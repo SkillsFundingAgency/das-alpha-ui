@@ -1,0 +1,170 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/">Apprenticeship Account ></a></li>
+    </ol>
+
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+  <div class="grid-row">
+          <div class="column-two-thirds">
+              <h1 class="heading-large" style="margin-top:0px">Acme Ltd Apprenticeship Account</h1>
+                <p style="margin-bottom:5px">On 21st August 2018 you have</p>
+                <h2 class="bold-xxlarge">£555,000<span class="robPence">.87</span></h2>
+                <p style="margin-top:0">in your account</p>
+                 <div style="margin-top:50px"></div>
+            
+            <div> 
+             <h2 class="bold-medium">Approved spending</h2>
+              <p>
+                  The following funds will be paid out of your account to fund your apprenticeships.
+                </p>
+                <table>
+                  <thead>
+                    <tr>
+                      <th scope="col">Period</th>
+                      <th class="numeric" scope="col">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                    <tr>
+                      <td>22nd August 2018 - 21st August 2019</td>
+                      <td class="numeric">£20,792.82</td>
+                    </tr>
+                    <tr>
+                      <td>22nd August 2018 - 21st August 2019</td>
+                      <td class="numeric">£200,740.98</td>
+                    </tr>
+                    <tr>
+                     <td>22nd August 2018 - 19th December 2020</td>
+                      <td class="numeric">£650,683.99</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p style="margin-top:10px; font-size:16px"><a href="#"> View your agreed spending by month</a></p>
+            </div>
+            <div>
+              <div class="panel panel-border-wide">
+             <h2 class="bold-medium">How much can I spend on apprentices?</h2>
+                <p>
+                  The amount of money you have to spend on apprentices is made up of your current balance minus the amount you have committed to spend in the future. 
+                </p>
+              </div>
+              </div>
+            <div style="margin-top:50px"></div>
+          </div>
+
+          <div class="column-one-third">
+            <aside class="related">
+              <h2 class="bold-medium robH2Spacing">Apprenticeships</h2>
+              <nav role="navigation">
+            <ul class="robSideNav">
+                <li>
+                  <a href="sprint2/find">Find a provider</a>
+                </li>
+                <li>
+                  <a href="sprint2/pay">Pay a provider</a>
+                </li>
+                <li>
+                  <a href="sprint2/statement">View account statement</a>
+                </li>
+                <li>
+                  <a href="sprint2/expire">View future commitments</a>
+                   <li>
+                  <a href="sprint2/expire">View funds due to expire</a>
+                </li>
+                </li>
+                  <li>
+                  <a href="sprint2/paye">Manage account</a>
+                </li>
+            </ul>
+          </nav>
+        </aside>
+
+          </div>
+  </div>
+
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+$( document ).ready(function() {
+
+  // change the tabs themselves to active - should be in the above but isn't working because it's looking for a not li so I added this as a quick fix.
+
+  $("ul#tabs-nav li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs-nav li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#tabs-nav li.active").removeClass("active");
+            $("ul#tabs-nav li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+  $('ul.tabs-nav').each(function(){
+    // For each set of tabs, we want to keep track of
+    // which tab is active and its associated content
+    var $active, $content, $links = $(this).find('a');
+
+
+
+    // If the location.hash matches one of the links, use that as the active tab.
+    // If no match is found, use the first link as the initial active tab.
+    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+   // $active.addClass('active');
+   console.log($active)
+
+    $content = $($active[0].hash);
+
+    // Hide the remaining content
+    $links.not($active).each(function () {
+      $(this.hash).hide();
+    }); 
+
+    // Bind the click event handler
+    $(this).on('click', 'a', function(e){
+      // Make the old tab inactive.
+    //  $active.removeClass('active');
+      $content.hide();
+
+      // Update the variables with the new link and content
+    //  $active = $(this);
+      $content = $(this.hash);
+
+      // Make the tab active.
+     // $active.addClass('active');
+      $content.show();
+
+      // Prevent the anchor's default click action
+      e.preventDefault();
+    });
+  });
+
+
+</script>
+
+{% endblock %}
+
