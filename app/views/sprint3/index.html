@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">Sprint 3 - Payment and Full Journey</h1>
+      <h2 class="heading-medium">Journey versions</h2>
+      <p>
+        <a href="http://127.0.0.1/skillsFundingNonNode/registration/start.html#p=home&c=1">Register (Nat/Axure)</a>
+      </p>
+      <p>
+        <a href="http://127.0.0.1/skillsFundingNonNode/sprint_6_4/">Search and Shortlist (Ty/Apache)</a>
+      </p>
+      <p>
+        <a href="http://127.0.0.1:3000/{% include "includes/sprint-link.html" %}/lightlogin/">Light Login (quick hack/node)</a>
+      </p>
+      <p>
+        <a href="http://127.0.0.1:3000/{% include "includes/sprint-link.html" %}/employerPortal/">Employer portal (quick hack/node)</a>
+      </p>
+       <p>
+        <a href="http://127.0.0.1:3000/{% include "includes/sprint-link.html" %}/employerPortal/upgrade">DAS "upgrade" (quick hack/node)</a>
+      </p>
+      <h2 class="heading-medium"> Levy Account pages</h2>
+      <p>
+        <a href="/{% include "includes/sprint-link.html" %}/login">Sign in to the service</a>
+      </p>
+      <p>
+        <a href="/{% include "includes/sprint-link.html" %}/balance">View my balance</a>
+      </p>
+       <p>
+        <a href="/{% include "includes/sprint-link.html" %}/history">View my account history</a>
+      </p>
+        <a href="/{% include "includes/sprint-link.html" %}/committed">View my planned spending</a>
+      </p>
+       </p>
+        <a href="/{% include "includes/sprint-link.html" %}/expire">View expiring funds</a>
+      </p>
+             </p>
+        <a href="/{% include "includes/sprint-link.html" %}/payment">View payment invoices</a>
+      </p>
+
+     
+
+      
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

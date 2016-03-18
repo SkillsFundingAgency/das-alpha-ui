@@ -13,8 +13,8 @@
 
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
-      <li><a href="/sprint2/balance">Apprenticeship Account</a></li>
-      <li><a href="/sprint2/history">Planned spending</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Apprenticeship Account</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/history">Fund expiry</a></li>
     </ol>
 
   </div>
@@ -25,75 +25,69 @@
 
   <div class="grid-row">
           <div class="column-two-thirds">
-              <h1 class="heading-large" style="margin-top:0px"><span class="heading-secondary" style="padding-top:0px">Acme Ltd</span>Planned spending</h1>
-                 <h2 class="heading-small" >You have planned to spend</h2>
-                <h2 class="bold-xxlarge">£675,000</h2>
-                <p>On apprenticehips until your final contract ends on 14th December 2022</p>
-              
-               
-            <h2 class="heading-medium">Summary of planned spending</h2>
-                <table>
-                    <thead>
-                      <tr>
-                        <th scope="col">Time</th>
-                        <th scope="col" class="numeric">Amount planned</th>
-                      </tr>
-                    </thead>
-                   <tbody>
-                    <tr>
-                      <td>Next 12 months</td>
-                      <td class="numeric">£20,792</td>
-                    </tr>
-                    <tr>
-                      <td>Next 24 months</td>
-                      <td class="numeric">£200,740</td>
-                    </tr>
-                    <tr>
-                     <td>Next 36 months</td>
-                      <td class="numeric">£512,028</td>
-                    </tr>
-                  </tbody>
-                  </table>
+              <h1 class="heading-large" style="margin-top:0px"><span class="heading-secondary" style="padding-top:0px">Acme Ltd</span>Funds at risk of expiry</h1>
 
-                    <p class="" style="margin-top:20px">Included in these figures are 7 apprenticeships that you have committed to but have not authorised payments</p>
-                    <p>Please <a href="">review and approve these payments</a></p>
-                    <p class="" style="margin-top:20px">You have <a href="#">6 "Quotes"</a> out to providers. When these quotes come in they will be added to committed funds</p>
-                <h2 class="heading-medium"><a name="paymentSchedule">Planned payment schedule</h2>
+               <p class="lede">
+                  If you don't use your levy allocation it will expire XX months after being deposited in your account.
+                </p>
+                <p>
+                  To avoid the risk of expiring you need to <a href="#">spend it on apprenticeships</a>.
+                </p>
+               
+            <h2 class="heading-medium">Summary of funds at risk over time</h2>
                 <table>
                     <thead>
                       <tr>
-                        <th scope="col">To</th>
-                        <th scope="col">Amount/Frequency</th>
-                        <th scope="col" class="numeric">Amount left to pay</th>
-                        <th scope="col">Date of final payment</th>
+                        <th scope="col">Expiry range</th>
+                        <th scope="col" class="numeric">Amount at risk</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td><a href="#">Hackney skills and training provider Ltd</a></td>
-                        <td>£2,000.92/month</td>
+                        <td>Expiring in < 3 months</td>
+                        <td class="numeric">£15,000</td>
+                      </tr>
+                      <tr>
+                        <td>Expiring in 3 to 6 months</td>
+                        <td class="numeric">£25,050.92</td>
+                      </tr>
+                      <tr>
+                        <td>Expiring in 6 to 12 months</td>
+                        <td class="numeric">£35,000.92</span></td>
+                      </tr>
+                    </table>
+
+            <h2 class="heading-medium">If not spent, the following funds will expire</h2>
+                <table>
+                    <thead>
+                      <tr>
+                        <th scope="col">Expiry date</th>
+                        <th scope="col">Description</th>
+                        <th scope="col" class="numeric">Amount at risk</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>24 September 2018</td>
+                        <td>August 2017 Skills Funding Agency Payment Expiring</td>
                         <td class="numeric">£15,000.00</td>
-                        <td>24 September 2019</td>
                       </tr>
                       <tr>
-                        <td><a href="#">Learning management, skills and business training Ltd</a></td>
-                        <td>£100.87/month</td>
-                        <td class="numeric">£4,000.93</td>
-                        <td>24 January 2020</td>
-                      </tr>
-                   
-                      <tr>
-                        <td><a href="#">Lots of skills Ltd</td>
-                        <td>£1,000.17/month</a></td>
-                        <td class="numeric">£9,000.92</td>
-                        <td>24 September 2020</td>
+                        <td>27 December 2018</td>
+                        <td>November 2017 Skills Funding Agency Payment Expiring</td>
+                        <td class="numeric">£25,050.92</td>
                       </tr>
                       <tr>
-                        <td><a href="#">Learning management, skills and business training Ltd</a></td>
-                        <td>£600.87/Final payment</td>
-                        <td class="numeric">£600.97</td>
-                        <td>14th December 2022</td>
-                      </tr>                
+                        <td>19 April 2019</td>
+                        <td>March 2018 Skills Funding Agency Payment Expiring</td>
+                        <td class="numeric">£15,000.092</td>
+                      </tr>
+                      <tr>
+                        <td>21 May 2019</td>
+                        <td>April 2018 Skills Funding Agency Payment Expiring</td>
+                        <td class="numeric">£15,000.092</td>
+                      </tr>
+
                     </tbody>
                 </table>
             <div style="margin-top:50px"></div>
@@ -105,13 +99,13 @@
          <nav role="navigation">
             <ul class="robSideNav">
               <li>
-                  <a href="/sprint2/balance">View balance</a>
+                  <a href="/{% include "includes/sprint-link.html" %}/balance">View balance</a>
               </li>
                 <li>
-                  <a href="/sprint2/history">View account statement</a>
+                  <a href="/{% include "includes/sprint-link.html" %}/history">View account statement</a>
               </li>
               <li>
-                  <a href="/sprint2/expire">View expiring funds</a>
+                  <a href="/{% include "includes/sprint-link.html" %}/committed">View planned spending</a>
               </li>
 
             </ul>
