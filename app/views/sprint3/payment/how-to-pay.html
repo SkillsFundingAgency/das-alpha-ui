@@ -26,18 +26,31 @@
 
   <div class="grid-row">
            <div class="column-two-thirds">
-            <div class="govuk-box-highlight">
-                <h1 class="bold-large">
-                  Offer accepted
-                </h1>
-                <p>Your contract reference number is <br>
-                  <strong class="heading-medium">98HGS3F</strong>
+              <h1 class="heading-large" style="margin:0px 0 50px 0">Payment authorisation</h1>
+            <div>
+                <p>
+                  You can choose whether payments will be automaticall paid each month or whether you have to authorise each payment due every month.
                 </p>
-            </div>
-                <p>Thank you for accepting the providers offer. </p>
+                <h2 class="heading-medium">
+                  How would you like payments to be made?
+                </h2>
+                
 
-                  <p><a href="/{% include "includes/sprint-link.html" %}/payment/quote/">Review more provider offers</a>
-                    <p><a href="/{% include "includes/sprint-link.html" %}/balance">Return to your account balance</a>
+                 <form action="/{% include "includes/sprint-link.html" %}/payment/approve-terms">
+                    <legend class="visuallyhidden">Payment type</legend>
+                      <div class="form-group">
+                      <label class="block-label" for="radio-1">
+                        <input id="radio-1" type="radio" name="radio-group" value="automatic-payment">
+                        Pay automatically when due
+                      </label>
+                      <label class="block-label" for="radio-2">
+                        <input id="radio-2" type="radio" name="radio-group" value="manual-payment">
+                        Manually authorise each payment
+                      </label>
+                    </div>
+                    </fieldset>
+                  <div style="margin-top:20px;"><input class="button" id="paymentPlan" type="submit" value="Save and continue"></div>
+                  </form>
 
             </div>
             <div style="margin-top:35px"></div>
