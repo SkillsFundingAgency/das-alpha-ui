@@ -15,7 +15,7 @@
     <ol role="breadcrumbs">
       <li><a href="/{% include "includes/sprint-link.html" %}/balance">Apprenticeship Account</a></li>
       <li><a href="/{% include "includes/sprint-link.html" %}/payment">Provider payments</a></li>
-      <li><a href="/{% include "includes/sprint-link.html" %}/payment/payment-plans">Set up a payment planr</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/payment/payment-plans">Set up a payment plan</a></li>
     </ol>
 
   </div>
@@ -28,27 +28,43 @@
            <div class="column-two-thirds">
               <h1 class="heading-large" style="margin:0px 0 50px 0">Set up a payment plan</h1>
           <div>
-                <p>You have chosen to pay the balance of £2987.24 over:</p>
-                <h2 class="heading-small" style="margin-top:0;">24 months</h2>
-                <p>Over this period you will make a first payment of:</p>
-                <h2 class="heading-small" style="margin-top:0;">£135.24</h2>
-                 <p>Followed by 23 monthly payments of:</p>
-                 <h2 class="heading-small" style="margin-top:0;">£124.00</h2>
-                 <p>If this is correct you can continue and choose how you authorise payments.</p>
-                  <form action="/{% include "includes/sprint-link.html" %}/payment/payment-plans/">
+                <p>You have chosen to pay the balance of £2987.24 over 24 months</p>
+                <h2 class="heading-medium">Payment schedule</h2>
+                  <table>
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <tr>
+                      <td>Total to pay</td>
+                      <td class="numeric">£2,987.24</td>
+                    </tr>
+                    <tr>
+                      <td>First  payment</td>
+                      <td class="numeric">£135.24</td>
+                    </tr>
+                    <tr>
+                     <td>23 monthly payments</td>
+                      <td class="numeric">£124.00</td>
+                    </tr>
+                    <tr>
+                     <td>Date of first payment</td>
+                      <td class="numeric">20th July 2018</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+                <p style="margin-top:20px;">If this is correct you can continue and choose how you authorise payments</p>
+
+                  <form action="/{% include "includes/sprint-link.html" %}/payment/payment-plans/how-to-pay">
                     <legend class="visuallyhidden">Approve the payment plan</legend>
                     <div style="margin-top:20px;"><input class="button" id="paymentPlan" type="submit" value="Save and continue"></div>
                   </form>
             </div>
-
-            <div>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Total to pay</h2 ><p>£2,987.24</p></div>
-                     <div><h2 class="heading-small" style="display:inline-block; margin:0;">Payments duration</h2 ><p>Level 2 NVQ</p></div>
-                     <div><h2 class="heading-small" style="display:inline-block; margin:0;">First payment date</h2 ><p>Aeronautical engineering</p></div>
-                     <div><h2 class="heading-small" style="display:inline-block; margin:0;">First payment</h2 ><p>24 months</p></div>
-                     <div><h2 class="heading-small" style="display:inline-block; margin:0;">Remaining payments</h2 ><p>12th August 2017</p></div>
-            </div> 
-
             <div style="margin-top:35px"></div>
             <div style="margin-top:50px"></div>
           </div>

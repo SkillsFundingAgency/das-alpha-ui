@@ -15,6 +15,7 @@
     <ol role="breadcrumbs">
       <li><a href="/{% include "includes/sprint-link.html" %}/balance">Apprenticeship Account</a></li>
       <li><a href="/{% include "includes/sprint-link.html" %}/payment">Provider payments</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/payment/quote">Provider offer</a></li>
     </ol>
 
   </div>
@@ -25,44 +26,43 @@
 
   <div class="grid-row">
            <div class="column-two-thirds">
-              <h1 class="heading-large" style="margin:0px 0 50px 0">Provider authorisation and payments</h1>
+              <h1 class="heading-large" style="margin:0px 0 50px 0">Payment authorisation</h1>
             <div>
-               <h2 class="heading-medium">
-                  Offers from providers
-              </h2>
                 <p>
-                  A provider that you have contracted with will provide you with an offer within the DAS. Please review the offer to ensure it meets your expectations and is what you negotiated with the provider. To start the apprenticeship and use your "levy"  you must accept the offer and set up a payment plan.
-              </p>
-               <p>
-                  You currently have 7 provider "offers" awaiting review. Once these are authorised, payments can be made to the provider. <a href="/{% include "includes/sprint-link.html" %}/payment/quote">Review 7 offers now</a>.
-              </p>
-               <h2 class="heading-medium">
-                  Payment plans
-              </h2>
-              <p>
-                  Once you've accepted an offer a payment plan between you and the provider will be set up. Typically these will be for equal payments over the term of the apprenticeship 
-              </p>
-              <p>In the "DAS" you can:</p>
-                <ul class="list list-bullet">
-                  <li><a href="">Amend a plan</a> if circumstances change</li>
-                  <li>Choose to <a href="#">authorise payments manually</a> or automatically</li>
-                </ul>
+                  You can choose whether payments will be automaticall paid each month or whether you have to authorise each payment due every month.
+                </p>
+                <h2 class="heading-medium">
+                  How would you like payments to be made?
+                </h2>
+                
+
+                 <form action="/{% include "includes/sprint-link.html" %}/payment/payment-plans/confirmation">
+                    <legend class="visuallyhidden">Payment type</legend>
+                      <div class="form-group">
+                      <label class="block-label" for="radio-1">
+                        <input id="radio-1" type="radio" name="radio-group" value="automatic-payment">
+                        Pay automatically
+                      </label>
+                      <label class="block-label" for="radio-2">
+                        <input id="radio-2" type="radio" name="radio-group" value="manual-payment">
+                        Pay "manually"
+                      </label>
+                    </div>
+                    </fieldset>
+                  <div style="margin-top:20px;"><input class="button" id="paymentPlan" type="submit" value="Finish - set up payment plan"></div>
+                  </form>
 
             </div>
-            <div style="margin-top:35px">
-
-              </div>
+            <div style="margin-top:35px"></div>
             <div style="margin-top:50px"></div>
           </div>
 
           <div class="column-one-third">
-                      <aside class="related">
+                       <!--aside class="related">
                         <h2 class="heading-medium" style="margin-top:10px">Provider management</h2>
                         <nav role="navigation">
                       <ul class="robSideNav">
-                          <li>
-                            <a href="/{% include "includes/sprint-link.html" %}/payment/quote">Review provider "offers"</a>
-                          </li>
+                        
                           <li>
                             <a href="/{% include "includes/sprint-link.html" %}/payment/paymentplan">Add a new payment plan (OUT?)</a>
                           </li>
@@ -77,7 +77,7 @@
                           </li>
                         </ul>
                            </nav>
-                    </aside>
+                    </aside-->
             </div>
         </div>
 </main>
