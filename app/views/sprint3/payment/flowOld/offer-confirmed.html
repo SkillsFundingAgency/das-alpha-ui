@@ -26,32 +26,26 @@
 
   <div class="grid-row">
            <div class="column-two-thirds">
-              <h1 class="heading-large" style="margin:0px 0 50px 0">Approve provider offer</h1>
-            <div>
-                <p>
-                  To finalise your approval of the quote we need you to agree to all of the following legal requirements
+            <div class="govuk-box-highlight">
+                <h1 class="bold-large">
+                  Offer accepted
+                </h1>
+                <p>Your contract reference number is <br>
+                  <strong class="heading-medium">98HGS3F</strong>
                 </p>
-                <p>
-                  Remember you are entering into a binding legal contract on behalf of your organisation
-                </p>
-                 <h2 class="heading-medium">
-                  On behalf of my organisation:
+            </div>
+                <p>Thank you for accepting the providers offer. </p>
+                <h2 class="heading-medium">
+                  Set up a payment plan
                 </h2>
+                <p>To ensure the smooth delivery of your apprenticeship you need to set up a payment plan to ensure your provider gets paid.</p>
+                
+                  <!--p><a href="/{% include "includes/sprint-link.html" %}/payment/payment-plans/">Set up a payment plan now</a-->
 
-                 <form action="/{% include "includes/sprint-link.html" %}/payment/offer-confirmed">
-                    <legend class="visuallyhidden">Terms and conditions</legend>
-                      <div class="form-group">
-                      <label class="block-label" for="checkbox-1">
-                        <input id="checkbox-1" type="checkbox" name="checkbox-group" value="agree-with-terms">
-                        I declare that I am authorised to approve contracts
-                      </label>
-                      <label class="block-label" for="checkbox-2">
-                        <input id="checkbox-2" type="checkbox" name="checkbox-group" value="agree-with-terms">
-                        I agree with the <a href="#">Terms and Conditions</a>
-                      </label>
-                    </div>
-                    </fieldset>
-                  <div style="margin-top:20px;"><input class="button" id="approveContract" type="submit" value="Approve contract"></div>
+                 <form action="/{% include "includes/sprint-link.html" %}/payment/payment-plans/">
+                    <legend class="visuallyhidden">Set up payment plan</legend>
+                
+                  <div style="margin-top:20px;"><input class="button" id="paymentPlan" type="submit" value="Set up a payment plan"></div>
                   </form>
 
             </div>
@@ -60,7 +54,26 @@
           </div>
 
           <div class="column-one-third">
-                      
+                       <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Provider management</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                        
+                          <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/paymentplan">Add a new payment plan (OUT?)</a>
+                          </li>
+                          <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/makepayment">Make a payment</a>
+                          </li>
+                           <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/reviewpayments">Review and amend regular payments</a>
+                          </li>
+                            <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/spendingcommitments">View a summary of your spending commitments</a>
+                          </li>
+                        </ul>
+                           </nav>
+                    </aside-->
             </div>
         </div>
 </main>

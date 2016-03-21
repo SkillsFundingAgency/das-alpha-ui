@@ -1311,8 +1311,8 @@ table {
 table th,
 table td {
   font-family: "nta", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.1428571429;
+  font-size: 16px;
+  line-height: 1.25;
   font-weight: 400;
   text-transform: none;
   padding: 0.75em 1.25em 0.5625em 0;
@@ -1324,8 +1324,8 @@ table td {
 @media (min-width: 641px) {
   table th,
   table td {
-    font-size: 16px;
-    line-height: 1.25;
+    font-size: 19px;
+    line-height: 1.3157894737;
   }
 }
 
@@ -1339,8 +1339,8 @@ table th.numeric {
 
 table td.numeric {
   font-family: "ntatabularnumbers", "nta", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.1428571429;
+  font-size: 16px;
+  line-height: 1.25;
   font-weight: 400;
   text-transform: none;
   text-align: right;
@@ -1348,8 +1348,8 @@ table td.numeric {
 
 @media (min-width: 641px) {
   table td.numeric {
-    font-size: 16px;
-    line-height: 1.25;
+    font-size: 19px;
+    line-height: 1.3157894737;
   }
 }
 
@@ -2065,6 +2065,11 @@ input[type=number] {
 .unbranded #footer {
   border: 0;
   background: #fff;
+}
+
+.rjTableName {
+  color: #6f777b;
+  font-weight: 700;
 }
 
 .govuk-related-items {
