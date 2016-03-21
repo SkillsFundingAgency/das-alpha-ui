@@ -2126,6 +2126,12 @@ input[type=number] {
   }
 }
 
+.robColumnDetails {
+  border-bottom: 1px solid #bfc1c3;
+  padding: 15px 0;
+  position: relative;
+}
+
 .twenty-top {
   margin-top: 20px;
 }

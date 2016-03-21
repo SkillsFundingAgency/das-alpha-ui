@@ -15,6 +15,7 @@
     <ol role="breadcrumbs">
       <li><a href="/{% include "includes/sprint-link.html" %}/balance">Apprenticeship Account</a></li>
       <li><a href="/{% include "includes/sprint-link.html" %}/payment">Provider payments</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/payment/payment-plans">Set up a payment planr</a></li>
     </ol>
 
   </div>
@@ -25,33 +26,30 @@
 
   <div class="grid-row">
            <div class="column-two-thirds">
-              <h1 class="heading-large" style="margin:0px 0 50px 0">Provider authorisation and payments</h1>
-            <div>
-               <h2 class="heading-medium">
-                  Offers from providers
-              </h2>
-                <p>
-                  A provider that you have contracted with will provide you with an offer within the DAS. Please review the offer to ensure it meets your expectations and is what you negotiated with the provider. To start the apprenticeship and use your "levy"  you must accept the offer and set up a payment plan.
-              </p>
-               <p>
-                  You currently have 7 provider "offers" awaiting review. Once these are authorised, payments can be made to the provider. <a href="/{% include "includes/sprint-link.html" %}/payment/quotes">Review 7 offers now</a>.:
-              </p>
-               <h2 class="heading-medium">
-                  Payment plans
-              </h2>
-              <p>
-                  Once you've accepted an offer a payment plan between you and the provider will be set up. Typically these will be for equal payments over the term of the apprenticeship 
-              </p>
-              <p>In the "DAS" you can:</p>
-                <ul class="list list-bullet">
-                  <li><a href="">Amend a plan</a> if circumstances change</li>
-                  <li>Choose to <a href="#">authorise payments manually</a> or automatically</li>
-                </ul>
-
+              <h1 class="heading-large" style="margin:0px 0 50px 0">Set up a payment plan</h1>
+          <div>
+                <p>You have chosen to pay the balance of £2987.24 over:</p>
+                <h2 class="heading-small" style="margin-top:0;">24 months</h2>
+                <p>Over this period you will make a first payment of:</p>
+                <h2 class="heading-small" style="margin-top:0;">£135.24</h2>
+                 <p>Followed by 23 monthly payments of:</p>
+                 <h2 class="heading-small" style="margin-top:0;">£124.00</h2>
+                 <p>If this is correct you can continue and choose how you authorise payments.</p>
+                  <form action="/{% include "includes/sprint-link.html" %}/payment/payment-plans/">
+                    <legend class="visuallyhidden">Approve the payment plan</legend>
+                    <div style="margin-top:20px;"><input class="button" id="paymentPlan" type="submit" value="Save and continue"></div>
+                  </form>
             </div>
-            <div style="margin-top:35px">
 
-              </div>
+            <div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Total to pay</h2 ><p>£2,987.24</p></div>
+                     <div><h2 class="heading-small" style="display:inline-block; margin:0;">Payments duration</h2 ><p>Level 2 NVQ</p></div>
+                     <div><h2 class="heading-small" style="display:inline-block; margin:0;">First payment date</h2 ><p>Aeronautical engineering</p></div>
+                     <div><h2 class="heading-small" style="display:inline-block; margin:0;">First payment</h2 ><p>24 months</p></div>
+                     <div><h2 class="heading-small" style="display:inline-block; margin:0;">Remaining payments</h2 ><p>12th August 2017</p></div>
+            </div> 
+
+            <div style="margin-top:35px"></div>
             <div style="margin-top:50px"></div>
           </div>
 
@@ -60,9 +58,9 @@
                         <h2 class="heading-medium" style="margin-top:10px">Provider management</h2>
                         <nav role="navigation">
                       <ul class="robSideNav">
-                          <li>
+                          <!--li>
                             <a href="/{% include "includes/sprint-link.html" %}/payment/quote">Review provider "offers"</a>
-                          </li>
+                          </li-->
                           <li>
                             <a href="/{% include "includes/sprint-link.html" %}/payment/paymentplan">Add a new payment plan (OUT?)</a>
                           </li>

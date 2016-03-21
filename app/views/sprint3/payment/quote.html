@@ -15,6 +15,7 @@
     <ol role="breadcrumbs">
       <li><a href="/{% include "includes/sprint-link.html" %}/balance">Apprenticeship Account</a></li>
       <li><a href="/{% include "includes/sprint-link.html" %}/payment">Provider payments</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/payment/quote">Provider offer</a></li>
     </ol>
 
   </div>
@@ -25,28 +26,33 @@
 
   <div class="grid-row">
            <div class="column-two-thirds">
-              <h1 class="heading-large" style="margin:0px 0 50px 0">Provider authorisation and payments</h1>
+              <h1 class="heading-large" style="margin:0px 0 50px 0">Review provider offers</h1>
             <div>
-               <h2 class="heading-medium">
-                  Offers from providers
-              </h2>
                 <p>
-                  A provider that you have contracted with will provide you with an offer within the DAS. Please review the offer to ensure it meets your expectations and is what you negotiated with the provider. To start the apprenticeship and use your "levy"  you must accept the offer and set up a payment plan.
-              </p>
-               <p>
-                  You currently have 7 provider "offers" awaiting review. Once these are authorised, payments can be made to the provider. <a href="/{% include "includes/sprint-link.html" %}/payment/quotes">Review 7 offers now</a>.:
-              </p>
-               <h2 class="heading-medium">
-                  Payment plans
-              </h2>
-              <p>
-                  Once you've accepted an offer a payment plan between you and the provider will be set up. Typically these will be for equal payments over the term of the apprenticeship 
-              </p>
-              <p>In the "DAS" you can:</p>
-                <ul class="list list-bullet">
-                  <li><a href="">Amend a plan</a> if circumstances change</li>
-                  <li>Choose to <a href="#">authorise payments manually</a> or automatically</li>
-                </ul>
+                  The following offers have been made by providers based on your requests. Please review and either approve, request an update or reject the quote.
+                </p>
+                <div class="robColumnDetails">
+                      <div ><h2 class="heading-medium" style"margin: 0"><a target="_blank=" href="/{% include "includes/sprint-link.html" %}/payment/individual-offer">Hackney Skills and Training Ltd</a></h2></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date posted:&nbsp</h2 ><p style="display:inline; margin:0;">12th July 2018</p></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Standard:&nbsp</h2 ><p style="display:inline; margin:0;">Level 2 Aeronautical Engineer</p></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Description:&nbsp</h2 ><p style="display:inline; margin:0;">Level 2 aeronautical engineering for 7 apprentices based on telephone conversation with Mel Edwards.</p></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">HAL7637827</p></div>
+    
+                          <!--form action="/sprint3/employerPortal/next">
+                            <input class="button" style="margin-top:30px" id="saveAndContinue" type="submit" value="Request a quote">
+                          </form-->
+                  </div>
+                   <div class="robColumnDetails">
+                      <div ><h2 class="heading-medium" style"margin: 0"><a target="_blank=" href="#">Scunthorp College of Learning and Higher Education Skills Ltd</a></h2></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date posted:&nbsp</h2 ><p style="display:inline; margin:0;">24th August 2018</p></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Standard:&nbsp</h2 ><p style="display:inline; margin:0;">Level 3 Network Engineer</p></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Description:&nbsp</h2 ><p style="display:inline; margin:0;">Based on 5th May conversation with Gareth Edwards - for 1 apprentice, yet to be hired</p></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">SCL928170</p></div>
+    
+                          <!--form action="/sprint3/employerPortal/next">
+                            <input class="button" style="margin-top:30px" id="saveAndContinue" type="submit" value="Request a quote">
+                          </form-->
+                  </div>
 
             </div>
             <div style="margin-top:35px">
@@ -60,9 +66,9 @@
                         <h2 class="heading-medium" style="margin-top:10px">Provider management</h2>
                         <nav role="navigation">
                       <ul class="robSideNav">
-                          <li>
+                          <!--li>
                             <a href="/{% include "includes/sprint-link.html" %}/payment/quote">Review provider "offers"</a>
-                          </li>
+                          </li-->
                           <li>
                             <a href="/{% include "includes/sprint-link.html" %}/payment/paymentplan">Add a new payment plan (OUT?)</a>
                           </li>
