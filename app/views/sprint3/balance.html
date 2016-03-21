@@ -30,7 +30,7 @@
                 <!--p style="margin-top:0">in your account</p-->
                  <div style="margin-top:50px"></div>
             <div> 
-             <h2 class="bold-medium">Planned spending</h2>
+             <h2 class="bold-medium">Summary of planned spending</h2>
               <p>
                   The following funds will be paid out of your account to fund your apprenticeships.
                 </p>
@@ -57,7 +57,7 @@
                     </tr>
                   </tbody>
                 </table>
-                <p style="margin-top:10px; font-size:16px"><a href="/{% include "includes/sprint-link.html" %}/committed#paymentSchedule">View your planned payment schedule</a></p>
+                <p style="margin-top:10px; font-size:16px"><a href="/{% include "includes/sprint-link.html" %}/payment/spendingcommitments">View your planned payment schedule</a></p>
             </div>
             <div style="margin-top:35px">
 
@@ -79,11 +79,18 @@
                           <li>
                             <a href="/{% include "includes/sprint-link.html" %}/history">View account statement</a>
                           </li>
-                          <li>
-                            <a href="/{% include "includes/sprint-link.html" %}/committed">View planned spending</a>
-                          </li>
+                        
                           <li>
                             <a href="/{% include "includes/sprint-link.html" %}/expire">View funds at risk of expiring</a>
+                          </li>
+                            <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/committed">View planned spending summary</a>
+                          </li>
+                          <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/spendingcommitments">Review payment plans</a>
+                          </li>
+                            <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/...">Authorise a payment</a>
                           </li>
                         </ul>
                            </nav>
@@ -91,7 +98,7 @@
                         <nav role="navigation">
                            <ul class="robSideNav">
                           <li>
-                            <a href="/{% include "includes/sprint-link.html" %}/payment">Provider payments</a>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/quote">Provider offers</a>
                           </li>
                            <li>
                             <a href="/{% include "includes/sprint-link.html" %}/find">Find a provider</a>

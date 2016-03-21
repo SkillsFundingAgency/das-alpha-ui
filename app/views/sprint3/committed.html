@@ -26,9 +26,7 @@
   <div class="grid-row">
           <div class="column-two-thirds">
               <h1 class="heading-large" style="margin-top:0px"><span class="heading-secondary" style="padding-top:0px">Acme Ltd</span>Planned spending</h1>
-                 <h2 class="heading-small" >You have planned to spend</h2>
-                <h2 class="bold-xxlarge">£675,000</h2>
-                <p>On apprenticehips until your final contract ends on 14th December 2022</p>
+                <p>You have planned the following spending planned until your final contract ends on 14th December 2022.</p>
               
                
             <h2 class="heading-medium">Summary of planned spending</h2>
@@ -52,71 +50,44 @@
                      <td class="rjTableName">Next 36 months</td>
                       <td class="numeric">£512,028</td>
                     </tr>
+                     <tr>
+                     <td class="rjTableName">Until final contract ends (40 months)</td>
+                      <td class="numeric">£675,028</td>
+                    </tr>
                   </tbody>
                   </table>
-
-                    <p class="" style="margin-top:20px">Included in these figures are 7 apprenticeships that you have committed to but have not authorised payments</p>
-                    <p>Please <a href="">review and approve these payments</a></p>
-                    <p class="" style="margin-top:20px">You have <a href="/{% include "includes/sprint-link.html" %}/payment/quote">2 offers</a> awaiting review. The costs for these have been added to your committed funds.</p>
-                <h2 class="heading-medium"><a name="paymentSchedule">Planned payment schedule</h2>
-                <table>
-                    <thead>
-                      <tr>
-                        <th scope="col">To</th>
-                        <th scope="col">Amount/Frequency</th>
-                        <th scope="col" class="numeric">Amount left to pay</th>
-                        <th scope="col">Date of final payment</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><a href="#">Hackney skills and training provider Ltd</a></td>
-                        <td>£2,000.92/month</td>
-                        <td class="numeric">£15,000.00</td>
-                        <td>24 September 2019</td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">Learning management, skills and business training Ltd</a></td>
-                        <td>£100.87/month</td>
-                        <td class="numeric">£4,000.93</td>
-                        <td>24 January 2020</td>
-                      </tr>
-                   
-                      <tr>
-                        <td><a href="#">Lots of skills Ltd</td>
-                        <td>£1,000.17/month</a></td>
-                        <td class="numeric">£9,000.92</td>
-                        <td>24 September 2020</td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">Learning management, skills and business training Ltd</a></td>
-                        <td>£600.87/Final payment</td>
-                        <td class="numeric">£600.97</td>
-                        <td>14th December 2022</td>
-                      </tr>                
-                    </tbody>
-                </table>
+                    <p class="" style="margin-top:20px">You have <a href="/{% include "includes/sprint-link.html" %}/payment/quote">2 offers awaiting review.</a>  The costs for these have been included in your planned spend.</p>
+                <p><a href="/{% include "includes/sprint-link.html" %}/payment/spendingcommitments" >Review and amend your planned payments</p></a>
+       
             <div style="margin-top:50px"></div>
           </div>
 
     <div class="column-one-third">
-      <aside class="related">
-              <h2 class="heading-medium" style="margin-top:10px">Account activity</h2>
-         <nav role="navigation">
-            <ul class="robSideNav">
-              <li>
-                  <a href="/{% include "includes/sprint-link.html" %}/balance">View balance</a>
-              </li>
-                <li>
-                  <a href="/{% include "includes/sprint-link.html" %}/history">View account statement</a>
-              </li>
-              <li>
-                  <a href="/{% include "includes/sprint-link.html" %}/expire">View expiring funds</a>
-              </li>
+                <aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Account activity</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/history">View account statement</a>
+                          </li>
+                          <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/committed">View planned spending summary</a>
+                          </li>
+                          <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/expire">View funds at risk of expiring</a>
+                          </li>
+                        </ul>
+                           </nav>
+                           <h2 class="heading-medium ">Provider management</h2>
+                        <nav role="navigation">
+                           <ul class="robSideNav">
+                          <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment">Provider payments</a>
+                          </li>
 
-            </ul>
-          </nav>
-        </aside>
+                      </ul>
+                    </nav>
+                    </aside>
     </div>
   </div>
 
