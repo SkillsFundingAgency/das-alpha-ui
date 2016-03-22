@@ -29,6 +29,31 @@
     font-weight: 700;
 }
 
+.rjChangeButton {
+        background-color: #dee0e2;
+    position: relative;
+    display: -moz-inline-stack;
+    display: inline-block;
+    padding: 0.5em 0.5em 0.15em 0.5em;
+    border: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -webkit-box-shadow: 0 2px 0 #b5babe;
+    -moz-box-shadow: 0 2px 0 #b5babe;
+    box-shadow: 0 2px 0 #b5babe;
+    font-size: 1em;
+    line-height: 1.25;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    color: #0b0c0c;
+    overflow: hidden;
+
+}
+
+
 
 // Related items
 // (These styles will be moved to GOV.UK elements, duplicating here for now.)
