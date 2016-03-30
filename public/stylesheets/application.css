@@ -2067,6 +2067,15 @@ input[type=number] {
   background: #fff;
 }
 
+.rjSearchButton {
+  display: inline-block !important;
+  padding: 0.9rem 1.2rem 0.5rem 1rem;
+  box-shadow: 0 0 0;
+  webkit-box-shadow: 0 0 0;
+  moz-box-shadow: 0 0 0;
+  margin-left: -3px;
+}
+
 .rjTabWidth {
   max-width: 250px;
 }
