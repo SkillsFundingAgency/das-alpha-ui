@@ -2073,7 +2073,26 @@ input[type=number] {
   box-shadow: 0 0 0;
   webkit-box-shadow: 0 0 0;
   moz-box-shadow: 0 0 0;
-  margin-left: -3px;
+  margin-left: -4px;
+}
+
+#organisation-name {
+  width: 76%;
+}
+
+@media (max-width: 640px) {
+  #organisation-name {
+    width: 100%;
+  }
+  .rjSearchButton {
+    margin: 5px 0 0 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .rjHideOnTablet {
+    display: none;
+  }
 }
 
 .rjTabWidth {

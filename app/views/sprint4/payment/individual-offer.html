@@ -36,7 +36,9 @@
                   <table>
                   <thead>
                     <tr>
-                      <th colspan="2">Details of offer</th>
+                      <th colspan="2">Offer information</th>
+                      <th>Details</th>
+                      
                      
                     </tr>
                   </thead>
@@ -45,97 +47,88 @@
                     <tr>
                       <td class="rjTableName">Provider name</td>
                       <td class="">Hackney skills and training Ltd</td>
+                      <td class=""></td>
                     </tr>
                      <tr>
                       <td class="rjTableName">Reference</td>
                       <td class="">HAL7637827</td>
+                      <td class=""></td>
                     </tr>
                       <tr>
                       <td class="rjTableName">Description</td>
-                      <td class="rjTabWidth">Level 2 aeronautical engineering for 7 apprentices based on telephone conversation with  Mel Edwards</td>
+                      <td class="rjTabWidth">Level 2 aeronautical engineering for 4 apprentices based on telephone conversation with  Mel Edwards</td>
+                      <td class=""></td>
                     </tr>
                     <tr>
                       <td class="rjTableName">Apprenticeship level</td>
                       <td class="">Level 2 NVQ</td>
+                      <td class=""></td>
                     </tr>
                     <tr>
                      <td class="rjTableName">Apprenticeship name</td>
                       <td class="">Aeronautical engineering</td>
+                      <td class=""></td>
                     </tr>
-                                        <tr>
+                    <tr>
                      <td class="rjTableName">Endpoint assessor</td>
                       <td class="">Pham Assessment Ltd</td>
+                      <td class=""></td>
+                    </tr>
+                      <tr>
+                     <td class="rjTableName">Number of apprenticeships</td>
+                      <td class="">4</td>
+                      <td class=""></td>
                     </tr>
                     <tr>
                      <td class="rjTableName">Apprentice name</td>
-                      <td class="">David Jenkins</td>
+                      <td class="">David Jenkins</a></td>
+                      <td class=""><a href="#">View</a></td>
                     </tr>
                     <tr>
                      <td class="rjTableName"></td>
-                      <td class="">Rob Edwards</td>
+                      <td class="">T.B.C</td>
+                      <td class=""></td>
                     </tr>
                     <tr>
                      <td class="rjTableName"></td>
-                      <td class="">Mel O'Connor</td>
+                      <td class="">T.B.C</td>
+                      <td class=""></td>
                     </tr>
                      <tr>
                      <td class="rjTableName"></td>
-                      <td class="">Susan Hamazaki</td>
+                      <td class="">T.B.C</td>
+                      <td class=""></td>
                     </tr>
-                      <tr>
-                     <td class="rjTableName">Start date</td>
-                      <td class="">20th July 2018</td>
-                    </tr>
-                    <tr>
-                     <td class="rjTableName">Duration</td>
-                      <td class="">24 months</td>
-                    </tr>
-                    <tr>
-                     <td class="rjTableName">Total to pay</td>
-                      <td class="">£2,987.24</td>
-                    </tr>
-                     <tr>
-                     <td class="rjTableName">Date of first payment</td>
-                      <td class="">20th August 2018</td>
-                    </tr>
-                    <tr>
-                      <td class="rjTableName">First payment</td>
-                      <td class="">£135.24</td>
-                    </tr>
-                    <tr>
-                     <td class="rjTableName">23 monthly payments</td>
-                      <td class="">£124.00</td>
-                    </tr>
-                   
                   </tbody>
                 </table>
-                <h2 class="heading-medium">Offer authorisation</h2>
+                <p style="margin-top:15px">
+                  You will get a chance to review payments on the next page.
+                </p>
+
+                <h2 class="heading-medium">Offer details</h2>
               <div class="panel panel-border-wide">
                 <p>
-                  Please check this offer carefully before approving as you are entering into a legally binding contract with your provider.
+                  Are the offer details correct on this page? You will get a chance to review payments on the next page.
                 </p>
               </div>
 
-                 <form action="/{% include "includes/sprint-link.html" %}/payment/how-to-pay">
+
+              <form action="/{% include "includes/sprint-link.html" %}/payment/payment-plans">
                     <fieldset>
                       <legend class="visuallyhidden">Action on the provider offer</legend>
                         <label class="block-label" for="radio-1">
-                          <input id="radio-1" type="radio" name="radio-group" value="approve-offer">
-                          Accept offer
+                          <input id="radio-1" type="radio" name="radio-group" value="correct-offer">
+                          Yes, the details are correct
                         </label>
 
                         <label class="block-label" for="radio-2">
-                          <input id="radio-2" type="radio" name="radio-group" value="reject-offer">
-                          Reject offer
-                        </label>
-
-                        <label class="block-label" for="radio-3">
-                          <input id="radio-3" type="radio" name="radio-group" value="request-amendment">
-                          Request amendment to offer
+                          <input id="radio-2" type="radio" name="radio-group" value="wrong-offer">
+                          No, the details are wrong
                         </label>
                       </fieldset>
                       <div style="margin-top:20px;"><input class="button" id="saveAndContinue" type="submit" value="Save and continue"></div>
-                  </form>
+                </form>
+
                 </div>
             </div>
             <div style="margin-top:35px">

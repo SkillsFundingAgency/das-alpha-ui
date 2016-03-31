@@ -29,7 +29,7 @@
               <h1 class="heading-large" style="margin:0px 0 50px 0">Apprentice details</h1>
             <div>
                 <p>
-                  Here are the details of your apprentice. You can update the apprenticeship to take account of a change in the apprenticeship.
+                  Here are the details of your apprentice. You can <a href="">update the apprenticeship</a> to take account of a changes in circumstances.
                 </p>
 
 
@@ -38,7 +38,8 @@
                   <table>
                   <thead>
                     <tr>
-                      <th colspan="2">Apprentice details</th>
+                      <th colspan="2">Apprentice information</th>
+                  
                      
                     </tr>
                   </thead>
@@ -47,57 +48,72 @@
                     <tr>
                       <td class="rjTableName">Apprentice name</td>
                       <td class="">Rob Edwards</td>
+                      <td class=""></td>
                     </tr>
                      <tr>
                       <td class="rjTableName">Learner ID</td>
                       <td class="">98HGS3FDS</td>
+                      <td class=""></td>
                     </tr>
                      <tr>
                      <td class="rjTableName">Apprenticeship name</td>
                       <td class="">Aeronautical engineering</td>
+                      <td class=""></td>
                     </tr>
                     <tr>
                       <td class="rjTableName">Apprenticeship level</td>
                       <td class="">Level 2 NVQ</td>
+                      <td class=""></td>
                     </tr>
                     <tr>
                       <td class="rjTableName">Training provider</td>
                       <td class="">Hackney Skills Solutions Ltd</td>
+                      <td class=""></td>
                     </tr>
 
                     <tr>
                      <td class="rjTableName">Endpoint assessor</td>
                       <td class="">Pham Assessment Ltd</td>
+                      <td class=""></td>
                     </tr>
                     <tr>
                     <tr>
                      <td class="rjTableName">Start date</td>
                       <td class="">20th July 2018</td>
+                      <td class=""></td>
                     </tr>
                     <tr>
                      <td class="rjTableName">Duration</td>
                       <td class="">24 months</td>
+                      <td class=""></td>
                     </tr>
                     <tr>
                      <td class="rjTableName">Time left</td>
                       <td class="">10 months</td>
+                      <td class=""></td>
                     </tr>
                     <tr>
                      <td class="rjTableName">Total cost</td>
                       <td class="">£2,957.56</td>
+                      <td class=""></td>
                     </tr>
                     <tr>
                      <td class="rjTableName">Total paid</td>
-                      <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/paid">£2,957.56</a?</td>
+                      <td class="">£1,312.56</td>
+                      <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/paid">View</a></td>
                     </tr>
                      <tr>
                      <td class="rjTableName">Left to pay</td>
-                      <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/left-to-pay">£1,645.00</a></td>
+                      <td class="">£1,645.00</td>
+                      <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/left-to-pay">View</a></td>
+                    </tr>
+                    <td class="rjTableName">Payment type</td>
+                      <td class="">Automatic</td>
+                      <td class=""></td>
                     </tr>
 
                   </tbody>
                 </table>
-should they be able to change manual/automatic payments on here?
 
                 </div>
             </div>
@@ -110,9 +126,9 @@ should they be able to change manual/automatic payments on here?
           <div class="column-one-third">
                       <aside class="related">
                         <h2 class="heading-medium" style="margin-top:10px">Update apprenticeship</h2>
-                        <p>You can update key details, pause or stop this apprenticeship </p>
+                        <p>You can update key details, payment methods, pause or stop this apprenticeship </p>
 
-                    <form action="/{% include "includes/sprint-link.html" %}/apprentice-view/">
+                    <form action="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship">
                         <div style="margin-top:20px;"><input class="button" id="updateDetails" type="submit" value="Update apprenticeship"></div> 
                     </form>
 
