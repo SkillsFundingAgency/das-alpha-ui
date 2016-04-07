@@ -1,90 +1,91 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Apprenticeships
+  GOV.UK prototype kit
 {% endblock %}
 
 {% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+//jQuery( document ).ready(function() {
+     //jQuery.validate(); 
+// });
+
+
+</script>
 
 
 <main id="content" role="main">
 {% include "includes/phase_banner_alpha.html" %}
 
-
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
-      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Apprenticeship Account ></a></li>
+      <li><a href="/">Breadcrumb here ></a></li>
     </ol>
 
   </div>
 
+        <div class="grid-row">
 
-<!--h1 class="heading-large">Levy account</h1-->
- <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+            <div class="column-two-thirds">
+                <h1 class="heading-xlarge">Access my levy</h1>
+                <div class="grid-row">
+                    <div class="column-half">
+                        <ol class="list list-number">
+                            <li><a href="inform_1.html">Overview</a></li>
+                            <li><a href="inform_2.html">Apprenticeship standards and levels</a></li>
+                            <li><a href="inform_3.html">Apprenticeship costs and funding</a></li>
+                        </ol>
+                    </div>
+                    <div class="column-half">
+                        <ol class="list list-number" start="4">
+                            <li><a href="inform_4.html">How to hire an apprentice</a></li>
 
-  <div class="grid-row">
-           <div class="column-two-thirds">
-              <h1 class="heading-large" style="margin:0px 0 50px 0"><span class="heading-secondary" style="padding-top:0px">Acme Ltd: DF90832778</span> Apprenticeship Account</h1>
-                <h2 class="heading-small" >On 21st August 2018 your current funds are</h2>
-                <h2 class="bold-xxlarge">£5,000</h2>
-                <!--p style="margin-top:0">in your account</p-->
-                 <div style="margin-top:50px"></div>
-            <div> 
-             <h2 class="bold-medium">Summary of planned spending</h2>
-              <p>
-                  The following funds have been committed to funding apprenticeships.
-                </p>
-                <table>
-                  <thead>
-                    <tr>
-                      <th scope="col">Period</th>
-                      <th class="numeric" scope="col">Total</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    
-                    <tr>
-                      <td class="rjTableName">Next 12 months</td>
-                      <td class="numeric">£20,792</td>
-                    </tr>
-                    <tr>
-                      <td class="rjTableName">Next 24 months</td>
-                      <td class="numeric">£50,740</td>
-                    </tr>
-                    <tr>
-                     <td class="rjTableName">Until final apprentice contract ends (40 months)</td>
-                      <td class="numeric">£65,028</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <!--p style="margin-top:10px; font-size:16px"><a href="/{% include "includes/sprint-link.html" %}/payment/spendingcommitments">View your planned payment schedule</a></p-->
-            </div>
-            <div style="margin-top:35px">
+                        </ol>
+                    </div>
+                </div>
 
-             <h2 class="bold-medium">What you can spend on apprenticeships</h2>
+                <h2 class="heading-large">1. Overview</h2>
                 <p>
-                  The amount of money you currently have to spend on apprentices is made up of your current funds minus the amount you have planned to spend in the future.
-                </p>
-                <div class="panel panel-border-wide">
-                  <p>
-                    Funds paid to you by the Skills Funding Agency expire after 24 months. You can <a href="/{% include "includes/sprint-link.html" %}/expire">view funds at risk of expiring here</a>.
-                  </p>
+
+                    <body>Apprentices are aged 16 or over and combine working with studying for a qualification. They can be new or current employees.</p>
+                <p>If you hire an apprentice, you must:</p>
+                <ul class="list list-bullet">
+                    <li>employ them for at least 30 hours a week</li>
+                    <li>pay them at least the <a href="https://www.gov.uk/national-minimum-wage-rates">minimum wage for apprentices</a></li>
+                    <li>offer them the same conditions (eg paid holidays, sick pay and benefits) as other employees working at a similar level</li>
+                    <li>provide your apprentice with experience and opportunities to help with future job progression</li>
+                    <li>allow them to attend off-the-job training and assessment during their working hours (eg at a college or training organisation)</li>
+                </ul>
+                <p class="hidden">You can’t usually make an apprentice redundant simply because you can’t afford to pay them or your company runs out of work. This is because you have a contract to train them.</p>
+
+
+
+                <!--<p class="form-hint">Search or browse to find your business type or the skill you’re looking for, eg Engineering or Accountant.</p>-->
+
+
+                <div class="page-navigation">
+                    <a href="inform_1.html#" style="visibility: hidden;" class="page-navigation__btn previous">
+                        <i class="arrow-button fa fa-angle-left"></i>
+                        <span class="description">Previous <span class="hide-mob">page</span></span>
+                        <span class="counter">1 of 4</span>
+                    </a>
+
+
+
+                    <a href="inform_2.html" style="" class="page-navigation__btn next">
+                        <i class="arrow-button fa fa-angle-right"></i>
+                        <span class="description">Next <span class="hide-mob">page</span></span>
+                        <span class="counter">Apprenticeship standards and levels</span>
+                    </a>
+
+
                 </div>
 
 
-                <!--p>
-                  The amount of money you currently have to spend on apprentices is made up of
-                </p>
-                <ul class="list list-bullet">
-                  <li> your current balance</li>
-                  <li> minus the amount you have planned to spend in the future</li>
-                  <li>funds that expire</li>
-                  <li>Future "levy" payments</li>
-                </ul-->
-
-              </div>
-            <div style="margin-top:50px"></div>
-          </div>
+            </div>
 
           <div class="column-one-third">
                       <aside class="related">
@@ -125,15 +126,16 @@
                     </nav>
                     </aside>
             </div>
+
+
         </div>
-
-
 </main>
-
- <!--button class="button">Do the thing</button-->
 
 <script>
 //jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+
+
+
 $( document ).ready(function() {
 
   // change the tabs themselves to active - should be in the above but isn't working because it's looking for a not li so I added this as a quick fix.
@@ -192,5 +194,5 @@ $( document ).ready(function() {
 
 </script>
 
-{% endblock %}
 
+{% endblock %}

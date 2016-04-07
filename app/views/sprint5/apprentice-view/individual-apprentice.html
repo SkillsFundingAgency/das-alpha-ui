@@ -14,8 +14,8 @@
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
       <li><a href="/{% include "includes/sprint-link.html" %}/balance">Apprenticeship Account</a></li>
-      <li><a href="/{% include "includes/sprint-link.html" %}/payment">Provider payments</a></li>
-      <li><a href="/{% include "includes/sprint-link.html" %}/payment/quote">Provider offer</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view">View apprenticeships</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice">Apprenticeship</a></li>
     </ol>
 
   </div>
@@ -26,34 +26,38 @@
 
   <div class="grid-row">
            <div class="column-two-thirds">
-              <h1 class="heading-large" style="margin:0px 0 50px 0">Planned payments</h1>
+              <h1 class="heading-large" style="margin:0px 0 50px 0">Apprentice details</h1>
             <div>
                 <p>
-                  The following shows details of the your planned payment. Fields that can be amended have a change button next to them.
+                  Here are the details of your apprentice. You can <a href="">update the apprenticeship</a> to take account of a changes in circumstances.
                 </p>
-                <div class="">
 
+
+
+                <div class="" style="margin-top:35px">
                   <table>
                   <thead>
                     <tr>
-                      <th colspan="2">Payment details</th>
-                      <th></th>
+                      <th colspan="2">Apprentice information</th>
+                  
+                     
                     </tr>
                   </thead>
                   <tbody>
+
                     <tr>
-                      <td class="rjTableName">Payments authorised by</td>
-                      <td class="">"Username"</td>
-                      <td class=""></td>
-                    </tr>
-                    <tr>
-                      <td class="rjTableName">Provider name</td>
-                      <td class="">Hackney skills and training Ltd</td>
+                      <td class="rjTableName">Apprentice name</td>
+                      <td class="">Rob Edwards</td>
                       <td class=""></td>
                     </tr>
                      <tr>
-                      <td class="rjTableName">Payment reference</td>
-                      <td class="">98HGS3F</td>
+                      <td class="rjTableName">Learner ID</td>
+                      <td class="">98HGS3FDS</td>
+                      <td class=""></td>
+                    </tr>
+                     <tr>
+                     <td class="rjTableName">Apprenticeship name</td>
+                      <td class="">Aeronautical engineering</td>
                       <td class=""></td>
                     </tr>
                     <tr>
@@ -62,76 +66,51 @@
                       <td class=""></td>
                     </tr>
                     <tr>
-                     <td class="rjTableName">Apprenticeship name</td>
-                      <td class="">Aeronautical engineering</td>
+                      <td class="rjTableName">Training provider</td>
+                      <td class="">Hackney Skills Solutions Ltd</td>
+                      <td class=""></td>
+                    </tr>
+
+                    <tr>
+                     <td class="rjTableName">Endpoint assessor</td>
+                      <td class="">Pham Assessment Ltd</td>
                       <td class=""></td>
                     </tr>
                     <tr>
-                     <td class="rjTableName">Apprentice name</td>
-                      <td class="">Rob Edwards</td>
-                      <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice"><div class="">View</div></a></td>
-                    </tr>
                     <tr>
-                     <td class="rjTableName"></td>
-                      <td class="">David Jenkins</td>
-                      <td class=""><a href="#"><div class="">View</div></a></td>
-                    </tr>
-                    <tr>
-                     <td class="rjTableName"></td>
-                      <td class="">Mel O'Connor</td>
-                      <td class=""><a href="#"><div class="">View</div></a></td>
-                    </tr>
-                     <tr>
-                     <td class="rjTableName"></td>
-                      <td class="">Susan Hamazaki</td>
-                      <td class=""><a href="#"><div class="">View</div></a></td>
-                    </tr>
-                      <tr>
                      <td class="rjTableName">Start date</td>
                       <td class="">20th July 2018</td>
-                      <td class=""></td>
-                    </tr>
-                     <tr>
-                     <td class="rjTableName">Total payment</td>
-                      <td class="">£2,987.24</td>
                       <td class=""></td>
                     </tr>
                     <tr>
                      <td class="rjTableName">Duration</td>
                       <td class="">24 months</td>
+                      <td class=""></td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">Time left</td>
+                      <td class="">10 months</td>
+                      <td class=""></td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">Total cost</td>
+                      <td class="">£2,957.56</td>
+                      <td class=""></td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">Total paid</td>
+                      <td class="">£1,312.56</td>
+                      <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/paid">View</a></td>
                     </tr>
                      <tr>
-                     <td class="rjTableName">Date of first payment</td>
-                      <td class="">20th August 2018</td>
-                      <td class=""></td>
-                    </tr>
-                    <tr>
-                      <td class="rjTableName">First payment</td>
-                      <td class="">£135.24</td>
-                      <td class=""></td>
-                    </tr>
-                    <tr>
-                     <td class="rjTableName">Monthly payments</td>
-                      <td class="">£124.00</td>
-                      <td class=""></td>
-                    </tr>
-                    <tr>
-                     <td class="rjTableName">Number of payments remaining</td>
-                      <td class="">24</td>
-                      <td class=""></td>
-                    </tr>
-                    <tr>
-                     <td class="rjTableName">Total outstanding</td>
-                      <td class="">£2,987.24</td>
-                      <td class=""></td>
+                     <td class="rjTableName">Left to pay</td>
+                      <td class="">£1,645.00</td>
+                      <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/left-to-pay">View</a></td>
                     </tr>
 
-                   
                   </tbody>
                 </table>
-                
 
-                
                 </div>
             </div>
             <div style="margin-top:35px">
@@ -141,8 +120,15 @@
           </div>
 
           <div class="column-one-third">
-                      <!--aside class="related">
-                        <h2 class="heading-medium" style="margin-top:10px">Provider management</h2>
+                      <aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Update apprenticeship</h2>
+                        <p>You can update key details, payment methods, pause or stop this apprenticeship </p>
+
+                    <form action="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship">
+                        <div style="margin-top:20px;"><input class="button" id="updateDetails" type="submit" value="Update apprenticeship"></div> 
+                    </form>
+
+                        <!--h2 class="heading-medium" style="margin-top:10px">Provider management</h2>
                         <nav role="navigation">
                       <ul class="robSideNav"-->
                           <!--li>
@@ -161,8 +147,8 @@
                             <a href="/{% include "includes/sprint-link.html" %}/payment/spendingcommitments">View a summary of your spending commitments</a>
                           </li>
                         </ul>
-                           </nav>
-                    </aside-->
+                           </nav-->
+                    </aside>
             </div>
         </div>
 </main>

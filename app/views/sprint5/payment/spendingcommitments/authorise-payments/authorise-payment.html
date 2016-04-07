@@ -14,8 +14,8 @@
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
       <li><a href="/{% include "includes/sprint-link.html" %}/balance">Apprenticeship Account</a></li>
-      <li><a href="/{% include "includes/sprint-link.html" %}/payment">Provider payments</a></li>
-      <li><a href="/{% include "includes/sprint-link.html" %}/payment/quote">Provider offer</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/payment/spendingcommitments/authorise-payment">Make a payment</a></li>
+
     </ol>
 
   </div>
@@ -26,10 +26,10 @@
 
   <div class="grid-row">
            <div class="column-two-thirds">
-              <h1 class="heading-large" style="margin:0px 0 50px 0">Planned payments</h1>
+              <h1 class="heading-large" style="margin:0px 0 50px 0">Make a payment</h1>
             <div>
                 <p>
-                  The following shows details of the your planned payment. Fields that can be amended have a change button next to them.
+                  Please review this payment and authorise if you are happy with it.
                 </p>
                 <div class="">
 
@@ -42,97 +42,56 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td class="rjTableName">Payments authorised by</td>
-                      <td class="">"Username"</td>
-                      <td class=""></td>
+                      <td class="rjTableName">ILR</td>
+                      <td class="">92018364</td>
+                    </tr>
+                     <tr>
+                      <td class="rjTableName">Payment due date</td>
+                      <td class="">20th July 2018</td>
                     </tr>
                     <tr>
                       <td class="rjTableName">Provider name</td>
                       <td class="">Hackney skills and training Ltd</td>
-                      <td class=""></td>
                     </tr>
                      <tr>
-                      <td class="rjTableName">Payment reference</td>
-                      <td class="">98HGS3F</td>
-                      <td class=""></td>
+                      <td class="rjTableName">Payment plan reference</td>
+                      <td class=""><a href="/{% include "includes/sprint-link.html" %}/payment/spendingcommitments/planned-spending-detail">98HGS3F</a></td>
                     </tr>
                     <tr>
                       <td class="rjTableName">Apprenticeship level</td>
                       <td class="">Level 2 NVQ</td>
-                      <td class=""></td>
                     </tr>
                     <tr>
                      <td class="rjTableName">Apprenticeship name</td>
                       <td class="">Aeronautical engineering</td>
-                      <td class=""></td>
                     </tr>
                     <tr>
-                     <td class="rjTableName">Apprentice name</td>
-                      <td class="">Rob Edwards</td>
-                      <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice"><div class="">View</div></a></td>
+                     <td class="rjTableName">Apprentice names</td>
+                      <td class="">David Jenkins</td>
                     </tr>
                     <tr>
                      <td class="rjTableName"></td>
-                      <td class="">David Jenkins</td>
-                      <td class=""><a href="#"><div class="">View</div></a></td>
+                      <td class="">Rob Edwards</td>
                     </tr>
                     <tr>
                      <td class="rjTableName"></td>
                       <td class="">Mel O'Connor</td>
-                      <td class=""><a href="#"><div class="">View</div></a></td>
                     </tr>
                      <tr>
                      <td class="rjTableName"></td>
                       <td class="">Susan Hamazaki</td>
-                      <td class=""><a href="#"><div class="">View</div></a></td>
-                    </tr>
-                      <tr>
-                     <td class="rjTableName">Start date</td>
-                      <td class="">20th July 2018</td>
-                      <td class=""></td>
-                    </tr>
-                     <tr>
-                     <td class="rjTableName">Total payment</td>
-                      <td class="">£2,987.24</td>
-                      <td class=""></td>
                     </tr>
                     <tr>
-                     <td class="rjTableName">Duration</td>
-                      <td class="">24 months</td>
-                    </tr>
-                     <tr>
-                     <td class="rjTableName">Date of first payment</td>
-                      <td class="">20th August 2018</td>
-                      <td class=""></td>
-                    </tr>
-                    <tr>
-                      <td class="rjTableName">First payment</td>
-                      <td class="">£135.24</td>
-                      <td class=""></td>
-                    </tr>
-                    <tr>
-                     <td class="rjTableName">Monthly payments</td>
+                     <td class="rjTableName">Payment</td>
                       <td class="">£124.00</td>
-                      <td class=""></td>
                     </tr>
-                    <tr>
-                     <td class="rjTableName">Number of payments remaining</td>
-                      <td class="">24</td>
-                      <td class=""></td>
-                    </tr>
-                    <tr>
-                     <td class="rjTableName">Total outstanding</td>
-                      <td class="">£2,987.24</td>
-                      <td class=""></td>
-                    </tr>
-
-                   
                   </tbody>
                 </table>
-                
-
-                
                 </div>
+
+                 <form action="/{% include "includes/sprint-link.html" %}/payment/spendingcommitments/authorise-payments/payment-confirmed">
+                  <div style="margin-top:20px;"><input class="button" id="approveContract" type="submit" value="Pay provider"></div>
+                  </form>
             </div>
             <div style="margin-top:35px">
 
