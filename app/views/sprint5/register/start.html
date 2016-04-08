@@ -20,31 +20,39 @@
 <main id="content" role="main">
 {% include "includes/phase_banner_alpha.html" %}
 
-  <div class="breadcrumbs">
+<div class="breadcrumbs">
     <ol role="breadcrumbs">
-      <li><a href="/">Breadcrumb here ></a></li>
+<!--the breadcrumb for the inform pages is in the following template -->
+       {% include "includes/breadcrumbs/start-bread.html" %}
     </ol>
-
-  </div>
+</div>
 
   <div class="grid-row">
            <div class="column-two-thirds">
-  <h1 class="heading-xlarge" style="margin:0px 0 50px 0">Digital Apprenticeship Account</h1>
+  <h1 class="heading-xlarge" style="margin:0px 0 50px 0">Get access to your funds</h1>
 
-    <p>You can "upgrade" your account if you are a company that pays the apprenticeship levy.</p>
+    <p>You can register for an account if you are a company that pays the apprenticeship levy.</p>
+    <p>Only employers who have a payroll of more than £3 million pay the apprenticeship levy.</p> <p>Find out more about <a href="#">the apprenticeship levy</a> and <a href="#">whether you need to create an account.</a> </p>
     <p>You can use the account to: </p>
     <ul class="list list-bullet">
+      <li>Get access to your funds</li>
         <li>Find out how much you have to spend</li>
-        <li>Spend your apprenticeship allocation from the Skills Funding Agency</li>
+        <li>Spend your funds on apprenticeships</li>
+        <li>Invite others in your organisation to view and spend funds</li>
     </ul>
-    <p>Only employers who have a payroll of more than £3 million pay the apprenticeship levy. Find out more about <a href="#">the apprenticeship levy</a> and <a href="#">whether you need to create an account.</a> </p>
+     <h2 class="heading-medium">Before you start</h2>
+     <p>You will need to have access to the following information to access your funds:</p>
+      <ul class="list list-bullet">
+         <li>Knowledge of which PAYE schemes you want to associate with this account</li>
+        <li>A login to the Government Gateway accounts associated with the PAYE schemes (payroll will usually have this)</li>
+     </ul>
 
     <div class="padder-top-x">
-        <a href="/sprint3/employerportal/upgrade/companyType" class="button button-start">Start</a>
+        <a href="/{% include "includes/sprint-link.html" %}/register/detailsOne" class="button button-start">Start</a>
     </div>
     <div style="margin-top:50px"></div>
     <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
-{% include "includes/start-tabs.html" %}
+<!-- {% include "includes/start-tabs.html" %} -->
 
             </div>
 
@@ -66,15 +74,7 @@
                            </nav>
                     </aside>
             </div>
-
-
-
-
-
 </div>
-
-
-
 </main>
 
 <script>
