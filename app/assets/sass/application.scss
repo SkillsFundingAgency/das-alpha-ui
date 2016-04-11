@@ -13,13 +13,25 @@
   * {
     font-family: Arial !important;
   }
+
   // Remove GOV.UK footer styles
-  #footer {
+#footer {
     border: 0;
     background: $white;
   }
 }
 
+  //Temporary links used to show variations can be removed by making this display none
+
+.rjTemp {
+    
+   //display: none;
+}
+
+.rjBackButton {
+    text-decoration: underline;
+    cursor: pointer; cursor: hand;
+}
 
 .rjSearchButton{
     display:inline-block !important;

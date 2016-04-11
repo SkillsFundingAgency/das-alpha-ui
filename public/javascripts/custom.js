@@ -11,3 +11,8 @@ var EventUtil = {
               }
             }
             };
+
+//back button
+function goBack() {
+    window.history.back();
+}

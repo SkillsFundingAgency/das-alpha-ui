@@ -22,72 +22,66 @@
 
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
-      <li><a href="/">Breadcrumb here ></a></li>
+      {% include "includes/breadcrumbs/register-back.html" %}
     </ol>
 
   </div>
 
-   <h1 class="heading-large" style="margin:0px 0 50px 0"><span class="heading-secondary" style="padding-top:0px">Question 1 of 1</span>Create an account</h1>
+   <h1 class="heading-large" style="margin:0px 0 50px 0">Create a new account</h1>
 
 
 
 
      
       <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
-<form action="/sprint3/employerPortal/" >
+<form>
   <fieldset>
     <legend class="visuallyhidden">users email</legend>
       <div class="form-group">
            
           <label class="form-label" for="full-name">Your email address</label>
-          <span class="form-hint">Please use your employer provided email</span>
+          <span class="form-hint">Please use your employer provided email if possible</span>
 
         </label>
           <input class="form-control" id="emailAddress" type="email">
         </fieldset>
          <fieldset>
-      <legend class="visuallyhidden">passwords</legend>
-      </div>
+          <p style="margin-bottom:0">Have you already registered for an account with this email address?</p>
+          <span class="form-hint" style="margin-bottom:20px">It is fine to use the same email address with multiple accounts</span>
+        <fieldset>
+      <legend class="visuallyhidden">Have you registered with us before?</legend>
       <div class="form-group">
-          <label class="form-label" for="password">Password</label>
-          <input class="form-control" id="password" type="password">
+      <label class="block-label" for="radio1">
+        <input id="radio1" type="radio" name="radio-group" value="no-not-registered">
+        No, I have not used this email address before
+      </label>
+      <label class="block-label" for="radio2">
+        <input id="radio2" type="radio" name="radio-group" value="yes-have-passwrod">
+        Yes, I have used this email address with another account
+      </label>
       </div>
-      <div class="form-group">
-          <label class="form-label" for="password-confirmation">Confirm your password</label>
-          <input class="form-control" id="passwordConfirmation" type="password">
-      </div>
-    </fieldset>
-    <input class="button" id="saveAndContinue" type="submit" value="Save and continue">
-
+      </fieldset>
+        <input class="button" id="saveAndContinue" value="Save and continue">
 </form>
+
 </main>
 
 <script>
 
-//store details entered into the form in local storage
-var createButton = document.getElementById('createAccountButton');
+//change page depending on which option you choose
+var createButton = document.getElementById('saveAndContinue');
 EventUtil.addHandler(createButton, 'click', function(){
-              // save the form info to local storage by first putting the data into an object
-              var userDetails = {
-                email: document.getElementById('email-address').value,
-                password: document.getElementById('password').value
-            };
 
-            //store the object in local storage using json stringify
-              localStorage.setItem("login", JSON.stringify(userDetails));
+ var whichRadio = $('input:radio[name=radio-group]:checked').val();
 
-            //store the users email address in a cookie to repeat back to them later. Remember that we have some of the data stored in an object in local storage as well -  so we'll use that again if we need it.
-            document.cookie =  "emailAddress="  + userDetails.email 
-            // shows the cookie in the console log to check it is working
-            console.log (document.cookie)
-
-        // not needed at the moment
-
-              //hide the login form
-              //$('#login').addClass('hidden');
-              //show the quiz
-           // $('#wrapper').removeClass('hidden')
+ if (whichRadio == 'no-not-registered'){
+   window.location.href='new-password';
+ } else {
+  window.location.href='enter-existing-password';
+ }
     });
+
+
 </script>
 
 {% endblock %}

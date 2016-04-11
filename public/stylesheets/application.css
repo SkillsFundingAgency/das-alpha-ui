@@ -2067,6 +2067,12 @@ input[type=number] {
   background: #fff;
 }
 
+.rjBackButton {
+  text-decoration: underline;
+  cursor: pointer;
+  cursor: hand;
+}
+
 .rjSearchButton {
   display: inline-block !important;
   padding: 0.9rem 1.2rem 0.5rem 1rem;
