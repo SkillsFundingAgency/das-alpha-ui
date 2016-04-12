@@ -29,33 +29,24 @@
   <div class="grid-row">
            <div class="column-two-thirds">
             <div class="rjHMRCLogo"><img src="/public/images/hmrc.jpg"></div>
-            <h1 class="heading-large" style="margin:0px 0 50px 0">Enter your Government gateway credentials</h1>
-            <p>The person entering this information should have authority within the organsation to access Government Gateway credentials for the PAYE schemes. Your payroll department will usually have this information<p/>
+
+            <h1 class="heading-large" style="margin:0px 0 50px 0">Permission to access PAYE information from HMRC</h1>
+            <p>Information about the funding available to your organisation is held by HMRC on the Government Gateway.</p>
+
+              <p>The Digital Apprenticeship Service (run by the Skills Funding Agency) would like to access this information so that you can view your funding information in your apprenticeship account.</p>
+
+              <p>If you agree, your apprenticeship account will be given details of the funding available for your PAYE Schemes, but no other information about the PAYE schemes.</p>
+
+              <p>The apprenticeship account will also be given information about termination dates for the PAYE Schemes.</p>
+
+              <p>Do you agree to allow your Apprenticeship account to access PAYE information from HMRC.<p/>
 
             <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
-            <form action="govt-gateway-disclaimer" >
-              <fieldset>
-                <legend class="visuallyhidden">Government Gateway credentials</legend>
-                  <div class="form-group">
-
-                      <label class="form-label" for="goverment-gateway-username">Government Gateway username</label>
-                      <span class="form-hint">The username used to log into the Government Gateway. </span>
-
-                    </label>
-                      <input class="form-control rjFormTwoThirds" id="government-gateway-username" type="text">
-                    </fieldset>
-                     <fieldset>
-                  <legend class="visuallyhidden">companies house number</legend>
-                  <div class="form-group">
-                      <label class="form-label" for="companies-house-number">Government Gateway password</label>
-                      <span class="form-hint">The password used to log into the Government Gateway.</span>
-                      <input class="form-control rjFormTwoThirds" id="companies-house-number" type="password">
-                  </div>
-
-                </fieldset>
-                <input class="button" id="saveAndContinue" type="submit" value="Save and continue">
-
+            <form action="/{% include "includes/sprint-link.html" %}/register/paye" >
+                <input class="button" id="saveAndContinue" type="submit" value="Allow and continue">
+                <p class="rjExitButton" style=""><a href="">Do not allow and exit</a></p>
               </form>
+
             </div>
       <div class="column-one-third"></div>
 </div>

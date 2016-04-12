@@ -24,13 +24,45 @@
   //Temporary links used to show variations can be removed by making this display none
 
 .rjTemp {
-    
    //display: none;
 }
 
 .rjBackButton {
     text-decoration: underline;
     cursor: pointer; cursor: hand;
+}
+
+.rjFormTwoThirds {
+    min-width:85%;
+}
+
+.rjmakeALink {
+    text-decoration: underline;
+    cursor: pointer; cursor: hand;
+    color: #005ea5;
+}
+
+.rjmakeALink:visited {
+    color:#4c2c92;
+}
+
+
+.rjHMRCLogo {
+    max-width: 240px;
+    max-height: 184px;
+    margin-bottom:50px;
+
+}
+
+.rjExitButton {
+    display:inline-block; 
+    margin: 15px 0 0 25px 
+
+}
+
+.rjHMRCLogo  img {
+    height: 100%;
+    width: 100%;
 }
 
 .rjSearchButton{
@@ -61,6 +93,11 @@
 .rjHideOnTablet {
     display:none;
     }
+
+    .rjExitButton {
+    display:inline-block; 
+    margin: 25px 0 0 0; 
+}
 
 
 }

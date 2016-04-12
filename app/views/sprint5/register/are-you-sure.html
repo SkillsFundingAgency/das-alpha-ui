@@ -22,45 +22,39 @@
 
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
-      {% include "includes/breadcrumbs/register-back.html" %}
+     {% include "includes/breadcrumbs/register-back.html" %}
     </ol>
+
   </div>
 
-  <div class="grid-row">
+
+      <div class="grid-row">
            <div class="column-two-thirds">
-            <div class="rjHMRCLogo"><img src="/public/images/hmrc.jpg"></div>
-            <h1 class="heading-large" style="margin:0px 0 50px 0">Enter your Government gateway credentials</h1>
-            <p>The person entering this information should have authority within the organsation to access Government Gateway credentials for the PAYE schemes. Your payroll department will usually have this information<p/>
 
-            <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
-            <form action="govt-gateway-disclaimer" >
-              <fieldset>
-                <legend class="visuallyhidden">Government Gateway credentials</legend>
+             <h1 class="heading-large" style="margin:0px 0 50px 0">Confirm PAYE removal</h1>
+             <p>Please confirm that you wish to remove this PAYE scheme from your apprenticeship account. It won't be removed from the Government Gateway.</p>
+
+              <form action="confirmation-PAYE">
+                <fieldset>
+                  <h2 class="heading-medium">Would you like to remove PAYE scheme 846/A246?</h2>
+                  <legend class="visuallyhidden">Remove PAYE</legend>
                   <div class="form-group">
-
-                      <label class="form-label" for="goverment-gateway-username">Government Gateway username</label>
-                      <span class="form-hint">The username used to log into the Government Gateway. </span>
-
-                    </label>
-                      <input class="form-control rjFormTwoThirds" id="government-gateway-username" type="text">
-                    </fieldset>
-                     <fieldset>
-                  <legend class="visuallyhidden">companies house number</legend>
-                  <div class="form-group">
-                      <label class="form-label" for="companies-house-number">Government Gateway password</label>
-                      <span class="form-hint">The password used to log into the Government Gateway.</span>
-                      <input class="form-control rjFormTwoThirds" id="companies-house-number" type="password">
+                  <label class="block-label" for="radio1">
+                    <input id="radio1" type="radio" name="radio-group" value="no-not-registered">
+                    No, Leave it as is
+                  </label>
+                  <label class="block-label" for="radio2">
+                    <input id="radio2" type="radio" name="radio-group" value="yes-have-passwrod">
+                    Yes, remove it
+                  </label>
                   </div>
-
                 </fieldset>
-                <input class="button" id="saveAndContinue" type="submit" value="Save and continue">
-
+                  <input class="button" id="saveAndContinue" type="submit" value="Save and continue">
               </form>
-            </div>
-      <div class="column-one-third"></div>
-</div>
-</main>
 
+            </div>
+      </div>
+</main>
 <script>
 
 //store details entered into the form in local storage
