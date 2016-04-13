@@ -73,7 +73,7 @@
             <div style="margin-top: 150px"></div>
 
             <p>
-                <a class="button button-start" href="#" role="button">Levy</a>
+                <a class="button button-start" href="/{% include "includes/sprint-link.html" %}/planning/levy" role="button">Levy</a>
             </p>
         </div>
     </div>
@@ -100,7 +100,7 @@ var standardsData =  [{"Code":34,"Name":"Able Seafarer (Deck)","NotionalEndLevel
         self.standard = ko.observable();
         self.quantity = ko.observable(1);
         self.subtotal = ko.pureComputed(function() {
-            return self.standard() ? self.standard().Price * parseInt("0" + self.quantity(), 10) : 0;
+			return self.standard() ? self.standard().Price * parseInt("0" + self.quantity(), 10) : 0;
         });
 
     };
@@ -112,6 +112,7 @@ var standardsData =  [{"Code":34,"Name":"Able Seafarer (Deck)","NotionalEndLevel
         self.grandTotal = ko.pureComputed(function() {
             var total = 0;
             $.each(self.lines(), function() { total += this.subtotal() })
+			localStorage.totalSpend = total;
             return total;
         });
 
@@ -122,7 +123,6 @@ var standardsData =  [{"Code":34,"Name":"Able Seafarer (Deck)","NotionalEndLevel
     };
 
   ko.applyBindings(new Cart());
-
 
 </script>
 
