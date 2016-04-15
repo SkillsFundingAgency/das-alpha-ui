@@ -8,7 +8,7 @@ table {
 
   th,
   td {
-    @include core-19;
+    @include core-16;
     padding: em(12, 16) em(20, 16) em(9, 16) 0;
 
     text-align: left;
@@ -26,7 +26,7 @@ table {
 
   // Use tabular numbers for numeric table cells
   td.numeric {
-    @include core-19($tabular-numbers: true);
+    @include core-16($tabular-numbers: true);
     text-align: right;
   }
 }

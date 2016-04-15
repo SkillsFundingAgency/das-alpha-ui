@@ -1311,8 +1311,8 @@ table {
 table th,
 table td {
   font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
+  font-size: 14px;
+  line-height: 1.1428571429;
   font-weight: 400;
   text-transform: none;
   padding: 0.75em 1.25em 0.5625em 0;
@@ -1324,8 +1324,8 @@ table td {
 @media (min-width: 641px) {
   table th,
   table td {
-    font-size: 19px;
-    line-height: 1.3157894737;
+    font-size: 16px;
+    line-height: 1.25;
   }
 }
 
@@ -1339,8 +1339,8 @@ table th.numeric {
 
 table td.numeric {
   font-family: "ntatabularnumbers", "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
+  font-size: 14px;
+  line-height: 1.1428571429;
   font-weight: 400;
   text-transform: none;
   text-align: right;
@@ -1348,8 +1348,8 @@ table td.numeric {
 
 @media (min-width: 641px) {
   table td.numeric {
-    font-size: 19px;
-    line-height: 1.3157894737;
+    font-size: 16px;
+    line-height: 1.25;
   }
 }
 
@@ -1871,6 +1871,7 @@ input[type=number] {
 }
 
 .phase-banner-alpha p {
+  display: table;
   margin: 0;
   color: #000;
   font-family: "nta", Arial, sans-serif;
@@ -1890,7 +1891,6 @@ input[type=number] {
 .phase-banner-alpha .phase-tag {
   display: -moz-inline-stack;
   display: inline-block;
-  vertical-align: top;
   margin: 0 8px 0 0;
   padding: 2px 5px 0;
   font-family: "nta", Arial, sans-serif;
@@ -1907,25 +1907,14 @@ input[type=number] {
 
 @media (min-width: 641px) {
   .phase-banner-alpha .phase-tag {
-    vertical-align: baseline;
-  }
-}
-
-@media (min-width: 641px) {
-  .phase-banner-alpha .phase-tag {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
 .phase-banner-alpha span {
-  vertical-align: top;
-}
-
-@media (min-width: 641px) {
-  .phase-banner-alpha span {
-    vertical-align: baseline;
-  }
+  display: table-cell;
+  vertical-align: baseline;
 }
 
 .phase-banner-beta {
@@ -1940,6 +1929,7 @@ input[type=number] {
 }
 
 .phase-banner-beta p {
+  display: table;
   margin: 0;
   color: #000;
   font-family: "nta", Arial, sans-serif;
@@ -1959,7 +1949,6 @@ input[type=number] {
 .phase-banner-beta .phase-tag {
   display: -moz-inline-stack;
   display: inline-block;
-  vertical-align: top;
   margin: 0 8px 0 0;
   padding: 2px 5px 0;
   font-family: "nta", Arial, sans-serif;
@@ -1976,25 +1965,14 @@ input[type=number] {
 
 @media (min-width: 641px) {
   .phase-banner-beta .phase-tag {
-    vertical-align: baseline;
-  }
-}
-
-@media (min-width: 641px) {
-  .phase-banner-beta .phase-tag {
     font-size: 16px;
     line-height: 1.25;
   }
 }
 
 .phase-banner-beta span {
-  vertical-align: top;
-}
-
-@media (min-width: 641px) {
-  .phase-banner-beta span {
-    vertical-align: baseline;
-  }
+  display: table-cell;
+  vertical-align: baseline;
 }
 
 .govuk-box-highlight {
@@ -2065,6 +2043,18 @@ input[type=number] {
 .unbranded #footer {
   border: 0;
   background: #fff;
+}
+
+.rjCashMoney {
+  font-size: 3em;
+  line-height: 1;
+  display: block;
+  font-weight: 700;
+}
+
+.home-figures {
+  display: inline-block;
+  margin-right: 50px;
 }
 
 .rjBackButton {
