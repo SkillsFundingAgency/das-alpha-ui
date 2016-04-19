@@ -1,11 +1,9 @@
-          <div class="column-one-third">
-                      <aside class="related">
-                        <p class="font-xsmall">Account: Acme Ltd - DF9 0832 778<p>
+{% include "includes/side-bars/top-bit.html" %}
                         <h2 class="heading-medium" style="margin-top:10px">Financial activity</h2>
                         <nav role="navigation">
                       <ul class="robSideNav">
                           <li>
-                            <a href="#">Forecast how much you have to spend with our budget calculator</a>
+                            <a href="#">Forecast how much you have to spend</a>
                           </li>
                           <li>
                             <a href="/{% include "includes/sprint-link.html" %}/history">View payments in and out</a>
@@ -26,17 +24,23 @@
                           <li>
                             <a href="/{% include "includes/sprint-link.html" %}/apprentice-view">View apprenticeships</a>
                           </li>
+                          <li>
+                            <a href="#">Find an apprentice</a>
+                          </li>
   
                        </ul>
                     </nav>
-                        <h2 class="heading-medium ">Contracts</h2>
+                        <h2 class="heading-medium ">Provider contracts</h2>
                       <nav role="navigation">
                         <ul class="robSideNav">
                           <li>
                             <a href="/{% include "includes/sprint-link.html" %}/payment/quote">Review provider offers (2)</a>
                           </li>
                           <li>
-                            <a href="#">View contracts</a>
+                            <a href="/{% include "includes/sprint-link.html" %}/contracts">View contracts with providers</a>
+                          </li>
+                            <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/contracts">Find a standard and provider</a>
                           </li>
   
                        </ul>

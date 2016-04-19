@@ -24,45 +24,106 @@
 
   <div class="grid-row">
            <div class="column-two-thirds">
-              <h1 class="heading-large" style="margin:0px 0 50px 0"><span class="heading-secondary" style="padding-top:0px; font-size:16px">21st August 2017</span>Available apprenticeship funds</h1>
-
-              <p>
-                  In this account you can:
-                </p>
-                <ul class="list list-bullet">
-                  <li>Review financial activity</li>
-                  <li>Agree contracts and payment schedules with training providers</li>
-                  <li>Review and update your apprenticeships</li>
-                </ul>
-            <div class="">
-                <h2 class="heading-small" >Forecast of available funds:</h2>
-                <h2 class="rjCashMoney">£5,000</h2>
-                <p style="margin-top:0">until 21 Jan 2019</p>
-                <p>Available funds have been forecast by a member of your organisation using the <a href="#">forecasting tool.</a> Please ensure that you keep the assumptions up to date.</p>
-            </div> 
+            <h1 class="heading-large" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Apprenticeship account</h1>
             <!--div class="">
-                <h2 class="heading-small" >Funds in your account:</h2>
-                <h2 class="rjCashMoney">£40,000,000</h2>
+                <p>Available funds have been forecast by a member of your organisation using the <a href="#">forecasting tool.</a> Please ensure that you keep the assumptions up to date.</p>
+                <h2 class="heading-small" >Forecast of available funds:</h2>
+                <h2 class="rjCashMoney" style="color:#08c">£5,000</span></h2>
+                <p style="margin-top:0">until 21 Jan 2019</p>
+            </div--> 
+            <div>
+            <div class="home-figures">
+                <h2 class="heading-small" >Your current balance is:</h2>
+                <h2 class="bold-xlarge" >£5,000</h2> <!--style="color:#08c" -->
+                <p style="font-size:16px" >on 27th August 2017</p>
+
+                 
             </div> 
-              <div class="" style="">
+          </div>
+
+            <h2 class="heading-large" style="">Available apprenticeship funds</h2>
+            <!--p>Forecast how much you have to spend with our <a href="#">budget calculator</a></p-->
+            <p>The figures and chart below show you how much you have left to spend on apprenticeships - taking into account committed spending, what you may lose due to expiry and the funds you expect to receive over the next 1 year.</p>
+            <p>Available funds have been forecast by a member of your organisation using the <a href="#">forecasting tool.</a> Please ensure that you have <a href="#">checked the assumptions</a> before relying on these figures.</p>
+            
+            <div class="graphGoesHere"><canvas id="robsChart" width="500" height="300"></canvas></div>
+              <!--div class="home-figures" style="">
                 <h2 class="heading-small">At risk of losing:</h2>
                 <h2 class="rjCashMoney">£15,000</h2>
                 <p style="margin-top:0">Before 31 Jan 2019</p>
               </div> 
 
-            <div class="" style="">
+            <div class="home-figures" style="">
                 <h2 class="heading-small">Total committed spending:</h2>
                 <h2 class="rjCashMoney">£65,000</h2>
-            </div> 
-            <div class="" style="">
+                <p style="margin-top:0">until 21 Jan 2021</p>
+            </div--> 
+            <!--div class="" style="">
                 <h2 class="heading-small">Forecasted income:</h2>
                 <h2 class="rjCashMoney">blah</h2>
                 <p style="margin-top:0">Until 31 Jan 2019</p>
             </div--> 
-                 <div style="margin-top:50px"></div>
-
-
-
+            <div>
+             <table>
+                  <thead>
+                    <tr>
+                      <th scope="col">Date</th>
+                      <th class="numeric" scope="col">Available funds</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                    <tr>
+                      <td class="rjTableName">September 2017</td>
+                      <td class="numeric">£20,792</td>
+                    </tr>
+                    <tr>
+                      <td class="rjTableName">October 2017</td>
+                      <td class="numeric">£15,740</td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">November 2017</td>
+                      <td class="numeric negativeNumber">&#45;£2,028</td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">December 2017</td>
+                      <td class="numeric negativeNumber">&#45;£4,096</td>
+                    </tr>
+                   <tr>
+                     <td class="rjTableName">January 2018</td>
+                      <td class="numeric ">£52
+                    <tr>
+                     <td class="rjTableName">February 2018</td>
+                      <td class="numeric ">£6,789</td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">March 2018</td>
+                      <td class="numeric">£9,898</td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">April 2018</td>
+                      <td class="numeric negativNumber">£12,041</td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">May 2018</td>
+                      <td class="numeric ">£16,590</td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">June 2018</td>
+                      <td class="numeric ">£13,002</td>
+                    </tr>
+                     <tr>
+                     <td class="rjTableName">July 2018</td>
+                      <td class="numeric ">£11,324</td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">August 2018</td>
+                      <td class="numeric ">£8,000</td>
+                    </tr>
+                  </tbody>
+              </table>
+            </div>
+            <p style="margin-top:20px"><a href="#" >Update your forecast</p></a>
 
                 <!--p>
                   The amount of money you currently have to spend on apprentices is made up of
@@ -86,6 +147,88 @@
  <!--button class="button">Do the thing</button-->
 
 <script>
+$(document).ready(function() {
+//chart data - static for now
+var chartData = {
+    labels: ["Sept 2017", "Oct 2017", "Nov 2017", "Dec 2017", "Jan 2018", "Feb 2018", "March 2018", "April 2018", "May 2018", "June 2018", "July 2018", "August 2018"],
+    datasets: [
+        {
+            label: "Available",
+            fillColor: "rgba(132,191,202,1)",
+            strokeColor: "rgba(9,127,150,1)",
+            pointColor: "rgba(9,127,150,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [20792, 15740, -2028, -4096, 52, 6789, 9898, 12400, 16590, 13002, 11324, 8000 ]
+        },
+    ]
+};
+
+// chart options - static for now
+var chartOptions = {
+
+  responsive: true,
+
+      ///Boolean - Whether grid lines are shown across the chart
+    scaleShowGridLines : false,
+
+    //String - Colour of the grid lines
+    scaleGridLineColor : "rgba(9,127,150,1)",
+
+    //Number - Width of the grid lines
+    scaleGridLineWidth : 1,
+
+    //Boolean - Whether to show horizontal lines (except X axis)
+    scaleShowHorizontalLines: true,
+
+    //Boolean - Whether to show vertical lines (except Y axis)
+    scaleShowVerticalLines: false,
+
+    //Boolean - Whether the line is curved between points
+    bezierCurve : true,
+
+    //Number - Tension of the bezier curve between points
+    bezierCurveTension : 0.4,
+
+    //Boolean - Whether to show a dot for each point
+    pointDot : true,
+
+    //Number - Radius of each point dot in pixels
+    pointDotRadius : 5,
+
+    //Number - Pixel width of point dot stroke
+    pointDotStrokeWidth : 1,
+
+    //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+    pointHitDetectionRadius : 20,
+
+    //Boolean - Whether to show a stroke for datasets
+    datasetStroke : true,
+
+    //Number - Pixel width of dataset stroke
+    datasetStrokeWidth : 6,
+
+    //Boolean - Whether to fill the dataset with a colour
+    datasetFill : true,
+
+    tooltipTemplate: "<%= datasetLabel %> - <%= value.toLocaleString() %>",
+
+    scaleLabel:
+    function(label){return  '£' + label.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");},
+
+};
+
+
+
+//chart stuff
+var ctx = document.getElementById("robsChart").getContext("2d");
+var availableChart = new Chart(ctx).Line(chartData, chartOptions);
+
+
+});
+
+
 //jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
 $( document ).ready(function() {
 

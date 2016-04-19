@@ -13,8 +13,8 @@
 
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
-      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Apprenticeship Account</a></li>
-      <li><a href="/{% include "includes/sprint-link.html" %}/history">Fund expiry</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/history">Funds you could lose</a></li>
     </ol>
 
   </div>
@@ -25,21 +25,21 @@
 
   <div class="grid-row">
           <div class="column-two-thirds">
-              <h1 class="heading-large" style="margin:0px 0 50px 0"><span class="heading-secondary" style="padding-top:0px">Acme Ltd: DF90832778</span> Apprenticeship Account</h1>
+              <h1 class="heading-large" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Funds you could lose</h1>
 
                <p class="lede">
-                  If you don't use your levy allocation it will expire 24 months after being deposited in your account.
+                  If you don't use all your fund allocation you will lose it 24 months after it was deposited into your account.
                 </p>
                 <p>
                   To avoid the risk of expiring you need to <a href="#">spend it on apprenticeships</a>.
                 </p>
-               
-            <h2 class="heading-medium">Summary of funds at risk over time</h2>
+
+            <h2 class="heading-medium">Summary of funds you could lose</h2>
                 <table>
                     <thead>
                       <tr>
-                        <th scope="col">Expiry range</th>
-                        <th scope="col" class="numeric">Amount at risk</th>
+                        <th scope="col">Dates</th>
+                        <th scope="col" class="numeric">Amount you could lose</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -57,13 +57,13 @@
                       </tr>
                     </table>
 
-            <h2 class="heading-medium">If not spent, the following funds will expire</h2>
+            <h2 class="heading-medium">If not spent, you will lose the following funds</h2>
                 <table>
                     <thead>
                       <tr>
                         <th scope="col">Expiry date</th>
                         <th scope="col">Description</th>
-                        <th scope="col" class="numeric">Amount at risk</th>
+                        <th scope="col" class="numeric">Amount you could lose</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -94,23 +94,9 @@
           </div>
 
     <div class="column-one-third">
-      <aside class="related">
-              <h2 class="heading-medium" style="margin-top:10px">Account activity</h2>
-         <nav role="navigation">
-            <ul class="robSideNav">
-              <li>
-                  <a href="/{% include "includes/sprint-link.html" %}/balance">View balance</a>
-              </li>
-                <li>
-                  <a href="/{% include "includes/sprint-link.html" %}/history">View account statement</a>
-              </li>
-              <li>
-                  <a href="/{% include "includes/sprint-link.html" %}/committed">View planned spending</a>
-              </li>
+                <aside class="related">
 
-            </ul>
-          </nav>
-        </aside>
+                </aside>
     </div>
   </div>
 

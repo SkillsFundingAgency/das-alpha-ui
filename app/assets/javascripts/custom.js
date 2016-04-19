@@ -16,3 +16,10 @@ var EventUtil = {
 function goBack() {
     window.history.back();
 }
+
+// yes, this does what you think it does!
+$( document ).ready(function() {
+  window.setInterval(function(){
+  $('.blink').toggle();
+}, 550);
+  });

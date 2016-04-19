@@ -2045,6 +2045,13 @@ input[type=number] {
   background: #fff;
 }
 
+.graphGoesHere {
+  width: 100%;
+  min-height: 300px;
+  height: auto;
+  background-color: #fff;
+}
+
 .rjCashMoney {
   font-size: 3em;
   line-height: 1;
