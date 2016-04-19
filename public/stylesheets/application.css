@@ -2114,8 +2114,12 @@ input[type=number] {
   width: 76%;
 }
 
+#contract-search {
+  width: 85%;
+}
+
 @media (max-width: 640px) {
-  #organisation-name {
+  #organisation-name, #contract-search {
     width: 100%;
   }
   .rjSearchButton {
