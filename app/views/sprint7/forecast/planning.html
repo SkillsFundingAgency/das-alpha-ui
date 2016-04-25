@@ -1,9 +1,8 @@
-{% extends "layout2.html" %}
+{% extends "layout.html" %}
 {% block content %}
 	<div class="grid-row">
 		<div class="column-two-thirds">
-			<h1 class="heading-xlarge">{{title}}</h1>
-
+			<h1 class="heading-xlarge">Planning</h1>
 			<table>
 				<thead>
 					<tr>
@@ -44,10 +43,12 @@
 				<a class="button" href="#" data-bind='click: addLine'>Add another standard</a>
 			</p>
 			<div style="margin-top: 150px">
-				<p>Yearly Payroll Amount: <input data-bind="textInput: payroll"/></p>
+				<p>Yearly Payroll Amount: <input id="payroll" data-bind="textInput: payroll"/></p>
 				<p>
-					<a class="button button-start" data-bind="attr: { 'href': 'forecast?data=' + save() + '&payroll=' + payroll() + '&planned=' + grandTotal() }", role="button">Forecast</a>
+					<a id="gotoForecast" class="button button-start" data-bind="attr: { 'href': 'forecast?data=' + save() + '&payroll=' + payroll() + '&planned=' + grandTotal() }", role="button">Forecast</a>
 				</p>
+				<input id="planned" type="hidden" data-bind="value: grandTotal()">
+				<input id="selected" type="hidden" data-bind="value: save()">
 			</div>
 		</div>
 		<div class="column-third">
@@ -56,9 +57,13 @@
 			</aside>
 		</div>
 	</div>
-
-<script language="javascript" src="/public/javascripts/planning.js"></script>
+	<script language="javascript" src="/javascripts/planning.js"></script>
 {% endblock %}
 {% block script %}
-
+<script language="javascript" src='/javascripts/jquery-1.10.2.min.js'></script>
+<script language="javascript" src='/javascripts/knockout-3.2.0.js'></script>
+<script language="javascript" src='/javascripts/underscore-min.js'></script>
+<script language="javascript" src="/javascripts/standards.js"></script>
+<script language="javascript" src="/javascripts/lockr.min.js"></script>
+<script language="javascript" src="/javascripts/planning.js"></script>
 {% endblock %}
