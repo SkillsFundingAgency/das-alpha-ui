@@ -1,6 +1,8 @@
 var path = require('path'),
     express = require('express'),
+       nunjucks2 = require('nunjucks'),
     nunjucks = require('express-nunjucks'),
+
     routes = require(__dirname + '/app/routes.js'),
     favicon = require('serve-favicon'),
     app = express(),
@@ -10,6 +12,7 @@ var path = require('path'),
     port = (process.env.PORT || config.port),
     utils = require(__dirname + '/lib/utils.js'),
     packageJson = require(__dirname + '/package.json'),
+    forecast = require(__dirname + '/app/forecast.js'),
 
 // Grab environment variables specified in Procfile or as Heroku config vars
     releaseVersion = packageJson.version;
@@ -31,11 +34,22 @@ if (env === 'production' && useAuth === 'true'){
 app.set('view engine', 'html');
 app.set('views', [__dirname + '/app/views', __dirname + '/lib/']);
 
+
+nunjucks2.configure('views', {
+  autoescape: true,
+  express   : app
+
+});
+
 nunjucks.setup({
   autoescape: true,
   watch: true,
-  noCache: true
+  noCache: true,
 }, app);
+
+
+
+
 
 // Middleware to serve static assets
 app.use('/public', express.static(__dirname + '/public'));
@@ -74,6 +88,8 @@ if (typeof(routes) != "function"){
 } else {
   app.use("/", routes);
 }
+app.use("/forecast", forecast);
+
 
 // auto render any view that exists
 app.get(/^\/([^.]+)$/, function (req, res) {
