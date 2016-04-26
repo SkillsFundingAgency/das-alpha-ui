@@ -7,7 +7,7 @@
 			<ul data-bind="foreach: plannedItems">
 				<li><span data-bind="text: Name"></span> ( <span data-bind="text: Quantity"></span> @ £<span data-bind="text: Price"></span> )</li>
 			</ul>
-			<p>Total Planned Cost: £{{planned}}</p>
+			<p>Total Planned Cost: £<span data-bind="text: planned"></span></p>
 			<table>
 				<thead>
 					<tr>
@@ -38,18 +38,16 @@
 			</aside>
 		</div>
 	</div>
-{% endblock %}
-{% block script %}
-<script language="javascript" src="/javascripts/lockr.min.js"></script>
+	<script language="javascript" src="/public/javascripts/lockr.min.js"></script>
 <script language="javascript">
 	var payroll = Lockr.get('payroll');
 	var planned = Lockr.get('planned');
 	var selected = JSON.parse(Lockr.get('selected'));
 </script>
-<script language="javascript" src='/javascripts/jquery-1.10.2.min.js'></script>
-<script language="javascript" src='/javascripts/knockout-3.2.0.js'></script>
-<script language="javascript" src='/javascripts/chart.js'></script>
-<script language="javascript" src='/javascripts/underscore-min.js'></script>
-<script language="javascript" src="/javascripts/standards.js"></script>
-<script language="javascript" src="/javascripts/forecast.js"></script>
+<script language="javascript" src='/public/javascripts/underscore-min.js'></script>
+<script language="javascript" src="/public/javascripts/standards.js"></script>
+<script language="javascript" src="/public/javascripts/forecast.js"></script>
+{% endblock %}
+{% block script %}
+
 {% endblock %}
