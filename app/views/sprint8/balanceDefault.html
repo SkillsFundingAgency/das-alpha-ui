@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+            <h1 class="heading-large" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Available apprenticeship funds</h1>
+            <!--div class="">
+                <p>Available funds have been forecast by a member of your organisation using the <a href="#">forecasting tool.</a> Please ensure that you keep the assumptions up to date.</p>
+                <h2 class="heading-small" >Forecast of available funds:</h2>
+                <h2 class="rjCashMoney" style="color:#08c">£5,000</span></h2>
+                <p style="margin-top:0">until 21 Jan 2019</p>
+            </div--> 
+            <div>
+            <div class="home-figures">
+                <h2 class="heading-small" >Your current balance is:</h2>
+                <h2 class="bold-xlarge" >£5,000</h2> <!--style="color:#08c" -->
+                <p style="font-size:16px" >on 27th August 2017</p>
+
+            </div> 
+          </div>
+
+            <!--h2 class="heading-large" style="">Available apprenticeship funds</h2>
+            <!--p>Forecast how much you have to spend with our <a href="#">budget calculator</a></p-->
+            <p style=margin-top:35px>We can help you understand how much you have to spend on apprentices by forecasting your potential funding over the next couple of years.</p><p> All we need is an estimate of your payroll and our forecasting tool will use that and information about your <a href="committed">committed spending</a> to work out how much you might have to spend. </p>
+
+              <!--div class="home-figures" style="">
+                <h2 class="heading-small">At risk of losing:</h2>
+                <h2 class="rjCashMoney">£15,000</h2>
+                <p style="margin-top:0">Before 31 Jan 2019</p>
+              </div> 
+
+            <div class="home-figures" style="">
+                <h2 class="heading-small">Total committed spending:</h2>
+                <h2 class="rjCashMoney">£65,000</h2>
+                <p style="margin-top:0">until 21 Jan 2021</p>
+            </div--> 
+            <!--div class="" style="">
+                <h2 class="heading-small">Forecasted income:</h2>
+                <h2 class="rjCashMoney">blah</h2>
+                <p style="margin-top:0">Until 31 Jan 2019</p>
+            </div--> 
+          
+            <p style="margin-top:20px"><a href="balance" >Forecast your available funds</p></a>
+
+                <!--p>
+                  The amount of money you currently have to spend on apprentices is made up of
+                </p>
+                <ul class="list list-bullet">
+                  <li> your current balance</li>
+                  <li> minus the amount you have planned to spend in the future</li>
+                  <li>funds that expire</li>
+                  <li>Future "levy" payments</li>
+                </ul-->
+
+            <div style="margin-top:50px"></div>
+          </div>
+
+{% include "includes/side-bars/funds-main.html" %}
+        </div>
+
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+
+
+</script>
+
+{% endblock %}
+
