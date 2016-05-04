@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+
+
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/">Breadcrumb here ></a></li>
+    </ol>
+
+  </div-->
+
+  <h1 class="heading-large">Data Admin</h1>
+
+  <p>
+   Edit the data that is displayed on this site
+  </p>
+
+<form action="login-choose-accounts">
+  <fieldset>
+    <legend class="visuallyhidden">email address and password to sign in</legend>
+      <div class="form-group">
+          <label class="form-label"  for="opening-balance">Opening Balance
+          <!--span class="form-hint">Here is a hint for this form field.</span-->
+        </label>
+          <input class="form-control" data-bind="value: openingBalance" id="email-address" type="number">
+      </div>
+    </fieldset>
+    <input class="button" id="saveData" data-bind="click: saveData" type="submit" value="Save">
+</form>
+<p style="padding-top:20px">
+ <a href="#">Forgotten your password?</a>
+</p>
+</main>
+
+
+{% endblock %}
