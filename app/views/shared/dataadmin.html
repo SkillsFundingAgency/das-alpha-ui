@@ -17,13 +17,6 @@
 <main id="content" role="main">
 {% include "includes/phase_banner_alpha.html" %}
 
-  <!--div class="breadcrumbs">
-    <ol role="breadcrumbs">
-      <li><a href="/">Breadcrumb here ></a></li>
-    </ol>
-
-  </div-->
-
   <h1 class="heading-large">Data Admin</h1>
 
   <p>
@@ -34,18 +27,55 @@
   <fieldset>
     <legend class="visuallyhidden">email address and password to sign in</legend>
       <div class="form-group">
-          <label class="form-label"  for="opening-balance">Opening Balance
-          <!--span class="form-hint">Here is a hint for this form field.</span-->
-        </label>
-          <input class="form-control" data-bind="value: openingBalance" id="email-address" type="number">
+          <label class="form-label">Opening Balance</label>
+          <h2 class="heading-large" data-bind="text: displayBalance" id="email-address" type="number"/>
+      </div>
+	  <div class="form-group">
+          <label class="form-label">Date</label>
+          <input class="form-control" data-bind="value: systemDate" type="date"/>
       </div>
     </fieldset>
+    	<table>
+		<thead>
+		<tr>
+			<th width="45%">Date</th>
+			<th width="40%">Description</th>
+			<th width='15%'>Amount</th>
+			<th width='10%'> </th>
+		</tr>
+		</thead>
+		<tbody data-bind='foreach: statementLines'>
+		<tr>
+
+			<td>
+				<input class="form-control" data-bind="value: date" type="date"/>
+			</td>
+						
+			</td>
+			<td width="100%">
+				<input  style="width:90%" data-bind='value: description'/>
+			</td>
+			<td>
+				<input data-bind='textInput: amount'/>
+			</td>
+			<td>
+				<a href='#' data-bind='click: $parent.removeLine'>Remove</a>
+			</td>
+		</tr>
+		</tbody>
+		
+	</table>
+	<div class="left" style="padding:10px 0">
+		<input class="button" id="addLine" data-bind='click: addLine' value="Add another statement entry"/>
+	</div> 
+	<div>
     <input class="button" id="saveData" data-bind="click: saveData" type="submit" value="Save">
+	</div>
+
 </form>
 <p style="padding-top:20px">
  <a href="#">Forgotten your password?</a>
 </p>
 </main>
-
 
 {% endblock %}
