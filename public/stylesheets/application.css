@@ -2046,6 +2046,10 @@ input[type=number] {
   background: #fff;
 }
 
+.noMarginTop {
+  margin-top: 0px;
+}
+
 #finder-frontend {
   margin-bottom: 45px;
 }
@@ -2573,9 +2577,29 @@ input.text {
   cursor: pointer;
 }
 
+.noMarginTop {
+  margin-top: 0px !important;
+}
+
+.smallMarginBotom {
+  margin-bottom: 2px !important;
+}
+
 .looks-like-a-link {
   color: #005ea5;
   font-weight: 700;
+}
+
+.looks-like-a-link-underline {
+  color: #005ea5;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.space-at-bottom {
+  border-bottom: 1px solid #bfc1c3;
+  padding: 15px 0;
+  position: relative;
 }
 
 .graphGoesHere {
@@ -2745,7 +2769,7 @@ input.text {
 }
 
 .robPence {
-  font-size: 32px;
+  font-size: 24px;
   line-height: 1;
 }
 
@@ -2756,7 +2780,7 @@ input.text {
 
 @media (max-width: 768px) {
   .robPence {
-    font-size: 28px;
+    font-size: 20px;
     line-height: 1;
   }
 }
