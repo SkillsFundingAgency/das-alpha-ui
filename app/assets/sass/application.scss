@@ -52,7 +52,9 @@
   a.button, input.button {
     @include button($button-colour);
     width: auto;
-    @include bold-24;
+        font-size: 1em;
+    line-height: 1.25;
+
   }
 
     .summary {
@@ -211,11 +213,7 @@
     text-indent: 5px;
   }
 
-  .button {
-    @include button($button-colour);
-    width: auto;
-    @include bold-24;
-  }
+
 
   .filtered-results {
     .result-info {
