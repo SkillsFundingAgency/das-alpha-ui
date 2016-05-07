@@ -72,6 +72,29 @@
     <input class="button" id="saveData" data-bind="click: saveData" type="submit" value="Save">
 	</div>
 
+	
+	<table>
+		<thead>
+			<th>Provider Name</th>
+			<th>Reference</th>
+			<th>Standards</th>
+		</thead>
+		<tbody data-bind='foreach: filteredProviders'>
+			<td>
+				<span data-bind="text: providerName"></span>
+			</td>
+			<td>
+				<span data-bind="text: reference"></span>
+			</td>
+			<td>
+				<span data-bind="text: standards"></span>
+			</td>
+		</tbody>
+	</table>
+	<input data-bind='textInput: filterText'/>
+	
+	
+	
 </form>
 <p style="padding-top:20px">
  <a href="#">Forgotten your password?</a>
