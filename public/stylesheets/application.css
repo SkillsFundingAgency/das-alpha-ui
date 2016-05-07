@@ -2773,6 +2773,10 @@ input.text {
   line-height: 1;
 }
 
+.make-it-bold {
+  font-weight: 700;
+}
+
 .negativeNumber {
   color: #DC143C;
   white-space: nowrap;
