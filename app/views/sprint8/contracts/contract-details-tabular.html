@@ -1,0 +1,279 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/contracts">Contracts</a></li>
+
+    </ol>
+
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+                  <h1 class="heading-large" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Apprenticeship</h1>
+            <div>
+                <p>
+                  The following shows details of your apprenticeship. To make a change to an apprentice, click view next to their names. <p>Amends will be reflected in payments information automatically.</p>
+                </p>
+                <div class="">
+
+                  <table>
+                  <thead>
+                    <tr>
+                      <th colspan="2">Apprenticeship details</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="rjTableName">Provider name</td>
+                      <td class="">Hackney skills and training Ltd</td>
+                      <td class=""></td>
+                    </tr>
+                     <tr>
+                      <td class="rjTableName">Contract reference</td>
+                      <td class="">98HGS3F</td>
+                      <td class=""></td>
+                    </tr>
+
+                    <tr>
+                      <td class="rjTableName">Apprenticeship name</td>
+                      <td class="">Aeronautical engineering</td>
+                      <td class=""></td>
+                    </tr>
+                    <tr>
+                      <td class="rjTableName">Apprenticeship level</td>
+                      <td class="">Level 2 NVQ</td>
+                      <td class=""></td>
+                    </tr>
+                    <tr>
+                      <td class="rjTableName">Endpoint assessor</td>
+                      <td class="">Pham Assessment Ltd</td>
+                      <td class=""></td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">Apprentice names</td>
+                      <td class="">Rob Edwards</td>
+                      <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice"><div class="">View</div></a></td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName"></td>
+                      <td class="">David Jenkins</td>
+                      <td class=""><a href="#"><div class="">View</div></a></td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName"></td>
+                      <td class="">Mel O'Connor</td>
+                      <td class=""><a href="#"><div class="">View</div></a></td>
+                    </tr>
+                     <tr>
+                     <td class="rjTableName"></td>
+                      <td class="">Susan Hamazaki</td>
+                      <td class=""><a href="#"><div class="">View</div></a></td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName"></td>
+                      <td class="">Carson Maayan</td>
+                      <td class=""><a href="#"><div class="">View</div></a></td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName"></td>
+                      <td class="">Eden Tierney</td>
+                      <td class=""><a href="#"><div class="">View</div></a></td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName"></td>
+                      <td class="">Kim Martie</td>
+                      <td class=""><a href="#"><div class="">View</div></a></td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName"></td>
+                      <td class="">Mattie Cheyenne</td>
+                      <td class=""><a href="#"><div class="">View</div></a></td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName"></td>
+                      <td class="">Ziv Yoshi</td>
+                      <td class=""><a href="#"><div class="">View</div></a></td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName"></td>
+                      <td class="">Lou Eden</td>
+                      <td class=""><a href="#"><div class="">View</div></a></td>
+                    </tr>
+                     <tr>
+                     <td class="rjTableName"></td>
+                      <td class="">Freddie Dikla</td>
+                      <td class=""><a href="#"><div class="">View</div></a></td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName"></td>
+                      <td class="">September Logan</td>
+                      <td class=""><a href="#"><div class="">View</div></a></td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName"></td>
+                      <td class="">Florence Hadar</td>
+                      <td class=""><a href="#"><div class="">View</div></a></td>
+                    </tr>
+                     <tr>
+                     <td class="rjTableName"></td>
+                      <td class="">Greer Merlyn</td>
+                      <td class=""><a href="#"><div class="">View</div></a></td>
+                    </tr>
+                      <tr>
+                     <td class="rjTableName">Start date</td>
+                      <td class="">20th July 2018</td>
+                      <td class=""></td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">Date of first payment</td>
+                      <td class="">20th August 2018</td>
+                      <td class=""></td>
+                    </tr>
+                     <tr>
+                     <td class="rjTableName">Total agreed</td>
+                      <td class="">£2,987.24</td>
+                      <td class=""></td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">Current total</td>
+                      <td class="">£2,987.24</td>
+                      <td class=""></td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">Total paid</td>
+                      <td class="">£0</td>
+                      <td class=""><a href="#">View</a></td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">Left to pay</td>
+                      <td class="">£2,987.24</td>
+                      <td class=""><a href="#">View</a></td>
+                    </tr>
+
+
+                   
+                  </tbody>
+                </table>
+                <p style="color:red; padding-top:15px"> NOTE TO ROB: - total agreed and current total can be different because the apprentices that make up the contract can change - be removed, paused etc. So contract value can change during the contract. This needs user validation</p>
+
+                
+                </div>
+            </div>
+            <div style="margin-top:35px">
+
+              </div>
+            <div style="margin-top:50px"></div>
+          </div>
+
+          <div class="column-one-third">
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Provider management</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav"-->
+                          <!--li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/quote">Review provider "offers"</a>
+                          </li-->
+                          <!--li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/paymentplan">Add a new payment plan (OUT?)</a>
+                          </li>
+                          <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/makepayment">Make a payment</a>
+                          </li>
+                           <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/reviewpayments">Review and amend regular payments</a>
+                          </li>
+                            <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/spendingcommitments">View a summary of your spending commitments</a>
+                          </li>
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+        </div>
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
+<script>
+
+
+//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+$( document ).ready(function() {
+
+  // change the tabs themselves to active - should be in the above but isn't working because it's looking for a not li so I added this as a quick fix.
+
+  $("ul#tabs-nav li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs-nav li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#tabs-nav li.active").removeClass("active");
+            $("ul#tabs-nav li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+  $('ul.tabs-nav').each(function(){
+    // For each set of tabs, we want to keep track of
+    // which tab is active and its associated content
+    var $active, $content, $links = $(this).find('a');
+
+
+
+    // If the location.hash matches one of the links, use that as the active tab.
+    // If no match is found, use the first link as the initial active tab.
+    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+   // $active.addClass('active');
+   console.log($active)
+
+    $content = $($active[0].hash);
+
+    // Hide the remaining content
+    $links.not($active).each(function () {
+      $(this.hash).hide();
+    }); 
+
+    // Bind the click event handler
+    $(this).on('click', 'a', function(e){
+      // Make the old tab inactive.
+    //  $active.removeClass('active');
+      $content.hide();
+
+      // Update the variables with the new link and content
+    //  $active = $(this);
+      $content = $(this.hash);
+
+      // Make the tab active.
+     // $active.addClass('active');
+      $content.show();
+
+      // Prevent the anchor's default click action
+      e.preventDefault();
+    });
+  });
+
+
+</script>
+
+{% endblock %}
+
