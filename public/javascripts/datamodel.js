@@ -7,7 +7,8 @@ Number.prototype.format = function(n, x) {
 	var das = das || {};
 	das.makeDefaultData = function() {
 		return {
-			openingBalance: 0
+			openingBalance: 0,
+			statementLines: []
 		};
 	};
 	
