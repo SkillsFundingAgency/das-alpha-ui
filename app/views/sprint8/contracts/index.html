@@ -19,49 +19,6 @@
   </div>
 
 
-<!--h1 class="heading-large">Levy account</h1-->
- <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
-              <!--div class="grid-row">
-                <div class="column-two-thirds">
-
-                            <h1 class="heading-large" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Review contracts</h1>
-                              <p>You have the following contracts with providers</p>
-                              <form action="" >
-                                  <fieldset>
-                                    <legend class="visuallyhidden">Search contracts</legend>
-                                    <div class="form-group">
-                                        <label class="form-label" style="font-weight:700" for="Contract-search">Search contracts</label>
-                                        <input class="form-control" id="contract-search" type="text">
-                                        <input class="button rjSearchButton" id="search" type="submit" value="Search">
-                                    </div>
-                                  </fieldset>
-                                  </form>
-               </div> 
-
-               <div class="column-one-third"></div>
-              </div-->
-              <!--div class="grid-row">
-                    <div class="column-one-quarter">
-                        <h2 class="heading-medium" style="margin-top:10px">Filter by category</h2>
-                     </div> 
-                     <div class="column-one-quarter">
-                        <label for="filter-category-active" class="form-checkbox">
-                                <input id="filter-category-active" name="category" value="active" type="checkbox" checked>
-                                Active
-                        </label>
-                        <label for="filter-category-archived" class="form-checkbox">
-                                <input id="filter-category-archived" name="category" value="Archived" type="checkbox">
-                                Archived
-                        </label>
-                     </div> 
-                     <div class="column-one-quarter">
-                       <label for="filter-category-archived" class="form-checkbox">
-                                <input id="filter-category-archived" name="category" value="Archived" type="checkbox">
-                                Not started
-                        </label>
-                     </div>
-             </div-->
-
 <div class="grid-row">
   <div class="column-two-thirds">
     <h1 class="heading-large" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Review contracts with providers</h1>
@@ -75,7 +32,7 @@
     <form method="get" action="/cma-cases" class="js-live-search-form">
       <div class="filter text-filter">
         <label class="legend" for="finder-keyword-search">Search</label>
-        <input value="" type="text" name="keywords" id="finder-keyword-search" aria-controls="js-search-results-info" class="text">
+        <input value="" type="text" name="keywords" data-bind='textInput: filterText' id="finder-keyword-search" aria-controls="js-search-results-info" class="text">
       </div>
 
 
@@ -163,70 +120,15 @@
 
    </div>
    <div class="column-two-thirds">
+   <div data-bind='foreach: filteredProviders'>
            <div class="robColumnDetails">
-              <h2 class="looks-like-a-link heading-medium" style="margin: 0 0 5px 0"><a style="text-decoration:none" href="/{% include "includes/sprint-link.html" %}/contracts/contract-apprenticeships">Hackney Skills and Training Ltd</a></h2>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">98HGS3F</p></div>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">Active</p></div>
-                      <div><p style="display:inline; margin:0;">14 Aerospace engineering standards</p></div>
-                      <div><p style="display:inline; margin:0;">2 Aerospace manufacturing fitter standards</p></div>
+              <h2 class="looks-like-a-link heading-medium" style="margin: 0 0 5px 0"><a style="text-decoration:none" href="/{% include "includes/sprint-link.html" %}/contracts/contract-apprenticeships" data-bind="text: providerName" ></a></h2>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;" data-bind="text: reference" ></p></div>
+                      <div><p style="display:inline; margin:0;" data-bind="text: standards"></p></div>
           </div>
-          <div class="robColumnDetails">
-              <h2 class="looks-like-a-link heading-medium" style="margin: 0 0 5px 0">Learning management, skills and business training Ltd</h2>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">HGHN734557</p></div>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">Active</p></div>
-                      <div><p style="display:inline; margin:0;">1 Aerospace engineering standards</p></div>
-                      <div><p style="display:inline; margin:0;">23 Aerospace manufacturing fitter standards</p></div>
-          </div>
-          <div class="robColumnDetails">
-              <h2 class="looks-like-a-link heading-medium" style="margin: 0 0 5px 0">Lots of skills Ltd</h2>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">NMJ786563</p></div>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">Active</p></div>
-                      <div><p style="display:inline; margin:0;">1 Aerospace manufacturing fitter standard</p></div>
-          </div>
-          <div class="robColumnDetails">
-              <h2 class="looks-like-a-link heading-medium" style="margin: 0 0 5px 0">Learning management, skills and business training Ltd</h2>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">NUY89763</p></div>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">Active</p></div>
-                      <div><p style="display:inline; margin:0;">444 Aerospace engineering standards</p></div>
-          </div>
+          
 
-                <!--table>
-                    <thead>
-                      <tr>
-                        <th scope="col">To</th>
-                        <th scope="col" class="">Reference</th>
-                        <!--th scope="col" class="">Monthly</br>payment</th>
-                        <th scope="col">Contract ends</th>
-                         <th scope="col">Details</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="rjTabWidth">Hackney skills and training provider Ltd</td>
-                        <td class="">98HGS3F</td>
-
-                        <td><a href="/{% include "includes/sprint-link.html" %}/contracts/contract-details">View</a></td>
-                      </tr>
-                      <tr>
-                        <td class="rjTabWidth">Learning management, skills and business training Ltd</td>
-                        <td class="">HGHN734557</td>
- 
-                        <td><a href="/{% include "includes/sprint-link.html" %}/contracts/contract-details">View</a></td>
-                      </tr>
-                      <tr>
-                        <td class="rjTabWidth">Lots of skills Ltd</td>
-                        <td class="">NMJ786563</td>
-
-                        <td><a href="/{% include "includes/sprint-link.html" %}/contracts/contract-details">View</a></td>
-                      </tr>
-                      <tr>
-                        <td class="rjTabWidth">Learning management, skills and business training Ltd</td>
-                        <td class="">NUY89763</td>
-
-                        <td><a href="/{% include "includes/sprint-link.html" %}/contracts/contract-details">View</a></td>
-                      </tr>                
-                    </tbody>
-                </table-->
+       </div>        
     </div>
 </div>
 
