@@ -26,58 +26,71 @@
 
       <div class="grid-row">
            <div class="column-two-thirds">
-          <h1 class="heading-large" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Hackney skills & training</h1>
+          <h1 class="heading-large" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Aeronautical engineering</h1>
         </div>
       </div>
-      <div class="space-at-bottom">
-        <div class="grid-row">
-           <div class="column-half">
-          <h2 class="heading-medium noMarginTop">Overview</h2>
-           </div>
-       </div>
-       <div class="grid-row">
+      <div class="">
+             <div class="grid-row">
            <div class="column-quarter">
-                      <h3 class="heading-small smallMarginBotom">Contract reference</h3>
-                      <p class="noMarginTop">98HGS3F</p>
+                      <h3 class="heading-small smallMarginBotom">Provider</h3>
+                      <p class="noMarginTop">Hackney skills & training Ltd</p>
 
             </div>
             <div class="column-quarter">
-                      <h3 class="heading-small smallMarginBotom">Status</h3>
-                      <p class="noMarginTop">Active</p>
+                      <h3 class="heading-small smallMarginBotom">Contract reference</h3>
+                      <p class="noMarginTop">98HGS3F</p>
             </div>
 
-            <div class="column-half">
-                  <h3 class="heading-small smallMarginBotom">Contract authorised by</h3>
-                  <p class="noMarginTop">"Username or email"</p>
-            </div>
         </div>
+       </div>
 
-          <div class="grid-row" >
+<div class="js-tabs nav-tabs" style="margin-top:35px">
+  <ul class="tabs-nav" id="tabs-nav" role="tablist">
+    <li class="active">
+      <a href="#summary" role="tab" id="tab-summary">Apprenticeship overview</a>
+    </li>
+    <li class="">
+      <a href="#payments" role="tab" id="tab-payments">Payments</a>
+    </li>
+    <li class="">
+      <a href="#apprentices" role="tab" id="tab-apprentices">Apprentices</a>
+    </li>
+  </ul>
+</div>
+
+
+
+<div class="js-tab-content tab-content" style=>
+    <div class="js-tab-pane tab-pane" id="summary">
+
+          <div class="grid-row">
            <div class="column-quarter" >
-               <h3 class="heading-small smallMarginBotom noMarginTop">Date started</h3>
-                      <p class="noMarginTop">12th May 2018</p>
+               <h3 class="heading-small smallMarginBotom ">Apprenticeship level</h3>
+                      <p class="noMarginTop">Level 2 NVQ</p>
           </div>
            <div class="column-quarter">
-                <h3 class="heading-small smallMarginBotom noMarginTop">Date ending</h3>
-                      <p class="noMarginTop">12th May 2020</p>
-                    </div>
+                <h3 class="heading-small smallMarginBotom ">Endpoint assessor</h3>
+                      <p class="noMarginTop">Pham Assessment Ltd</p>
+            </div>
+              <div class="column-quarter">
+                <h3 class="heading-small smallMarginBotom ">Training start date</h3>
+                      <p class="noMarginTop">20th July 2018</p>
+            </div>
         </div>
-
       </div>
-      <div class="space-at-bottom">
-        <h2 class="heading-medium ">Standards</h2>
-        <div class="grid-row">
-           <div class="column-two-thirds">
 
-            <p style="margin-top:20px" ><a href="contract-details">14 Aerospace engineers </a></p>
-            <p class="looks-like-a-link-underline">2 Aerospace manufacturing fitters</p>
+
+    <div class="js-tab-pane tab-pane" id="payments">
+
+          <div class="grid-row">
+            <div class="column-one-quarter">
+                <h2 class="heading-small">Date of first payment</h2>
+                <p style="margin-bottom:5px">20th August 2018</p>
+
           </div>
-      </div>
-    </div>
+          </div>
 
-    <div class=" space-at-bottom">
-      <h2 class="heading-medium ">Payments</h2>
-         <div class="grid-row">
+          <div class="grid-row">
           <div class="column-one-quarter">
                 <h2 class="heading-small" >Total agreed</h2>
                 <p>£2,987<span class="robPence">.24</span></p> <!--style="color:#08c" -->
@@ -108,15 +121,31 @@
     </div>
 
 
-<h2 style="margin-top:75px;color:red"> rob remember to put some opening alert text somewhere to explain the difference between current total and total agreed - the reason is that the contact can change e.g. someone is removed halfway through and therefore the cost and payments will change. Need to explain this. Maybe Current total doesn't show until this happens?</h2>
+    <div class="js-tab-pane tab-pane" id="apprentices">
 
 
-
-
-
-
-
-
+        <div class="grid-row">
+           <div class="column-half">
+            <p style="margin-top:20px" ><a href="../apprentice-view/individual-apprentice">Rob Edwards</a></p>
+            <p class="looks-like-a-link-underline">Mel O'Connor</p>
+            <p class="looks-like-a-link-underline">Carson Maayan</p>
+            <p class="looks-like-a-link-underline">Kim Martie</p>
+            <p class="looks-like-a-link-underline">Mattie Cheyenne</p>
+            <p class="looks-like-a-link-underline">Ziv Yoshi</p>
+            <p class="looks-like-a-link-underline">Lou Eden</p>
+          </div>
+          <div class="column-half">
+            <p class="looks-like-a-link-underline" style="margin-top:20px">David Jenkins</p>
+            <p class="looks-like-a-link-underline">Susan Hamazaki</p>
+            <p class="looks-like-a-link-underline">Eden Tierney</p>
+            <p class="looks-like-a-link-underline">Freddie Dikla</p>
+            <p class="looks-like-a-link-underline">September Logan</p>
+            <p class="looks-like-a-link-underline">Florence Hadar</p>
+            <p class="looks-like-a-link-underline">Greer Merlyn</p>
+          </div>
+       </div>
+    </div>
+</div>
 
 </main>
 
@@ -124,10 +153,11 @@
 
 
 <script>
-
-
 //jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
-$( document ).ready(function() {
+
+
+
+$(document).ready(function() {
 
   // change the tabs themselves to active - should be in the above but isn't working because it's looking for a not li so I added this as a quick fix.
 
@@ -184,6 +214,5 @@ $( document ).ready(function() {
 
 
 </script>
-
 {% endblock %}
 

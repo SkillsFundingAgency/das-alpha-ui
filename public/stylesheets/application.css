@@ -2769,7 +2769,7 @@ input.text {
 }
 
 .robPence {
-  font-size: 24px;
+  font-size: 16px;
   line-height: 1;
 }
 
@@ -2784,7 +2784,7 @@ input.text {
 
 @media (max-width: 768px) {
   .robPence {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1;
   }
 }
