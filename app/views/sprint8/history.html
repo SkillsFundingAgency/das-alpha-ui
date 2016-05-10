@@ -33,8 +33,8 @@
                             <div>
             <div class="home-figures">
                 <h2 class="heading-small" >Your current balance is:</h2>
-                <h2 class="bold-xlarge" >£5,000</h2> <!--style="color:#08c"-->
-                <p style="font-size:16px" >on 27th August 2018</p>
+                <h2 class="bold-xlarge" data-bind="text: displayBalance"></h2> <!--style="color:#08c"-->
+                <p style="font-size:16px" >on <span data-bind="text: displaySystemDate"></span></p>
             </div>
               <!--div class="home-figures" style="">
                 <h2 class="heading-small">At risk of losing:</h2>
@@ -65,8 +65,16 @@
                         <th scope="col"></th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
+                    <tbody data-bind="foreach: statementLines">
+                        <tr>
+                            <td data-bind="text: date"></td>
+                            <td data-bind="text: description"></td>
+                            <td class="numeric" data-bind="text: displayCredit"></td>
+                            <td class="numeric negative" data-bind="text: displayDebit">-</td>
+                            <td class="numeric" data-bind="text: $parent.calculateRunningTotal($index)"></td>
+                            <td><a href="#">View</a></td>
+                        </tr>
+                      <!--<tr>
                         <td>20th July 2018</td>
                         <td>Skills Funding Agency July 2018 Payment</td>
                         <td class="numeric">£2,000.00</td>
@@ -112,8 +120,13 @@
                         <td class="numeric">-</td>
                         <td class="numeric negative">£4,000.93</td>
                         <td class="numeric">£5,867.24</td>
+<<<<<<< HEAD
                         <td class="looks-like-a-link-underline">View</td>
                       </tr>
+=======
+                        <td><a href="#">View</a></td>
+                      </tr>-->
+>>>>>>> origin/master
                     </tbody>
                 </table>
 
