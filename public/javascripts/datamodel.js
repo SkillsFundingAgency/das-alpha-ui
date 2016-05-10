@@ -121,9 +121,9 @@ Number.prototype.format = function(n, x) {
 		}
 		
 		var providers = [
-				{providerName:"Hackney Skills and Training Ltd",providerReferemce:"98HGS3F", standards:"14 Aerospace engineering standards"},
-				{providerName:"Learning management, skills and business training Ltd",providerReferemce:"HGHN734557", standards:"1 Aerospace engineering standards"},
-				{providerName:"Lots of skills Ltd",providerReferemce:"NMJ786563", standards:"1 Aerospace engineering standards"},
+				{providerName:"Hackney Skills and Training Ltd",providerReferemce:"98HGS3F", conStatus:"Active", standards:"14 Aerospace engineering standards"},
+				{providerName:"Learning management, skills and business training Ltd",providerReferemce:"HGHN734557", conStatus:"Active", standards:"1 Aerospace engineering standards"},
+				{providerName:"Lots of skills Ltd",providerReferemce:"NMJ786563", conStatus:"Active", standards:"1 Aerospace engineering standards"},
 			];
 		
 		console.log(providers);
@@ -131,6 +131,7 @@ Number.prototype.format = function(n, x) {
 		self.searchItems = ko.utils.arrayMap(providers, function(provider){
 			return {
 				providerName : provider.providerName,
+				status : provider.conStatus,
 				reference: provider.providerReferemce,
 				standards: provider.standards
 			}

@@ -362,6 +362,7 @@
 .looks-like-a-link {
     color:#005ea5;
     font-weight:700;
+    text-decoration:underline;
 }
 
 .looks-like-a-link-underline {
@@ -583,7 +584,7 @@ line-height: 1;
 
 .robColumnDetails {
     border-bottom: 1px solid #bfc1c3;
-    padding: 15px 0;
+    padding: 15px 0 50px 0;
     position: relative;
 }
 
