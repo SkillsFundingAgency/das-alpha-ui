@@ -4,6 +4,9 @@
 
         // Properties
         self.systemDate = ko.observable(storedData.systemDate);
+        self.displaySystemDate = ko.computed(function() {
+            return moment(self.systemDate()).format('Do MMMM YYYY');
+        })
         self.statementLines = ko.observableArray(ko.utils.arrayMap(storedData.statementLines.sort(function(a,b){return new Date(a.date) - new Date(b.date);}), function(line) {
             return new statementLineViewModel(line);
         }));
@@ -45,6 +48,14 @@
         self.removeProvider = function(provider) {
             self.providers.remove(provider);
         }
+        self.calculateRunningTotal = function(toLineIndex) {
+            var runningTotal = 0;
+            var lines = self.statementLines();
+            for(var i = 0; i <= toLineIndex(); i++) {
+                runningTotal += lines[i].amount();
+            }
+            return "£" + runningTotal.format();
+        }
     };
     var statementLineViewModel = function(storedData) {
         var self = this;
@@ -56,12 +67,19 @@
         self.date = ko.observable(storedData.date);
         self.description = ko.observable(storedData.description);
         self.amount = ko.observable(parseInt(storedData.amount));
-        self.displayAmount = ko.computed(function(){
-            var total = self.amount();
-            if(total <= 0){
-                total = total * -1;
+        self.displayCredit = ko.computed(function() {
+            var amount = self.amount();
+            if(amount < 0) {
+                return '';
             }
-            return '£' + total.format();
+            return '£' + amount.format();
+        });
+        self.displayDebit = ko.computed(function() {
+            var amount = self.amount();
+            if(amount >= 0) {
+                return '';
+            }
+            return '£' + amount.format();
         });
     };
     var providerViewModel =function(storedData) {
