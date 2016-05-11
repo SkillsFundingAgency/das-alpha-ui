@@ -36,6 +36,52 @@
 
             return lines.sort(function(a,b){return new Date(b.date) - new Date(a.date);});
         });
+        self.commitmentsEndDate = ko.computed(function() {
+            var commitments = self.commitments().sort(function(a,b){return new Date(b.endDate) - new Date(a.endDate);});
+            return moment(commitments[0].endDate()).format('Do MMMM YYYY');
+        });
+        self.commitedSpending = ko.computed(function() {
+            var yearStart = moment(self.systemDate());
+            var yearEnd = moment(self.systemDate()).add(1,'Y');
+
+            var lines = [];
+            for(var i = 0; i < self.commitments().length; i++) {
+                var commitmentLines = self.commitments()[i].createStatementLines('9999-12-30');
+                for(var j = 0; j < commitmentLines.length; j++) {
+                    if(moment(commitmentLines[j].date).isAfter(yearStart)) {
+                        lines.push(commitmentLines[j]);
+                    }
+                }
+            }
+            lines = lines.sort(function(a,b){return new Date(a.date) - new Date(b.date);});
+
+            var aggregations = [];
+
+            var yearTotal = 0;
+            for(var i = 0; i < lines.length; i++) {
+                var line = lines[i];
+                var date = moment(line.date);
+                if(date.isAfter(yearEnd)) {
+                    aggregations.push({
+                        from: yearStart.format('Do MMMM YYYY'),
+                        to: yearEnd.format('Do MMMM YYYY'),
+                        total: '£' + yearTotal.format()
+                    });
+
+                    yearStart.add(1, 'Y');
+                    yearEnd.add(1, 'Y');
+                    yearTotal = 0;
+                }
+                yearTotal += line.amount * -1;
+            }
+            aggregations.push({
+                from: yearStart.format('Do MMMM YYYY'),
+                to: self.commitmentsEndDate(),
+                total: '£' + yearTotal.format()
+            });
+
+            return aggregations;
+        });
         self.displayBalance = ko.computed(function () {
             var total = 0;
             for(var i = 0; i < self.statementLines().length; i++) {

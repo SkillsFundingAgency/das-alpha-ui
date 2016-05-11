@@ -27,7 +27,7 @@
   <div class="grid-row">
           <div class="column-two-thirds">
              <h1 class="heading-large" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Committed spending</h1>
-                <p>You have committed the following spending until your final apprentice contract ends on 14th December 2021.</P> <p>The figures DO NOT include the costs associated with <span class="looks-like-a-link-underline">provider contracts not yet confirmed</span> by your organisation.</p> 
+                <p>You have committed the following spending until your final apprentice contract ends on <span data-bind="text: commitmentsEndDate"></span>.</P> <p>The figures DO NOT include the costs associated with <span class="looks-like-a-link-underline">provider contracts not yet confirmed</span> by your organisation.</p>
 
             <h2 class="heading-medium">Summary of committed spending</h2>
                 <table>
@@ -37,7 +37,13 @@
                         <th scope="col" class="numeric">Amount committed</th>
                       </tr>
                     </thead>
-                   <tbody>
+                    <tbody data-bind="foreach: commitedSpending">
+                        <tr>
+                            <td><span data-bind="text: from"></span> - <span data-bind="text: to"></span></td>
+                            <td class="numeric" data-bind="text: total"></td>
+                        </tr>
+                    </tbody>
+                   <!--<tbody>
                     <tr>
                       <td class="rjTableName">27 August 2018 -- 26 August 2019</td>
                       <td class="numeric">£62,028</td>
@@ -58,7 +64,7 @@
                      <td class="rjTableName">Total</td>
                       <td class="numeric">£132,853</td>
                     </tr>
-                  </tbody>
+                  </tbody>-->
                   </table>
                 <p style="margin-top:20px"><span class="looks-like-a-link-underline">Forecast your spending and committments</span></a>
             <div style="margin-top:50px"></div>
