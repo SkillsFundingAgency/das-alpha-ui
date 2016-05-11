@@ -144,7 +144,7 @@
 
     function makeDefaultData() {
         return {
-            systemDate: moment().format('YYYY-MM-DD'),
+            systemDate: '2018-06-28',
             statementLines: [
                 {
                     date: moment().format('YYYY-MM-DD'),
