@@ -1,0 +1,149 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+//jQuery( document ).ready(function() {
+     //jQuery.validate(); 
+// });
+
+
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+<div class="breadcrumbs">
+    <ol role="breadcrumbs">
+<!--the breadcrumb for the inform pages is in the following template -->
+       {% include "includes/breadcrumbs/start-bread.html" %}
+    </ol>
+</div>
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" style="margin:0px 0 50px 0">Get access to your funds</h1>
+
+    <p>You can register for an account if you are a company that pays the apprenticeship levy.</p>
+    <p>Only employers who have a payroll of more than £3 million pay the apprenticeship levy.</p> <p>Find out more about <span class="looks-like-a-link-underline">the apprenticeship levy</span> and <span class="looks-like-a-link-underline">whether you need to create an account.</span> </p>
+    <p>You can use the account to: </p>
+    <ul class="list list-bullet">
+      <li>Get access to your funds</li>
+        <li>Find out how much you have to spend</li>
+        <li>Spend your funds on apprenticeships</li>
+        <li>Invite others in your organisation to view and spend funds</li>
+    </ul>
+     <h2 class="heading-medium">Before you start</h2>
+     <p>You will need to have access to the following information to access your funds:</p>
+      <ul class="list list-bullet">
+         <li>Knowledge of which PAYE schemes you want to associate with this account</li>
+        <li>A login to the Government Gateway accounts associated with the PAYE schemes (payroll will usually have this)</li>
+     </ul>
+      <div class="panel panel-border-wide">
+    <p>
+      You need to be authorised to access your government gateway account and enter financial details.
+    </p>
+  </div>
+
+    <div class="padder-top-x">
+        <a href="/{% include "includes/sprint-link.html" %}/register/detailsOne" class="button button-start">Start</a>
+    </div>
+    <div style="margin-top:50px"></div>
+    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
+<!-- {% include "includes/start-tabs.html" %} -->
+
+            </div>
+
+             <div class="column-one-third">
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Employer account</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="#">What is a "DAS account"</a>
+                          </li>
+                          <li>
+                            <a href="#">Which employers pay levy</a>
+                          </li>
+                          <li>
+                            <a href="#">How to view your "levy account"</a>
+                          </li>
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+</div>
+</main>
+
+<script>
+//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+
+
+
+$( document ).ready(function() {
+
+  // change the tabs themselves to active - should be in the above but isn't working because it's looking for a not li so I added this as a quick fix.
+
+  $("ul#tabs-nav li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs-nav li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#tabs-nav li.active").removeClass("active");
+            $("ul#tabs-nav li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+  $('ul.tabs-nav').each(function(){
+    // For each set of tabs, we want to keep track of
+    // which tab is active and its associated content
+    var $active, $content, $links = $(this).find('a');
+
+
+
+    // If the location.hash matches one of the links, use that as the active tab.
+    // If no match is found, use the first link as the initial active tab.
+    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+   // $active.addClass('active');
+   console.log($active)
+
+    $content = $($active[0].hash);
+
+    // Hide the remaining content
+    $links.not($active).each(function () {
+      $(this.hash).hide();
+    }); 
+
+    // Bind the click event handler
+    $(this).on('click', 'a', function(e){
+      // Make the old tab inactive.
+    //  $active.removeClass('active');
+      $content.hide();
+
+      // Update the variables with the new link and content
+    //  $active = $(this);
+      $content = $(this.hash);
+
+      // Make the tab active.
+     // $active.addClass('active');
+      $content.show();
+
+      // Prevent the anchor's default click action
+      e.preventDefault();
+    });
+  });
+
+
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block content %}
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-xlarge">Planning</h1>
+			<table>
+				<thead>
+					<tr>
+						<th>Standard</th>
+						<th class="numeric">Price</th>
+						<th class="numeric">Quantity</th>
+						<th class="numeric">Subtotal</th>
+						<th width='10%'></th>
+					</tr>
+				</thead>
+				<tbody data-bind='foreach: lines'>
+					<tr>
+						<td>
+							<select data-bind="options: standards, optionsText: 'Name', optionsCaption: 'Select....', value: standard" />
+						</td>
+						<td class='numeric' data-bind='with: standard'>
+							<span data-bind='text: formatCurrency(Price)'></span>
+						</td>
+						<td class='numeric'>
+							<input data-bind='visible: standard, value: quantity, valueUpdate: "afterkeydown"' />
+						</td>
+						<td class='numeric'>
+							<span data-bind='visible: standard, text: formatCurrency(subtotal())'></span>
+						</td>
+						<td>
+							<a href='#' data-bind='click: $parent.removeLine'>Remove</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div style="margin-top: 50px"></div>
+			<p class='numeric'>Total value: 
+				<span data-bind='text: formatCurrency(grandTotal())'></span>
+			</p>
+
+			<div style="margin-top: 50px"></div>
+			<p>
+				<a class="button" href="#" data-bind='click: addLine'>Add another standard</a>
+			</p>
+			<div style="margin-top: 150px">
+				<p>Yearly Payroll Amount: <input id="payroll" data-bind="textInput: payroll"/></p>
+				<p>
+					<a id="gotoForecast" class="button button-start" data-bind="attr: { 'href': 'forecast?data=' + save() + '&payroll=' + payroll() + '&planned=' + grandTotal() }", role="button">Forecast</a>
+				</p>
+				<input id="planned" type="hidden" data-bind="value: grandTotal()">
+				<input id="selected" type="hidden" data-bind="value: save()">
+			</div>
+		</div>
+		<div class="column-third">
+			<aside class="govuk-related-items">
+				<h2 class="heading-medium" style="margin-top: 10px">Links</h2>
+			</aside>
+		</div>
+	</div>
+	<script language="javascript" src="/public/javascripts/lockr.min.js"></script>
+	<script language="javascript" src="/public/javascripts/standards.js"></script>
+	<script language="javascript" src="/public/javascripts/planning.js"></script>
+{% endblock %}
+{% block script %}
+
+
+
+
+{% endblock %}

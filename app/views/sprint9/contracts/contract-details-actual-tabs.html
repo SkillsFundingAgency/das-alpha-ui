@@ -1,0 +1,218 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/contracts">Contracts</a></li>
+
+    </ol>
+
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+      <div class="grid-row">
+           <div class="column-two-thirds">
+          <h1 class="heading-large" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Aeronautical engineering</h1>
+        </div>
+      </div>
+      <div class="">
+             <div class="grid-row">
+           <div class="column-quarter">
+                      <h3 class="heading-small smallMarginBotom">Provider</h3>
+                      <p class="noMarginTop">Hackney skills & training Ltd</p>
+
+            </div>
+            <div class="column-quarter">
+                      <h3 class="heading-small smallMarginBotom">Contract reference</h3>
+                      <p class="noMarginTop">98HGS3F</p>
+            </div>
+
+        </div>
+       </div>
+
+<div class="js-tabs nav-tabs" style="margin-top:35px">
+  <ul class="tabs-nav" id="tabs-nav" role="tablist">
+    <li class="active">
+      <a href="#summary" role="tab" id="tab-summary">Apprenticeship overview</a>
+    </li>
+    <li class="">
+      <a href="#payments" role="tab" id="tab-payments">Payments</a>
+    </li>
+    <li class="">
+      <a href="#apprentices" role="tab" id="tab-apprentices">Apprentices</a>
+    </li>
+  </ul>
+</div>
+
+
+
+<div class="js-tab-content tab-content" style=>
+    <div class="js-tab-pane tab-pane" id="summary">
+
+          <div class="grid-row">
+           <div class="column-quarter" >
+               <h3 class="heading-small smallMarginBotom ">Apprenticeship level</h3>
+                      <p class="noMarginTop">Level 2 NVQ</p>
+          </div>
+           <div class="column-quarter">
+                <h3 class="heading-small smallMarginBotom ">Endpoint assessor</h3>
+                      <p class="noMarginTop">Pham Assessment Ltd</p>
+            </div>
+              <div class="column-quarter">
+                <h3 class="heading-small smallMarginBotom ">Training start date</h3>
+                      <p class="noMarginTop">20th July 2018</p>
+            </div>
+        </div>
+      </div>
+
+
+    <div class="js-tab-pane tab-pane" id="payments">
+
+          <div class="grid-row">
+            <div class="column-one-quarter">
+                <h2 class="heading-small">Date of first payment</h2>
+                <p style="margin-bottom:5px">20th August 2018</p>
+
+          </div>
+          </div>
+
+          <div class="grid-row">
+          <div class="column-one-quarter">
+                <h2 class="heading-small" >Total agreed</h2>
+                <p>£2,987<span class="robPence">.24</span></p> <!--style="color:#08c" -->
+                <!--p style="font-size:16px" >on 27th August 2018</p-->
+          </div>
+
+          <div class="column-one-quarter">
+                <h2 class="heading-small">Current total</h2>
+                <p>£2,987<span class="robPence">.24</span></p>
+                <!--p style="margin-top:0">Before 31 Jan 2019</p-->
+            </div>
+          </div>
+
+           <div class="grid-row">
+            <div class="column-one-quarter">
+                <h2 class="heading-small">Total paid</h2>
+                <p style="margin-bottom:5px">£0</p>
+                <p style="margin-top:0" class=" looks-like-a-link-underline">View details</p>
+
+          </div>
+          <div class="column-one-quarter">
+                <h2 class="heading-small">Left to pay</h2>
+                <p style="margin-bottom:5px">£2,987<span class="robPence">.24</span></p>
+                <p style="margin-top:0" class=" looks-like-a-link-underline">View details</p>
+
+          </div>
+          </div>
+    </div>
+
+
+    <div class="js-tab-pane tab-pane" id="apprentices">
+
+
+        <div class="grid-row">
+           <div class="column-half">
+            <p style="margin-top:20px" ><a href="../apprentice-view/individual-apprentice">Rob Edwards</a></p>
+            <p class="looks-like-a-link-underline">Mel O'Connor</p>
+            <p class="looks-like-a-link-underline">Carson Maayan</p>
+            <p class="looks-like-a-link-underline">Kim Martie</p>
+            <p class="looks-like-a-link-underline">Mattie Cheyenne</p>
+            <p class="looks-like-a-link-underline">Ziv Yoshi</p>
+            <p class="looks-like-a-link-underline">Lou Eden</p>
+          </div>
+          <div class="column-half">
+            <p class="looks-like-a-link-underline" style="margin-top:20px">David Jenkins</p>
+            <p class="looks-like-a-link-underline">Susan Hamazaki</p>
+            <p class="looks-like-a-link-underline">Eden Tierney</p>
+            <p class="looks-like-a-link-underline">Freddie Dikla</p>
+            <p class="looks-like-a-link-underline">September Logan</p>
+            <p class="looks-like-a-link-underline">Florence Hadar</p>
+            <p class="looks-like-a-link-underline">Greer Merlyn</p>
+          </div>
+       </div>
+    </div>
+</div>
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
+<script>
+//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+
+
+
+$(document).ready(function() {
+
+  // change the tabs themselves to active - should be in the above but isn't working because it's looking for a not li so I added this as a quick fix.
+
+  $("ul#tabs-nav li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs-nav li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#tabs-nav li.active").removeClass("active");
+            $("ul#tabs-nav li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+  $('ul.tabs-nav').each(function(){
+    // For each set of tabs, we want to keep track of
+    // which tab is active and its associated content
+    var $active, $content, $links = $(this).find('a');
+
+
+
+    // If the location.hash matches one of the links, use that as the active tab.
+    // If no match is found, use the first link as the initial active tab.
+    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+   // $active.addClass('active');
+   console.log($active)
+
+    $content = $($active[0].hash);
+
+    // Hide the remaining content
+    $links.not($active).each(function () {
+      $(this.hash).hide();
+    }); 
+
+    // Bind the click event handler
+    $(this).on('click', 'a', function(e){
+      // Make the old tab inactive.
+    //  $active.removeClass('active');
+      $content.hide();
+
+      // Update the variables with the new link and content
+    //  $active = $(this);
+      $content = $(this.hash);
+
+      // Make the tab active.
+     // $active.addClass('active');
+      $content.show();
+
+      // Prevent the anchor's default click action
+      e.preventDefault();
+    });
+  });
+
+
+</script>
+{% endblock %}
+

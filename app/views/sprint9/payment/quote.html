@@ -1,0 +1,148 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Apprenticeship Account</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/payment">Provider payments</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/payment/quote">Provider offer</a></li>
+    </ol>
+
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+              <h1 class="heading-large" style="margin:0px 0 50px 0">Review provider offers</h1>
+            <div>
+                <p>
+                  The following offers have been made by providers based on your requests. Please review and either approve, request an update or reject the quote.
+                </p>
+                <div class="robColumnDetails">
+
+                      <h2 class="looks-like-a-link heading-medium" style="margin: 0 0 5px 0"><a href="/{% include "includes/sprint-link.html" %}/payment/individual-offer">Hackney Skills and Training Ltd</a></h2>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date posted:&nbsp</h2 ><p style="display:inline; margin:0;">12th July 2018</p></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Standard:&nbsp</h2 ><p style="display:inline; margin:0;">Level 2 Aeronautical Engineer</p></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Description:&nbsp</h2 ><p style="display:inline; margin:0;">Level 2 aeronautical engineering for 7 apprentices based on telephone conversation with Mel Edwards.</p></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">HAL7637827</p></div>
+
+                  </div>
+                   <div class="robColumnDetails">
+                      <div ><h2 class="looks-like-a-link heading-medium" style="margin: 0 0 5px 0">Scunthorp College of Learning and Higher Education Skills Ltd</h2></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date posted:&nbsp</h2 ><p style="display:inline; margin:0;">24th August 2018</p></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Standard:&nbsp</h2 ><p style="display:inline; margin:0;">Level 3 Network Engineer</p></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Description:&nbsp</h2 ><p style="display:inline; margin:0;">Based on 5th May conversation with Gareth Edwards - for 1 apprentice, yet to be hired</p></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">SCL928170</p></div>
+                  </div>
+
+            </div>
+            <div style="margin-top:35px">
+
+              </div>
+            <div style="margin-top:50px"></div>
+          </div>
+
+          <div class="column-one-third">
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Provider management</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav"-->
+                          <!--li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/quote">Review provider "offers"</a>
+                          </li-->
+                          <!--li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/paymentplan">Add a new payment plan (OUT?)</a>
+                          </li>
+                          <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/makepayment">Make a payment</a>
+                          </li>
+                           <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/reviewpayments">Review and amend regular payments</a>
+                          </li>
+                            <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/spendingcommitments">View a summary of your spending commitments</a>
+                          </li>
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+        </div>
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+$( document ).ready(function() {
+
+  // change the tabs themselves to active - should be in the above but isn't working because it's looking for a not li so I added this as a quick fix.
+
+  $("ul#tabs-nav li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs-nav li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#tabs-nav li.active").removeClass("active");
+            $("ul#tabs-nav li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+  $('ul.tabs-nav').each(function(){
+    // For each set of tabs, we want to keep track of
+    // which tab is active and its associated content
+    var $active, $content, $links = $(this).find('a');
+
+
+
+    // If the location.hash matches one of the links, use that as the active tab.
+    // If no match is found, use the first link as the initial active tab.
+    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+   // $active.addClass('active');
+   console.log($active)
+
+    $content = $($active[0].hash);
+
+    // Hide the remaining content
+    $links.not($active).each(function () {
+      $(this.hash).hide();
+    }); 
+
+    // Bind the click event handler
+    $(this).on('click', 'a', function(e){
+      // Make the old tab inactive.
+    //  $active.removeClass('active');
+      $content.hide();
+
+      // Update the variables with the new link and content
+    //  $active = $(this);
+      $content = $(this.hash);
+
+      // Make the tab active.
+     // $active.addClass('active');
+      $content.show();
+
+      // Prevent the anchor's default click action
+      e.preventDefault();
+    });
+  });
+
+
+</script>
+
+{% endblock %}
+
