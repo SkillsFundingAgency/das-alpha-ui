@@ -21,7 +21,10 @@
             var lines = [];
 
             for(var i = 0; i < self.declarations().length; i++) {
-                lines.push(self.declarations()[i].createStatementLine());
+                var declarationLines = self.declarations()[i].createStatementLines();
+                for(var j = 0; j < declarationLines.length; j++) {
+                    lines.push(declarationLines[j]);
+                }
             }
 
             for(var i = 0; i < self.commitments().length; i++) {
@@ -115,23 +118,35 @@
         self.date = ko.observable(storedData.date);
         self.amount = ko.observable(storedData.amount);
         self.description = ko.computed(function() {
-            return 'Levy declaration ' + moment(self.date()).format('MMMM YYYY');
+            return 'Skills Funding Agency ' + moment(self.date()).format('MMMM YYYY') + ' Payment';
         });
 
 
-        self.createStatementLine = function() {
+        self.createStatementLines = function() {
             var amount = parseInt(self.amount());
             if(isNaN(amount)){
                 amount=0;
             }
-            return {
-                date: self.date(),
-                displayDate: moment(self.date()).format('Do MMMM YYYY'),
-                description: self.description(),
-                amount: amount,
-                displayCredit: amount > 0 ? '£' + amount.format() : '',
-                displayDebit: amount < 0 ? '£' + amount.format() : ''
-            };
+            var topup = amount * 0.1;
+
+            return [
+                    {
+                        date: self.date(),
+                        displayDate: moment(self.date()).format('Do MMMM YYYY'),
+                        description: 'Skills Funding Agency ' + moment(self.date()).format('MMMM YYYY') + ' Payment',
+                        amount: amount,
+                        displayCredit: '£' + amount.format(),
+                        displayDebit: ''
+                    },
+                    {
+                        date: self.date(),
+                        displayDate: moment(self.date()).format('Do MMMM YYYY'),
+                        description: 'SFA 10% Bonus Funds ' + moment(self.date()).format('MMMM YYYY'),
+                        amount: topup,
+                        displayCredit: '£' + topup.format(),
+                        displayDebit: ''
+                    }
+                ]
         }
     };
     var commitmentViewModel = function(storedData){
@@ -164,8 +179,8 @@
                     displayDate: date.format('Do MMMM YYYY'),
                     description: 'Payment to provider ' + self.provider(),
                     amount: amount,
-                    displayCredit: amount > 0 ? '£' + amount.format() : '',
-                    displayDebit: amount < 0 ? '£' + amount.format() : ''
+                    displayCredit: '',
+                    displayDebit: '£' + amount.format()
                 });
 
                 date.add(1,'M');
@@ -225,28 +240,29 @@
             systemDate: '2018-08-20',
             declarations: [
 
-                {date:'2017-02-10',amount:649},
-                {date:'2017-03-10',amount:649},
-                {date:'2017-04-10',amount:649},
-                {date:'2017-05-10',amount:649},
-                {date:'2017-06-10',amount:649},
-                {date:'2017-07-10',amount:649},
-                {date:'2017-08-10',amount:649},
-                {date:'2017-09-10',amount:649},
-                {date:'2017-10-10',amount:649},
-                {date:'2017-11-10',amount:649},
-                {date:'2017-12-10',amount:649},
-                {date:'2018-01-10',amount:674},
-                {date:'2018-02-10',amount:674},
-                {date:'2018-03-10',amount:674},
-                {date:'2018-04-10',amount:674},
-                {date:'2018-05-10',amount:674},
-                {date:'2018-06-10',amount:674},
-                {date:'2018-07-10',amount:674},
-                {date:'2018-08-10',amount:674}
+                {date:'2017-02-10',amount:652},
+                {date:'2017-03-10',amount:652},
+                {date:'2017-04-10',amount:652},
+                {date:'2017-05-10',amount:652},
+                {date:'2017-06-10',amount:652},
+                {date:'2017-07-10',amount:652},
+                {date:'2017-08-10',amount:652},
+                {date:'2017-09-10',amount:652},
+                {date:'2017-10-10',amount:652},
+                {date:'2017-11-10',amount:652},
+                {date:'2017-12-10',amount:652},
+                {date:'2018-01-10',amount:704},
+                {date:'2018-02-10',amount:704},
+                {date:'2018-03-10',amount:704},
+                {date:'2018-04-10',amount:704},
+                {date:'2018-05-10',amount:704},
+                {date:'2018-06-10',amount:704},
+                {date:'2018-07-10',amount:704},
+                {date:'2018-08-10',amount:704}
             ],
             commitments: [
-                {provider:'Hackney Skills and Training Ltd',startDate:'2017-08-15',endDate:'2020-08-15',monthlyPayment:568}
+                {provider:'Hackney Skills and Training Ltd',startDate:'2017-08-15',endDate:'2020-08-15',monthlyPayment:379},
+                {provider:'Lots of skills Ltd',startDate:'2017-10-08',endDate:'2019-10-08',monthlyPayment:347}
             ],
             providers: [
                 {providerName:"Hackney Skills and Training Ltd",reference:"98HGS3F", standards:"14 Aerospace engineering standards"},
