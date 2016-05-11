@@ -31,7 +31,7 @@
                 }
             }
 
-            return lines.sort(function(a,b){return new Date(a.date) - new Date(b.date);});
+            return lines.sort(function(a,b){return new Date(b.date) - new Date(a.date);});
         });
         self.displayBalance = ko.computed(function () {
             var total = 0;
