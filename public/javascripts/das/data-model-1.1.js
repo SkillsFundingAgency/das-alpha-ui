@@ -95,7 +95,7 @@
         self.calculateRunningTotal = function(toLineIndex) {
             var runningTotal = 0;
             var lines = self.statementLines();
-            for(var i = 0; i <= toLineIndex(); i++) {
+            for(var i = lines.length - 1; i >= toLineIndex(); i--) {
                 runningTotal += lines[i].amount;
             }
             return "£" + runningTotal.format();
