@@ -209,11 +209,39 @@
     function storeData(viewModel) {
         var data = {
             systemDate: viewModel.systemDate(),
+            declarations: convertDeclarations(viewModel),
+            commitments: convertCommitments(viewModel),
             providers: convertProviders(viewModel)
         };
 
         localStorage.dasData = JSON.stringify(data);
         alert('Saved');
+    }
+    function convertDeclarations(viewModel) {
+        var vmDeclarations = viewModel.declarations();
+        var declarations = [];
+        for(var i = 0; i < vmDeclarations.length; i++) {
+            var declaration = vmDeclarations[i];
+            declarations.push({
+                date: declaration.date(),
+                amount: declaration.amount()
+            });
+        }
+        return declarations;
+    }
+    function convertCommitments(viewModel) {
+        var vmCommitments = viewModel.commitments();
+        var commitments = [];
+        for(var i = 0; i < vmCommitments.length; i++) {
+            var commitment = vmCommitments[i];
+            commitments.push({
+                provider: commitment.provider(),
+                startDate: commitment.startDate(),
+                endDate: commitment.endDate(),
+                monthlyPayment: commitment.monthlyPayment()
+            });
+        }
+        return commitments;
     }
     function convertProviders(viewModel) {
         var vmProviders = viewModel.providers();
@@ -232,7 +260,9 @@
         if(!localStorage.dasData) {
             return makeDefaultData();
         }
-        return JSON.parse(localStorage.dasData);
+        var data = JSON.parse(localStorage.dasData);
+        console.log(data);
+        return data;
     }
 
     function makeDefaultData() {
