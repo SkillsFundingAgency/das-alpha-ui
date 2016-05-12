@@ -21,22 +21,22 @@
 
 <div class="grid-row">
            <div class="column-two-thirds">
-  <h1 class="heading-xlarge" style="margin:0px 0 50px 0">Forecast your cashflow</h1>
+  <h1 class="heading-xlarge" style="margin:0px 0 50px 0">Payroll figures</h1>
+  <p>Tell us your average monthly payroll over the next 12 months</p>
 
-    <p>We can help you estimate how much you have left to spend on apprenticeships in the future.</p>
-    <h2 class="heading-medium">Before you start</h2>
-    <p>You will need the following</p>
-    <ul class="list list-bullet">
-    <li>The amount of time you want to forecast</li>
-    <li>Your monthly payroll forecasts for the future period. Either a monthly average or a per month figure. </li>
+    <form action="cashflow" >
+      <fieldset>
+          <div class="form-group">
+          <legend class="visuallyhidden">payroll figures</legend>
+          </div>
+          <div class="form-group">
+              <label class="form-label" for="password">Average payroll</label>
+              <input class="form-control" id="averagefigure" type="text" value="£">
+          </div>
+        </fieldset>
+        <input class="button" id="calculate" type="submit" value="Calculate">
 
-  </ul>
-
-
-    <div style="margin-top:50px"></div>
-    <div class="padder-top-x">
-        <a href="/{% include "includes/sprint-link.html" %}/forecast/dates" class="button button-start">Start</a>
-    </div>
+    </form>
     <div style="margin-top:50px"></div>
     <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
 <!-- {% include "includes/start-tabs.html" %} -->

@@ -21,22 +21,33 @@
 
 <div class="grid-row">
            <div class="column-two-thirds">
-  <h1 class="heading-xlarge" style="margin:0px 0 50px 0">Forecast your cashflow</h1>
+  <h1 class="heading-xlarge" style="margin:0px 0 50px 0">Forecast duration</h1>
+            <form action="figures-questions">
+                <fieldset>
+                  <h2 class="heading-medium">How long would you like to forecast for?</h2>
+                  <legend class="visuallyhidden">Forecast duration</legend>
+                  <div class="form-group">
+                  <label class="block-label" for="radio1">
+                    <input id="radio1" type="radio" name="radio-group" value="6-months">
+                    6 months
+                  </label>
+                  <label class="block-label" for="radio2">
+                    <input id="radio2" type="radio" name="radio-group" value="12-months">
+                    12 months
+                  </label>
+                   <label class="block-label" for="radio3">
+                    <input id="radio3" type="radio" name="radio-group" value="18-months">
+                    18 months
+                  </label>
+                  <label class="block-label" for="radio4">
+                    <input id="radio4" type="radio" name="radio-group" value="24-months">
+                    24 months
+                  </label>
+                  </div>
+                </fieldset>
+                  <input class="button" id="saveAndContinue" type="submit" value="Save and continue">
+              </form>
 
-    <p>We can help you estimate how much you have left to spend on apprenticeships in the future.</p>
-    <h2 class="heading-medium">Before you start</h2>
-    <p>You will need the following</p>
-    <ul class="list list-bullet">
-    <li>The amount of time you want to forecast</li>
-    <li>Your monthly payroll forecasts for the future period. Either a monthly average or a per month figure. </li>
-
-  </ul>
-
-
-    <div style="margin-top:50px"></div>
-    <div class="padder-top-x">
-        <a href="/{% include "includes/sprint-link.html" %}/forecast/dates" class="button button-start">Start</a>
-    </div>
     <div style="margin-top:50px"></div>
     <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
 <!-- {% include "includes/start-tabs.html" %} -->
