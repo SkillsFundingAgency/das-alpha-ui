@@ -2169,14 +2169,19 @@ input[type=number] {
 }
 
 #navigation-primary {
-  background-color: #CCC;
+  /* background-color:#CCC; */
+  margin-top: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #bfc1c3;
   position: relative;
   width: 100%;
   min-height: 45px;
 }
 
 #navigation-secondary {
-  background-color: #DDE0E2;
+  /* background-color:#DDE0E2; */
+  background-color: #fff;
+  border-bottom: 1px solid #bfc1c3;
   position: relative;
   width: 100%;
   min-height: 35px;

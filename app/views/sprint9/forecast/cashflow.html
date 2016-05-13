@@ -24,18 +24,23 @@
 
   <div class="grid-row">
            <div class="column-two-thirds">
-            <h1 class="heading-large" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Cashflow forecast</h1>
+            <h1 class="heading-xlarge" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Cashflow forecast</h1>
  
             <!--h2 class="heading-large" style="">Available apprenticeship funds</h2>
             <!--p>Forecast how much you have to spend with our <a href="#">budget calculator</a></p-->
             <!--h2 class="heading-large" style="">Cashflow forecast</h2-->
-            <p style=margin-top:35px>The chart shows the amount you currently have left to spend in your apprenticeship account.</p>
-            <p>Committed spend, potential loss due to expiry and expected funds over the next twelve months are all included</p>
+            <p class="first-para-spacing">The chart shows the estimated amount you have left to spend in your chosen time period.</p>
+            <p>Included in the time period:</p>
+            <ul class="list list-bullet">
+                  <li>committed spend</li>
+                  <li>any potential loss due to expiry</li>
+                  <li>expected funds</li>
+              </ul>
 
-            <div class="graphGoesHere"><canvas id="robsChart" width="500" height="300"></canvas></div>
+            <!--div class="graphGoesHere"><canvas id="robsChart" width="500" height="400"></canvas></div-->
 
             <div>
-             <table>
+             <table class="table-19-font">
                   <thead>
                     <tr>
                       <th scope="col">Date</th>
@@ -109,7 +114,7 @@
             <div style="margin-top:50px"></div>
           </div>
 
-{% include "includes/side-bars/funds-main.html" %}
+
         </div>
 
 

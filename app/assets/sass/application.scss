@@ -35,6 +35,9 @@
 }
 }
 
+.first-para-spacing
+
+{ }
 
 .noMarginTop {
     margin-top:0px !important;
@@ -154,28 +157,33 @@
  * nav and logo styles. 
  */
 
-.navigation
-{
+.navigation  {
+  z-index: 200;
 
-z-index: 200;
+  }
+
+.right-info {
 
 }
 
 
  #navigation-primary {
-  background-color:#CCC;
+  /* background-color:#CCC; */
+    margin-top: 20px;
+  background-color:#fff;
+   border-bottom: 1px solid #bfc1c3;
     position: relative;
     width: 100%;
     min-height:45px;
-
   }
 
  #navigation-secondary {
-  background-color:#DDE0E2;
+  /* background-color:#DDE0E2; */
+   background-color:#fff;
+   border-bottom: 1px solid #bfc1c3;
     position: relative;
     width: 100%;
     min-height:35px;
-
   }
 
 #navigation-primary ul {
@@ -186,24 +194,27 @@ z-index: 200;
   padding-top: 6px;
  }
 
-#navigation-primary li
-{ list-style:none; list-style-image: none; display: inline; margin:12px;  }
+#navigation-primary li {
+  list-style:none; list-style-image: none; display: inline; margin:12px;  }
 
 #navigation-secondary li
 { list-style:none; list-style-image: none; display: inline; margin:12px; font-size:16px; }
 
 /* this is  like this to allow jquery to change the class easily, when the nav moves.*/
-.top_nav a:link {text-decoration: none; color:#0b0c0c; } 
-.works_nav a:link {text-decoration: none; color:#0b0c0c; } 
-.locations_nav a:link {text-decoration: none; color:#0b0c0c; } 
-.contact_nav a:link {text-decoration: none; color:#0b0c0c; } 
+.top_nav a:link {text-decoration: none; color:#0b0c0c; }
+.works_nav a:link {text-decoration: none; color:#0b0c0c; }
+.locations_nav a:link {text-decoration: none; color:#0b0c0c; }
+.contact_nav a:link {text-decoration: none; color:#0b0c0c; }
 
 .highlight_nav a:link{text-decoration: none; color:black; }
 
 
-#navigation-primary a:visited, #navigation-secondary a:visited {text-decoration: none; color:#0b0c0c; } 
-#navigation-primary a:active, #navigation-secondary a:active  {text-decoration: none;color:#0b0c0c; } 
+#navigation-primary a:visited, #navigation-secondary a:visited {text-decoration: none; color:#0b0c0c; }
+#navigation-primary a:active, #navigation-secondary a:active  {text-decoration: none;color:#0b0c0c; }
 #navigation-primary a:hover, #navigation-secondary a:active {text-decoration: none; color: #0b0c0c;}
+
+
+
 
 @media (max-width: 640px) {
 .rjHideOnTablet {
