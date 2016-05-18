@@ -8,15 +8,14 @@
 
 
 <style>
-  .people-nav, .learners-nav {
+  .financial-nav, .nav-payments {
     {% include "includes/nav-on-state-css.html" %}
   }
 </style>
 
-
 <main id="content" role="main">
 {% include "includes/phase_banner_alpha.html" %}
-{% include "includes/secondary-nav-people.html" %}
+{% include "includes/secondary-nav-finance.html" %}
 
 
   <div class="breadcrumbs">
@@ -34,7 +33,7 @@
 
   <div class="grid-row">
            <div class="column-two-thirds">
-              <h1 class="heading-xlarge" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Apprentice details</h1>
+              <h1 class="heading-xlarge" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Hackney Skills and Training Ltd</h1>
             <div>
                 <p>
                   Here are the details of your apprentice. You can <a href="">update the apprenticeship</a> to take account of a changes in circumstances.
@@ -141,42 +140,14 @@
 
           
             </div>
-            <div style="margin-top:35px">
+
 
               </div>
-            <div style="margin-top:50px"></div>
+
           </div>
 
           <div class="column-one-third">
-                      <aside class="related">
-                        <h2 class="heading-medium" style="margin-top:10px">Update apprenticeship</h2>
-                        <p>You can update key details, payment methods, pause or stop this apprenticeship </p>
-
-                    <form action="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship">
-                        <div style="margin-top:20px;"><input class="button" id="updateDetails" type="submit" value="Update apprenticeship"></div> 
-                    </form>
-
-                        <!--h2 class="heading-medium" style="margin-top:10px">Provider management</h2>
-                        <nav role="navigation">
-                      <ul class="robSideNav"-->
-                          <!--li>
-                            <a href="/{% include "includes/sprint-link.html" %}/payment/quote">Review provider "offers"</a>
-                          </li-->
-                          <!--li>
-                            <a href="/{% include "includes/sprint-link.html" %}/payment/paymentplan">Add a new payment plan (OUT?)</a>
-                          </li>
-                          <li>
-                            <a href="/{% include "includes/sprint-link.html" %}/payment/makepayment">Make a payment</a>
-                          </li>
-                           <li>
-                            <a href="/{% include "includes/sprint-link.html" %}/payment/reviewpayments">Review and amend regular payments</a>
-                          </li>
-                            <li>
-                            <a href="/{% include "includes/sprint-link.html" %}/payment/spendingcommitments">View a summary of your spending commitments</a>
-                          </li>
-                        </ul>
-                           </nav-->
-                    </aside>
+                     
             </div>
         </div>
 </main>

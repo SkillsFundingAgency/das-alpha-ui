@@ -7,8 +7,15 @@
 {% block content %}
 
 
+<style>
+  .financial-nav, .nav-payments {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
 <main id="content" role="main">
 {% include "includes/phase_banner_alpha.html" %}
+{% include "includes/secondary-nav-finance.html" %}
 
 
   <div class="breadcrumbs">
@@ -72,7 +79,8 @@
                             <td class="numeric" data-bind="text: displayCredit"></td>
                             <td class="numeric negative" data-bind="text: displayDebit">-</td>
                             <td class="numeric" data-bind="text: $parent.calculateRunningTotal($index)"></td>
-                            <td class="looks-like-a-link-underline">View</td>
+                            <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/debit-details">View</td>
+                            <!--td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/credit-details">View</td-->
                         </tr>
                       <!--<tr>
                         <td>20th July 2018</td>

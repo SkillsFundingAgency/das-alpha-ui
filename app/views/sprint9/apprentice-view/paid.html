@@ -7,8 +7,16 @@
 {% block content %}
 
 
+<style>
+  .people-nav, .learners-nav {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
 <main id="content" role="main">
 {% include "includes/phase_banner_alpha.html" %}
+{% include "includes/secondary-nav-people.html" %}
 
 
   <div class="breadcrumbs">

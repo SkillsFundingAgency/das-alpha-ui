@@ -7,8 +7,15 @@
 {% block content %}
 
 
+<style>
+  .financial-nav, .nav-expiring {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
 <main id="content" role="main">
 {% include "includes/phase_banner_alpha.html" %}
+{% include "includes/secondary-nav-finance.html" %}
 
 
   <div class="breadcrumbs">

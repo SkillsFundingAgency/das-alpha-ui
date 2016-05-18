@@ -55,12 +55,13 @@
 }
 
 .rj-number-alert h2 {
- padding-left: 19px;
+  font-size:48px;
+ text-align: center;
  padding-top: 18px;
 }
 
 .single-number h2 {
- padding-left: 30px;
+  text-align: center;
  padding-top: 18px;
 }
 
@@ -71,12 +72,13 @@ vertical-align: top;
 }
 
 
-
 .rj-alert-copy-inner {
   display:block;
   vertical-align: top;
   width:100%;
 }
+
+
 
 
 // end of feed/to do list
@@ -200,8 +202,7 @@ vertical-align: top;
     }
 .rjSearchButton {
     margin: 5px 0 0 0;
-}
-
+  }
 }
 
 
@@ -211,14 +212,28 @@ vertical-align: top;
  * nav and logo styles. 
  */
 
+.nav-selected {
+  background-color: #ffbf47;
+    outline: 3px solid #ffbf47;
+}
+
+
 .navigation  {
   z-index: 200;
+  }
+
+
+.left-info {
 
   }
 
 .right-info {
-
+    float: right;
+    margin-top:0 !important;
+ 
 }
+
+
 
 
  #navigation-primary {
@@ -265,8 +280,18 @@ vertical-align: top;
 #navigation-primary a:active, #navigation-secondary a:active  {text-decoration: none;color:#0b0c0c; }
 #navigation-primary a:hover, #navigation-secondary a:active {text-decoration: none; color: #0b0c0c;}
 
+@media (max-width: 640px) {
 
+.right-info  {
+  float:none;
+  }
 
+#navigation-primary li {
+  list-style:none; list-style-image: none; display: inline; margin:12px 6px 15px 6px; font-size:16px; font-weight:400; 
+  }
+}
+
+// end of navigation
 
 @media (max-width: 640px) {
 .rjHideOnTablet {

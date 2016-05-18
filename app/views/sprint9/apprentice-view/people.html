@@ -6,16 +6,16 @@
 
 {% block content %}
 
-
 <style>
-  .financial-nav, .nav-forecast {
+  .people-nav {
     {% include "includes/nav-on-state-css.html" %}
   }
 </style>
 
+
 <main id="content" role="main">
 {% include "includes/phase_banner_alpha.html" %}
-{% include "includes/secondary-nav-finance.html" %}
+{% include "includes/secondary-nav-people.html" %}
 
 
   <div class="breadcrumbs">
@@ -31,23 +31,72 @@
 
   <div class="grid-row">
            <div class="column-two-thirds">
-            <h1 class="heading-xlarge" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Cashflow forecast</h1>
- 
-            <!--h2 class="heading-large" style="">Available apprenticeship funds</h2>
-            <!--p>Forecast how much you have to spend with our <a href="#">budget calculator</a></p-->
-            <!--h2 class="heading-large" style="">Cashflow forecast</h2-->
-            <p class="first-para-spacing">The table shows the estimated amount you have left to spend over time.</p>
-            <p>Included in the calculations are:</p>
-            <ul class="list list-bullet">
-                  <li>committed spends</li>
-                  <li>any potential losses due to expiry</li>
-                  <li>expected funds</li>
+            <h1 class="heading-xlarge" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}People</h1>
+            <p class="lede">You can:</p>
+
+
+            <p><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/">View your apprentice learners</a></p>
+            <p class="looks-like-a-link-underline">Recruit an apprentice</p>
+
+
+            <!--p class="">Apprentices, including:</p>
+             <ul class="list list-bullet">
+                  <li>updating their information</li>
+                  <li>the provider delivering the training</li>
+                  <li>spend</li>
               </ul>
 
-            <!--div class="graphGoesHere"><canvas id="robsChart" width="500" height="400"></canvas></div-->
+            <p class="">Training providers, including:</p>
+             <ul class="list list-bullet">
+                  <li>offers</li>
+                  <li>contracts</li>
+                  <li>finding a new training provider</li>
+              </ul-->
+
+            <!--div class="">
+                <p>Available funds have been forecast by a member of your organisation using the <a href="#">forecasting tool.</a> Please ensure that you keep the assumptions up to date.</p>
+                <h2 class="heading-small" >Forecast of available funds:</h2>
+                <h2 class="rjCashMoney" style="color:#08c">£5,000</span></h2>
+                <p style="margin-top:0">until 21 Jan 2019</p>
+            </div--> 
+            <div>
+            <!--div class="home-figures">
+                <h2 class="heading-small" >Your current balance is:</h2>
+                <h2 class="bold-xlarge" >£5,000</h2> <!--style="color:#08c" -->
+                <!--p style="font-size:16px" >on 27th August 2018</p>
+            </div-->
+              <!--div class="home-figures" style="">
+                <h2 class="heading-small">At risk of losing:</h2>
+                <h2 class="rjCashMoney">£15,000</h2>
+                <p style="margin-top:0">Before 31 Jan 2019</p>
+              </div> 
+
+            <div class="home-figures" style="">
+                <h2 class="heading-small">Total committed spending:</h2>
+                <h2 class="rjCashMoney">£65,000</h2>
+                <p style="margin-top:0">until 21 Jan 2021</p>
+            </div> 
+            <div class="home-figures" style="">
+                <h2 class="heading-small">Forecasted income:</h2>
+                <h2 class="rjCashMoney">£120,000</h2>
+                <p style="margin-top:0">Until 31 Jan 2019</p>
+            </div--> 
+          </div>
+
+            <!--h2 class="heading-large" style="">Available apprenticeship funds</h2>
+            <!--p>Forecast how much you have to spend with our <a href="#">budget calculator</a></p-->
+
+            <!--h2 class="heading-large" style="">Content</h2>
+            <p style=margin-top:35px>The figures and chart below show you how much you have left to spend on apprenticeships - taking into account spending, fund expiry and the payments from the SFA.</p>
+
+            <h2 class="heading-large" style="">Cashflow forecast</h2>
+            <p style=margin-top:35px>The figures and chart below show you how much you have left to spend on apprenticeships - taking into account spending, fund expiry and the payments from the Skills Funding Agency.</p>
+
+
+            <div class="graphGoesHere"><canvas id="robsChart" width="500" height="300"></canvas></div>
 
             <div>
-             <table class="table-19-font">
+             <table>
                   <thead>
                     <tr>
                       <th scope="col">Date</th>
@@ -106,7 +155,7 @@
                   </tbody>
               </table>
             </div>
-            <p style="margin-top:20px"><a href="index" >Update your forecast</p></a>
+            <p style="margin-top:20px"><a href="balanceDefault" >Update your forecast</p></a-->
 
                 <!--p>
                   The amount of money you currently have to spend on apprentices is made up of
@@ -121,7 +170,7 @@
             <div style="margin-top:50px"></div>
           </div>
 
-
+{% include "includes/side-bars/funds-main.html" %}
         </div>
 
 

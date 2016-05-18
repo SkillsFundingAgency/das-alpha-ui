@@ -5,7 +5,7 @@
         // Properties
         self.systemDate = ko.observable(storedData.systemDate);
         self.displaySystemDate = ko.computed(function() {
-            return moment(self.systemDate()).format('Do MMMM YYYY');
+            return moment(self.systemDate()).format('DD MMMM YYYY');
         });
 
         self.quickCreateStartDate = ko.observable('2016-08-10');
@@ -38,7 +38,7 @@
         });
         self.commitmentsEndDate = ko.computed(function() {
             var commitments = self.commitments().sort(function(a,b){return new Date(b.endDate) - new Date(a.endDate);});
-            return moment(commitments[0].endDate()).format('Do MMMM YYYY');
+            return moment(commitments[0].endDate()).format('DD MMMM YYYY');
         });
         self.commitedSpending = ko.computed(function() {
             var yearStart = moment(self.systemDate());
@@ -63,8 +63,8 @@
                 var date = moment(line.date);
                 if(date.isAfter(yearEnd)) {
                     aggregations.push({
-                        from: yearStart.format('Do MMMM YYYY'),
-                        to: yearEnd.format('Do MMMM YYYY'),
+                        from: yearStart.format('DD MMMM YYYY'),
+                        to: yearEnd.format('DD MMMM YYYY'),
                         total: '£' + yearTotal.format()
                     });
 
@@ -75,7 +75,7 @@
                 yearTotal += line.amount * -1;
             }
             aggregations.push({
-                from: yearStart.format('Do MMMM YYYY'),
+                from: yearStart.format('DD MMMM YYYY'),
                 to: self.commitmentsEndDate(),
                 total: '£' + yearTotal.format()
             });
@@ -178,7 +178,7 @@
             return [
                     {
                         date: self.date(),
-                        displayDate: moment(self.date()).format('Do MMMM YYYY'),
+                        displayDate: moment(self.date()).format('DD MMMM YYYY'),
                         description: 'Skills Funding Agency ' + moment(self.date()).format('MMMM YYYY') + ' Payment',
                         amount: amount,
                         displayCredit: '£' + amount.format(),
@@ -186,7 +186,7 @@
                     },
                     {
                         date: self.date(),
-                        displayDate: moment(self.date()).format('Do MMMM YYYY'),
+                        displayDate: moment(self.date()).format('DD MMMM YYYY'),
                         description: 'SFA 10% Bonus Funds ' + moment(self.date()).format('MMMM YYYY'),
                         amount: topup,
                         displayCredit: '£' + topup.format(),
@@ -222,7 +222,7 @@
 
                 lines.push({
                     date: date.format('YYYY-MM-DD'),
-                    displayDate: date.format('Do MMMM YYYY'),
+                    displayDate: date.format('DD MMMM YYYY'),
                     description: 'Payment to provider ' + self.provider(),
                     amount: amount,
                     displayCredit: '',
