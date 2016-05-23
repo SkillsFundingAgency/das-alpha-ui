@@ -2051,10 +2051,11 @@ input[type=number] {
 }
 
 .rj-alert-wrapper {
-  border: 1px solid #bfc1c3;
+  border-left: 3px solid #005EA5;
   width: 100%;
-  height: 80px;
+  min-height: 100px;
   margin-top: 25px;
+  background-color: #eee;
 }
 
 .rj-number-alert {
