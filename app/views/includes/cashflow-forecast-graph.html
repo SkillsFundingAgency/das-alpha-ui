@@ -1,0 +1,139 @@
+$(document).ready(function() {
+//chart data - static for now
+var chartData = {
+    labels: ["Sept 2018", "Oct 2018", "Nov 2018", "Dec 2018", "Jan 2019", "Feb 2019", "March 2019", "April 2019", "May 2019", "June 2019", "July 2019", "August 2019"],
+    datasets: [
+/*
+             {
+            label: "",
+            fillColor: "rgba(204,0,0,1)",
+            strokeColor: "rgba(204,0,0,0)",
+            pointColor: "rgba(204,0,0,0)",
+            pointStrokeColor: "rgba(204,0,0,0)",
+            pointHighlightFill: "rgba(204,0,0,0)",
+            pointHighlightStroke: "rgba(204,0,0,0)",
+            data: [0, 2740, -6028, -8096, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+        }, 
+*/
+       
+        {
+            label: "Available Funds",
+            fillColor: "rgba(132,191,202,0.4)",
+            strokeColor: "rgba(9,127,150,1)",
+            pointColor: "rgba(9,127,150,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [5792, 2740, 6028, 8096, 520, 6789, 9898, 12400, 12590, 13002, 11324, 8000, 0 ]
+        },
+
+
+    ]
+};
+
+// chart options - static for now
+var chartOptions = {
+
+  responsive: true,
+
+      ///Boolean - Whether grid lines are shown across the chart
+    scaleShowGridLines : false,
+
+    //String - Colour of the grid lines
+    scaleGridLineColor : "rgba(9,127,150,1)",
+
+    //Number - Width of the grid lines
+    scaleGridLineWidth : 1,
+
+    //Boolean - Whether to show horizontal lines (except X axis)
+    scaleShowHorizontalLines: true,
+
+    //Boolean - Whether to show vertical lines (except Y axis)
+    scaleShowVerticalLines: false,
+
+    //Boolean - Whether the line is curved between points
+    bezierCurve : true,
+
+    //Number - Tension of the bezier curve between points
+    bezierCurveTension : 0.1,
+
+    //Boolean - Whether to show a dot for each point
+    pointDot : true,
+
+    //Number - Radius of each point dot in pixels
+    pointDotRadius : 4,
+
+    //Number - Pixel width of point dot stroke
+    pointDotStrokeWidth : 1,
+
+    //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+    pointHitDetectionRadius : 20,
+
+    //Boolean - Whether to show a stroke for datasets
+    datasetStroke : true,
+
+    //Number - Pixel width of dataset stroke
+    datasetStrokeWidth : 4,
+
+    //Boolean - Whether to fill the dataset with a colour
+    datasetFill : false,
+
+    tooltipTemplate: "<%= datasetLabel %> - <%= value.toLocaleString() %>",
+
+    scaleLabel:
+    function(label){return  '£' + label.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");},
+
+
+
+};
+
+
+Chart.types.Line.extend({
+    name: "LineAlt",
+    draw: function () {
+        Chart.types.Line.prototype.draw.apply(this, arguments);
+
+        var ctx = this.chart.ctx;
+        var scale = this.scale;
+
+        ctx.save();
+
+         ctx.fillStyle = this.datasets[0].fillColor;
+        ctx.beginPath();
+        ctx.moveTo(scale.calculateX(0), scale.calculateY(0))
+        this.datasets[0].points.forEach(function (point) {
+            ctx.lineTo(point.x, point.y);
+        })
+        ctx.closePath();
+        ctx.fill();
+/*
+        ctx.fillStyle = this.datasets[1].fillColor;
+        ctx.beginPath();
+        ctx.moveTo(scale.calculateX(0), scale.calculateY(0))
+        this.datasets[1].points.forEach(function (point) {
+            ctx.lineTo(point.x, point.y);
+        })
+        ctx.closePath();
+        ctx.fill();
+*/
+
+  
+        ctx.restore();
+    }
+
+
+});
+
+
+
+
+var ctx = document.getElementById("robsChart").getContext("2d");
+var availableChart = new Chart(ctx).LineAlt(chartData, chartOptions);
+
+// changes color of certain points on the chart
+// availableChart.datasets[0].points[2].fillColor =  "red";
+// availableChart.datasets[0].points[3].fillColor =  "red";
+//availableChart.update();
+
+
+});
