@@ -216,6 +216,12 @@ vertical-align: top;
  * nav and logo styles. 
  */
 
+ // temp remove secondary navigation
+
+ #navigation-secondary {
+  display:none;
+ }
+
 .nav-selected {
   background-color: #ffbf47;
     outline: 3px solid #ffbf47;

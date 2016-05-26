@@ -2208,6 +2208,10 @@ input[type=number] {
 /** 
  * nav and logo styles. 
  */
+#navigation-secondary {
+  display: none;
+}
+
 .nav-selected {
   background-color: #ffbf47;
   outline: 3px solid #ffbf47;
