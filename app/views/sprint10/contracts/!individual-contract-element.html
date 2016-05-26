@@ -7,79 +7,91 @@
 {% block content %}
 
 
-<style>
-  .financial-nav, .nav-forecast {
-    {% include "includes/nav-on-state-css.html" %}
-  }
-</style>
-
 <main id="content" role="main">
 {% include "includes/phase_banner_alpha.html" %}
-{% include "includes/secondary-nav-finance.html" %}
 
 
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
-      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+ <li><a href="/{% include "includes/sprint-link.html" %}/payment/payment-plans">< Back</a></li>
     </ol>
-
   </div>
 
 
 <!--h1 class="heading-large">Levy account</h1-->
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
 
-  <div class="grid-row">
-           <div class="column-two-thirds">
-            <h1 class="heading-xlarge" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Cash flow forecast</h1>
- 
-            <!--h2 class="heading-large" style="">Available apprenticeship funds</h2>
-            <!--p>Forecast how much you have to spend with our <a href="#">budget calculator</a></p-->
-            <!--h2 class="heading-large" style="">Cashflow forecast</h2-->
-            <p class="first-para-spacing">The table shows the estimated amount you have left to spend over time.</p>
-            <p>Included in the calculations are:</p>
-            <ul class="list list-bullet">
-                  <li>committed spending</li>
-                  <li>any potential losses due to expiry</li>
-                  <li>expected funds</li>
-              </ul>
 
-            <div class="graphGoesHere" style="margin-top:35px"><canvas id="robsChart" width="500" height="300"></canvas></div>
+          <div class="column-two-thirds">
+             <h1 class="heading-large" style="margin:0px 0 50px 0"><span class="heading-secondary" style="padding-top:0px">Acme Ltd: DF90832778</span>Individual payments</h1>
 
-            <div>
-             <table class="table-19-font">
-                  {% include "includes/cashflow-forecast.html" %}
-               
-                  </tbody>
-              </table>
-            </div>
-            <p style="margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/forecast" >Update your forecast</a></p>
-
-                <!--p>
-                  The amount of money you currently have to spend on apprentices is made up of
+                <p>
+                  Your payment schedule is made up of payments for individual apprenticeships. 
                 </p>
-                <ul class="list list-bullet">
-                  <li> your current balance</li>
-                  <li> minus the amount you have planned to spend in the future</li>
-                  <li>funds that expire</li>
-                  <li>Future "levy" payments</li>
-                </ul-->
+            <h2 class="heading-medium">Payment schedule for July 2018</h2>
 
+                <div style="margin-top:35px">
+          
+                <table>
+                    <thead>
+                      <tr>
+                        <th scope="col">Apprentice</th>
+                        <th scope="col" class="numeric">Payment due</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>David Jenkins</td>
+                        <td class="numeric">£316.66</td>
+                      </tr>
+                      <tr>
+                        <td>T.B.C</td>
+                        <td class="numeric">£316.66</td>
+                      </tr>
+                      <tr>
+                        <td>T.B.C</td>
+                        <td class="numeric">£316.66</span></td>
+                      </tr>
+                      <tr>
+                        <td>T.B.C</td>
+                        <td class="numeric">£100.02</td>
+                      </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <thead>
+                      <tr>
+                        <th scope="col"></th>
+                        <th scope="col" class="numeric"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="font-weight:700;">Total</td>
+                        <td class="numeric" style="font-weight:700;">£1,050.00</td>
+                      </tr>
+                    </tbody>
+                </table>
+              </div>
+<div style="margin-top:35px">
+
+              </div>
             <div style="margin-top:50px"></div>
           </div>
 
+          <div class="column-one-third">
 
         </div>
 
 
+
 </main>
+
+
 
  <!--button class="button">Do the thing</button-->
 
 <script>
-
-{% include "includes/cashflow-forecast-graph.html" %}
-
 //jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
 $( document ).ready(function() {
 

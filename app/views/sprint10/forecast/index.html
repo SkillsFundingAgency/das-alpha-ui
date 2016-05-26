@@ -6,7 +6,6 @@
 
 {% block content %}
 
-
 <style>
   .financial-nav, .nav-forecast {
     {% include "includes/nav-on-state-css.html" %}
@@ -26,61 +25,52 @@
   </div>
 
 
-<!--h1 class="heading-large">Levy account</h1-->
- <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
-
-  <div class="grid-row">
+<div class="grid-row">
            <div class="column-two-thirds">
-            <h1 class="heading-xlarge" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Cash flow forecast</h1>
- 
-            <!--h2 class="heading-large" style="">Available apprenticeship funds</h2>
-            <!--p>Forecast how much you have to spend with our <a href="#">budget calculator</a></p-->
-            <!--h2 class="heading-large" style="">Cashflow forecast</h2-->
-            <p class="first-para-spacing">The table shows the estimated amount you have left to spend over time.</p>
-            <p>Included in the calculations are:</p>
-            <ul class="list list-bullet">
-                  <li>committed spending</li>
-                  <li>any potential losses due to expiry</li>
-                  <li>expected funds</li>
-              </ul>
+  <h1 class="heading-xlarge" style="margin:0px 0 50px 0">Forecast your cash flow</h1>
 
-            <div class="graphGoesHere" style="margin-top:35px"><canvas id="robsChart" width="500" height="300"></canvas></div>
+    <p class="lede">Estimate the amount you have left to spend in your apprenticeship account. </p>
+    <p>You can work out how much you have left to spend over the next 6, 12, 18 or 24 months.</p>
 
-            <div>
-             <table class="table-19-font">
-                  {% include "includes/cashflow-forecast.html" %}
-               
-                  </tbody>
-              </table>
+    <h2 class="heading-medium">Before you start</h2>
+    <p>You need to:</p>
+  <ul class="list list-bullet">
+    <li>choose the time period you want to forecast</li>
+    <li>know your monthly or average monthly payroll figures for the chosen time period</li>
+  </ul>
+
+
+    <div style="margin-top:50px"></div>
+    <div class="padder-top-x">
+        <a href="/{% include "includes/sprint-link.html" %}/forecast/dates" class="button button-start">Start</a>
+    </div>
+    <div style="margin-top:50px"></div>
+    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
+<!-- {% include "includes/start-tabs.html" %} -->
+
             </div>
-            <p style="margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/forecast" >Update your forecast</a></p>
 
-                <!--p>
-                  The amount of money you currently have to spend on apprentices is made up of
-                </p>
-                <ul class="list list-bullet">
-                  <li> your current balance</li>
-                  <li> minus the amount you have planned to spend in the future</li>
-                  <li>funds that expire</li>
-                  <li>Future "levy" payments</li>
-                </ul-->
+             <div class="column-one-third">
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="../login">Sign in</a>
+                          </li>
 
-            <div style="margin-top:50px"></div>
-          </div>
-
-
-        </div>
-
-
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+</div>
 </main>
 
- <!--button class="button">Do the thing</button-->
-
 <script>
-
-{% include "includes/cashflow-forecast-graph.html" %}
-
 //jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+
+
+
 $( document ).ready(function() {
 
   // change the tabs themselves to active - should be in the above but isn't working because it's looking for a not li so I added this as a quick fix.
@@ -139,5 +129,5 @@ $( document ).ready(function() {
 
 </script>
 
-{% endblock %}
 
+{% endblock %}

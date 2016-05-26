@@ -123,6 +123,8 @@ vertical-align: top;
     position: relative;
 }
 
+
+
 .graphGoesHere {
     width:100%;
     min-height:300px;
@@ -271,6 +273,9 @@ vertical-align: top;
 #navigation-secondary li
 { list-style:none; list-style-image: none; display: inline; margin:12px; font-size:16px; }
 
+.top_nav {
+      padding:2px 5px 2px 5px
+}
 /* this is  like this to allow jquery to change the class easily, when the nav moves.*/
 .top_nav a:link {text-decoration: none; color:#0b0c0c; }
 

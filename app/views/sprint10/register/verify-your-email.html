@@ -5,22 +5,22 @@
 {% endblock %}
 
 {% block content %}
-
-
 <style>
-  .financial-nav, .nav-forecast {
-    {% include "includes/nav-on-state-css.html" %}
-  }
+
+#navigation-primary {
+  display:none ;
+}
+
 </style>
+
 
 <main id="content" role="main">
 {% include "includes/phase_banner_alpha.html" %}
-{% include "includes/secondary-nav-finance.html" %}
 
 
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
-      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+      {% include "includes/breadcrumbs/register-back.html" %}
     </ol>
 
   </div>
@@ -31,55 +31,27 @@
 
   <div class="grid-row">
            <div class="column-two-thirds">
-            <h1 class="heading-xlarge" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Cash flow forecast</h1>
- 
-            <!--h2 class="heading-large" style="">Available apprenticeship funds</h2>
-            <!--p>Forecast how much you have to spend with our <a href="#">budget calculator</a></p-->
-            <!--h2 class="heading-large" style="">Cashflow forecast</h2-->
-            <p class="first-para-spacing">The table shows the estimated amount you have left to spend over time.</p>
-            <p>Included in the calculations are:</p>
-            <ul class="list list-bullet">
-                  <li>committed spending</li>
-                  <li>any potential losses due to expiry</li>
-                  <li>expected funds</li>
-              </ul>
-
-            <div class="graphGoesHere" style="margin-top:35px"><canvas id="robsChart" width="500" height="300"></canvas></div>
-
-            <div>
-             <table class="table-19-font">
-                  {% include "includes/cashflow-forecast.html" %}
-               
-                  </tbody>
-              </table>
-            </div>
-            <p style="margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/forecast" >Update your forecast</a></p>
-
-                <!--p>
-                  The amount of money you currently have to spend on apprentices is made up of
+              <h1 class="heading-large" style="margin:0px 0 50px 0">Activate your account</h1>
+            <div> 
+              <p>
+                  An activation email has been sent to: <span style="font-weight:700">youremail@emailaddress.com</span>
                 </p>
-                <ul class="list list-bullet">
-                  <li> your current balance</li>
-                  <li> minus the amount you have planned to spend in the future</li>
-                  <li>funds that expire</li>
-                  <li>Future "levy" payments</li>
-                </ul-->
+
+                <p>Select the link in the email to verify the email address and activate your account.</p> 
+                  <p>The link must be used within 24 hours or it will expire and you will need to register again.</p>
+                </p>
+                <p>If you did not get the email we can <span class="looks-like-a-link-underline">send it again</span> </p>
+            </div>
 
             <div style="margin-top:50px"></div>
           </div>
-
-
         </div>
-
-
+        <a class="rjTemp" href="new-password">jump</a>
 </main>
 
  <!--button class="button">Do the thing</button-->
 
 <script>
-
-{% include "includes/cashflow-forecast-graph.html" %}
-
 //jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
 $( document ).ready(function() {
 

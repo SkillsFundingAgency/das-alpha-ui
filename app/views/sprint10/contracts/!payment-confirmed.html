@@ -7,20 +7,15 @@
 {% block content %}
 
 
-<style>
-  .financial-nav, .nav-forecast {
-    {% include "includes/nav-on-state-css.html" %}
-  }
-</style>
-
 <main id="content" role="main">
 {% include "includes/phase_banner_alpha.html" %}
-{% include "includes/secondary-nav-finance.html" %}
 
 
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
-      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Apprenticeship Account</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/payment">Provider payments</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/payment/quote">Provider offer</a></li>
     </ol>
 
   </div>
@@ -31,55 +26,42 @@
 
   <div class="grid-row">
            <div class="column-two-thirds">
-            <h1 class="heading-xlarge" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Cash flow forecast</h1>
- 
-            <!--h2 class="heading-large" style="">Available apprenticeship funds</h2>
-            <!--p>Forecast how much you have to spend with our <a href="#">budget calculator</a></p-->
-            <!--h2 class="heading-large" style="">Cashflow forecast</h2-->
-            <p class="first-para-spacing">The table shows the estimated amount you have left to spend over time.</p>
-            <p>Included in the calculations are:</p>
-            <ul class="list list-bullet">
-                  <li>committed spending</li>
-                  <li>any potential losses due to expiry</li>
-                  <li>expected funds</li>
-              </ul>
-
-            <div class="graphGoesHere" style="margin-top:35px"><canvas id="robsChart" width="500" height="300"></canvas></div>
-
-            <div>
-             <table class="table-19-font">
-                  {% include "includes/cashflow-forecast.html" %}
-               
-                  </tbody>
-              </table>
-            </div>
-            <p style="margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/forecast" >Update your forecast</a></p>
-
-                <!--p>
-                  The amount of money you currently have to spend on apprentices is made up of
+            <div class="govuk-box-highlight">
+                <h1 class="bold-large">
+                  Payment confirmed
+                </h1>
+                <p>Your payment plan reference number is <br>
+                  <strong class="heading-medium">98HGS3F</strong>
                 </p>
-                <ul class="list list-bullet">
-                  <li> your current balance</li>
-                  <li> minus the amount you have planned to spend in the future</li>
-                  <li>funds that expire</li>
-                  <li>Future "levy" payments</li>
-                </ul-->
+            </div>
+                <p>Thank you for paying your provider. </p>
 
+
+            <div style="margin-top:35px"></div>
             <div style="margin-top:50px"></div>
           </div>
 
-
+          <div class="column-one-third">
+                        <aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Payments</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/spendingcommitments">Review payment plans</a>
+                          </li>
+                            <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/...">Authorise a payment</a>
+                          </li>
+                        </ul>
+                           </nav>
+                    </aside>
+            </div>
         </div>
-
-
 </main>
 
  <!--button class="button">Do the thing</button-->
 
 <script>
-
-{% include "includes/cashflow-forecast-graph.html" %}
-
 //jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
 $( document ).ready(function() {
 
