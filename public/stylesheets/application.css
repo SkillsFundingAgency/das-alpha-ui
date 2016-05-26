@@ -2123,6 +2123,11 @@ input[type=number] {
   position: relative;
 }
 
+.rj-top-border {
+  padding-top: 20px;
+  border-top: 1px solid #bfc1c3;
+}
+
 .graphGoesHere {
   width: 100%;
   min-height: 300px;

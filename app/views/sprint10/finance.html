@@ -32,37 +32,52 @@
   <div class="grid-row">
            <div class="column-two-thirds">
             <h1 class="heading-xlarge" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Financial activity</h1>
-
-            <div class="space-at-bottom " style="padding:0">
-                <table class="table-19-font"> 
-                    <thead>
-                    {% include "includes/expiry-summary.html" %}
-                </table>
-                 <p style="margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/expiry" >Review funds you could lose</a></p>
+          <div class="grid-row">
+            <div class="column-half ">
+              <h2 class="heading-medium">Forecast</h2>
+              <p>Forecast the amount you have to spend on apprenticeships</p>
+              <a href="/{% include "includes/sprint-link.html" %}/forecast">Forecast your funds</a>
             </div>
-
-
-
-              <h2 class="heading-medium">Your cash flow forecast</h2>
-               <div class="rj-cash-flow-on">
-               <div class="graphGoesHere" style="margin-top:35px"><canvas id="robsChart" width="500" height="250"></canvas></div>
-    
-
-              <table class="table-19-font">
-                  {% include "includes/cashflow-forecast.html" %}
-                </tbody>
-              </table>
-               <p style="margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/forecast" >Update your forecast</a></p>
+            <div class="column-half">
+              <h2 class="heading-medium">Expiry</h2>
+               <p>Funds expire after 18 months</p>
+              <a href="/{% include "includes/sprint-link.html" %}/expire">Check your expiring funds</a>
             </div>
-            <div class="rj-cash-flow-off" style="display:none">
-                When cashflow hasn't been done, stuff will go here.
+          </div>  
+          <div class="grid-row">
+            <div class="column-half ">
+              <h2 class="heading-medium rj-top-border">Statement</h2>
+              <p>Check payments in and out of your account</p>
+              <a href="/{% include "includes/sprint-link.html" %}/history">Check your payments</a>
             </div>
-       
-        </div>
+            <div class="column-half ">
+              <h2 class="heading-medium rj-top-border">Committed</h2>
+              <p>Review the amount you have committed to spend on apprenticeships</p>
+              <a href="/{% include "includes/sprint-link.html" %}/committed">Review committed funds</a>
+            </div>
+         </div>   
+         <div class="grid-row">
+            <div class="column-half ">
+              <h2 class="heading-medium rj-top-border">English fraction</h2>
+              <p>Check your English fraction</p>
+              <a href="/{% include "includes/sprint-link.html" %}/fraction">Check your English fraction</a>
+            </div>
+            <div class="column-half ">
+              <h2 class="heading-medium rj-top-border">Download data</h2>
+              <p>Download your raw financial data </p>
+              <p class="looks-like-a-link-underline">Download data</p>
+
+            </div>
+          </div>  
+
+          </div>  
+
+            </div>
+  </div>
 
 
          <div class="column-one-third">
-        <div>
+        <!--div>
             <div class="home-figures space-at-bottom">
                 <h2 class="heading-small" >Your current balance is:</h2>
                 <h2 class="bold-xlarge" data-bind="text: displayBalance"></h2> 
@@ -87,7 +102,7 @@
                    </div>
               </details>
 
-            </div>
+            </div-->
           </div>
 </div>
 
