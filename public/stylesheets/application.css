@@ -2050,6 +2050,13 @@ input[type=number] {
   display: none;
 }
 
+.rj-contract-verify {
+  width: 100%;
+  min-height: 200px;
+  margin-top: 25px;
+  background-color: #dee0e2;
+}
+
 .rj-alert-wrapper {
   border-left: 4px solid #005EA5;
   width: 100%;
