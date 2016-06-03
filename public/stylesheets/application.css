@@ -2055,7 +2055,7 @@ input[type=number] {
   width: 100%;
   min-height: 100px;
   margin-top: 25px;
-  background-color: #eee;
+  background-color: #dee0e2;
 }
 
 .rj-number-alert {
@@ -2114,6 +2114,12 @@ input[type=number] {
 .looks-like-a-link-underline {
   color: #005ea5;
   font-weight: 400;
+  text-decoration: underline;
+}
+
+.looks-like-a-link-underline-h2 {
+  color: #005ea5;
+  font-weight: 700;
   text-decoration: underline;
 }
 

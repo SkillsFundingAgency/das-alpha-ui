@@ -44,7 +44,7 @@
   width: 100%;
  min-height: 100px;
   margin-top:25px;
-  background-color: #eee;
+  background-color: $grey-3;
 }
 
 .rj-number-alert {
@@ -114,6 +114,12 @@ vertical-align: top;
 .looks-like-a-link-underline {
     color:#005ea5;
     font-weight:400;
+    text-decoration:underline;
+}
+
+.looks-like-a-link-underline-h2 {
+    color:#005ea5;
+    font-weight:700;
     text-decoration:underline;
 }
 

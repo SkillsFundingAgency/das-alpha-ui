@@ -34,14 +34,24 @@
             <h1 class="heading-xlarge" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Providers</h1>
           <div class="grid-row">
             <div class="column-half ">
-              <h2 class="heading-medium">New contract</h2>
-              <p>Add a new contract to the 'system'</p>
-              <p class="looks-like-a-link-underline">Add a contract</p>
+
             </div>
             <div class="column-half">
               <h2 class="heading-medium">Existing contracts</h2>
                <p>View an existing contract</p>
               <a href="/{% include "includes/sprint-link.html" %}/contracts">Review contracts</a>
+            </div>
+          </div>  
+          <div class="grid-row">
+            <div class="column-half ">
+              <h2 class="heading-medium rj-top-border">New contract</h2>
+              <p>Add a new contract to the 'system'</p>
+              <a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract">Add a contract</a>
+            </div>
+            <div class="column-half">
+              <h2 class="heading-medium rj-top-border">Contracts in progress</h2>
+               <p>View a contract in progress</p>
+              <a href="/{% include "includes/sprint-link.html" %}/contracts/in-progress">View contracts in progress</a>
             </div>
           </div>  
           <div class="grid-row">
