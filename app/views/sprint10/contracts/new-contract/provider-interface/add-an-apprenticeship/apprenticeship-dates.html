@@ -35,22 +35,46 @@
 <div class="grid-row">
 
            <div class="column-two-thirds">
-  <h1 class="heading-xlarge" style="margin:0px 0 50px 0">Find your provider</h1>
-  <p>Search for the provider you have entered into a contract with.</p>
+  <h1 class="heading-xlarge" style="margin:0px 0 50px 0">Projected dates of apprenticeship</h1>
+  <p>Please enter the dates you expect this apprenticeship to take place between. We will use these dates to help ensure your forecasting projections take this contract into account.</p>
 
  
-<form action="provider-list">
-  <fieldset>
-    <legend class="visuallyhidden">Search for your provider</legend>
-      <div class="form-group">
-          <label class="form-label" for="search">Search for a provider
-          <!--span class="form-hint">Here is a hint for this form field.</span-->
-        </label>
-          <input class="form-control" id="find-a-provider" type="text">
+<form action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-apprenticeship">
+    <div class="form-group">
+            <fieldset>
+              <legend>
+                <span class="form-label-bold">Projected start date</span>
+              </legend>
+              <div class="form-date">
+                <div class="form-group form-group-month">
+                  <label class="form-label" for="dob-month">Month</label>
+                  <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                </div>
+                <div class="form-group form-group-year">
+                  <label class="form-label" for="dob-year">Year</label>
+                  <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2030">
+                </div>
+              </div>
+            </fieldset>
       </div>
-
-    </fieldset>
-    <input class="button" id="search-provider" type="submit" value="Search">
+          <div class="form-group">
+            <fieldset>
+              <legend>
+                <span class="form-label-bold">Projected finish date</span>
+              </legend>
+              <div class="form-date">
+                <div class="form-group form-group-month">
+                  <label class="form-label" for="dob-month">Month</label>
+                  <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                </div>
+                <div class="form-group form-group-year">
+                  <label class="form-label" for="dob-year">Year</label>
+                  <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2030">
+                </div>
+              </div>
+            </fieldset>
+      </div>
+    <input class="button" id="apprentice-dates" type="submit" value="Save and continue">
 </form>
     <div style="margin-top:50px"></div>
     <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
