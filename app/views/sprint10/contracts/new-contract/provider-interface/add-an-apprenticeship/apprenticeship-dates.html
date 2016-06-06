@@ -6,6 +6,16 @@
 
 {% block content %}
 
+<script>
+
+var addedDates = function() {
+  var isAddedDates = 'yes';
+  localStorage.setItem("apprenticeship-dates-added", JSON.stringify(isAddedDates));
+  window.location.href='../add-apprenticeship';
+};
+
+
+</script>
 
 <style>
   #navigation-primary {
@@ -74,7 +84,7 @@
               </div>
             </fieldset>
       </div>
-    <input class="button" id="apprentice-dates" type="submit" value="Save and continue">
+    <input class="button" id="apprentice-dates" onclick="addedDates()" value="Add and return">
 </form>
     <div style="margin-top:50px"></div>
     <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->

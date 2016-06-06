@@ -6,6 +6,23 @@
 
 {% block content %}
 
+<script>
+
+var addedNames = function() {
+  var isAddedNames = 'yes';
+  localStorage.setItem("apprenticeship-names-added", JSON.stringify(isAddedNames));
+  window.location.href='../add-apprenticeship';
+};
+
+$( document ).ready(function() {
+var textAreas = document.getElementsByTagName('textarea');
+
+Array.prototype.forEach.call(textAreas, function(elem) {
+    elem.placeholder = elem.placeholder.replace(/\\n/g, '\n');
+});
+});
+
+</script>
 
 <style>
   #navigation-primary {
@@ -33,44 +50,49 @@
 
 
 <div class="grid-row">
-
            <div class="column-two-thirds">
-  <h1 class="heading-xlarge" style="margin:0px 0 50px 0">Find your provider</h1>
-  <p>Search for the provider you have entered into a contract with.</p>
-
+  <h1 class="heading-xlarge" style="margin:0px 0 50px 0">Apprentice names</h1>
+  <p>Add the Unique Learner Number and the names of your learners. Put one record on each line</p>
+          </div>
+</div>
  
+ <div class="grid-row">
+           <div class="column-half">
 <form action="provider-list">
-  <fieldset>
-    <legend class="visuallyhidden">Search for your provider</legend>
-      <div class="form-group">
-          <label class="form-label" for="search">Search for a provider
-          <!--span class="form-hint">Here is a hint for this form field.</span-->
-        </label>
-          <input class="form-control" id="find-a-provider" type="text">
-      </div>
 
+
+
+  <fieldset>
+    <legend class="visuallyhidden">provider contact details and message - optional</legend>
+      <div class="form-group">
+          <label class="form-label-bold" for="message">Apprentice names</label>
+           <span class="form-hint">To save time you can cut and paste the apprentice details into this field</span>
+             <table class="table-19-font" style="width:75%; margin-left:15px "> 
+                    <thead>
+                      <tr>
+                        <th scope="col" class="">Firstname</th>
+                        <th scope="col" style="padding-left:50px" class="">Lastname</th>
+                        <th scope="col" style="padding-left:50px">ULN</th>
+                      </tr>
+                    </thead>
+                   <tbody>
+                  </tbody>
+                  </table>
+          <textarea class="form-control" id="message" type="text" style="width:100%" rows="10" placeholder="Firstname                       Lastname                    ULN\nFirstname                       Lastname                    ULN\nFirstname                       Lastname                    ULN\nFirstname                       Lastname                    ULN\nFirstname                       Lastname                    ULN\nFirstname                       Lastname                    ULN\n"></textarea>
+      </div>
     </fieldset>
-    <input class="button" id="search-provider" type="submit" value="Search">
+
+
+
+    <input class="button" id="search-provider" onclick="addedNames()" value="Add and return">
 </form>
     <div style="margin-top:50px"></div>
     <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
 <!-- {% include "includes/start-tabs.html" %} -->
 
-            </div>
+ 
+ </div>
 
-             <div class="column-one-third">
-                      <!--aside class="related">
-                        <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
-                        <nav role="navigation">
-                      <ul class="robSideNav">
-                          <li>
-                            <a href="../login">Sign in</a>
-                          </li>
-
-                        </ul>
-                           </nav>
-                    </aside-->
-            </div>
 </div>
 </main>
 
