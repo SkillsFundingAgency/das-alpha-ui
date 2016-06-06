@@ -43,6 +43,21 @@
   background-color: $panel-colour;
 }
 
+//
+
+.rj-dont-display {
+  display:none;
+}
+
+.rj-pound-sign {
+  height: 1em;
+  width:1em;
+  background-color: $grey-2;
+  display:inline-block;
+  margin-right:3px;
+  padding: 4px 0 11px 4px;
+}
+
 
 // To do list of actions - or feed
 

@@ -14,6 +14,30 @@
   }
 </style>
 
+<script>
+/* needs to swap the divs out later on if an apprenticeship has been added */
+
+$( document ).ready(function() {
+var whereNow = function() {
+  var hasAppAdded = JSON.parse(localStorage.getItem('apprenticeship-added'));
+   console.log(hasAppAdded)
+    if (hasAppAdded == "yes") {
+      $( "#no-apprenticeships" ).addClass( "rj-dont-display" );
+      var  isAddedApp = 'no';
+      localStorage.setItem("apprenticeship-added", JSON.stringify(isAddedApp));
+ 
+
+  } else {
+  $( "#apprenticeships" ).addClass( "rj-dont-display" );
+
+  }
+};
+whereNow();
+
+});
+
+</script>
+
 <main id="content" role="main">
 {% include "includes/phase_banner_alpha.html" %}
 
@@ -54,15 +78,19 @@
                 </div>
             </div>
 
-            <div class="rj-no-apprenticeships">
+            <div style="" class="rj-no-apprenticeships" id="no-apprenticeships">
                   <h2 class="heading-medium">Apprenticeships</h2>
-                  <p>This contract has <span style="font-weight:700">0</span> apprenticeships.</p>
+                  <p>This contract has <span style="font-weight:700">0</span> apprenticeships</p>
                   <p><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-apprenticeship">Add an apprenticeship</a></p>
                   <p><a href="#">Bulk upload apprenticeships</a></p>
             </div>
-            <div style="display:none" class="rj-has-apprenticeships">
+            <div style="" class="rj-has-apprenticeships" id="apprenticeships">
+              <h2 class="heading-medium">Apprenticeships</h2>
+                  <p>This contract has <span style="font-weight:700">1</span> apprenticeship</p>
+                  <p><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-apprenticeship">Add another apprenticeship</a></p>
+                  <p><a href="#">Bulk upload apprenticeships</a></p>
                 <form action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/review-contract">
-                      <div style="margin-top:20px;"><input class="button" id="paymentPlan" type="submit" value="Review contract"></div>
+                      <div style="margin-top:20px;"><input class="button" id="paymentPlan" type="submit" value="Review contract and finish"></div>
                 </form>
             </div>
 

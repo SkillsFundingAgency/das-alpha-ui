@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  #navigation-primary {
+    display:none;
+  }
+</style>
+
+<script>
+
+var addedCost = function() {
+  var isAddedCost = 'yes';
+  localStorage.setItem("apprenticeship-cost-added", JSON.stringify(isAddedCost));
+  window.location.href='../add-apprenticeship';
+};
+
+
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<div class="grid-row">
+
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" style="margin:0px 0 50px 0">Cost of apprenticeship</h1>
+  <p>Tell us the total cost of this apprenticeship</p>
+
+ 
+<form action="add-apprenticeship">
+  <fieldset>
+    <legend class="visuallyhidden">Total cost</legend>
+      <div class="form-group">
+          <label class="form-label" for="search">Total cost
+          <!--span class="form-hint">Here is a hint for this form field.</span-->
+        </label>
+          <!--div class="rj-pound-sign">£</div--><input class="form-control rj-enter-pounds" id="number-of-apprentices" type="text" value="£" >
+      </div>
+
+    </fieldset>
+    <input class="button" id="search-provider" onclick="addedCost()" value="Add and return">
+</form>
+    <div style="margin-top:50px"></div>
+    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
+<!-- {% include "includes/start-tabs.html" %} -->
+
+            </div>
+
+             <div class="column-one-third">
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="../login">Sign in</a>
+                          </li>
+
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+</div>
+</main>
+
+
+
+{% endblock %}

@@ -2057,6 +2057,19 @@ input[type=number] {
   background-color: #dee0e2;
 }
 
+.rj-dont-display {
+  display: none;
+}
+
+.rj-pound-sign {
+  height: 1em;
+  width: 1em;
+  background-color: #bfc1c3;
+  display: inline-block;
+  margin-right: 3px;
+  padding: 4px 0 11px 4px;
+}
+
 .rj-alert-wrapper {
   border-left: 4px solid #005EA5;
   width: 100%;
