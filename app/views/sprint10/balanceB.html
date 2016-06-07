@@ -29,7 +29,8 @@
 
   <div class="grid-row">
            <div class="column-two-thirds">
-            <h1 class="heading-xlarge" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Employ an apprentice</h1>
+             <h1 class="heading-xlarge" id="company-Name" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}</h1>
+            <script>document.getElementById('company-Name').innerText = JSON.parse(localStorage.getItem('company-name-header'));</script>
             <h2 class="heading-medium">To do list:</h2>
             <!--p class="">The following items need your attention:</p-->
 
