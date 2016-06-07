@@ -37,16 +37,92 @@
 
   <div class="grid-row">
            <div class="column-two-thirds">
-            <h1 class="heading-xlarge" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Review contract</h1>
-           
-            <p class="">Add the details of the apprenticeship below. Adding names at this stage is optional but this will need to be completed before you can be paid. </p>
+            <h1 class="heading-xlarge" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Check details before you submit</h1>
+
+            <p class="">There is <span style="font-weight:700">1</span> apprenticeship on this contract</p>
+
+
+                <table class=""> 
+                    <thead>
+                      <tr>
+                        <h2 class="heading-medium">Apprenticeship 1</h2>
+                           <th scope="col"></th>
+                          <th scope="col"></th>
+                           <th scope="col"></th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Apprenticeship type</td>
+                        <td style="font-weight:700; font-size:19px">Business and professional administration</td>
+                        <td class="looks-like-a-link-underline">Change</td>
+                      </tr>
+                       <tr>
+                        <td>Projected dates</td>
+                        <td style="font-weight:700; font-size:19px">Aug 2018 to July 2020</td>
+                        <td class="looks-like-a-link-underline">Change</td>
+                      </tr>
+                      <tr>
+                        <td>Number of apprentices</td>
+                        <td style="font-weight:700; font-size:19px">6</td>
+                        <td class="looks-like-a-link-underline">Change</td>
+                      </tr>
+                      <tr>
+                        <td>Cost of cohort</td>
+                        <td style="font-weight:700; font-size:19px">£9,600.22</td>
+                        <td class="looks-like-a-link-underline">Change</td>
+                      </tr>
+                      <tr>
+                        <td>Employer registration number (ERN)</td>
+                        <td style="font-weight:700; font-size:19px">90210</td>
+                        <td class="looks-like-a-link-underline">Change</td>
+                      </tr>
+                      <tr>
+                        <td>Name/ULN (optional)</td>
+                        <td style="font-weight:700; font-size:19px">David Jenkins 456789</td>
+                        <td class="looks-like-a-link-underline">Change</td>
+                      </tr>
+                       <tr>
+                        <td></td>
+                        <td style="font-weight:700; font-size:19px">Robert Edwards 666898</td>
+                        <td class="looks-like-a-link-underline"></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td style="font-weight:700; font-size:19px">Mel Hamazaki 545636</td>
+                        <td class="looks-like-a-link-underline"></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td style="font-weight:700; font-size:19px">Natalie Pham 124758</td>
+                        <td class="looks-like-a-link-underline"></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td style="font-weight:700; font-size:19px">Mark Gowing 435875</td>
+                        <td class="looks-like-a-link-underline"></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td style="font-weight:700; font-size:19px">Brendan Gasson 675367</td>
+                        <td class="looks-like-a-link-underline"></td>
+                      </tr>
+                      <tr>
+                        <td>Endpoint assessor</td>
+                        <td style="font-weight:700; font-size:19px">Cyberdyne systems Inc</td>
+                        <td class="looks-like-a-link-underline">Change</td>
+                      </tr>
+
+
+                    </tbody>
+                </table>
 
 
 
-                 <form action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/review-contract">
-
-                  <div style="margin-top:20px;"><input class="button" id="paymentPlan" type="submit" value="Save and return"></div>
-                </form>
+              <form action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/provider-confirmation">
+                  <div style="margin-top:20px;"><input class="button" id="paymentPlan" type="submit" value="Submit"></div>
+              </form>
 
 
 

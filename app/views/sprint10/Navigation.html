@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+
+var NavigationOn = function() {
+  var Navigation = 'on';
+  localStorage.setItem("Navigation-Status", JSON.stringify(Navigation));
+  window.location.href='navigation';
+};
+
+var NavigationOff = function() {
+  var Navigation = 'off';
+  localStorage.setItem("Navigation-Status", JSON.stringify(Navigation));
+  window.location.href='navigation';
+};
+
+
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">Navigation on and off </h1>
+
+      <p class="looks-like-a-link-underline" onclick="NavigationOn()"> Navigation ON</p>
+      <p class="looks-like-a-link-underline" onclick="NavigationOff()">Navigation OFF</p>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+
