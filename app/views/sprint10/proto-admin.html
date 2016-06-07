@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+
+var NavigationOn = function() {
+  var Navigation = 'on';
+  localStorage.setItem("Navigation-Status", JSON.stringify(Navigation));
+  window.location.href='proto-admin';
+};
+
+var NavigationOff = function() {
+  var Navigation = 'off';
+  localStorage.setItem("Navigation-Status", JSON.stringify(Navigation));
+  window.location.href='proto-admin';
+};
+
+var addCompanyName = function() {
+  var coName = $('#company-name-field').val();
+  localStorage.setItem("company-name-header", JSON.stringify(coName));
+  window.location.href='proto-admin';
+};
+
+$( document ).ready(function() {
+var bla = JSON.parse(localStorage.getItem('company-name-header'));
+$('#company-name-field').val(bla);
+});
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Prototype simple admin</h1>
+
+      <h2 class="heading-medium">Navigation on and off </h2>
+
+      <p class="looks-like-a-link-underline" style="cursor: pointer;" onclick="NavigationOn()"> Navigation ON</p>
+      <p class="looks-like-a-link-underline" style="cursor: pointer;" onclick="NavigationOff()">Navigation OFF</p>
+
+      <h2 class="heading-medium">Add a company name</h2>
+
+
+<form>
+  <fieldset>
+    <legend class="visuallyhidden">Total cost of cohort</legend>
+      <div class="form-group">
+          <label class="form-label-bold" for="search">Company name
+          <span class="form-hint">This changes the company name on the homepage</span>
+        </label>
+         <input class="form-control" id="company-name-field" type="text" >
+      </div>
+
+    </fieldset>
+    <input class="button" id="company-name-add" onclick="addCompanyName()" value="Add company name">
+</form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+
