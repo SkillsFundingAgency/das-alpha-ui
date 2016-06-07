@@ -25,19 +25,3 @@ $( document ).ready(function() {
   });
 
 
-//Turns navigation on and off
-
-$( document ).ready(function() {
-var NavigationStatus = function() {
-  var navStatus = JSON.parse(localStorage.getItem('Navigation-Status'));
-   console.log(navStatus)
-    if (navStatus == "on") {
-      $( "#navigation-primary" ).removeClass( "rj-dont-display" );
-  } else {
-  $( "#navigation-primary" ).addClass( "rj-dont-display" );
-
-  }
-};
-NavigationStatus();
-
-});

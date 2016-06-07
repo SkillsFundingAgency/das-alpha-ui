@@ -1,4 +1,4 @@
-<nav id="navigation-primary" style="">
+<nav id="navigation-primary" class="rj-dont-display">
 				<ul class="">
 					<li class="top_nav home-nav"><a href="/{% include "includes/sprint-link.html" %}/balance">Home</a></li>
 					<li class="top_nav financial-nav"> <a href="/{% include "includes/sprint-link.html" %}/finance">Funding</a></li>
@@ -9,6 +9,26 @@
 </nav>
 
 
+<script>
+
+
+//Turns navigation on and off depending on local storage variable set at /navigation
+
+
+var NavigationStatus = function() {
+  var navStatus = JSON.parse(localStorage.getItem('Navigation-Status'));
+   console.log(navStatus)
+    if (navStatus == "on") {
+      $( "#navigation-primary" ).removeClass( "rj-dont-display" );
+  } else {
+  $( "#navigation-primary" ).addClass( "rj-dont-display" );
+
+  }
+};
+NavigationStatus();
+
+
+</script>
 
 
 <nav id="navigation-secondary" style="display:none">
@@ -33,13 +53,3 @@
 				</ul>
 </nav>
 
-<!--not needed at the moment
-
-              //hide the login form
-              //$('#login').addClass('hidden');
-              //show the quiz
-           // $('#wrapper').removeClass('hidden')
-    });
-
-
--->
