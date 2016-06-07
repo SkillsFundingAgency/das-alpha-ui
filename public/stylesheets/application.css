@@ -2073,7 +2073,7 @@ input[type=number] {
 .rj-alert-wrapper {
   border-left: 4px solid #005EA5;
   width: 100%;
-  min-height: 100px;
+  min-height: 110px;
   margin-top: 25px;
   background-color: #dee0e2;
 }
