@@ -6,11 +6,6 @@
 
 {% block content %}
 
-<style>
-  .home-nav {
-    {% include "includes/nav-on-state-css.html" %}
-  }
-</style>
 
 <main id="content" role="main">
 {% include "includes/phase_banner_alpha.html" %}
@@ -29,93 +24,7 @@
 
   <div class="grid-row">
            <div class="column-two-thirds">
-             <h1 class="heading-xlarge" id="company-Name" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}</h1>
-            <script>document.getElementById('company-Name').innerText = JSON.parse(localStorage.getItem('company-name-header'));</script>
-            <h2 class="heading-medium">To do list:</h2>
-            <!--p class="">The following items need your attention:</p-->
-
-            <div class="rj-alert-wrapper">
-                <div class="rj-alert-copy">
-                  <h2 class="heading-medium" style="margin: 22px 0 5px 20px">Cash flow forecast  </h2>
-                  <p  style="width:100%; margin: 5px 0 5px 20px"><a href="/{% include "includes/sprint-link.html" %}/forecast/">Project your cashflow</a></p>
-                </div>
-            </div>
-
-            <!--div class="rj-alert-wrapper">
-                <!--div class="rj-number-alert">
-                  <h2 class="bold-xlarge">14</h2>
-                </div-->
-                <!--div class="rj-alert-copy">
-                  <h2 class="heading-medium" style="margin: 22px 0 5px 20px">Training provider</h2>
-                  <p class="looks-like-a-link-underline" style="width:100%; margin: 5px 0 5px 20px">Shortlist your training provider</p>
-                </div>
-            </div-->
-
-            <div class="rj-alert-wrapper">
-                <!--div class="rj-number-alert">
-                  <h2 class="bold-xlarge">14</h2>
-                </div-->
-                <div class="rj-alert-copy">
-                  <h2 class="heading-medium" style="margin: 22px 0 5px 20px">Applications received: 16</h2>
-                  <p class="looks-like-a-link-underline" style="width:100%; margin: 5px 0 5px 20px">Process your applications</p>
-                </div>
-            </div>
-
-            <div class="rj-alert-wrapper">
-                <!--div class="rj-number-alert single-number">
-                  <h2 class="bold-xlarge">2</h2>
-                </div-->
-                <div class="rj-alert-copy">
-              
-                  <h2 class="heading-medium" style="margin: 22px 0 5px 20px">Contracts awaiting review: 7 </h2>
-                  <p class="looks-like-a-link-underline" style="width:100%; margin: 5px 0 5px 20px">Review your contracts</p>
-        
-                </div>
-            </div>
-
-            <div class="rj-alert-wrapper">
-                <div class="rj-alert-copy">
-                  <h2 class="heading-medium" style="margin: 22px 0 5px 20px">Staff with access to account: 1 </h2>
-                  <p class="looks-like-a-link-underline" style="width:100%; margin: 5px 0 5px 20px">Grant access to others</p>
-                </div>
-            </div>
-
-            <!--div class="rj-alert-wrapper">
-                <div class="rj-number-alert">
-                  <h2 class="bold-xlarge">99</h2>
-                </div>
-                <div class="rj-alert-copy">
-              
-                  <h2 class="heading-medium" style="margin: 10px 0 5px 10px">A thing</h2>
-                  <p class="looks-like-a-link-underline" style="width:100%; margin: 5px 0 5px 10px">Go on, do the thing</p>
-        
-                </div>
-            </div-->
-
-
-
-
-            <!--p class="">Financial activity, including:</p>
-             <ul class="list list-bullet">
-                  <li>forecasting your cashflow</li>
-                  <li>committed spend</li>
-                  <li>funds you could lose</li>
-              </ul>
-
-            <p class="">Apprentices, including:</p>
-             <ul class="list list-bullet">
-                  <li>updating their information</li>
-                  <li>the provider delivering the training</li>
-                  <li>spend</li>
-              </ul>
-
-            <p class="">Training providers, including:</p>
-             <ul class="list list-bullet">
-                  <li>offers</li>
-                  <li>contracts</li>
-                  <li>finding a new training provider</li>
-              </ul-->
-
+            <h1 class="heading-large" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Available apprenticeship funds</h1>
             <!--div class="">
                 <p>Available funds have been forecast by a member of your organisation using the <a href="#">forecasting tool.</a> Please ensure that you keep the assumptions up to date.</p>
                 <h2 class="heading-small" >Forecast of available funds:</h2>
@@ -123,11 +32,11 @@
                 <p style="margin-top:0">until 21 Jan 2019</p>
             </div--> 
             <div>
-            <!--div class="home-figures">
+            <div class="home-figures">
                 <h2 class="heading-small" >Your current balance is:</h2>
-                <h2 class="bold-xlarge" >£5,000</h2> <!--style="color:#08c" -->
-                <!--p style="font-size:16px" >on 27th August 2018</p>
-            </div-->
+                <h2 class="rjCashMoney" >£5,000</h2> <!--style="color:#08c" -->
+                <p style="font-size:16px" >on 27th August 2018</p>
+            </div>
               <!--div class="home-figures" style="">
                 <h2 class="heading-small">At risk of losing:</h2>
                 <h2 class="rjCashMoney">£15,000</h2>
@@ -148,14 +57,10 @@
 
             <!--h2 class="heading-large" style="">Available apprenticeship funds</h2>
             <!--p>Forecast how much you have to spend with our <a href="#">budget calculator</a></p-->
-
-            <!--h2 class="heading-large" style="">Content</h2>
-            <p style=margin-top:35px>The figures and chart below show you how much you have left to spend on apprenticeships - taking into account spending, fund expiry and the payments from the SFA.</p>
-
             <h2 class="heading-large" style="">Cashflow forecast</h2>
-            <p style=margin-top:35px>The figures and chart below show you how much you have left to spend on apprenticeships - taking into account spending, fund expiry and the payments from the Skills Funding Agency.</p>
-
-
+            <p style=margin-top:35px>The figures and chart below show you how much you have left to spend on apprenticeships - taking into account spending, fund expiry and payments from the SFA.</p>
+    
+            
             <div class="graphGoesHere"><canvas id="robsChart" width="500" height="300"></canvas></div>
 
             <div>
@@ -218,7 +123,7 @@
                   </tbody>
               </table>
             </div>
-            <p style="margin-top:20px"><a href="balanceDefault" >Update your forecast</p></a-->
+            <p style="margin-top:20px"><a href="balanceDefault" >Update your forecast</p></a>
 
                 <!--p>
                   The amount of money you currently have to spend on apprentices is made up of
@@ -230,55 +135,11 @@
                   <li>Future "levy" payments</li>
                 </ul-->
 
-            
+            <div style="margin-top:50px"></div>
           </div>
-            <div class="column-one-third">
 
-          <!--div>
-           <h2 class="heading-medium">Funds you could lose</h2>
-           <p>You have expiring funds, see below</p>
-              <div class="home-figures">
-                <h3 class="heading-small">In less than 3 months</h3>
-                <p class="bold-large">£1,000</p>
-                <p style=" font-size:16px" class="">Since 1 April 2017</p> 
-              </div>
-              <div class="home-figures">
-                <h3 class="heading-small">3 to 6 months</h3>
-                <p class="bold-large">£2,050</p>
-              </div>
-              <div class="home-figures">
-                <h3 class="heading-small">6 to 12 months</h3>
-                <p class="bold-large">£3,447</p>
-              </div>
-          </div>
-           <a href="">View details of expiring funds</a>
-           <!--div>
-                      <table class=""> 
-                    <thead>
-                      <tr>
-                        <h2 class="heading-medium">Funds you could lose</h2>
-                        <th scope="col">Dates</th>
-                        <th scope="col" class="numeric">Amount you could lose</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="rjTableName">Expiring in < 3 months</td>
-                        <td class="numeric">£1,000</td>
-                      </tr>
-                      <tr>
-                        <td class="rjTableName">Expiring in 3 to 6 months</td>
-                        <td class="numeric">£2,050</td>
-                      </tr>
-                      <tr>
-                        <td class="rjTableName">Expiring in 6 to 12 months</td>
-                        <td class="numeric">£3,447</span></td>
-                      </tr>
-                </table>
-           </div-->
-
+{% include "includes/side-bars/funds-main.html" %}
         </div>
-
 
 
 </main>

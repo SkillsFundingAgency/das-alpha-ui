@@ -1,0 +1,177 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .financial-nav {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+{% include "includes/secondary-nav-finance.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+            <h1 class="heading-xlarge" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Funding</h1>
+          <div class="grid-row">
+            <div class="column-half ">
+              <h2 class="heading-medium">Available to spend</h2>
+              <p>You can forecast the amount you have to spend on apprenticeships</p>
+              <a href="/{% include "includes/sprint-link.html" %}/forecast">Forecast your funds</a>
+            </div>
+            <div class="column-half">
+              <h2 class="heading-medium">Funds you could lose</h2>
+               <p>Your funds will expire after 18 months if you don't spend it on apprenticeships</p>
+              <a href="/{% include "includes/sprint-link.html" %}/expire">View funds you could lose</a>
+            </div>
+          </div>  
+          <div class="grid-row">
+            <div class="column-half ">
+              <h2 class="heading-medium rj-top-border">Transactions</h2>
+              <p>You can view payments in and out of your account</p>
+              <a href="/{% include "includes/sprint-link.html" %}/history">View your payments</a>
+            </div>
+            <div class="column-half ">
+              <h2 class="heading-medium rj-top-border">Committed spending</h2>
+              <p>You can review the amount you've committed to spend on apprenticeships</p>
+              <a href="/{% include "includes/sprint-link.html" %}/committed">View committed spending</a>
+            </div>
+         </div>   
+         <div class="grid-row">
+            <div class="column-half ">
+              <h2 class="heading-medium rj-top-border">English fraction</h2>
+              <p>You can view the English fraction that's been applied to your levy funds</p>
+              <a href="/{% include "includes/sprint-link.html" %}/fraction">View your English fraction</a>
+            </div>
+            <div class="column-half ">
+              <h2 class="heading-medium rj-top-border">Download data</h2>
+              <p>You can download your financial information </p>
+              <p class="looks-like-a-link-underline">Download your financial data</p>
+
+            </div>
+          </div>  
+
+          </div>  
+
+            </div>
+  </div>
+
+
+         <div class="column-one-third">
+        <!--div>
+            <div class="home-figures space-at-bottom">
+                <h2 class="heading-small" >Your current balance is:</h2>
+                <h2 class="bold-xlarge" data-bind="text: displayBalance"></h2> 
+                <p style="font-size:16px; margin-bottom:35px" >on <span data-bind="text: displaySystemDate"></span></p>
+                <a href="/{% include "includes/sprint-link.html" %}/history/" >View your statement history</a>
+            </div>
+              <div class="home-figures space-at-bottom">
+                <h2 class="heading-small" >Your committed spending is:</h2>
+                <h2 class="bold-xlarge" >£132,853</h2> 
+                <p style="font-size:16px; margin-bottom:35px" >Until 21 Dec 2021</p>
+                <a href="/{% include "includes/sprint-link.html" %}/committed/" >View your committed spending</a>
+            </div>
+            <div class="home-figures space-at-bottom">
+                <h2 class="heading-small" >Your English fraction is</h2>
+                <h2 class="bold-xlarge" >0.81</h2> 
+                <p style="font-size:16px; margin-bottom:35px" >Since 1 April 2017</p>
+
+              <details>
+                <summary><span class="summary">English fraction explained</span></summary>
+                   <div class="panel panel-border-narrow">
+                    <p>The proportion of payroll for an employer that is directly attributable to their English operations (separate from Scottish, Welsh or Northern Irish operations). This will be automatically calculated by HMRC using data on postcode of employee's home address.</p>
+                   </div>
+              </details>
+
+            </div-->
+          </div>
+</div>
+
+
+</main>
+
+
+
+<script>
+{% include "includes/cashflow-forecast-graph.html" %}
+
+//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+$( document ).ready(function() {
+
+  // change the tabs themselves to active - should be in the above but isn't working because it's looking for a not li so I added this as a quick fix.
+
+  $("ul#tabs-nav li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs-nav li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#tabs-nav li.active").removeClass("active");
+            $("ul#tabs-nav li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+  $('ul.tabs-nav').each(function(){
+    // For each set of tabs, we want to keep track of
+    // which tab is active and its associated content
+    var $active, $content, $links = $(this).find('a');
+
+
+
+    // If the location.hash matches one of the links, use that as the active tab.
+    // If no match is found, use the first link as the initial active tab.
+    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+   // $active.addClass('active');
+   console.log($active)
+
+    $content = $($active[0].hash);
+
+    // Hide the remaining content
+    $links.not($active).each(function () {
+      $(this.hash).hide();
+    }); 
+
+    // Bind the click event handler
+    $(this).on('click', 'a', function(e){
+      // Make the old tab inactive.
+    //  $active.removeClass('active');
+      $content.hide();
+
+      // Update the variables with the new link and content
+    //  $active = $(this);
+      $content = $(this.hash);
+
+      // Make the tab active.
+     // $active.addClass('active');
+      $content.show();
+
+      // Prevent the anchor's default click action
+      e.preventDefault();
+    });
+  });
+
+
+</script>
+
+{% endblock %}
+
