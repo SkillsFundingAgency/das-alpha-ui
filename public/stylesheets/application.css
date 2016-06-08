@@ -2244,8 +2244,8 @@ input[type=number] {
 }
 
 .nav-selected {
-  background-color: #ffbf47;
-  outline: 3px solid #ffbf47;
+  /** background-color: #ffbf47;
+    outline: 3px solid #ffbf47; */
 }
 
 .navigation {
@@ -2307,8 +2307,7 @@ input[type=number] {
 
 /* this is  like this to allow jquery to change the class easily, when the nav moves.*/
 .top_nav a:link {
-  text-decoration: none;
-  color: #0b0c0c;
+  /**text-decoration: none; color:#0b0c0c;*/
 }
 
 .highlight_nav a:link {
@@ -2317,18 +2316,15 @@ input[type=number] {
 }
 
 #navigation-primary a:visited, #navigation-secondary a:visited {
-  text-decoration: none;
-  color: #0b0c0c;
+  /**text-decoration: none; color:#0b0c0c;*/
 }
 
 #navigation-primary a:active, #navigation-secondary a:active {
-  text-decoration: none;
-  color: #0b0c0c;
+  /**text-decoration: none; color:#0b0c0c;*/
 }
 
 #navigation-primary a:hover, #navigation-secondary a:active {
-  text-decoration: none;
-  color: #0b0c0c;
+  /**text-decoration: none; color:#0b0c0c;*/
 }
 
 @media (max-width: 640px) {

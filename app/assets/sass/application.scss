@@ -256,8 +256,8 @@ vertical-align: top;
  }
 
 .nav-selected {
-  background-color: #ffbf47;
-    outline: 3px solid #ffbf47;
+ /** background-color: #ffbf47;
+    outline: 3px solid #ffbf47; */
 }
 
 
@@ -316,15 +316,15 @@ vertical-align: top;
       padding:2px 5px 2px 5px
 }
 /* this is  like this to allow jquery to change the class easily, when the nav moves.*/
-.top_nav a:link {text-decoration: none; color:#0b0c0c; }
+.top_nav a:link {/**text-decoration: none; color:#0b0c0c;*/ }
 
 
 .highlight_nav a:link{text-decoration: none; color:black; }
 
 
-#navigation-primary a:visited, #navigation-secondary a:visited {text-decoration: none; color:#0b0c0c; }
-#navigation-primary a:active, #navigation-secondary a:active  {text-decoration: none;color:#0b0c0c; }
-#navigation-primary a:hover, #navigation-secondary a:active {text-decoration: none; color: #0b0c0c;}
+#navigation-primary a:visited, #navigation-secondary a:visited {/**text-decoration: none; color:#0b0c0c;*/  }
+#navigation-primary a:active, #navigation-secondary a:active  {/**text-decoration: none; color:#0b0c0c;*/  }
+#navigation-primary a:hover, #navigation-secondary a:active {/**text-decoration: none; color:#0b0c0c;*/ }
 
 @media (max-width: 640px) {
 

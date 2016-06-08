@@ -7,7 +7,7 @@
 {% block content %}
 
 <style>
-  .financial-nav, .nav-forecast {
+  .financial-nav a, .nav-forecast a{
     {% include "includes/nav-on-state-css.html" %}
   }
 </style>
@@ -17,17 +17,24 @@
 {% include "includes/secondary-nav-finance.html" %}
 
 
-  <div class="breadcrumbs">
+
+  <!--div class="breadcrumbs">
     <ol role="breadcrumbs">
       <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
     </ol>
 
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
   </div>
 
 
 <div class="grid-row">
            <div class="column-two-thirds">
-  <h1 class="heading-xlarge" style="margin:0px 0 50px 0">Forecast your apprenticeship funds</h1>
+  <h1 class="heading-xlarge" style="margin:0px 0 50px 0">Forecast your cash flow</h1>
 
     <p class="lede">Use this service to work out how much you have left to spend over the next 6 to 24 months.</p>
    
