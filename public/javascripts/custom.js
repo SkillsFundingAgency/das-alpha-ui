@@ -25,7 +25,19 @@ $( document ).ready(function() {
   });
 
 
+// this sets the default sprint number if its not changed on the admin page.
+var defaultSprint = function() {
+ var sprintNow = JSON.parse(localStorage.getItem('sprint-number'));
+ console.log(sprintNow);
+    if (sprintNow == null) {
+      sprintNow = "sprint10";
+      localStorage.setItem("sprint-number", JSON.stringify(sprintNow));
+  } else {
+  }
+};
+defaultSprint();
 
+// This sets a default company name if its not been set on the proto admin page
 var CompanyName = function() {
  var navStatus = JSON.parse(localStorage.getItem('company-name-header'));
  console.log(navStatus);
@@ -37,10 +49,11 @@ var CompanyName = function() {
 };
 CompanyName();
 
-//This sets the value of the company field on the prototype admin page - shouldn't do anything else.
+
+//This swaps out the URL to the sprint chosen in the admin tool. The phrase it is searching for and replacing is in includes/sprint-link.html
 
 $( document ).ready(function() {
-var bla = JSON.parse(localStorage.getItem('company-name-header'));
-$('#company-name-field').val(bla);
+  var urlToBeChanged = JSON.parse(localStorage.getItem('sprint-number'));
+$("body").html($("body").html().replace(/change-me-url/g, urlToBeChanged));
 });
 
