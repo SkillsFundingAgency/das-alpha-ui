@@ -43,3 +43,4 @@ $( document ).ready(function() {
 var bla = JSON.parse(localStorage.getItem('company-name-header'));
 $('#company-name-field').val(bla);
 });
+
