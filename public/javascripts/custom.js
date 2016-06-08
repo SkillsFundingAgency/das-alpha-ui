@@ -39,11 +39,11 @@ defaultSprint();
 
 // This sets a default company name if its not been set on the proto admin page
 var CompanyName = function() {
- var navStatus = JSON.parse(localStorage.getItem('company-name-header'));
- console.log(navStatus);
-    if (navStatus == null) {
-      navStatus = "Acme Ltd Coventry";
-      localStorage.setItem("company-name-header", JSON.stringify(navStatus));
+ var compName = JSON.parse(localStorage.getItem('company-name-header'));
+ console.log(compName);
+    if (compName == null) {
+      compName = "Acme Ltd Coventry";
+      localStorage.setItem("company-name-header", JSON.stringify(compName));
   } else {
   }
 };
