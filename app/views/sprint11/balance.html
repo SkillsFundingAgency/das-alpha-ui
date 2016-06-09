@@ -33,50 +33,29 @@
             <h1 class="heading-xlarge" id="company-Name" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}</h1>
             <script>document.getElementById('company-Name').innerText = JSON.parse(localStorage.getItem('company-name-header'));</script>
 
-            <h2 class="heading-large" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Funding</h2>
+
+            <!--h2 class="heading-large" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Funding</h2-->
+         
           <div class="grid-row">
-
             <div class="column-half ">
-
-              <h3 class="heading-medium"><a href="/{% include "includes/sprint-link.html" %}/forecast">Available to spend</a></h3>
-              <p>You can forecast the amount you have to spend on apprenticeships</p>
+              <h3 class="heading-medium"><a href="/{% include "includes/sprint-link.html" %}/finance">Funding</a></h3>
+              <p>Everything to do with your funding</p>
             </div>
             <div class="column-half">
-              <h3 class="heading-medium"><a href="/{% include "includes/sprint-link.html" %}/expire">View funds you could lose</a></h3>
-               <p>Your funds will expire after 18 months if you don't spend it on apprenticeships</p>
+              <h3 class="heading-medium"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></h3>
+               <p>Everything to do with your learners</p>
             </div>
           </div> 
           <div class="grid-row">
             <div class="column-half ">
-              <h3 class="heading-medium rj-top-border"><a href="/{% include "includes/sprint-link.html" %}/history">View your payments</a></h3>
-              <p>You can view payments in and out of your account</p>
+              <h3 class="heading-medium rj-top-border"><a href="/{% include "includes/sprint-link.html" %}/training">Training</a></h3>
+              <p>Search for new training</p>
             </div>
             <div class="column-half ">
-              <h3 class="heading-medium rj-top-border"><a href="/{% include "includes/sprint-link.html" %}/committed">View committed spending</a></h3>
-              <p>You can review the amount you've committed to spend on apprenticeships</p>
+              <h3 class="heading-medium rj-top-border"><a href="/{% include "includes/sprint-link.html" %}/contracts/providers">Contracts</a></h3>
+              <p>Review existing and add new contracts with your providers</p>
             </div>
          </div>
-         <div class="grid-row">
-            <div class="column-half ">
-
-              <h3 class="heading-medium rj-top-border"><a href="/{% include "includes/sprint-link.html" %}/fraction">View your English fraction</a></h3>
-              <p>You can view the English fraction that's been applied to your levy funds</p>
-
-              <h3 class="heading-medium rj-top-border"><a href="/{% include "includes/sprint-link.html" %}/fraction">View your English percentage</a></h3>
-              <p>You can view the English percentage that's been applied to your levy funds</p>
-
-            </div>
-            <div class="column-half ">
-              <h3 class="heading-medium looks-like-a-link-underline-h2 rj-top-border">Download your financial information</h3>
-              <p>You can download your financial information </p>
-            </div>
-          </div>
-
-
-
-
-
-
           </div>
 
             <!--div class="column-one-third">
