@@ -2046,10 +2046,10 @@ input[type=number] {
   background: #fff;
 }
 
-.breadcrumbs ol li a {
-  display: none;
+/*.breadcrumbs ol li a {
+  display:none;
 }
-
+*/
 .rj-contract-verify {
   width: 100%;
   min-height: 200px;

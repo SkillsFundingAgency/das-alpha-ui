@@ -37,6 +37,17 @@ var defaultSprint = function() {
 };
 defaultSprint();
 
+
+// This removes the breadcrumbs from sprints below 10
+var breadyCrumb = function() {
+          var whatSprint = JSON.parse(localStorage.getItem('sprint-number'));
+           console.log('what sprint is ' + whatSprint);
+          if (whatSprint != "sprint11") {
+            $('<style>.breadcrumbs ol li a { display:none;}</style>').appendTo('head');
+          } else {}
+}; 
+breadyCrumb();
+
 // This sets a default company name if its not been set on the proto admin page
 var CompanyName = function() {
  var compName = JSON.parse(localStorage.getItem('company-name-header'));
