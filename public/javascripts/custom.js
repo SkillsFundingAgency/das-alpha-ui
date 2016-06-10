@@ -30,7 +30,7 @@ var defaultSprint = function() {
  var sprintNow = JSON.parse(localStorage.getItem('sprint-number'));
  console.log(sprintNow);
     if (sprintNow == null) {
-      sprintNow = "sprint10";
+      sprintNow = "sprint11";
       localStorage.setItem("sprint-number", JSON.stringify(sprintNow));
   } else {
   }
