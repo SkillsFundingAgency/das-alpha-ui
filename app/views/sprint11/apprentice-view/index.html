@@ -21,8 +21,9 @@
 
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
-      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Apprenticeship Account</a></li>
-      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view">View apprenticeships</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></li>
+      <li>Your apprentices</li>
     </ol>
   </div>
 
@@ -31,7 +32,7 @@
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
 <div class="grid-row">
   <div class="column-two-thirds">
-    <h1 class="heading-xlarge" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}View apprentices</h1>
+    <h1 class="heading-xlarge" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Your apprentices</h1>
   </div>
 </div>
 
@@ -41,7 +42,7 @@
   <div id="finder-frontend" class="inner-block">
     <form method="get" action="/cma-cases" class="js-live-search-form">
       <div class="filter text-filter">
-        <label class="legend" for="finder-keyword-search">Search</label>
+        <label class="legend" for="finder-keyword-search">Search by name or ULN</label>
         <input value="" type="text" name="keywords" id="finder-keyword-search" aria-controls="js-search-results-info" class="text">
       </div>
 
@@ -73,7 +74,7 @@
                           <thead>
                             <tr>
                               <th scope="col" style="padding-top:0">Name</th>
-                              <th scope="col" style="padding-top:0">Learner ID</th>
+                              <th scope="col" style="padding-top:0">ULN</th>
                                <th scope="col" style="padding-top:0"></th>
                             </tr>
                           </thead>

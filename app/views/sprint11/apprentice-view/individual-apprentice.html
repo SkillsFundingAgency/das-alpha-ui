@@ -21,9 +21,10 @@
 
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
-      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Apprenticeship Account</a></li>
-      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view">View apprenticeships</a></li>
-      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice">Apprenticeship</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view">Your apprentices</a></li>
+      <li>Rob Edwards</li>
     </ol>
 
   </div>
@@ -34,10 +35,10 @@
 
   <div class="grid-row">
            <div class="column-two-thirds">
-              <h1 class="heading-xlarge" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Apprentice details</h1>
+              <h1 class="heading-xlarge" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Rob Edwards</h1>
             <div>
                 <p>
-                  Here are the details of your apprentice. You can <a href="">update the apprenticeship</a> to take account of a changes in circumstances.
+                   You can <a href="">update the apprenticeship</a> to take account of a changes in circumstances.
                 </p>
 
 
@@ -56,7 +57,7 @@
                       <td class=""></td>
                     </tr>
                      <tr>
-                      <td class="rjTableName">Learner ID</td>
+                      <td class="rjTableName">ULN</td>
                       <td class="">98HGS3FDS</td>
                       <td class=""></td>
                     </tr>
@@ -95,7 +96,7 @@
                   <tbody>
                     <tr>
                      <td class="rjTableName">Start date</td>
-                      <td class="">20th July 2018</td>
+                      <td class="">20 July 2018</td>
                       <td class=""></td>
                     </tr>
                     <tr>
@@ -121,17 +122,17 @@
                   </thead>
                   <tbody>
                     <tr>
-                     <td class="rjTableName">Total cost</td>
+                     <td class="rjTableName">Cost</td>
                       <td class="">£2,957.56</td>
                       <td class=""></td>
                     </tr>
                     <tr>
-                     <td class="rjTableName">Total paid</td>
+                     <td class="rjTableName">Amount paid</td>
                       <td class="">£1,312.56</td>
                       <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/paid">View</a></td>
                     </tr>
                      <tr>
-                     <td class="rjTableName">Left to pay</td>
+                     <td class="rjTableName">Amount left <br />to pay</td>
                       <td class="">£1,645.00</td>
                       <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/left-to-pay">View</a></td>
                     </tr>
@@ -150,7 +151,7 @@
           <div class="column-one-third">
                       <aside class="related">
                         <h2 class="heading-medium" style="margin-top:10px">Update apprenticeship</h2>
-                        <p>You can update key details, payment methods, pause or stop this apprenticeship </p>
+                        <p>Transfer, pause or stop this apprenticeship </p>
 
                     <form action="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship">
                         <div style="margin-top:20px;"><input class="button" id="updateDetails" type="submit" value="Update apprenticeship"></div> 

@@ -34,7 +34,8 @@ var chartData = {
 // chart options - static for now
 var chartOptions = {
 
-  responsive: true,
+
+    responsive: true,
 
       ///Boolean - Whether grid lines are shown across the chart
     scaleShowGridLines : false,
@@ -82,8 +83,6 @@ var chartOptions = {
 
     scaleLabel:
     function(label){return  '£' + label.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");},
-
-
 
 };
 
