@@ -288,7 +288,7 @@ vertical-align: top;
 
 
 
- #navigation-primary {
+ #navigation-primary, #navigation-primary-v2 {
   /* background-color:#CCC; */
     margin-top: 20px;
   background-color:#fff;
@@ -307,7 +307,7 @@ vertical-align: top;
     min-height:35px;
   }
 
-#navigation-primary ul {
+#navigation-primary ul, #navigation-primary-v2 ul {
   padding-top: 11px;
  }
 
@@ -315,7 +315,7 @@ vertical-align: top;
   padding-top: 6px;
  }
 
-#navigation-primary li {
+#navigation-primary li, , #navigation-primary-v2 li {
   list-style:none; list-style-image: none; display: inline; margin:12px; font-size:19px; font-weight:700; }
 
 #navigation-secondary li
@@ -331,9 +331,9 @@ vertical-align: top;
 .highlight_nav a:link{text-decoration: none; color:black; }
 
 
-#navigation-primary a:visited, #navigation-secondary a:visited {/**text-decoration: none; color:#0b0c0c;*/  }
-#navigation-primary a:active, #navigation-secondary a:active  {/**text-decoration: none; color:#0b0c0c;*/  }
-#navigation-primary a:hover, #navigation-secondary a:active {/**text-decoration: none; color:#0b0c0c;*/ }
+#navigation-primary a:visited,, #navigation-primary-v2 a:visited,  #navigation-secondary a:visited {/**text-decoration: none; color:#0b0c0c;*/  }
+#navigation-primary a:active, #navigation-primary-v2 a:active, #navigation-secondary a:active  {/**text-decoration: none; color:#0b0c0c;*/  }
+#navigation-primary a:hover, #navigation-primary-v2 a:active, #navigation-secondary a:active {/**text-decoration: none; color:#0b0c0c;*/ }
 
 @media (max-width: 640px) {
 
@@ -341,7 +341,7 @@ vertical-align: top;
   float:none;
   }
 
-#navigation-primary li {
+#navigation-primary li, #navigation-primary-v2 li {
   list-style:none; list-style-image: none; display: inline; margin:12px 6px 15px 6px; font-size:16px; font-weight:400; 
   }
 }

@@ -2266,7 +2266,7 @@ input[type=number] {
   margin-top: 0 !important;
 }
 
-#navigation-primary {
+#navigation-primary, #navigation-primary-v2 {
   /* background-color:#CCC; */
   margin-top: 20px;
   background-color: #fff;
@@ -2285,7 +2285,7 @@ input[type=number] {
   min-height: 35px;
 }
 
-#navigation-primary ul {
+#navigation-primary ul, #navigation-primary-v2 ul {
   padding-top: 11px;
 }
 
@@ -2293,7 +2293,7 @@ input[type=number] {
   padding-top: 6px;
 }
 
-#navigation-primary li {
+#navigation-primary li, #navigation-primary-v2 li {
   list-style: none;
   list-style-image: none;
   display: inline;
@@ -2324,15 +2324,15 @@ input[type=number] {
   color: black;
 }
 
-#navigation-primary a:visited, #navigation-secondary a:visited {
+#navigation-primary a:visited, #navigation-primary-v2 a:visited, #navigation-secondary a:visited {
   /**text-decoration: none; color:#0b0c0c;*/
 }
 
-#navigation-primary a:active, #navigation-secondary a:active {
+#navigation-primary a:active, #navigation-primary-v2 a:active, #navigation-secondary a:active {
   /**text-decoration: none; color:#0b0c0c;*/
 }
 
-#navigation-primary a:hover, #navigation-secondary a:active {
+#navigation-primary a:hover, #navigation-primary-v2 a:active, #navigation-secondary a:active {
   /**text-decoration: none; color:#0b0c0c;*/
 }
 
@@ -2340,7 +2340,7 @@ input[type=number] {
   .right-info {
     float: none;
   }
-  #navigation-primary li {
+  #navigation-primary li, #navigation-primary-v2 li {
     list-style: none;
     list-style-image: none;
     display: inline;
