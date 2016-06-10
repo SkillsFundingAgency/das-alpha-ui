@@ -2075,6 +2075,10 @@ input[type=number] {
   border-bottom: 4px solid #BFC1C3;
 }
 
+.rj-home-spacer {
+  margin-bottom: 35px;
+}
+
 .rj-alert-wrapper {
   border-left: 4px solid #005EA5;
   width: 100%;
