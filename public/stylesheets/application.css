@@ -2070,6 +2070,11 @@ input[type=number] {
   padding: 4px 0 11px 4px;
 }
 
+.rj-headings-border {
+  padding-bottom: 20px;
+  border-bottom: 4px solid #BFC1C3;
+}
+
 .rj-alert-wrapper {
   border-left: 4px solid #005EA5;
   width: 100%;
