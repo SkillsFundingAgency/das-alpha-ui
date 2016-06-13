@@ -1,16 +1,6 @@
-# GOV.UK Prototype kit
+# Access my levy prototype kit
 
-## News
 
-**Upgrading from version 1 to 2:** the latest version of the kit (2.0.0 and later) is not compatible with previous versions. If you update your old prototypes you'll need to [convert them as well](https://github.com/alphagov/govuk_prototype_kit/blob/master/docs/updating-the-kit.md).
-
-## About the prototype kit
-
-The prototype kit provides a simple way to make interactive prototypes that look like pages on GOV.UK. These prototypes can be used to show ideas to people you work with, and to do user research.
-
-Read the [project principles](docs/principles.md).
-
-> You must protect user privacy at all times, even when using prototypes. Prototypes made with the kit look like GOV.UK, but do not have the same security provisions. Always make sure you are handling user data appropriately. 
 
 ## Installation instructions
 
@@ -31,9 +21,7 @@ Read the [project principles](docs/principles.md).
 - [Tips and tricks](docs/tips-and-tricks.md)
 - [Creating routes (server-side programming)](docs/creating-routes.md)
 
-## Community
+## Access my levy
 
-We have two Slack channels for the Prototype kit. You'll need a government email address to join them.
+- Use /proto-admin to change setting for navigation, breadcrumbs, company name on account home page and sprint number (to review old versions)
 
-* [Slack channel for users of the prototype kit](https://ukgovernmentdigital.slack.com/messages/prototype-kit/)
-* [Slack channel for developers of the prototype kit](https://ukgovernmentdigital.slack.com/messages/prototype-kit-dev/)
