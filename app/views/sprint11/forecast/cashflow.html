@@ -25,12 +25,19 @@
     </ol>
 
   </div-->
-
      <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+                 <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/finance">Funding</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/forecast">Forecast your funds</a></li>
+            <li>Apprentice funds forecast</li>
+    </ol>
+  </div>
+     <!--div class="breadcrumbs back-breadcrumb">
     <ol role="breadcrumbs">
       {% include "includes/breadcrumbs/register-back.html" %}
     </ol>
-  </div>
+  </div-->
 
 
 <!--h1 class="heading-large">Levy account</h1-->
@@ -38,7 +45,7 @@
 
   <div class="grid-row">
            <div class="column-two-thirds">
-            <h1 class="heading-xlarge" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Apprenticeship funds forecast</h1>
+            <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Apprenticeship funds forecast</h1>
  
             <!--h2 class="heading-large" style="">Available apprenticeship funds</h2>
             <!--p>Forecast how much you have to spend with our <a href="#">budget calculator</a></p-->
