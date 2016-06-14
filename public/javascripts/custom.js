@@ -105,10 +105,10 @@ whereNow();
 //This swaps out the URL to the sprint chosen in the admin tool. The phrase it is searching for and replacing is in includes/sprint-link.html
 // Want this to run last as it was breaking other things...
 
-$( document ).ready(function() {
-  var urlToBeChanged = JSON.parse(localStorage.getItem('sprint-number'));
-$("body").html($("body").html().replace(/change-me-url/g, urlToBeChanged));
-});
+$(document).ready(function() {
+      var urlToBeChanged = JSON.parse(localStorage.getItem('sprint-number'));
+      $("body").html($("body").html().replace(/change-me-url/g, urlToBeChanged));
+  });
 
 
 
