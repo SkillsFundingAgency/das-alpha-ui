@@ -117,6 +117,67 @@ vertical-align: top;
 
 // end of feed/to do list
 
+// Mobile tables
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
+
+  /* Force table to not be like tables anymore */
+  #transactions table, #transactions thead, #transactions tbody, #transactions th, #transactions td, #transactions tr { 
+    display: block; 
+  }
+  
+  /* Hide table headers (but not display: none;, for accessibility) */
+  #transactions thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+
+  }
+
+   
+
+
+  #transactions tr { border-left: 1px solid $grey-2; margin-top:10px; border-right: 1px solid $grey-2;border-top: 1px solid $grey-2; }
+  
+  #transactions td { 
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid $grey-2; 
+    position: relative;
+    padding-left: 50%; 
+    font-size: 16px;
+
+  }
+
+   #transactions .numeric {
+    text-align:left !important;
+   }
+  
+  #transactions td:before { 
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 11px;
+    left: 6px;
+    width: 45%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+  }
+  
+  /*
+  Label the data
+  */
+  #transactions td:nth-of-type(1):before { content: "Date"; font-weight:700;}
+  #transactions td:nth-of-type(2):before { content: "Description"; font-weight:700;}
+  #transactions td:nth-of-type(3):before { content: "Credit"; font-weight:700;}
+  #transactions td:nth-of-type(4):before { content: "Debit"; font-weight:700;}
+  #transactions td:nth-of-type(5):before { content: "Balance"; font-weight:700;}
+  #transactions td:nth-of-type(6):before { content: "Action";font-weight:700;  color: #0b0c0c;}
+}
+
+
+//end of mobile tables
+
 
 @media (min-width: 641px) {
 .table-19-font td, .table-19-font th {
