@@ -20,26 +20,12 @@ var addedApp = function() {
   window.location.href='individual-contract';
 };
 
-/* To determine if the to do list has been done - only dates works for now */
 
-$( document ).ready(function() {
-var addedOrNor = function() {
-  var hasAppAdded = JSON.parse(localStorage.getItem('apprenticeship-dates-added'));
-   console.log(hasAppAdded)
-    if (hasAppAdded == "yes") {
-      $( ".datesToDo" ).addClass( "rj-dont-display" );
-      var  hasAppAdded = 'no';
-      localStorage.setItem("apprenticeship-dates-added", JSON.stringify(hasAppAdded));
- 
+/* To determine if the to do list has been done - only dates works for now - this breaks because of the URl change below if it is in the page...it should live in /sprint11/contracts/new-contract/provider-interface/add-apprenticeship */
 
-  } else {
-  $( ".datesComplete" ).addClass( "rj-dont-display" );
+//this is now in the global custom.js tempate as it stopped working when I added the sprint link changer.
 
-  }
-};
-addedOrNor();
 
-});
 
 
 </script>
@@ -89,10 +75,10 @@ addedOrNor();
                               </tr>
                               <tr>
                                 <td class="rjTableName">Projected dates</td>
-                                <td class="datesToDo" id="">To do</td>
-                                <td class="looks-like-a-link-underline datesToDo" id=""><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-an-apprenticeship/apprenticeship-dates">Add</a></td>
-                                <td class="datesComplete" id="" style="">Added</td>
-                                <td class="looks-like-a-link-underline datesComplete" id="" style=""><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-an-apprenticeship/apprenticeship-dates">View</a></td>
+                                <td class="datesToDo" >To do</td>
+                                <td class="datesToDo" ><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-an-apprenticeship/apprenticeship-dates">Add</a></td>
+                                <td class="datesComplete" >Added</td>
+                                <td class="datesComplete" ><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-an-apprenticeship/apprenticeship-dates">View</a></td>
                               </tr>
                               <tr>
                                 <td class="rjTableName">Number of apprentices</td>

@@ -17,24 +17,7 @@
 <script>
 /* needs to swap the divs out later on if an apprenticeship has been added */
 
-$( document ).ready(function() {
-var whereNow = function() {
-  var hasAppAdded = JSON.parse(localStorage.getItem('apprenticeship-added'));
-   console.log(hasAppAdded)
-    if (hasAppAdded == "yes") {
-      $( "#no-apprenticeships" ).addClass( "rj-dont-display" );
-      var  isAddedApp = 'no';
-      localStorage.setItem("apprenticeship-added", JSON.stringify(isAddedApp));
- 
-
-  } else {
-  $( "#apprenticeships" ).addClass( "rj-dont-display" );
-
-  }
-};
-whereNow();
-
-});
+// this is now in the global custom.js file as things were breaking because of the url switching jquery
 
 </script>
 

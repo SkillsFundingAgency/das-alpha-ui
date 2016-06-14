@@ -60,11 +60,58 @@ var CompanyName = function() {
 };
 CompanyName();
 
+/* To determine if the to do list has been done - only dates works for now - this breaks because of the URl change below if it is in the page...it should live in /sprint11/contracts/new-contract/provider-interface/add-apprenticeship */
+
+$( document ).ready(function() {
+var addedOrNor = function() {
+  var hasDatesAdded = JSON.parse(localStorage.getItem('apprenticeship-dates-added'));
+   console.log(hasDatesAdded)
+    if (hasDatesAdded == "yes") {
+       $( ".datesComplete" ).removeClass( "rj-dont-display" );
+      $( ".datesToDo" ).addClass( "rj-dont-display" );
+      var  hasDatesAdded = 'no';
+      localStorage.setItem("apprenticeship-dates-added", JSON.stringify(hasDatesAdded));
+  } else {
+  $( ".datesComplete" ).addClass( "rj-dont-display" );
+
+  }
+};
+addedOrNor();
+
+});
+
+/* To determine if an apprenticeship has been added to the contract - this breaks because of the URl change below if it is in the page...it should live in /sprint11/contracts/new-contract/provider-interface/individual-contract */
+
+$( document ).ready(function() {
+var whereNow = function() {
+  var hasAppAdded = JSON.parse(localStorage.getItem('apprenticeship-added'));
+   console.log(hasAppAdded)
+    if (hasAppAdded == "yes") {
+      $( "#no-apprenticeships" ).addClass( "rj-dont-display" );
+      var  isAddedApp = 'no';
+      localStorage.setItem("apprenticeship-added", JSON.stringify(isAddedApp));
+ 
+
+  } else {
+  $( "#apprenticeships" ).addClass( "rj-dont-display" );
+
+  }
+};
+whereNow();
+
+});
+
 
 //This swaps out the URL to the sprint chosen in the admin tool. The phrase it is searching for and replacing is in includes/sprint-link.html
+// Want this to run last as it was breaking other things...
 
 $( document ).ready(function() {
   var urlToBeChanged = JSON.parse(localStorage.getItem('sprint-number'));
 $("body").html($("body").html().replace(/change-me-url/g, urlToBeChanged));
 });
+
+
+
+
+
 
