@@ -227,18 +227,38 @@ vertical-align: top;
   border-top: 1px solid #bfc1c3;
 }
 
+.rj-currency-symbol {
+  font-weight:700;
+}
+
+.rj-currency-title {
+  margin-left: 15px
+}
+
 
 @media (max-width: 641px) {
 .rj-top-border-mobile {
   padding-top: 35px;
   border-top: 1px solid #bfc1c3;
-}
+  }
 
 .rj-bottom-border-mobile {
   padding-bottom: 35px;
   border-bottom: 1px solid #bfc1c3;
+  }
+
+.rj-currency-title {
+  margin-left: 19px;
 }
+
+.rj-currency-input {
+ width:93% !important;
+ margin-left: 3px;
+
+  }
+
 }
+
 
 
 
