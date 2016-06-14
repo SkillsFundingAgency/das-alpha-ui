@@ -146,7 +146,7 @@ vertical-align: top;
     position: relative;
     padding-left: 50%; 
     font-size: 16px;
-
+    font-weight:700;
   }
 
    #transactions .numeric {
@@ -167,12 +167,12 @@ vertical-align: top;
   /*
   Label the data
   */
-  #transactions td:nth-of-type(1):before { content: "Date"; font-weight:700;}
-  #transactions td:nth-of-type(2):before { content: "Description"; font-weight:700;}
-  #transactions td:nth-of-type(3):before { content: "Credit"; font-weight:700;}
-  #transactions td:nth-of-type(4):before { content: "Debit"; font-weight:700;}
-  #transactions td:nth-of-type(5):before { content: "Balance"; font-weight:700;}
-  #transactions td:nth-of-type(6):before { content: "Action";font-weight:700;  color: #0b0c0c;}
+  #transactions td:nth-of-type(1):before { content: "Date"; font-weight:400; }
+  #transactions td:nth-of-type(2):before { content: "Description"; font-weight:400; }
+  #transactions td:nth-of-type(3):before { content: "Credit"; font-weight:400; }
+  #transactions td:nth-of-type(4):before { content: "Debit"; font-weight:400; }
+  #transactions td:nth-of-type(5):before { content: "Balance"; font-weight:400; }
+  #transactions td:nth-of-type(6):before { content: ""; font-weight:400;  color: #0b0c0c;}
 }
 
 
@@ -226,6 +226,20 @@ vertical-align: top;
   padding-top: 20px;
   border-top: 1px solid #bfc1c3;
 }
+
+
+@media (max-width: 641px) {
+.rj-top-border-mobile {
+  padding-top: 35px;
+  border-top: 1px solid #bfc1c3;
+}
+
+.rj-bottom-border-mobile {
+  padding-bottom: 35px;
+  border-bottom: 1px solid #bfc1c3;
+}
+}
+
 
 
 .graphGoesHere {
