@@ -42,7 +42,7 @@
   <div id="finder-frontend" class="inner-block">
     <form method="get" action="/cma-cases" class="js-live-search-form">
       <div class="filter text-filter">
-        <label class="legend" for="finder-keyword-search">Search by name or ULN</label>
+        <label class="legend" for="finder-keyword-search">Search</label>
         <input value="" type="text" name="keywords" id="finder-keyword-search" aria-controls="js-search-results-info" class="text">
       </div>
 
@@ -74,13 +74,14 @@
                           <thead>
                             <tr>
                               <th scope="col" style="padding-top:0">Name</th>
-                              <th scope="col" style="padding-top:0">ULN</th>
+                              <th scope="col" style="padding-top:0">Learner number </th>
                                <th scope="col" style="padding-top:0"></th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
-                              <td class="rjTabWidth">Rob Edwards</td>
+                              <!--quick hack, will fix -->
+                              <td class="rjTabWidth">Rob Edwards &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
                               <td class="">98HGS3FDS</td>
                               <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice">View</a></td>
                             </tr>
