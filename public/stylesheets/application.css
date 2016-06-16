@@ -2189,21 +2189,37 @@ input[type=number] {
 }
 
 .rj-co-funding {
-  background-color: #dee0e2;
+  background-color: #f8f8f8;
   width: 143px;
-  border-top: 1px solid #bfc1c3;
+  border-top: 1px solid #dee0e2;
+}
+
+.rj-white-background {
+  background-color: #fff;
 }
 
 .rj-border-left {
-  border-left: 1px solid #bfc1c3;
+  border-left: 1px solid #dee0e2;
 }
 
 .rj-border-right {
-  border-right: 1px solid #bfc1c3;
+  border-right: 1px solid #dee0e2;
 }
 
 .rj-co-funding-label p {
-  padding: 10px 20px 10px 20px;
+  padding: 0px 10px 10px 20px;
+  margin-bottom: 0px;
+}
+
+.rj-co-funding-label h3 {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 10px;
+}
+
+.sunset-funds {
+  display: block;
+  color: red;
 }
 
 @media (min-width: 641px) {
