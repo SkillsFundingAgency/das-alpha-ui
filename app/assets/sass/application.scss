@@ -178,6 +178,32 @@ vertical-align: top;
 
 //end of mobile tables
 
+// james funding toolkit
+.rj-co-funding {
+  background-color: $grey-3;
+  width:143px;
+  border-top: 1px solid $grey-2; 
+  
+
+}
+
+.rj-border-left {
+     border-left: 1px solid $grey-2; 
+}
+
+.rj-border-right {
+     border-right: 1px solid $grey-2; 
+}
+
+
+.rj-co-funding-label {
+
+}
+
+.rj-co-funding-label p {
+  padding: 10px 20px 10px 20px;
+
+}
 
 @media (min-width: 641px) {
 .table-19-font td, .table-19-font th {
