@@ -2274,6 +2274,11 @@ input[type=number] {
   margin-left: 15px;
 }
 
+.rj-percentage-symbol {
+  margin-left: 5px;
+  font-weight: 700;
+}
+
 .list-item-wrapper-vertical {
   padding-left: 20px;
   padding-right: 20px;
