@@ -73,7 +73,6 @@ $(document).ready(function(){
 
            <div class="column-three-thirds">
             <!--h2 class="heading-medium">Account history</h2-->
-             <table id="transactions" class="sticky-header">
 
                 <table id="transactions" class="sticky-header">
                   <h2 class="heading-medium" style="">Monthly funding breakdown</h2>
@@ -248,8 +247,27 @@ $(document).ready(function(){
                         <td class="numeric rj-co-funding rj-border-right">£0</td>
                         <td class="numeric ">£36,076</td>
                       </tr>
-                      <td colspan="6"> <h2 class="heading-medium">Expiring funds</h2><p>Funds will expire after they have been unused for 18 months. You have expiring funds in your figures below</p></td>
-                                            <tr>
+
+                   </tbody>
+             </table>
+<h2 class="heading-medium">Expiring funds</h2><p>Funds will expire after they have been unused for 18 months. You have expiring funds in your figures below</p>
+
+               <table id="transactions" class="sticky-header">
+   
+
+                    <thead>
+                      <tr>
+                        <th class="rj-white-background"scope="col">Date</th>
+                        <th class="numeric rj-white-background" scope="col ">Funding</th>
+                        <th class="numeric rj-white-background" scope="col" >Training cost</th>
+                        <th  class="numeric rj-co-funding rj-border-left" scope="col" >Your contribution</th>
+                        <th class="numeric rj-co-funding rj-border-right"  scope="col" >Govt top up</th>
+                        <th class="numeric rj-white-background rj-balance-column" scope="col">Balance</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
                         <td>June 2018</td>
                         <td class="numeric ">£19,388</td>
                         <td class="numeric">£1,350</td>
@@ -283,6 +301,8 @@ $(document).ready(function(){
                       </tr>
              
                     </tbody>
+
+
                    
                 </table>
 
