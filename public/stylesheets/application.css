@@ -2274,6 +2274,53 @@ input[type=number] {
   margin-left: 15px;
 }
 
+.list-item-wrapper-vertical {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.list-item-wrapper-vertical input {
+  width: 80%;
+}
+
+.list-item-wrapper-vertical .remove-list-item-vertical {
+  margin-top: 4.4em;
+  display: block;
+}
+
+.list-item-wrapper-vertical .heading-medium {
+  margin-top: 0;
+}
+
+.button-add-another-vertical {
+  background-color: #eee;
+  color: #000;
+  box-shadow: 0 2px 0 #666;
+}
+
+.button-add-another-vertical:hover {
+  background-color: #ccc;
+  color: #000;
+  box-shadow: 0 2px 0 #666;
+}
+
+.button-add-another-vertical:focus {
+  background-color: #ccc;
+  color: #000;
+  box-shadow: 0 2px 0 #666;
+}
+
+@media (max-width: 640px) {
+  .list-item-wrapper-vertical inpit {
+    width: 100%;
+  }
+  .button-add-another-vertical {
+    width: 90%;
+    margin: auto;
+    display: block;
+  }
+}
+
 @media (max-width: 641px) {
   .rj-top-border-mobile {
     padding-top: 35px;
