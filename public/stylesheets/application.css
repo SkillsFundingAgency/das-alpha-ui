@@ -2188,6 +2188,22 @@ input[type=number] {
   }
 }
 
+.tamc-js-hidden {
+  display: none;
+}
+
+.error-inline {
+  margin-top: 15px;
+  clear: both;
+  background-color: #fef7f7;
+}
+
+.validation-summary {
+  border: 5px solid #b10e1e;
+  padding: 15px 30px;
+  margin-bottom: 30px;
+}
+
 .rj-co-funding {
   background-color: #dee0e2;
   width: 143px;

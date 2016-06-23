@@ -178,6 +178,27 @@ vertical-align: top;
 
 //end of mobile tables
 
+//register marrage allowance type thing
+
+.tamc-js-hidden {
+  display : none;
+}
+
+.error-inline {
+  margin-top: 15px;
+  clear: both;
+  background-color: #fef7f7;
+}
+
+.validation-summary {
+    border: 5px solid #b10e1e;
+    padding: 15px 30px;
+    margin-bottom: 30px;
+}
+
+
+
+
 // james funding toolkit
 .rj-co-funding {
   background-color: $panel-colour;
@@ -291,7 +312,7 @@ vertical-align: top;
     margin-top: 10px;
     padding-left: 0;
   }
-  
+
     .list-item-wrapper-vertical {
       padding-left: 20px;
       padding-right: 20px;
