@@ -2279,7 +2279,7 @@ input[type=number] {
   font-weight: 700;
 }
 
-.button-clear, .button-clear:focus {
+.button-clear, .button-clear:focus, .button-clear:hover {
   border: none;
   background: none;
   color: #005ea5;

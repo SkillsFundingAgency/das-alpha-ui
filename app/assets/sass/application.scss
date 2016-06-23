@@ -281,7 +281,7 @@ vertical-align: top;
  font-weight:700;
 }
 
-.button-clear, .button-clear:focus {
+.button-clear, .button-clear:focus, .button-clear:hover {
     border: none;
     background: none;
     color: #005ea5;
@@ -290,10 +290,8 @@ vertical-align: top;
     display:block;
     margin-top: 10px;
     padding-left: 0;
-
-
-
   }
+  
     .list-item-wrapper-vertical {
       padding-left: 20px;
       padding-right: 20px;
