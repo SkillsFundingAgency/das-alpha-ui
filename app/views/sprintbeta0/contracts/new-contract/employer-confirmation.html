@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .provider-nav a, .nav-forecast a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+ <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+            <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/contracts/providers">Contracts</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract">Add contract</a></li>
+            <li>Contract entered</li>
+    </ol>
+
+  </div>
+
+
+<div class="grid-row">
+                    <div class="column-two-thirds">
+
+
+             <div class="govuk-box-highlight">
+                <h1 class="heading-xlarge">
+                  Contract sent
+                </h1>
+                <p>Your contract reference number is <br>
+                  <strong class="heading-medium">98HGS3F</strong>
+                </p>
+            </div>
+                <p>The contract has been sent for your provider to enter their details.
+                 You can <span class="looks-like-a-link-underline ">view contracts in progress</span></p>
+          </div>
+
+          <div class="column-one-third">
+
+          </div>
+        </div>
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
+
+{% endblock %}
+

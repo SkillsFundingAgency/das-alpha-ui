@@ -1,0 +1,175 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  #navigation-primary {
+    display:none;
+  }
+</style>
+
+<script>
+/* to set the saved variable on save and return (so it changed the next screen to show an apprenticeship that's been added) */
+var addedApp = function() {
+  var isAddedApp = 'yes';
+  localStorage.setItem("apprenticeship-added", JSON.stringify(isAddedApp));
+  window.location.href='individual-contract';
+};
+
+
+/* To determine if the to do list has been done - only dates works for now - this breaks because of the URl change below if it is in the page...it should live in /sprint11/contracts/new-contract/provider-interface/add-apprenticeship */
+
+//this is now in the global custom.js tempate as it stopped working when I added the sprint link changer.
+
+
+
+
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+            <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Add an apprenticeship</h1>
+           
+            <p class="">Add the details of the apprenticeship below. Adding names at this stage is optional but this will need to be completed before you can be paid. </p>
+
+                   <table class="table-19-font">
+                      <thead>
+                              <tr>
+                                <h2 class="heading-medium">To do:</h2>
+                                <p >Complete the items in the to-do list below to add the contract to the system</p>
+                                <th scope="col">Item</th>
+                                <th scope="col" class="">Status</th>
+                                <th scope="col">Action</th>
+                              </tr>
+                        </thead>
+                        <tbody>
+                              <tr>
+                                <td class="rjTableName">Apprenticeship type</td>
+                                <td class="">To do</td>
+                                <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-an-apprenticeship/apprenticeship-type">Add</a></td>
+                              </tr>
+                              <tr>
+                                <td class="rjTableName">Projected dates</td>
+                                <td class="datesToDo" >To do</td>
+                                <td class="datesToDo" ><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-an-apprenticeship/apprenticeship-dates">Add</a></td>
+                                <td class="datesComplete" >Added</td>
+                                <td class="datesComplete" ><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-an-apprenticeship/apprenticeship-dates">View</a></td>
+                              </tr>
+                              <tr>
+                                <td class="rjTableName">Number of apprentices</td>
+                                <td class="">To do</td>
+                                <td class="looks-like-a-link-underline "><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-an-apprenticeship/apprenticeship-numbers">Add</a></td>
+                              </tr>
+                              <tr>
+                                <td class="rjTableName">Cost of cohort</td>
+                                <td class="">To do</td>
+                                <td class="looks-like-a-link-underline "><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-an-apprenticeship/apprenticeship-cost">Add</a></td>
+                              </tr>
+                              <tr>
+                                <td class="rjTableName">ERN</td>
+                                <td class="">To do</td>
+                                <td class="looks-like-a-link-underline "><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-an-apprenticeship/apprenticeship-ern">Add</a></td>
+                              </tr>
+                              <tr>
+                                <td class="rjTableName">ULN/Names (optional)</td>
+                                <td class="">To do</td>
+                                <td class="looks-like-a-link-underline "><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-an-apprenticeship/apprenticeship-names">Add</a></td>
+                              </tr>
+                              <tr>
+                                <td class="rjTableName">Endpoint assessor</td>
+                                <td class="">To do</td>
+                                <td class="looks-like-a-link-underline "><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-an-apprenticeship/apprenticeship-endpoint">Add</a></td>
+                              </tr>
+                        </tbody>
+                    </table>
+
+               
+
+                  <div style="margin-top:20px;"><input class="button" id="paymentPlan" onclick="addedApp()" value="Save and return"></div>
+           
+
+
+
+          </div>
+            <div class="column-one-third">
+
+          <!--div>
+           <h2 class="heading-medium">Funds you could lose</h2>
+           <p>You have expiring funds, see below</p>
+              <div class="home-figures">
+                <h3 class="heading-small">In less than 3 months</h3>
+                <p class="bold-large">£1,000</p>
+                <p style=" font-size:16px" class="">Since 1 April 2017</p> 
+              </div>
+              <div class="home-figures">
+                <h3 class="heading-small">3 to 6 months</h3>
+                <p class="bold-large">£2,050</p>
+              </div>
+              <div class="home-figures">
+                <h3 class="heading-small">6 to 12 months</h3>
+                <p class="bold-large">£3,447</p>
+              </div>
+          </div>
+           <a href="">View details of expiring funds</a>
+           <!--div>
+                      <table class=""> 
+                    <thead>
+                      <tr>
+                        <h2 class="heading-medium">Funds you could lose</h2>
+                        <th scope="col">Dates</th>
+                        <th scope="col" class="numeric">Amount you could lose</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="rjTableName">Expiring in < 3 months</td>
+                        <td class="numeric">£1,000</td>
+                      </tr>
+                      <tr>
+                        <td class="rjTableName">Expiring in 3 to 6 months</td>
+                        <td class="numeric">£2,050</td>
+                      </tr>
+                      <tr>
+                        <td class="rjTableName">Expiring in 6 to 12 months</td>
+                        <td class="numeric">£3,447</span></td>
+                      </tr>
+                </table>
+           </div-->
+
+        </div>
+
+
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
+
+{% endblock %}
+
