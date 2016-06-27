@@ -1,11 +1,10 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  GOV.UK prototype kit
+  Apprenticeships
 {% endblock %}
 
 {% block content %}
-
 <style>
 
 #navigation-primary {
@@ -14,83 +13,46 @@
 
 </style>
 
-<script>
-// not needed at the moment, remember to remove script from the header if you don't use this in the end.
-
-//jQuery( document ).ready(function() {
-     //jQuery.validate(); 
-// });
-
-
-</script>
-
 
 <main id="content" role="main">
 {% include "includes/phase_banner_alpha.html" %}
 
-<div class="breadcrumbs">
+
+  <div class="breadcrumbs">
     <ol role="breadcrumbs">
-<!--the breadcrumb for the inform pages is in the following template -->
-       {% include "includes/breadcrumbs/start-bread.html" %}
+      {% include "includes/breadcrumbs/register-back.html" %}
     </ol>
-</div>
+
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
 
   <div class="grid-row">
            <div class="column-two-thirds">
-  <h1 class="heading-xlarge" >Get access to your levy funds</h1>
+              <h1 class="heading-xlarge" >Activate your account</h1>
+            <div> 
+              <p>
+                  An activation email has been sent to: <span style="font-weight:700">youremail@emailaddress.com</span>
+                </p>
 
-    <p>Use this service to:
-	<ul class="list-bullet">
-		<li>Create an apprenticeship account</li>
-		<li>Associate PAYE schemes with the apprenticeship account</li>
-		<li>Give the apprenticeship account a name</li>
-	</ul></p>
-	
-	<h2 class="heading-medium">Before you start</h2>
-
-    <p>You need:
-	<ul class="list-bullet">
-		<li>The email you use at work</li>
-		<li>Government Gateway ID</li>
-		<li>The PAYE schemes you want to link to the apprenticeship account</li>
-	</ul></p>
-
- <!-- <div class="panel panel-border-wide">
-    <p>
-      After you have registered, you will be able to grant access to the apprenticeship account to other people in your company.
-    </p>
-  </div> -->
-    <div style="margin-top:50px"></div>
-    <div class="padder-top-x">
-        <a href="/{% include "includes/sprint-link.html" %}/register/beta/detailsOne" class="button button-start">Start</a>
-    </div>
-    <div style="margin-top:50px"></div>
-    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
-<!-- {% include "includes/start-tabs.html" %} -->
-
+                <p>Select the link in the email to verify the email address and activate your account.</p> 
+                  <p>The link must be used within 24 hours or it will expire and you will need to register again.</p>
+                </p>
+                <p>If you did not get the email we can <span class="looks-like-a-link-underline">send it again</span> </p>
             </div>
 
-             <div class="column-one-third">
-                      <aside class="related">
-                        <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
-                        <nav role="navigation">
-                      <ul class="robSideNav">
-                          <li>
-                            <a href="../login">Sign in</a>
-                          </li>
-
-                        </ul>
-                           </nav>
-                    </aside>
-            </div>
-</div>
+            <div style="margin-top:50px"></div>
+          </div>
+        </div>
+        <a class="rjTemp" href="new-password">jump</a>
 </main>
+
+ <!--button class="button">Do the thing</button-->
 
 <script>
 //jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
-
-
-
 $( document ).ready(function() {
 
   // change the tabs themselves to active - should be in the above but isn't working because it's looking for a not li so I added this as a quick fix.
@@ -149,5 +111,5 @@ $( document ).ready(function() {
 
 </script>
 
-
 {% endblock %}
+
