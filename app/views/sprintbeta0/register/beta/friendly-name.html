@@ -6,6 +6,15 @@
 
 {% block content %}
 
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+
 <script>
 // not needed at the moment, remember to remove script from the header if you don't use this in the end.
 
@@ -30,34 +39,28 @@
 
       <div class="grid-row">
            <div class="column-two-thirds">
-
-   <h1 class="heading-xlarge" ><!--span class="heading-secondary" style="padding-top:0px">Question 2 of 4</span-->Company details</h1>
- </div></div>
-
-
-
-
-      <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
-<form action="friendly-name" >
-  <fieldset>
-    <legend class="visuallyhidden">company details</legend>
-      <div class="form-group">
-          <label class="form-label" for="full-name">Company name</label>
-          <span class="form-hint">The name of your company when initially created</span>
-          <input class="form-control" id="companyName" type="text">
+             <h1 class="heading-xlarge" >Give your account a name</h1>
+             <p>The apprenticeship account will have a default name, but you can change it here to help you identify it in future.</p>
+            </div>
       </div>
-      <div class="form-group">
-          <label class="form-label" for="companies-house-number">Companies House number</label>
-          <span class="form-hint">The number used to register the company with Companies House</span>
-          <input class="form-control" id="companies-house-number" style="max-width:6em" type="text">
-      </div>
-    </fieldset>
+              <form action="../balance">
+                  <fieldset>
+                    <legend class="visuallyhidden">Account name</legend>
+                    <div class="form-group">
+                        <label class="form-label-bold" for="text">Account name</label>
+                        <span class="form-hint">We have suggested a name, you can change this to something more descriptive for you</span>
+                        <input class="form-control " id="accountName" type="text" value="Acme Ltd Coventry">
 
-    <input class="button" id="saveAndContinue" type="submit" value="Save and continue">
-</form>
+                    </div>
+                  </fieldset>
+                  <input class="button" id="saveAndContinue" type="submit" value="Save and Continue">
+				  <div style="margin-top:25px"></div>
+				  <!--div class="rjmakeALink" onclick="loopyLoop()"><p>Create another apprenticeship account</p></div-->
+				  <!--CREATE ANOTHER APPRENTICESHIP ACCOUNT-->
+              </form>
+
 
 </main>
-
 <script>
 
 //store details entered into the form in local storage
