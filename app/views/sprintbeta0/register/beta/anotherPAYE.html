@@ -6,15 +6,6 @@
 
 {% block content %}
 
-<style>
-
-#navigation-primary {
-  display:none ;
-}
-
-</style>
-
-
 <script>
 // not needed at the moment, remember to remove script from the header if you don't use this in the end.
 
@@ -31,36 +22,44 @@
 
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
-     {% include "includes/breadcrumbs/register-back.html" %}
+      <li><a href="/">Breadcrumb here ></a></li>
     </ol>
 
   </div>
-
-
-      <div class="grid-row">
+        <div class="grid-row">
            <div class="column-two-thirds">
-             <h1 class="heading-xlarge" >Give your account a name</h1>
-             <p>The apprenticeship account will have a default name, but you can change it here to help you identify it in future.</p>
-            </div>
-      </div>
-              <form action="govt-gateway-disclaimer">
-                  <fieldset>
-                    <legend class="visuallyhidden">Account name</legend>
-                    <div class="form-group">
-                        <label class="form-label-bold" for="text">Account name</label>
-                        <span class="form-hint">We have suggested a name, you can change this to something more descriptive for you</span>
-                        <input class="form-control " id="accountName" type="text" value="Acme Ltd Coventry">
 
-                    </div>
-                  </fieldset>
-                  <input class="button" id="saveAndContinue" type="submit" value="Save and Continue">
-				  <div style="margin-top:25px"></div>
-				  <!--div class="rjmakeALink" onclick="loopyLoop()"><p>Create another apprenticeship account</p></div-->
-				  <!--CREATE ANOTHER APPRENTICESHIP ACCOUNT-->
-              </form>
+  <h1 class="heading-xlarge">Add another PAYE scheme</h1>
 
+  <p>
+  Do you want to add another PAYE scheme to this account, if you don't want to do it now you can always add more later.
+  </p>
+
+<form action="confirmation">
+
+    <fieldset>
+
+      <legend class="visuallyhidden">Add another PAYE scheme</legend>
+      <div class="form-group">
+      <label class="block-label" for="radio-1">
+        <input id="radio-1" type="radio" name="radio-group" value="yes registered before">
+        Yes, I want to add another PAYE scheme now
+      </label>
+
+      <label class="block-label" for="radio-2">
+        <input id="radio-2" type="radio" name="radio-group" value="no havent registered before">
+        No, I don't want to add another PAYE scheme yet
+      </label>
+    </div>
+    </fieldset>
+         <input class="button" id="saveAndContinue" type="submit" value="Save and continue">
+  </form>
+
+</div>
+</div>
 
 </main>
+
 <script>
 
 //store details entered into the form in local storage

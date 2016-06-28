@@ -2306,6 +2306,12 @@ input[type=number] {
   padding-left: 0;
 }
 
+.button-grey-secondary {
+  background-color: #eee;
+  color: #000;
+  box-shadow: 0 2px 0 #666;
+}
+
 .list-item-wrapper-vertical {
   padding-left: 20px;
   padding-right: 20px;
