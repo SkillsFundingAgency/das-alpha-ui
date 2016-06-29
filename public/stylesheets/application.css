@@ -2050,6 +2050,10 @@ input[type=number] {
   display:none;
 }
 */
+.form-label-bold {
+  margin-bottom: 5px;
+}
+
 .rj-contract-verify {
   width: 100%;
   min-height: 200px;
