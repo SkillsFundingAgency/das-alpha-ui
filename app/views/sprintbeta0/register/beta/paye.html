@@ -57,28 +57,30 @@ var whereNow = function() {
 
       <div class="grid-row">
            <div class="column-two-thirds">
-              <h1 class="heading-xlarge" >Confirm your PAYE scheme</h1>
-              <p>The following PAYE scheme is associated with this Government Gateway account, please confirm that you want to use this scheme.<p/>
+              <h1 class="heading-xlarge" >Confirm PAYE scheme</h1>
+              <p>The following PAYE scheme is associated with this Government Gateway ID, please confirm that you want to use this scheme.<p/>
                 <h2 class="heading-large" style="margin-bottom:0; ">Acme Coventry Store Ltd</h2>
                 <h3 class="heading-medium" style="margin-top:0px;color:#6F777B " >846/A246</h2>
 
               <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
-              <form action="">
+              <form action="confirmation">
                   <legend class="visuallyhidden">PAYE scheme reference number</legend>
                     <div class="form-group">
+                      <label class="form-label-bold" for="companies-house-number">Is this the PAYE scheme you want to add?</label>
                     <label class="block-label" for="checkbox1">
                       <input id="checkbox1" type="radio" name="checkbox-group" value="paye-1">
-                    Yes, add 846/A246 to my account
+                     Yes, add 856/A246 to this account
                      </label>
                     <label class="block-label" for="checkbox2">
                       <input id="checkbox2" type="radio" name="checkbox-group" value="paye-2">
-                    No, do not add to my account
+                    No, do not add 856/A246 to this account
                      </label>
                   </div>
                 </fieldset>
                 <!-- function loopyLoop and whereNow are at the top of this page -->
                   <div style="margin-top:50px"></div>
-				  <input class="button" id="saveAndContinue" onclick="whereNow()" value="Save and continue">
+				  <!--input class="button" id="saveAndContinue" onclick="whereNow()" value="Save and continue"-->
+          <input class="button" id="saveAndContinue" type="submit" value="Save and continue">
               </form>
             </div>
             <div class="column-one-third"></div>
