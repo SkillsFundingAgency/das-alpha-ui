@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block content %}
-
 <style>
 
 #navigation-primary {
@@ -13,13 +12,17 @@
 }
 
 </style>
+
+
 <main id="content" role="main">
 {% include "includes/phase_banner_beta.html" %}
 
+
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
-{% include "includes/breadcrumbs/register-back.html" %}
+      {% include "includes/breadcrumbs/register-back.html" %}
     </ol>
+
   </div>
 
 
@@ -28,45 +31,20 @@
 
   <div class="grid-row">
            <div class="column-two-thirds">
-              <h1 class="heading-xlarge" >Approve terms and conditions</h1>
-            <div>
-                <p>
-                  To set up your account we need you to agree to all of the following legal requirements
+              <h1 class="heading-xlarge" >Account activated</h1>
+            <div> 
+              <p>
+                  Your account has been activated
                 </p>
-               <div class="panel panel-border-wide">
-                <p>
-                  Remember you are entering into a binding legal contract on behalf of your organisation
-                </p>
-              </div>
-                 <h2 class="heading-medium">
-                  On behalf of my organisation:
-                </h2>
 
-                 <form action="/{% include "includes/sprint-link.html" %}/balance">
-                    <legend class="visuallyhidden">Terms and conditions</legend>
-                      <div class="form-group">
-                      <label class="block-label" for="checkbox-1">
-                        <input id="checkbox-1" type="checkbox" name="checkbox-group" value="agree-with-terms">
-                        I declare that I am authorised to approve contracts
-                      </label>
-                      <label class="block-label" for="checkbox-2">
-                        <input id="checkbox-2" type="checkbox" name="checkbox-group" value="agree-with-terms">
-                        I agree with the <a href="#">Terms and Conditions</a>
-                      </label>
-                    </div>
-                    </fieldset>
-                  <div style="margin-top:20px;"><input class="button" id="approveContract" type="submit" value="Finish and set up account"></div>
-                  </form>
+                <p>We need some more info from you, please continue.</p> 
 
             </div>
-            <div style="margin-top:35px"></div>
+
             <div style="margin-top:50px"></div>
           </div>
-
-          <div class="column-one-third">
-                      
-            </div>
         </div>
+        <a class="rjTemp" href="companyDetails">jump</a>
 </main>
 
  <!--button class="button">Do the thing</button-->
