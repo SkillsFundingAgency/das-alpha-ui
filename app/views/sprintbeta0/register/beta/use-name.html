@@ -9,7 +9,7 @@
 <style>
 
 #navigation-primary {
-  display:none;
+  display:none ;
 }
 
 </style>
@@ -25,7 +25,23 @@
 
 
 //loopyloop stores a variable in local storage if the user is looping through the govt gateway form multiple times so I can display a confirmation page later
+var loopyLoop = function() {
+  var isLooping = 'yes';
+  localStorage.setItem("is-looping", JSON.stringify(isLooping));
+  window.location.href='govtCredentials';
+};
 
+var whereNow = function() {
+  var areWeLooping = JSON.parse(localStorage.getItem('is-looping'));
+   console.log(areWeLooping)
+    if (areWeLooping == "yes") {
+      var isLooping = 'no';
+      localStorage.setItem("is-looping", JSON.stringify(isLooping));
+    window.location.href='confirmation';
+  } else {
+    window.location.href='confirmation';
+  }
+};
 
 </script>
 
@@ -38,31 +54,32 @@
 {% include "includes/breadcrumbs/register-back.html" %}
     </ol>
   </div>
+
       <div class="grid-row">
            <div class="column-two-thirds">
-              <h1 class="heading-xlarge" >Confirm your Companies House number</h1>
-              <p class="">Your company number <span style="font-weight:700">03127414</span> is associated with:<p/>
+              <h1 class="heading-xlarge" >Company name</h1>
+              <p>We need to use a company name on the contract <p/>
                 <h2 class="heading-large" style="margin-bottom:0; ">Acme Coventry Store Ltd</h2>
-                 <h3 class="heading-medium" style="margin-top:0px;color:#6F777B " >120 Aldersgate Street, EC1A 4JQ</h3>
-
+                <h3 class="heading-medium" style="margin-top:0px;color:#6F777B">846/A246</h2>
               <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
-              <form action="approve-terms">
-                  <legend class="visuallyhidden">Company name</legend>
+              <form action="companyDetails">
+                  <legend class="visuallyhidden">PAYE scheme reference number</legend>
                     <div class="form-group">
-                      <label class="form-label-bold" for="companies-house-number">Are these details correct?</label>
+                      <label class="form-label-bold" for="companies-house-number">Is this the PAYE scheme you want to add?</label>
                     <label class="block-label" for="checkbox1">
-                      <input id="checkbox1" type="radio" name="checkbox-group" value="yes">
-                    Yes, these are correct
+                      <input id="checkbox1" type="radio" name="checkbox-group" value="paye-1">
+                     Yes, add 856/A246 to this account
                      </label>
                     <label class="block-label" for="checkbox2">
-                      <input id="checkbox2" type="radio" name="checkbox-group" value="no">
-                    No, search again
+                      <input id="checkbox2" type="radio" name="checkbox-group" value="paye-2">
+                    No, do not add 856/A246 to this account
                      </label>
                   </div>
                 </fieldset>
                 <!-- function loopyLoop and whereNow are at the top of this page -->
                   <div style="margin-top:50px"></div>
-				   <input class="button" id="saveAndContinue" type="submit" value="Save and continue">
+				  <!--input class="button" id="saveAndContinue" onclick="whereNow()" value="Save and continue"-->
+          <input class="button" id="saveAndContinue" type="submit" value="Save and continue">
               </form>
             </div>
             <div class="column-one-third"></div>
@@ -70,5 +87,11 @@
 
 </main>
 
+<script>
+
+
+
+
+</script>
 
 {% endblock %}
