@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+#navigation-primary {
+  display:none;
+}
+
+</style>
+
+
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+//jQuery( document ).ready(function() {
+     //jQuery.validate(); 
+// });
+
+
+//loopyloop stores a variable in local storage if the user is looping through the govt gateway form multiple times so I can display a confirmation page later
+
+
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+{% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+      <div class="grid-row">
+           <div class="column-two-thirds">
+              <h1 class="heading-xlarge" >Confirm your Company Name</h1>
+              <p class="">Your company number <span style="font-weight:700">03127414</span> is associated with:<p/>
+                <h2 class="heading-large" style="margin-bottom:0; ">Acme Coventry Store Ltd</h2>
+                 <h3 class="heading-medium" style="margin-top:0px;color:#6F777B " >120 Aldersgate Street, EC1A 4JQ</h3>
+
+              <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
+              <form action="approve-terms">
+                  <legend class="visuallyhidden">Company name</legend>
+                    <div class="form-group">
+                      <label class="form-label-bold" for="companies-house-number">Use Acme Coventry Store Ltd on your contract?</label>
+                    <label class="block-label" for="checkbox1">
+                      <input id="checkbox1" type="radio" name="checkbox-group" value="yes">
+                    Yes, use this 
+                     </label>
+                    <label class="block-label" for="checkbox2">
+                      <input id="checkbox2" type="radio" name="checkbox-group" value="no">
+                    No, search again
+                     </label>
+                  </div>
+                </fieldset>
+                <!-- function loopyLoop and whereNow are at the top of this page -->
+                  <div style="margin-top:50px"></div>
+				   <input class="button" id="saveAndContinue" type="submit" value="Save and continue">
+              </form>
+            </div>
+            <div class="column-one-third"></div>
+          </div>
+
+</main>
+
+
+{% endblock %}
