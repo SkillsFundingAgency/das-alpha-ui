@@ -138,11 +138,11 @@ var defaultSprint = function() {
 defaultSprint();
 
 
-// This removes the breadcrumbs from sprints below 10
+// This removes the breadcrumbs from sprint 10 (the navigation version). The breadcrumb on earlier versions is broken
 var breadyCrumb = function() {
           var whatSprint = JSON.parse(localStorage.getItem('sprint-number'));
            console.log('what sprint is ' + whatSprint);
-          if (whatSprint != "sprint11") {
+          if (whatSprint == "sprint10") {
             $('<style>.breadcrumbs ol li a { display:none;}</style>').appendTo('head');
           } else {}
 }; 
