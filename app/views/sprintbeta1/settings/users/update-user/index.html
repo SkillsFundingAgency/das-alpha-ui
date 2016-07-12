@@ -22,12 +22,10 @@
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
       <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
-      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></li>
-      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view">Your apprentices</a></li>
-      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice">Rob Edwards</a></li>
-       <li>Update apprenticeship</li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/settings/">Settings</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/settings/users">Team members</a></li>
+      <li>Rob Edwards</li>
     </ol>
-
   </div>
 
 
@@ -49,18 +47,16 @@
                  <form action="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice">
                     <legend class="visuallyhidden">Changes</legend>
                       <div class="form-group">
-                      <label class="block-label" for="radio-2">
-                        <input id="radio-2" type="radio" name="radio-group" value="pause-apprenticeship">
+                      <label class="block-label" for="radio-1">
+                        <input id="radio-1" type="radio" name="radio-group" value="pause-apprenticeship">
                         Pause the apprenticeship
                       </label>
-                      <label class="block-label" for="radio-3">
-                        <input id="radio-3" type="radio" name="radio-group" value="manual-payment">
+                      <label class="block-label" for="radio-2">
+                        <input id="radio-2" type="radio" name="radio-group" value="manual-payment">
                         Transfer the apprenticeship to another account
                       </label>
-                    </div>
-                    <div class="form-group">
-                        <label class="block-label" for="radio-5">
-                        <input id="radio-5" type="radio" name="radio-group" value="delete-apprenticeship">
+                        <label class="block-label" for="radio-3">
+                        <input id="radio-3" type="radio" name="radio-group" value="delete-apprenticeship">
                         DELETE this apprenticeship
                       </label>
                     </div>
