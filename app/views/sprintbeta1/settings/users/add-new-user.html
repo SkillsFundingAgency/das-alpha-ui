@@ -54,13 +54,39 @@
                     <input class="form-control" id="email-address" type="email" >
               </div>
             </fieldset>
-                <fieldset>
-                    <legend class="visuallyhidden">Terms and conditions</legend>
+
+                  <fieldset>
+                          <legend class="visuallyhidden">Access to the service</legend>
+                          <label class="form-label-bold" for="full-name">Team member access</label>
+                            <p>What level of access you would like this user to have?</p>
+                          <label class="rj-roles-choice block-label " for="radio-1">
+                            <input id="radio-1" type="radio" name="radio-group" value="Viewer">
+                           Viewer
+                           <span class="form-hint">A viewer can view all content on service and update the forecast tool.</span>
+                          </label>
+
+                          <label class="block-label rj-roles-choice" for="radio-2">
+                            <input id="radio-2" type="radio" name="radio-group" value="Transactor">
+                            Transactor
+                             <span class="form-hint">A transactor can do everything a viewer can do but can also start new and approve contracts as well as pause and stop payments.</span>
+                          </label>
+                          <label class="block-label rj-roles-choice" for="radio-3">
+                            <input id="radio-3" type="radio" name="radio-group" value="Owner">
+                            Owner
+                            <span class="form-hint">An owner can do everything including add new users, alter and add PAYE schemes as well as everything a transactor can do.</span>
+                          </label>
+                  </fieldset>
+
+
+
+
+                <!--fieldset>
+                    <legend class="visuallyhidden">Access to the service</legend>
                       <div class="form-group">
                         <label class="form-label-bold" for="full-name">Access to the service</label>
                         <div class="grid-row">
                           <div class="column-two-thirds">
-                        <p>All team members can read and review content on the site including updating the forecast tool. You can give them additional access to sensitive features below:</p>
+                        <p>Please choose the level of access you would like the new user to have:</p>
                       </div></div>
                       <label class="block-label" for="checkbox-1">
                         <input id="checkbox-1" type="checkbox" name="checkbox-group" value="manage-other-users">
@@ -75,8 +101,8 @@
                         Allow team member to add, delete and manage the PAYE schemes on this account
                       </label>
                     </div>
-              </fieldset>
-
+              </fieldset-->
+                <div style="margin-top:20px"></div>
                   <input class="button" id="saveAndContinue" type="submit" value="Invite user to the service">
           </form>
 

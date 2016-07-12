@@ -2163,6 +2163,12 @@ input[type=number] {
   margin-bottom: 35px;
 }
 
+@media (min-width: 641px) {
+  .rj-roles-choice {
+    width: 66%;
+  }
+}
+
 .rj-alert-wrapper {
   border-left: 4px solid #005EA5;
   width: 100%;
