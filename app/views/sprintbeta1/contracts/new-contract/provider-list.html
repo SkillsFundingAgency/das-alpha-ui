@@ -27,27 +27,29 @@
 
      <div class="breadcrumbs back-breadcrumb">
     <ol role="breadcrumbs">
-      {% include "includes/breadcrumbs/register-back.html" %}
+       <a href="" class="link-back" onclick="goBack()">Start a new search </a>
     </ol>
   </div>
 
 
 <div class="grid-row">
                     <div class="column-two-thirds">
-  <h1 class="heading-xlarge" >Search results</h1>
-  <p>There are <span style="font-weight:700">2</span> providers matching your search for <span style="font-weight:700">'Hackney Skills'</span></p>
+  <h1 class="heading-xlarge" >Your provider</h1>
+  <p>The following provider is a match for UKPRN number <span style="font-weight:700">'90210':</span></p>
 
-            <div class="robColumnDetails">
-              <h2 class="heading-medium" style="margin: 0 0 5px 0"><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-contact">Hackney Skills and Training Ltd</a></h2>
+            <div class="">
+              <h2 class="heading-medium" style="margin: 0 0 5px 0">Hackney Skills and Training Ltd</h2>
                       <div><h2 class="heading-small" style="display:inline-block; margin:0;">Address:&nbsp</h2 ><p style="display:inline; margin:0;">93 Hackney Rd, London, EC1V 3QJ</p></div>
 
-          </div>
-          <div class="robColumnDetails">
-              <h2 class="heading-medium looks-like-a-link-underline-h2" style="margin: 0 0 5px 0">Hackney Skills and Training Ltd</h2>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Address:&nbsp</h2 ><p style="display:inline; margin:0;">101 Wood St, London, N4 3BJ</p></div>
+                          <div style="margin-top:35px"></div>
+                                <form action="putsomethinghere">
+                                    <input class="button" id="search-provider" type="submit" value="Start contract with provider">
+                                </form>
+                                <form action="find-provider">
+                                    <input class="button button-clear" id="search-provider" type="submit" value="Search again">
+                                </form>
 
           </div>
-
 
 
 
