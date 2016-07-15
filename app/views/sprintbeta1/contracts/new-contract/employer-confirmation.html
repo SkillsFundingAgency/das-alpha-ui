@@ -14,7 +14,7 @@
 </style>
 
 <main id="content" role="main">
-{% include "includes/phase_banner_alpha.html" %}
+{% include "includes/phase_banner_beta.html" %}
 {% include "includes/secondary-nav-provider.html" %}
 
 
@@ -25,28 +25,30 @@
             <li><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract">Add contract</a></li>
             <li>Contract entered</li>
     </ol>
-
   </div>
 
 
 <div class="grid-row">
-                    <div class="column-two-thirds">
-
-
+        <div class="column-two-thirds">
              <div class="govuk-box-highlight">
-                <h1 class="heading-xlarge">
-                  Contract sent
+                <h1 class="bold-xlarge">
+                  Contract created
                 </h1>
                 <p>Your contract reference number is <br>
                   <strong class="heading-medium">98HGS3F</strong>
                 </p>
             </div>
-                <p>The contract has been sent for your provider to enter their details.
-                 You can <span class="looks-like-a-link-underline ">view contracts in progress</span></p>
-          </div>
 
-          <div class="column-one-third">
+            <div style="" class="rj-has-apprenticeships" id="!apprenticeships">
+              <h2 class="heading-medium">Apprenticeships</h2>
+                  <p>This contract has <span style="font-weight:700">0</span> apprenticeships</p>
+                  <p><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-apprenticeship">Add a cohort</a></p>
+                  <p><a href="#">Bulk upload apprentices</a></p>
 
+            </div>
+
+            </div>
+              <div class="column-one-third">
           </div>
         </div>
 </main>
