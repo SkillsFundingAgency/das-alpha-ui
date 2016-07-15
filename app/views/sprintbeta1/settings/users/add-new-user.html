@@ -6,17 +6,15 @@
 
 {% block content %}
 
-
 <style>
   .people-nav a, .learners-nav a {
     {% include "includes/nav-on-state-css.html" %}
   }
 </style>
 
-
 <main id="content" role="main">
-{% include "includes/phase_banner_beta.html" %}
-{% include "includes/secondary-nav-people.html" %}
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/secondary-nav-people.html" %}
 
 
   <div class="breadcrumbs">
@@ -24,94 +22,129 @@
       <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
       <li><a href="/{% include "includes/sprint-link.html" %}/settings/">Settings</a></li>
       <li><a href="/{% include "includes/sprint-link.html" %}/settings/users">Team members</a></li>
-       <li>Invite team member</li>
+      <li>Invite team member</li>
     </ol>
-
   </div>
 
 
-<!--h1 class="heading-large">Levy account</h1-->
- <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+  <!--h1 class="heading-large">Levy account</h1-->
+  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
 
-<div class="grid-row">
-  <div class="column-two-thirds">
-    <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Invite a team member</h1>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Invite a team member</h1>
+    </div>
   </div>
-</div>
 
-                <form action="user-confirmation">
-            <fieldset>
-              <legend class="visuallyhidden">password</legend>
+  <p class="lede">
+    Invite another user to access your organisation's account. You can limit
+    their actions by setting an appropriate access level.
+  </p>
 
-              <div class="form-group">
-                    <label class="form-label-bold" for="full-name">Full name</label>
+  <form action="user-confirmation">
+    <fieldset>
+      <legend class="visuallyhidden">password</legend>
 
-                    <input class="form-control" id="name" type="text" >
-              </div>
-              <div class="form-group">
-                    <label class="form-label-bold" for="full-name">Email address</label>
-                    <span class="form-hint">The invitation to join the service will be sent to this address</span>
-                    <input class="form-control" id="email-address" type="email" >
-              </div>
-            </fieldset>
+      <div class="form-group">
+        <label class="form-label-bold" for="full-name">Email address</label>
+        <span class="form-hint">
+          This should be the email address of the person you want to join your
+          team.  An invitation message will be sent to the email addresss.
+        </span>
+        <input class="form-control" id="email-address" type="email">
+      </div>
 
-                  <fieldset>
-                          <legend class="visuallyhidden">Access to the service</legend>
-                          <label class="form-label-bold" for="full-name">Team member access</label>
-                            <p>What level of access you would like this user to have?</p>
-                          <label class="rj-roles-choice block-label " for="radio-1">
-                            <input id="radio-1" type="radio" name="radio-group" value="Viewer">
-                           Viewer
-                           <span class="form-hint">A viewer can view all content on service and update the forecast tool.</span>
-                          </label>
+      <div class="form-group">
+        <label class="form-label-bold" for="full-name">Full name</label>
+        <span class="form-hint">
+          This name will be used in the email invitation. It will also appear
+          on your team members list while the invited person has a "pending"
+          status.
+        </span>
+        <input class="form-control" id="name" type="text" >
+      </div>
+    </fieldset>
 
-                          <label class="block-label rj-roles-choice" for="radio-2">
-                            <input id="radio-2" type="radio" name="radio-group" value="Transactor">
-                            Transactor
-                             <span class="form-hint">A transactor can do everything a viewer can do but can also start new and approve contracts as well as pause and stop payments.</span>
-                          </label>
-                          <label class="block-label rj-roles-choice" for="radio-3">
-                            <input id="radio-3" type="radio" name="radio-group" value="Owner">
-                            Owner
-                            <span class="form-hint">An owner can do everything including add new users, alter and add PAYE schemes as well as everything a transactor can do.</span>
-                          </label>
-                  </fieldset>
+    <fieldset>
+      <legend class="visuallyhidden">Access to the service</legend>
+      <label class="form-label-bold" for="full-name">Team member access</label>
 
+      <p>
 
+        You need to select which access level this user should have.
 
+      </p>
 
-                <!--fieldset>
-                    <legend class="visuallyhidden">Access to the service</legend>
-                      <div class="form-group">
-                        <label class="form-label-bold" for="full-name">Access to the service</label>
-                        <div class="grid-row">
-                          <div class="column-two-thirds">
-                        <p>Please choose the level of access you would like the new user to have:</p>
-                      </div></div>
-                      <label class="block-label" for="checkbox-1">
-                        <input id="checkbox-1" type="checkbox" name="checkbox-group" value="manage-other-users">
-                        Allow team member to add and manage other users
-                      </label>
-                       <label class="block-label" for="checkbox-2">
-                        <input id="checkbox-2" type="checkbox" name="checkbox-group" value="pay-providers">
-                        Allow team member to approve contracts and manage payments to providers
-                      </label>
-                      <label class="block-label" for="checkbox-3">
-                        <input id="checkbox-3" type="checkbox" name="checkbox-group" value="manage-PAYE">
-                        Allow team member to add, delete and manage the PAYE schemes on this account
-                      </label>
-                    </div>
-              </fieldset-->
-                <div style="margin-top:20px"></div>
-                  <input class="button" id="saveAndContinue" type="submit" value="Invite user to the service">
-          </form>
+      <label class="rj-roles-choice block-label " for="radio-1">
+        <input id="radio-1" type="radio" name="radio-group" value="Viewer">
+        Viewer
+        <span class="form-hint">
+          A "viewer" is a team member with limited access to the organisation's
+          account. They can view contracts and account information, but not
+          make changes to it.
+        </span>
+      </label>
 
+      <label class="block-label rj-roles-choice" for="radio-2">
+        <input id="radio-2" type="radio" name="radio-group" value="Doer">
+        Doer
+        <span class="form-hint">
+          A "doer" is a team member who can:
+          <ul>
+            <li>create new contracts</li>
+            <li>approve in-progress contracts</li>
+            <li>pause training payments</li>
+            <li>stop training payments</li>
+          </ul>
+        </span>
+      </label>
 
+      <label class="block-label rj-roles-choice" for="radio-3">
+        <input id="radio-3" type="radio" name="radio-group" value="Owner">
+        Owner
+        <span class="form-hint">
 
+          An "owner" is a team member with full access to the organisation's
+          account. They can do everything a viewer or doer can and also
+          <ol>
+            <li>manage team members</li>
+            <li>manage PAYE schemes</li>
+          </ol>
+        </span>
+      </label>
+    </fieldset>
+
+    <!--fieldset>
+      <legend class="visuallyhidden">Access to the service</legend>
+      <div class="form-group">
+        <label class="form-label-bold" for="full-name">Access to the service</label>
+        <div class="grid-row">
+          <div class="column-two-thirds">
+            <p>Please choose the level of access you would like the new user to have:</p>
+          </div>
         </div>
+        <label class="block-label" for="checkbox-1">
+          <input id="checkbox-1" type="checkbox" name="checkbox-group" value="manage-other-users">
+          Allow team member to add and manage other users
+        </label>
+        <label class="block-label" for="checkbox-2">
+          <input id="checkbox-2" type="checkbox" name="checkbox-group" value="pay-providers">
+          Allow team member to approve contracts and manage payments to providers
+        </label>
+        <label class="block-label" for="checkbox-3">
+          <input id="checkbox-3" type="checkbox" name="checkbox-group" value="manage-PAYE">
+          Allow team member to add, delete and manage the PAYE schemes on this account
+        </label>
+      </div>
+    </fieldset-->
+
+    <div style="margin-top:20px"></div>
+    <input class="button" id="saveAndContinue" type="submit" value="Invite user to the service">
+  </form>
+
+<!-- </div> -->
+
 </main>
-
-
 
 {% endblock %}
 
