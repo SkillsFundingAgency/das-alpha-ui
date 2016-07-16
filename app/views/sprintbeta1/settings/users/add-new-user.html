@@ -33,13 +33,15 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Invite a team member</h1>
-    </div>
-  </div>
+
 
   <p class="lede">
     Invite another user to access your organisation's account. You can limit
     their actions by setting an appropriate access level.
   </p>
+
+  </div>
+  </div>
 
   <form action="user-confirmation">
     <fieldset>
@@ -47,10 +49,12 @@
 
       <div class="form-group">
         <label class="form-label-bold" for="full-name">Email address</label>
+            <div class="column-two-thirds">
         <span class="form-hint">
           This should be the email address of the person you want to join your
           team.  An invitation message will be sent to the email addresss.
         </span>
+      </div>
         <input class="form-control" id="email-address" type="email">
       </div>
 
