@@ -103,9 +103,23 @@
     }
       
 .alert-success {
-    border-color: #28a197;
-    background-color: #eaf6f5;
+    border-color: $turquoise;
+    // background-color: #eaf6f5;
+    background-color: $turquoise;
   }
+
+.alert-success h2 {
+    color:#fff;
+    display:inline-block;
+    margin-top: 0
+  }
+
+.alert-success .fa-check {
+  color: #fff;
+  display:inline-block;
+  margin-right:10px;
+}
+
 
 // end of adding new users inline
 
@@ -418,6 +432,23 @@ vertical-align: top;
     box-shadow: 0 2px 0 #666;
 }
 
+.delete-button, {
+    background-color: $red;
+    color: #fff;
+    box-shadow: 0 2px 0 #666;
+}
+
+ .delete-button:focus, .delete-button:hover {
+    background-color: darken($red ,4);
+}
+
+.inline-form {
+  display:inline-block;
+}
+
+.delete-form {
+  float:right;
+}
 
     .list-item-wrapper-vertical {
       padding-left: 20px;
