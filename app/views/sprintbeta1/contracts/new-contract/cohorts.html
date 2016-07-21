@@ -82,20 +82,29 @@
 <!-- -------------- This is shows when one cohort has been added ---------- -->
 
             <div style="" class="rj-has-apprenticeships" id="apprenticeships">
-              <h2 class="heading-medium">Apprenticeships</h2>
+               <p class="">Apprenticeships can be added to your progamme in groups.</p><p> If you have a set of apprenticeships that share the same frameworks/standards, start dates, duration and cost you can group them all together. </p>
+                <h2 class="heading-medium">Apprenticeship groups</h2>
                   <p>This commitment has <span style="font-weight:700">1</span> group</p>
 
-                 <form class="" action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-apprenticeship">
+
+
+                  <hr style="margin-top:35px"/>
+
+                  <h3 class="heading-medium" style="margin-top:35px">Group 1</h3>
+                   <p style="margin-bottom:15px"><span style="font-weight:700">Training type:</span> Aeronautical engineering level 2 </p>
+                   <p style="margin-bottom:15px"><span style="font-weight:700">Dates:</span> November 2018 until August 2020 </p>
+                   <p style="margin-bottom:15px"><span style="font-weight:700">Number of apprentices:</span> 15</p>
+                    <p style="margin-bottom:15px"><span style="font-weight:700">Cost/Apprenticeship:</span> £1,000.00</p>
+                    <p style="margin-bottom:15px"><span style="font-weight:700">Cost/Apprenticeship:</span> £15,000.00</p>
+
+                     <hr style="margin:35px 0 35px 0;"/>
+
+                    <form class="" action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-apprenticeship">
                     <div style="margin-top:20px;"><input class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add a new group"></div>
                   </form>
 
                   <!--p><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-apprenticeship">Add a new apprenticeship group</a></p-->
                   <p style="margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/bulk-upload">Bulk upload apprenticeship groups</a></p>
-
-                  <hr />
-
-                  <h3 class="heading-medium">Group 1</h3>
-                  <p>things about the group/cohort go here</p>
 
 
                   </div>
@@ -106,9 +115,9 @@
                 </form-->
 
               <hr style="margin-top:50px"/>
-                <form class="inline-form" action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/find-provider">
+                <!--form class="inline-form" action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/find-provider">
                     <div style="margin-top:20px;"><input class="button" type="submit"  id="send-to-provider"  value="Finish and send to provider"></div>
-                </form>
+                </form-->
 
           </div>
 
@@ -116,12 +125,15 @@
 
             <div class="column-one-third">
                       <aside class="related">
-                        <h2 class="heading-medium" style="margin-top:10px"></h2>
+
                         <nav role="navigation">
+                      <h2 class="heading-medium" style="margin-top:10px">Finished?</h2>
+                        <p>When you've finished, send to your provider and they will add their details.  </p>
                               <!--p style="margin-bottom:5px"><span style="font-weight:700">Provider:</span> Acme Coventry Ltd </p-->
-                              <p style="margin-bottom:5px"><span style="font-weight:700">Commitment ID:</span> 98HGS3F </p>
-                              <p style="margin-bottom:5px"><span style="font-weight:700">Status:</span> In progress </p>
-                              <p style="margin-bottom:5px"><span style="font-weight:700">Last saved:</span> 5.30pm Today</p>
+                              <!--p style="margin-bottom:5px"><span style="font-weight:700">Commitment ID:</span> 98HGS3F </p-->
+                                <form class="" action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/find-provider">
+                                    <div style="margin-top:20px;"><input class="button" type="submit"  id="send-to-provider"  value="Finish and send to provider"></div>
+                                </form>
                            </nav>
                     </aside>
             </div>
