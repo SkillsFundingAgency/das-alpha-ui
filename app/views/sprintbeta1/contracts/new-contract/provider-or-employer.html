@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+<!-- This just directs the user to the correct place depending on which button is checked -->
+ <script>
+var whereNow = function() {
+  var status = $('input[name=radio-group]:checked').val();
+  console.log(status)
+    if (status == "employer") {
+      
+    window.location.href='cohorts';
+  } else {
+    window.location.href='find-provider';
+  }
+};
+ </script>
+
+<style>
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-finance.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<div class="grid-row">
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Who should start this process?</h1>
+ <p class="first-para-spacing">You can start adding the details of your apprenticeships to this commitment or you ask ask your provider to start it for you.</p>
+
+            <form action="individual-figures">
+                <fieldset>
+                  <!--h2 class="heading-medium">Choose</h2-->
+                  <legend class="visuallyhidden">Choose provider to enter details</legend>
+                  <div class="form-group">
+                  <label class="block-label" for="radio1">
+                    <input id="radio1" type="radio" name="radio-group" value="employer">
+                    I will start adding apprenticeships to this commitment
+                  </label>
+                  <label class="block-label" for="radio2">
+                    <input id="radio2" type="radio" name="radio-group" value="provider">
+                    I'd like my provider to start adding apprenticeships
+                  </label>
+                  </div>
+                </fieldset>
+                  <input class="button" id="saveAndContinue" onclick="whereNow()" value="Save and continue">
+              </form>
+
+    <div style="margin-top:50px"></div>
+    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
+<!-- {% include "includes/start-tabs.html" %} -->
+
+            </div>
+
+             <div class="column-one-third">
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="../login">Sign in</a>
+                          </li>
+
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+</div>
+</main>
+
+
+
+
+
+
+
+{% endblock %}
