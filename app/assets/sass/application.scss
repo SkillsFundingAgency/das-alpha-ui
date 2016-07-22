@@ -41,7 +41,7 @@
 
 // adding new users inline
 
-                
+
     .no-padding {
       padding-left: 0;
       padding-right: 0;
@@ -106,7 +106,7 @@
         display: block;
       }
     }
-      
+
 .alert-success {
     border-color: $turquoise;
     // background-color: #eaf6f5;
@@ -177,7 +177,9 @@
   margin-bottom:35px;
 }
 
-
+.rj-commitments-border {
+  padding-bottom:20px; border-bottom: 4px solid $govuk-blue;
+}
 
 @media (min-width: 641px) {
 .rj-roles-choice {
@@ -532,9 +534,6 @@ vertical-align: top;
   }
 
 }
-
-
-
 
 .graphGoesHere {
     width:100%;

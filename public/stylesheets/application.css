@@ -2178,6 +2178,11 @@ input[type=number] {
   margin-bottom: 35px;
 }
 
+.rj-commitments-border {
+  padding-bottom: 20px;
+  border-bottom: 4px solid #005ea5;
+}
+
 @media (min-width: 641px) {
   .rj-roles-choice {
     width: 66%;
