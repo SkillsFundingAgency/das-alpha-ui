@@ -36,6 +36,8 @@
   </div>
 
 
+
+
 <!--h1 class="heading-large">Levy account</h1-->
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
 
@@ -88,9 +90,9 @@
                     <p style="margin-bottom:5px"><span style="font-weight:700">Cost per apprenticeship:</span> £1,000.00</p>
                     <p style="margin-bottom:25px"><span style="font-weight:700">Total cost of group:</span> £15,000.00</p>
 
-                     <form class="" action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-apprenticeship">
-                    <div style="margin-top:20px;"><input class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Edit this group"></div>
-                  </form>
+
+                  <a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-apprenticeship">Edit this group</a>
+
 
                   <a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-apprenticeship"></a>
 
@@ -99,6 +101,7 @@
                     <form class="" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/edit-group">
                     <div style="margin-top:20px;"><input class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add a new group"></div>
                   </form>
+
 
                   <!--p><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-apprenticeship">Add a new apprenticeship group</a></p-->
                   <p style="margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/bulk-upload">Bulk upload apprenticeship groups</a></p>
@@ -130,12 +133,12 @@
                                   <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">Needs provider input</p></div>
                                  <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">14th August 2018</p></div>
                             </div>
-                      <h2 class="heading-medium" style="margin-top:35px">Finished?</h2>
+                      <h2 class="heading-medium" style="margin-top:35px">Finished editing</h2>
                         <p>When you've finished, tell us and you can send to employer for additional details or approval  </p>
                               <!--p style="margin-bottom:5px"><span style="font-weight:700">Provider:</span> Acme Coventry Ltd </p-->
                               <!--p style="margin-bottom:5px"><span style="font-weight:700">Commitment ID:</span> 98HGS3F </p-->
-                                <form class="" action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/find-provider">
-                                    <div style="margin-top:20px;"><input class="button" type="submit"  id="send-to-provider"  value="Finish"></div>
+                                <form class="" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
+                                    <div style="margin-top:20px;"><input class="button" type="submit"  id="send-to-employer"  value="Finshed editing"></div>
                                 </form>
                            </nav>
                     </aside>

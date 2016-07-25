@@ -113,9 +113,10 @@
     background-color: $turquoise;
   }
 
-.alert-success  {
+.alert-success h2 {
     color:#fff;
     display:inline-block;
+    margin-top:4px;
   }
 
 .alert-success .fa-check {
