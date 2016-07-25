@@ -130,7 +130,7 @@ var defaultSprint = function() {
  var sprintNow = JSON.parse(localStorage.getItem('sprint-number'));
  console.log(sprintNow);
     if (sprintNow == null) {
-      sprintNow = "sprintbeta0";
+      sprintNow = "sprintbeta1";
       localStorage.setItem("sprint-number", JSON.stringify(sprintNow));
   } else {
   }
@@ -198,6 +198,28 @@ var whereNow = function() {
   }
 };
 whereNow();
+
+});
+
+
+/* To determine whether the commitments in progress page should show the confirmation or not (i.e. have you just completed something) - this breaks because of the URl change below if it is in the page...it should live in /contracts/provider-in-progress? */
+
+$( document ).ready(function() {
+var showDoneAlert = function() {
+  var isAlertShowing = JSON.parse(localStorage.getItem('commitments.providerAlert'));
+
+    if (isAlertShowing == "yes") {
+      $( "#showDoneAlert" ).removeClass( "rj-dont-display" );
+      var  isAlertShowing = 'no';
+      localStorage.setItem("commitments.providerAlert", JSON.stringify(isAlertShowing));
+
+
+  } else {
+  // $( "#showDoneAlert" ).addClass( "rj-dont-display" );
+
+  }
+};
+showDoneAlert();
 
 });
 

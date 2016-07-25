@@ -13,6 +13,18 @@
   }
 </style>
 
+<script>
+
+var setProviderAlert = function() {
+  var commitments ={};
+  commitments.providerAlert = 'yes';
+  localStorage.setItem("commitments.providerAlert", JSON.stringify(commitments.providerAlert));
+  window.location.href='../provider-in-progress';
+};
+
+
+</script>
+
 
 <main id="content" role="main">
 {% include "includes/phase_banner_alpha.html" %}
@@ -58,7 +70,7 @@
                       </label>
                     </div>
                     </fieldset>
-                  <div style="margin-top:20px;"><input class="button" id="paymentPlan" type="submit" value="Save and continue"></div>
+                  <div style="margin-top:20px;"><input class="button" id="paymentPlan" onClick="setProviderAlert()" value="Save and continue"></div>
                   </form>
 
             </div>
