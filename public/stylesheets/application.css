@@ -2150,6 +2150,19 @@ input[type=number] {
   margin-bottom: 5px;
 }
 
+.drag-upload {
+  min-height: 150px;
+  min-width: 300px;
+  background-color: #dee0e2;
+  margin-top: -6px;
+}
+
+.drag-upload p {
+  text-align: center;
+  padding-top: 65px;
+  font-weight: 700;
+}
+
 .rj-contract-verify {
   width: 100%;
   min-height: 200px;

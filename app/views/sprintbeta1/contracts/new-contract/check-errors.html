@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  #navigation-primary {
+    display:none;
+  }
+</style>
+
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<div class="grid-row">
+
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Check your upload</h1>
+  <p>The first five rows of your upload are shown below, check that fields are in the right place.</p>
+</div>
+</div>
+
+
+
+                <table class="table-19-font" id="upload-alert"> 
+                    <thead>
+                      <tr>
+
+                        <th scope="col">Training code</th>
+                        <th scope="col">Training type</th>
+                        <th scope="col" class="">Name</th>
+                        <th scope="col" class="">ULN</th>
+                        <th scope="col" class="">Start date</th>
+                        <th scope="col" class="">End date</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>09130</td>
+                        <td>Mechatronics Engineer</td>
+                        <td class="">David Edwards</td>
+                        <td class="">9021001209</td>
+                        <td class="">11/18</td>
+                        <td class="">10/20</td>
+                      </tr>
+                                            <tr>
+                        <td>09130</td>
+                        <td>Mechatronics Engineer</td>
+                        <td class="">Rob Andrews</td>
+                        <td class="">8780601583</td>
+                        <td class="">11/18</td>
+                        <td class="">10/20</td>
+                      </tr>
+                                            <tr>
+                        <td>09130</td>
+                        <td>Mechatronics Engineer</td>
+                        <td class="">Mellisa Shaw</td>
+                        <td class="">6421001981</td>
+                        <td class="">11/18</td>
+                        <td class="">10/20</td>
+                      </tr>
+                                            <tr>
+                        <td>09130</td>
+                        <td>Mechatronics Engineer</td>
+                        <td class="">Brendan Hamazaki</td>
+                        <td class="">67210012321</td>
+                        <td class="">11/18</td>
+                        <td class="">10/20</td>
+                      </tr>
+                                            <tr>
+                        <td>09130</td>
+                        <td>Mechatronics Engineer</td>
+                        <td class="">Gary Barton</td>
+                        <td class="">21210012876</td>
+                        <td class="">11/18</td>
+                        <td class="">10/20</td>
+                      </tr>
+
+                    </tbody>
+                </table>
+
+
+<div style="margin-top:10px"><a href="#">View all rows</a></div>
+
+ 
+<form style="margin-top:35px" action="cohorts">
+    <input class="button" id="search-provider" type="submit" value="Save and approve">
+</form>
+<div style="margin-top:15px"><a href="bulk-upload">Upload again</a></div>
+    <div style="margin-top:50px"></div>
+    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
+<!-- {% include "includes/start-tabs.html" %} -->
+
+            </div>
+
+             <div class="column-one-third">
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="../login">Sign in</a>
+                          </li>
+
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+</div>
+</main>
+
+
+
+{% endblock %}
