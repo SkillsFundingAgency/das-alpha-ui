@@ -2150,6 +2150,12 @@ input[type=number] {
   margin-bottom: 5px;
 }
 
+@media (min-width: 640px) {
+  .activation-code {
+    max-width: 6em;
+  }
+}
+
 .drag-upload {
   min-height: 150px;
   min-width: 300px;
