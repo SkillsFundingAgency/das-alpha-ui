@@ -18,9 +18,7 @@
 =======
 <script>
 // not needed at the moment, remember to remove script from the header if you don't use this in the end.
-//jQuery( document ).ready(function() {
-     //jQuery.validate(); 
-// });
+// jQuery( document ).ready(function() { jQuery.validate(); });
 </script>
 >>>>>>> origin/master
 
@@ -85,17 +83,18 @@ EventUtil.addHandler(btn, 'click', function(){
       <h1 class="heading-xlarge" >Activate account</h1>
 
       <p>
-        An activation code has been sent to <span
-        style="font-weight:700">joe.bloggs@coventryltd.com</span>. You must
-        enter this below.
+        Your account needs to be activated before you can use it. An activation
+        code has been sent to <span
+        style="font-weight:700">joe.bloggs@coventryltd.com</span>.
       </p>
 
-      <p>You must enter the activation code that was sent to you.
+      <p>
+        You must enter your activation code below before it expires at <br/>
+        <span style="font-weight:700">12am on 12 August 2018</span>.
+      </p>
 
-      <p>You have until <span style="font-weight:700">12am on 12 August
-      2018</span> to activate your account</p>
-
-      <form style="max-width:100%" action="../balance">
+      <!-- form style="max-width:100%" action="../balance" -->
+      <form style="max-width:100%" action="activated">
         <fieldset>
           <legend class="visuallyhidden">Activation code</legend>
           <div class="form-group">
