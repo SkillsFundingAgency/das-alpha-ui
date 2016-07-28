@@ -7,16 +7,22 @@
 {% block content %}
 
 <style>
-
 #navigation-primary {
   display:none ;
 }
-
 </style>
 
+<<<<<<< HEAD
 
 
-
+=======
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+//jQuery( document ).ready(function() {
+     //jQuery.validate(); 
+// });
+</script>
+>>>>>>> origin/master
 
 <main id="content" role="main">
 {% include "includes/phase_banner_alpha.html" %}
@@ -25,9 +31,9 @@
     <ol role="breadcrumbs">
      {% include "includes/breadcrumbs/register-back.html" %}
     </ol>
-
   </div>
 
+<<<<<<< HEAD
   <div id="showDoneAlert" class="user-alert rj-dont-display">
   <div class="panel panel-border-wide alert-success">
     <i class="fa fa-check "></i>
@@ -73,4 +79,39 @@ EventUtil.addHandler(btn, 'click', function(){
 </script>
 
 
+=======
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge" >Activate account</h1>
+
+      <p>
+        An activation code has been sent to <span
+        style="font-weight:700">joe.bloggs@coventryltd.com</span>. You must
+        enter this below.
+      </p>
+
+      <p>You must enter the activation code that was sent to you.
+
+      <p>You have until <span style="font-weight:700">12am on 12 August
+      2018</span> to activate your account</p>
+
+      <form style="max-width:100%" action="../balance">
+        <fieldset>
+          <legend class="visuallyhidden">Activation code</legend>
+          <div class="form-group">
+            <label class="form-label-bold" for="text">Activation code</label>
+            <!--span class="form-hint">For instance "Acme Ltd Oxford St Branch"</span-->
+            <input class="form-control activation-code"  id="accountName" type="text">
+          </div>
+        </fieldset>
+        <input class="button" id="saveAndContinue" type="submit" value="Activate account">
+        <div style="margin-top:25px"></div>
+			 <!--div class="rjmakeALink" onclick="loopyLoop()"><p>Create another apprenticeship account</p></div-->
+			 <!--CREATE ANOTHER APPRENTICESHIP ACCOUNT-->
+      </form>
+    </div>
+  </div>
+</main>
+
+>>>>>>> origin/master
 {% endblock %}
