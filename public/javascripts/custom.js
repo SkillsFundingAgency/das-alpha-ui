@@ -185,7 +185,7 @@ addedOrNor();
 $( document ).ready(function() {
 var whereNow = function() {
   var hasAppAdded = JSON.parse(localStorage.getItem('apprenticeship-added'));
-   console.log(hasAppAdded)
+
     if (hasAppAdded == "yes") {
       $( "#no-apprenticeships" ).addClass( "rj-dont-display" );
       var  isAddedApp = 'no';
@@ -198,6 +198,24 @@ var whereNow = function() {
   }
 };
 whereNow();
+
+});
+
+$( document ).ready(function() {
+var bulkUpload = function() {
+  var hasBulkUpload = JSON.parse(localStorage.getItem('apprenticeship-added.bulk-upload'));
+    if (hasBulkUpload == "yes") {
+      $( "#no-apprenticeships" ).addClass( "rj-dont-display" );
+      $( "#no-apprenticeships" ).addClass( "rj-dont-display" );
+      $( "#apprenticeships-bulk" ).removeClass( "rj-dont-display" );
+      var  hasBulkUpload = 'no';
+      localStorage.setItem("apprenticeship-added.bulk-upload", JSON.stringify(hasBulkUpload));
+  } else {
+  $( "#apprenticeships-bulk" ).addClass( "rj-dont-display" );
+
+  }
+};
+bulkUpload();
 
 });
 

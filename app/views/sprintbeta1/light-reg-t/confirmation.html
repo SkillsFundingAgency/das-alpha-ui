@@ -15,15 +15,7 @@
 </style>
 
 
-<script>
-// not needed at the moment, remember to remove script from the header if you don't use this in the end.
 
-//jQuery( document ).ready(function() {
-     //jQuery.validate(); 
-// });
-
-
-</script>
 
 
 <main id="content" role="main">
@@ -36,12 +28,18 @@
 
   </div>
 
-
+  <div id="showDoneAlert" class="user-alert rj-dont-display">
+  <div class="panel panel-border-wide alert-success">
+    <i class="fa fa-check "></i>
+            <h2 class="heading-small">Email resent to joe.bloggs@coventryltd.com</h2>
+          </div>
+  </div>
       <div class="grid-row">
            <div class="column-two-thirds">
+
              <h1 class="heading-xlarge" >Activate account</h1>
-             <p>An activation code has been sent to <span style="font-weight:700">joe.bloggs@coventryltd.com</span></p>
-             <p>You have until <span style="font-weight:700">12am on 12 August 2018</span> to activate your account</p>
+             <p>An activation code has been sent to joe.bloggs@coventryltd.com</p>
+             <p>You have until 12am on 12 August 2018   to activate your account</p>
 
               <form style="max-width:100%" action="../balance">
                   <fieldset>
@@ -58,10 +56,21 @@
 				  <!--div class="rjmakeALink" onclick="loopyLoop()"><p>Create another apprenticeship account</p></div-->
 				  <!--CREATE ANOTHER APPRENTICESHIP ACCOUNT-->
               </form>
+              <h3 class="heading-medium">Not received an email?</h3>
+              <p>If your activation code has expired or has not arrived you can <a id="btn" href="#" >resend it.</a> Please check that the email hasn't been directed to your spam or junk folder.</p>
 
             </div>
       </div>
 </main>
+
+<script>
+
+// Add the stuff confirmation into the page when clicked to simulate resending the email
+var btn = document.getElementById('btn');
+EventUtil.addHandler(btn, 'click', function(){
+    $( "#showDoneAlert" ).removeClass( "rj-dont-display" );
+    });
+</script>
 
 
 {% endblock %}

@@ -13,6 +13,10 @@
   }
 </style>
 
+<script>
+// SCRIPT AT BOTTOM OF THE PAGE
+</script>
+
 
 
 <main id="content" role="main">
@@ -41,16 +45,14 @@
   <p>The first five rows of your upload are shown below, check that fields are in the right place.</p>
 </div>
 </div>
-
-
-
-                <table class="table-19-font" id="upload-alert"> 
+                <table class="" id=""> 
                     <thead>
                       <tr>
 
-                        <th scope="col">Training code</th>
+                        <!--th scope="col">Training code</th-->
                         <th scope="col">Training type</th>
-                        <th scope="col" class="">Name</th>
+                        <th scope="col" class="">Given Name</th>
+                        <th scope="col" class="">Family Name</th>
                         <th scope="col" class="">ULN</th>
                         <th scope="col" class="">Start date</th>
                         <th scope="col" class="">End date</th>
@@ -59,41 +61,46 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>09130</td>
+                        <!--td>09130</td-->
                         <td>Mechatronics Engineer</td>
-                        <td class="">David Edwards</td>
+                        <td class="">David</td>
+                         <td class="">Edwards</td>
                         <td class="">9021001209</td>
                         <td class="">11/18</td>
-                        <td class="">10/20</td>
+                         <td class="">10/20</td>
                       </tr>
                                             <tr>
-                        <td>09130</td>
+                        <!--td>09130</td-->
                         <td>Mechatronics Engineer</td>
-                        <td class="">Rob Andrews</td>
+                        <td class="">Rob</td>
+                        <td class="">Andrews</td>
                         <td class="">8780601583</td>
                         <td class="">11/18</td>
                         <td class="">10/20</td>
                       </tr>
                                             <tr>
-                        <td>09130</td>
+                        <!--td>09130</td-->
                         <td>Mechatronics Engineer</td>
-                        <td class="">Mellisa Shaw</td>
+                        <td class="">Mellisa</td>
+                        <td class="">Shaw</td>
                         <td class="">6421001981</td>
                         <td class="">11/18</td>
                         <td class="">10/20</td>
                       </tr>
                                             <tr>
-                        <td>09130</td>
+                        <!--td>09130</td-->
                         <td>Mechatronics Engineer</td>
-                        <td class="">Brendan Hamazaki</td>
+                        <td class="">Brendan</td>
+                        <td class="">Hamazaki</td>
                         <td class="">67210012321</td>
                         <td class="">11/18</td>
                         <td class="">10/20</td>
                       </tr>
                                             <tr>
-                        <td>09130</td>
+                        <!--td>09130</td-->
                         <td>Mechatronics Engineer</td>
-                        <td class="">Gary Barton</td>
+                        <td class="">Gary</td>
+                        <td class="">Barton</td>
                         <td class="">21210012876</td>
                         <td class="">11/18</td>
                         <td class="">10/20</td>
@@ -107,7 +114,7 @@
 
  
 <form style="margin-top:35px" action="cohorts">
-    <input class="button" id="search-provider" type="submit" value="Save and approve">
+    <input class="button" id="bulk-upload-finish"  value="Save and approve">
 </form>
 <div style="margin-top:15px"><a href="bulk-upload">Upload again</a></div>
     <div style="margin-top:50px"></div>
@@ -131,6 +138,19 @@
             </div>
 </div>
 </main>
+
+
+<script>
+
+// Add the stuff confirmation into the page when clicked to simulate resending the email
+var btn = document.getElementById('bulk-upload-finish');
+EventUtil.addHandler(btn, 'click', function(){
+        var isUploaded = 'yes';
+        localStorage.setItem("apprenticeship-added.bulk-upload", JSON.stringify(isUploaded));
+        window.location.href='cohorts';
+ });
+
+</script>
 
 
 

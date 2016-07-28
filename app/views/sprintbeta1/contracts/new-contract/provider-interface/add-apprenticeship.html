@@ -20,14 +20,6 @@ var addedApp = function() {
   window.location.href='../cohorts';
 };
 
-
-/* To determine if the to do list has been done - only dates works for now - this breaks because of the URl change below if it is in the page...it should live in /sprint11/contracts/new-contract/provider-interface/add-apprenticeship */
-
-//this is now in the global custom.js tempate as it stopped working when I added the sprint link changer.
-
-
-
-
 </script>
 
 <main id="content" role="main">
@@ -53,12 +45,32 @@ var addedApp = function() {
 
   <div class="grid-row">
            <div class="column-two-thirds">
-            <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Add a group of apprenticeships</h1>
+            <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Add an apprenticeship</h1>
            
-            <p class="">Add the details of the group below. A group is a group of apprentices that share the same training type, start dates and cost.</p>
+            <p class="">Add the details of your apprenticeship below. If you don't have the information now you can leave it blank and add it later</p>
+            <form action="training-list">
+                <fieldset>
+                  <legend class="visuallyhidden">Enter the name of the framework or standard.</legend>
+                    <div class="form-group">
+                        <label class="form-label-bold" for="search">Name of training
+                        <span class="form-hint">We need to make sure the course name is accurate</span>
+                      </label>
+                        <input class="form-control" id="search-for-training" type="text">
+                    </div>
+                  </fieldset>
+                  <input class="button button-grey-secondary" id="search-provider" type="submit" value="Confirm training">
+            </form>
+
+
+
+
+
+
+
+
             <!--p>Adding names at this stage is optional but this will need to be completed before you can be paid. </p-->
 
-                   <table class="table-19-font">
+                   <!--table class="table-19-font">
                       <thead>
                               <tr>
                                 <h2 class="heading-medium">Group 1</h2>
@@ -90,17 +102,17 @@ var addedApp = function() {
                                 <td class="rjTableName">Cost of group</td>
                                 <td class="">To do</td>
                                 <td class="looks-like-a-link-underline "><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-an-apprenticeship/apprenticeship-cost">Add</a></td>
-                              </tr>
+                              </tr-->
                               <!--tr>
                                 <td class="rjTableName">ERN</td>
                                 <td class="">To do</td>
                                 <td class="looks-like-a-link-underline "><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-an-apprenticeship/apprenticeship-ern">Add</a></td>
                               </tr-->
-                              <tr>
+                              <!--tr>
                                 <td class="rjTableName">ULN/Names</td>
                                 <td class="">To do</td>
                                 <td class="looks-like-a-link-underline "><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-an-apprenticeship/apprenticeship-names">Add</a></td>
-                              </tr>
+                              </tr-->
                               <!--tr>
                                 <td class="rjTableName">Endpoint assessor</td>
                                 <td class="">To do</td>
