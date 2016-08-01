@@ -90,9 +90,23 @@
             </div-->
 
 
+    <!-- ----------- This is the default where there aren't any groups or cohorts added ------------ -->
+    <div style="" class="rj-no-apprenticeships" id="no-apprenticeships">
+        <p>This commitment has <span style="font-weight:700">0</span> apprenticeships</p>
 
+
+        <form class="" action="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">
+        <input type="hidden" name="source" value="provider" />
+        <div style="margin-top:20px;"><input class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add an apprenticeship"></div>
+        </form>
+        <!--p><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-apprenticeship">Add a new apprenticeship group</a></p-->
+        <p style="margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">Import apprenticeships</a></p>
+
+    </div>
+
+    <!-- -------------- This is shows when one apprenticeship has been added ---------- -->
                 <div style="margin-top:45px" class="rj-has-apprenticeships" id="apprenticeships">
-                  <p>This commitment has <span style="font-weight:700">5</span> apprenticeships</p>
+                  <p>This commitment has <span style="font-weight:700" id="numberOfApprentices"></span> apprenticeships</p>
                   <!--hr style="margin-top:35px"/-->
                 <table class="" id="">
                     <thead>
@@ -168,7 +182,8 @@
                     </tbody>
                 </table>
                      <!--hr style="margin:35px 0 35px 0;"/-->
-                    <form class="" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/add-apprenticeship">
+                  <form class="" action="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">
+                    <input type="hidden" name="source" value="provider" />
                     <div style="margin-top:20px;"><input class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add an apprenticeship"></div>
                   </form>
                   <!--p><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-apprenticeship">Add a new apprenticeship group</a></p-->
