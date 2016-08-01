@@ -149,12 +149,123 @@
 <script>
 
 // Add the stuff confirmation into the page when clicked to simulate resending the email
-var btn = document.getElementById('bulk-upload-finish');
+/*var btn = document.getElementById('bulk-upload-finish');
 EventUtil.addHandler(btn, 'click', function(){
         var isUploaded = 'yes';
         localStorage.setItem("apprenticeship-added.bulk-upload", JSON.stringify(isUploaded));
         window.location.href='cohorts';
- });
+ });*/
+
+$('#bulk-upload-finish').click(function() {
+    window.das.commitments.addApprenticeships([
+        {
+            training: {
+                code: 1,
+                name: "Mechatronics Engineer"
+            },
+            start: {
+                month: 11,
+                year: 2018
+            },
+            finish:
+            {
+                month: 10,
+                year: 2020
+            },
+            cost: 1500,
+            apprentice: {
+                first: "David",
+                last: "Edwards",
+                uln: 9021001209
+            }
+        },
+        {
+            training: {
+                code: 1,
+                name: "Mechatronics Engineer"
+            },
+            start: {
+                month: 11,
+                year: 2018
+            },
+            finish:
+            {
+                month: 10,
+                year: 2020
+            },
+            cost: 1500,
+            apprentice: {
+                first: "Rob",
+                last: "Andrews",
+                uln: 8780601583
+            }
+        },
+        {
+            training: {
+                code: 1,
+                name: "Mechatronics Engineer"
+            },
+            start: {
+                month: 11,
+                year: 2018
+            },
+            finish:
+            {
+                month: 10,
+                year: 2020
+            },
+            cost: 1500,
+            apprentice: {
+                first: "Mellisa",
+                last: "Shaw",
+                uln: 6421001981
+            }
+        },
+        {
+            training: {
+                code: 1,
+                name: "Mechatronics Engineer"
+            },
+            start: {
+                month: 11,
+                year: 2018
+            },
+            finish:
+            {
+                month: 10,
+                year: 2020
+            },
+            cost: 1500,
+            apprentice: {
+                first: "Brendan",
+                last: "Hamazaki",
+                uln: 67210012321
+            }
+        },
+        {
+            training: {
+                code: 1,
+                name: "Mechatronics Engineer"
+            },
+            start: {
+                month: 11,
+                year: 2018
+            },
+            finish:
+            {
+                month: 10,
+                year: 2020
+            },
+            cost: 1500,
+            apprentice: {
+                first: "Gary",
+                last: "Barton",
+                uln: 21210012876
+            }
+        }
+    ]);
+    window.location.href = 'cohorts';
+});
 
 </script>
 

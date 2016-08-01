@@ -6,13 +6,17 @@
         $apprenticeshipsTableBody: null
     };
     var model = {
-        apprenticeships: []
+        apprenticeships: [],
+
+        load: function() {
+            var json = window.localStorage.getItem('commitment-apprenticeships');
+            model.apprenticeships  = JSON.parse(json);
+        },
+        save: function() {
+            window.localStorage.setItem('commitment-apprenticeships', JSON.stringify(model.apprenticeships));
+        }
     };
 
-    function loadModelFromLocalStorage() {
-        var json = window.localStorage.getItem('commitment-apprenticeships');
-        model.apprenticeships  = JSON.parse(json);
-    }
     function showEmptyState() {
         $('#no-apprenticeships').removeClass('rj-dont-display');
         $('#apprenticeships').addClass('rj-dont-display');
@@ -22,8 +26,8 @@
         $('#apprenticeships').removeClass('rj-dont-display');
 
         view.$numberOfApprenticesLabel.text(model.apprenticeships.length);
-        for(var i = 0; i < model.apprenticehips.length; i++) {
-            var $tr = makeRow(model.apprenticehips[i]);
+        for(var i = 0; i < model.apprenticeships.length; i++) {
+            var $tr = makeRow(model.apprenticeships[i]);
             view.$apprenticeshipsTableBody.append($tr);
         }
     }
@@ -49,13 +53,23 @@
         view.$numberOfApprenticesLabel = $('#numberOfApprentices');
         view.$apprenticeshipsTableBody = $('#apprenticeships table > tbody');
 
-        loadModelFromLocalStorage();
-
-        if(model.apprenticehips.length > 0) {
+        model.load();
+        if(model.apprenticeships.length > 0) {
             showApprenticeships();
         }
         else {
             showEmptyState();
         }
     });
+
+    // Exports
+    window.das = window.das || {};
+    window.das.commitments = {
+        addApprenticeships: function(apprenticeships) {
+            for(var i = 0; i < apprenticeships.length; i++) {
+                model.apprenticeships.push(apprenticeships[i]);
+            }
+            model.save();
+        }
+    }
 })();
