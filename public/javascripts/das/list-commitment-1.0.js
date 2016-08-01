@@ -43,8 +43,10 @@
         return $('<td></td>').text(text);
     }
     function makeActionCell(id) {
+        var source = commitmentListSource || 'employer';
+
         var a = $('<a>Edit</a>');
-        a.attr('href', '../provider-interface/add-apprenticeship?id=' + id);
+        a.attr('href', '../provider-interface/add-apprenticeship?id=' + id + '&source=' + source);
 
         var td = $('<td></td>');
         td.append(a);
