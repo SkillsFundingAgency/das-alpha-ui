@@ -3,7 +3,14 @@
         $noApprenticeshipsBlock: null,
         $apprenticeshipsBlock: null,
         $numberOfApprenticesLabel: null,
-        $apprenticeshipsTableBody: null
+        $apprenticeshipsTableBody: null,
+
+        load: function() {
+            view.$noApprenticeshipsBlock = $('#no-apprenticeships');
+            view.$apprenticeshipsBlock = $('#apprenticeships');
+            view.$numberOfApprenticesLabel = $('#numberOfApprentices');
+            view.$apprenticeshipsTableBody = $('#apprenticeships table > tbody');
+        }
     };
     var model = {
         apprenticeships: [],
@@ -48,12 +55,9 @@
     }
 
     $(document).ready(function() {
-        view.$noApprenticeshipsBlock = $('#no-apprenticeships');
-        view.$apprenticeshipsBlock = $('#apprenticeships');
-        view.$numberOfApprenticesLabel = $('#numberOfApprentices');
-        view.$apprenticeshipsTableBody = $('#apprenticeships table > tbody');
-
+        view.load();
         model.load();
+
         if(model.apprenticeships.length > 0) {
             showApprenticeships();
         }
