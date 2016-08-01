@@ -182,43 +182,44 @@ addedOrNor();
 
 /* To determine if an apprenticeship has been added to the contract - this breaks because of the URl change below if it is in the page...it should live in /sprint11/contracts/new-contract/provider-interface/individual-contract */
 
-$( document ).ready(function() {
-var whereNow = function() {
-  var hasAppAdded = JSON.parse(localStorage.getItem('apprenticeship-added'));
+// This has moved to javascripts/das/commitment-1.0.js
 
-    if (hasAppAdded == "yes") {
-      $( "#no-apprenticeships" ).addClass( "rj-dont-display" );
-      var  isAddedApp = 'no';
-      localStorage.setItem("apprenticeship-added", JSON.stringify(isAddedApp));
- 
-
-  } else {
-  $( "#apprenticeships" ).addClass( "rj-dont-display" );
-
-  }
-};
-whereNow();
-
-});
-
-$( document ).ready(function() {
-var bulkUpload = function() {
-  var hasBulkUpload = JSON.parse(localStorage.getItem('apprenticeship-added.bulk-upload'));
-    if (hasBulkUpload == "yes") {
-      $( "#no-apprenticeships" ).addClass( "rj-dont-display" );
-      $( "#no-apprenticeships" ).addClass( "rj-dont-display" );
-      $( "#apprenticeships-bulk" ).removeClass( "rj-dont-display" );
-      var  hasBulkUpload = 'no';
-      localStorage.setItem("apprenticeship-added.bulk-upload", JSON.stringify(hasBulkUpload));
-  } else {
-  $( "#apprenticeships-bulk" ).addClass( "rj-dont-display" );
-
-  }
-};
-bulkUpload();
-
-});
-
+// $( document ).ready(function() {
+// var whereNow = function() {
+//   var hasAppAdded = JSON.parse(localStorage.getItem('apprenticeship-added'));
+//
+//     if (hasAppAdded == "yes") {
+//       $( "#no-apprenticeships" ).addClass( "rj-dont-display" );
+//       var  isAddedApp = 'no';
+//       localStorage.setItem("apprenticeship-added", JSON.stringify(isAddedApp));
+//
+//
+//   } else {
+//   $( "#apprenticeships" ).addClass( "rj-dont-display" );
+//
+//   }
+// };
+// whereNow();
+//
+// });
+//
+// $( document ).ready(function() {
+// var bulkUpload = function() {
+//   var hasBulkUpload = JSON.parse(localStorage.getItem('apprenticeship-added.bulk-upload'));
+//     if (hasBulkUpload == "yes") {
+//       $( "#no-apprenticeships" ).addClass( "rj-dont-display" );
+//       $( "#no-apprenticeships" ).addClass( "rj-dont-display" );
+//       $( "#apprenticeships-bulk" ).removeClass( "rj-dont-display" );
+//       var  hasBulkUpload = 'no';
+//       localStorage.setItem("apprenticeship-added.bulk-upload", JSON.stringify(hasBulkUpload));
+//   } else {
+//   $( "#apprenticeships-bulk" ).addClass( "rj-dont-display" );
+//
+//   }
+// };
+// bulkUpload();
+//
+// });
 
 /* To determine whether the commitments in progress page should show the confirmation or not (i.e. have you just completed something) - this breaks because of the URl change below if it is in the page...it should live in /contracts/provider-in-progress? */
 
