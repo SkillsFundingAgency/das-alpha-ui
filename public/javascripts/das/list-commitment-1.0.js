@@ -36,11 +36,20 @@
         $tr.append(makeCell(apprenticeship.start.month + '/' + apprenticeship.start.year));
         $tr.append(makeCell(apprenticeship.finish.month + '/' + apprenticeship.finish.year));
         $tr.append(makeCell('£' + apprenticeship.cost.format(0)));
-        $tr.append(makeCell(''));
+        $tr.append(makeActionCell(apprenticeship.id));
         return $tr;
     }
     function makeCell(text) {
         return $('<td></td>').text(text);
+    }
+    function makeActionCell(id) {
+        var a = $('<a>Edit</a>');
+        a.attr('href', '../provider-interface/add-apprenticeship?id=' + id);
+
+        var td = $('<td></td>');
+        td.append(a);
+
+        return td;
     }
 
     $(document).ready(function() {

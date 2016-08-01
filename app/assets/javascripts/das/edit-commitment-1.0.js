@@ -22,7 +22,39 @@
             view.$saveButton = $('#ffjkshfdsjkhsfkj');
         }
     };
+    var model = {
+        apprenticeship: null,
+        load: function() {
+            var editId = getParameterByName('id');
+            if(editId) {
+                model.apprenticeship = window.das.commitments.get(editId);
+            }
+        },
+        save: function(updatedApprenticeship) {
+            if(model.apprenticeship) {
+                updatedApprenticeship.id = model.apprenticeship.id;
+                window.das.commitments.update(updatedApprenticeship);
+            }
+            else {
+                window.das.commitments.addApprenticeships([updatedApprenticeship]);
+            }
+        }
+    }
 
+    function loadApprenticeship() {
+        if(!model.apprenticeship) {
+            return;
+        }
+
+        view.$startMonthInput.val(model.apprenticeship.start.month);
+        view.$startYearInput.val(model.apprenticeship.start.year);
+        view.$finishMonthInput.val(model.apprenticeship.finish.month);
+        view.$finishYearInput.val(model.apprenticeship.finish.year);
+        view.$costInput.val(model.apprenticeship.cost);
+        view.$apprenticeFirstInput.val(model.apprenticeship.apprentice.first);
+        view.$apprenticeLastInput.val(model.apprenticeship.apprentice.last);
+        view.$apprenticeUlnInput.val(model.apprenticeship.apprentice.uln);
+    }
     function onSave() {
         try {
             var apprenticeship = {
@@ -46,7 +78,7 @@
                 }
             };
 
-            window.das.commitments.addApprenticeships([apprenticeship]);
+            model.save(apprenticeship);
             window.location.href = getReturnUrl();
         }
         catch (e) {
@@ -74,5 +106,8 @@
     $(document).ready(function() {
         view.load();
         view.$saveButton.unbind('click').click(onSave);
+
+        model.load();
+        loadApprenticeship();
     });
 })();
