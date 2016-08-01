@@ -1,5 +1,10 @@
 {% extends "layout.html" %}
 
+{% block head %}
+    {% include "includes/head.html" %}
+    <script src="/public/javascripts/das/edit-commitment-1.0.js"></script>
+{% endblock %}
+
 {% block page_title %}
   Apprenticeships
 {% endblock %}
@@ -164,7 +169,7 @@ EventUtil.addHandler(btn, 'click', function(){
 
 
 
-<script src="/public/javascripts/das/edit-commitment-1.0.js"></script>
+
 
 {% endblock %}
 
