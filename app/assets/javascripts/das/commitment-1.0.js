@@ -74,6 +74,10 @@
                 model.apprenticeships.push(apprenticeships[i]);
             }
             model.save();
+        },
+        clear: function() {
+            model.apprenticeships = [];
+            model.save();
         }
     }
 })();

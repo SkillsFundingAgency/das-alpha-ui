@@ -84,9 +84,28 @@ $('#sprint-number-field').val(sprinty);
           <input class="button" id="sprint-number-change" onclick="setSprintNumber()" value="Change sprint number">
       </form>
 
+      <h2 class="heading-medium">Commitment Data</h2>
+      <form>
+        <fieldset>
+          <legend class="visuallyhidden">Clear commitment data</legend>
+          <div class="form-group">
+            <button id="clearCommitmentData" type="button" class="button">Clear Data</button>
+          </div>
+
+        </fieldset>
+      </form>
+
+
     </div>
   </div>
 </main>
+
+
+<script>
+  $('#clearCommitmentData').click(function() {
+    window.das.commitments.clear();
+  })
+</script>
 
 {% endblock %}
 
