@@ -28,19 +28,23 @@
         }
     }
     function makeRow(apprenticeship) {
+        var displayCost = apprenticeship.cost ? '£' + apprenticeship.cost.format(0) : 'TBD';
+        var displayStart = apprenticeship.start.month ? apprenticeship.start.month + '/' + apprenticeship.start.year : 'unknown';
+        var displayFinish = apprenticeship.finish.month ? apprenticeship.finish.month + '/' + apprenticeship.finish.year : 'unknown';
+
         var $tr = $('<tr></tr>');
         $tr.append(makeCell(apprenticeship.training.name));
         $tr.append(makeCell(apprenticeship.apprentice.first));
         $tr.append(makeCell(apprenticeship.apprentice.last));
         $tr.append(makeCell(apprenticeship.apprentice.uln));
-        $tr.append(makeCell(apprenticeship.start.month + '/' + apprenticeship.start.year));
-        $tr.append(makeCell(apprenticeship.finish.month + '/' + apprenticeship.finish.year));
-        $tr.append(makeCell('£' + apprenticeship.cost.format(0)));
+        $tr.append(makeCell(displayStart));
+        $tr.append(makeCell(displayFinish));
+        $tr.append(makeCell(displayCost));
         $tr.append(makeActionCell(apprenticeship.id));
         return $tr;
     }
     function makeCell(text) {
-        return $('<td></td>').text(text);
+        return $('<td></td>').text(text || 'unknown');
     }
     function makeActionCell(id) {
         var source = commitmentListSource || 'employer';
