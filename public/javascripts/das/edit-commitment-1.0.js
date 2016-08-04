@@ -49,12 +49,13 @@
 
     function setCourseView() {
         var courseSelection = getParameterByName('radio-group');
-        if(courseSelection){
+        var id = getParameterByName('id');
+        if(courseSelection || id){
             view.$searchTrainingContainer.css('display', 'none');
             view.$displayTrainingContainer.css('display', 'block');
         }
     }
-    function addSourceToCheckTraining() {
+    function addQueryParamsToCheckTraining() {
         var source = getParameterByName('source') || 'employer';
         view.$checkTrainingSourceInput.val(source);
     }
@@ -128,6 +129,6 @@
         loadApprenticeship();
 
         setCourseView();
-        addSourceToCheckTraining();
+        addQueryParamsToCheckTraining();
     });
 })();
