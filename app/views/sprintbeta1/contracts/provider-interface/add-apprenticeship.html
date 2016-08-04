@@ -54,21 +54,35 @@ EventUtil.addHandler(btn, 'click', function(){
            <div class="column-two-thirds">
             <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Add an apprenticeship</h1>
 
-            <p class="">Add the details of your apprenticeship below. If you don't have the information now you can leave it blank and add it later</p>
-            <form action="add-an-apprenticeship/training-list">
-                <fieldset>
-                  <legend class="visuallyhidden">Enter the name of the framework or standard.</legend>
-                    <div class="form-group" style="margin-bottom:15px">
-                        <label class="form-label-bold" for="search">Name of training
-                        <span class="form-hint">We need to make sure the course name is accurate</span>
-                      </label>
-                        <input class="form-control" id="search-for-training" type="text">
+            <h3 class="heading-medium">Training course</h3>
+            <div id="searchTraining">
+                <p class="">Add the details of your apprenticeship below. If you don't have the information now you can leave it blank and add it later</p>
+                <form id="checkTrainingForm" action="add-an-apprenticeship/training-list">
+                    <input id="checkTrainingSource" name="source" type="hidden" value="employer" />
+                    <fieldset>
+                      <legend class="visuallyhidden">Enter the name of the framework or standard.</legend>
+                        <div class="form-group" style="margin-bottom:15px">
+                            <label class="form-label-bold" for="search">Name of training
+                            <span class="form-hint">We need to make sure the course name is accurate</span>
+                          </label>
+                            <input class="form-control" id="search-for-training" type="text">
 
-                    </div>
-                      <input class="button button-grey-secondary" id="search-provider" type="submit" value="Check training name">
-                  </fieldset>
+                        </div>
+                          <input class="button button-grey-secondary" id="search-provider" type="submit" value="Check training name">
+                      </fieldset>
 
-            </form>
+                </form>
+            </div>
+            <div id="displayTraining" style="display: none; clear: both;">
+                <div class="rj-roles-choice block-label " for="radio-2">
+                    <span style="font-weight:700">Mechatronics technician</span>
+                    <span class="">
+                      <div><p style="display:inline-block; margin:0;">Training code:&nbsp</p ><p style="display:inline; margin:0;">9267</p></div>
+                        <div><p style="display:inline-block; margin:0;">Level:&nbsp</p><p style="display:inline; margin:0;">2 </p></div>
+                    </span>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
             <form style="margin-top:30px">
               <hr />
             <div class="form-group">
@@ -151,7 +165,7 @@ EventUtil.addHandler(btn, 'click', function(){
 
     </form>
 
-          <div style="margin-top:20px;"><input class="button" id="ffjkshfdsjkhsfkj" value="Save and return"></div>
+          <div style="margin-top:20px;"><input class="button" id="saveAndReturn" value="Save and return"></div>
           <p class="looks-like-a-link-underline" style="margin-top:20px">Save and clone this apprenticeship</p>
 
 

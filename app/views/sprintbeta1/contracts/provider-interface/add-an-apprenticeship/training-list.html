@@ -1,5 +1,25 @@
 {% extends "layout.html" %}
 
+{% block head %}
+    {% include "includes/head.html" %}
+    <script>
+        $(document).ready(function() {
+            var source = getParameterByName('source') || 'employer';
+            $('#source').val(source);
+        });
+        function getParameterByName(name, url) {
+            // taken from http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+    </script>
+{% endblock %}
+
 {% block page_title %}
   Apprenticeships
 {% endblock %}
@@ -49,6 +69,7 @@
 
           </div-->
   <form action="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">
+    <input id="source" name="source" type="hidden" value="employer" />
     <fieldset>
       <legend class="visuallyhidden">Access to the service</legend>
 

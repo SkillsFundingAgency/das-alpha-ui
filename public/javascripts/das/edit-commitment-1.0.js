@@ -9,6 +9,9 @@
         $apprenticeLastInput: null,
         $apprenticeUlnInput: null,
         $saveButton: null,
+        $checkTrainingSourceInput: null,
+        $displayTrainingContainer: null,
+        $searchTrainingContainer: null,
 
         load: function() {
             view.$startMonthInput = $('#startMonth');
@@ -19,7 +22,10 @@
             view.$apprenticeFirstInput = $('#apprenticeGivenName');
             view.$apprenticeLastInput = $('#apprenticeFamilyName');
             view.$apprenticeUlnInput = $('#ULN');
-            view.$saveButton = $('#ffjkshfdsjkhsfkj');
+            view.$saveButton = $('#saveAndReturn');
+            view.$checkTrainingSourceInput = $('#checkTrainingSource');
+            view.$displayTrainingContainer = $('#displayTraining');
+            view.$searchTrainingContainer = $('#searchTraining');
         }
     };
     var model = {
@@ -39,8 +45,19 @@
                 window.das.commitments.addApprenticeships([updatedApprenticeship]);
             }
         }
-    }
+    };
 
+    function setCourseView() {
+        var courseSelection = getParameterByName('radio-group');
+        if(courseSelection){
+            view.$searchTrainingContainer.css('display', 'none');
+            view.$displayTrainingContainer.css('display', 'block');
+        }
+    }
+    function addSourceToCheckTraining() {
+        var source = getParameterByName('source') || 'employer';
+        view.$checkTrainingSourceInput.val(source);
+    }
     function loadApprenticeship() {
         if(!model.apprenticeship) {
             return;
@@ -109,5 +126,8 @@
 
         model.load();
         loadApprenticeship();
+
+        setCourseView();
+        addSourceToCheckTraining();
     });
 })();
