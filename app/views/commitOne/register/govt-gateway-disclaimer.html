@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+//jQuery( document ).ready(function() {
+     //jQuery.validate(); 
+// });
+
+
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+            <div class="rjHMRCLogo"><img src="/public/images/hmrc.jpg"></div>
+
+            <h1 class="heading-xlarge" >Permission to access PAYE information from HMRC</h1>
+            <p>Information about the funding available to your organisation is held by HMRC on the Government Gateway.</p>
+
+              <p>The Digital Apprenticeship Service (run by the Skills Funding Agency) would like to access this information so that you can view your funding information in your apprenticeship account.</p>
+
+              <p>If you agree, your apprenticeship account will be given details of the funding available for your PAYE Schemes, but no other information about the PAYE schemes.</p>
+
+              <p>The apprenticeship account will also be given information about termination dates for the PAYE Schemes.</p>
+
+              <p>Do you agree to allow your Apprenticeship account to access PAYE information from HMRC.<p/>
+
+            <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
+            <form action="/{% include "includes/sprint-link.html" %}/register/paye" >
+                <input class="button" id="saveAndContinue" type="submit" value="Allow and continue">
+                <p class="rjExitButton" style=""><a href="">Do not allow and exit</a></p>
+              </form>
+
+            </div>
+      <div class="column-one-third"></div>
+</div>
+</main>
+
+<script>
+
+//store details entered into the form in local storage
+var createButton = document.getElementById('createAccountButton');
+EventUtil.addHandler(createButton, 'click', function(){
+              // save the form info to local storage by first putting the data into an object
+              var userDetails = {
+                email: document.getElementById('email-address').value,
+                password: document.getElementById('password').value
+            };
+
+            //store the object in local storage using json stringify
+              localStorage.setItem("login", JSON.stringify(userDetails));
+
+            //store the users email address in a cookie to repeat back to them later. Remember that we have some of the data stored in an object in local storage as well -  so we'll use that again if we need it.
+            document.cookie =  "emailAddress="  + userDetails.email 
+            // shows the cookie in the console log to check it is working
+            console.log (document.cookie)
+
+        // not needed at the moment
+
+              //hide the login form
+              //$('#login').addClass('hidden');
+              //show the quiz
+           // $('#wrapper').removeClass('hidden')
+    });
+</script>
+
+{% endblock %}
