@@ -48,9 +48,9 @@
 
 <!--h1 class="heading-large">Levy account</h1-->
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
-
+<h1 class="heading-xlarge">Add apprentices</h1>
   <div class="grid-row">
-           <div class="column-two-thirds">
+           <div class="column-half">
              <!--div class="govuk-box-highlight">
                 <h1 class="bold-xlarge">
                   Commitment started
@@ -61,28 +61,31 @@
             </div-->
 
 
-              <h1 class="heading-xlarge">Commitment</h1>
+              
 
                         <div class="" style="padding-bottom:35px">
                                      <h2 class="heading-medium" style="margin: 0 0 5px 0">Acme Coventry Ltd</h2>
                                   <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">98HGS3F</p></div>
                                   <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">Needs provider input</p></div>
                                  <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">14th August 2018</p></div>
+                                  
                       </div>
             </div>
 
-        <div class="column-one-third">
-                      <aside class="related">
+        <div class="column-half">
+          <div class="" style="padding-bottom:35px">
+            <div><h2 class="heading-small" style="display:inline-block; margin:0;">Messages:&nbsp</h2 ><p style=" margin:0;">dates. blah, etc</p></div>
+
+          </div>
+                      <!--aside class="related">
 
                         <nav role="navigation">
 
                       <h2 class="heading-medium" style="margin-top:35px">Finished editing</h2>
                         <p >When you've finished, tell us and you can send to employer for additional details or approval  </p>
-                              <!--p style="margin-bottom:5px"><span style="font-weight:700">Provider:</span> Acme Coventry Ltd </p-->
-                              <!--p style="margin-bottom:5px"><span style="font-weight:700">Commitment ID:</span> 98HGS3F </p-->
                                 <form class="" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
                                     <div style="margin-top:20px;"><input class="button" type="submit"  id="send-to-employer"  value="Finshed editing"></div>
-                                </form>
+                                </form-->
                            </nav>
                     </aside>
             </div>
@@ -100,22 +103,41 @@
 
     <!-- ----------- This is the default where there aren't any groups or cohorts added ------------ -->
     <div style="" class="rj-no-apprenticeships" id="no-apprenticeships">
-        <p>This commitment has <span style="font-weight:700">0</span> apprenticeships</p>
+        <p><span style="font-weight:700">0</span> apprenticeships</p>
+        <hr style="margin:0 0 18px 0" />
+        <div class="commit-bar">
+            <form class="" style="display:inline-block" action="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">
+                <input type="hidden" name="source" value="provider" />
+                <div style="display:inline-block;"><input style="display:inline" class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add an apprenticeship"></div>
+            </form>
+             <form class="" style="display:inline-block" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">
+                <input type="hidden" name="source" value="provider" />
+                <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px" class="button-clear button " type="submit"  id="bulk-upload"  value="Import apprenticeships"></div>
+            </form>
+             <!--p style="display:inline; margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">Import apprenticeships</a></p-->
+             <form class="" style="display:inline-block; float:right;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
+                    <div style="display:inline-block;"><input class="button" style="display:inline; margin:0 0 0 10px" type="submit"  id="send-to-employer"  value="Finshed editing"></div>
+              </form-->
+        </div>
 
+        <hr style="margin:20px 0 20px 0" />
 
-        <form class="" action="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">
-        <input type="hidden" name="source" value="provider" />
-        <div style="margin-top:20px;"><input class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add an apprenticeship"></div>
-        </form>
-        <!--p><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-apprenticeship">Add a new apprenticeship group</a></p-->
-        <p style="margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">Import apprenticeships</a></p>
+       
 
     </div>
 
     <!-- -------------- This is shows when one apprenticeship has been added ---------- -->
                 <div style="margin-top:45px" class="rj-has-apprenticeships" id="apprenticeships">
-                  <p>This commitment has <span style="font-weight:700" id="numberOfApprentices"></span> apprenticeships</p>
+                  <p><span style="font-weight:700" id="numberOfApprentices"></span> apprenticeships</p>
                   <!--hr style="margin-top:35px"/-->
+
+                 <form class="" action="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">
+                    <input type="hidden" name="source" value="provider" />
+                    <div style="margin-top:20px;"><input class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add an apprenticeship"></div>
+                  </form>
+                  <!--p><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-apprenticeship">Add a new apprenticeship group</a></p-->
+                  <p style="margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">Import apprenticeships</a></p>
+
                 <table class="" id="">
                     <thead>
                       <tr>
@@ -131,71 +153,11 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <!--<tr>
-                        &lt;!&ndash;td>09130</td&ndash;&gt;
-                        <td>Mechatronics Engineer</td>
-                        <td class="">David</td>
-                         <td class="">Edwards</td>
-                        <td class="">9021001209</td>
-                        <td class="">Nov 2018</td>
-                         <td class="">Oct 2020</td>
-                         <td scope="" class="">£1,500</td>
-                         <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/edit-apprenticeship">View</a></td>
-                      </tr>
-                      <tr>
-                        &lt;!&ndash;td>09130</td&ndash;&gt;
-                        <td>Mechatronics Engineer</td>
-                        <td class="">Rob</td>
-                        <td class="">Andrews</td>
-                        <td class="">8780601583</td>
-                        <td class="">Nov 2018</td>
-                         <td class="">Oct 2020</td>
-                         <td scope="" class="">£1,500</td>
-                        <td class="looks-like-a-link-underline">View</td>
-                      </tr>
-                                            <tr>
-                        &lt;!&ndash;td>09130</td&ndash;&gt;
-                        <td>Mechatronics Engineer</td>
-                        <td class="">Mellisa</td>
-                        <td class="">Shaw</td>
-                        <td class="">6421001981</td>
-                        <td class="">Nov 2018</td>
-                         <td class="">Oct 2020</td>
-                         <td scope="" class="">£1,500</td>
-                        <td class="looks-like-a-link-underline">View</td>
-                      </tr>
-                                            <tr>
-                        &lt;!&ndash;td>09130</td&ndash;&gt;
-                        <td>Mechatronics Engineer</td>
-                        <td class="">Brendan</td>
-                        <td class="">Hamazaki</td>
-                        <td class="">67210012321</td>
-                        <td class="">Nov 2018</td>
-                         <td class="">Oct 2020</td>
-                         <td scope="" class="">£1,500</td>
-                        <td class="looks-like-a-link-underline">View</td>
-                      </tr>
-                                            <tr>
-                        &lt;!&ndash;td>09130</td&ndash;&gt;
-                        <td>Mechatronics Engineer</td>
-                        <td class="">Gary</td>
-                        <td class="">Barton</td>
-                        <td class="">21210012876</td>
-                        <td class="">Nov 2018</td>
-                         <td class="">Oct 2020</td>
-                         <td scope="" class="">£1,500</td>
-                        <td class="looks-like-a-link-underline">View</td>
-                      </tr>-->
 
                     </tbody>
                 </table>
                      <!--hr style="margin:35px 0 35px 0;"/-->
-                  <form class="" action="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">
-                    <input type="hidden" name="source" value="provider" />
-                    <div style="margin-top:20px;"><input class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add an apprenticeship"></div>
-                  </form>
-                  <!--p><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-apprenticeship">Add a new apprenticeship group</a></p-->
-                  <p style="margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">Import apprenticeships</a></p>
+
 
             </div>
 
