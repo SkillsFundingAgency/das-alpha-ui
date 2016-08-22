@@ -27,21 +27,22 @@
             view.$apprenticeshipsTableBody.append($tr);
         }
 
+        
     }
 
-
-  //      console.log('im running');
-   //     var $h2 =$('<h2></h2>');
-    //    $h2.append(makeCell(apprenticeship.training.name));
-     //   return $h2;
 
 
 
 
     function makeRow(apprenticeship) {
+
+  
+
         var displayCost = apprenticeship.cost ? '£' + apprenticeship.cost.format(0) : 'TBD';
         var displayStart = apprenticeship.start.month ? apprenticeship.start.month + '/' + apprenticeship.start.year : 'unknown';
         var displayFinish = apprenticeship.finish.month ? apprenticeship.finish.month + '/' + apprenticeship.finish.year : 'unknown';
+
+       
 
         var $tr = $('<tr></tr>');
         $tr.append(makeCell(apprenticeship.training.name));
@@ -53,7 +54,9 @@
         $tr.append(makeCell(displayCost));
         $tr.append(makeActionCell(apprenticeship.id));
         return $tr;
+
     }
+
     function makeCell(text) {
         return $('<td></td>').text(text || 'unknown');
     }
