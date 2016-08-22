@@ -35,6 +35,7 @@
 
 
     function makeRow(apprenticeship) {
+<<<<<<< HEAD
 
   
 
@@ -44,21 +45,23 @@
 
        
 
+=======
+>>>>>>> parent of 982a1b0... Fix issue where if not all apprenticeship info is completed list does not display correctly
         var $tr = $('<tr></tr>');
         $tr.append(makeCell(apprenticeship.training.name));
         $tr.append(makeCell(apprenticeship.apprentice.first));
         $tr.append(makeCell(apprenticeship.apprentice.last));
         $tr.append(makeCell(apprenticeship.apprentice.uln));
-        $tr.append(makeCell(displayStart));
-        $tr.append(makeCell(displayFinish));
-        $tr.append(makeCell(displayCost));
+        $tr.append(makeCell(apprenticeship.start.month + '/' + apprenticeship.start.year));
+        $tr.append(makeCell(apprenticeship.finish.month + '/' + apprenticeship.finish.year));
+        $tr.append(makeCell('£' + apprenticeship.cost.format(0)));
         $tr.append(makeActionCell(apprenticeship.id));
         return $tr;
 
     }
 
     function makeCell(text) {
-        return $('<td></td>').text(text || 'unknown');
+        return $('<td></td>').text(text);
     }
     function makeActionCell(id) {
         var source = commitmentListSource || 'employer';
