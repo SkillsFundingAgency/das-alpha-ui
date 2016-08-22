@@ -26,7 +26,18 @@
             var $tr = makeRow(apprenticeships[i]);
             view.$apprenticeshipsTableBody.append($tr);
         }
+
     }
+
+
+  //      console.log('im running');
+   //     var $h2 =$('<h2></h2>');
+    //    $h2.append(makeCell(apprenticeship.training.name));
+     //   return $h2;
+
+
+
+
     function makeRow(apprenticeship) {
         var displayCost = apprenticeship.cost ? '£' + apprenticeship.cost.format(0) : 'TBD';
         var displayStart = apprenticeship.start.month ? apprenticeship.start.month + '/' + apprenticeship.start.year : 'unknown';
