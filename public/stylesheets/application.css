@@ -2342,6 +2342,18 @@ input[type=number] {
   background-color: #DEE0E2;
 }
 
+.fullWidthGreyAlert {
+  background-color: #dee0e2;
+  width: 100%;
+  height: 50px;
+  padding: 20px 40px 20px 40px;
+  margin: 0 0 20px 0;
+}
+
+.fullWidthGreyAlert p {
+  text-align: center;
+}
+
 .rj-co-funding {
   background-color: #dee0e2;
   width: 143px;
