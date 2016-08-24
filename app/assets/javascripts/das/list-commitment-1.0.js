@@ -25,13 +25,7 @@
         $('#apprenticeships').removeClass('rj-dont-display');
 
 
-        // random global variable assignment - variable is used again later -  the copy in the training header.
-        numberOfApps = apprenticeships.length;
-        appsMoreThanOne = "";
-        if (numberOfApps >= 2) {
-            appsMoreThanOne ="s"} else {appsMoreThanOne=""};
 
-        //end of robs random code
 
         view.$numberOfApprenticesLabel.text(apprenticeships.length);
         for(var i = 0; i < apprenticeships.length; i++) {

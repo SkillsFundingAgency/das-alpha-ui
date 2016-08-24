@@ -2334,6 +2334,14 @@ input[type=number] {
   margin-bottom: 30px;
 }
 
+.changeHighlightCopy {
+  font-weight: 700;
+}
+
+.thereAreChanges {
+  background-color: #DEE0E2;
+}
+
 .rj-co-funding {
   background-color: #dee0e2;
   width: 143px;
