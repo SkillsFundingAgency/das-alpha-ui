@@ -2354,6 +2354,14 @@ input[type=number] {
   text-align: center;
 }
 
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #DEE0E2;
+}
+
 .rj-co-funding {
   background-color: #dee0e2;
   width: 143px;
