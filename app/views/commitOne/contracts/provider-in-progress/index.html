@@ -1,17 +1,29 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Apprenticeships
+  SFS
 {% endblock %}
 
 {% block content %}
 
 <style>
-  .provider-nav a {
+  .home-nav a {
     {% include "includes/nav-on-state-css.html" %}
   }
-</style>
 
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
 
 <main id="content" role="main">
 {% include "includes/phase_banner_beta.html" %}
@@ -19,189 +31,86 @@
 
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
-      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Provider home</a></li>
-            <li><a href="/{% include "includes/sprint-link.html" %}/contracts/providers">Update and authorise commitments</a></li>
-            <li>View commitments</li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress">SFS home</a></li>
     </ol>
   </div>
 
-  <div id="showDoneAlert" class="user-alert rj-dont-display">
-  <div class="panel panel-border-wide alert-success">
-    <i class="fa fa-check "></i>
-            <h2 class="heading-small">Commitment sent to Acme Coventry Ltd for approval</h2>
-          </div>
-  </div>
-
-
 <!--h1 class="heading-large">Levy account</h1-->
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
-              <!--div class="grid-row">
-                <div class="column-two-thirds">
 
-                            <!--h1 class="heading-large" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Review contracts</h1>
-                              <p>You have the following contracts with providers</p>
-                              <form action="" >
-                                  <fieldset>
-                                    <legend class="visuallyhidden">Search contracts</legend>
-                                    <div class="form-group">
-                                        <label class="form-label" style="font-weight:700" for="Contract-search">Search contracts</label>
-                                        <input class="form-control" id="contract-search" type="text">
-                                        <input class="button rjSearchButton" id="search" type="submit" value="Search">
-                                    </div>
-                                  </fieldset>
-                                  </form>
-               </div> 
 
-               <div class="column-one-third"></div>
-              </div-->
-              <!--div class="grid-row">
-                    <div class="column-one-quarter">
-                        <h2 class="heading-medium" style="margin-top:10px">Filter by category</h2>
-                     </div> 
-                     <div class="column-one-quarter">
-                        <label for="filter-category-active" class="form-checkbox">
-                                <input id="filter-category-active" name="category" value="active" type="checkbox" checked>
-                                Active
-                        </label>
-                        <label for="filter-category-archived" class="form-checkbox">
-                                <input id="filter-category-archived" name="category" value="Archived" type="checkbox">
-                                Archived
-                        </label>
-                     </div> 
-                     <div class="column-one-quarter">
-                       <label for="filter-category-archived" class="form-checkbox">
-                                <input id="filter-category-archived" name="category" value="Archived" type="checkbox">
-                                Not started
-                        </label>
-                     </div>
-             </div-->
+ <div class="grid-row">
+           <div class="column-two-thirds">
+             <h1 class="heading-xlarge rj-headings-border" id="" >Casterbridge college<span class="heading-secondary" style="font-size:16px;padding-top:0px">UK PRN: 12345678</span></h1>
 
-<div class="grid-row">
-  <div class="column-two-thirds">
-    <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Update and authorise commitments</h1>
-    <!--p class="lede">You have <span style="font-weight:700">4</span> commitments in progress with employers</p-->
-      </div>
-</div>
+            <!--h2 class="heading-large" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Funding</h2-->
+         <div style="max-width:90%">
+          <div class="grid-row">
+            <div class="column-half ">
+              <h3 class="heading-medium looks-like-a-link-underline-h2" style="margin-top:0 "><!--a href="/{% include "includes/sprint-link.html" %}/finance"-->Contracts</a></h3>
+              <p class="rj-home-spacer"><span class="looks-like-a-link-underline">View and sign your contracts</span> with the SFA online.</p>
+            </div>
 
-<div class="grid-row">
-  <div class="column-one-third">
-        <div style="" class="">
-                <div class="rj-number-alert">
-                  <h2 class="bold-xlarge">24</h2>
+            <div class="column-half">
+              <h3 class="heading-medium rj-top-border-mobile" style="margin-top:0;  " ><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/overview">New commitments</a></h3>
+              <p class="rj-home-spacer"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/overview">View, update and approve</a> the commitments you have with employers</p>
+            </div>
+          </div> 
+          <div class="grid-row">
+            <div class="column-half">
+              <h3 class="heading-medium rj-top-border" style="margin-top:0;  " ><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprenticships</a></h3>
+              <p class="rj-home-spacer"><span class="looks-like-a-link-underline">View and amend</span> your apprenticeships</p>
+            </div>
+          </div> 
+         </div>
+
+       </div>
+
+
+          </div>
+
+            <div class="column-one-third">
+
+            <!--h2 class="heading-medium" style="margin-top:0">To do:</h2>
+
+            <div class="rj-alert-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Forecast: not completed  </h2>
+                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action><a href="/{% include "includes/sprint-link.html" %}/forecast/">Calculate your available spend</a></p>
                 </div>
-                <div class="rj-alert-copy" style="max-width:68%">
-                  <h2 class="heading-medium" style="margin: 12px 0 0px 10px; ">Commitments in progress</h2>
-                  <!--p class="looks-like-a-link-underline" style="width:100%; margin: 5px 0 5px 10px">Shortlist your training provider</p-->
+            </div>
+
+            <div class="rj-alert-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Applications received: 16</h2>
+                  <p class="looks-like-a-link-underline to-do-action" style="width:88%; margin: 5px 10px 5px 20px">Process your applications</p>
                 </div>
+            </div>
+
+            <div class="rj-alert-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Contracts awaiting review: 7 </h2>
+                  <p class="looks-like-a-link-underline to-do-action" style="width:85%; margin: 5px 10px 5px 20px">Review your contracts</p>
+                </div>
+            </div>
+
+            <div class="rj-alert-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Staff with access to account: 1 </h2>
+                  <p class="looks-like-a-link-underline to-do-action" style="width:85%; margin: 5px 10px 5px 20px">Grant access to others</p>
+                </div>
+            </div-->
+
         </div>
-
-    </div>
-  <div class="column-one-third">
-        <div style="" class="">
-                <div class="rj-number-alert">
-                  <h2 class="bold-xlarge">24</h2>
-                </div>
-                <div class="rj-alert-copy" style="max-width:68%">
-                  <h2 class="heading-medium" style="margin: 12px 0 0px 10px; ">Commitments in progress</h2>
-                  <!--p class="looks-like-a-link-underline" style="width:100%; margin: 5px 0 5px 10px">Shortlist your training provider</p-->
-                </div>
-        </div>
-      </div>
-
-  </div> <!-- close grid-row  -->
-
-
-   <!--div class="column-three-thirds">
-           <div class="robColumnDetails">
-              <h2 class="heading-medium" style="margin: 0 0 5px 0"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list">Acme Coventry Ltd</a></h2>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">98HGS3F</p></div>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">Needs provider input</p></div>
-                     <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">14th August 2018</p></div>
-                      <div><p style="display:inline; margin:0;">15 Aeronautical  engineers </p></div>
-
-          </div>
-           <div class="robColumnDetails">
-              <h2 class="looks-like-a-link-underline-h2 heading-medium" style="margin: 0 0 5px 0">Acme Coventry Ltd</h2>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">55HGS3F</p></div>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">Employer updaing</p></div>
-                     <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">30th June 2018</p></div>
-                      <div><p style="display:inline; margin:0;">196 Mechatronics maintenance engineers</p></div>
-                      <div><p style="display:inline; margin:0;">96 Manufacturing engineers</p></div>
-                      <div><p style="display:inline; margin:0;">1 Survival equipment fitter</p></div>
-          </div>
-           <div class="robColumnDetails">
-              <h2 class="looks-like-a-link-underline-h2 heading-medium" style="margin: 0 0 5px 0">Cyberdyne Systems Inc</h2>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">MGF897F</p></div>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">New</p></div>
-                     <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">21th August 2018</p></div>
-                      <div><p style="display:inline; margin:0;">5 Network engineers</p></div>
-                      <div><p style="display:inline; margin:0;">6 Cyber intrusion analysts</p></div>
-                      <div><p style="display:inline; margin:0;">1 Cyber security technologist</p></div>
-          </div>
-           <div class="robColumnDetails">
-              <h2 class="looks-like-a-link-underline-h2 heading-medium" style="margin: 0 0 5px 0">Tyrell Corp</h2>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">999GHY4</p></div>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">New</p></div>
-                     <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">21th August 2018</p></div>
-                      <div><p style="display:inline; margin:0;">55 Embedded Electronic Systems Design and Development Engineer </p></div>
-                      <div><p style="display:inline; margin:0;">43 Cyber intrusion analysts</p></div>
-                      <div><p style="display:inline; margin:0;">25 Embedded Electronic Systems Design and Development Engineer </p></div>
-          </div-->
-            <div style="margin-top:35px"></div>
-                <table>
-                    <thead>
-                      <tr>
-                        <th scope="col">Employer</th>
-                        <th scope="col" class="">Reference</th>
-                        <th scope="col">Status</th>
-                         <th scope="col"></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="rjTabWidth">Hackney skills and training provider Ltd</td>
-                        <td class="">98HGS3F</td>
-                         <td class="">Action required</td>
-
-
-                        <td><a href="/{% include "includes/sprint-link.html" %}/contracts/contract-details">Add details</a></td>
-                      </tr>
-                      <tr>
-                        <td class="rjTabWidth">Learning management, skills and business training Ltd</td>
-                        <td class="">HGHN734557</td>
-                        <td class="">Approval required</td>
- 
-                        <td><a href="/{% include "includes/sprint-link.html" %}/contracts/contract-details">Review</a></td>
-                      </tr>
-                      <tr>
-                        <td class="rjTabWidth">Lots of skills Ltd</td>
-                        <td class="">NMJ786563</td>
-                        <td class="">Action required</td>
-
-                        <td><a href="/{% include "includes/sprint-link.html" %}/contracts/contract-details">Add details</a></td>
-                      </tr>
-                      <tr>
-                        <td class="rjTabWidth">Learning management, skills and business training Ltd</td>
-                        <td class="">NUY89763</td>
-                        <td class="">Action required</td>
-
-                        <td><a href="/{% include "includes/sprint-link.html" %}/contracts/contract-details">Add details</a></td>
-                      </tr>                
-                    </tbody>
-                </table>
-    </div>
-</div>
-
-
 
 
 
 </main>
 
-
-
  <!--button class="button">Do the thing</button-->
 
+
+</script>
 
 {% endblock %}
 
