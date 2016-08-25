@@ -356,24 +356,34 @@ vertical-align: top;
 
 .fullWidthGreyAlert {
   background-color: $panel-colour;
-  width:100%;
-  height:50px;
-  padding: 20px 40px 20px 40px;
-  margin: 0 0 20px 0;
+ // width:100%;
+  height:120px;
+  padding: 20px 40px 0px 40px;
+  margin: 45px 0 0px 0;
+  position:relative;
 
 }
 
-.fullWidthGreyAlert p {
+.fullWidthGreyAlert p,.fullWidthGreyAlert h2  {
   text-align: center;
+  margin-top:0;
 }
 
-.arrow-down {
-  width: 0; 
-  height: 0; 
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-top: 20px solid #DEE0E2;
+.fullWidthGreyAlert:after {
+     content: '';
+    position: absolute;
+    left: 10%;
+    top: 140px;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 25px solid $panel-colour;
+
+    clear: both;
 }
+
+
 
 
 // james funding toolkit
