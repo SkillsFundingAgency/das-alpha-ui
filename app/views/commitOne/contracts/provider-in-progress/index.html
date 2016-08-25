@@ -79,101 +79,13 @@
 <div class="grid-row">
   <div class="column-two-thirds">
     <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Commitments in progress</h1>
-    <p class="lede">You have <span style="font-weight:700">4</span> contracts in progress with employers</p>
+    <p class="lede">You have <span style="font-weight:700">4</span> commitments in progress with employers</p>
   </div>
 </div>
 
-<div class="grid-row">
-   <div class="column-one-third">
-<div class="filter-form">
-  <div id="finder-frontend" class="inner-block">
-    <form method="get" action="/cma-cases" class="js-live-search-form">
-      <div class="filter text-filter">
-        <label class="legend" for="finder-keyword-search">Search</label>
-        <input value="" type="text" name="keywords" id="finder-keyword-search" aria-controls="js-search-results-info" class="text">
-      </div>
 
-
-
-
-<div class="govuk-option-select js-collapsible js-closed" data-closed-on-load="true">
-  <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
-    <div class="option-select-label">Employer</div>
-  <div class="js-selected-counter"></div></button>
-  <div class="options-container" id="case_state">
-    <div class="js-auto-height-inner">
-
-    </div>
-
-  </div>
-</div>
-
-<div class="govuk-option-select js-collapsible js-closed" data-closed-on-load="true">
-  <button class="js-container-head" type="button" aria-expanded="false" aria-controls="market_sector">
-    <div class="option-select-label">Status</div>
-  <div class="js-selected-counter"></div></button>
-  <div class="options-container" id="market_sector">
-    <div class="js-auto-height-inner">
-      <!--label for="market_sector-aerospace">
-        <input name="market_sector[]" value="aerospace" id="market_sector-aerospace" type="checkbox" aria-controls="js-search-results-info">
-        Aerospace
-        </label>
-      <label for="market_sector-agriculture-environment-and-natural-resources">
-        <input name="market_sector[]" value="agriculture-environment-and-natural-resources" id="market_sector-agriculture-environment-and-natural-resources" type="checkbox" aria-controls="js-search-results-info">
-        Agriculture, environment and natural resources
-        </label>
-      <label for="market_sector-building-and-construction">
-        <input name="market_sector[]" value="building-and-construction" id="market_sector-building-and-construction" type="checkbox" aria-controls="js-search-results-info">
-        Building and construction
-        </label-->
-
-    </div>
-
-  </div>
-</div>
-
-<div class="govuk-option-select js-collapsible js-closed" data-closed-on-load="true">
-  <button class="js-container-head" type="button" aria-expanded="false" aria-controls="market_sector">
-    <div class="option-select-label">Training</div>
-  <div class="js-selected-counter"></div></button>
-  <div class="options-container" id="market_sector">
-    <div class="js-auto-height-inner">
-      <!--label for="market_sector-aerospace">
-        <input name="market_sector[]" value="aerospace" id="market_sector-aerospace" type="checkbox" aria-controls="js-search-results-info">
-        Aerospace
-        </label>
-      <label for="market_sector-agriculture-environment-and-natural-resources">
-        <input name="market_sector[]" value="agriculture-environment-and-natural-resources" id="market_sector-agriculture-environment-and-natural-resources" type="checkbox" aria-controls="js-search-results-info">
-        Agriculture, environment and natural resources
-        </label>
-      <label for="market_sector-building-and-construction">
-        <input name="market_sector[]" value="building-and-construction" id="market_sector-building-and-construction" type="checkbox" aria-controls="js-search-results-info">
-        Building and construction
-        </label-->
-
-    </div>
-
-  </div>
-</div>
-
-<!--div class="filter text-filter">
-  <label class="legend" for="closed_date[from]">Closed after</label>
-  <input value="" type="text" name="closed_date[from]" id="closed_date[from]" aria-controls="js-search-results-info" aria-describedby="date-help-text-closed_date" class="text">
-
-  <label class="legend" for="closed_date[to]">Closed before</label>
-  <input value="" type="text" name="closed_date[to]" id="closed_date[to]" aria-controls="js-search-results-info" class="text" aria-describedby="date-help-text-closed_date">
-  <span id="date-help-text-closed_date" class="help-text">For example, 2005 or 21/11/2014<span>
-</span></span>
-</div-->
-
-      <input type="submit" value="Filter results" class="button js-live-search-fallback">
-    </form>
-  </div>
-</div>
-
-   </div>
    
-   <div class="column-two-thirds">
+   <!--div class="column-three-thirds">
            <div class="robColumnDetails">
               <h2 class="heading-medium" style="margin: 0 0 5px 0"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list">Acme Coventry Ltd</a></h2>
                       <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">98HGS3F</p></div>
@@ -208,45 +120,49 @@
                       <div><p style="display:inline; margin:0;">55 Embedded Electronic Systems Design and Development Engineer </p></div>
                       <div><p style="display:inline; margin:0;">43 Cyber intrusion analysts</p></div>
                       <div><p style="display:inline; margin:0;">25 Embedded Electronic Systems Design and Development Engineer </p></div>
-          </div>
+          </div-->
 
-                <!--table>
+                <table>
                     <thead>
                       <tr>
-                        <th scope="col">To</th>
+                        <th scope="col">Employer</th>
                         <th scope="col" class="">Reference</th>
-                        <!--th scope="col" class="">Monthly</br>payment</th>
-                        <th scope="col">Contract ends</th>
-                         <th scope="col">Details</th>
+                        <th scope="col">Status</th>
+                         <th scope="col"></th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td class="rjTabWidth">Hackney skills and training provider Ltd</td>
                         <td class="">98HGS3F</td>
+                         <td class="">Action required</td>
+
 
                         <td><a href="/{% include "includes/sprint-link.html" %}/contracts/contract-details">View</a></td>
                       </tr>
                       <tr>
                         <td class="rjTabWidth">Learning management, skills and business training Ltd</td>
                         <td class="">HGHN734557</td>
+                        <td class="">Action required</td>
  
                         <td><a href="/{% include "includes/sprint-link.html" %}/contracts/contract-details">View</a></td>
                       </tr>
                       <tr>
                         <td class="rjTabWidth">Lots of skills Ltd</td>
                         <td class="">NMJ786563</td>
+                        <td class="">Action required</td>
 
                         <td><a href="/{% include "includes/sprint-link.html" %}/contracts/contract-details">View</a></td>
                       </tr>
                       <tr>
                         <td class="rjTabWidth">Learning management, skills and business training Ltd</td>
                         <td class="">NUY89763</td>
+                        <td class="">Action required</td>
 
                         <td><a href="/{% include "includes/sprint-link.html" %}/contracts/contract-details">View</a></td>
                       </tr>                
                     </tbody>
-                </table-->
+                </table>
     </div>
 </div>
 
