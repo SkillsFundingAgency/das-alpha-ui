@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+
+<script>
+$(document).ready(function() {
+      var theButton = document.getElementById('finance-person-false');
+      EventUtil.addHandler(theButton, 'click', function(event){
+        event = EventUtil.getEvent(event);
+        var target = EventUtil.getTarget(event);
+
+           var $input = $("input:radio[value=true]:checked").val();
+
+         if ($input) {} else { $( "#inline-finance-pro-error" ).removeClass( "tamc-js-hidden" );}
+      });
+      });
+$(document).ready(function() {
+            var anotherButton = document.getElementById('finance-person-true');
+      EventUtil.addHandler(anotherButton, 'click', function(event){
+        event = EventUtil.getEvent(event);
+        var target = EventUtil.getTarget(event);
+
+           var $inputOn = $("input:radio[value=true]:checked").val();
+          if ($inputOn) {$( "#inline-finance-pro-error" ).addClass( "tamc-js-hidden" );} else { }
+      });
+         });
+
+
+
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+     {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+
+  </div>
+
+
+      <div class="grid-row">
+           <div class="column-two-thirds">
+             <h1 class="heading-xlarge" >Are you a member of senior management</h1>
+             <p>Claiming your levy funds is an important task that should be undertaken either by a senior manager or someone authorised by them. We would recommend a finance professional do this task.</p>
+
+              <form action="thought-about-accounts">
+                    <div class="form-group inline">
+                                                     <label class="form-label-bold" for="text">Does this apply to you?</label> 
+                        <fieldset class="inline spacingBottom" id="lower-earner" data-inline-error="inline-lower-earner-error">
+                            <legend class="visuallyhidden">
+                                eligibility.check.lower.earner.h2
+                            </legend>
+                        <label for="finance-person-true" class="block-label">
+                                    <input type="radio" id="finance-person-true" name="lower-earner" value="true">Yes </label>
+                        <label for="finance-person-false" class="block-label">
+                                    <input type="radio" id="finance-person-false" name="lower-earner" value="false">No </label>
+                        </fieldset>
+                    </div>
+                    <div class="tamc-js-hidden error-inline validation-summary" id="inline-finance-pro-error" >
+        some copy here explaining that they really should be a senior person, but we won't stop them if they are not
+        </div>
+                  <input class="button" id="saveAndContinue" type="submit" value="Continue">
+
+				  <!--div class="rjmakeALink" onclick="loopyLoop()"><p>Create another apprenticeship account</p></div-->
+				  <!--CREATE ANOTHER APPRENTICESHIP ACCOUNT-->
+              </form>
+
+            </div>
+      </div>
+</main>
+
+
+{% endblock %}
+
+

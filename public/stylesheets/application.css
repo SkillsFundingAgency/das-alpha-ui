@@ -2046,10 +2046,6 @@ input[type=number] {
   background: #fff;
 }
 
-.link-back {
-  margin: 0 !important;
-}
-
 /* .breadcrumbs ol li a {
   display:none;
 }
@@ -3692,4 +3688,41 @@ input.text {
   border-bottom: 1px solid #bfc1c3;
   width: 100%;
   cursor: pointer;
+}
+
+.hgroup {
+  margin-bottom: 30px;
+}
+
+@media (min-width: 641px) {
+  .hgroup {
+    margin-bottom: 60px;
+  }
+}
+
+.link-back:link, .link-back:visited, .link-back:hover, .link-back:active {
+  color: #0b0c0c;
+}
+
+.link-back {
+  display: inline-block;
+  position: relative;
+  font-family: "nta", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.1428571429;
+  font-weight: 400;
+  text-transform: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-left: 14px;
+  color: #0b0c0c;
+  text-decoration: none;
+  border-bottom: 1px solid #0b0c0c;
+}
+
+@media (min-width: 641px) {
+  .link-back {
+    font-size: 16px;
+    line-height: 1.25;
+  }
 }

@@ -1,0 +1,185 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .people-nav a, .learners-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/account">change me</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/settings/">change me</a></li>
+      <li>Manage team members</li>
+    </ol>
+  </div>    
+    <div class="govuk-box-highlight">
+                <h2 class="bold-large">
+            Invitation sent
+          </h2>
+                <p>
+                    You've sent an invitation to <span class="bold-small">john@tesco.co.uk</span>
+                </p>
+            </div>
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-xlarge" style="margin-bottom:5px;">{% include "includes/account-name-number.html" %}Manage team members</h1>
+      <p style="margin-bottom:35px">
+Invite members, control what they can do, delete members and cancel or resend invitations.
+</p>
+  </div>
+    <div class="column-one-third">
+                 <form action="/{% include "includes/sprint-link.html" %}/settings/users/add-new-user">
+                  <div style="margin-top:30px; float:right"><input class="button" id="addNewUser" type="submit" value="Invite a new member"></div>
+              </form>
+  </div>
+</div>
+
+    
+
+
+
+<div class="">
+                     <table class="">
+                          <thead>
+                            <tr>
+                              <th scope="col" style="padding-top:0">Team member</th>
+
+                              <th scope="col" class="" style="padding-top:0; width: 50%;">What they can do</th>
+                               <th scope="col" class="" style="padding-top:0">Status</th>
+
+                               <th scope="col" style="padding-top:0"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                                                        <tr>
+                              <!--quick hack, will fix -->
+                              <td >Brendan McShane
+                            <br>
+                            <span class="text-secondary">brendan.mcshane@acmecoventry.com</span>
+                                </td>
+
+                              <td class="">Create and stop payments, sign legal agreements, manage PAYE schemes and team accounts	</td>
+                              <!--td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td>
+                              <td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td>
+                              <td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td-->
+                                                            <td class="">Invitation expired</td>
+                                                            
+                                                            
+                                                          <td class="looks-like-a-link-underline">Edit</td>
+  
+                            </tr>
+                             <tr>
+                                 <td class="rjTabWidth">Susan Hamazaki<br><span class="text-secondary">susan.hamazaki@acmecoventry.com</span></td>
+                              <td class="">View financial information</td>
+                              <!--td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td>
+                              <td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td>
+                              <td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td-->
+                               <td class="">Active</td>
+                              <td class="looks-like-a-link-underline">Edit</td>
+                            </tr>
+                            <tr>
+                                <td class="rjTabWidth">David Jenkins<br><span class="text-secondary">david.jenkins@acmecoventry.com</span></td>
+                              <td class="">View financial information</td>
+                              <!--td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td>
+                              <td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td>
+                              <td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td-->
+                               <td class="">Invitation sent<br><span class="text-secondary">Expires in 3 days</span></td>
+                               <td class="looks-like-a-link-underline">Edit</td>
+                            </tr>
+                            <tr>
+                                <td class="rjTabWidth">Mel O'Connor<br><span class="text-secondary">mel.oconnor@acmecoventry.com</span></td>
+                              <td class="">Create and stop payments and view financial information	</td>
+                              <!--td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td>
+                              <td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td>
+                              <td class="align-center-columns"><i class="fa fa-check fa-2x"></i></td-->
+                               <td class="">Active</td>
+                              <td class="looks-like-a-link-underline">Edit</td>
+                            </tr>
+                          </tbody>
+                      </table>
+             </div>
+</main>
+
+
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+$( document ).ready(function() {
+
+  // change the tabs themselves to active - should be in the above but isn't working because it's looking for a not li so I added this as a quick fix.
+
+  $("ul#tabs-nav li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs-nav li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#tabs-nav li.active").removeClass("active");
+            $("ul#tabs-nav li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+  $('ul.tabs-nav').each(function(){
+    // For each set of tabs, we want to keep track of
+    // which tab is active and its associated content
+    var $active, $content, $links = $(this).find('a');
+
+
+
+    // If the location.hash matches one of the links, use that as the active tab.
+    // If no match is found, use the first link as the initial active tab.
+    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+   // $active.addClass('active');
+   console.log($active)
+
+    $content = $($active[0].hash);
+
+    // Hide the remaining content
+    $links.not($active).each(function () {
+      $(this.hash).hide();
+    }); 
+
+    // Bind the click event handler
+    $(this).on('click', 'a', function(e){
+      // Make the old tab inactive.
+    //  $active.removeClass('active');
+      $content.hide();
+
+      // Update the variables with the new link and content
+    //  $active = $(this);
+      $content = $(this.hash);
+
+      // Make the tab active.
+     // $active.addClass('active');
+      $content.show();
+
+      // Prevent the anchor's default click action
+      e.preventDefault();
+    });
+  });
+
+
+</script>
+
+{% endblock %}
+
