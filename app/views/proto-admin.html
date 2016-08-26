@@ -8,6 +8,16 @@
 
 <script>
 
+        function authSet(){
+  var authSetValue = $('#authSetValue').val();
+  localStorage.setItem("authSet", JSON.stringify(authSetValue));
+  window.location.href='proto-admin';
+    };
+    
+        function poopoo(){
+        alert("hello world");
+    };
+    
 var NavigationOn = function() {
   var Navigation = 'on';
   localStorage.setItem("Navigation-Status", JSON.stringify(Navigation));
@@ -31,13 +41,22 @@ var setSprintNumber = function() {
   localStorage.setItem("sprint-number", JSON.stringify(sprintName));
   window.location.href='proto-admin';
 };
+    
+
+
 
 $( document ).ready(function() {
 var bla = JSON.parse(localStorage.getItem('company-name-header'));
 $('#company-name-field').val(bla);
 var sprinty = JSON.parse(localStorage.getItem('sprint-number'));
 $('#sprint-number-field').val(sprinty);
+var getAuthSet = JSON.parse(localStorage.getItem('authSet'));
+$('#authSetValue').val(getAuthSet);
 });
+
+    
+    //  localStorage.setItem("authSet", JSON.stringify("false"));
+//var   JSON.parse(localStorage.getItem('authSet'));
 
 </script>
 
@@ -92,6 +111,19 @@ $('#sprint-number-field').val(sprinty);
             <button id="clearCommitmentData" type="button" class="button">Clear Data</button>
           </div>
 
+        </fieldset>
+      </form>
+        
+        <h2 class="heading-medium">Authenticated state</h2>
+      <form>
+        <fieldset>
+          <legend class="visuallyhidden">Set the auth state of the user</legend>
+          <div class="form-group">
+                             <input class="form-control" id="authSetValue" type="text" >
+          </div>
+          <div class="form-group">
+                <button id="authSetButton" type="button" class="button" onclick="authSet()">Set state</button>
+          </div>
         </fieldset>
       </form>
 

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">Sprint 5 Beta - </h1>
+        <p>
+        <a href="/{% include "includes/sprint-link.html" %}/start">Service start</a>
+      </p>
+      <p>
+        <a href="/{% include "includes/sprint-link.html" %}/login">Sign in to the service</a>
+      </p>
+      <p>
+        <a href="/{% include "includes/sprint-link.html" %}/profile">Profile home</a>
+      </p>
+
+        <p>
+        <a href="/{% include "includes/sprint-link.html" %}/account">Account home</a>
+      </p>
+       <p>
+        <a href="/{% include "includes/sprint-link.html" %}/history">View my account history</a>
+      </p>
+        <a href="/{% include "includes/sprint-link.html" %}/committed">View my planned spending</a>
+      </p>
+       </p>
+        <a href="/{% include "includes/sprint-link.html" %}/expire">View expiring funds</a>
+      </p>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

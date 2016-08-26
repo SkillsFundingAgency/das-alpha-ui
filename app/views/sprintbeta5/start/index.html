@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">please wait</h1>
+        
+    </div>
+  </div>
+</main>
+
+<script>
+
+    if ( JSON.parse(localStorage.getItem('authSet')) == "true" ) {
+    //if you're logged in
+    //alert("auth is true")
+    window.location.replace("profile");
+    } else {
+    // if you're not or its not set
+    //alert("auth is false")
+    window.location.replace("inform");
+    }
+
+    
+</script>
+
+{% endblock %}
+
+

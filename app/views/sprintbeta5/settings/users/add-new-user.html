@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .people-nav a, .learners-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/secondary-nav-people.html" %}
+
+
+<a href="http://prototype.lunchlabs.co.uk/SFA/aml/2/invite.html" class="link-back">Back to manage team members</a>
+
+
+  <!--h1 class="heading-large">Levy account</h1-->
+  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+        <div class="hgroup">
+      <h1 class="heading-xlarge" style="margin-bottom: 5px;">{% include "includes/account-name-number.html" %}Invite a new member</h1>
+  <p>
+    Invite somebody to access this levy account.
+  </p>
+</div>
+  </div>
+  </div>
+
+  <form action="user-confirmation">
+    <fieldset>
+      <legend class="visuallyhidden">password</legend>
+
+      <div class="form-group">
+
+        <label class="form-label-bold" for="full-name">Email address</label>
+          <div class="grid-row">
+    <div class="column-two-thirds">
+        <span class="form-hint">
+          An invitation will be sent to this email addresss.
+        </span>
+      </div>
+    </div>
+
+        <input class="form-control" id="email-address" type="email">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label-bold" for="full-name">Full name</label>
+                  <div class="grid-row">
+    </div>
+        <input class="form-control" id="name" type="text" >
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend class="visuallyhidden">Access to the service</legend>
+      <label class="form-label-bold" for="full-name">Team member access</label>
+
+      <p>
+          Choose the level of access this user can have.
+      </p>
+
+      <label class="rj-roles-choice block-label " for="radio-1">
+        <input id="radio-1" type="radio" name="radio-group" value="Viewer">
+            Can view financial information but can't make changes
+      </label>
+
+      <label class="block-label rj-roles-choice" for="radio-2">
+        <input id="radio-2" type="radio" name="radio-group" value="Doer">
+        Can create and stop payments and view financial information
+      </label>
+
+      <label class="block-label rj-roles-choice" for="radio-3">
+        <input id="radio-3" type="radio" name="radio-group" value="Owner">
+          Can create and stop payments, sign legal agreements, manage PAYE schemes and team accounts
+        <span class="form-hint">    
+        </span>
+      </label>
+    </fieldset>
+
+    <!--
+    <fieldset>
+      <legend class="visuallyhidden">Access to the service</legend>
+      <div class="form-group">
+        <label class="form-label-bold" for="full-name">Access to the service</label>
+        <div class="grid-row">
+          <div class="column-two-thirds">
+            <p>Please choose the level of access you would like the new user to have:</p>
+          </div>
+        </div>
+        <label class="block-label" for="checkbox-1">
+          <input id="checkbox-1" type="checkbox" name="checkbox-group" value="manage-other-users">
+          Allow team member to add and manage other users
+        </label>
+        <label class="block-label" for="checkbox-2">
+          <input id="checkbox-2" type="checkbox" name="checkbox-group" value="pay-providers">
+          Allow team member to approve contracts and manage payments to providers
+        </label>
+        <label class="block-label" for="checkbox-3">
+          <input id="checkbox-3" type="checkbox" name="checkbox-group" value="manage-PAYE">
+          Allow team member to add, delete and manage the PAYE schemes on this account
+        </label>
+      </div>
+    </fieldset>
+    -->
+
+    <div style="margin-top:20px"></div>
+    <input class="button" id="saveAndContinue" type="submit" value="Send invitation">
+  </form>
+
+<!-- </div> -->
+
+</main>
+
+{% endblock %}
+
