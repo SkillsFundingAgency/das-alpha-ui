@@ -53,7 +53,7 @@
         var displayFinish = apprenticeship.finish.month ? apprenticeship.finish.month + '/' + apprenticeship.finish.year : 'unknown';
 
         var $tr = $('<tr></tr>');
-        $tr.append(makeCell(apprenticeship.training.name));
+      //  $tr.append(makeCell(apprenticeship.training.name));
         $tr.append(makeCell(apprenticeship.apprentice.first));
         $tr.append(makeCell(apprenticeship.apprentice.last));
         $tr.append(makeCell(apprenticeship.apprentice.uln));
