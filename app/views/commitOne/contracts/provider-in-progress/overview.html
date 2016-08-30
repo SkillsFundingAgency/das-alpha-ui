@@ -44,7 +44,7 @@
       </div>
 </div>
 
-<div class="grid-row">
+<!--div class="grid-row">
     <div class="column-one-quarter" >
         <div style="" class="arse" >
                 <div class="rj-number-alert">
@@ -52,7 +52,6 @@
                 </div>
                 <div class="rj-alert-copy looks-like-a-link-underline-h2" style="max-width:56%">
                   <h2 class="heading-medium" style="margin: 10px 0 0px 15px; ">New from employer</h2>
-                  <!--p class="looks-like-a-link-underline" style="width:100%; margin: 5px 0 5px 10px">Shortlist your training provider</p-->
                 </div>
         </div>
 
@@ -65,7 +64,6 @@
                 </div>
                 <div class="rj-alert-copy looks-like-a-link-underline-h2" style="max-width:56%">
                   <h2 class="heading-medium" style="margin: 10px 0 0px 15px; ">Need updates</h2>
-                  <!--p class="looks-like-a-link-underline" style="width:100%; margin: 5px 0 5px 10px">Shortlist your training provider</p-->
                 </div>
         </div>
 
@@ -78,7 +76,6 @@
                 </div>
                 <div class="rj-alert-copy looks-like-a-link-underline-h2" style="max-width:56%">
                   <h2 class="heading-medium" style="margin: 10px 0 0px 15px; ">Require approval</h2>
-                  <!--p class="looks-like-a-link-underline" style="width:100%; margin: 5px 0 5px 10px">Shortlist your training provider</p-->
                 </div>
         </div>
       </div>
@@ -89,10 +86,9 @@
                 </div>
                 <div class="rj-alert-copy looks-like-a-link-underline-h2" style="max-width:56%">
                   <h2 class="heading-medium" style="margin: 10px 0 0px 15px; ">Are with employers</h2>
-                  <!--p class="looks-like-a-link-underline" style="width:100%; margin: 5px 0 5px 10px">Shortlist your training provider</p-->
                 </div>
         </div>
-      </div>
+      </div-->
 
   </div> <!-- close grid-row  -->
 
@@ -104,14 +100,44 @@
     <div class="filter-form filtering ">
       <div id="finder-frontend" class="inner-block">
 
-        <form method="get" action="/cma-cases" class="js-live-search-form">
+        <form method="get" action="/" class="js-live-search-form">
           <div class="filter text-filter">
             <label class="legend" for="finder-keyword-search">Search</label>
             <input value="" type="text" name="keywords" id="finder-keyword-search" aria-controls="js-search-results-info" class="text">
           </div>
 
 
-                       <div class="govuk-option-select js-collapsible" >
+        <div class="govuk-option-select js-collapsible" >
+            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+              <div class="option-select-label">Commitment status</div>
+              <div class="js-selected-counter"></div></button>
+                <div class="options-container" id="case_state">
+                  <div class="js-auto-height-inner">
+                      <label for="new">
+                        <input name="case_type[]" value="acme-cov" id="status-new" type="checkbox" aria-controls="js-search-results-info">
+                          New (1)
+                        </label>
+                        <label for="Awaiting - Provider input">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          Needs your input (1)
+                        </label>
+                        <label for="Awaiting - Employer input">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          In progress with employer (1)
+                        </label>
+                        <label for="Approved by employer">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          Approved by employer (1)
+                        </label>
+
+                  </div>
+
+               </div>
+          </div>
+
+
+
+        <div class="govuk-option-select js-collapsible" >
             <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
               <div class="option-select-label">Employer</div>
               <div class="js-selected-counter"></div></button>
@@ -119,15 +145,15 @@
                   <div class="js-auto-height-inner">
                       <label for="Acme Coventry Ltd">
                         <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
-                          Acme Coventry Ltd
+                          Acme Coventry Ltd (2)
                         </label>
                         <label for="Cyberdyne Systems Inc">
                         <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
-                          Cyberdyne Systems Inc
+                          Cyberdyne Systems Inc (1)
                         </label>
                         <label for="Tyrell Corp">
                         <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
-                          Tyrell Corp
+                          Tyrell Corp (1)
                         </label>
 
                   </div>
@@ -196,7 +222,7 @@
                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">14th August 2018</p></div>
 
 
-                      <div><p style="display:inline; margin:0;">15 Mechatronics engineers </p></div>
+                      <!--div><p style="display:inline; margin:0;">15 Mechatronics engineers </p></div-->
 
           </div>
 
@@ -204,7 +230,7 @@
            <div class="facetedResults">
               <h2 class="looks-like-a-link-underline-h2 heading-medium" style="margin: 0 0 5px 0">Acme Coventry Ltd</h2>
                       <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">55HGS3F</p></div>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">Employer updaing</p></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">Needs your input</p></div>
                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">30th June 2018</p></div>
                       <div><p style="display:inline; margin:0;">196 Mechatronics maintenance engineers</p></div>
                       <div><p style="display:inline; margin:0;">96 Manufacturing engineers</p></div>
@@ -215,7 +241,7 @@
            <div class="facetedResults">
               <h2 class="looks-like-a-link-underline-h2 heading-medium" style="margin: 0 0 5px 0">Cyberdyne Systems Inc</h2>
                       <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">MGF897F</p></div>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">New</p></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">In progress with employer</p></div>
                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">21th August 2018</p></div>
                       <div><p style="display:inline; margin:0;">5 Network engineers</p></div>
                       <div><p style="display:inline; margin:0;">6 Cyber intrusion analysts</p></div>
@@ -226,7 +252,7 @@
            <div class="facetedResults">
               <h2 class="looks-like-a-link-underline-h2 heading-medium" style="margin: 0 0 5px 0">Tyrell Corp</h2>
                       <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">999GHY4</p></div>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">New</p></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">Approved by employer</p></div>
                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">21th August 2018</p></div>
                       <div><p style="display:inline; margin:0;">55 Embedded Electronic Systems Design and Development Engineer </p></div>
                       <div><p style="display:inline; margin:0;">43 Cyber intrusion analysts</p></div>
