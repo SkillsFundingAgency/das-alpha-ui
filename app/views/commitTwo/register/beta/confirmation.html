@@ -1,0 +1,301 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+{% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+            <h1 class="heading-xlarge" >Review details before submission</h1>
+
+            <p class="">Check or amend your details before you submit them. </p>
+
+
+                <table class=""> 
+                    <thead>
+                      <tr>
+                        <!--h2 class="heading-medium">Apprenticeship 1</h2-->
+                           <th scope="col"></th>
+                          <th scope="col"></th>
+                           <th scope="col"></th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!--tr>
+                        <td>Organisation</td>
+                        <td style="font-weight:700; font-size:19px">Limited company</td>
+                        <td class="looks-like-a-link-underline">Change</td>
+                      </tr-->
+                       <tr>
+                        <td style="border-bottom:none; padding-bottom:0">Company</td>
+                        <td style="font-weight:700; font-size:19px;border-bottom:none;padding-bottom:0">Acme Coventy Ltd</td>
+                        <td class="looks-like-a-link-underline" style="border-bottom:none; ">Change</td>
+                      </tr>
+                       <tr>
+                       <td></td>
+                        <td style="font-weight:700; font-size:19px; padding-top:0; color:#6F777B">12345678</td>
+                        <td class="looks-like-a-link-underline"></td>
+                      </tr>
+
+                      <tr>
+                        <td>Account name</td>
+                        <td style="font-weight:700; font-size:19px">My account</td>
+                        <td class="looks-like-a-link-underline">Change</td>
+                      </tr>
+                      <tr>
+                        <td style="border-bottom:none; padding-bottom:0">PAYE Scheme 1</td>
+                        <td style="font-weight:700; font-size:19px; border-bottom:none;padding-bottom:0">Acme Coventry Stores Ltd</td>
+                        <td class="looks-like-a-link-underline" style="border-bottom:none;">Change</td>
+                      </tr>
+                      <tr>
+                       <td></td>
+                        <td style="font-weight:700; font-size:19px; padding-top:0; color:#6F777B">846/A246</td>
+                        <td class="looks-like-a-link-underline"></td>
+                      </tr>
+
+                    </tbody>
+                </table>
+
+
+
+              <form action="approve-terms">
+                  <div style="margin-top:20px;"><input class="button" id="paymentPlan" type="submit" value="Save and continue"></div>
+              </form>
+
+
+
+          </div>
+  
+        </div>
+
+
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+$(document).ready(function() {
+//chart data - static for now
+var chartData = {
+    labels: ["Sept 2018", "Oct 2018", "Nov 2018", "Dec 2018", "Jan 2019", "Feb 2019", "March 2019", "April 2019", "May 2019", "June 2019", "July 2019", "August 2019"],
+    datasets: [
+/*
+             {
+            label: "",
+            fillColor: "rgba(204,0,0,1)",
+            strokeColor: "rgba(204,0,0,0)",
+            pointColor: "rgba(204,0,0,0)",
+            pointStrokeColor: "rgba(204,0,0,0)",
+            pointHighlightFill: "rgba(204,0,0,0)",
+            pointHighlightStroke: "rgba(204,0,0,0)",
+            data: [0, 2740, -6028, -8096, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+        }, 
+*/
+       
+        {
+            label: "Available Funds",
+            fillColor: "rgba(132,191,202,0.4)",
+            strokeColor: "rgba(9,127,150,1)",
+            pointColor: "rgba(9,127,150,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [5792, 2740, -6028, -8096, 52, 6789, 9898, 12400, 16590, 13002, 11324, 8000, 0 ]
+        },
+
+
+    ]
+};
+
+// chart options - static for now
+var chartOptions = {
+
+  responsive: true,
+
+      ///Boolean - Whether grid lines are shown across the chart
+    scaleShowGridLines : false,
+
+    //String - Colour of the grid lines
+    scaleGridLineColor : "rgba(9,127,150,1)",
+
+    //Number - Width of the grid lines
+    scaleGridLineWidth : 1,
+
+    //Boolean - Whether to show horizontal lines (except X axis)
+    scaleShowHorizontalLines: true,
+
+    //Boolean - Whether to show vertical lines (except Y axis)
+    scaleShowVerticalLines: false,
+
+    //Boolean - Whether the line is curved between points
+    bezierCurve : true,
+
+    //Number - Tension of the bezier curve between points
+    bezierCurveTension : 0.1,
+
+    //Boolean - Whether to show a dot for each point
+    pointDot : true,
+
+    //Number - Radius of each point dot in pixels
+    pointDotRadius : 4,
+
+    //Number - Pixel width of point dot stroke
+    pointDotStrokeWidth : 1,
+
+    //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+    pointHitDetectionRadius : 20,
+
+    //Boolean - Whether to show a stroke for datasets
+    datasetStroke : true,
+
+    //Number - Pixel width of dataset stroke
+    datasetStrokeWidth : 4,
+
+    //Boolean - Whether to fill the dataset with a colour
+    datasetFill : false,
+
+    tooltipTemplate: "<%= datasetLabel %> - <%= value.toLocaleString() %>",
+
+    scaleLabel:
+    function(label){return  '£' + label.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");},
+
+
+
+};
+
+
+Chart.types.Line.extend({
+    name: "LineAlt",
+    draw: function () {
+        Chart.types.Line.prototype.draw.apply(this, arguments);
+
+        var ctx = this.chart.ctx;
+        var scale = this.scale;
+
+        ctx.save();
+
+         ctx.fillStyle = this.datasets[0].fillColor;
+        ctx.beginPath();
+        ctx.moveTo(scale.calculateX(0), scale.calculateY(0))
+        this.datasets[0].points.forEach(function (point) {
+            ctx.lineTo(point.x, point.y);
+        })
+        ctx.closePath();
+        ctx.fill();
+/*
+        ctx.fillStyle = this.datasets[1].fillColor;
+        ctx.beginPath();
+        ctx.moveTo(scale.calculateX(0), scale.calculateY(0))
+        this.datasets[1].points.forEach(function (point) {
+            ctx.lineTo(point.x, point.y);
+        })
+        ctx.closePath();
+        ctx.fill();
+*/
+
+  
+        ctx.restore();
+    }
+
+
+});
+
+
+
+
+var ctx = document.getElementById("robsChart").getContext("2d");
+var availableChart = new Chart(ctx).LineAlt(chartData, chartOptions);
+
+// changes color of certain points on the chart
+// availableChart.datasets[0].points[2].fillColor =  "red";
+// availableChart.datasets[0].points[3].fillColor =  "red";
+//availableChart.update();
+
+
+});
+
+
+//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+$( document ).ready(function() {
+
+  // change the tabs themselves to active - should be in the above but isn't working because it's looking for a not li so I added this as a quick fix.
+
+  $("ul#tabs-nav li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs-nav li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#tabs-nav li.active").removeClass("active");
+            $("ul#tabs-nav li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+  $('ul.tabs-nav').each(function(){
+    // For each set of tabs, we want to keep track of
+    // which tab is active and its associated content
+    var $active, $content, $links = $(this).find('a');
+
+
+
+    // If the location.hash matches one of the links, use that as the active tab.
+    // If no match is found, use the first link as the initial active tab.
+    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+   // $active.addClass('active');
+   console.log($active)
+
+    $content = $($active[0].hash);
+
+    // Hide the remaining content
+    $links.not($active).each(function () {
+      $(this.hash).hide();
+    }); 
+
+    // Bind the click event handler
+    $(this).on('click', 'a', function(e){
+      // Make the old tab inactive.
+    //  $active.removeClass('active');
+      $content.hide();
+
+      // Update the variables with the new link and content
+    //  $active = $(this);
+      $content = $(this.hash);
+
+      // Make the tab active.
+     // $active.addClass('active');
+      $content.show();
+
+      // Prevent the anchor's default click action
+      e.preventDefault();
+    });
+  });
+
+
+</script>
+
+{% endblock %}
+

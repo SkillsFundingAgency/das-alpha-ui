@@ -1,0 +1,208 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .people-nav a, .learners-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view">Your apprentices</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice">Rob Edwards</a></li>
+      <li>Amount paid</li>
+    </ol>
+
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+
+          <div class="column-two-thirds">
+         <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Amount paid</h1>
+
+                <p>
+                  View instalments paid for this apprentice
+
+                </p>
+            <!--h2 class="heading-medium">Account history</h2-->
+                   <table class="table-19-font"> 
+                    <thead>
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col" class="numeric">Learner number</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Rob Edwards</td>
+                        <td class="numeric">98HGS3FDS</td>
+
+                      </tr>
+                    </tbody>
+                </table>
+                <div style="margin-top:35px">
+
+                 <table class="table-19-font"> 
+                    <thead>
+                      <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col" class="numeric">Payment</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>20 July 2019</td>
+                        <td class="numeric">£123.33</td>
+                      </tr>
+                      <tr>
+                        <td>20 June 2019</td>
+                        <td class="numeric">£123.33</td>
+                      </tr>
+                      <tr>
+                        <td>20 May 2019</td>
+                        <td class="numeric">£123.33</span></td>
+                      </tr>
+                      <tr>
+                        <td>20 April 2019</td>
+                        <td class="numeric">£123.33</td>
+                      </tr>
+                       <tr>
+                        <td>20 March 2019</td>
+                        <td class="numeric">£123.33</td>
+                      </tr>
+                      <tr>
+                        <td>20 February 2019</td>
+                        <td class="numeric">£123.33</td>
+                      </tr>
+                      <tr>
+                        <td>20 January 2019</td>
+                        <td class="numeric">£123.33</td>
+                      </tr>
+                      <tr>
+                        <td>20 December 2018</td>
+                        <td class="numeric">£123.33</td>
+                      </tr>
+                       <tr>
+                        <td>20 November 2018</td>
+                        <td class="numeric">£123.33</td>
+                      </tr>
+                      <tr>
+                        <td>20 October 2018</td>
+                        <td class="numeric">£123.33</td>
+                      </tr>
+                    </tbody>
+                </table>
+                <table class="table-19-font"> 
+                    <thead>
+                      <tr>
+                        <th scope="col"></th>
+                        <th scope="col" class="numeric"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="font-weight:700;">Total paid</td>
+                        <td class="numeric" style="font-weight:700;">£1,312.56</td>
+                      </tr>
+                    </tbody>
+                </table>
+              </div>
+<div style="margin-top:35px">
+
+              </div>
+            <div style="margin-top:50px"></div>
+          </div>
+
+          <div class="column-one-third">
+
+        </div>
+
+
+
+</main>
+
+
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+$( document ).ready(function() {
+
+  // change the tabs themselves to active - should be in the above but isn't working because it's looking for a not li so I added this as a quick fix.
+
+  $("ul#tabs-nav li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs-nav li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#tabs-nav li.active").removeClass("active");
+            $("ul#tabs-nav li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+  $('ul.tabs-nav').each(function(){
+    // For each set of tabs, we want to keep track of
+    // which tab is active and its associated content
+    var $active, $content, $links = $(this).find('a');
+
+
+
+    // If the location.hash matches one of the links, use that as the active tab.
+    // If no match is found, use the first link as the initial active tab.
+    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+   // $active.addClass('active');
+   console.log($active)
+
+    $content = $($active[0].hash);
+
+    // Hide the remaining content
+    $links.not($active).each(function () {
+      $(this.hash).hide();
+    }); 
+
+    // Bind the click event handler
+    $(this).on('click', 'a', function(e){
+      // Make the old tab inactive.
+    //  $active.removeClass('active');
+      $content.hide();
+
+      // Update the variables with the new link and content
+    //  $active = $(this);
+      $content = $(this.hash);
+
+      // Make the tab active.
+     // $active.addClass('active');
+      $content.show();
+
+      // Prevent the anchor's default click action
+      e.preventDefault();
+    });
+  });
+
+
+</script>
+
+{% endblock %}
+
