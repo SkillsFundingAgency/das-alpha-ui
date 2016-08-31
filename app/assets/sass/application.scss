@@ -39,6 +39,16 @@
 }
 */
 
+// clears floats
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
 // adding new users inline
 
 
@@ -914,8 +924,22 @@ line-height: 1;
     border-bottom: 1px solid #bfc1c3;
     padding: 35px 0 35px 0;
     position: relative;
+
 }
 
+.facetedFlexBox {
+  display:flex; 
+  
+
+}
+
+.flexGrowaBit {
+margin-left:20px;
+}
+
+.firstThing {
+min-width:285px;
+}
 
 //spacers
 
