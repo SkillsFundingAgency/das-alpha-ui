@@ -48,15 +48,13 @@ EventUtil.addHandler(btn, 'click', function(){
     </ol>
   </div>
 
-
-
   <div class="grid-row">
            <div class="column-two-thirds">
             <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Add an apprenticeship</h1>
-
+                <p class="lede">Add the details of your apprenticeship below. If you don't have the information now you can leave it blank and add it later</p>
             <h3 class="heading-medium">Training course</h3>
             <div id="searchTraining">
-                <p class="">Add the details of your apprenticeship below. If you don't have the information now you can leave it blank and add it later</p>
+
                 <form id="checkTrainingForm" action="add-an-apprenticeship/training-list">
                     <input id="checkTrainingSource" name="source" type="hidden" value="employer" />
                     <fieldset>
@@ -82,9 +80,26 @@ EventUtil.addHandler(btn, 'click', function(){
                     </span>
                 </div>
                 <div style="clear: both;"></div>
+                 <p class="looks-like-a-link-underline">Change training</p>
             </div>
-            <form style="margin-top:30px">
-              <hr />
+
+
+
+
+        <fieldset>
+           <hr style="margin-top:0px"/>
+            <legend class="visuallyhidden">Cost per apprenticeship</legend>
+            <div class="form-group">
+            <label class="form-label-bold" for="apprenticeCost">Employer note
+          <span class="form-hint">Use this to add a note. e.g. contract number or internal reference </span>
+           </label>
+              <input class="form-control rj-currency-input" id="apprenticeCost" type="text" value="">
+      </div>
+    </fieldset>
+
+
+                <hr style="margin-top:0px"/>
+
             <div class="form-group">
             <fieldset>
               <legend>
