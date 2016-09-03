@@ -941,6 +941,65 @@ margin-left:20px;
 min-width:285px;
 }
 
+// commit list
+
+.commitResults {
+    border-bottom: 1px solid #bfc1c3;
+    padding: 35px 0 35px 0;
+    position: relative;
+
+
+}
+
+.commitFlexBox {
+  display:inline-flex; 
+width:100%;
+  flex-wrap:nowrap;
+}
+
+.flexElement {
+flex:2;
+}
+
+.commitTweak {
+  padding:30%;
+}
+
+.commitCheck label {
+ background-color: #fff;
+ border:0;
+}
+
+
+
+.commitCheck .block-label [type="checkbox"]+span, .commitCheck .block-label [type="radio"]+span {
+    width: 25px;
+    height: 25px;
+    left: 14px;
+    top: 16px;
+}
+
+.commitCheck .block-label [type="checkbox"]+span, .commitCheck .block-label [type="radio"]+span {
+    position: absolute;
+    left: 17px;
+    top: 14px;
+    background: #fff;
+    display: inline-block;
+    border: 2px solid #0b0c0c;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.commitCheck .block-label [type="checkbox"]+span {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+///
+
+
 //spacers
 
 .twenty-top {
