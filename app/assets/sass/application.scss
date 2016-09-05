@@ -961,6 +961,11 @@ width:100%;
 flex:2;
 }
 
+
+.flexElementMiddle {
+flex:8;
+}
+
 .commitTweak {
   padding:30%;
 }
@@ -968,6 +973,16 @@ flex:2;
 .commitCheck label {
  background-color: #fff;
  border:0;
+}
+
+.commitCheck {
+margin-top:-10px;
+flex:1;
+}
+
+.viewButton {
+  margin:0 auto; 
+  width:4em
 }
 
 
@@ -996,6 +1011,25 @@ flex:2;
     -moz-border-radius: 0;
     border-radius: 0;
 }
+
+.commitCheck .block-label.selected [type="checkbox"]+span .inner, .commitCheck .block-label [type="checkbox"]:checked+span .inner {
+    background: url(https://www.signin.service.gov.uk/assets/icons/checkbox-tick-4a0921cc74631fe3000b07e0644698a602afa1541df7aec61d30624cc643b972.png) 0 0 no-repeat;
+}
+
+.commitCheck  .block-label [type="checkbox"]+span .inner, .commitCheck .block-label [type="radio"]+span .inner {
+    width: 19px;
+    height: 19px;
+  }
+
+  .commitCheck .block-label [type="checkbox"]+span .inner, .commitCheck .block-label [type="radio"]+span .inner {
+    display: inherit;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    border: 3px solid #fff;
+  }
+
+
 
 ///
 
