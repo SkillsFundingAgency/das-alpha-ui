@@ -2357,7 +2357,14 @@ input[type=number] {
   position: relative;
 }
 
-.fullWidthGreyAlert p, .fullWidthGreyAlert h2 {
+.fullWidthAnotherAlert {
+  background-color: #dee0e2;
+  height: 100px;
+  padding: 20px 40px 0px 40px;
+  margin: 20px 0 0px 0;
+}
+
+.fullWidthGreyAlert p, .fullWidthAnotherAlert p, .fullWidthGreyAlert h2, .fullWidthAnotherAlert h2 {
   text-align: center;
   margin-top: 0;
 }

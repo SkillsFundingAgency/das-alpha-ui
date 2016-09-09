@@ -50,25 +50,30 @@ EventUtil.addHandler(btn, 'click', function(){
 
   <div class="grid-row">
            <div class="column-two-thirds">
-            <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Add an apprenticeship</h1>
+            <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Review an apprenticeship</h1>
                 <p class="lede">Add the details of your apprenticeship below. If you don't have the information now you can leave it blank and add it later</p>
-          <hr style=""/>
-                          <label class="form-label-bold" for="apprenticeCost">Training course</label>
-            <div id="searchTraining">
-                <form id="checkTrainingForm" action="add-an-apprenticeship/training-list">
-                    <input id="checkTrainingSource" name="source" type="hidden" value="employer" />
-                    <fieldset>
-                      <legend class="visuallyhidden">Enter the name of the framework or standard.</legend>
-                        <div class="form-group" style="margin-bottom:15px">
-                            <label class="form-label-bold" for="search">Find training type
-                        <span class="form-hint">Search by name or training code </span>
-                          </label>
-                            <input class="form-control" id="search-for-training" type="text">
-                        </div>
-                          <input class="button button-grey-secondary" id="search-provider" type="submit" value="Find training type">
-                      </fieldset>
-                </form>
+                 </div>
+          </div>
+            <div class="fullWidthAnotherAlert">
+               <h2 class="heading-medium" style="margin-bottom:20px" >This apprenticeship was changed by your provider</h2>
+               <p >Amended values are presented next to the field that has been changed</p>
             </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h3 class="heading-medium" style="margin-bottom:0">Current</h3>
+        </div>
+        <div class="column-one-third">
+            <h2 class="heading-medium" style="margin-bottom:0">Previous</h2>
+        </div>
+      </div>
+    </div>
+           
+
+    <div class="grid-row">
+           <div class="column-two-thirds">
+              <hr style=""/>
+                      <label class="form-label-bold" for="apprenticeCost">Training course</label>
 
             <div id="displayTraining" style="clear: both;">
                 <div class=" " style="background-color:#fff; border: 0; padding: 18px 0px 15px 0px;" >
@@ -81,23 +86,45 @@ EventUtil.addHandler(btn, 'click', function(){
                 <div style="clear: both;"></div>
                  <p class="looks-like-a-link-underline">Change training</p>
             </div>
+      </div>
+
+     <div class="column-one-third">
+      <hr style=""/>
+        <div style="margin-top:74px"></div>
+                    <span style="">Mechatronics technician</span>
+                    <span class="">
+                      <div><p style="display:inline-block; margin:0;">Training code:&nbsp</p ><p style="display:inline; margin:0;">4563</p></div>
+                        <div><p style="display:inline-block; margin:0;">Level:&nbsp</p><p style="display:inline; margin:0;">4 </p></div>
+                    </span>
+      </div>
+  </div>
 
 
-
-
+    <div class="grid-row">
+           <div class="column-two-thirds">
+            <hr style="margin-top:5px"/>
         <fieldset>
-           <hr style=""/>
-            <legend class="visuallyhidden">Cost per apprenticeship</legend>
-            <div class="form-group">
+            <legend class="visuallyhidden">Employer note</legend>
+          <div class="form-group">
             <label class="form-label-bold" for="apprenticeCost">Employer note
           <span class="form-hint">Use this to add a note. e.g. contract number or internal reference </span>
            </label>
               <input class="form-control rj-currency-input" id="apprenticeCost" type="text" value="">
-      </div>
-    </fieldset>
+          </div>
+        </fieldset>
+  </div>
+
+  <div class="column-one-third">
+    <hr style="margin-top:5px"/>
+            <div><p style="display:inline-block; margin-top:60px;">No changes</p></div>
+
+  </div>
+</div>
 
 
-                <hr style="margin-top:0px"/>
+    <div class="grid-row">
+           <div class="column-two-thirds">
+            <hr style="margin-top:5px"/>
 
             <div class="form-group">
             <fieldset>
@@ -107,12 +134,12 @@ EventUtil.addHandler(btn, 'click', function(){
               <div class="form-date">
                 <div class="form-group form-group-month">
                   <label class="form-label" for="startMonth">Month</label>
-                  <input class="form-control" id="startMonth" name="start-month" type="number" min="1" max="12" placeholder="MM">
+                  <input class="form-control" id="startMonth" name="start-month" type="number" min="1" max="12" placeholder="MM" value="09">
                 </div>
                 <div class="form-group form-group-year">
 
                   <label class="form-label" for="startYear">Year</label>
-                  <input class="form-control" id="startYear" name="start-year" type="number" min="2016" max="2030" placeholder="YYYY">
+                  <input class="form-control" id="startYear" name="start-year" type="number" min="2016" max="2030" placeholder="YYYY" value="2017">
                 </div>
               </div>
             </fieldset>
@@ -128,19 +155,29 @@ EventUtil.addHandler(btn, 'click', function(){
               <div class="form-date">
                 <div class="form-group form-group-month">
                   <label class="form-label" for="finishMonth">Month</label>
-                  <input class="form-control" id="finishMonth" name="finish-month" type="number" min="1" max="12" placeholder="MM">
+                  <input class="form-control" id="finishMonth" name="finish-month" type="number" min="1" max="12" placeholder="MM" value="11">
                 </div>
                 <div class="form-group form-group-year">
                   <label class="form-label" for="finishYear">Year</label>
-                  <input class="form-control" id="finishYear" name="finish-year" type="number" min="2016" max="2030" placeholder="YYYY">
+                  <input class="form-control" id="finishYear" name="finish-year" type="number" min="2016" max="2030" placeholder="YYYY" value="2020">
                 </div>
               </div>
             </fieldset>
 
       </div>
+    </div>
+      <div class="column-one-third">
+    <hr style="margin-top:5px"/>
+            <div><p style="display:inline-block; margin-top:70px;">No changes</p></div>
+             <div><p style="display:inline-block; margin-top:100px;">11/2018</p></div>
 
+  </div>
+</div>
+    <div class="grid-row">
+           <div class="column-two-thirds">
+            <hr style="margin-top:5px"/>
         <fieldset>
-           <hr style="margin-top:0px"/>
+
             <legend class="visuallyhidden">Cost per apprenticeship</legend>
             <div class="form-group">
             <label class="form-label-bold" for="apprenticeCost">Cost of apprenticeship
@@ -149,8 +186,18 @@ EventUtil.addHandler(btn, 'click', function(){
               <span class="rj-currency-symbol">£</span>
               <input class="form-control rj-currency-input" id="apprenticeCost" type="text" value="">
       </div>
+    </div>
+      <div class="column-one-third">
+    <hr style="margin-top:5px"/>
+            <div><p style="display:inline-block; margin-top:35px;">No changes</p></div>
+      </div>
+</div>
+
+
+    <div class="grid-row">
+           <div class="column-two-thirds">
+            <hr style="margin-top:5px"/>
     </fieldset>
-           <hr style="margin-top:0px"/>
         <fieldset>
           <legend class="visuallyhidden">Apprentice name</legend>
                 <div class="form-group" style="margin-bottom:15px">
@@ -166,8 +213,19 @@ EventUtil.addHandler(btn, 'click', function(){
                   <input class="form-control" id="apprenticeFamilyName" type="text">
                 </div>
         </fieldset>
+      </div>
+     <div class="column-one-third">
+    <hr style="margin-top:5px"/>
+            <div><p style="display:inline-block; margin-top:35px;">No changes</p></div>
+            <div><p style="display:inline-block; margin-top:37px;">No changes</p></div>
+      </div>
+</div>
+
+
+    <div class="grid-row">
+           <div class="column-two-thirds">
+            <hr style="margin-top:25px"/>
         <fieldset>
-           <hr style=""/>
             <legend class="visuallyhidden">ULN</legend>
             <div class="form-group">
             <label class="form-label-bold" for="ULN">Unique learner number
@@ -176,24 +234,28 @@ EventUtil.addHandler(btn, 'click', function(){
               <input class="form-control " id="ULN" type="number" value="">
       </div>
     </fieldset>
-
-
-
-
+  </div>
+   <div class="column-one-third">
+    <hr style="margin-top:25px"/>
+            <div><p style="display:inline-block; margin-top:35px;">No changes</p></div>
+      </div>
+</div>
     </form>
 
+
+    <div class="grid-row">
+           <div class="column-two-thirds">
+            <hr style="margin-top:5px"/>
           <div style="margin-top:20px;"><input class="button" id="saveAndReturn" value="Save and return"></div>
           <p class="looks-like-a-link-underline" style="margin-top:20px">Save and clone this apprenticeship</p>
+    </div>
+       <div class="column-one-third">
 
+            <hr style="margin-top:5px"/>
+                     <div style="margin-top:20px;"><input class="button delete-button" id="deleteApprenticeship" value="Delete apprenticeship"></div>
 
-
-
-          </div>
-            <div class="column-one-third">
-
-
-        </div>
-
+      </div>
+    </div>
 
 
 </main>
