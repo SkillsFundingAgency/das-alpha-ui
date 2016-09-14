@@ -1,0 +1,150 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+//jQuery( document ).ready(function() {
+     //jQuery.validate(); 
+// });
+
+
+</script>
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+<div class="breadcrumbs">
+    <ol role="breadcrumbs">
+<!--the breadcrumb for the inform pages is in the following template -->
+       {% include "includes/breadcrumbs/inform-bread.html" %}
+
+    </ol> 
+
+  </div>
+
+        <div class="grid-row">
+
+            <div class="column-two-thirds">
+                <h1 class="heading-xlarge">Access my apprenticeship funding</h1>
+                <div class="grid-row">
+                    <div class="column-half">
+                      <!--the navigation for the inform pages is in the following template -->
+                        {% include "includes/inform-nav.html" %}
+                    </div>
+                </div>
+
+                <h2 class="heading-large">2. Who pays levy</h2>
+                <p>The levy will apply to all UK employers in both the private and public sectors.</p>
+
+                <p>It is payable on annual pay bills of more than £3 million. Employers with an annual pay bill of less than £3 million will not pay the levy. These employers will continue to have access to government funding to support apprenticeships. </p>
+
+                <p>Less than 2% of UK employers will pay the apprenticeship levy.</p>
+                <!--<p class="form-hint">Search or browse to find your business type or the skill you’re looking for, eg Engineering or Accountant.</p>-->
+
+
+                <div class="page-navigation">
+                    <a href="/{% include "includes/sprint-link.html" %}/register/inform_4" style="visibility: hidden;" class="page-navigation__btn previous">
+                        <i class="arrow-button fa fa-angle-left"></i>
+                        <span class="description">Previous <span class="hide-mob">page</span></span>
+                        <span class="counter">2 of 5</span>
+                    </a>
+
+
+
+                    <a href="/{% include "includes/sprint-link.html" %}/register/inform_4" style="" class="page-navigation__btn next">
+                        <i class="arrow-button fa fa-angle-right"></i>
+                        <span class="description">Next <span class="hide-mob">page</span></span>
+                        <span class="counter">How much you have to spend</span>
+                    </a>
+
+
+                </div>
+
+
+            </div>
+                      <!--the side bar for the inform pages is in the following template -->
+                        {% include "includes/side-bars/inform.html" %}
+
+
+        </div>
+</main>
+
+<script>
+//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+
+
+
+$( document ).ready(function() {
+
+  // change the tabs themselves to active - should be in the above but isn't working because it's looking for a not li so I added this as a quick fix.
+
+  $("ul#tabs-nav li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs-nav li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#tabs-nav li.active").removeClass("active");
+            $("ul#tabs-nav li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+  $('ul.tabs-nav').each(function(){
+    // For each set of tabs, we want to keep track of
+    // which tab is active and its associated content
+    var $active, $content, $links = $(this).find('a');
+
+
+
+    // If the location.hash matches one of the links, use that as the active tab.
+    // If no match is found, use the first link as the initial active tab.
+    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+   // $active.addClass('active');
+   console.log($active)
+
+    $content = $($active[0].hash);
+
+    // Hide the remaining content
+    $links.not($active).each(function () {
+      $(this.hash).hide();
+    }); 
+
+    // Bind the click event handler
+    $(this).on('click', 'a', function(e){
+      // Make the old tab inactive.
+    //  $active.removeClass('active');
+      $content.hide();
+
+      // Update the variables with the new link and content
+    //  $active = $(this);
+      $content = $(this.hash);
+
+      // Make the tab active.
+     // $active.addClass('active');
+      $content.show();
+
+      // Prevent the anchor's default click action
+      e.preventDefault();
+    });
+  });
+
+
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .financial-nav a, .nav-forecast a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+{% include "includes/secondary-nav-finance.html" %}
+
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+                 <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/finance">Funding</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/forecast">Forecast your funds</a></li>
+            <li>Apprentice funds forecast</li>
+    </ol>
+  </div>
+     <!--div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div-->
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+            <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Apprenticeship funds forecast</h1>
+ 
+            <!--h2 class="heading-large" style="">Available apprenticeship funds</h2>
+            <!--p>Forecast how much you have to spend with our <a href="#">budget calculator</a></p-->
+            <!--h2 class="heading-large" style="">Cashflow forecast</h2-->
+            <p class="first-para-spacing">The table shows the estimated amount you have left to spend over time.</p>
+            <p>Included in the calculations are:</p>
+            <ul class="list list-bullet">
+                  <li>committed spending</li>
+                  <li>any potential losses due to expiry of funds</li>
+                  <li>expected funds</li>
+              </ul>
+              <h2 class="heading-medium">Available to spend</h2>
+            <div class="graphGoesHere" style="margin-top:35px"><canvas id="robsChart" width="500" height="300"></canvas></div>
+
+            <div>
+             <table class="table-19-font">
+                  {% include "includes/cashflow-forecast.html" %}
+               
+                  </tbody>
+              </table>
+            </div>
+            <p style="margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/forecast" >Update your forecast</a></p>
+
+                <!--p>
+                  The amount of money you currently have to spend on apprentices is made up of
+                </p>
+                <ul class="list list-bullet">
+                  <li> your current balance</li>
+                  <li> minus the amount you have planned to spend in the future</li>
+                  <li>funds that expire</li>
+                  <li>Future "levy" payments</li>
+                </ul-->
+
+            <div style="margin-top:50px"></div>
+          </div>
+
+
+        </div>
+
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+
+{% include "includes/cashflow-forecast-graph.html" %}
+
+</script>
+
+{% endblock %}
+
