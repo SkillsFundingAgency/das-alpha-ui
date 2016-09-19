@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .provider-nav a, .nav-forecast a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+ <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+            <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/contracts/providers">Commitment</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/contracts/in-progress">Commitment in progress</a></li>
+            <li>ID 98HGS3F</li>
+    </ol>
+  </div>
+
+
+
+<div class="grid-row">
+        <div class="column-two-thirds">
+             <div class="govuk-box-highlight">
+                <h1 class="bold-xlarge">
+                  Request sent
+                </h1>
+                <p>Your reference number is <br>
+                  <strong class="heading-medium">98HGS3F</strong>
+                </p>
+            </div>
+
+            <div style="" >
+
+              <p class="">For your provider to be paid you both need to work together to add your apprenticeships to this commitment. When you both agree on the details, the provider can be paid when they complete the training.</p>
+<h2 class="heading-medium">What happens next?</h2>
+               <p class="">Your provider has been told that you want to add new apprenticeships to your account. They will start adding them for you and you will have a chance to approve or amend them before any payments are confirmed.</p>
+
+
+            </div>
+
+            </div>
+              <div class="column-one-third">
+          </div>
+        </div>
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
+
+{% endblock %}
+

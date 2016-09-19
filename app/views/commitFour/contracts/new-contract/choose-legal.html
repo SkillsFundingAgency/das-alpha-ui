@@ -1,0 +1,167 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    {% include "includes/head.html" %}
+
+{% endblock %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<script>
+$(document).on('click', 'input[type="radio"]', function (e) {
+  if ($(e.target).attr('id') === 'radio-3' || $(e.target).attr('id') === 'radio-4' || $(e.target).attr('id') === 'radio-5') 
+  { $('#other-organisation-options').removeClass('js-hidden') ; } 
+      else {};
+
+});
+
+</script>
+
+
+
+<style>
+  #navigation-primary {
+    display:none;
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<div class="grid-row">
+                    <div class="column-two-thirds">
+  <h1 class="heading-xlarge">Choose contracting organisation</h1>
+  <p class="lede">Choose the organisation that entered into the contract for the apprenticeships you are adding. </p>
+
+            <!--div class="robColumnDetails">
+              <h2 class="heading-medium" style="margin: 0 0 5px 0"><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-an-apprenticeship/chosen">Mechatronics engineer</a></h2>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Level:&nbsp</h2 ><p style="display:inline; margin:0;">4 (equivalent to certificate of higher education)</p></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Typical length:&nbsp</h2 ><p style="display:inline; margin:0;">24 months</p></div>
+
+          </div>
+          <div class="robColumnDetails">
+              <h2 class="heading-medium looks-like-a-link-underline-h2" style="margin: 0 0 5px 0">Mechatronics technician</h2>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Level:&nbsp</h2 ><p style="display:inline; margin:0;">3 (equivalent to A levels at grades A to E)</p></div>
+
+          </div-->
+  <form action="find-provider">
+    <input id="source" name="source" type="hidden" value="employer" />
+    <fieldset>
+      <legend class="visuallyhidden">Access to the service</legend>
+
+      <!--p>
+        Choose the training you have agreed
+      </p-->
+
+      <label class="rj-roles-choice block-label " for="radio-1">
+        <input id="radio-1" type="radio" name="radio-group" value="acme-coventry" >
+        <span style="font-weight:700">Acme Coventry Ltd</span>
+        <span class="">
+          <div><p style="display:inline-block; margin:0;">Company number:&nbsp</p ><p style="display:inline; margin:0;">03127414</p></div>
+            <!--div><p style="display:inline-block; margin:0;">Level:&nbsp</p><p style="display:inline; margin:0;">4 </p></div-->
+
+        </span>
+      </label>
+
+      <label class="rj-roles-choice block-label " for="radio-2">
+        <input id="radio-2" type="radio" name="radio-group" value="acme-birmingham" >
+        <span style="font-weight:700">Acme Birmingham Ltd</span>
+        <span class="">
+          <div><p style="display:inline-block; margin:0;">Company number:&nbsp</p ><p style="display:inline; margin:0;">08610080</p></div>
+            <!--div><p style="display:inline-block; margin:0;">Level:&nbsp</p><p style="display:inline; margin:0;">2 </p></div-->
+        </span>
+      </label>
+        <label class="rj-roles-choice block-label " for="radio-3">
+        <input id="radio-3" type="radio" name="radio-group" value="other-org" >
+        <span style="font-weight:700">Other organisation</span>
+        <span class="">
+          <!--div><p style="display:inline-block; margin:0;">Company number:&nbsp</p ><p style="display:inline; margin:0;">08610080</p></div-->
+            <!--div><p style="display:inline-block; margin:0;">Level:&nbsp</p><p style="display:inline; margin:0;">2 </p></div-->
+        </span>
+      </label>
+
+
+    </fieldset>
+
+     <div class="js-hidden" id="other-organisation-options" style="margin: 10px 0 0 20px">
+      <div class="form-group">
+    <fieldset>
+         <legend class="visuallyhidden">Add another organisation</legend>
+         <label class="form-label-bold" style="margin: 10px 0 10px 0" for="search">To proceed you need to add the organisation, do you want to add it now?</label>
+           <label class="rj-roles-choice block-label " for="radio-4">
+                <input id="radio-4" type="radio" name="radio-group" value="add-new-org" >
+                <span style="font-weight:700">Yes, add the new organisation</span>
+                <span class="">
+                
+                </span>
+              </label>
+                <label class="rj-roles-choice block-label " for="radio-5">
+                <input id="radio-5" type="radio" name="radio-group" value="dont-add-org" >
+                <span style="font-weight:700">No, cancel adding this commitment</span>
+                <span class="">
+                  <!--div><p style="display:inline-block; margin:0;">Company number:&nbsp</p ><p style="display:inline; margin:0;">08610080</p></div-->
+                    <!--div><p style="display:inline-block; margin:0;">Level:&nbsp</p><p style="display:inline; margin:0;">2 </p></div-->
+                </span>
+              </label>
+      </fieldset>
+
+      </div>
+    </div>
+
+     <input class="button" id="saveAndContinue" type="submit" style="margin-top:30px" value="Continue">
+  </form>
+
+
+
+
+    <div style="margin-top:50px"></div>
+    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
+<!-- {% include "includes/start-tabs.html" %} -->
+
+            </div>
+
+             <div class="column-one-third">
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="../login">Sign in</a>
+                          </li>
+
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+</div>
+</main>
+
+<script>
+//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<script>
+ var whichMessage = JSON.parse(localStorage.getItem('commitments.completionMessage'));
+ console.log(whichMessage);
+
+ $(document).ready(function() {
+  var changeStuff = function() {
+      switch(whichMessage) {
+        case "send-amend":
+           document.getElementById("changeHeadline").innerHTML = "Sent to provider";
+            //document.getElementById("changeRefNumber").textContent = "Hackney Skills & Training Ltd";
+            document.getElementById("changeMainCopy").innerHTML = '<p>The information you added has been sent to Hackney Skills &amp Training Ltd to enter the rest of the details.</p><p> You can view the progress in <span class=\"looks-like-a-link-underline\">apprenticeships in progress</span></p>';
+            resetStoredStuff();
+        break;
+
+        case "send-approve":
+            document.getElementById("changeHeadline").innerHTML = "Sent to provider";
+            //document.getElementById("changeRefNumber").textContent = "Hackney Skills & Training Ltd";
+            document.getElementById("changeMainCopy").innerHTML = '<p>The information you added has been sent to Hackney Skills &amp Training Ltd to review and approve from their side. Once they have agreed payments will become due based on the payment plan.</p><p> You can view the progress in <span class=\"looks-like-a-link-underline\">apprenticeships in progress</span></p>';
+            resetStoredStuff();
+
+        break;
+        case "save-no-send":
+              document.getElementById("changeHeadline").innerHTML = "Saved not sent";
+            //document.getElementById("changeRefNumber").textContent = "Hackney Skills & Training Ltd";
+            document.getElementById("changeMainCopy").innerHTML = '<p>The information you added has been saved but not sent to your provider to action.</p>';
+            resetStoredStuff();
+
+        break;
+        default:
+        console.log("something weird happened and the case wasn't triggered")
+      }
+}
+changeStuff();
+});
+
+ var resetStoredStuff = function() {
+  localStorage.setItem("commitments.completionMessage", JSON.stringify("null"));
+ localStorage.setItem("commitments.isEmployer", JSON.stringify("no"));
+ }
+
+</script>
+
+<style>
+
+
+  #navigation-primary {
+    display:none;
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+
+
+
+<div class="grid-row">
+                    <div class="column-two-thirds">
+
+
+             <div class="govuk-box-highlight">
+                <h1 class="heading-xlarge" id="changeHeadline">
+                  Sent to provider
+                </h1>
+                <p id="changeRefNumber">Your reference number is <br>
+                  <strong class="heading-medium">98HGS3F</strong>
+                </p>
+            </div>
+                <p id="changeMainCopy">The information you added has been sent to your provider to confirm the details.
+                 You can view the progress in  <span class="looks-like-a-link-underline ">apprenticeships in progress</span></p>
+
+
+          </div>
+
+          <div class="column-one-third">
+
+          </div>
+        </div>
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
+
+{% endblock %}
+

@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+//jQuery( document ).ready(function() {
+     //jQuery.validate(); 
+// });
+
+
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+
+  </div>
+    <div class="grid-row">
+           <div class="column-two-thirds">
+   <h1 class="heading-xlarge" >Email address</h1>
+
+   <div style="margin-top:50px"></div>
+   <p>Enter the email address you use at work</p>
+      <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
+          <form action="verify-your-email">
+            <fieldset>
+              <legend class="visuallyhidden">users email</legend>
+            <div class="form-group">
+                    <!-- <label class="form-label" for="full-name">What is your company email address?</label> -->
+                    <!--span class="form-hint">Please use your employer provided email if possible</span-->
+                    <input class="form-control rjFormTwoThirds" id="emailAddress" type="email" >
+              </div>
+              
+            </fieldset>
+                   <!--fieldset>
+                    <p style="margin-bottom:0">Do you already have an Apprenticeship password?</p>
+                    <span class="form-hint" style="margin-bottom:20px">You may have a password if you already have an existing funding account, have saved a standard and provider or have posted a vacancy.</span>
+                  <fieldset>
+                <legend class="visuallyhidden">Have you registered with us before?</legend>
+                <div class="form-group">
+                <label class="block-label" for="radio1">
+                  <input id="radio1" type="radio" name="radio-group" value="no-not-registered">
+                  No, I am a new apprenticeship account user
+                </label>
+                <label class="block-label" for="radio2">
+                  <input id="radio2" type="radio" name="radio-group" value="yes-have-passwrod">
+                  Yes, I have a password
+                </label>
+                </div>
+                </fieldset-->
+                  <input class="button" id="saveAndContinue" type="submit" value="Continue">
+          </form>
+        </div>
+      </div>
+</main>
+
+<script>
+
+//change page depending on which option you choose
+// var createButton = document.getElementById('saveAndContinue');
+ // EventUtil.addHandler(createButton, 'click', function(){
+
+ // var whichRadio = $('input:radio[name=radio-group]:checked').val();
+
+ // if (whichRadio == 'no-not-registered'){
+ //   window.location.href='new-password';
+ // } else {
+ //  window.location.href='enter-existing-password';
+ // }
+ //    });
+
+
+</script>
+
+{% endblock %}

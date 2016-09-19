@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+//jQuery( document ).ready(function() {
+     //jQuery.validate(); 
+// });
+
+
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+
+  </div>
+      <div class="grid-row">
+           <div class="column-two-thirds">
+
+   <h1 class="heading-xlarge" ><!--span class="heading-secondary" style="padding-top:0px">Question 2 of 4</span-->Choose a password</h1>
+ </div></div>
+
+      <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
+          <form action="govtCredentials">
+            <fieldset>
+              <legend class="visuallyhidden">password</legend>
+
+              <div class="form-group">
+                    <label class="form-label-bold" for="full-name">Password</label>
+                     <span class="form-hint">Passwords should be a minimum of eight letters and <br />consist of at least one number, one uppercase letter <br />and one lowercase letter</span>
+                    <input class="form-control" id="password" type="password" >
+              </div>
+              <div class="form-group">
+                    <label class="form-label-bold" for="full-name">Confirm password</label>
+                    <input class="form-control" id="confirm-password" type="password" >
+              </div>
+            </fieldset>
+
+                  <input class="button" id="saveAndContinue" type="submit" value="Continue">
+          </form>
+
+
+</main>
+
+<script>
+
+//change page depending on which option you choose
+// var createButton = document.getElementById('saveAndContinue');
+ // EventUtil.addHandler(createButton, 'click', function(){
+
+ // var whichRadio = $('input:radio[name=radio-group]:checked').val();
+
+ // if (whichRadio == 'no-not-registered'){
+ //   window.location.href='new-password';
+ // } else {
+ //  window.location.href='enter-existing-password';
+ // }
+ //    });
+
+
+</script>
+
+{% endblock %}
