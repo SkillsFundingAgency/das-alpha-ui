@@ -11,7 +11,6 @@ var whereNow = function() {
   var status = $('input[name=radio-group]:checked').val();
   console.log(status)
     if (status == "employer") {
-      
          var isAddedApp = 'yes';
          localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
          window.location.href='choose-legal';
@@ -73,7 +72,7 @@ var whereNow = function() {
                   </label>
                   </div>
                 </fieldset>
-                  <input class="button" id="saveAndContinue" onclick="whereNow()" value="Save and continue">
+                  <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Save and continue">
               </form>
 
     <div style="margin-top:50px"></div>

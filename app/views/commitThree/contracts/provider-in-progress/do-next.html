@@ -14,14 +14,27 @@
 </style>
 
 <script>
+// if this is an employer journey, change some of the copy on the page.
+var employerOrNot = JSON.parse(localStorage.getItem('commitments.isEmployer'));
+
+$( document ).ready(function() {
+  var changeStuff = function() {
+  if (employerOrNot=='yes') {
+    document.getElementById("changeOne").innerHTML = "Send to provider to amend or add details";
+    document.getElementById("changeTwo").innerHTML = "Approve and send to provider";
+    document.getElementById("changeThree").innerHTML = "Save but do not send to provider";
+  }
+else { };
+}
+
+changeStuff();
+});
 
 var setProviderAlert = function() {
-  var commitments ={};
-  commitments.providerAlert = 'yes';
-  localStorage.setItem("commitments.providerAlert", JSON.stringify(commitments.providerAlert));
-  window.location.href='../provider-in-progress';
-};
-
+  var status = $('input[name=radio-group]:checked').val();
+  localStorage.setItem("commitments.completionMessage", JSON.stringify(status));
+  window.location.href='../confirmation/confirmation-variations';
+  }
 
 </script>
 
@@ -55,21 +68,21 @@ var setProviderAlert = function() {
                  <form action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress">
                     <legend class="visuallyhidden">Things to do next</legend>
                       <div class="form-group">
+                      <label class="block-label" for="radio-1">
+                        <input id="radio-1" type="radio" name="radio-group" value="send-amend">
+                       <span id="changeOne">Send to employer to amend or add details<span>
+                      </label>
                       <label class="block-label" for="radio-2">
-                        <input id="radio-2" type="radio" name="radio-group" value="pause-apprenticeship">
-                        Send to employer to amend or add details
+                        <input id="radio-2" type="radio" name="radio-group" value="send-approve">
+                        <span id="changeTwo">Send to employer for final approval</span>
                       </label>
                       <label class="block-label" for="radio-3">
-                        <input id="radio-3" type="radio" name="radio-group" value="manual-payment">
-                         Send to employer for final approval
-                      </label>
-                      <label class="block-label" for="radio-5">
-                        <input id="radio-5" type="radio" name="radio-group" value="delete-apprenticeship">
-                        Save but do not send to employer
+                        <input id="radio-3" type="radio" name="radio-group" value="save-no-send">
+                        <span id="changeThree">Save but do not send to employer</span>
                       </label>
                     </div>
                     </fieldset>
-                  <div style="margin-top:20px;"><input class="button" id="paymentPlan" onClick="setProviderAlert()" value="Save and continue"></div>
+                  <div style="margin-top:20px;"><input type="button" class="button" id="paymentPlan" onClick="setProviderAlert()" value="Save and continue"></div>
                   </form>
 
             </div>

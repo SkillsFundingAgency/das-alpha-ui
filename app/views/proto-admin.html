@@ -103,6 +103,7 @@ $('#sprint-number-field').val(sprinty);
 
 <script>
   $('#clearCommitmentData').click(function() {
+    localStorage.setItem("commitments.isEmployer", JSON.stringify("no"));
     window.das.commitments.clear();
   })
 </script>
