@@ -7,6 +7,29 @@
 {% block content %}
 
 
+
+
+
+
+
+<script>
+// if this is an employer journey, change some of the copy on the page.
+
+
+
+var whereNow = function() {
+  var status = JSON.parse(localStorage.getItem('commitments.isEmployer'));
+if (status == 'send-approve'){
+  window.location.href='../confirmation/confirmation-variations';
+}
+else {
+    window.location.href='../confirmation/confirmation-variations';
+}
+
+  }
+
+</script>
+
 <main id="content" role="main">
 {% include "includes/phase_banner_beta.html" %}
 
@@ -122,7 +145,7 @@
 
 
               <form action="/{% include "includes/sprint-link.html" %}/payment/how-to-pay">
-                  <div style="margin-top:20px;"><input class="button" id="saveAndContinue" type="submit" value="Approve commitment"></div>
+                  <div style="margin-top:20px;"><input class="button" type="button" id="saveAndContinue" onClick="whereNow()" value="Approve and send"></div>
                 </form>
               </div>
 <div style="margin-top:35px">

@@ -14,16 +14,24 @@
   var changeStuff = function() {
       switch(whichMessage) {
         case "send-amend":
-           document.getElementById("changeHeadline").textContent = "Commitment Sent";
+           document.getElementById("changeHeadline").innerHTML = "Sent to provider";
             //document.getElementById("changeRefNumber").textContent = "Hackney Skills & Training Ltd";
             document.getElementById("changeMainCopy").innerHTML = '<p>The information you added has been sent to Hackney Skills &amp Training Ltd to enter the rest of the details.</p><p> You can view the progress in <span class=\"looks-like-a-link-underline\">apprenticeships in progress</span></p>';
             resetStoredStuff();
-
         break;
+
         case "send-approve":
+            document.getElementById("changeHeadline").innerHTML = "Sent to provider";
+            //document.getElementById("changeRefNumber").textContent = "Hackney Skills & Training Ltd";
+            document.getElementById("changeMainCopy").innerHTML = '<p>The information you added has been sent to Hackney Skills &amp Training Ltd to review and approve from their side. Once they have agreed payments will become due based on the payment plan.</p><p> You can view the progress in <span class=\"looks-like-a-link-underline\">apprenticeships in progress</span></p>';
+            resetStoredStuff();
 
         break;
         case "save-no-send":
+              document.getElementById("changeHeadline").innerHTML = "Saved not sent";
+            //document.getElementById("changeRefNumber").textContent = "Hackney Skills & Training Ltd";
+            document.getElementById("changeMainCopy").innerHTML = '<p>The information you added has been saved but not sent to your provider to action.</p>';
+            resetStoredStuff();
 
         break;
         default:
@@ -34,8 +42,8 @@ changeStuff();
 });
 
  var resetStoredStuff = function() {
-   localStorage.setItem("commitments.completionMessage", JSON.stringify("null"));
-   localStorage.setItem("commitments.isEmployer", JSON.stringify("no"));
+  localStorage.setItem("commitments.completionMessage", JSON.stringify("null"));
+ localStorage.setItem("commitments.isEmployer", JSON.stringify("no"));
  }
 
 </script>

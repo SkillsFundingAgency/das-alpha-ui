@@ -33,7 +33,13 @@ changeStuff();
 var setProviderAlert = function() {
   var status = $('input[name=radio-group]:checked').val();
   localStorage.setItem("commitments.completionMessage", JSON.stringify(status));
-  window.location.href='../confirmation/confirmation-variations';
+if (status == 'send-approve'){
+  window.location.href='../confirmation/payment-plans';
+}
+else {
+    window.location.href='../confirmation/confirmation-variations';
+}
+
   }
 
 </script>
