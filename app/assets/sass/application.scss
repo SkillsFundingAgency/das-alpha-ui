@@ -361,7 +361,9 @@ vertical-align: top;
 }
 
 .thereAreChanges {
-  background-color:#DEE0E2
+  background-color:#DEE0E2; 
+  border-right:1px solid $border-colour; 
+  border-left:1px solid $border-colour; 
 }
 
 .fullWidthGreyAlert {

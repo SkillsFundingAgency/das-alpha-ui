@@ -2347,6 +2347,8 @@ input[type=number] {
 
 .thereAreChanges {
   background-color: #DEE0E2;
+  border-right: 1px solid #bfc1c3;
+  border-left: 1px solid #bfc1c3;
 }
 
 .fullWidthGreyAlert {
