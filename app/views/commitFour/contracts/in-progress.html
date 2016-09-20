@@ -1,3 +1,5 @@
+<!-- ROB >>>> THIS IS A DUPE OF /contracts/provider-in-progress/overview.html -->
+
 {% extends "layout.html" %}
 
 {% block page_title %}
@@ -24,18 +26,18 @@
 
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
-      <li><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress">SFS</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress">Home</a></li>
             <li><!--a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/overview"-->Update and authorise commitments</a></li>
    
     </ol>
   </div>
 
-  <div id="showDoneAlert" class="user-alert rj-dont-display">
+  <!--div id="showDoneAlert" class="user-alert rj-dont-display">
   <div class="panel panel-border-wide alert-success">
     <i class="fa fa-check "></i>
             <h2 class="heading-small">Commitment sent to Acme Coventry Ltd for approval</h2>
           </div>
-  </div>
+  </div-->
 
 <div class="grid-row">
   <div class="column-two-thirds">
@@ -119,15 +121,15 @@
                         </label>
                         <label for="Awaiting - Provider input">
                         <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
-                          Needs your input (1)
+                          Needs your approval (1)
                         </label>
                         <label for="Awaiting - Employer input">
                         <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
-                          In progress with employer (1)
+                          Needs your input (1) 
                         </label>
                         <label for="Approved by employer">
                         <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
-                          Approved by employer (1)
+                          In progress with provider (1) 
                         </label>
 
                   </div>
@@ -139,21 +141,21 @@
 
         <div class="govuk-option-select js-collapsible" >
             <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
-              <div class="option-select-label">Employer</div>
+              <div class="option-select-label">Provider</div>
               <div class="js-selected-counter"></div></button>
                 <div class="options-container" id="case_state">
                   <div class="js-auto-height-inner">
                       <label for="Acme Coventry Ltd">
                         <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
-                          Acme Coventry Ltd (2)
+                          Hackney Skills & Training Ltd (2)
                         </label>
                         <label for="Cyberdyne Systems Inc">
                         <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
-                          Cyberdyne Systems Inc (1)
+                          Lots of Skills Ltd (1)
                         </label>
                         <label for="Tyrell Corp">
                         <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
-                          Tyrell Corp (1)
+                          Skills Skills Skills Ltd (1)
                         </label>
 
                   </div>
