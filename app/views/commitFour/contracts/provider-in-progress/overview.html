@@ -9,6 +9,12 @@
 
 <link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
 
+<script>
+ var isAddedApp = 'no';
+    localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
+
+</script>
+
 <style>
   .provider-nav a {
     {% include "includes/nav-on-state-css.html" %}
@@ -26,7 +32,7 @@
     <ol role="breadcrumbs">
       <li><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress">SFS</a></li>
             <li><!--a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/overview"-->Update and authorise commitments</a></li>
-   
+
     </ol>
   </div>
 

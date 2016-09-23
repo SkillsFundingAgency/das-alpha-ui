@@ -50,21 +50,38 @@ EventUtil.addHandler(btn, 'click', function(){
 
   <div class="grid-row">
            <div class="column-two-thirds">
-            <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Add an apprenticeship</h1>
-                <p class="lede">Add the details of your apprenticeship below. If you don't have the information now you can leave it blank and add it later</p>
+            <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Add an apprentice</h1>
+                <p class="lede">Add the details of your apprentice below. If you don't have the information now you can leave it blank and add it later</p>
           <hr style=""/>
+
+        <fieldset>
+          <legend class="visuallyhidden">Apprentice name</legend>
+                <div class="form-group" style="margin-bottom:15px">
+                    <label class="form-label-bold" for="apprenticeGivenName">Apprentice first name
+                     <!--span class="form-hint">If you don't have this yet, you can leave it blank</span-->
+                    </label>
+                  <input class="form-control" id="apprenticeGivenName" type="text">
+                </div>
+                <div class="form-group" style="margin-bottom:15px">
+                    <label class="form-label-bold" for="apprenticeFamilyName">Apprentice last name
+                     <!--span class="form-hint">If you don't have this yet, you can leave it blank</span-->
+                    </label>
+                  <input class="form-control" id="apprenticeFamilyName" type="text">
+                </div>
+        </fieldset>
+        <hr style=""/>
                                     <div id="searchTraining">
                 <form id="checkTrainingForm" action="add-an-apprenticeship/training-list">
                     <input id="checkTrainingSource" name="source" type="hidden" value="employer" />
                     <fieldset>
                       <legend class="visuallyhidden">Enter the name of the framework or standard.</legend>
                         <div class="form-group" style="margin-bottom:15px">
-                            <label class="form-label-bold" for="search">Find training type
+                            <label class="form-label-bold" for="search">Find apprenticeship
                         <span class="form-hint">Search by name or training code </span>
                           </label>
                             <input class="form-control" id="search-for-training" type="text">
                         </div>
-                          <input class="button button-grey-secondary" id="search-provider" type="submit" value="Find training type">
+                          <input class="button button-grey-secondary" id="search-provider" type="submit" value="Find apprenticeship">
                       </fieldset>
                 </form>
             </div>
@@ -88,12 +105,12 @@ EventUtil.addHandler(btn, 'click', function(){
 
         <fieldset>
            <hr style=""/>
-            <legend class="visuallyhidden">Employer reference</legend>
+            <legend class="visuallyhidden">Add a note</legend>
             <div class="form-group">
-            <label class="form-label-bold" for="apprenticeCost">Employer reference
-          <span class="form-hint">Use this to add a rederence. e.g. contract number or internal reference </span>
+            <label class="form-label-bold" for="apprenticeCost">Add a note (optional)
+          <span class="form-hint">Use this to add a reference. e.g. contract number or employee number </span>
            </label>
-              <input class="form-control rj-currency-input" id="employerRef" type="text" value="">
+              <input class="form-control rj-currency-input" id="employerRef" type="text" value="" style="width:100%">
       </div>
     </fieldset>
 
@@ -123,7 +140,6 @@ EventUtil.addHandler(btn, 'click', function(){
             <fieldset>
               <legend>
                 <span class="form-label-bold" style="margin-bottom:0;padding-bottom:0">Projected finish date</span>
-                <span class="form-hint" style="margin-bottom:5px;">Search by name or training code </span>
               </legend>
 
               <div class="form-date">
@@ -148,27 +164,12 @@ EventUtil.addHandler(btn, 'click', function(){
           <!--span class="form-hint">Here is a hint for this form field.</span-->
            </label>
               <span class="rj-currency-symbol">£</span>
-              <input class="form-control rj-currency-input" id="apprenticeCost" type="text" value="">
+              <input class="form-control rj-currency-input" id="apprenticeCost" type="text" value="" style="max-width:6em">
       </div>
     </fieldset>
-           <hr style="margin-top:0px"/>
+          
         <fieldset>
-          <legend class="visuallyhidden">Apprentice name</legend>
-                <div class="form-group" style="margin-bottom:15px">
-                    <label class="form-label-bold" for="apprenticeGivenName">Apprentice given name
-                     <!--span class="form-hint">If you don't have this yet, you can leave it blank</span-->
-                    </label>
-                  <input class="form-control" id="apprenticeGivenName" type="text">
-                </div>
-                <div class="form-group" style="margin-bottom:15px">
-                    <label class="form-label-bold" for="apprenticeFamilyName">Apprentice family name
-                     <!--span class="form-hint">If you don't have this yet, you can leave it blank</span-->
-                    </label>
-                  <input class="form-control" id="apprenticeFamilyName" type="text">
-                </div>
-        </fieldset>
-        <fieldset>
-           <hr style=""/>
+      <hr style="margin-top:0px"/>
             <legend class="visuallyhidden">ULN</legend>
             <div class="form-group">
             <label class="form-label-bold" for="ULN">Unique learner number
@@ -183,8 +184,8 @@ EventUtil.addHandler(btn, 'click', function(){
 
     </form>
 
-          <div style="margin-top:20px;"><input class="button" id="saveAndReturn" value="Save and return"></div>
-          <p class="looks-like-a-link-underline" style="margin-top:20px">Save and clone this apprenticeship</p>
+          <div style="margin-top:20px;"><input class="button" type="button" id="saveAndReturn" value="Add apprentice"></div>
+          <p class="looks-like-a-link-underline" style="margin-top:20px">Add clone this apprenticeship</p>
 
 
 

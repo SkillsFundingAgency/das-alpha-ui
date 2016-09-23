@@ -45,8 +45,8 @@ changeStuff();
  <div class="breadcrumbs">
     <ol role="breadcrumbs">
             <li><a href="/{% include "includes/sprint-link.html" %}/balance">Home</a></li>
-            <li><a href="/{% include "includes/sprint-link.html" %}/contracts/providers">Commitments in progress</a></li>
-            <li><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress">View commitments</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/contracts/providers">Apprentices</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress">Start an apprentice</a></li>
             <li>98HGS3F</li>
     </ol>
   </div>
@@ -106,16 +106,16 @@ changeStuff();
 
     <!-- ----------- This is the default where there aren't any groups or cohorts added ------------ -->
     <div style="" class="rj-no-apprenticeships" id="no-apprenticeships">
-        <h2 class="heading-medium"><span style="font-weight:700" id=""> 0 Apprenticeships</span></h2>
+        <h2 class="heading-medium"><span style="font-weight:700" id=""> 0 Apprentices</span></h2>
         <hr style="margin:0 0 18px 0" />
         <div class="commit-bar">
             <form class="" style="display:inline-block" action="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">
                 <input type="hidden" name="source" value="provider" />
-                <div style="display:inline-block;"><input style="display:inline" class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add an apprenticeship"></div>
+                <div style="display:inline-block;"><input style="display:inline" class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add an apprentice"></div>
             </form>
              <form class="" style="display:inline-block" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">
                 <input type="hidden" name="source" value="provider" />
-                <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px" class="button-clear button " type="submit"  id="bulk-upload"  value="Import apprenticeships"></div>
+                <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px" class="button-clear button " type="submit"  id="bulk-upload"  value="Bulk upload apprentices"></div>
             </form>
              <!--p style="display:inline; margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">Import apprenticeships</a></p-->
              <form class="" style="display:inline-block; float:right;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
@@ -131,7 +131,7 @@ changeStuff();
 
     <!-- -------------- This is shows when one apprenticeship has been added ---------- -->
                 <div style="margin-top:45px" class="rj-has-apprenticeships" id="apprenticeships">
-                   <h2 class="heading-medium"><span style="font-weight:700" id="numberOfApprentices"></span> Apprenticeships</h2>
+                   <h2 class="heading-medium"><span style="font-weight:700" id="numberOfApprentices"></span> Apprentices</h2>
                   <!--hr style="margin-top:35px"/-->
 
                  <!--form class="" action="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">
@@ -145,11 +145,11 @@ changeStuff();
         <div class="commit-bar">
             <form class="" style="display:inline-block" action="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">
                 <input type="hidden" name="source" value="provider" />
-                <div style="display:inline-block;"><input style="display:inline" class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add an apprenticeship"></div>
+                <div style="display:inline-block;"><input style="display:inline" class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add an apprentice"></div>
             </form>
              <form class="" style="display:inline-block" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">
                 <input type="hidden" name="source" value="provider" />
-                <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px" class="button-clear button " type="submit"  id="bulk-upload"  value="Import apprenticeships"></div>
+                <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px" class="button-clear button " type="submit"  id="bulk-upload"  value="Bulk upload apprentices"></div>
             </form>
              <!--p style="display:inline; margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">Import apprenticeships</a></p-->
              <form class="" style="display:inline-block; float:right;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
@@ -167,8 +167,8 @@ changeStuff();
                       <tr>
                         <!--th scope="col">Training code</th-->
                      <!--  <th scope="col">Training type</th> -->
-                        <th scope="col" class="">Given</br />Name</th>
-                        <th scope="col" class="">Family<br />Name</th>
+                        <th scope="col" class="">First</br />name</th>
+                        <th scope="col" class="">Last<br />name</th>
                         <th scope="col" class="">ULN</th>
                         <th scope="col" class="">Start<br />date</th>
                         <th scope="col" class="">End<br />date</th>
