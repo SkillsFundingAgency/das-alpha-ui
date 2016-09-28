@@ -21,7 +21,7 @@
     <ol role="breadcrumbs">
             <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
             <li><a href="/{% include "includes/sprint-link.html" %}/contracts/providers">Apprentices</a></li>
-            <li>Start a new apprentice</li>
+            <li>Add an apprentice</li>
     </ol>
 
   </div>
@@ -29,19 +29,25 @@
 
 <div class="grid-row">
            <div class="column-two-thirds">
-  <h1 class="heading-xlarge" >Start a new apprentice</h1>
+  <h1 class="heading-xlarge" >Add an apprentice</h1>
 
-    <p class="lede">If you’ve started a new programme with a training provider they need to add the details of it to your account in order to be paid.</p>
-    <p>You need to find your provider and start the process, they will enter all the details and you will have a chance to approve it before any payment is made.</p>
-   
-
-    <h2 class="heading-medium">Before you start</h2>
+   <p>Use this service to:</p>
 
      <ul class="list list-bullet">
-  <li>You will need to know which one your companies has entered into the legal agreement.</li>
-  <li>You will need to know who your training provider is and where they are based.</li>
+  <li>add a new apprentice to your account</li>
+  <li>make sure your training provider gets paid</li>
 
 </ul>
+
+   <p>You will need to know:</p>
+
+     <ul class="list list-bullet">
+  <li>the UKPRN (UK provider reference number) of your training provider</li>
+  <li>who your apprentice will be employed by, if your business has more than one legal entity</li>
+
+</ul>
+
+<p>You can choose to add details of each apprentice or allow your training provider to add details for you.</p>
 
 
     <div style="margin-top:50px"></div>
@@ -49,6 +55,13 @@
         <a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-or-employer" class="button button-start">Start</a>
     </div>
     <div style="margin-top:50px"></div>
+     <h2 class="heading-medium">Before you start</h2>
+     <p>You must make sure you have:</p>
+     <ul class="list list-bullet">
+  <li>an agreement with the Skills Funding Agency</li>
+  <li>a training agreement with your training provider</li>
+  <li>recruited and know the names of your new apprentices</li>
+</ul>
     <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
 <!-- {% include "includes/start-tabs.html" %} -->
 
@@ -70,68 +83,7 @@
 </div>
 </main>
 
-<script>
-//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
 
-
-
-$( document ).ready(function() {
-
-  // change the tabs themselves to active - should be in the above but isn't working because it's looking for a not li so I added this as a quick fix.
-
-  $("ul#tabs-nav li").click(function(e){
-        if (!$(this).hasClass("active")) {
-            var tabNum = $(this).index();
-            var nthChild = tabNum+1;
-            $("ul#tabs-nav li.active").removeClass("active");
-            $(this).addClass("active");
-            $("ul#tabs-nav li.active").removeClass("active");
-            $("ul#tabs-nav li:nth-child("+nthChild+")").addClass("active");
-        }
-    });
-});
-
-  $('ul.tabs-nav').each(function(){
-    // For each set of tabs, we want to keep track of
-    // which tab is active and its associated content
-    var $active, $content, $links = $(this).find('a');
-
-
-
-    // If the location.hash matches one of the links, use that as the active tab.
-    // If no match is found, use the first link as the initial active tab.
-    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
-   // $active.addClass('active');
-   console.log($active)
-
-    $content = $($active[0].hash);
-
-    // Hide the remaining content
-    $links.not($active).each(function () {
-      $(this.hash).hide();
-    }); 
-
-    // Bind the click event handler
-    $(this).on('click', 'a', function(e){
-      // Make the old tab inactive.
-    //  $active.removeClass('active');
-      $content.hide();
-
-      // Update the variables with the new link and content
-    //  $active = $(this);
-      $content = $(this.hash);
-
-      // Make the tab active.
-     // $active.addClass('active');
-      $content.show();
-
-      // Prevent the anchor's default click action
-      e.preventDefault();
-    });
-  });
-
-
-</script>
 
 
 {% endblock %}

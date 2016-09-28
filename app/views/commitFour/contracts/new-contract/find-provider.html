@@ -36,15 +36,22 @@
 
            <div class="column-two-thirds">
   <h1 class="heading-xlarge" >Find your training provider</h1>
-  <p>Search for the provider you have entered into a contract with.</p>
-
+  <p class="lede">Search for the training provider that will be training your apprentices.</p>
+  <details style="margin-bottom:25px">
+  <summary><span class="summary">What is a UKPRN?</span></summary>
+  <div class="panel panel-border-narrow" >
+    <p>
+      A UK provider reference number (UKPRN) is a unique number that each training provider has to help identify them. Your training provider will be able to tell you their UKPRN.
+    </p>
+  </div>
+</details>
  
 <form action="provider-list">
   <fieldset>
     <legend class="visuallyhidden">Find your provider</legend>
       <div class="form-group">
           <label class="form-label-bold" for="search">Search for provider
-          <span class="form-hint">Search for provider by name or UKPRN </span>
+          <span class="form-hint">Search for provider by UKPRN (UK provider reference number)</span>
         </label>
           <input class="form-control" id="find-a-provider" type="text">
       </div>
@@ -53,6 +60,9 @@
     <input class="button" id="search-provider" type="submit" value="Find provider">
 </form>
     <div style="margin-top:50px"></div>
+
+
+
     <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
 <!-- {% include "includes/start-tabs.html" %} -->
 

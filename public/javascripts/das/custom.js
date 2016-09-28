@@ -54,7 +54,7 @@ breadyCrumb();
 var CompanyName = function() {
  var compName = JSON.parse(localStorage.getItem('company-name-header'));
     if (compName == null) {
-      compName = "Acme Ltd Coventry";
+      compName = "Acme Ltd";
       localStorage.setItem("company-name-header", JSON.stringify(compName));
   } else {
   }
