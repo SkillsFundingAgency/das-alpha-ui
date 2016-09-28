@@ -12,11 +12,11 @@
 {% block content %}
 
 <script>
+
 $(document).on('click', 'input[type="radio"]', function (e) {
   if ($(e.target).attr('id') === 'radio-3' || $(e.target).attr('id') === 'radio-4' || $(e.target).attr('id') === 'radio-5') 
   { $('#other-organisation-options').removeClass('js-hidden') ; } 
       else {};
-
 });
 
 </script>
@@ -29,8 +29,29 @@ $(document).on('click', 'input[type="radio"]', function (e) {
   }
 </style>
 
+
+<script>
+
+var companyName = JSON.parse(localStorage.getItem('company-name-header'));
+
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+      console.log("why is this not working")
+  var updateThisThing = function() {
+    document.getElementById("coName").innerText = companyName;
+     document.getElementById("coNameTwo").innerText = companyName;
+
+  };
+
+updateThisThing();
+});
+
+
+
+</script>
+
 <main id="content" role="main">
-{% include "includes/phase_banner_alpha.html" %}
+{% include "includes/phase_banner_beta.html" %}
 {% include "includes/secondary-nav-provider.html" %}
 
 
@@ -74,8 +95,8 @@ $(document).on('click', 'input[type="radio"]', function (e) {
       </p-->
 
       <label class="rj-roles-choice block-label " for="radio-1">
-        <input id="radio-1" type="radio" name="radio-group" value="acme-coventry" >
-        <span style="font-weight:700" id="coNameOne">Acme Coventry Ltd</span>
+        <input id="radio-1" type="radio" name="radio-group" value="acme-coventry" id="" >
+        <span style="font-weight:700" id="coName" ></span> <span style="font-weight:700" id="">Coventry</span>
         <span class="">
           <div><p style="display:inline-block; margin:0;">Company number:&nbsp</p ><p style="display:inline; margin:0;">03127414</p></div>
             <!--div><p style="display:inline-block; margin:0;">Level:&nbsp</p><p style="display:inline; margin:0;">4 </p></div-->
@@ -85,7 +106,7 @@ $(document).on('click', 'input[type="radio"]', function (e) {
 
       <label class="rj-roles-choice block-label " for="radio-2">
         <input id="radio-2" type="radio" name="radio-group" value="acme-birmingham" >
-        <span style="font-weight:700" id="coNameTwo">Acme Birmingham Ltd</span>
+        <span style="font-weight:700" id="coNameTwo"></span> <span style="font-weight:700" id="">Birmingham </span>
         <span class="">
           <div><p style="display:inline-block; margin:0;">Company number:&nbsp</p ><p style="display:inline; margin:0;">08610080</p></div>
             <!--div><p style="display:inline-block; margin:0;">Level:&nbsp</p><p style="display:inline; margin:0;">2 </p></div-->
