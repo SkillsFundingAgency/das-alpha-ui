@@ -25,12 +25,22 @@
 <script>
 
 
+//Set a default for Navigation status to be on, users have to switch it off on the admin tool
+
+var setDefaultNavStatus = function() {
+	var navStatus = JSON.parse(localStorage.getItem('Navigation-Status'));
+	if (navStatus===null ) {
+		var turnNavOn = 'on';
+		localStorage.setItem("Navigation-Status", JSON.stringify(turnNavOn));
+	} else {};
+};
+setDefaultNavStatus();
+
 //Turns navigation on and off depending on local storage variable set at /navigation
 
 
 var NavigationStatus = function() {
   var navStatus = JSON.parse(localStorage.getItem('Navigation-Status'));
-   console.log(navStatus)
     if (navStatus == "on") {
       $( "#navigation-primary" ).removeClass( "rj-dont-display" );
             $( "#removeWithNav" ).addClass( "rj-dont-display" );
