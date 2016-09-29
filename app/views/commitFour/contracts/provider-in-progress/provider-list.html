@@ -15,10 +15,8 @@
 {% block content %}
 
 <style>
-
-
-  #navigation-primary {
-    display:none;
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
   }
 </style>
 
@@ -47,7 +45,7 @@ changeStuff();
             <li><a href="/{% include "includes/sprint-link.html" %}/balance">Home</a></li>
             <li><a href="/{% include "includes/sprint-link.html" %}/contracts/providers">Apprentices</a></li>
             <li><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress">Start an apprentice</a></li>
-            <li>98HGS3F</li>
+            <li id="removeWithNav">98HGS3F</li>
     </ol>
   </div>
 

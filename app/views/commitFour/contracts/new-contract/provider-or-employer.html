@@ -15,6 +15,8 @@ var whereNow = function() {
          localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
          window.location.href='choose-legal';
   } else {
+      var isAddedApp = 'no';
+      localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
     window.location.href='choose-legal';
   }
 };
@@ -32,6 +34,12 @@ var whereNow = function() {
 // });
 
 </script>
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
 
 <main id="content" role="main">
 {% include "includes/phase_banner_beta.html" %}
