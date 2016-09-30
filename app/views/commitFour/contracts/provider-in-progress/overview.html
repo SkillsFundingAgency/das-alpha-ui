@@ -16,22 +16,22 @@
 </script>
 
 <style>
-  .provider-nav a {
-    {% include "includes/nav-on-state-css.html" %}
-  }
+ #navigation-primary {
+  display:none;
+}
 </style>
 
 
 
 
 <main id="content" role="main">
-{% include "includes/phase_banner_beta.html" %}
+{% include "includes/phase_banner_beta_noNav.html" %}
 
 
   <div class="breadcrumbs">
     <ol role="breadcrumbs">
       <li><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress">SFS</a></li>
-            <li><!--a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/overview"-->Update and authorise commitments</a></li>
+            <li id=""><!--a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/overview"-->Update and authorise commitments</a></li>
 
     </ol>
   </div>
@@ -50,55 +50,55 @@
       </div>
 </div>
 
-<!--div class="grid-row">
-    <div class="column-one-quarter" >
-        <div style="" class="arse" >
-                <div class="rj-number-alert">
-                  <h2 class="bold-xlarge">1</h2>
+<div class="grid-row" style="margin-top:10px; margin-bottom:75px">
+    <div class="column-one-quarter " >
+        <div style="" class="hitBoxFilter" >
+                <div class="rj-number-filter ">
+                  <h2 class="bold-large">22</h2>
                 </div>
-                <div class="rj-alert-copy looks-like-a-link-underline-h2" style="max-width:56%">
-                  <h2 class="heading-medium" style="margin: 10px 0 0px 15px; ">New from employer</h2>
-                </div>
-        </div>
-
-    </div>
-
-  <div class="column-one-quarter">
-        <div style="" class="">
-                <div class="rj-number-alert">
-                  <h2 class="bold-xlarge">1</h2>
-                </div>
-                <div class="rj-alert-copy looks-like-a-link-underline-h2" style="max-width:56%">
-                  <h2 class="heading-medium" style="margin: 10px 0 0px 15px; ">Need updates</h2>
+                <div class="rj-alert-copy looks-like-a-link-underline-h2" style="max-width:50%">
+                  <h2 class="heading-small" style="margin: 19px 0 0px 10px; ">New from employer</h2>
                 </div>
         </div>
 
     </div>
 
   <div class="column-one-quarter">
-        <div style="margin-" class="">
-                <div class="rj-number-alert">
-                  <h2 class="bold-xlarge">1</h2>
+         <div style="" class="hitBoxFilter" >
+                <div class="rj-number-filter">
+                  <h2 class="bold-large">1</h2>
                 </div>
-                <div class="rj-alert-copy looks-like-a-link-underline-h2" style="max-width:56%">
-                  <h2 class="heading-medium" style="margin: 10px 0 0px 15px; ">Require approval</h2>
+                <div class="rj-alert-copy looks-like-a-link-underline-h2" style="max-width:50%">
+                  <h2 class="heading-small" style="margin: 19px 0 0px 10px; ">Needs your input </h2>
+                </div>
+        </div>
+
+    </div>
+
+  <div class="column-one-quarter">
+         <div style="" class="hitBoxFilter" >
+                <div class="rj-number-filter">
+                  <h2 class="bold-large">77</h2>
+                </div>
+                <div class="rj-alert-copy looks-like-a-link-underline-h2" style="max-width:50%">
+                  <h2 class="heading-small" style="margin: 19px 0 0px 10px; ">Needs your approval</h2>
                 </div>
         </div>
       </div>
         <div class="column-one-quarter">
-        <div style="" class="">
-                <div class="rj-number-alert">
-                  <h2 class="bold-xlarge">1</h2>
+        <div style="" class="hitBoxFilter" >
+                <div class="rj-number-filter">
+                  <h2 class="bold-large">999</h2>
                 </div>
-                <div class="rj-alert-copy looks-like-a-link-underline-h2" style="max-width:56%">
-                  <h2 class="heading-medium" style="margin: 10px 0 0px 15px; ">Are with employers</h2>
+                <div class="rj-alert-copy looks-like-a-link-underline-h2" style="max-width:50%">
+                  <h2 class="heading-small" style="margin: 19px 0 0px 10px; ">Are with employers</h2>
                 </div>
         </div>
-      </div-->
+      </div>
 
   </div> <!-- close grid-row  -->
 
-   <div style="margin-top:60px"></div>
+
 
   <div class="grid-row">
    <div class="column-one-third">
@@ -113,7 +113,7 @@
           </div>
 
 
-        <div class="govuk-option-select js-collapsible" >
+        <!--div class="govuk-option-select js-collapsible" >
             <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
               <div class="option-select-label">Commitment status</div>
               <div class="js-selected-counter"></div></button>
@@ -139,7 +139,7 @@
                   </div>
 
                </div>
-          </div>
+          </div-->
 
 
 
@@ -226,8 +226,9 @@
 
                 <div class="facetedFlexBox ">
                   <div class="firstThing">
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">98HGS3F</p></div>
                       <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">New</p></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">98HGS3F</p></div>
+
                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">14 August 2018</p></div>
                   </div>
                      <div class="flexGrowaBit">
@@ -239,6 +240,8 @@
 
 
                       <!--div><p style="display:inline; margin:0;">15 Mechatronics engineers </p></div-->
+                  <div style="margin-top:25px; width:100%; overflow:hidden"><input style="float:right; " class="button delete-button" id="deleteApprenticeship" value="Delete this record"></div>
+                  <div style="clear:all"></div>
 
           </div>
 
@@ -247,8 +250,9 @@
               <h2 class="looks-like-a-link-underline-h2 heading-medium" style="margin: 0 0 5px 0">Acme Coventry Ltd</h2>
                 <div class="facetedFlexBox ">
                   <div class="firstThing">
+                    <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">Needs your input</p></div>
                       <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">55HGS3F</p></div>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">Needs your input</p></div>
+
                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">30 June 2018</p></div>
                 </div>
 
@@ -268,8 +272,9 @@
               <h2 class="looks-like-a-link-underline-h2 heading-medium" style="margin: 0 0 5px 0">Cyberdyne Systems Inc</h2>
                  <div class="facetedFlexBox">
                   <div class="firstThing">
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">MGF897F</p></div>
                       <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">In progress with employer</p></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">MGF897F</p></div>
+
                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">21 August 2018</p></div>
                   </div>
                   <div class="flexGrowaBit">
@@ -287,8 +292,9 @@
               <h2 class="looks-like-a-link-underline-h2 heading-medium" style="margin: 0 0 5px 0">Tyrell Corp</h2>
                 <div class="facetedFlexBox">
                   <div class="firstThing">
+                                          <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">Approved by employer</p></div>
                       <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">999GHY4</p></div>
-                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">Approved by employer</p></div>
+
                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">21 August 2018</p></div>
                 </div>
                 <div class="flexGrowaBit">

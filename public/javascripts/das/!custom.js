@@ -1,3 +1,5 @@
+//I don't this this script is called. There is another one in the root of Javascripts.
+
 //event handlers for buttons
 var EventUtil = {
 

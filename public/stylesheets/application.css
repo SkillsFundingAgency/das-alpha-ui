@@ -2244,6 +2244,31 @@ input[type=number] {
   padding-top: 18px;
 }
 
+.rj-number-filter {
+  border-right: 1px solid #bfc1c3;
+  width: 90px;
+  height: 90px;
+  background-color: #005EA5;
+  color: #FFF;
+  display: inline-block;
+}
+
+.rj-number-filter h2 {
+  font-size: 48px;
+  text-align: center;
+  padding-top: 19px;
+}
+
+.number-filter-single-number h2 {
+  text-align: center;
+  padding-top: 18px;
+}
+
+.hitBoxFilter {
+  border: 1px solid #bfc1c3;
+  max-height: 90px;
+}
+
 .rj-alert-copy {
   display: inline-block;
   height: 80px;
@@ -2501,6 +2526,7 @@ input[type=number] {
   background-color: #b10e1e;
   color: #fff;
   box-shadow: 0 2px 0 #666;
+  padding-top: 8px;
 }
 
 .delete-button:focus, .delete-button:hover {

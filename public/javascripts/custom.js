@@ -130,7 +130,7 @@ var defaultSprint = function() {
  var sprintNow = JSON.parse(localStorage.getItem('sprint-number'));
  console.log(sprintNow);
     if (sprintNow == null) {
-      sprintNow = "sprintbeta1";
+      sprintNow = "commitFour";
       localStorage.setItem("sprint-number", JSON.stringify(sprintNow));
   } else {
   }
@@ -153,7 +153,7 @@ var CompanyName = function() {
  var compName = JSON.parse(localStorage.getItem('company-name-header'));
  console.log(compName);
     if (compName == null) {
-      compName = "Acme Ltd Coventry";
+      compName = "Acme Ltd";
       localStorage.setItem("company-name-header", JSON.stringify(compName));
   } else {
   }
@@ -162,23 +162,23 @@ CompanyName();
 
 /* To determine if the to do list has been done - only dates works for now - this breaks because of the URl change below if it is in the page...it should live in /sprint11/contracts/new-contract/provider-interface/add-apprenticeship */
 
-$( document ).ready(function() {
-var addedOrNor = function() {
-  var hasDatesAdded = JSON.parse(localStorage.getItem('apprenticeship-dates-added'));
-   console.log(hasDatesAdded)
-    if (hasDatesAdded == "yes") {
-       $( ".datesComplete" ).removeClass( "rj-dont-display" );
-      $( ".datesToDo" ).addClass( "rj-dont-display" );
-      var  hasDatesAdded = 'no';
-      localStorage.setItem("apprenticeship-dates-added", JSON.stringify(hasDatesAdded));
-  } else {
-  $( ".datesComplete" ).addClass( "rj-dont-display" );
+//$( document ).ready(function() {
+//var addedOrNor = function() {
+ // var hasDatesAdded = JSON.parse(localStorage.getItem('apprenticeship-dates-added'));
+ //  console.log(hasDatesAdded)
+  //  if (hasDatesAdded == "yes") {
+  //     $( ".datesComplete" ).removeClass( "rj-dont-display" );
+  //    $( ".datesToDo" ).addClass( "rj-dont-display" );
+  //    var  hasDatesAdded = 'no';
+   //   localStorage.setItem("apprenticeship-dates-added", JSON.stringify(hasDatesAdded));
+ // } else {
+ // $( ".datesComplete" ).addClass( "rj-dont-display" );
 
-  }
-};
-addedOrNor();
+ // }
+//};
+//addedOrNor();
 
-});
+//});
 
 /* To determine if an apprenticeship has been added to the contract - this breaks because of the URl change below if it is in the page...it should live in /sprint11/contracts/new-contract/provider-interface/individual-contract */
 
