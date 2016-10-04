@@ -49,8 +49,9 @@ var whereNow = function() {
 <div class="grid-row">
                     <div class="column-two-thirds">
   <h1 class="heading-xlarge" >Add a note</h1>
-  <p>You’re about to send details of your cohort to your training provider. Once you send it they’ll be able to see it in their online account.</p>
-  <p>You can add a note for them to read.</p>
+  <p class="lede">You’re about to send a request to your training provider, asking them to add one or more apprentices to your cohort. </p>
+  <p>Once you send it they’ll be able to see your request in their online account.</p>
+  <p>Before you send your request, you can add a note to it for your provider to read.</p>
 
 <form action="">
   <fieldset>
@@ -63,11 +64,11 @@ var whereNow = function() {
       </div>
       <div class="form-group">
           <label class="form-label-bold" for="message">Note (optional)</label>
-           <span class="form-hint">For example, please add the 25 engineers we agreed on contract #90120</span>
+           <span class="form-hint">For example, please add the 25 engineers we agreed on contract #54321</span>
           <textarea class="form-control" id="message" type="text" style="width:100%" rows="5"></textarea>
       </div>
     </fieldset>
-    <input class="button" id="Finish"  onclick="whereNow()" type="button" value="Send to provider">
+    <input class="button" id="Finish"  onclick="whereNow()" type="button" value="Send request to provider">
 </form>
 
 

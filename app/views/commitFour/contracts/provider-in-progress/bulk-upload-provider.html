@@ -26,7 +26,7 @@ var uploadAlert = function() {
 </script>
 
 <main id="content" role="main">
-{% include "includes/phase_banner_alpha.html" %}
+{% include "includes/phase_banner_beta.html" %}
 {% include "includes/secondary-nav-provider.html" %}
 
 
@@ -47,14 +47,14 @@ var uploadAlert = function() {
 <div class="grid-row">
 
            <div class="column-two-thirds">
-  <h1 class="heading-xlarge" >Upload apprenticeships</h1>
-  <p>You can bulk upload using a .csv or .txt file</p>
+  <h1 class="heading-xlarge" >Bulk upload apprentice details</h1>
+  <p>You can add details of multiple apprentices (bulk upload) using a .csv or .txt file.</p>
 
   <details style="margin-bottom:35px">
   <summary><span class="summary">Help with uploading files</span></summary>
   <div class="panel panel-border-narrow">
     <p>
-      Help with file formatting and how to bulk upload a file.
+     Help with file formatting and how to bulk upload a file.
     </p>
 
   </div>
@@ -81,8 +81,8 @@ var uploadAlert = function() {
                     </tbody>
                 </table>
 
-<div class="drag-upload" onClick="uploadAlert()" ><p>Drag and drop a file (or files) here.</p></div>
-or <a href="upload-choose-file-provider">browse for a file (or files)</a>
+<div class="drag-upload" onClick="uploadAlert()" ><p>Drag and drop one or more files here.</p></div>
+<p>or <a href="upload-choose-file-provider">browse for files </a>on your computer</p>
 
  
 <form style="margin-top:35px" action="check-errors-provider">

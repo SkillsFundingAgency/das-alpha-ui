@@ -19,10 +19,18 @@
     function showEmptyState() {
         $('#no-apprenticeships').removeClass('rj-dont-display');
         $('#apprenticeships').addClass('rj-dont-display');
+        $('#bottomToolBarLotsofApprentices').addClass('rj-dont-display');
     }
+
+    function showLotsExtraBar() {
+    $('#bottomToolBarLotsofApprentices').removeClass('rj-dont-display');
+    }
+
     function showApprenticeships(apprenticeships) {
         $('#no-apprenticeships').addClass('rj-dont-display');
         $('#apprenticeships').removeClass('rj-dont-display');
+              $('#bottomToolBarLotsofApprentices').addClass('rj-dont-display');
+      
 
 
         // random global variable assignment - variable is used again later -  the copy in the training header.
@@ -52,7 +60,7 @@
         var displayStart = apprenticeship.start.month ? apprenticeship.start.month + '/' + apprenticeship.start.year : 'unknown';
         var displayFinish = apprenticeship.finish.month ? apprenticeship.finish.month + '/' + apprenticeship.finish.year : 'unknown';
         var fullName = apprenticeship.apprentice.first ? apprenticeship.apprentice.first + ' ' + apprenticeship.apprentice.last : 'unknown';
-        var allDates = apprenticeship.start.month ? apprenticeship.start.month + '/' +  + apprenticeship.start.year + ' - ' +  apprenticeship.finish.month + '/' + apprenticeship.finish.year : 'unknown';
+        var allDates = apprenticeship.start.month ? apprenticeship.start.month + '/' +  + apprenticeship.start.year + ' to ' +  apprenticeship.finish.month + '/' + apprenticeship.finish.year : 'unknown';
         var blankField = '  '
         var changesOne = ' '
 
@@ -86,17 +94,23 @@
         return td;
     }
 
-    $(document).ready(function() {
+ $(document).ready(function() {
         console.log('load commitment list');
         view.load();
-
-        var apprenticeships = window.das.commitments.getAll();
-        if(apprenticeships.length > 0) {
+       var apprenticeships = window.das.commitments.getAll();
+       switch (true) {
+             case  (apprenticeships.length > 5):
+                showApprenticeships(apprenticeships);
+                showLotsExtraBar();
+                break;
+        case (apprenticeships.length > 0):
             showApprenticeships(apprenticeships);
-        }
-        else {
-            showEmptyState();
+            break;
+        default:
+             showEmptyState();
+             console.log('gyahhhhhhhh')
+            break;
         }
     });
-
 })();
+

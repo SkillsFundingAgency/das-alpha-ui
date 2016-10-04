@@ -37,7 +37,24 @@
            <div class="column-two-thirds">
   <h1 class="heading-xlarge" >Find your training provider</h1>
   <p class="lede">Search for the training provider that will be training your apprentices.</p>
-  <details style="margin-bottom:25px">
+ 
+ 
+<form action="provider-list">
+  <fieldset>
+    <legend class="visuallyhidden">Find your provider</legend>
+      <div class="form-group">
+          <label class="form-label-bold" for="search">Search for training provider
+          <span class="form-hint">Search by UK Provider Reference Number  (UKPRN)</span>
+        </label>
+          <input class="form-control" id="find-a-provider" type="text">
+      </div>
+ 
+    </fieldset>
+    <input class="button" id="search-provider" type="submit" value="Find provider">
+</form>
+
+    <div style="margin-top:50px"></div>
+    <details style="margin-bottom:25px">
   <summary><span class="summary">What is a UKPRN?</span></summary>
   <div class="panel panel-border-narrow" >
     <p>
@@ -45,21 +62,6 @@
     </p>
   </div>
 </details>
- 
-<form action="provider-list">
-  <fieldset>
-    <legend class="visuallyhidden">Find your provider</legend>
-      <div class="form-group">
-          <label class="form-label-bold" for="search">Search for provider
-          <span class="form-hint">Search for provider by UKPRN (UK provider registration number)</span>
-        </label>
-          <input class="form-control" id="find-a-provider" type="text">
-      </div>
-
-    </fieldset>
-    <input class="button" id="search-provider" type="submit" value="Find provider">
-</form>
-    <div style="margin-top:50px"></div>
 
 
 

@@ -74,13 +74,13 @@ changeStuff();
                                      <h2 class="heading-medium" id="commitmentsName" style="margin: 0 0 5px 0">Acme Coventry Ltd</h2>
                                   <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">98HGS3F</p></div>
                                   <div><h2 class="heading-small" id="commitmentStatus" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">Needs provider input</p></div>
-                                 <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">14th August 2018</p></div>
+                                 <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">14 August 2018</p></div>
                       </div>
             </div>
 
         <div class="column-half">
           <div class="" style="padding-bottom:35px">
-            <div><h2 class="heading-small" style="display:inline-block; margin:0;">Messages:&nbsp</h2 ><p style=" margin:0;">No messages</p></div>
+            <div><h2 class="heading-small" style="display:inline-block; margin:0;">Note:&nbsp</h2 ><p style=" margin:0;">No note added</p></div>
 
           </div>
                       <!--aside class="related">
@@ -123,7 +123,7 @@ changeStuff();
              <!--p style="display:inline; margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">Import apprenticeships</a></p-->
              <form class="" style="display:inline-block; float:right;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
                     <div style="display:inline-block;"><input class="button" style="display:inline; margin:0 0 0 10px" type="submit"  id="send-to-employer"  value="Finished editing"></div>
-              </form-->
+              </form>
         </div>
 
         <hr style="margin:20px 0 20px 0" />
@@ -135,16 +135,8 @@ changeStuff();
     <!-- -------------- This is shows when one apprenticeship has been added ---------- -->
                 <div style="margin-top:45px" class="rj-has-apprenticeships" id="apprenticeships">
                    <h2 class="heading-medium"><span style="font-weight:700" id="numberOfApprentices"></span> Apprentices</h2>
-                  <!--hr style="margin-top:35px"/-->
 
-                 <!--form class="" action="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">
-                    <input type="hidden" name="source" value="provider" />
-                    <div style="margin-top:20px;"><input class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add an apprenticeship"></div>
-                  </form-->
-                  <!--p><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-apprenticeship">Add a new apprenticeship group</a></p-->
-                  <!--p style="margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">Import apprenticeships</a></p-->
-
-                  <hr style="margin:0 0 18px 0" />
+       <hr style="margin:0 0 18px 0" />
         <div class="commit-bar">
             <form class="" style="display:inline-block" action="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">
                 <input type="hidden" name="source" value="provider" />
@@ -157,7 +149,7 @@ changeStuff();
              <!--p style="display:inline; margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">Import apprenticeships</a></p-->
              <form class="" style="display:inline-block; float:right;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
                     <div style="display:inline-block;"><input class="button" style="display:inline; margin:0 0 0 10px" type="submit"  id="send-to-employer"  value="Finished editing"></div>
-              </form-->
+              </form>
         </div>
 
         <hr style="margin:20px 0 15px 0" />
@@ -182,9 +174,27 @@ changeStuff();
                     </tbody>
                 </table>
                      <!--hr style="margin:35px 0 35px 0;"/-->
-
-
             </div>
+            <div id="bottomToolBarLotsofApprentices">
+              <div style="margin-top:50px"></div>
+        <hr style="margin:0 0 18px 0" />
+        <div class="commit-bar">
+            <form class="" style="display:inline-block" action="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">
+                <input type="hidden" name="source" value="provider" />
+                <div style="display:inline-block;"><input style="display:inline" class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add an apprentice"></div>
+            </form>
+             <form class="" style="display:inline-block" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">
+                <input type="hidden" name="source" value="provider" />
+                <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px" class="button-clear button " type="submit"  id="bulk-upload"  value="Bulk upload apprentices"></div>
+            </form>
+             <!--p style="display:inline; margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">Import apprenticeships</a></p-->
+             <form class="" style="display:inline-block; float:right;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
+                    <div style="display:inline-block;"><input class="button" style="display:inline; margin:0 0 0 10px" type="submit"  id="send-to-employer"  value="Finished editing"></div>
+              </form>
+        </div>
+
+        <hr style="margin:20px 0 15px 0" />
+      </div>
 
 
 </main>

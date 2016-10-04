@@ -34,7 +34,8 @@
    <p>Use this service to:</p>
 
      <ul class="list list-bullet">
-  <li>add a new apprentice to your account</li>
+  <li>add one or more apprentices (a cohort) to your account</li>
+  <li>create a link between your levy account and training provider</li>
   <li>make sure your training provider gets paid</li>
 
 </ul>
@@ -42,26 +43,39 @@
    <p>You will need to know:</p>
 
      <ul class="list list-bullet">
-  <li>the UKPRN (UK provider reference number) of your training provider</li>
-  <li>who your apprentice will be employed by, if your business has more than one legal entity</li>
+  <li>who your apprentices will be employed by, if your organisation has more than one legal entity</li>
+  <li>the UK Provider Reference Number (UKPRN) of your training provider</li>
 
 </ul>
+<div style="margin-top:25px"></div>
 
-<p>You can choose to add details of each apprentice or allow your training provider to add details for you.</p>
+  <details >
+  <summary><span class="summary">What is a UKPRN?</span></summary>
+  <div class="panel panel-border-narrow">
+    <p>
+      What is a UKPRN?
+    </p>
+    <p>
+      A UK Provider Reference Number (UKPRN) is a unique number that identifies an individual training provider. Your training provider will be able to tell you their UKPRN.
+    </p>
+  </div>
+</details>
+<div style="margin-bottom:20px"></div> <!-- this is different because the element above is 30px high which is about 5px too high and so looks weird -->
 
+<p>Once you start, you can choose to add details of each apprentice or allow your training provider to add details for you.</p>
 
-    <div style="margin-top:50px"></div>
-    <div class="padder-top-x">
-        <a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-or-employer" class="button button-start">Start</a>
-    </div>
-    <div style="margin-top:50px"></div>
      <h2 class="heading-medium">Before you start</h2>
      <p>You must have:</p>
      <ul class="list list-bullet">
   <li>an agreement with the Skills Funding Agency</li>
   <li>a training agreement with your training provider</li>
-  <li>recruited and know the names of your new apprentices</li>
+  <li>the names of your apprentices</li>
 </ul>
+
+    <div style="margin-top:50px"></div>
+    <div class="padder-top-x">
+        <a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-or-employer" class="button button-start">Start</a>
+    </div>
     <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
 <!-- {% include "includes/start-tabs.html" %} -->
 

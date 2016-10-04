@@ -51,7 +51,7 @@ EventUtil.addHandler(btn, 'click', function(){
   <div class="grid-row">
            <div class="column-two-thirds">
             <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Add an apprentice</h1>
-                <p class="lede">Add the details of your apprentice below. If you don't have the information now you can leave it blank and add it later</p>
+                <p class="lede">Fill in as many fields as you can. You can come back to this page and add more information later, if you need to.</p>
           <hr style=""/>
   
 
@@ -59,26 +59,36 @@ EventUtil.addHandler(btn, 'click', function(){
           <legend class="visuallyhidden">Apprentice name</legend>
                 <div class="form-group" style="margin-bottom:15px">
                     <label class="form-label-bold" for="apprenticeGivenName">Apprentice first name
-                     <!--span class="form-hint">If you don't have this yet, you can leave it blank</span-->
+                     <span class="form-hint">The name that will be on the apprentice’s exam certificate.</span>
                     </label>
                   <input class="form-control" id="apprenticeGivenName" type="text">
                 </div>
                 <div class="form-group" style="margin-bottom:15px">
                     <label class="form-label-bold" for="apprenticeFamilyName">Apprentice last name
-                     <!--span class="form-hint">If you don't have this yet, you can leave it blank</span-->
+                     <span class="form-hint">The name that will be on the apprentice’s exam certificate.</span>
                     </label>
                   <input class="form-control" id="apprenticeFamilyName" type="text">
                 </div>
         </fieldset>
-        <hr style=""/>
+         <fieldset>
+      <hr style=""/>
+            <legend class="visuallyhidden">ULN</legend>
+            <div class="form-group">
+            <label class="form-label-bold" for="ULN">Unique learner number
+           <span class="form-hint">This field is usually completed by training providers.</span>
+           </label>
+              <input class="form-control " id="ULN" type="number" value="">
+      </div>
+    </fieldset>
+        <hr style="margin-top:0px"/>
                                     <div id="searchTraining">
                 <form id="checkTrainingForm" action="add-an-apprenticeship/training-list">
                     <input id="checkTrainingSource" name="source" type="hidden" value="employer" />
                     <fieldset>
                       <legend class="visuallyhidden">Enter the name of the framework or standard.</legend>
                         <div class="form-group" style="margin-bottom:15px">
-                            <label class="form-label-bold" for="search">Find apprenticeship
-                        <span class="form-hint">Search by name or training code </span>
+                            <label class="form-label-bold" for="search">Apprenticeship training course
+                        <span class="form-hint">Search for the training by course name or code.</span>
                           </label>
                             <input class="form-control" id="search-for-training" type="text">
                         </div>
@@ -88,7 +98,7 @@ EventUtil.addHandler(btn, 'click', function(){
             </div>
 
             <div id="displayTraining" style="display: none;clear: both;">
-                <label class="form-label-bold" for="apprenticeCost">Training course</label>
+                <label class="form-label-bold" for="apprenticeCost">Apprenticeship training course</label>
 
                 <div class=" " style="background-color:#fff; border: 0; padding: 18px 0px 15px 0px;" >
                     <span style="">Mechatronics technician</span>
@@ -101,27 +111,12 @@ EventUtil.addHandler(btn, 'click', function(){
                  <p class="looks-like-a-link-underline">Change training</p>
             </div>
 
-
-
-
-        <fieldset>
-           <hr style=""/>
-            <legend class="visuallyhidden">Add a note</legend>
-            <div class="form-group">
-            <label class="form-label-bold" for="apprenticeCost">Add a note (optional)
-          <span class="form-hint">Use this to add a reference. e.g. contract number or employee number </span>
-           </label>
-              <input class="form-control rj-currency-input" id="employerRef" type="text" value="" style="width:100%">
-      </div>
-    </fieldset>
-
-
-                <hr style="margin-top:0px"/>
+                <hr style=""/>
 
             <div class="form-group">
             <fieldset>
               <legend>
-                <span class="form-label-bold">Projected start date</span>
+                <span class="form-label-bold">Planned training start date</span>
               </legend>
               <div class="form-date">
                 <div class="form-group form-group-month">
@@ -168,17 +163,19 @@ EventUtil.addHandler(btn, 'click', function(){
               <input class="form-control rj-currency-input" id="apprenticeCost" type="text" value="" style="max-width:6em">
       </div>
     </fieldset>
-          
-        <fieldset>
-      <hr style="margin-top:0px"/>
-            <legend class="visuallyhidden">ULN</legend>
+
+            <fieldset>
+           <hr style="margin-top:0px"/>
+            <legend class="visuallyhidden">Add a note</legend>
             <div class="form-group">
-            <label class="form-label-bold" for="ULN">Unique learner number
-           <!--span class="form-hint">If you don't have this yet, you can leave it blank</span-->
+            <label class="form-label-bold" for="apprenticeCost">Add a note (optional)
+          <span class="form-hint">Add a note, such as employee number or location, to help identify this apprentice if you have more than one with the same name. This will be seen by both employers and training providers.</span>
            </label>
-              <input class="form-control " id="ULN" type="number" value="">
+              <input class="form-control rj-currency-input" id="employerRef" type="text" value="" style="width:100%">
       </div>
     </fieldset>
+          
+       
 
 
 
