@@ -6,6 +6,7 @@
 
 {% block content %}
 
+<link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
 
 <style>
   .people-nav a, .learners-nav a {
@@ -23,7 +24,7 @@
     <ol role="breadcrumbs">
       <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
       <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></li>
-      <li>Your apprentices</li>
+       <li id="removeWithNav">Your apprentices</li>
     </ol>
   </div>
 
@@ -36,37 +37,126 @@
   </div>
 </div>
 
-<div class="grid-row">
+ <div class="grid-row">
    <div class="column-one-third">
-<div class="filter-form">
-  <div id="finder-frontend" class="inner-block">
-    <form method="get" action="/cma-cases" class="js-live-search-form">
-      <div class="filter text-filter">
-        <label class="legend" for="finder-keyword-search">Search</label>
-        <input value="" type="text" name="keywords" id="finder-keyword-search" aria-controls="js-search-results-info" class="text">
+    
+    <div class="filter-form filtering ">
+      <div id="finder-frontend" class="inner-block">
+
+        <form method="get" action="/" class="js-live-search-form">
+          <div class="filter text-filter">
+            <label class="legend" for="finder-keyword-search">Search</label>
+            <input value="" type="text" name="keywords" id="finder-keyword-search" aria-controls="js-search-results-info" class="text">
+          </div>
+
+
+        <!--div class="govuk-option-select js-collapsible" >
+            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+              <div class="option-select-label">Commitment status</div>
+              <div class="js-selected-counter"></div></button>
+                <div class="options-container" id="case_state">
+                  <div class="js-auto-height-inner">
+                      <label for="new">
+                        <input name="case_type[]" value="acme-cov" id="status-new" type="checkbox" aria-controls="js-search-results-info">
+                          New (1)
+                        </label>
+                        <label for="Awaiting - Provider input">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          Needs your input (1)
+                        </label>
+                        <label for="Awaiting - Employer input">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          In progress with employer (1)
+                        </label>
+                        <label for="Approved by employer">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          Approved by employer (1)
+                        </label>
+
+                  </div>
+
+               </div>
+          </div-->
+
+
+
+        <div class="govuk-option-select js-collapsible" >
+            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+              <div class="option-select-label">Status</div>
+              <div class="js-selected-counter"></div></button>
+                <div class="options-container" id="case_state">
+                  <div class="js-auto-height-inner">
+                      <label for="action-needed">
+                       <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                          Action needed
+                        </label>
+                         <label for="Live">
+                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                          Live
+                        </label>
+                        <label for="Paused">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          Paused
+                        </label>
+                        <label for="Finished">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                         Finished
+                        </label>
+
+                  </div>
+
+               </div>
+          </div>
+
+          <!--div class="govuk-option-select js-collapsible" >
+            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+              <div class="option-select-label">Training</div>
+              <div class="js-selected-counter"></div></button>
+                <div class="options-container" id="case_state">
+                  <div class="js-auto-height-inner">
+                      <label for="Acme Coventry Ltd">
+                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                          Mechatronics engineers
+                        </label>
+                        <label for="Cyberdyne Systems Inc">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          Manufacturing engineers
+                        </label>
+                        <label for="Tyrell Corp">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          Survival equipment fitter
+                        </label>
+                                                <label for="Tyrell Corp">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          Network engineer
+                        </label>
+                                                                        <label for="Tyrell Corp">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          Cyber intrusion analyst
+                        </label>
+                                                                                                <label for="Tyrell Corp">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          Cyber security technologist
+                        </label>
+                                                                                                              <label for="Tyrell Corp">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          Embedded Electronic Systems Design and Development Engineer
+                        </label>
+
+                  </div>
+
+               </div>
+          </div-->
+
+ 
+
+
+
+        </div>
       </div>
-
-
-
-
-<div class="govuk-option-select js-collapsible js-closed" data-closed-on-load="true">
-  <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
-    <div class="option-select-label">Apprentice status</div>
-  <div class="js-selected-counter"></div></button>
-  <div class="options-container" id="case_state">
-    <div class="js-auto-height-inner">
-
     </div>
 
-  </div>
-</div>
 
-      <input type="submit" value="Filter results" class="button js-live-search-fallback">
-    </form>
-  </div>
-</div>
-
-   </div>
 
 
                 <div class="column-two-thirds">
