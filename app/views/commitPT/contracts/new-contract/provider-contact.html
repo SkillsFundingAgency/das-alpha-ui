@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<script>
+
+var whereNow = function() {
+  var goToEmployer = JSON.parse(localStorage.getItem('commitments.isEmployer'));
+
+    if (goToEmployer == "yes") {
+         window.location.href='../provider-in-progress/provider-list';
+  } else {
+    window.location.href='employer-confirmation';
+  }
+};
+
+</script>
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<div class="grid-row">
+                    <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Add a note</h1>
+  <p class="lede">You’re about to send a request to your training provider, asking them to add one or more apprentices. </p>
+  <p>Once you send it they’ll be able to see your request in their online account.</p>
+  <p>Before you send your request, you can add a note to it for your provider to read.</p>
+
+<form action="">
+  <fieldset>
+    <legend class="visuallyhidden">provider contact details and message - optional</legend>
+      <div class="form-group">
+          <label class="form-label-bold" for="email-address">Email (optional)
+          <span class="form-hint">Your request will automatically appear in your provider’s account. You can also send a copy of your note to your training contact by email.</span>
+        </label>
+          <input class="form-control" id="email-address" type="text">
+      </div>
+      <div class="form-group">
+          <label class="form-label-bold" for="message">Note (optional)</label>
+           <span class="form-hint">For example, please add the 25 engineers we agreed on contract #54321</span>
+          <textarea class="form-control" id="message" type="text" style="width:100%" rows="5"></textarea>
+      </div>
+    </fieldset>
+    <input class="button" id="Finish"  onclick="whereNow()" type="button" value="Send request to provider">
+</form>
+
+
+
+
+    <div style="margin-top:50px"></div>
+    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
+<!-- {% include "includes/start-tabs.html" %} -->
+
+            </div>
+
+             <div class="column-one-third">
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="../login">Sign in</a>
+                          </li>
+
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+</div>
+</main>
+
+<script>
+//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+
+
+
+
+{% endblock %}

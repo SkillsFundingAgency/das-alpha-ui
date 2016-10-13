@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+            <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/contracts/providers">Apprentices</a></li>
+            <li id="removeWithNav">Add an apprentice</li>
+    </ol>
+
+  </div>
+
+
+<div class="grid-row">
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Add an apprentice</h1>
+
+   <p>Use this service to:</p>
+
+     <ul class="list list-bullet">
+  <li>add one or more apprentices (a cohort) to your account</li>
+  <li>create a link between your levy account and training provider</li>
+  <li>make sure your training provider gets paid</li>
+
+</ul>
+
+   <p>You will need to know:</p>
+
+     <ul class="list list-bullet">
+  <li>who your apprentices will be employed by, if your organisation has more than one legal entity</li>
+  <li>the UK Provider Reference Number (UKPRN) of your training provider</li>
+
+</ul>
+<div style="margin-top:25px"></div>
+
+  <details >
+  <summary><span class="summary">What is a UKPRN?</span></summary>
+  <div class="panel panel-border-narrow">
+    <p>
+      What is a UKPRN?
+    </p>
+    <p>
+      A UK Provider Reference Number (UKPRN) is a unique number that identifies an individual training provider. Your training provider will be able to tell you their UKPRN.
+    </p>
+  </div>
+</details>
+<div style="margin-bottom:20px"></div> <!-- this is different because the element above is 30px high which is about 5px too high and so looks weird -->
+
+<p>Once you start, you can choose to add details of each apprentice or allow your training provider to add details for you.</p>
+
+     <h2 class="heading-medium">Before you start</h2>
+     <p>You must have:</p>
+     <ul class="list list-bullet">
+  <li>a training agreement with your training provider</li>
+  <li>the names of your apprentices</li>
+</ul>
+
+    <div style="margin-top:50px"></div>
+    <div class="padder-top-x">
+        <a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/choose-legal" class="button button-start">Start</a>
+    </div>
+    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
+<!-- {% include "includes/start-tabs.html" %} -->
+
+            </div>
+
+             <div class="column-one-third">
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="../login">Sign in</a>
+                          </li>
+
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+</div>
+</main>
+
+
+
+
+{% endblock %}

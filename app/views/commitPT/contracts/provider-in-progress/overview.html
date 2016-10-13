@@ -1,0 +1,369 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
+
+<script>
+ var isAddedApp = 'no';
+    localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
+
+</script>
+
+<style>
+ #navigation-primary {
+  display:none;
+}
+</style>
+
+
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta_noNav.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress">SFS</a></li>
+            <li id=""><!--a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/overview"-->Update and agree cohorts</a></li>
+
+    </ol>
+  </div>
+
+  <div id="showDoneAlert" class="user-alert rj-dont-display">
+  <div class="panel panel-border-wide alert-success">
+    <i class="fa fa-check "></i>
+            <h2 class="heading-small">Commitment sent to Acme Coventry Ltd for approval</h2>
+          </div>
+  </div>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Update and agree cohorts</h1>
+    <p class="lede">You have <span style="font-weight:700">4</span> cohorts in progress </p>
+      </div>
+</div>
+
+<div class="grid-row" style="margin-top:10px; margin-bottom:75px">
+    <!--div class="column-one-quarter " >
+        <div style="" class="hitBoxFilter" >
+                <div class="rj-number-filter ">
+                  <h2 class="bold-large">22</h2>
+                </div>
+                <div class="rj-alert-copy looks-like-a-link-underline-h2" style="max-width:50%">
+                  <h2 class="heading-small" style="margin: 19px 0 0px 10px; ">New from employer</h2>
+                </div>
+        </div>
+
+    </div-->
+
+  <div class="column-one-third">
+         <div style="" class="hitBoxFilter" >
+                <div class="rj-number-filter">
+                  <h2 class="bold-large">1</h2>
+                </div>
+                <div class="rj-alert-copy looks-like-a-link-underline-h2" style="max-width:50%">
+                  <h2 class="heading-medium" style="margin: 15px 0 0px 10px; ">Ready for review</h2>
+                </div>
+        </div>
+
+    </div>
+
+  <div class="column-one-third">
+         <div style="" class="hitBoxFilter" >
+                <div class="rj-number-filter">
+                  <h2 class="bold-large">2</h2>
+                </div>
+                <div class="rj-alert-copy looks-like-a-link-underline-h2" style="max-width:50%">
+                  <h2 class="heading-medium" style="margin: 15px 0 0px 10px; ">Ready for approval</h2>
+                </div>
+        </div>
+      </div>
+        <div class="column-one-third">
+        <div style="" class="hitBoxFilter" >
+                <div class="rj-number-filter">
+                  <h2 class="bold-large">1</h2>
+                </div>
+                <div class="rj-alert-copy looks-like-a-link-underline-h2" style="max-width:50%">
+                  <h2 class="heading-medium" style="margin: 15px 0 0px 10px; ">With employers</h2>
+                </div>
+        </div>
+      </div>
+
+  </div> <!-- close grid-row  -->
+
+
+
+  <div class="grid-row">
+   <div class="column-one-third">
+    
+    <div class="filter-form filtering ">
+      <div id="finder-frontend" class="inner-block">
+
+        <form method="get" action="/" class="js-live-search-form">
+          <div class="filter text-filter">
+            <label class="legend" for="finder-keyword-search">Search</label>
+            <input value="" type="text" name="keywords" id="finder-keyword-search" aria-controls="js-search-results-info" class="text">
+          </div>
+
+
+        <!--div class="govuk-option-select js-collapsible" >
+            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+              <div class="option-select-label">Commitment status</div>
+              <div class="js-selected-counter"></div></button>
+                <div class="options-container" id="case_state">
+                  <div class="js-auto-height-inner">
+                      <label for="new">
+                        <input name="case_type[]" value="acme-cov" id="status-new" type="checkbox" aria-controls="js-search-results-info">
+                          New (1)
+                        </label>
+                        <label for="Awaiting - Provider input">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          Needs your input (1)
+                        </label>
+                        <label for="Awaiting - Employer input">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          In progress with employer (1)
+                        </label>
+                        <label for="Approved by employer">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          Approved by employer (1)
+                        </label>
+
+                  </div>
+
+               </div>
+          </div-->
+
+
+
+        <div class="govuk-option-select js-collapsible" >
+            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+              <div class="option-select-label">Employer</div>
+              <div class="js-selected-counter"></div></button>
+                <div class="options-container" id="case_state">
+                  <div class="js-auto-height-inner">
+                      <label for="Acme Coventry Ltd">
+                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                          Acme Coventry Ltd (2)
+                        </label>
+                        <label for="Cyberdyne Systems Inc">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          Cyberdyne Systems Inc (1)
+                        </label>
+                        <label for="Tyrell Corp">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          Tyrell Corp (1)
+                        </label>
+
+                  </div>
+
+               </div>
+          </div>
+
+          <!--div class="govuk-option-select js-collapsible" >
+            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+              <div class="option-select-label">Training</div>
+              <div class="js-selected-counter"></div></button>
+                <div class="options-container" id="case_state">
+                  <div class="js-auto-height-inner">
+                      <label for="Acme Coventry Ltd">
+                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                          Mechatronics engineers
+                        </label>
+                        <label for="Cyberdyne Systems Inc">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          Manufacturing engineers
+                        </label>
+                        <label for="Tyrell Corp">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          Survival equipment fitter
+                        </label>
+                                                <label for="Tyrell Corp">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          Network engineer
+                        </label>
+                                                                        <label for="Tyrell Corp">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          Cyber intrusion analyst
+                        </label>
+                                                                                                <label for="Tyrell Corp">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          Cyber security technologist
+                        </label>
+                                                                                                              <label for="Tyrell Corp">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          Embedded Electronic Systems Design and Development Engineer
+                        </label>
+
+                  </div>
+
+               </div>
+          </div-->
+
+ 
+
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+   <div class="column-two-thirds">
+
+
+
+           <div class="facetedResults" style="padding-top:0">
+
+              <h2 class="heading-medium" style="margin: 0 0 5px 0"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list">Acme Coventry Ltd</a></h2>
+
+                <!--div class="facetedFlexBox ">
+                  <div class="firstThing">
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">New</p></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">98HGS3F</p></div>
+
+                     <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">14 August 2018</p></div>
+                  </div>
+                     <div class="flexGrowaBit">
+                        <div><h3 class="heading-small" style="display:inline-block; margin:0;">Apprenticeships:</h3 ></div>
+                      <div><p style="display:inline; margin:0;">No apprenticeships added </p></div>
+                    </div>
+                  </div>
+                  <div><h2 class="heading-small" style="margin:0;">Last message:&nbsp</h2 ><p style="display:inline; margin:0;">This is contract ref#90210, can you add the 25 bakery assistants to it.</p></div>
+
+
+             
+                  <div style="margin-top:25px; width:100%; overflow:hidden"><input style="float:right; " class="button delete-button" id="deleteApprenticeship" value="Delete this record"></div>
+                  <div style="clear:all"></div-->
+
+          </div>
+
+<!--
+           <div class="facetedResults">
+              <h2 class="looks-like-a-link-underline-h2 heading-medium" style="margin: 0 0 5px 0">Acme Coventry Ltd</h2>
+                <div class="facetedFlexBox ">
+                  <div class="firstThing">
+                    <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">Needs your input</p></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">55HGS3F</p></div>
+
+                     <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">30 June 2018</p></div>
+                </div>
+
+                     <div class="flexGrowaBit">
+                        <div><h3 class="heading-small" style="display:inline-block; margin:0;">Apprenticeships:</h3 ></div>
+                      <div><p style="display:inline; margin:0;">196 Mechatronics maintenance engineers </p></div>
+                      <div><p style="display:inline; margin:0;">96 Manufacturing engineers</p></div>
+                      <div><p style="display:inline; margin:0;">1 Survival equipment fitter</p></div>
+                    </div>
+                  </div>
+                                    <div><h2 class="heading-small" style="margin:0;">Last message:&nbsp</h2 ><p style="display:inline; margin:0;">This is a message that has been added. It runs along the bottom of the card for now.</p></div>
+             
+          </div>
+
+
+           <div class="facetedResults">
+              <h2 class="looks-like-a-link-underline-h2 heading-medium" style="margin: 0 0 5px 0">Cyberdyne Systems Inc</h2>
+                 <div class="facetedFlexBox">
+                  <div class="firstThing">
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">In progress with employer</p></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">MGF897F</p></div>
+
+                     <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">21 August 2018</p></div>
+                  </div>
+                  <div class="flexGrowaBit">
+                      <div><h3 class="heading-small" style="display:inline-block; margin:0;">Apprenticeships:</h3 ></div>
+                      <div><p style="display:inline; margin:0;">5 Network engineers</p></div>
+                      <div><p style="display:inline; margin:0;">6 Cyber intrusion analysts</p></div>
+                      <div><p style="display:inline; margin:0;">1 Cyber security technologist</p></div>
+                    </div>
+                  </div>
+                                                      <div><h2 class="heading-small" style="margin:0;">Last message:&nbsp</h2 ><p style="display:inline; margin:0;">This is a message that has been added. It runs along the bottom of the card for now.</p></div>
+          </div>
+
+
+           <div class="facetedResults">
+              <h2 class="looks-like-a-link-underline-h2 heading-medium" style="margin: 0 0 5px 0">Tyrell Corp</h2>
+                <div class="facetedFlexBox">
+                  <div class="firstThing">
+                                          <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">Approved by employer</p></div>
+                      <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">999GHY4</p></div>
+
+                     <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">21 August 2018</p></div>
+                </div>
+                <div class="flexGrowaBit">
+                      <div><h3 class="heading-small" style="display:inline-block; margin:0;">Apprenticeships:</h3 ></div>
+                      <div style=""><p style="margin:0;">55 Embedded Electronic Systems Design and Development Engineer </p></div>
+                      <div><p style="margin:0;">43 Cyber intrusion analysts</p></div>
+                </div>
+              </div>
+                                                  <div><h2 class="heading-small" style="margin:0;">Last message:&nbsp</h2 ><p style="display:inline; margin:0;">This is a message that has been added. It runs along the bottom of the card for now.</p></div>
+          </div>
+
+-->
+
+            <div style="margin-top:60px"></div>
+                <!--table>
+                    <thead>
+                      <tr>
+                        <th scope="col">Employer</th>
+                        <th scope="col" class="">Reference</th>
+                        <th scope="col">Status</th>
+                         <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="rjTabWidth">Acme Coventry Ltd</td>
+                        <td class="">98HGS3F</td>
+                         <td class="">New</td>
+
+
+                        <td><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list">Add</a></td>
+                      </tr>
+                      <tr>
+                        <td class="rjTabWidth">Cyberdyne Systems Inc</td>
+                        <td class="">HGH7345</td>
+                        <td class="">Update requested</td>
+ 
+                        <td><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list-static-highlight">Update</a></td>
+                      </tr>
+                      <tr>
+                        <td class="rjTabWidth">Cyberdyne Systems Inc</td>
+                        <td class="">NMJ7865</td>
+                        <td class="">Approval required</td>
+
+                            <td><span class="looks-like-a-link-underline">Review and approve</span></td>
+                      </tr>
+                      <tr>
+                        <td class="rjTabWidth">Tyrell Corp</td>
+                        <td class="">NUY8976</td>
+                        <td class="">Employer inputing</td>
+
+                        <td><span class="looks-like-a-link-underline">View</span></td>
+                      </tr>                
+                    </tbody>
+                </table-->
+    </div>
+</div>
+
+
+
+
+
+</main>
+
+
+
+ <!--button class="button">Do the thing</button-->
+
+
+{% endblock %}
+

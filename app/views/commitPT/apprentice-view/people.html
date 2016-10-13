@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+       <li id="removeWithNav">Apprentices</li>
+    </ol>
+
+  </div>
+  <h1 class="heading-xlarge rj-headings-border " >{% include "includes/account-name-number.html" %}Apprentices</h1>
+
+ <div class="grid-row">
+           <div class="column-two-thirds">
+
+          <div class="grid-row">
+            <div class="column-half ">
+              <h3 class="heading-medium" style="margin-top:0"><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract">Add a new apprentice</a></h3>
+              <p class="rj-home-spacer">Make sure your providers get paid by adding your new apprentices to the DAS.</p>
+            </div>
+            <div class="column-half">
+              <!--h3 class="heading-medium rj-top-border-mobile" style="margin-top:0 "><a href="/{% include "includes/sprint-link.html" %}/expire">View funds you could lose</a></h3>
+               <p class="rj-home-spacer">Your funds will expire after 18 months if you don't spend it on apprenticeships</p-->
+            </div>
+          </div> 
+          <div class="grid-row">
+            <div class="column-half ">
+              <h3 class="heading-medium rj-top-border" style="margin-top:0; padding-top:35px"><a href="/{% include "includes/sprint-link.html" %}/contracts/in-progress">Review and approve cohorts</a></h3>
+              <p class="rj-home-spacer">Review and approve apprentices you and your training provider are adding to the DAS.</p>
+            </div>
+            <div class="column-half ">
+              <h3 class="heading-medium rj-top-border" style="margin-top:0; padding-top:35px"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/">View apprentices on programme</a></h3>
+              <p class="rj-home-spacer">View, pause and stop apprentices that you are currently paying for.</p>
+            </div>
+        </div>  
+       </div>
+    </div>
+  </main>
+
+
+{% endblock %}
+
