@@ -5,7 +5,7 @@
     <script>
         var commitmentListSource = 'provider';
     </script>
-    <script src="/public/javascripts/das/list-commitment-1.2.js"></script>
+    <script src="/public/javascripts/das/list-commitment-1.3.js"></script>
 {% endblock %}
 
 {% block page_title %}
@@ -26,11 +26,18 @@ $(document).ready(function() {
   var changeStuff = function() {
   if (employerOrNot=='yes') {
     document.getElementById("commitmentsName").textContent = "Hackney Skills & Training Ltd";
-    $(notesStuff).addClass("rj-dont-display")
+    $(notesStuff).addClass("rj-dont-display");
+    $(addReference).addClass("rj-dont-display");
+    $(commitmentStatus).addClass("rj-dont-display");
+     $(addDate).addClass("rj-dont-display")
+    }
+else {  
+    $(notesStuff).removeClass("rj-dont-display");
+    $(addReference).removeClass("rj-dont-display");
+    $(commitmentStatus).removeClass("rj-dont-display");
+    $(addDate).removeClass("rj-dont-display")
+        };
   }
-else {  $(notesStuff).removeClass("rj-dont-display")};
-}
-
 changeStuff();
 });
 
@@ -73,9 +80,9 @@ changeStuff();
             </div-->
                         <div class="" style="padding-bottom:35px">
                                      <h2 class="heading-medium" id="commitmentsName" style="margin: 0 0 5px 0">Acme Coventry Ltd</h2>
-                                  <div><h2 class="heading-small" id="addReference" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">98HGS3F</p></div>
-                                  <div><h2 class="heading-small" id="commitmentStatus" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p id="addStatus" style="display:inline; margin:0;">Needs provider input</p></div>
-                                 <div><h2 id="addDate" class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">14 August 2018</p></div>
+                                  <div id="addReference"><h2 class="heading-small"  style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">98HGS3F</p></div>
+                                  <div id="commitmentStatus"><h2 class="heading-small"  style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p  style="display:inline; margin:0;">Needs provider input</p></div>
+                                 <div id="addDate"><h2  class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">14 August 2018</p></div>
                       </div>
             </div>
 
@@ -119,7 +126,7 @@ changeStuff();
             </form>
              <form class="" style="display:inline-block" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">
                 <input type="hidden" name="source" value="provider" />
-                <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px" class="button-clear button " type="submit"  id="bulk-upload"  value="Bulk upload apprentices"></div>
+                <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px" class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Bulk upload apprentices"></div>
             </form>
              <!--p style="display:inline; margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">Import apprenticeships</a></p-->
              <form class="" style="display:inline-block; float:right;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
@@ -145,7 +152,7 @@ changeStuff();
             </form>
              <form class="" style="display:inline-block" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">
                 <input type="hidden" name="source" value="provider" />
-                <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px" class="button-clear button " type="submit"  id="bulk-upload"  value="Bulk upload apprentices"></div>
+                <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px" class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Bulk upload apprentices"></div>
             </form>
              <!--p style="display:inline; margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">Import apprenticeships</a></p-->
              <form class="" style="display:inline-block; float:right;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
@@ -176,6 +183,17 @@ changeStuff();
                 </table>
                      <!--hr style="margin:35px 0 35px 0;"/-->
             </div>
+
+            <div id="addApprenticesEmptyState" class="emptyState">
+                <div class="emptyStateAlert">
+                  <div class="emptyStateCopy">
+                    <p>Things go here to help people know what to do</p>
+
+                  </div>
+                </div>
+            </div>
+
+
             <div id="bottomToolBarLotsofApprentices">
               <div style="margin-top:50px"></div>
         <hr style="margin:0 0 18px 0" />
