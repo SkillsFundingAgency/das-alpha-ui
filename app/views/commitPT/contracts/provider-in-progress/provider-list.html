@@ -25,7 +25,8 @@ var employerOrNot = JSON.parse(localStorage.getItem('commitments.isEmployer'));
 $(document).ready(function() {
   var changeStuff = function() {
   if (employerOrNot=='yes') {
-    document.getElementById("commitmentsName").textContent = "Hackney Skills & Training Ltd";
+    document.getElementById("commitmentsName").textContent = " Hackney Skills & Training Ltd";
+    document.getElementById("providerName").textContent = "Provider:" ;
     $(notesStuff).addClass("rj-dont-display");
     $(addReference).addClass("rj-dont-display");
     $(commitmentStatus).addClass("rj-dont-display");
@@ -79,7 +80,9 @@ changeStuff();
                 </p>
             </div-->
                         <div class="" style="padding-bottom:35px">
-                                     <h2 class="heading-medium" id="commitmentsName" style="margin: 0 0 5px 0">Acme Coventry Ltd</h2>
+                                     <!--h2 class="heading-medium" id="commitmentsName" style="margin: 0 0 5px 0">Acme Coventry Ltd</h2-->
+                                     <div id=""><h2 id="providerName" class="heading-small"  style="display:inline-block; margin:0;">Employer:&nbsp</h2 ><p id="commitmentsName" style="display:inline; margin:0;">Acme Coventry Ltd</p></div>
+                                     <div id=""><h2 class="heading-small"  style="display:inline-block; margin:0;">Cohort name:&nbsp</h2 ><p style="display:inline; margin:0;">Mechatronics August 2018</p></div>
                                   <div id="addReference"><h2 class="heading-small"  style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">98HGS3F</p></div>
                                   <div id="commitmentStatus"><h2 class="heading-small"  style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p  style="display:inline; margin:0;">Needs provider input</p></div>
                                  <div id="addDate"><h2  class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">14 August 2018</p></div>
@@ -92,9 +95,7 @@ changeStuff();
 
           </div>
                       <!--aside class="related">
-
                         <nav role="navigation">
-
                       <h2 class="heading-medium" style="margin-top:35px">Finished editing</h2>
                         <p >When you've finished, tell us and you can send to employer for additional details or approval  </p>
                                 <form class="" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
