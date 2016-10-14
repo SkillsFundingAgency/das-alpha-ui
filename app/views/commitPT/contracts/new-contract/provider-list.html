@@ -28,12 +28,17 @@ var whereNow = function() {
 var isEmployerorProvider = function() {
 // Rob add in here to skip the adding note if this is the employer journey
 
+// this is in here for the PT version as there is no explicit choice of being provider or employer anymore
+ var isAddedApp = 'yes';
+         localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
+
+//original script
 var goToEmployer = JSON.parse(localStorage.getItem('commitments.isEmployer'));
 
     if (goToEmployer == "yes") {
-         window.location.href='../provider-in-progress/provider-list';
+         window.location.href='friendly-name';
   } else {
-    window.location.href='provider-contact';
+    window.location.href='friendly-name';
   }
 
 
@@ -75,7 +80,7 @@ var goToEmployer = JSON.parse(localStorage.getItem('commitments.isEmployer'));
 
 
               <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
-              <form action="provider-contact">
+              <form action="friendly-name">
                   <legend class="visuallyhidden">Training provider</legend>
                     <div class="form-group">
                       <label class="form-label-bold" for="">Will this training provider be training the apprentices you’re about to add?</label>

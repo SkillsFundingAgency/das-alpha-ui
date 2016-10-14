@@ -26,8 +26,9 @@ $(document).ready(function() {
   var changeStuff = function() {
   if (employerOrNot=='yes') {
     document.getElementById("commitmentsName").textContent = "Hackney Skills & Training Ltd";
+    $(notesStuff).addClass("rj-dont-display")
   }
-else { };
+else {  $(notesStuff).removeClass("rj-dont-display")};
 }
 
 changeStuff();
@@ -72,13 +73,13 @@ changeStuff();
             </div-->
                         <div class="" style="padding-bottom:35px">
                                      <h2 class="heading-medium" id="commitmentsName" style="margin: 0 0 5px 0">Acme Coventry Ltd</h2>
-                                  <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">98HGS3F</p></div>
-                                  <div><h2 class="heading-small" id="commitmentStatus" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">Needs provider input</p></div>
-                                 <div><h2 class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">14 August 2018</p></div>
+                                  <div><h2 class="heading-small" id="addReference" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">98HGS3F</p></div>
+                                  <div><h2 class="heading-small" id="commitmentStatus" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p id="addStatus" style="display:inline; margin:0;">Needs provider input</p></div>
+                                 <div><h2 id="addDate" class="heading-small" style="display:inline-block; margin:0;">Date started:&nbsp</h2 ><p style="display:inline; margin:0;">14 August 2018</p></div>
                       </div>
             </div>
 
-        <div class="column-half">
+        <div class="column-half" id="notesStuff">
           <div class="" style="padding-bottom:35px">
             <div><h2 class="heading-small" style="display:inline-block; margin:0;">Note:&nbsp</h2 ><p style=" margin:0;">No note added</p></div>
 

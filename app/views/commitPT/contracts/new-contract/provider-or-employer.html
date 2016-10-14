@@ -13,11 +13,11 @@ var whereNow = function() {
     if (status == "employer") {
          var isAddedApp = 'yes';
          localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
-         window.location.href='find-provider';
+         window.location.href='../provider-in-progress/provider-list';
   } else {
       var isAddedApp = 'no';
       localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
-    window.location.href='find-provider';
+    window.location.href='provider-contact';
   }
 };
  </script>
