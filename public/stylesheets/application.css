@@ -2159,6 +2159,16 @@ input[type=number] {
   padding-top: 40px;
 }
 
+.errorRow {
+  border: 5px solid #b10e1e !important;
+}
+
+.errorCopyTable {
+  font-size: 19px;
+  font-weight: 700;
+  color: #b10e1e;
+}
+
 .fa-check {
   color: #00823b;
 }

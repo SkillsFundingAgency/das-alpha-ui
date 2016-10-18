@@ -158,6 +158,21 @@ margin-top: 35px;
   padding-top:40px;
 }
 
+.errorRow {
+  border: 5px solid $error-colour !important;
+}
+
+.errorCell {
+ // border: 5px solid $error-colour !important;
+}
+
+.errorCopyTable {
+ 
+  font-size: 19px;
+  font-weight:700;
+  color:$error-colour;
+}
+
 .fa-check {
   color:#00823b;
 }

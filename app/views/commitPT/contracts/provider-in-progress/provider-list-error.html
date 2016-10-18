@@ -46,6 +46,21 @@
 
 <!--h1 class="heading-large">Levy account</h1-->
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+   <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+        <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+          There was a problem with your submission
+        </h1>
+            <p>
+              To submit your cohort for approval you need to fix the following issues.
+            </p>
+            <ul class="error-summary-list">
+              <li><a href="#example-personal-details">Missing training dates</a></li>
+              <li><a href="#example-personal-details">Missing apprentice surname</a></li>
+              <li><a href="#example-personal-details">Missing ULN</a></li>
+              <li><a href="#example-personal-details">Invalid characters in the ULN</a></li>
+            </ul>
+    </div>
+
 <h1 class="heading-xlarge">Apprentice cohort</h1>
   <div class="grid-row">
            <div class="column-half">
@@ -133,10 +148,10 @@
 
               <hr style="margin:20px 0 15px 0" />
 
-               <div class="fullWidthGreyAlert">
+               <!--div class="fullWidthGreyAlert">
                 <h2 class="heading-medium" style="padding-top:20px; margin-bottom:10px" >6 Mechatronics Engineers changed</h2>
                   <p style="margin:0">Changes your provider has made have been listed next to the record.</p>
-               </div>
+               </div-->
 
                 <h2 class ="heading-medium"  style="margin-bottom:5px"  id="apprenticeReplaceMe">10 Mechatronics Engineers</h2>
                 <p style="margin:0px">Level: 4</p>
@@ -152,50 +167,36 @@
                         <th scope="col" class="">Training dates</th>
                         <!--th scope="col" class="">End<br />date</th-->
                          <th scope="col" class="">Cost</th>
-                         <th scope="col" class="">Changes</th>
+                         <!--th scope="col" class="">Changes</th-->
 
                         <th scope="col" class=""></th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>Rob Edwards</td>
+                      <tr class="errorRow">
+                        <td class="error">Rob Edwards</td>
 
                         <td class="">8321052156</td>
-                        <td class=" ">11/18 to 11/20 </td>
+                        <td class=" ">--/-- to 11/20<br/><span class="errorCopyTable">Start date cannot be empty</span> </td>
 
                         <td class="">£2,000</td>
-                        <td class="">
-                        Start date from <span class="changeHighlightCopy">11/19</span> 
-                         <br />End date from <span class="changeHighlightCopy">11/21</span> 
-                        <br />Cost from <span class="changeHighlightCopy">£5,000.93</span> 
-                      </td>
-                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">Edit</a></td>
                       </tr>
                       <tr>
                         <td>Taylor Lucas</td>
                         <td class="">1221052101</td>
                         <td class=" ">11/18 to 11/20 </td>
                         <td class="">£2,000</td>
-
-                         <td class="">
-                         </td>
-
-                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">Edit</a></td>
                       </tr>
-                      <tr>
-                        <td>Prahlad Naik</td>
+                      <tr class="errorRow" >
+                        <td class="error">Prahlad Naik</td>
                         <td class="">6621052119</td>
                         <td class=" ">11/18 to 11/20 </td>
                         <td class="">£2,000</td>
 
-                         <td class="">
-                          Given name from <span class="changeHighlightCopy">Pralad Nak</span> 
-                       
-
-                         </td>
-
-                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">Edit</a></td>
                       </tr>
                                             <tr>
                         <td>Jeff Bloggs</td>
@@ -203,10 +204,8 @@
                         <td class=" ">11/18 to 11/20 </td>
                         <td class="">£2,000</td>
 
-                         <td class="" >
-                         </td>
 
-                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">Edit</a></td>
                       </tr>
                                             <tr>
                         <td  style="max-width:100px; word-wrap:break-word;">Mahershalalhashbaz Tollemache-Tollemache de Orellana Plantagenet</td>
@@ -215,25 +214,15 @@
                         <td class=" ">11/18 to 11/20 </td>
                         <td class="">£2,000</td>
 
-                         <td class="">
-                         Name from <span class="changeHighlightCopy">Rob andrew</span> 
-                       </span> 
 
-                         </td>
-
-                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship-static">Edit</a></td>
                       </tr>
-                                            <tr>
-                        <td>Melissa Shaw</td>
+                      <tr class="errorRow">
+                        <td class="error">Melissa Shaw</td>
                         <td class="">8921052156</td>
                         <td class=" ">11/18 to 11/20 </td>
                         <td class="">£2,000</td>
-
-                         <td class="">
- 
-                         </td>
-
-                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship-static">Edit</a></td>
                       </tr>
                                             <tr>
                         <td>Brendan Hamazaki</td>
@@ -241,12 +230,7 @@
                         <td class="">2421052176</td>
                         <td class=" ">11/18 to 11/20 </td>
                         <td class="">£2,000</td>
-
-                         <td class="">
-                            Cost from <span class="changeHighlightCopy">£5,000.93</span> 
-                         </td>
-
-                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship-static">Edit</a></td>
                       </tr>
                                             <tr>
                         <td>Gary Barton</td>
@@ -254,35 +238,25 @@
                         <td class=" ">11/18 to 11/20 </td>
                         <td class="">£2,000</td>
 
-                         <td class="">
-
-                         </td>
-
-                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship-static">Edit</a></td>
                       </tr>
                                             <tr>
                         <td>Tommy Barger</td>
                         <td class="">4121052139</td>
                         <td class=" ">11/18 to 11/20 </td>
                         <td class="">£2,000</td>
-                         <td class="">
 
-                        End date from <span class="changeHighlightCopy">11/21</span> 
-                        <br />Cost from <span class="changeHighlightCopy">£5,000.93</span> 
-                         </td>
 
-                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship-static">Edit</a></td>
                       </tr>
                                             <tr>
                         <td>William Dewitt</td>
                         <td class="">8221052149</td>
                         <td class=" ">11/18 to 11/20 </td>
                         <td class="">£2,000</td>
-                         <td class="">
-                         Name from <span class="changeHighlightCopy">Pralad Defoe</span> 
-                         </td>
 
-                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship-static">Edit</a></td>
                       </tr>
 
                     </tbody>
@@ -301,54 +275,49 @@
                         <th scope="col" class="">Name</th>
 
                         <th scope="col" class="">ULN</th>
-                        <th scope="col" class="">Traning dates</th>
+                        <th scope="col" class="">Training dates</th>
 
                          <th scope="col" class="">Cost</th>
-                            <th scope="col" class="">Changes</th>
+
                         <th scope="col" class=""></th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>Mayu Hirano</td>
+                      <tr class="errorRow">
+                        <td class="error">Mayu Hirano</td>
                         <td class="">6421052104</td>
                         <td class=" ">10/18 to 09/19</td>
 
                         <td class="">£1,492</td>
-                        <td></td>
-                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship-static">Edit</a></td>
                       </tr>
                       <tr>
                         <td>Rajeshwari Pillai</td>
                         <td class="">0921052112</td>
                         <td class=" ">10/18 to 09/19</td>
                         <td class="">£1,492</td>
-                        <td></td>
-                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship-static">Edit</a></td>
                       </tr>
                        <tr>
                         <td>Hoai Mi Le</td>
                         <td class="">7821052148</td>
                         <td class=" ">10/18 to 09/19</td>
                         <td class="">£1,492</td>
-                        <td></td>
-                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship-static">Edit</a></td>
                       </tr>
                       <tr>
                         <td>Raven Welsh</td>
                         <td class="">6121052198</td>
                         <td class=" ">10/18 to 09/19</td>
                         <td class="">£1,492</td>
-                        <td></td>
-                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship-static">Edit</a></td>
                       </tr>
                       <tr>
                         <td>Nana Friedman</td>
                         <td class="">49210521521</td>
                         <td class=" ">10/18 to 09/19</td>
                         <td class="">£1,492</td>
-                        <td></td>
-                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship-static">Edit</a></td>
                       </tr>
                     </tbody>
                 </table>
