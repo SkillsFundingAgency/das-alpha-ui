@@ -163,14 +163,30 @@ margin-top: 35px;
 }
 
 .errorCell {
- // border: 5px solid $error-colour !important;
+ border: 0;
 }
 
 .errorCopyTable {
- 
-  font-size: 19px;
+
+  font-size: 16px;
   font-weight:700;
   color:$error-colour;
+}
+
+.indentedTablePadding tr td {
+ padding-left: 2px;
+}
+
+.errorBox {
+ padding-top:18px;
+   border-bottom: 5px solid $error-colour !important;
+
+   background-color: $highlight-colour;
+
+}
+
+.fatBR {
+  line-height:25px
 }
 
 .fa-check {

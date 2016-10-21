@@ -2163,10 +2163,28 @@ input[type=number] {
   border: 5px solid #b10e1e !important;
 }
 
+.errorCell {
+  border: 0;
+}
+
 .errorCopyTable {
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 700;
   color: #b10e1e;
+}
+
+.indentedTablePadding tr td {
+  padding-left: 2px;
+}
+
+.errorBox {
+  padding-top: 18px;
+  border-bottom: 5px solid #b10e1e !important;
+  background-color: #f8f8f8;
+}
+
+.fatBR {
+  line-height: 25px;
 }
 
 .fa-check {

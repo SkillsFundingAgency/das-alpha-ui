@@ -74,15 +74,13 @@
             </div-->
 
 
-              
-
                         <div class="" style="padding-bottom:35px">
-                                   <div id=""><h2 id="providerName" class="heading-small"  style="display:inline-block; margin:0;">Employer:&nbsp</h2 ><p id="commitmentsName" style="display:inline; margin:0;">Acme Coventry Ltd</p></div>
-                                    <div id=""><h2 class="heading-small"  style="display:inline-block; margin:0;">Cohort name:&nbsp</h2 ><p style="display:inline; margin:0;">Mechatronics August 2018</p></div>
+                                   <div id=""><h2 id="providerName" class="heading-small"  style="display:inline-block; margin:0;">Employer&nbsp</h2 ><p id="commitmentsName" style="display:inline; margin:0;">Acme Coventry Ltd</p></div>
+                                    <!--div id=""><h2 class="heading-small"  style="display:inline-block; margin:0;">Cohort name:&nbsp</h2 ><p style="display:inline; margin:0;">Mechatronics August 2018</p></div-->
                                   <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">98HGS3F</p></div>
                                   <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">Needs your approval</p></div>
 
-                                  
+
                       </div>
             </div>
 
@@ -142,7 +140,7 @@
             </form>
              <!--p style="display:inline; margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">Import apprenticeships</a></p-->
              <form class="" style="display:inline-block; float:right;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
-                    <div style="display:inline-block;"><input class="button" style="display:inline; margin:0 0 0 10px" type="submit"  id="send-to-employer"  value="Finshed editing"></div>
+                    <div style="display:inline-block;"><input class="button" style="display:inline; margin:0 0 0 10px" type="submit"  id="send-to-employer"  value="Finished editing"></div>
               </form-->
         </div>
 
@@ -172,12 +170,12 @@
                         <th scope="col" class=""></th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr class="errorRow">
-                        <td class="error">Rob Edwards</td>
+                    <tbody class="indentedTablePadding">
+                      <tr class="errorMargin">
+                        <td class="">Rob Edwards</td>
 
                         <td class="">8321052156</td>
-                        <td class=" ">--/-- to 11/20<br/><span class="errorCopyTable">Start date cannot be empty</span> </td>
+                        <td class=" errorBox"><span class="errorCopyTable">Start date cannot be empty</span><br / class="fatBR">--/-- to 11/20 </td>
 
                         <td class="">£2,000</td>
 
@@ -187,13 +185,13 @@
                         <td>Taylor Lucas</td>
                         <td class="">1221052101</td>
                         <td class=" ">11/18 to 11/20 </td>
-                        <td class="">£2,000</td>
+                        <td class="errorBox"><span class="errorCopyTable">Enter a cost</span><br / class="fatBR">£  </td>
                         <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">Edit</a></td>
                       </tr>
-                      <tr class="errorRow" >
-                        <td class="error">Prahlad Naik</td>
+                      <tr class="" >
+                 <td class=" errorBox"><span class="errorCopyTable">Surname is missing</span><br / class="fatBR">Prahlad </td>
                         <td class="">6621052119</td>
-                        <td class=" ">11/18 to 11/20 </td>
+                        <td class=" ">--/-- to 11/20 <br /></td>
                         <td class="">£2,000</td>
 
                         <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">Edit</a></td>
@@ -217,9 +215,9 @@
 
                         <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship-static">Edit</a></td>
                       </tr>
-                      <tr class="errorRow">
-                        <td class="error">Melissa Shaw</td>
-                        <td class="">8921052156</td>
+                      <tr class="">
+                        <td class="">Melissa Shaw</td>
+                        <td class=" errorBox"><span class="errorCopyTable">ULN is missing</span><br / class="fatBR">-------------------- </td>
                         <td class=" ">11/18 to 11/20 </td>
                         <td class="">£2,000</td>
                         <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship-static">Edit</a></td>
@@ -283,9 +281,9 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr class="errorRow">
-                        <td class="error">Mayu Hirano</td>
-                        <td class="">6421052104</td>
+                      <tr class="">
+                        <td class="">Mayu Hirano</td>
+                        <td class=" errorBox"><span class="errorCopyTable">ULN has invalid characters</span><br / class="fatBR">DROP TABLE users;</td>
                         <td class=" ">10/18 to 09/19</td>
 
                         <td class="">£1,492</td>
