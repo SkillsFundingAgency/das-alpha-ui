@@ -68,8 +68,8 @@ var goToEmployer = JSON.parse(localStorage.getItem('commitments.isEmployer'));
 
 <div class="grid-row">
                     <div class="column-two-thirds">
-  <h1 class="heading-xlarge" >Your training provider</h1>
-  <p class="">Your search for <span style="font-weight:700">'9021055566'</span> has found the following:</p>
+  <h1 class="heading-xlarge" >Confirm training provider</h1>
+  <p class="">UK Provider Reference Number <span style="font-weight:700">'9021055566'</span> matches:</p>
 
 
 
@@ -83,20 +83,20 @@ var goToEmployer = JSON.parse(localStorage.getItem('commitments.isEmployer'));
               <form action="friendly-name">
                   <legend class="visuallyhidden">Training provider</legend>
                     <div class="form-group">
-                      <label class="form-label-bold" for="">Will this training provider be training the apprentices you’re about to add?</label>
+                      <label class="form-label-bold" for="">Will this training provider be training your apprentices?</label>
                     <label class="block-label" for="provider-1">
                       <input id="provider-1" type="radio" name="radio-group" value="provider-1">
                      Yes, use Hackney Skills & Training Ltd
                      </label>
                     <label class="block-label" for="provider-2">
                       <input id="provider-2" type="radio" name="radio-group" value="provider-2">
-                    No, search again
+                    No, change UK Provider Reference Number
                      </label>
                   </div>
                 </fieldset>
                                   <div style="margin-top:50px"></div>
           <!--input class="button" id="saveAndContinue" onclick="whereNow()" value="Save and continue"-->
-          <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Save and continue">
+          <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Continue">
               </form>
 
 
