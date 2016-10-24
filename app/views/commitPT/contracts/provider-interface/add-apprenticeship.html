@@ -51,7 +51,12 @@ EventUtil.addHandler(btn, 'click', function(){
   <div class="grid-row">
            <div class="column-two-thirds">
             <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Add an apprentice</h1>
-                <p class="lede">Fill in as many fields as you can. You can come back to this page and add more information later, if you need to.</p>
+               
+               <div class="panel panel-border-wide">
+                 <p>
+                   You can return to this apprentice later to edit or add more information, if you need to.
+                 </p>
+               </div>
           <hr style=""/>
   
 
@@ -59,13 +64,13 @@ EventUtil.addHandler(btn, 'click', function(){
           <legend class="visuallyhidden">Apprentice name</legend>
                 <div class="form-group" style="margin-bottom:15px">
                     <label class="form-label-bold" for="apprenticeGivenName">First name
-                     <span class="form-hint">The name that will be on the apprentice’s exam certificate.</span>
+                     <span class="form-hint">The apprentice's legal name.</span>
                     </label>
                   <input class="form-control" id="apprenticeGivenName" type="text">
                 </div>
                 <div class="form-group" style="margin-bottom:15px">
                     <label class="form-label-bold" for="apprenticeFamilyName">Last name
-                     <span class="form-hint">The name that will be on the apprentice’s exam certificate.</span>
+                     <span class="form-hint">The apprentice's legal name.</span>
                     </label>
                   <input class="form-control" id="apprenticeFamilyName" type="text">
                 </div>
@@ -167,8 +172,8 @@ EventUtil.addHandler(btn, 'click', function(){
            <hr style="margin-top:0px"/>
             <legend class="visuallyhidden">Add a note</legend>
             <div class="form-group">
-            <label class="form-label-bold" for="apprenticeCost">Add a note (optional)
-          <span class="form-hint">Add a note, such as employee number or location, to help identify this apprentice if you have more than one with the same name. This will be seen by both employers and training providers.</span>
+            <label class="form-label-bold" for="apprenticeCost">Add a reference
+          <span class="form-hint">Add a reference, such as employee number or location, to help identify this apprentice if you have more than one with the same name. This will be seen by both employers and training providers.</span>
            </label>
               <input class="form-control rj-currency-input" id="employerRef" type="text" value="" style="width:100%">
       </div>
@@ -178,8 +183,8 @@ EventUtil.addHandler(btn, 'click', function(){
             <div class="column-one-third">
         </div>
     <div class="column-two-thirds">
-          <div style="margin-top:20px;"><input class="button" type="button" id="saveAndReturn" value="Add apprentice"></div>
-          <p class="looks-like-a-link-underline" style="margin-top:20px">Add, and copy to add another</p>
+          <div style="margin-top:20px;"><input class="button" type="button" id="saveAndReturn" value="Save"></div>
+          <p class="looks-like-a-link-underline" style="margin-top:20px">Save, and make a copy</p>
     </div>
       <div class="column-one-third">
          <!--div style="margin-top:20px;"><input class="button delete-button" id="deleteApprenticeship" value="Delete apprentice"></div-->
