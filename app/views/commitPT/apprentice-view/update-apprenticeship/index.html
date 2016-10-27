@@ -25,7 +25,7 @@
       <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></li>
       <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view">Your apprentices</a></li>
       <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice">Rob Edwards</a></li>
-       <li>Update apprenticeship</li>
+       <li id="removeWithNav">Update apprenticeship</li>
     </ol>
 
   </div>
@@ -55,15 +55,10 @@
                       </label>
                       <label class="block-label" for="radio-3">
                         <input id="radio-3" type="radio" name="radio-group" value="manual-payment">
-                        Transfer the apprenticeship to another account
+                        Stop the apprenticeship 
                       </label>
                     </div>
-                    <div class="form-group">
-                        <label class="block-label" for="radio-5">
-                        <input id="radio-5" type="radio" name="radio-group" value="delete-apprenticeship">
-                        DELETE this apprenticeship
-                      </label>
-                    </div>
+
                     </fieldset>
                   <div style="margin-top:20px;"><input class="button" id="paymentPlan" type="submit" value="Save and continue"></div>
                   </form>
