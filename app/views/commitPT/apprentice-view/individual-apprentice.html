@@ -38,7 +38,7 @@
               <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Rob Edwards</h1>
             <div>
                 <p>
-                  To transfer, pause or stop this apprenticeship you can <a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship?">update the apprenticeship</a> 
+                  To transfer, pause or stop this apprenticeship you can <a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship?">edit this apprentice</a> 
                 </p>
 
 
@@ -56,21 +56,17 @@
                       <td class="">Rob Edwards</td>
                       <td class=""></td>
                     </tr>
-                     <tr>
+                     <!--tr>
                       <td class="rjTableName">Learner number</td>
                       <td class="">98HGS3FDS</td>
                       <td class=""></td>
-                    </tr>
+                    </tr-->
                      <tr>
                      <td class="rjTableName">Apprenticeship name</td>
-                      <td class="">Aeronautical engineering</td>
+                      <td class="">Level 2: Aeronautical engineering</td>
                       <td class=""></td>
                     </tr>
-                    <tr>
-                      <td class="rjTableName">Apprenticeship level</td>
-                      <td class="">Level 2 NVQ</td>
-                      <td class=""></td>
-                    </tr>
+
                     <tr>
                       <td class="rjTableName">Training provider</td>
                       <td class="">Hackney Skills Solutions Ltd</td>
@@ -153,16 +149,16 @@
                         <h2 class="heading-medium" style="margin-top:10px">Edit apprentice</h2>
                         <p>Edit, pause or stop this apprentice</p>
 
-                    <form action="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship">
+                    <form action="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/edit-existing-apprenticeship">
                         <div style="margin-top:20px;"><input class="button" id="updateDetails" type="submit" value="Edit apprentice"></div> 
                     </form>
 
-                        <!--h2 class="heading-medium" style="margin-top:10px">Provider management</h2>
+                        <h2 class="heading-medium" style="border-top: 1px #bfc1c3 solid;padding-top:35px">Audit log</h2>
                         <nav role="navigation">
-                      <ul class="robSideNav"-->
-                          <!--li>
-                            <a href="/{% include "includes/sprint-link.html" %}/payment/quote">Review provider "offers"</a>
-                          </li-->
+                      <ul class="robSideNav">
+                          <li>
+                            <p>There have been no changes</p>
+                          </li>
                           <!--li>
                             <a href="/{% include "includes/sprint-link.html" %}/payment/paymentplan">Add a new payment plan (OUT?)</a>
                           </li>
