@@ -205,24 +205,28 @@ EventUtil.addHandler(btn, 'click', function(){
               <input class="form-control rj-currency-input" id="apprenticeCost" type="text"  style="max-width:6em" value="2,957.56">
       </div>
       </fieldset>
+
       <fieldset>
            <hr style="margin-top:0px"/>
             <legend class="visuallyhidden">Add a note</legend>
             <div class="form-group">
             <label class="form-label-bold" for="apprenticeCost">Reference (optional)
-          <span class="form-hint">Add a reference, such as employee number or location, to help identify this apprentice if you have more than one with the same name. This will be seen by both employers and training providers.</span>
+          <span class="form-hint">Add a reference, such as employee number or location, to help identify this apprentice if you have more than one with the same name. This will only be seen by you.</span>
            </label>
               <input class="form-control rj-currency-input" id="employerRef" type="text" value="" style="width:100%">
       </div>
     </fieldset>
-    </form>
+
           </div>
             <div class="column-one-third">
         </div>
+   
     <div class="column-two-thirds">
-          <div style="margin-top:20px;"><input class="button" type="button" id="saveAndReturn" value="Update apprentice"></div>
+       <form action="../">
+            <div style="margin-top:20px;"><input class="button" id="updateDetails" type="submit" value="Update apprentice"></div> 
+      </form>
+  </div>
 
-    </div>
       <div class="column-one-third">
          <!--div style="margin-top:20px;"><input class="button delete-button" id="deleteApprenticeship" value="Delete apprentice"></div-->
       </div>
