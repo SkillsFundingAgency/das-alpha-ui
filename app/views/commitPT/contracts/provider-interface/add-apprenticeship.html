@@ -56,7 +56,7 @@ EventUtil.addHandler(btn, 'click', function(){
                  <p>
                    You can return to this apprentice later to make changes or add more information, if you need to.
                  </p>
-                   <p>All the fields must be complete for your training provider to get paid - this excludes the Reference field.</p>
+                   <p>All the fields must be complete and accurate for your training provider to get paid - this excludes the Reference field.</p>
                </div>
           <hr style=""/>
   
@@ -65,13 +65,11 @@ EventUtil.addHandler(btn, 'click', function(){
           <legend class="visuallyhidden">Apprentice name</legend>
                 <div class="form-group" style="margin-bottom:15px">
                     <label class="form-label-bold" for="apprenticeGivenName">First name
-                     <span class="form-hint">The apprentice's legal name.</span>
                     </label>
                   <input class="form-control" id="apprenticeGivenName" type="text">
                 </div>
                 <div class="form-group" style="margin-bottom:15px">
                     <label class="form-label-bold" for="apprenticeFamilyName">Last name
-                     <span class="form-hint">The apprentice's legal name.</span>
                     </label>
                   <input class="form-control" id="apprenticeFamilyName" type="text">
                 </div>
@@ -81,7 +79,7 @@ EventUtil.addHandler(btn, 'click', function(){
             <legend class="visuallyhidden">ULN</legend>
             <div class="form-group">
             <label class="form-label-bold" for="ULN">Unique learner number
-           <span class="form-hint">This field is usually completed by training providers.</span>
+           <span class="form-hint">This field is usually completed by training providers</span>
            </label>
               <input class="form-control " id="ULN" type="number" value="">
       </div>
@@ -94,7 +92,7 @@ EventUtil.addHandler(btn, 'click', function(){
                       <legend class="visuallyhidden">Enter the name of the framework or standard.</legend>
                         <div class="form-group" style="margin-bottom:15px">
                             <label class="form-label-bold" for="search">Apprenticeship training course
-                        <span class="form-hint">Search for the training by course name or code.</span>
+                        <span class="form-hint">Search for the training by course name or code</span>
                           </label>
                             <input class="form-control" id="search-for-training" type="text">
                         </div>
@@ -162,8 +160,7 @@ EventUtil.addHandler(btn, 'click', function(){
            <hr style="margin-top:0px"/>
             <legend class="visuallyhidden">Cost per apprenticeship</legend>
             <div class="form-group">
-            <label class="form-label-bold" for="apprenticeCost">Cost
-          <span class="form-hint">The total agreed cost of the training.</span>
+            <label class="form-label-bold" for="apprenticeCost">Total agreed training cost
            </label>
               <span class="rj-currency-symbol">£</span>
               <input class="form-control rj-currency-input" id="apprenticeCost" type="text" value="" style="max-width:6em">
@@ -174,7 +171,8 @@ EventUtil.addHandler(btn, 'click', function(){
             <legend class="visuallyhidden">Add a note</legend>
             <div class="form-group">
             <label class="form-label-bold" for="apprenticeCost">Reference (optional)
-          <span class="form-hint">Add a reference, such as employee number or location, to help identify this apprentice if you have more than one with the same name. This will be seen by both employers and training providers.</span>
+          <span class="form-hint">Add a reference, such as employee number or location - this can help identify this apprentice 
+              if you have more than one with the same name.</span>
            </label>
               <input class="form-control rj-currency-input" id="employerRef" type="text" value="" style="width:100%">
       </div>
