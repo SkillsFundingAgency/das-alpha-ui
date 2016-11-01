@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+//jQuery( document ).ready(function() {
+     //jQuery.validate(); 
+// });
+
+
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+
+  </div>
+      <div class="grid-row">
+           <div class="column-two-thirds">
+
+   <h1 class="heading-xlarge" ><!--span class="heading-secondary" style="padding-top:0px">Question 2 of 4</span-->Your email address</h1>
+     <p>We need your email address to start setting up the process, we'll send a verification to make sure you can access your account.</p>
+ </div></div>
+
+ 
+      <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
+          <form action="verify-your-email">
+            <fieldset>
+              <legend class="visuallyhidden">users details</legend>
+            <div class="form-group">
+                    <label class="form-label-bold" for="full-name">Email address</label>
+                    <span class="form-hint">Enter the email address you use at work</span>
+                    <input class="form-control " id="emailAddress" type="email" >
+              </div>
+            </fieldset>
+
+                  <input class="button" id="saveAndContinue" type="submit" value="Send verification email">
+          </form>
+
+
+</main>
+
+<script>
+
+//change page depending on which option you choose
+// var createButton = document.getElementById('saveAndContinue');
+ // EventUtil.addHandler(createButton, 'click', function(){
+
+ // var whichRadio = $('input:radio[name=radio-group]:checked').val();
+
+ // if (whichRadio == 'no-not-registered'){
+ //   window.location.href='new-password';
+ // } else {
+ //  window.location.href='enter-existing-password';
+ // }
+ //    });
+
+
+</script>
+
+{% endblock %}

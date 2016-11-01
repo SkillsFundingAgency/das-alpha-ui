@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+//jQuery( document ).ready(function() {
+     //jQuery.validate(); 
+// });
+
+
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/">Breadcrumb here ></a></li>
+    </ol>
+
+  </div>
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" style="margin:0px 0 50px 0">Employer account</h1>
+
+    <p>You can register for an account if you are an employer that wishes to:</p>
+    <ul class="list list-bullet">
+        <li>Save and review provider details</li>
+        <li>Enquire about courses that a provider offers</li>
+    </ul>
+    <p>If you are a <a href="#">levy paying employer</a> you will be able to:</p>
+    <ul class="list list-bullet">
+        <li>Review the amount you have to spend in your levy account</li>
+        <li>Spend your levy on new apprenticeships</li>
+    </ul>
+
+    <div class="padder-top-x">
+        <a href="/sprint3/lightLogin/detailsOne" class="button button-start">Start</a>
+    </div>
+
+            </div>
+
+             <div class="column-one-third">
+                      <aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Employer account</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="#">What is an employer account</a>
+                          </li>
+                          <li>
+                            <a href="#">Which employers pay levy</a>
+                          </li>
+                          <li>
+                            <a href="#">How to view your levy account</a>
+                          </li>
+                        </ul>
+                           </nav>
+                    </aside>
+            </div>
+
+
+
+
+
+</div>
+
+
+
+</main>
+
+
+{% endblock %}

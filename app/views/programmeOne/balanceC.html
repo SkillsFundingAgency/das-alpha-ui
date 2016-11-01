@@ -1,0 +1,490 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .home-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+             <h1 class="heading-xlarge" id="company-Name" >{% include "includes/account-name-number.html" %}</h1>
+            <script>document.getElementById('company-Name').innerText = JSON.parse(localStorage.getItem('company-name-header'));</script>
+            <h2 class="heading-medium">To do list:</h2>
+            <!--p class="">The following items need your attention:</p-->
+
+            <div class="rj-alert-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-medium" style="margin: 22px 0 5px 20px">Cash flow forecast  </h2>
+                  <p  style="width:100%; margin: 5px 0 5px 20px"><a href="/{% include "includes/sprint-link.html" %}/forecast/">Project your cashflow</a></p>
+                </div>
+            </div>
+
+            <!--div class="rj-alert-wrapper">
+                <!--div class="rj-number-alert">
+                  <h2 class="bold-xlarge">14</h2>
+                </div-->
+                <!--div class="rj-alert-copy">
+                  <h2 class="heading-medium" style="margin: 22px 0 5px 20px">Training provider</h2>
+                  <p class="looks-like-a-link-underline" style="width:100%; margin: 5px 0 5px 20px">Shortlist your training provider</p>
+                </div>
+            </div-->
+
+            <div class="rj-alert-wrapper">
+                <!--div class="rj-number-alert">
+                  <h2 class="bold-xlarge">14</h2>
+                </div-->
+                <div class="rj-alert-copy">
+                  <h2 class="heading-medium" style="margin: 22px 0 5px 20px">Applications received: 16</h2>
+                  <p class="looks-like-a-link-underline" style="width:100%; margin: 5px 0 5px 20px">Process your applications</p>
+                </div>
+            </div>
+
+            <div class="rj-alert-wrapper">
+                <!--div class="rj-number-alert single-number">
+                  <h2 class="bold-xlarge">2</h2>
+                </div-->
+                <div class="rj-alert-copy">
+              
+                  <h2 class="heading-medium" style="margin: 22px 0 5px 20px">Contracts awaiting review: 7 </h2>
+                  <p class="looks-like-a-link-underline" style="width:100%; margin: 5px 0 5px 20px">Review your contracts</p>
+        
+                </div>
+            </div>
+
+            <div class="rj-alert-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-medium" style="margin: 22px 0 5px 20px">Staff with access to account: 1 </h2>
+                  <p class="looks-like-a-link-underline" style="width:100%; margin: 5px 0 5px 20px">Grant access to others</p>
+                </div>
+            </div>
+
+            <!--div class="rj-alert-wrapper">
+                <div class="rj-number-alert">
+                  <h2 class="bold-xlarge">99</h2>
+                </div>
+                <div class="rj-alert-copy">
+              
+                  <h2 class="heading-medium" style="margin: 10px 0 5px 10px">A thing</h2>
+                  <p class="looks-like-a-link-underline" style="width:100%; margin: 5px 0 5px 10px">Go on, do the thing</p>
+        
+                </div>
+            </div-->
+
+
+
+
+            <!--p class="">Financial activity, including:</p>
+             <ul class="list list-bullet">
+                  <li>forecasting your cashflow</li>
+                  <li>committed spend</li>
+                  <li>funds you could lose</li>
+              </ul>
+
+            <p class="">Apprentices, including:</p>
+             <ul class="list list-bullet">
+                  <li>updating their information</li>
+                  <li>the provider delivering the training</li>
+                  <li>spend</li>
+              </ul>
+
+            <p class="">Training providers, including:</p>
+             <ul class="list list-bullet">
+                  <li>offers</li>
+                  <li>contracts</li>
+                  <li>finding a new training provider</li>
+              </ul-->
+
+            <!--div class="">
+                <p>Available funds have been forecast by a member of your organisation using the <a href="#">forecasting tool.</a> Please ensure that you keep the assumptions up to date.</p>
+                <h2 class="heading-small" >Forecast of available funds:</h2>
+                <h2 class="rjCashMoney" style="color:#08c">£5,000</span></h2>
+                <p style="margin-top:0">until 21 Jan 2019</p>
+            </div--> 
+            <div>
+            <!--div class="home-figures">
+                <h2 class="heading-small" >Your current balance is:</h2>
+                <h2 class="bold-xlarge" >£5,000</h2> <!--style="color:#08c" -->
+                <!--p style="font-size:16px" >on 27th August 2018</p>
+            </div-->
+              <!--div class="home-figures" style="">
+                <h2 class="heading-small">At risk of losing:</h2>
+                <h2 class="rjCashMoney">£15,000</h2>
+                <p style="margin-top:0">Before 31 Jan 2019</p>
+              </div> 
+
+            <div class="home-figures" style="">
+                <h2 class="heading-small">Total committed spending:</h2>
+                <h2 class="rjCashMoney">£65,000</h2>
+                <p style="margin-top:0">until 21 Jan 2021</p>
+            </div> 
+            <div class="home-figures" style="">
+                <h2 class="heading-small">Forecasted income:</h2>
+                <h2 class="rjCashMoney">£120,000</h2>
+                <p style="margin-top:0">Until 31 Jan 2019</p>
+            </div--> 
+          </div>
+
+            <!--h2 class="heading-large" style="">Available apprenticeship funds</h2>
+            <!--p>Forecast how much you have to spend with our <a href="#">budget calculator</a></p-->
+
+            <!--h2 class="heading-large" style="">Content</h2>
+            <p style=margin-top:35px>The figures and chart below show you how much you have left to spend on apprenticeships - taking into account spending, fund expiry and the payments from the SFA.</p>
+
+            <h2 class="heading-large" style="">Cashflow forecast</h2>
+            <p style=margin-top:35px>The figures and chart below show you how much you have left to spend on apprenticeships - taking into account spending, fund expiry and the payments from the Skills Funding Agency.</p>
+
+
+            <div class="graphGoesHere"><canvas id="robsChart" width="500" height="300"></canvas></div>
+
+            <div>
+             <table>
+                  <thead>
+                    <tr>
+                      <th scope="col">Date</th>
+                      <th class="numeric" scope="col">Available funds</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <tr>
+                      <td class="rjTableName">September 2018</td>
+                      <td class="numeric">£5,792</td>
+                    </tr>
+                    <tr>
+                      <td class="rjTableName">October 2018</td>
+                      <td class="numeric">£2,740</td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">November 2018</td>
+                      <td class="numeric negativeNumber">&#45;£6,028</td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">December 2018</td>
+                      <td class="numeric negativeNumber">&#45;£8,096</td>
+                    </tr>
+                   <tr>
+                     <td class="rjTableName">January 2019</td>
+                      <td class="numeric ">£52
+                    <tr>
+                     <td class="rjTableName">February 2019</td>
+                      <td class="numeric ">£6,789</td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">March 2019</td>
+                      <td class="numeric">£9,898</td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">April 2019</td>
+                      <td class="numeric negativNumber">£12,041</td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">May 2019</td>
+                      <td class="numeric ">£16,590</td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">June 2019</td>
+                      <td class="numeric ">£13,002</td>
+                    </tr>
+                     <tr>
+                     <td class="rjTableName">July 2019</td>
+                      <td class="numeric ">£11,324</td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">August 2019</td>
+                      <td class="numeric ">£8,000</td>
+                    </tr>
+                  </tbody>
+              </table>
+            </div>
+            <p style="margin-top:20px"><a href="balanceDefault" >Update your forecast</p></a-->
+
+                <!--p>
+                  The amount of money you currently have to spend on apprentices is made up of
+                </p>
+                <ul class="list list-bullet">
+                  <li> your current balance</li>
+                  <li> minus the amount you have planned to spend in the future</li>
+                  <li>funds that expire</li>
+                  <li>Future "levy" payments</li>
+                </ul-->
+
+            
+          </div>
+            <div class="column-one-third">
+
+          <!--div>
+           <h2 class="heading-medium">Funds you could lose</h2>
+           <p>You have expiring funds, see below</p>
+              <div class="home-figures">
+                <h3 class="heading-small">In less than 3 months</h3>
+                <p class="bold-large">£1,000</p>
+                <p style=" font-size:16px" class="">Since 1 April 2017</p> 
+              </div>
+              <div class="home-figures">
+                <h3 class="heading-small">3 to 6 months</h3>
+                <p class="bold-large">£2,050</p>
+              </div>
+              <div class="home-figures">
+                <h3 class="heading-small">6 to 12 months</h3>
+                <p class="bold-large">£3,447</p>
+              </div>
+          </div>
+           <a href="">View details of expiring funds</a>
+           <!--div>
+                      <table class=""> 
+                    <thead>
+                      <tr>
+                        <h2 class="heading-medium">Funds you could lose</h2>
+                        <th scope="col">Dates</th>
+                        <th scope="col" class="numeric">Amount you could lose</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="rjTableName">Expiring in < 3 months</td>
+                        <td class="numeric">£1,000</td>
+                      </tr>
+                      <tr>
+                        <td class="rjTableName">Expiring in 3 to 6 months</td>
+                        <td class="numeric">£2,050</td>
+                      </tr>
+                      <tr>
+                        <td class="rjTableName">Expiring in 6 to 12 months</td>
+                        <td class="numeric">£3,447</span></td>
+                      </tr>
+                </table>
+           </div-->
+
+        </div>
+
+
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+$(document).ready(function() {
+//chart data - static for now
+var chartData = {
+    labels: ["Sept 2018", "Oct 2018", "Nov 2018", "Dec 2018", "Jan 2019", "Feb 2019", "March 2019", "April 2019", "May 2019", "June 2019", "July 2019", "August 2019"],
+    datasets: [
+/*
+             {
+            label: "",
+            fillColor: "rgba(204,0,0,1)",
+            strokeColor: "rgba(204,0,0,0)",
+            pointColor: "rgba(204,0,0,0)",
+            pointStrokeColor: "rgba(204,0,0,0)",
+            pointHighlightFill: "rgba(204,0,0,0)",
+            pointHighlightStroke: "rgba(204,0,0,0)",
+            data: [0, 2740, -6028, -8096, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+        }, 
+*/
+       
+        {
+            label: "Available Funds",
+            fillColor: "rgba(132,191,202,0.4)",
+            strokeColor: "rgba(9,127,150,1)",
+            pointColor: "rgba(9,127,150,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [5792, 2740, -6028, -8096, 52, 6789, 9898, 12400, 16590, 13002, 11324, 8000, 0 ]
+        },
+
+
+    ]
+};
+
+// chart options - static for now
+var chartOptions = {
+
+  responsive: true,
+
+      ///Boolean - Whether grid lines are shown across the chart
+    scaleShowGridLines : false,
+
+    //String - Colour of the grid lines
+    scaleGridLineColor : "rgba(9,127,150,1)",
+
+    //Number - Width of the grid lines
+    scaleGridLineWidth : 1,
+
+    //Boolean - Whether to show horizontal lines (except X axis)
+    scaleShowHorizontalLines: true,
+
+    //Boolean - Whether to show vertical lines (except Y axis)
+    scaleShowVerticalLines: false,
+
+    //Boolean - Whether the line is curved between points
+    bezierCurve : true,
+
+    //Number - Tension of the bezier curve between points
+    bezierCurveTension : 0.1,
+
+    //Boolean - Whether to show a dot for each point
+    pointDot : true,
+
+    //Number - Radius of each point dot in pixels
+    pointDotRadius : 4,
+
+    //Number - Pixel width of point dot stroke
+    pointDotStrokeWidth : 1,
+
+    //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+    pointHitDetectionRadius : 20,
+
+    //Boolean - Whether to show a stroke for datasets
+    datasetStroke : true,
+
+    //Number - Pixel width of dataset stroke
+    datasetStrokeWidth : 4,
+
+    //Boolean - Whether to fill the dataset with a colour
+    datasetFill : false,
+
+    tooltipTemplate: "<%= datasetLabel %> - <%= value.toLocaleString() %>",
+
+    scaleLabel:
+    function(label){return  '£' + label.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");},
+
+
+
+};
+
+
+Chart.types.Line.extend({
+    name: "LineAlt",
+    draw: function () {
+        Chart.types.Line.prototype.draw.apply(this, arguments);
+
+        var ctx = this.chart.ctx;
+        var scale = this.scale;
+
+        ctx.save();
+
+         ctx.fillStyle = this.datasets[0].fillColor;
+        ctx.beginPath();
+        ctx.moveTo(scale.calculateX(0), scale.calculateY(0))
+        this.datasets[0].points.forEach(function (point) {
+            ctx.lineTo(point.x, point.y);
+        })
+        ctx.closePath();
+        ctx.fill();
+/*
+        ctx.fillStyle = this.datasets[1].fillColor;
+        ctx.beginPath();
+        ctx.moveTo(scale.calculateX(0), scale.calculateY(0))
+        this.datasets[1].points.forEach(function (point) {
+            ctx.lineTo(point.x, point.y);
+        })
+        ctx.closePath();
+        ctx.fill();
+*/
+
+  
+        ctx.restore();
+    }
+
+
+});
+
+
+
+
+var ctx = document.getElementById("robsChart").getContext("2d");
+var availableChart = new Chart(ctx).LineAlt(chartData, chartOptions);
+
+// changes color of certain points on the chart
+// availableChart.datasets[0].points[2].fillColor =  "red";
+// availableChart.datasets[0].points[3].fillColor =  "red";
+//availableChart.update();
+
+
+});
+
+
+//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+$( document ).ready(function() {
+
+  // change the tabs themselves to active - should be in the above but isn't working because it's looking for a not li so I added this as a quick fix.
+
+  $("ul#tabs-nav li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs-nav li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#tabs-nav li.active").removeClass("active");
+            $("ul#tabs-nav li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+  $('ul.tabs-nav').each(function(){
+    // For each set of tabs, we want to keep track of
+    // which tab is active and its associated content
+    var $active, $content, $links = $(this).find('a');
+
+
+
+    // If the location.hash matches one of the links, use that as the active tab.
+    // If no match is found, use the first link as the initial active tab.
+    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+   // $active.addClass('active');
+   console.log($active)
+
+    $content = $($active[0].hash);
+
+    // Hide the remaining content
+    $links.not($active).each(function () {
+      $(this.hash).hide();
+    }); 
+
+    // Bind the click event handler
+    $(this).on('click', 'a', function(e){
+      // Make the old tab inactive.
+    //  $active.removeClass('active');
+      $content.hide();
+
+      // Update the variables with the new link and content
+    //  $active = $(this);
+      $content = $(this.hash);
+
+      // Make the tab active.
+     // $active.addClass('active');
+      $content.show();
+
+      // Prevent the anchor's default click action
+      e.preventDefault();
+    });
+  });
+
+
+</script>
+
+{% endblock %}
+

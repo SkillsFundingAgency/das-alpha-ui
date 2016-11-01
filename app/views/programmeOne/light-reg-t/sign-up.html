@@ -1,0 +1,133 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+#navigation-primary {
+  display:none ;
+}
+</style>
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+//jQuery( document ).ready(function() {
+     //jQuery.validate(); 
+// });
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+ 
+  <div class="grid-row">
+    <div class="column-two-thirds">   
+      <form class="form" style="max-width:100%" >
+        <h2 class="heading-xlarge">
+          Create account
+        </h2>
+            
+        <!--<p>If you haven’t used this service before you must create an account.</p>-->
+
+        <!-- first name -->
+        <div class="form-group">
+          <label class="form-label-bold" for="first-name-2">
+            First name
+            <span class="form-hint">
+              Enter your first name or given name.
+            </span>
+          </label>
+          <input class="form-control" id="first-name-2" name="first-name-2" type="text">
+        </div>
+
+        <!-- last name -->
+        <div class="form-group">
+          <label class="form-label-bold" for="last-name-2">
+            Last name
+            <span class="form-hint">
+              Enter your last name or family name.
+            </span>
+          </label>
+          <input class="form-control" id="last-name-2" name="last-name-2" type="text">
+        </div>
+
+        <!-- email address -->
+        <div class="form-group">
+          <label class="form-label-bold" for="email">
+            Email address
+            <span class="form-hint">
+              Enter the email address that you want to have associated with
+              this account. If we need to send you an email message, it will be
+              sent to this address. This email address will also be used when
+              you sign in to the service.
+            </span>
+          </label>
+          <input type="text" class="form-control" id="email">
+        </div>
+      
+        <!-- password -->
+        <div class="form-group">
+          <label class="form-label-bold" for="password">
+            Create password
+            <span class="form-hint">
+              Enter a password for this account. You will need to use this
+              password when you sign in to the service. You must use at least 8
+              characters and include at least one uppercase letter (A-Z), one
+              lowercase letter (a-z), and one digit (0-9).
+            </span>
+          </label>
+          <input type="password" class="form-control" id="password">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label-bold" for="password-confirm">
+              Confirm password
+              <span class="form-hint">
+                Confirm your password by repeating exactly what you entered as
+                your password above.
+              </span>
+          </label>
+          <input type="password" class="form-control" id="password-confirm">    
+        </div>
+
+        <details role="group">
+          <summary role="button" aria-controls="details-content-0" aria-expanded="false">
+            <span class="summary">Help with choosing a strong password</span>
+          </summary>
+          <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">      
+            <p>
+              Choose a password with at least eight characters a combination of
+              upper and lower case letters, numbers and keyboard symbols such
+              as @ # $ % ^ &amp; * ( ) _ +. (for example SP1D3Rm@n – a
+              variation of spiderman, with letters, numbers, upper and lower
+              case).
+            </p>
+            <p>
+              Never give your passwords to anyone else. If you think that someone
+              else knows your password, change it immediately.
+            </p>
+          </div>
+        </details>
+ 
+        <h1 class="heading-medium">Terms and conditions</h1>
+           
+        <fieldset>
+          <div class="form-group">
+            <label class="block-label" for="marketing-opt-out">
+              <input id="marketing-opt-out" name="terms-and-conditions" type="checkbox" value="terms-and-conditions">
+                I accept the <a href="#">terms and conditions</a> 
+            </label>
+          </div>
+        </fieldset>
+      
+        <div class="form-group">
+          <a href="confirmation" class="button">Create account</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

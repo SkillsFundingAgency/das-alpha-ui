@@ -33,13 +33,13 @@
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
 <div class="grid-row">
   <div class="column-two-thirds">
-    <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Apprentices on programme</h1>
+    <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Apprentices changes that need your approval</h1>
     <!--p class="lede">All apprentices who are currently on your programme and need no action.</p-->
   </div>
 </div>
 
- <div class="grid-row">
-   <div class="column-one-third">
+ <div class="///grid-row////">
+   <!--div class="column-one-third">
     
     <div class="filter-form filtering ">
       <div id="finder-frontend" class="inner-block">
@@ -51,70 +51,6 @@
           </div>
 
 
-        <!--div class="govuk-option-select js-collapsible" >
-            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
-              <div class="option-select-label">Commitment status</div>
-              <div class="js-selected-counter"></div></button>
-                <div class="options-container" id="case_state">
-                  <div class="js-auto-height-inner">
-                      <label for="new">
-                        <input name="case_type[]" value="acme-cov" id="status-new" type="checkbox" aria-controls="js-search-results-info">
-                          New (1)
-                        </label>
-                        <label for="Awaiting - Provider input">
-                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
-                          Needs your input (1)
-                        </label>
-                        <label for="Awaiting - Employer input">
-                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
-                          In progress with employer (1)
-                        </label>
-                        <label for="Approved by employer">
-                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
-                          Approved by employer (1)
-                        </label>
-
-                  </div>
-
-               </div>
-          </div-->
-
-
-
-        <div class="govuk-option-select js-collapsible" >
-            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
-              <div class="option-select-label">Status</div>
-              <div class="js-selected-counter"></div></button>
-                <div class="options-container" id="case_state">
-                  <div class="js-auto-height-inner">
-                      <label for="Approval needed">
-                       <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
-                          Approval needed
-                        </label>
-                       <label for="epa-update">
-                       <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
-                          EPA update required
-                        </label>
-                        
-                        <label for="Paused">
-                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
-                          Paused
-                        </label>
-                         <label for="Stopped">
-                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
-                          Stopped
-                        </label>
-                        <label for="Finished">
-                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
-                         Finished
-                        </label>
-                         <label for="Live">
-                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
-                          Live
-                        </label>
-                  </div>
-               </div>
-          </div>
 
           <div class="govuk-option-select js-collapsible" >
             <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
@@ -156,25 +92,19 @@
                </div>
           </div>
 
- 
-
-
-
         </div>
       </div>
-    </div>
+    </div-->
 
-
-
-
-                <div class="column-two-thirds">
+                <div class="/////column-two-thirds/////">
                       <table class="">
                           <thead>
                             <tr>
                               <th scope="col" style="padding-top:0">Name</th>
                               <th scope="col" style="padding-top:0">Date of birth</th>
-                               <th scope="col" style="padding-top:0">Status</th>
+                               <th scope="col" style="padding-top:0">Changes</th>
                                <th scope="col" style="padding-top:0"></th>
+                                 <th scope="col" style="padding-top:0"></th>
                             </tr>
                           </thead>
                           <tbody>
@@ -182,13 +112,19 @@
                               <!--quick hack, will fix -->
                               <td class="rjTabWidth">Rob Edwards</td>
                               <td class="">03/06/97</td>
-                              <td class="">Live</td>
+                              <td class="">
+                              Start date from <span class="changeHighlightCopy">11/11/19</span> to <span class="changeHighlightCopy">10/10/19</span> 
+                              <br />End date from <span class="changeHighlightCopy">01/11/21</span> to  <span class="changeHighlightCopy">01/11/21</span> 
+                              <br />Cost from <span class="changeHighlightCopy">£5,000.93</span> to <span class="changeHighlightCopy">£20.00</span> 
+                      </td>
+                      <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice">Approve</a></td>
                               <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice">View</a></td>
                             </tr>
                              <tr>
                               <td class="rjTabWidth">Susan Hamazaki</td>
                               <td class="">12/10/95</td>
-                               <td class="">Paused</td>
+                             <td></td>
+                               <td><a href="/">Approve</a></td>
                                <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice-authorise-amends">View</a></td>
 
                               
@@ -198,13 +134,15 @@
                             <tr>
                               <td class="rjTabWidth">David Jenkins</td>
                               <td class="">05/09/99</td>
-                                <td class="">Approval needed</td>
+                                                       <td></td>
+                               <td><a href="/">Approve</a></td>
                                <td class="looks-like-a-link-underline">View</td>
                             </tr>
                             <tr>
                               <td class="rjTabWidth">Mel O'Connor</td>
                               <td class="">01/05/98</td>
-                                <td class="">Stopped</td>
+                                                      <td></td>
+                               <td><a href="/">Approve</a></td>
                               <td class="looks-like-a-link-underline">View</td>
                             </tr>
                           </tbody>
