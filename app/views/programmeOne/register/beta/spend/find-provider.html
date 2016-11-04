@@ -1,76 +1,74 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  GOV.UK prototype kit
+  Apprenticeships
 {% endblock %}
 
 {% block content %}
 
+
 <style>
-
-#navigation-primary {
-  display:none ;
-}
-
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
 </style>
-
-<script>
-// not needed at the moment, remember to remove script from the header if you don't use this in the end.
-
-//jQuery( document ).ready(function() {
-     //jQuery.validate(); 
-// });
-
-
-</script>
-
 
 <main id="content" role="main">
 {% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-provider.html" %}
 
-<div class="breadcrumbs">
+
+  <!--div class="breadcrumbs">
     <ol role="breadcrumbs">
-<!--the breadcrumb for the inform pages is in the following template -->
-       {% include "includes/breadcrumbs/start-bread.html" %}
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
     </ol>
-</div>
 
-  <div class="grid-row">
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<div class="grid-row">
+
            <div class="column-two-thirds">
-  <h1 class="heading-xlarge" >Find out how much funding you have to spend</h1>
+  <h1 class="heading-xlarge" >Add training provider details</h1>
+ 
+<form action="provider-list">
+  <fieldset>
+    <legend class="visuallyhidden">Find your provider</legend>
+      <div class="form-group">
+          <label class="form-label-bold" for="search">UK Provider Reference Number
+        </label>
+          <input class="form-control" id="find-a-provider" type="text">
+      </div>
+ 
+    </fieldset>
+    <input class="button" id="search-provider" type="submit" value="Continue">
+</form>
 
-    <p>Use this service to:
-	<ul class="list-bullet">
-		<li>Find out how much you have to spend</li>
-		<li>Spend it</li>
-	</ul></p>
-	
-	<h2 class="heading-medium">Before you start</h2>
-
-
-      <p>You need to know
-  <ul class="list-bullet">
-    <li>Your organisation’s PAYE schemes</li>
-      <li>The Government Gateway ID of each PAYE scheme </li>
-  </ul></p>
-
- <!-- <div class="panel panel-border-wide">
+    <div style="margin-top:50px"></div>
+    <!--details style="margin-bottom:25px">
+  <summary><span class="summary">What is a UKPRN?</span></summary>
+  <div class="panel panel-border-narrow" >
     <p>
-      After you have registered, you will be able to grant access to the apprenticeship account to other people in your company.
+      A UK provider registration number (UKPRN) is a unique number that each training provider has to help identify them. Your training provider will be able to tell you their UKPRN.
     </p>
-  </div> -->
-    <div style="margin-top:50px"></div>
-    <div class="padder-top-x">
-        <a href="/{% include "includes/sprint-link.html" %}/register/beta/have-govt-gateway-details" class="button button-start">Start</a>
-    </div>
-    <div style="margin-top:50px"></div>
+  </div>
+</details-->
+
+
+
     <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
 <!-- {% include "includes/start-tabs.html" %} -->
 
             </div>
 
              <div class="column-one-third">
-                      <aside class="related">
+                      <!--aside class="related">
                         <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
                         <nav role="navigation">
                       <ul class="robSideNav">
@@ -80,7 +78,7 @@
 
                         </ul>
                            </nav>
-                    </aside>
+                    </aside-->
             </div>
 </div>
 </main>

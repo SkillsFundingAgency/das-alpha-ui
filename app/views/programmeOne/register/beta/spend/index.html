@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta_noNav.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+
+    </ol>
+
+  </div>
+
+
+<div class="grid-row">
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Spend your funds</h1>
+
+   <p>Use this service to:</p>
+
+     <ul class="list list-bullet">
+      <li>add details of one or more apprentices to your account</li>
+      <li>make sure your training provider gets paid through your account</li>
+    </ul>
+
+  <div style="margin-top:25px"></div>
+
+  <h2 class="heading-medium">Before you start</h2>
+     <p>You must:</p>
+      <ul class="list list-bullet">
+        <li>know the names of your apprentices</li>
+        <li>know the UK Provider Reference Number (UKPRN) of your training provider - your training provider can tell you this</li>
+      </ul>
+
+    <div style="margin-top:50px"></div>
+    <div class="padder-top-x">
+        <a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/choose-legal" class="button button-start">Start</a>
+    </div>
+    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
+<!-- {% include "includes/start-tabs.html" %} -->
+
+            </div>
+
+             <div class="column-one-third">
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="../login">Sign in</a>
+                          </li>
+
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+</div>
+</main>
+
+
+
+
+{% endblock %}
