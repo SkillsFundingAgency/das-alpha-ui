@@ -14,7 +14,7 @@
 
 </style>
 
- <script>
+<script>
 
 //put something in here to do a loop and add more stuff to the paye scheme if it does
 //pull a local storage item, if it doesn't exist set it to one and do nothing more. If exists, take the number and add that number of lines to the paye scheme thing and then +1 to the number 
@@ -48,11 +48,6 @@ var status = $('input[name=radio-group]:checked').val();
         console.log("something weird happened and the case wasn't triggered")
       }
 };
-
-
-
-
-
 
  </script>
 
@@ -91,7 +86,7 @@ var status = $('input[name=radio-group]:checked').val();
                         <td>90210/HP</td>
                         <td>A big company Ltd</td>
                         <td class="numeric">£90,000</td>
-                        <td class="numeric"><a href="/{% include "includes/sprint-link.html" %}/finance/debit-details">Change</a></td>
+                        <td class="numeric"><a href="#">Change</a></td>
                       </tr>
                     </tbody>
 </table>
@@ -100,7 +95,7 @@ var status = $('input[name=radio-group]:checked').val();
 
 
                     <div class="form-group">
-                      <label class="form-label-bold" for="companies-house-number">What would you like to do</label>
+                      <label class="form-label-bold" for="companies-house-number">What would you like to do?</label>
                     <label class="block-label" for="checkbox1">
                       <input id="checkbox1" type="radio" name="radio-group" value="saveIt">
                      Save it for later retrieval

@@ -13,11 +13,11 @@ var whereNow = function() {
     if (status == "employer") {
          var isAddedApp = 'yes';
          localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
-         window.location.href='../provider-in-progress/provider-list';
+         window.location.href='./add-apprentices';
   } else {
-      var isAddedApp = 'no';
-      localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
-    window.location.href='provider-contact';
+      var isAddedApp = 'adding-apprentices';
+      localStorage.setItem("registration.during-add-apprentices", JSON.stringify(isAddedApp));
+    window.location.href='../save';
   }
 };
  </script>
@@ -42,7 +42,7 @@ var whereNow = function() {
 </style>
 
 <main id="content" role="main">
-{% include "includes/phase_banner_beta.html" %}
+{% include "includes/phase_banner_beta_noNav.html" %}
 {% include "includes/secondary-nav-finance.html" %}
 
 

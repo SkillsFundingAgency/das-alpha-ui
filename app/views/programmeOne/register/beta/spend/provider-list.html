@@ -36,9 +36,9 @@ var isEmployerorProvider = function() {
 var goToEmployer = JSON.parse(localStorage.getItem('commitments.isEmployer'));
 
     if (goToEmployer == "yes") {
-         window.location.href='provider-or-employer';
+         window.location.href='./add-apprentices';
   } else {
-    window.location.href='provider-or-employer';
+    window.location.href='./add-apprentices';
   }
 
 
@@ -48,7 +48,7 @@ var goToEmployer = JSON.parse(localStorage.getItem('commitments.isEmployer'));
 
 
 <main id="content" role="main">
-{% include "includes/phase_banner_beta.html" %}
+{% include "includes/phase_banner_beta_noNav.html" %}
 {% include "includes/secondary-nav-provider.html" %}
 
 
