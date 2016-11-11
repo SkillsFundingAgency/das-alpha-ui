@@ -36,7 +36,7 @@
   Do you want to add another PAYE scheme to this account, if you don't want to do it now you can always add more later.
   </p>
 
-<form action="/{% include "includes/sprint-link.html" %}/balance">
+<form action="paye">
 
     <fieldset>
 
@@ -53,7 +53,7 @@
       </label>
     </div>
     </fieldset>
-         <input class="button" id="saveAndContinue" type="submit" value="Finish and create account">
+         <input class="button" id="saveAndContinue" type="submit" value="Finish and show my funds">
   </form>
 
 </div>
@@ -61,32 +61,6 @@
 
 </main>
 
-<script>
 
-//store details entered into the form in local storage
-var createButton = document.getElementById('createAccountButton');
-EventUtil.addHandler(createButton, 'click', function(){
-              // save the form info to local storage by first putting the data into an object
-              var userDetails = {
-                email: document.getElementById('email-address').value,
-                password: document.getElementById('password').value
-            };
-
-            //store the object in local storage using json stringify
-              localStorage.setItem("login", JSON.stringify(userDetails));
-
-            //store the users email address in a cookie to repeat back to them later. Remember that we have some of the data stored in an object in local storage as well -  so we'll use that again if we need it.
-            document.cookie =  "emailAddress="  + userDetails.email 
-            // shows the cookie in the console log to check it is working
-            console.log (document.cookie)
-
-        // not needed at the moment
-
-              //hide the login form
-              //$('#login').addClass('hidden');
-              //show the quiz
-           // $('#wrapper').removeClass('hidden')
-    });
-</script>
 
 {% endblock %}

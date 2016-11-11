@@ -41,11 +41,12 @@ var status = $('input[name=radio-group]:checked').val();
         case "spendIt":
          var fundsChoice = 'spendIt';
          localStorage.setItem("registration.choices", JSON.stringify(fundsChoice));
-         window.location.href='spend/';
+         window.location.href='spend';
 
         break;
         default:
         console.log("something weird happened and the case wasn't triggered")
+        window.location.href='save';
       }
 };
 
@@ -63,17 +64,18 @@ var status = $('input[name=radio-group]:checked').val();
 
       <div class="grid-row">
            <div class="column-two-thirds">
-              <h1 class="heading-xlarge" >Your funds</h1>
 
-                <h2 class="heading-xlarge" style="margin-bottom:0; margin-top:0">£90,000</h2>
-                <h3 class="heading-medium" style="margin-top:0px;color:#6F777B">available to spend on apprentices</h2>
+
+                <h1 class="heading-large" style="margin-bottom:0;">Your levy fund</h1>
+                <h2 class="bold-xxlarge" style="margin-top:0px;color:#6F777B">£90,000</h2>
+                <p class="bold-xsmall">as of 26 November 2017</p>
 
               <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
               <form action="anotherPAYE">
                   <legend class="visuallyhidden">PAYE scheme reference number</legend>
 
                   <table id="transactionsOUT">
-                  <h2 class="heading-medium">Made up of</h2>
+                  <h2 class="heading-medium">PAYE schemes</h2>
                     <thead>
                       <tr>
                         <th scope="col">PAYE Scheme</th>
@@ -94,7 +96,8 @@ var status = $('input[name=radio-group]:checked').val();
 
 
 
-                    <div class="form-group">
+              <!--div class="form-group">
+                <fieldset>
                       <label class="form-label-bold" for="companies-house-number">What would you like to do?</label>
                     <label class="block-label" for="checkbox1">
                       <input id="checkbox1" type="radio" name="radio-group" value="saveIt">
@@ -108,12 +111,15 @@ var status = $('input[name=radio-group]:checked').val();
                       <input id="checkbox3" type="radio" name="radio-group" value="spendIt">
                     Spend on apprentices
                      </label>
-                  </div>
-                </fieldset>
+                  </fieldset>
+              </div-->
+
                 <!-- function loopyLoop and whereNow are at the top of this page -->
                   <div style="margin-top:50px"></div>
+              <h3 class="heading-medium">Claim your funds</h3>
+              <p>Lovely copy explaining the next steps needs to claim your funding.</p>
 				  <!--input class="button" id="saveAndContinue" onclick="whereNow()" value="Save and continue"-->
-          <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Save and continue">
+          <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Claim your funds">
               </form>
             </div>
             <div class="column-one-third"></div>
