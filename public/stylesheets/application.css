@@ -2147,7 +2147,7 @@ input[type=number] {
 }
 
 .emptyStateAlert {
-  border-left: 8px solid #2b8cc4;
+  border-left: 10px solid #2b8cc4;
   width: 100%;
   min-height: 110px;
   margin: 0 auto;
@@ -2494,6 +2494,14 @@ input[type=number] {
     font-size: 19px !important;
     line-height: 1.3157894737;
   }
+}
+
+.statusToDo {
+  text-transform: uppercase;
+  font-size: 16px;
+  background-color: black;
+  color: white;
+  padding: 5px 9px 4px 9px;
 }
 
 .noMarginTop {

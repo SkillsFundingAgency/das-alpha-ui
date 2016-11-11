@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+ <script>
+var whereNow = function() {
+  var status = $('input[name=only-user]:checked').val();
+  console.log(status)
+    if (status == "true") {
+        // var isAddedApp = 'yes';
+        // localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
+         window.location.href='onboarding/invite';
+  } else {
+    //  var isAddedApp = 'no';
+     // localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
+    window.location.href='onboarding/invite';
+  }
+};
+ </script>
+
+<!-- <script>
+$(document).ready(function() {
+      var theButton = document.getElementById('finance-person-false');
+      EventUtil.addHandler(theButton, 'click', function(event){
+        event = EventUtil.getEvent(event);
+        var target = EventUtil.getTarget(event);
+
+           var $input = $("input:radio[value=true]:checked").val();
+
+         if ($input) {} else { $( "#inline-finance-pro-error" ).removeClass( "tamc-js-hidden" );}
+      });
+      });
+$(document).ready(function() {
+            var anotherButton = document.getElementById('finance-person-true');
+      EventUtil.addHandler(anotherButton, 'click', function(event){
+        event = EventUtil.getEvent(event);
+        var target = EventUtil.getTarget(event);
+
+           var $inputOn = $("input:radio[value=true]:checked").val();
+          if ($inputOn) {$( "#inline-finance-pro-error" ).addClass( "tamc-js-hidden" );} else { }
+      });
+         });
+
+
+
+</script> -->
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+     {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+
+  </div>
+
+
+      <div class="grid-row">
+           <div class="column-two-thirds">
+             <h1 class="heading-xlarge" >Are you the only person who manages this account?</h1>
+             <p>Ask the user if they will be performing all the functions of the service themselves. Or are they going to be able to invite others to help them. Essentially we are trying to figure out if they are the finance person who needs to invite their apprentice manager or are they the actual apprentice manager and so doesn't need to do this right now.</p>
+
+              <form action="thought-about-accounts">
+                    <div class="">
+
+
+<legend class="visuallyhidden">Are you the only person who manages this account?</legend>
+                    <div class="form-group">
+                      <label class="form-label-bold" for="only-person-true">Are you the only person who manages this account?</label>
+                    <label class="block-label" for="only-person-true">
+                      <input id="only-person-true" type="radio" name="only-user" value="true">
+                     Yes, I will be managing this account on my own
+                     </label>
+                    <label class="block-label" for="only-person-false">
+                      <input id="only-person-false" type="radio" name="only-user" value="false">
+                    No, I need to add others to help me manage this account
+                     </label>
+                  </div>
+                        </fieldset>
+                    </div>
+
+                  <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Continue">
+
+				  <!--div class="rjmakeALink" onclick="loopyLoop()"><p>Create another apprenticeship account</p></div-->
+				  <!--CREATE ANOTHER APPRENTICESHIP ACCOUNT-->
+              </form>
+
+            </div>
+      </div>
+</main>
+
+
+{% endblock %}
