@@ -15,7 +15,7 @@
 
 
 <main id="content" role="main">
-{% include "includes/phase_banner_alpha.html" %}
+{% include "includes/phase_banner_beta.html" %}
 {% include "includes/secondary-nav-people.html" %}
 
 
@@ -47,14 +47,22 @@
                 
 
                  <form action="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice">
-                    <legend class="visuallyhidden">Changes</legend>
+           <fieldset>
+                   <legend class="visuallyhidden">Changes</legend>
+                <label class="form-label-bold" for="apprenticeGivenName">Change apprenticeship status
+                     <span class="form-hint">You can pause or stop the apprentice by changing their status.</span>
+                    </label>
                       <div class="form-group">
+                       <label class="block-label" for="radio-1">
+                        <input id="radio-1" type="radio" name="radio-group" value="live" checked="checked">
+                        Keep apprenticeship status unchanged
+                      </label>
                       <label class="block-label" for="radio-2">
                         <input id="radio-2" type="radio" name="radio-group" value="pause-apprenticeship">
                         Pause the apprenticeship
                       </label>
                       <label class="block-label" for="radio-3">
-                        <input id="radio-3" type="radio" name="radio-group" value="manual-payment">
+                        <input id="radio-3" type="radio" name="radio-group" value="stop-apprenticeship">
                         Stop the apprenticeship 
                       </label>
                     </div>

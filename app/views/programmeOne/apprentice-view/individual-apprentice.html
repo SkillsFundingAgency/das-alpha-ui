@@ -45,7 +45,7 @@
                   <thead>
                     <tr>
                       <th colspan="2"> <h2 class="heading-medium">Status</h2></th>
-                      <th><p style="margin-top:45px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship?">Pause or stop apprenticeship</a> </p> </th>
+                      <th><p style="margin-top:45px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship">Pause or stop apprenticeship</a> </p> </th>
 
                     </tr>
                   </thead>
@@ -62,8 +62,8 @@
                 <table class="table-19-font"> 
                   <thead>
                     <tr>
-                      <th colspan="2"> <h2 class="heading-medium">Overview</h2></th>
-                      <th><p style="margin-top:45px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship?">Edit overview</a> </p> </th>
+                      <th colspan="2"> <h2 class="heading-medium">Apprentice</h2></th>
+                      <th><p style="margin-top:45px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/edit-apprentice">Edit apprentice</a> </p> </th>
 
                     </tr>
                   </thead>
@@ -78,6 +78,21 @@
                       <td class="" style="width:200px">28 February 1997</td>
                       <td class=""></td>
                     </tr>
+                   </tbody>
+                </table>
+
+
+              <table class="table-19-font"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Training</h2></th>
+                      <th><p style="margin-top:45px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/edit-overview">Edit training</a> </p> </th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+
+
                      <tr>
                      <td class="rjTableName" style="width:217px">Apprenticeship name</td>
                       <td class="" style="width:200px">Level 2: Aeronautical engineering</td>
@@ -103,7 +118,7 @@
                   <thead>
                     <tr>
                       <th colspan="2"> <h2 class="heading-medium">Dates</h2></th>
-                      <th><p style="margin-top:45px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship?">Edit dates</a> </p> </th>
+                       <th class="looks-like-a-link-underline"><p style="margin-top:45px; text-align:right"> Edit dates </p> </th>
 
                     </tr>
                   </thead>
@@ -131,7 +146,7 @@
                   <thead>
                     <tr>
                       <th colspan="2"> <h2 class="heading-medium">Payment</h2></th>
-                       <th><p style="margin-top:45px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship?">Edit costs</a> </p> </th>
+                       <th class="looks-like-a-link-underline"><p style="margin-top:45px; text-align:right"> Edit costs </p> </th>
 
                     </tr>
                   </thead>
@@ -176,8 +191,9 @@
                         <nav role="navigation">
                       <ul class="robSideNav">
                           <li>
-                            <p>There have been no changes</p>
+                            <p>There have been no past changes</p>
                           </li>
+                        </ul>
                           <!--li>
                             <a href="/{% include "includes/sprint-link.html" %}/payment/paymentplan">Add a new payment plan (OUT?)</a>
                           </li>
