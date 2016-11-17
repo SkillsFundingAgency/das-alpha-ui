@@ -13,6 +13,43 @@
 }
 </style>
 
+<script>
+var userAdded = JSON.parse(localStorage.getItem('registration.addingAnotherUser'));
+var forecastDone = JSON.parse(localStorage.getItem('registration.forecastComplete'));
+console.log(forecastDone)
+$(document).ready(function() {
+  var changeStuff = function() {
+  if (userAdded=='yes' && forecastDone !="yes") {
+   // document.getElementById("commitmentsName").textContent = " Hackney Skills & Training Ltd";
+   // document.getElementById("providerName").textContent = "Provider:" ;
+    $(confirmationAdded).removeClass("rj-dont-display")
+   $(teamMemberOne).removeClass("rj-dont-display");
+  //  $(addReference).addClass("rj-dont-display");
+   // $(commitmentStatus).addClass("rj-dont-display");
+   //  $(addDate).addClass("rj-dont-display")
+    }
+else {  
+  //  $(notesStuff).removeClass("rj-dont-display");
+  //  $(addReference).removeClass("rj-dont-display");
+  //  $(commitmentStatus).removeClass("rj-dont-display");
+  //  $(addDate).removeClass("rj-dont-display")
+        };
+
+if (userAdded=='yes' & forecastDone =="yes") {
+   $(teamMemberOne).removeClass("rj-dont-display");
+   $(forecastComplete).removeClass("rj-dont-display");
+    }
+else {  };
+if (userAdded=='No' & forecastDone =="yes") {
+   $(forecastComplete).removeClass("rj-dont-display");
+    }
+else {  };
+
+  }
+changeStuff();
+});
+
+</script>
 
 <main id="content" role="main">
 {% include "includes/phase_banner_beta.html" %}
@@ -25,6 +62,13 @@
     </ol>
 
   </div>
+
+<div id="confirmationAdded" class="user-alert rj-dont-display">
+  <div class="panel panel-border-wide alert-success">
+    <i class="fa fa-check "></i>
+            <h2 class="heading-small">Invite sent to brendan.mcshane@acmecoventryltd.com</h2>
+          </div>
+</div>
 
 <!--h1 class="heading-large">Levy account</h1-->
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
@@ -56,25 +100,27 @@
                              <tr>
                               <!--quick hack, will fix -->
                               <td style="font-size:28px; color:#005ea5; font-weight:700;">1. Add more team members</td>
-                                <td class=""><span class="statusToDo">1 Team member added</span></td>
+                                <td >
+                                  <span id="teamMemberOne" class="statusToDo rj-dont-display">1 Team member added</span>
+                                  <span id="teamMemberTwo" class="statusToDo rj-dont-display">2 Team members added</span>
+                                </td>
                               </tr>
                               <tr>
                               <!--quick hack, will fix -->
-                              <td style="font-size:28px; color:#005ea5; font-weight:700;">2. Forecast your funds</td>
-                                <td class="looks-like-a-link-underline"></td>
+                              <td style="font-size:28px;  font-weight:700; "><a style="text-decoration:none; color:#005ea5;" href="/{% include "includes/sprint-link.html" %}/forecast">2. Forecast your funds</a></td>
+                               <td> <span id="forecastComplete" class="statusToDo rj-dont-display">Forecast added on 20 May 2017</span> </td>
                               </tr>
                              <tr>
                               <!--quick hack, will fix -->
-                              <td style="font-size:28px; color:#005ea5; font-weight:700;">3. Explore training</td>
+                              <td style="font-size:28px; color:#005ea5; font-weight:700;">3. Explore training courses</td>
                                 <td class="looks-like-a-link-underline"></td>
                               </tr>
-
                              <tr>
                               <!--quick hack, will fix -->
                               <td style="font-size:28px; color:#005ea5; font-weight:700;">4. Find a provider</td>
                                 <td class="looks-like-a-link-underline"></td>
                               </tr>
-                                                           <tr>
+                              <tr>
                               <!--quick hack, will fix -->
                               <td style="font-size:28px; color:#005ea5; font-weight:700;">5. Learn more about Endpoint Assesment</td>
                                 <td class="looks-like-a-link-underline"></td>
@@ -85,14 +131,9 @@
 </div>
   <form action="/{% include "includes/sprint-link.html" %}/balance">
     <div style="margin-top:20px"></div>
-    <input class="button" id="saveAndContinue" type="submit" value="Continue">
-    <p style="margin-top:15px"><a href="/">Skip<a/></p>
+    <!--input class="button" id="saveAndContinue" type="submit" value="Continue"-->
+    <p style="margin-top:15px"><a href="/{% include "includes/sprint-link.html" %}/balance">Skip to dashboard<a/></p>
   </form>
 </main>
-
-
-
-
-
 {% endblock %}
 

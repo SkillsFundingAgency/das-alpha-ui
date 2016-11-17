@@ -19,43 +19,17 @@ var whereNow = function() {
   var status = $('input[name=only-user]:checked').val();
   console.log(status)
     if (status == "true") {
-        // var isAddedApp = 'yes';
-        // localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
+        var addingAnother = 'No';
+        localStorage.setItem("registration.addingAnotherUser", JSON.stringify(addingAnother));
          window.location.href='onboarding/things-to-do';
   } else {
-    //  var isAddedApp = 'no';
-     // localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
+            var addingAnother = 'yes';
+        localStorage.setItem("registration.addingAnotherUser", JSON.stringify(addingAnother));
     window.location.href='onboarding/invite';
   }
 };
  </script>
 
-<!-- <script>
-$(document).ready(function() {
-      var theButton = document.getElementById('finance-person-false');
-      EventUtil.addHandler(theButton, 'click', function(event){
-        event = EventUtil.getEvent(event);
-        var target = EventUtil.getTarget(event);
-
-           var $input = $("input:radio[value=true]:checked").val();
-
-         if ($input) {} else { $( "#inline-finance-pro-error" ).removeClass( "tamc-js-hidden" );}
-      });
-      });
-$(document).ready(function() {
-            var anotherButton = document.getElementById('finance-person-true');
-      EventUtil.addHandler(anotherButton, 'click', function(event){
-        event = EventUtil.getEvent(event);
-        var target = EventUtil.getTarget(event);
-
-           var $inputOn = $("input:radio[value=true]:checked").val();
-          if ($inputOn) {$( "#inline-finance-pro-error" ).addClass( "tamc-js-hidden" );} else { }
-      });
-         });
-
-
-
-</script> -->
 
 
 <main id="content" role="main">

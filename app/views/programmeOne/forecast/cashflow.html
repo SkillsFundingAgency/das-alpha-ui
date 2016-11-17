@@ -8,40 +8,33 @@
 
 
 <style>
-  .financial-nav a, .nav-forecast a {
-    {% include "includes/nav-on-state-css.html" %}
-  }
+#navigation-primary {
+  display:none ;
+}
 </style>
 
+<script>
+
+$(document).ready(function() {
+  var doTheThing = function() {
+        var forecastComplete = 'yes';
+        localStorage.setItem("registration.forecastComplete", JSON.stringify(forecastComplete));
+  }
+doTheThing();
+});
+
+</script>
+
 <main id="content" role="main">
-{% include "includes/phase_banner_alpha.html" %}
+{% include "includes/phase_banner_beta.html" %}
 {% include "includes/secondary-nav-finance.html" %}
 
 
-
-  <!--div class="breadcrumbs">
-    <ol role="breadcrumbs">
-      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
-    </ol>
-
-  </div-->
      <div class="breadcrumbs back-breadcrumb">
-    <ol role="breadcrumbs">
-                 <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
-            <li><a href="/{% include "includes/sprint-link.html" %}/finance">Funding</a></li>
-            <li><a href="/{% include "includes/sprint-link.html" %}/forecast">Forecast your funds</a></li>
-            <li>Apprentice funds forecast</li>
-    </ol>
-  </div>
-     <!--div class="breadcrumbs back-breadcrumb">
     <ol role="breadcrumbs">
       {% include "includes/breadcrumbs/register-back.html" %}
     </ol>
-  </div-->
-
-
-<!--h1 class="heading-large">Levy account</h1-->
- <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+  </div>
 
   <div class="grid-row">
            <div class="column-two-thirds">
@@ -58,7 +51,7 @@
                   <li>expected funds</li>
               </ul>
               <h2 class="heading-medium">Available to spend</h2>
-            <div class="graphGoesHere" style="margin-top:35px"><canvas id="robsChart" width="500" height="300"></canvas></div>
+            <!--div class="graphGoesHere" style="margin-top:35px"><canvas id="robsChart" width="500" height="300"></canvas></div-->
 
             <div>
              <table class="table-19-font">
@@ -67,19 +60,11 @@
                   </tbody>
               </table>
             </div>
-            <p style="margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/forecast" >Update your forecast</a></p>
+                <div style="margin-top:35px"></div>
 
-                <!--p>
-                  The amount of money you currently have to spend on apprentices is made up of
-                </p>
-                <ul class="list list-bullet">
-                  <li> your current balance</li>
-                  <li> minus the amount you have planned to spend in the future</li>
-                  <li>funds that expire</li>
-                  <li>Future "levy" payments</li>
-                </ul-->
-
-            <div style="margin-top:50px"></div>
+  <form action="/{% include "includes/sprint-link.html" %}/register/beta/onboarding/things-to-do">
+    <input class="button" id="saveAndContinue" type="submit" value="Save forecast and return">
+  </form>
           </div>
 
 

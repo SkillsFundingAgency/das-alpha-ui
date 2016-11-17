@@ -14,6 +14,8 @@
 
 </style>
 
+
+
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
   {% include "includes/secondary-nav-people.html" %}
@@ -42,7 +44,7 @@
   </div>
   </div>
 
-  <form action="user-confirmation">
+  <form action="things-to-do">
     <fieldset>
       <legend class="visuallyhidden">password</legend>
 
@@ -102,38 +104,11 @@
       </label>
     </fieldset>
 
-    <!--
-    <fieldset>
-      <legend class="visuallyhidden">Access to the service</legend>
-      <div class="form-group">
-        <label class="form-label-bold" for="full-name">Access to the service</label>
-        <div class="grid-row">
-          <div class="column-two-thirds">
-            <p>Please choose the level of access you would like the new user to have:</p>
-          </div>
-        </div>
-        <label class="block-label" for="checkbox-1">
-          <input id="checkbox-1" type="checkbox" name="checkbox-group" value="manage-other-users">
-          Allow team member to add and manage other users
-        </label>
-        <label class="block-label" for="checkbox-2">
-          <input id="checkbox-2" type="checkbox" name="checkbox-group" value="pay-providers">
-          Allow team member to approve contracts and manage payments to providers
-        </label>
-        <label class="block-label" for="checkbox-3">
-          <input id="checkbox-3" type="checkbox" name="checkbox-group" value="manage-PAYE">
-          Allow team member to add, delete and manage the PAYE schemes on this account
-        </label>
-      </div>
-    </fieldset>
-    -->
-
     <div style="margin-top:20px"></div>
     <input class="button" id="saveAndContinue" type="submit" value="Invite new team member">
     <p style="margin-top:15px"><a href="/">Skip<a/></p>
   </form>
 
-<!-- </div> -->
 
 </main>
 
