@@ -20,9 +20,9 @@ var employerOrNot = JSON.parse(localStorage.getItem('commitments.isEmployer'));
 $( document ).ready(function() {
   var changeStuff = function() {
   if (employerOrNot=='yes') {
-    document.getElementById("changeOne").innerHTML = "Send to provider to amend or add details";
-    document.getElementById("changeTwo").innerHTML = "Approve and send to provider";
-    document.getElementById("changeThree").innerHTML = "Save but do not send to provider";
+    document.getElementById("changeTwo").innerHTML = "Approve and send to training provider";
+    document.getElementById("changeOne").innerHTML = "Send to training provider to review or add details";
+    document.getElementById("changeThree").innerHTML = "Save but don't send to training provider";
   }
 else { };
 }
