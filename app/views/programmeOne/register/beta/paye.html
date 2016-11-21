@@ -66,7 +66,7 @@ var status = $('input[name=radio-group]:checked').val();
            <div class="column-two-thirds">
 
 
-                <h1 class="heading-large" style="margin-bottom:0;">Your levy fund</h1>
+                <h1 class="heading-large" style="margin-bottom:0;">Available funds</h1>
                 <h2 class="bold-xxlarge" style="margin-top:0px;color:#6F777B">£90,000</h2>
                 <p class="bold-xsmall">as of 26 November 2017</p>
 
@@ -75,7 +75,7 @@ var status = $('input[name=radio-group]:checked').val();
                   <legend class="visuallyhidden">PAYE scheme reference number</legend>
 
                   <table id="transactionsOUT">
-                  <h2 class="heading-medium">PAYE schemes</h2>
+                  <h2 class="heading-medium"></h2>
                     <thead>
                       <tr>
                         <th scope="col">PAYE Scheme</th>
@@ -88,7 +88,7 @@ var status = $('input[name=radio-group]:checked').val();
                         <td>90210/HP</td>
                         <td>A big company Ltd</td>
                         <td class="numeric">£90,000</td>
-                        <td class="numeric"><a href="#">Change</a></td>
+                        <td class="numeric"><a href="#">Remove</a></td>
                       </tr>
                     </tbody>
 </table>
@@ -96,30 +96,29 @@ var status = $('input[name=radio-group]:checked').val();
 
 
 
-              <!--div class="form-group">
+              <div class="form-group">
                 <fieldset>
-                      <label class="form-label-bold" for="companies-house-number">What would you like to do?</label>
-                    <label class="block-label" for="checkbox1">
+                      <label class="form-label-bold" for="companies-house-number">What would you like to do next?</label>
+                     <label class="block-label" for="checkbox1">
                       <input id="checkbox1" type="radio" name="radio-group" value="saveIt">
-                     Save it for later retrieval
+                     Claim these funds
                      </label>
                     <label class="block-label" for="checkbox2">
                       <input id="checkbox2" type="radio" name="radio-group" value="addMore">
-                    Add another PAYE scheme
+                    Add more funds
                      </label>
-                    <label class="block-label" for="checkbox3">
+                    <!--label class="block-label" for="checkbox3">
                       <input id="checkbox3" type="radio" name="radio-group" value="spendIt">
                     Spend on apprentices
-                     </label>
+                     </label-->
                   </fieldset>
-              </div-->
+              </div>
 
                 <!-- function loopyLoop and whereNow are at the top of this page -->
                   <div style="margin-top:50px"></div>
-              <h3 class="heading-medium">Claim your funds</h3>
-              <p>Lovely copy explaining the next steps needs to claim your funding.</p>
+              <!--h3 class="heading-medium">Claim these funds</h3-->
 				  <!--input class="button" id="saveAndContinue" onclick="whereNow()" value="Save and continue"-->
-          <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Claim your funds">
+          <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Continue">
               </form>
             </div>
             <div class="column-one-third"></div>
