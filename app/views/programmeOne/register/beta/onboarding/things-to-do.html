@@ -44,6 +44,11 @@ if (userAdded=='No' & forecastDone =="yes") {
    $(forecastComplete).removeClass("rj-dont-display");
     }
 else {  };
+if (userAdded=='No' ) {
+   $(trainingProviders).removeClass("rj-dont-display");
+   $(endpointAssessment).removeClass("rj-dont-display");
+    }
+else {  };
 
   }
 changeStuff();
@@ -100,9 +105,13 @@ changeStuff();
                             </tr>
                           </thead>
                           <tbody>
+
+                             <tr id="" class="">
+                              <td style="font-size:28px; color:#005ea5; font-weight:700;">1. Enable spending - you need to sign an agreement</td>
+                                <td class="looks-like-a-link-underline"></td>
+                              </tr>
                              <tr>
-                              <!--quick hack, will fix -->
-                              <td style="font-size:28px; color:#005ea5; font-weight:700;">1. Invite team members</td>
+                              <td style="font-size:28px; color:#005ea5; font-weight:700;">2. Invite team members</td>
                                 <td >
                                   <span id="teamMemberOne" class="statusToDo rj-dont-display">1 Team member added</span>
                                   <span id="teamMemberTwo" class="statusToDo rj-dont-display">2 Team members added</span>
@@ -110,19 +119,20 @@ changeStuff();
                               </tr>
                               <tr>
                               <!--quick hack, will fix -->
-                              <td style="font-size:28px;  font-weight:700; "><a style="text-decoration:none; color:#005ea5;" href="/{% include "includes/sprint-link.html" %}/forecast">2. Forecast your funds</a></td>
+                              <td style="font-size:28px;  font-weight:700; "><a style="text-decoration:none; color:#005ea5;" href="/{% include "includes/sprint-link.html" %}/forecast">3. Forecast your funds</a></td>
                                <td> <span id="forecastComplete" class="statusToDo rj-dont-display">Forecast added on 20 May 2017</span> </td>
                               </tr>
-                             <tr>
-                              <!--quick hack, will fix -->
-                              <td style="font-size:28px; color:#005ea5; font-weight:700;">3. Explore training courses and providers</td>
+
+                             <tr id="trainingProviders" class="rj-dont-display">
+                              <td style="font-size:28px; color:#005ea5; font-weight:700;">4. Explore training and find a provider</td>
                                 <td class="looks-like-a-link-underline"></td>
                               </tr>
-                             <tr>
-                              <!--quick hack, will fix -->
-                              <td style="font-size:28px; color:#005ea5; font-weight:700;">4. Learn more about Endpoint Assesment</td>
+
+                              <tr id="endpointAssessment" class="rj-dont-display">
+                              <td style="font-size:28px; color:#005ea5; font-weight:700;">5. Learn more about Endpoint Assesment</td>
                                 <td class="looks-like-a-link-underline"></td>
                               </tr>
+
 
                           </tbody>
                       </table>
@@ -135,3 +145,43 @@ changeStuff();
 </main>
 {% endblock %}
 
+<!--
+
+  <div style="margin-top:25px">
+                      <table class="">
+                          <thead>
+                            <tr>
+                              <th scope="col" style="padding-top:0"></th>
+                               <th scope="col" style="padding-top:0"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                             <tr>
+
+                              <td style="font-size:28px; color:#005ea5; font-weight:700;">1. Invite team members</td>
+                                <td >
+                                  <span id="teamMemberOne" class="statusToDo rj-dont-display">1 Team member added</span>
+                                  <span id="teamMemberTwo" class="statusToDo rj-dont-display">2 Team members added</span>
+                                </td>
+                              </tr>
+                              <tr>
+
+                              <td style="font-size:28px;  font-weight:700; "><a style="text-decoration:none; color:#005ea5;" href="/{% include "includes/sprint-link.html" %}/forecast">2. Forecast your funds</a></td>
+                               <td> <span id="forecastComplete" class="statusToDo rj-dont-display">Forecast added on 20 May 2017</span> </td>
+                              </tr>
+                             <tr>
+
+                              <td style="font-size:28px; color:#005ea5; font-weight:700;">3. Explore training courses and providers</td>
+                                <td class="looks-like-a-link-underline"></td>
+                              </tr>
+                             <tr>
+
+                              <td style="font-size:28px; color:#005ea5; font-weight:700;">4. Learn more about Endpoint Assesment</td>
+                                <td class="looks-like-a-link-underline"></td>
+                              </tr>
+
+                          </tbody>
+                      </table>
+</div>
+
+-->

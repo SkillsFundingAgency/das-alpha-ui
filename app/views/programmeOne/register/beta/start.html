@@ -20,6 +20,16 @@
 //jQuery( document ).ready(function() {
      //jQuery.validate(); 
 // });
+$(document).ready(function() {
+
+var clear = null;
+// reset all the local storage variables for this section.
+
+localStorage.setItem("registration.addingAnotherUser", JSON.stringify(clear));
+localStorage.setItem("registration.forecastComplete", JSON.stringify(clear));
+localStorage.setItem("registration.choices", JSON.stringify(clear));
+
+});
 
 
 </script>

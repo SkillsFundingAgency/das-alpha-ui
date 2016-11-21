@@ -29,13 +29,13 @@ var status = $('input[name=radio-group]:checked').val();
         case "saveIt":
          var fundsChoice = 'saveIt';
          localStorage.setItem("registration.choices", JSON.stringify(fundsChoice));
-         window.location.href='save';
+         window.location.href='friendly-name';
         break;
 
         case "addMore":
         var fundsChoice = 'addMore';
          localStorage.setItem("registration.choices", JSON.stringify(fundsChoice));
-         window.location.href='addMore';
+         window.location.href='govtCredentials';
 
         break;
         case "spendIt":
@@ -105,7 +105,7 @@ var status = $('input[name=radio-group]:checked').val();
                      </label>
                     <label class="block-label" for="checkbox2">
                       <input id="checkbox2" type="radio" name="radio-group" value="addMore">
-                    Add more funds
+                    Add more PAYE funds
                      </label>
                     <!--label class="block-label" for="checkbox3">
                       <input id="checkbox3" type="radio" name="radio-group" value="spendIt">
