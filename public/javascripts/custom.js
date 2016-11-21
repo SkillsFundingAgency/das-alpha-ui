@@ -130,7 +130,7 @@ var defaultSprint = function() {
  var sprintNow = JSON.parse(localStorage.getItem('sprint-number'));
  console.log(sprintNow);
     if (sprintNow == null) {
-      sprintNow = "commitFour";
+      sprintNow = "programmeOne";
       localStorage.setItem("sprint-number", JSON.stringify(sprintNow));
   } else {
   }
