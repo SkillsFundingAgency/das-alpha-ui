@@ -141,7 +141,6 @@
 .emptyState {
 width:100%;
 margin-top: 35px;
-
 }
 
 .emptyStateAlert {
@@ -154,8 +153,12 @@ margin-top: 35px;
 }
 
 .emptyStateCopy {
-  text-align: center;
+  // text-align: center;
   padding-top:40px;
+}
+
+.emptyStateCopy p {
+padding-left:15px;
 }
 
 .errorRow {
