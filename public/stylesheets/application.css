@@ -2300,13 +2300,13 @@ input[type=number] {
 .emptyStateAlert {
   border-left: 10px solid #2b8cc4;
   width: 100%;
-  min-height: 110px;
+  min-height: 70px;
   margin: 0 auto;
   background-color: #eaf4f9;
 }
 
 .emptyStateCopy {
-  padding-top: 40px;
+  padding-top: 19px;
 }
 
 .emptyStateCopy p {
