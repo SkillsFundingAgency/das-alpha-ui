@@ -14,14 +14,14 @@
   var changeStuff = function() {
       switch(whichMessage) {
         case "send-amend":
-           document.getElementById("changeHeadline").innerHTML = "Sent to provider";
+           document.getElementById("changeHeadline").innerHTML = "Sent to training provider";
             //document.getElementById("changeRefNumber").textContent = "Hackney Skills & Training Ltd";
             document.getElementById("changeMainCopy").innerHTML = '<p>The information you added has been sent to Hackney Skills &amp Training Ltd to enter the rest of the details.</p><p> You can view the progress in <span class=\"looks-like-a-link-underline\">apprenticeships in progress</span></p>';
             resetStoredStuff();
         break;
 
         case "send-approve":
-            document.getElementById("changeHeadline").innerHTML = "Sent to provider";
+            document.getElementById("changeHeadline").innerHTML = "Sent to training provider";
             //document.getElementById("changeRefNumber").textContent = "Hackney Skills & Training Ltd";
             document.getElementById("changeMainCopy").innerHTML = '<p>The employer will log on to their account and see the changes you’ve made. They’ll then either approve them or send the cohort back to you to make changes.</p>';
             resetStoredStuff();
@@ -94,7 +94,7 @@ changeStuff();
                     </thead>
                     <tbody>
                         <tr>
-                        <td style="">Reference</td>
+                        <td style="">Cohort reference</td>
                         <td style="font-weight:700; ;">98HGS3F</td>
                       </tr>
                        <tr>
