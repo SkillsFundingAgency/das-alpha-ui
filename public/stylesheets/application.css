@@ -230,130 +230,34 @@
   display: none;
 }
 
-div,
-span,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark {
+/* Borrowed from http://meyerweb.com/eric/tools/css/reset/ */
+div, span,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark {
   border: none;
   margin: 0;
   padding: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-input,
-textarea,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td {
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+input, textarea,
+table, caption, tbody, tfoot, thead, tr, th, td {
   font-size: inherit;
   font-family: inherit;
   line-height: inherit;
   font-weight: normal;
-}
-
-abbr[title],
-acronym[title] {
-  text-decoration: none;
-}
-
-legend {
-  box-sizing: border-box;
-  max-width: 100%;
-  display: table;
 }
 
 #content {
@@ -1407,11 +1311,11 @@ table {
 table th,
 table td {
   font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
+  font-size: 14px;
+  line-height: 1.1428571429;
   font-weight: 400;
   text-transform: none;
-  padding: 0.6315789474em 1.0526315789em 0.4736842105em 0;
+  padding: 0.75em 1.25em 0.5625em 0;
   text-align: left;
   color: #0b0c0c;
   border-bottom: 1px solid #bfc1c3;
@@ -1420,8 +1324,8 @@ table td {
 @media (min-width: 641px) {
   table th,
   table td {
-    font-size: 19px;
-    line-height: 1.3157894737;
+    font-size: 16px;
+    line-height: 1.25;
   }
 }
 
@@ -1449,44 +1353,8 @@ table td.numeric {
   }
 }
 
-.table-font-xsmall th {
-  font-family: "nta", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.1428571429;
-  font-weight: 700;
-  text-transform: none;
-}
-
-@media (min-width: 641px) {
-  .table-font-xsmall th {
-    font-size: 16px;
-    line-height: 1.25;
-  }
-}
-
-.table-font-xsmall td {
-  font-family: "nta", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.1428571429;
-  font-weight: 400;
-  text-transform: none;
-}
-
-@media (min-width: 641px) {
-  .table-font-xsmall td {
-    font-size: 16px;
-    line-height: 1.25;
-  }
-}
-
-.table-font-xsmall th,
-.table-font-xsmall td {
-  padding: 0.75em 1.25em 0.5625em 0;
-}
-
 details {
   display: block;
-  clear: both;
 }
 
 details summary {
@@ -1515,9 +1383,6 @@ details .arrow {
 }
 
 .panel {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   clear: both;
   border-left-style: solid;
   border-color: #bfc1c3;
@@ -1543,23 +1408,7 @@ details .arrow {
 }
 
 .form-group .panel-border-narrow {
-  float: left;
-  width: 100%;
   padding-bottom: 0;
-}
-
-.form-group .panel-border-narrow:first-child {
-  margin-top: 10px;
-}
-
-.form-group .panel-border-narrow:last-child {
-  margin-top: 10px;
-  margin-bottom: 0;
-}
-
-.inline .panel-border-narrow {
-  margin-top: 10px;
-  margin-bottom: 0;
 }
 
 fieldset {
@@ -2399,6 +2248,11 @@ input[type=number] {
 .rj-headings-border {
   padding-bottom: 20px;
   border-bottom: 4px solid #BFC1C3;
+}
+
+.rj-headings-border-top {
+  padding-top: 20px;
+  border-top: 4px solid #BFC1C3;
 }
 
 .rj-home-spacer {
