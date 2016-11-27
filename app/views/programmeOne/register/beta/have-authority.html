@@ -58,21 +58,21 @@ $(document).ready(function() {
            <div class="column-two-thirds">
              <h1 class="heading-xlarge" >Allowing your tax details to be used</h1>
              <p></p>
-             <p class="">When you enter your Government Gateway details you'll need to allow your tax details to be used.</p>
+             <p class="">When you enter your Government Gateway details you'll be asked to ‘grant authority’ to allow your tax details to be used.</p> <p>This means you allow HMRC to send the SFA details of the levy that you’ve paid - no other payroll information will be shared.</p>
              
             
 
               <form action="govtCredentials">
-                    <div class="form-group inline">
+                    <div class="form-group ">
                           <label class="form-label-bold" for="text">Do you have permission to allow your tax details to be used?</label> 
-                        <fieldset class="inline spacingBottom" id="lower-earner" data-inline-error="inline-lower-earner-error">
+                        <fieldset class=" spacingBottom" id="lower-earner" data-inline-error="inline-lower-earner-error">
                             <legend class="visuallyhidden">
                                 eligibility.check.lower.earner.h2
                             </legend>
                         <label for="finance-person-true" class="block-label">
-                                    <input type="radio" id="finance-person-true" name="govt-gateway" value="true">Yes </label>
+                                    <input type="radio" id="finance-person-true" name="govt-gateway" value="true">Yes, I have permission </label>
                         <label for="finance-person-false" class="block-label">
-                                    <input type="radio" id="finance-person-false" name="govt-gateway" value="false">No </label>
+                                    <input type="radio" id="finance-person-false" name="govt-gateway" value="false">No, I don't have permission </label>
                         </fieldset>
                     </div>
                     <div class="tamc-js-hidden error-inline validation-summary" id="inline-finance-pro-error" >

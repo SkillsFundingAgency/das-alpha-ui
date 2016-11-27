@@ -62,18 +62,23 @@ $(document).ready(function() {
             
 
               <form action="have-authority">
-                    <div class="form-group inline">
+                    <div class="form-group ">
                           <label class="form-label-bold" for="text">Do you have your Government Gateway details?</label> 
-                        <fieldset class="inline spacingBottom" id="lower-earner" data-inline-error="inline-lower-earner-error">
+                        <fieldset class=" spacingBottom" id="lower-earner" data-inline-error="inline-lower-earner-error">
                             <legend class="visuallyhidden">
                                 eligibility.check.lower.earner.h2
                             </legend>
                         <label for="finance-person-true" class="block-label">
-                                    <input type="radio" id="finance-person-true" name="govt-gateway" value="true">Yes </label>
+                                    <input type="radio" id="finance-person-true" name="govt-gateway" value="true">Yes, I have Government Gateway details </label>
                         <label for="finance-person-false" class="block-label">
-                                    <input type="radio" id="finance-person-false" name="govt-gateway" value="false">No </label>
+                                    <input type="radio" id="finance-person-false" name="govt-gateway" value="false">No, I don't have Government Gateway details </label>
                         </fieldset>
                     </div>
+
+
+
+
+
                     <div class="tamc-js-hidden error-inline validation-summary" id="inline-finance-pro-error" >
         <p>To continue you need your Government Gateway details.</p>
         </div>

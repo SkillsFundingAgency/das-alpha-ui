@@ -276,6 +276,10 @@ margin-top:-6px;
   padding-bottom:20px; border-bottom: 4px solid $govuk-blue;
 }
 
+.mini-pad {
+  padding-left:0px;
+}
+
 @media (min-width: 641px) {
 .rj-roles-choice {
   width:66%;
