@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+       <li id="removeWithNav">Apprentices</li>
+    </ol>
+
+  </div>
+  <h1 class="heading-xlarge rj-headings-border " >{% include "includes/account-name-number.html" %}Apprentices</h1>
+
+ <div class="grid-row">
+           <div class="column-two-thirds">
+
+          <div class="grid-row">
+            <div class="column-half ">
+              <h3 class="heading-medium" style="margin-top:0"><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract">Add an apprentice</a></h3>
+              <p class="rj-home-spacer">Add an apprentice to your account, so your training provider gets paid for their training.</p>
+            </div>
+            <div class="column-half ">
+              <h3 class="heading-medium " style="margin-top:0; "><a href="/{% include "includes/sprint-link.html" %}/contracts/in-progress">Check and approve new cohorts</a></h3>
+              <p class="rj-home-spacer">Review and approve information you and your training provider have added.</p>
+            </div>
+          </div> 
+          <div class="grid-row">
+             <div class="column-half ">
+              <h3 class="heading-medium rj-top-border" style="margin-top:0; padding-top:35px"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/">Update existing apprentices</a></h3>
+              <p class="rj-home-spacer">View, pause and stop apprentices that you're currently paying for.</p>
+            </div>
+            <div class="column-half ">
+              <h3 class="heading-medium rj-top-border" style="margin-top:0; padding-top:35px"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/changes-list">Apprentices that need change approval</a></h3>
+              <p class="rj-home-spacer">View and approve apprentices that need change approval</p>
+            </div>
+
+        </div>  
+       </div>
+    </div>
+  </main>
+
+
+{% endblock %}
+

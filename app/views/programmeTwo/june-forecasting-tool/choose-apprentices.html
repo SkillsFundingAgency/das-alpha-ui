@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .financial-nav a, .nav-payments a{
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+</style>
+
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/back-june-forecast.html" %}
+    </ol>
+  </div>
+
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+<div class="grid-row">
+           <div class="column-two-thirds">
+
+    
+           <!--div class="column-two-thirds"-->
+             <h1 class="heading-xlarge" >Choose the apprenticeships you want</h1>
+
+
+
+  <p style="margin-bottom:0;">You can now estimate how much you’ll be spending on apprenticeships every month or you can <a href="">skip this step</a></p>
+</div>
+</div>
+
+
+<div class="grid-row">
+           <div class="column-two-thirds">
+
+  <hr />
+
+
+            <!--h2 class="heading-medium" style="margin-top:0px">Apprenticeship 1</h2-->
+
+                <form action="">
+                  <fieldset>
+                    <legend class="visuallyhidden">Account name</legend>
+                    <div class="form-group">
+                        <label class="form-label-bold" for="text">Type of training</label>
+                        <input class="form-control rjFormTwoThirds" id="accountName" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label-bold" for="text">Number of apprentices</label>
+                        <input class="form-control" style="width:50px" id="number-of-apprentices" type="text" value="1">
+                    </div>
+                      <div class="form-date">
+                            <label class="form-label-bold" for="text">Start date</label><span class="form-hint">This can be any date after May 2017</span>
+
+                          <div class="form-group form-group-month">
+                            <label class="form-label" for="dob-month">MM</label>
+                            <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12" >
+                          </div>
+                          <div class="form-group form-group-year">
+                            <label class="form-label" for="dob-year">YYYY</label>
+                            <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2020" >
+                          </div>
+                        </div>
+                    <div class="form-group" style="margin:30px 0 0 0">
+                        <label class="form-label-bold" for="text">Cost</label>
+                        <p style="margin-bottom:0;">£9,000 over 24 months</p>
+                    </div>
+
+                  </fieldset>
+                </form>
+
+                  <div style="">
+                   
+                      <button id="add-button" class="button button-clear" style="margin-top:35px" >Add another apprenticeship</button>
+                       <hr />
+                   </div>
+
+           
+
+                   <h3 class="heading-medium" style="margin-top:0px">Total cost: £9,000</h3>
+ 
+
+                  <input class="button" id="saveAndContinue" type="submit" value="Save and continue" >
+                  <input name="trainingCourseSkip" type="submit" class="button button-clear" value="Skip this step">
+
+              </form>
+            </div>
+          </div>
+
+</main>
+
+
+
+
+
+{% endblock %}
+

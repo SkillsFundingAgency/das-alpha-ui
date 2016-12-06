@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+
+<script>
+$(document).ready(function() {
+      var theButton = document.getElementById('finance-person-false');
+      EventUtil.addHandler(theButton, 'click', function(event){
+        event = EventUtil.getEvent(event);
+        var target = EventUtil.getTarget(event);
+
+           var $input = $("input:radio[value=true]:checked").val();
+
+         if ($input) {} else { $( "#inline-finance-pro-error" ).removeClass( "tamc-js-hidden" );}
+      });
+      });
+$(document).ready(function() {
+            var anotherButton = document.getElementById('finance-person-true');
+      EventUtil.addHandler(anotherButton, 'click', function(event){
+        event = EventUtil.getEvent(event);
+        var target = EventUtil.getTarget(event);
+
+           var $inputOn = $("input:radio[value=true]:checked").val();
+          if ($inputOn) {$( "#inline-finance-pro-error" ).addClass( "tamc-js-hidden" );} else { }
+      });
+         });
+
+
+
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+     {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+
+  </div>
+
+
+      <div class="grid-row">
+           <div class="column-two-thirds">
+             <h1 class="heading-xlarge" >Allowing your tax details to be used</h1>
+             <p></p>
+             <p class="">When you enter your Government Gateway details you'll be asked to ‘grant authority’ to allow your tax details to be used.</p> <p>This means you allow HMRC to send the SFA details of the levy that you’ve paid - no other payroll information will be shared.</p>
+             
+            
+
+              <form action="govtCredentials">
+                    <div class="form-group ">
+                          <label class="form-label-bold" for="text">Do you have permission to allow your tax details to be used?</label> 
+                        <fieldset class=" spacingBottom" id="lower-earner" data-inline-error="inline-lower-earner-error">
+                            <legend class="visuallyhidden">
+                                eligibility.check.lower.earner.h2
+                            </legend>
+                        <label for="finance-person-true" class="block-label">
+                                    <input type="radio" id="finance-person-true" name="govt-gateway" value="true">Yes, I have permission </label>
+                        <label for="finance-person-false" class="block-label">
+                                    <input type="radio" id="finance-person-false" name="govt-gateway" value="false">No, I don't have permission </label>
+                        </fieldset>
+                    </div>
+                    <div class="tamc-js-hidden error-inline validation-summary" id="inline-finance-pro-error" >
+        <p>To continue you need permission to allow your tax details to be used.</p></p>
+        </div>
+                  <input class="button" id="saveAndContinue" type="submit" value="Continue">
+
+				  <!--div class="rjmakeALink" onclick="loopyLoop()"><p>Create another apprenticeship account</p></div-->
+				  <!--CREATE ANOTHER APPRENTICESHIP ACCOUNT-->
+              </form>
+
+            </div>
+      </div>
+</main>
+
+
+{% endblock %}
+
+

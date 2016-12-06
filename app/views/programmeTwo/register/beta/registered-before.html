@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+//jQuery( document ).ready(function() {
+     //jQuery.validate(); 
+// });
+
+
+</script>
+
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+     {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+
+  </div>
+  
+        <div class="grid-row">
+           <div class="column-two-thirds">
+
+  <h1 class="heading-xlarge">Your apprenticeship account</h1>
+
+  <!--p>
+  Do you want to add another PAYE scheme to this account, if you don't want to do it now you can always add more later.
+  </p-->
+
+<form action="are-you-a-finance-person">
+
+    <fieldset>
+
+      <legend class="visuallyhidden">Used service before</legend>
+      <div class="form-group">
+        <label class="form-label-bold" for="companies-house-number" style="s">Have you used the apprenticeship service before?</label>
+      <label class="block-label" for="radio-1">
+        <input id="radio-1" type="radio" name="radio-group" value="yes registered before">
+        Yes, I've used it before
+      </label>
+
+      <label class="block-label" for="radio-2">
+        <input id="radio-2" type="radio" name="radio-group" value="no havent registered before">
+        No, I haven't used the apprenticeship service
+      </label>
+    </div>
+    </fieldset>
+         <input class="button" id="saveAndContinue" type="submit" value="Save and continue">
+  </form>
+
+</div>
+</div>
+
+</main>
+
+<script>
+
+//store details entered into the form in local storage
+var createButton = document.getElementById('createAccountButton');
+EventUtil.addHandler(createButton, 'click', function(){
+              // save the form info to local storage by first putting the data into an object
+              var userDetails = {
+                email: document.getElementById('email-address').value,
+                password: document.getElementById('password').value
+            };
+
+            //store the object in local storage using json stringify
+              localStorage.setItem("login", JSON.stringify(userDetails));
+
+            //store the users email address in a cookie to repeat back to them later. Remember that we have some of the data stored in an object in local storage as well -  so we'll use that again if we need it.
+            document.cookie =  "emailAddress="  + userDetails.email 
+            // shows the cookie in the console log to check it is working
+            console.log (document.cookie)
+
+        // not needed at the moment
+
+              //hide the login form
+              //$('#login').addClass('hidden');
+              //show the quiz
+           // $('#wrapper').removeClass('hidden')
+    });
+</script>
+
+{% endblock %}

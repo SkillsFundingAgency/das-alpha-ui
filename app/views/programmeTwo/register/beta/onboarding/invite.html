@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% include "includes/secondary-nav-people.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+     {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+
+  </div>
+
+
+  <!--h1 class="heading-large">Levy account</h1-->
+  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Invite a team member</h1>
+
+
+  <p class="lede">
+    Invite somebody to access this levy account.
+  </p>
+
+  </div>
+  </div>
+
+  <form action="things-to-do">
+    <fieldset>
+      <legend class="visuallyhidden">password</legend>
+
+      <div class="form-group">
+
+        <label class="form-label-bold" for="full-name">Email </label>
+          <div class="grid-row">
+    <div class="column-two-thirds">
+        <span class="form-hint">
+          An invitation will be sent to this email address.
+        </span>
+      </div>
+    </div>
+
+        <input class="form-control" id="email-address" type="email">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label-bold" for="full-name">Full name</label>
+                  <div class="grid-row">
+    <div class="column-two-thirds">
+        <!--span class="form-hint">
+          Enter the name that will be used in the email invitation. It will
+          also appear on your team members list while the invited person has a
+          "pending" status.
+        </span-->
+      </div>
+    </div>
+        <input class="form-control" id="name" type="text" >
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend class="visuallyhidden">Access to the service</legend>
+      <label class="form-label-bold" for="full-name">Team member access</label>
+
+      <p>This team member will be able to:
+  <ul class="list-bullet">
+    <li>manage apprentices</li>
+    <li>manage payments</li>
+     <li>sign legal agreements</li>
+      <li>invite additional team members</li>
+  </ul></p>
+
+      <!--label class=" block-label " for="radio-1">
+        <input id="radio-1" type="radio" name="radio-group" value="Viewer">
+        Can view financial information but can't make changes
+
+      </label-->
+<!--
+          <label class="block-label" for="radio-3">
+        <input id="radio-3" type="radio" name="radio-group" value="Owner">
+        Everything - they're an owner
+
+      </label>
+
+      <label class="block-label" for="radio-2">
+        <input id="radio-2" type="radio" name="radio-group" value="Doer">
+        Manage payments and apprentices
+
+      </label>
+
+
+    </fieldset>
+  -->
+
+    <div style="margin-top:20px"></div>
+    <input class="button" id="saveAndContinue" type="submit" value="Invite">
+    <p style="margin-top:15px"><a href="/">Skip<a/></p>
+  </form>
+
+
+</main>
+
+{% endblock %}
+

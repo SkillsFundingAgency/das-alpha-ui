@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+     {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+
+  </div>
+
+<div class="user-alert">
+  <div class="panel panel-border-wide alert-success">
+    <i class="fa fa-check "></i>
+            <h2 class="heading-small">Invite sent to brendan.mcshane@acmecoventryltd.com</h2>
+          </div>
+</div>
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Team members</h1>
+    <p>This is a page that confirms the person was added, asks if they want to keep adding and setting up their team, or keep going/</p>
+
+  <form action="things-to-do">
+    <div style="margin-top:20px"></div>
+    <input class="button" id="saveAndContinue" type="submit" value="Keep going for now">
+
+  </form>
+  </div>
+</main>
+
+
+
+
+
+{% endblock %}
+
