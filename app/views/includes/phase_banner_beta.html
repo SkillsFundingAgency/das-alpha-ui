@@ -39,10 +39,11 @@
 				<ul id="global-nav-links">
 					<li {% if page_name == "dashboard" %} class="current" {% endif %}><a href="/{% include "includes/sprint-link.html" %}/balance">Home</a></li>
 					<li {% if page_name == "finance" %} class="current" {% endif %}><a href="/{% include "includes/sprint-link.html" %}/finance">Funding</a></li>
+					<li {% if page_name == "apprentices" %} class="current" {% endif %}><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/spend">Spend</a></li>
 					<li {% if page_name == "apprentices" %} class="current" {% endif %}><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></li>
-					<li {% if page_name == "training" %} class="current" {% endif %}><a href="/{% include "includes/sprint-link.html" %}/training">Find training</a></li>
+					<li {% if page_name == "training" %} class="current" {% endif %}><a href="/{% include "includes/sprint-link.html" %}/training">Training</a></li>
 					<li class="top_nav looks-like-a-link-underline" style="padding: 12px 15px 10px;">Team</li>
-					<li class="top_nav looks-like-a-link-underline" style="padding: 12px 15px 10px;">Organisations</li>
+					<!--li class="top_nav looks-like-a-link-underline" style="padding: 12px 15px 10px;">Organisations</li-->
 
 
 					<!--li {% if page_name == "paye" %} class="current" {% endif %}><a href="/sprint/{{ sprint }}/account/paye/index">PAYE schemes</a></li-->
