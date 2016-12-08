@@ -1473,6 +1473,609 @@ only screen and (min-resolution: 2dppx) {
 }
 
 
+//New navigation
+
+
+
+.header-global__title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+    padding: 0;
+    @include media(tablet) {
+        font-size: 32px;
+    }
+    a {
+        border-bottom: 1px solid #000;
+        color: #fff;
+        display: inline-block;
+        padding: 2px 0;
+        text-decoration: none;
+    }
+}
+
+
+
+
+.header-user {
+  background: $grey-4;
+}
+
+.header-user, 
+.header-organisation {
+  border-bottom: 1px solid $grey-2;
+}
+
+.header-inner {
+  @extend #content;
+  padding: 0;
+}
+
+
+
+.header-organisation h2 {
+  padding: 0;
+  margin-top: .75em;
+  margin-bottom: 0;
+}
+
+.js-hidden-mobile {
+  display: none;
+  @include media(tablet) {
+    display: block;
+  }
+}
+
+.js-hidden-desktop {
+  display: block;
+  @include media(tablet) {
+    display: none;
+  }
+}
+
+$nav-padding: 15px;
+
+a.nav-menu-link {
+  float: right;
+  clear: both;
+  margin: 10px 0;
+  font-size: 14px;
+  padding-left: 15px !important;
+  color: #000;
+  text-decoration: none;
+  &:before {
+    left: 5px !important;
+    margin-top: -6px !important;
+  }
+}
+
+nav#user-nav {
+  font-size: 14px;
+  clear: both;
+  @include media(tablet) {
+        font-size: 16px;
+    }
+  > ul {
+    list-style:none;
+    margin-left: -$nav-padding;
+    margin-right: -$nav-padding;
+    position: relative;
+    @include media(tablet) {
+      float: right;
+      margin: 0;  
+    }
+    li {
+      border-top: 1px solid $grey-2;
+      @include media(tablet) {
+        border: none; 
+      }
+      a {
+        padding: 12px $nav-padding 10px 20px;
+                display: block;
+      }
+      li { 
+        a {
+          padding-left: $nav-padding * 1;
+        }
+      }
+    }
+    li.top-level {
+      > a {
+        text-decoration: none;
+        color: $black
+      }
+      &.open {
+        ul li.selected a {
+          padding-left: 20px;
+          background-image: url('/public/images/tick.png');
+          background-repeat: no-repeat;
+          background-position: 0px 14px;
+          background-size: 15px;
+          text-decoration: none;
+          color: $black;
+          margin-left: $nav-padding * 1;
+        } 
+      }
+      @include media(tablet) {
+        display: inline-block;
+        float: left;
+        > a {
+          padding-top: 10px;
+          padding-bottom: 8px;
+          margin: 3px 0;
+           &.js-toggle {
+                    padding-left: 25px;
+                  }
+        } 
+        ul {
+          display: none;
+        }
+        &.open {
+          position: relative;
+          ul {
+            display: block;
+            position: absolute;
+            width: 250px;
+            top: 100%;
+            right: 0;
+            background: $grey-4;
+            border: 1px solid $grey-2;
+            z-index: 100;
+            li {
+              margin: 0 10px;
+              border-bottom: 1px solid $grey-2;
+              &:last-child {
+                border: none;
+              }
+              a {
+                padding-left: 0;
+                padding-right: 0;
+              }
+              &.selected a {
+                
+                margin-left: 0;
+              }
+            }
+          }
+        }
+        a.menu-open,
+        a.menu-open:focus {
+          background: $grey-4;
+          border: 1px solid $grey-2;
+          border-bottom: none;
+          position: relative;
+          margin-bottom: -1px;
+          z-index: 101;
+        }
+      }
+    }
+  }
+}
+
+
+
+a.menu-open, 
+a.menu-closed {
+  padding-left: 20px;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    border-color: transparent;
+    border-width: 7px 4px;
+    border-style: solid;
+    display: block;
+    width: 0;
+    height: 0;
+    top: 50%;
+    margin-top: -4px;
+  }
+}
+
+a.menu-open:before {
+  border-top-color: black;
+}
+
+a.menu-closed:before {
+  border-left-color: black;
+  border-width: 4px 7px;
+}
+
+nav.global-nav {
+  @extend %contain-floats;
+  font-size: 14px;
+  @include media(tablet) {
+        font-size: 16px;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        margin-left: -$nav-padding;
+        margin-rightr: -$nav-padding;
+        padding: 0;
+        position: relative;
+        li {
+            display: inline-block;
+            float: left;
+            a {
+                padding: 12px $nav-padding 10px;
+                display: block;
+                position: relative;
+                &:focus {
+                    outline: 0;
+                }
+               
+            }
+            &.current {
+                a {
+                    color: black;
+                    text-decoration:none;
+                    &:after {
+                        content: "";
+                        display: block;
+                        height: 5px;
+                        position: absolute;
+                        left: $nav-padding;
+                        right: $nav-padding;
+                        bottom: -1px;
+                        z-index: 1;
+                        background: $govuk-blue;
+                    }
+                }
+            }
+            &.more-link {
+              a {
+                position: absolute;
+              }
+              @include media(tablet) {
+              display: none;   
+              }
+            }
+        }
+    }
+    ul#global-nav-links-secondary {
+      float: none;
+      clear: both;
+      margin-right: -$nav-padding;
+      @include media(tablet) {
+        float: left;
+        clear: none;
+        margin-left: 0;
+      }
+      li {
+        display: block;
+        float: none;
+        border-top: 1px solid $grey-2;
+        @include media(tablet) {
+          float: left;
+          border: none;
+        }
+      }
+    }
+}
+
+nav.global-nav ul {
+  @include media(desktop) {
+    font-size: 19px;
+  }
+  li.sa-stacker {
+    float: right;
+    ul {
+      display: none;
+    }
+    &.sa-open {
+      ul {
+        display: block;
+        position: absolute;
+        background: white;
+        left: $nav-padding;
+        right: -$nav-padding;
+        border-bottom: 2px solid $grey-2;
+        li {
+            display: block;
+            float: none;
+            border-top: 1px solid $grey-2;
+            
+          }
+      }
+    }
+  }
+  
+}
+
+.service-info {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.service-info .logo {
+  margin-top: 0.78947em;
+}
+
+.service-info .organisation-logo {
+  font-family: Helvetica, Arial;
+  font-weight: 400;
+  display: block;
+  position: relative;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 3px 0 2px 0;
+  text-decoration: none;
+  padding: 3px 0 2px 30px;
+  background-image: url("../images/hmrc_crest_18px.png");
+  background-position: 5px center;
+  background-repeat: no-repeat;
+  border-left: 2px solid #009390;
+}
+
+.service-info .organisation-logo-medium {
+  font-size: 18px;
+  line-height: 22px;
+  padding: 3px 0 2px 38px;
+  background-image: url("../images/hmrc_crest_18px_x2.png");
+  background-size: auto 26px;
+  border-left: 2px solid #009390;
+  white-space: nowrap;
+}
+
+.button.text-link {
+    background-color: transparent;
+    box-shadow: none;
+    text-decoration: underline;
+    color: #005ea5;
+    border: none;
+}
+
+.hgroup {
+  margin-bottom: 30px;
+}
+
+@media (min-width: 641px) {
+  .hgroup {
+    margin-bottom: 60px;
+  }
+}
+
+/* HTML Guideance styles */
+.html-publications-show:after,
+.html-publications-show .publication-external:after,
+.html-publications-show .publication-header:after,
+.html-publications-show .publication-content .govspeak .contact:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.html-publications-show:after,
+.html-publications-show .publication-external:after,
+.html-publications-show .publication-header:after,
+.html-publications-show .publication-content .govspeak .contact:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.html-publications-show {
+  padding: 15px 15px 90px;
+}
+
+.html-publications-show .publication-header {
+  background: #2b8cc4;
+  padding: 10px 15px;
+  margin: 0 -15px;
+}
+
+.html-publications-show .publication-header .headings {
+  overflow: hidden;
+}
+
+.html-publications-show .publication-header .headings .document-type {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.11111;
+  font-weight: 400;
+  text-transform: none;
+  display: block;
+  margin: 20px 0 0;
+}
+
+.html-publications-show .publication-header .headings h1 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 32px;
+  line-height: 1.09375;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: bold;
+  margin: 5px 0 15px;
+  color: #fff;
+}
+
+.html-publications-show .publication-header .headings p {
+  margin: 15px 0 20px;
+  color: #fff;
+}
+
+.html-publications-show .in-page-navigation {
+  color: #fff;
+  margin: 0 0 40px;
+  width: 100%;
+}
+
+.html-publications-show .in-page-navigation h2 {
+  font-weight: bold;
+}
+
+.html-publications-show .in-page-navigation ol {
+  padding-left: 30px;
+  list-style-type: decimal;
+}
+
+.html-publications-show .in-page-navigation ol li {
+  list-style: decimal;
+  font-weight: bold;
+}
+
+.html-publications-show .in-page-navigation a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.html-publications-show .publication-header a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.html-publications-show .publication-content {
+  position: relative;
+  z-index: 2;
+}
+
+.html-publications-show .publication-content .govspeak h2, #whitehall-wrapper .html-publications-show .publication-content .govspeak h3 {
+  font-weight: bold;
+  color: black;
+  margin-top: 30px;
+}
+
+.html-publications-show .publication-content .govspeak h2 .number {
+  background: #fff;
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+.html-publications-show .publication-content .govspeak h3 {
+  font-weight: bold;
+  color: black;
+  margin-top: 30px;
+}
+
+.html-publications-show .publication-content .govspeak h3 .number {
+  background: #fff;
+  color: #6f777b;
+  padding-right: 10px;
+}
+
+.html-publications-show .govspeak h4, .html-publications-show .govspeak h5, .html-publications-show .govspeak h6 {
+  font-size: 19px;
+  line-height: 1.31579;
+}
+
+@media (min-width: 641px) {
+  .html-publications-show .publication-header {
+    padding: 0 30px;
+    margin: 0 -15px;
+  }
+  .html-publications-show .publication-header .headings .document-type {
+    font-size: 27px;
+    line-height: 1.11111;
+  }
+  .html-publications-show .publication-header .headings .document-type {
+    margin: 75px 0 10px;
+  }
+  .html-publications-show .publication-header .headings h1 {
+    font-size: 48px;
+    line-height: 1.04167;
+  }
+  .html-publications-show .publication-header .headings h1 {
+    margin-bottom: 60px;
+  }
+  .html-publications-show .publication-content .govspeak {
+    width: 75%;
+    float: right;
+  }
+  .html-publications-show .publication-content .govspeak h2, #whitehall-wrapper .html-publications-show .publication-content .govspeak h3 {
+    margin-top: 80px;
+  }
+  .html-publications-show .publication-content .govspeak h2 {
+    font-size: 36px;
+    line-height: 1.11111;
+  }
+  .html-publications-show .publication-content .govspeak h2 {
+    margin: 60px 0 15px;
+  }
+  .html-publications-show .publication-content .govspeak h2 .number {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 53px;
+    line-height: 1.03774;
+    font-weight: 400;
+    text-transform: none;
+    font-weight: bold;
+    position: absolute;
+    margin: -30px 0 0 -25%;
+    width: 22%;
+    padding: 35px 0 30px 3%;
+  }
+  .html-publications-show .publication-content .govspeak h2 .number {
+    font-size: 80px;
+    line-height: 1;
+  }
+  .html-publications-show .publication-content .govspeak h3 {
+    font-size: 27px;
+    line-height: 1.11111;
+  }
+  .html-publications-show .publication-content .govspeak h3 {
+    margin-top: 80px;
+  }
+  .html-publications-show .publication-content .govspeak h3 .number {
+    padding-right: 0;
+    display: inline-block;
+    width: 75px;
+    margin-left: -75px;
+  }
+  .html-publications-show .publication-content .govspeak h4, #whitehall-wrapper .html-publications-show .publication-content .govspeak h5, #whitehall-wrapper .html-publications-show .publication-content .govspeak h6 {
+    font-weight: bold;
+    color: black;
+    margin-top: 30px;
+  }
+}
+
+
+.govuk-box-highlight {
+    padding: 1em 0;
+}
+.govuk-box-highlight p {
+    margin-bottom: 0;
+}
+
+.related {
+    border-top-color: $govuk-blue;
+    border-top-style: solid;
+    border-top-width: 10px;
+    margin-top: 20px;
+}
+
+
+.visually-hidden, .hidden, .vh {
+    display: none;
+}
+
+table {
+    margin-bottom: 20px;
+}
+
+tr.total th {
+    border: none;
+}
+
+tr.total td {
+    border-bottom: 2px solid #0b0c0c;
+    font-weight: 700;
+}
+
+.govuk-box-highlight a {
+    color: white;
+    &:hover {
+        color: #2b8cc4;
+    }
+    &:visited {
+        color: #912B88;
+    }
+}
+
 
 
 

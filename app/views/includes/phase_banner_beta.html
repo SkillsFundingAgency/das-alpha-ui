@@ -1,6 +1,4 @@
 
-<!--
-<div class="global-header-bar"></div>
 <div class="header-user">
 	<div class="header-inner">
 		<div class="service-info">
@@ -11,7 +9,7 @@
 		        </p>
 		    </div>
 		</div>
-		<nav id="navigation-primary-NEW" class="rj-dont-display">
+<nav id="navigation-primary-NEW" class="rj-dont-display">
 		<a href="#user-nav" class="js-toggle js-hidden-desktop menu-closed nav-menu-link" data-target="#user-nav">Settings</a>
 		<nav id="user-nav" class="js-hidden-mobile">
 			<ul>
@@ -34,30 +32,34 @@
 		</nav>
 	</div>
 </div>
-<div class="header-organisation">
-	<div class="header-inner">
-		<h2 class="heading-medium">Red &amp; White &amp; Blue &amp; Green Holdings Ltd</h2>
-		<nav id="global-nav" class="global-nav">
-			<ul id="global-nav-links">
-				<li {% if page_name == "dashboard" %} class="current" {% endif %}><a href="/sprint/{{ sprint }}/account/dashboard/index">Dashboard</a></li>
-				<li {% if page_name == "finance" %} class="current" {% endif %}><a href="/sprint/{{ sprint }}/account/finance/index">Finance</a></li>
-				<li {% if page_name == "apprentices" %} class="current" {% endif %}><a href="/sprint/{{ sprint }}/account/apprentices/index">Apprentices</a></li>
-				<li {% if page_name == "team" %} class="current" {% endif %}><a href="/sprint/{{ sprint }}/account/team/index">Manage your team</a></li>
-				<li {% if page_name == "organisations" %} class="current" {% endif %}><a href="/sprint/{{ sprint }}/account/organisations/index">Organisations and agreements</a></li>
-				<li {% if page_name == "paye" %} class="current" {% endif %}><a href="/sprint/{{ sprint }}/account/paye/index">PAYE schemes</a></li>
-			</ul>
-		</nav>
+	<div class="header-organisation">
+		<div class="header-inner">
+			<!--h2 class="heading-medium">Red &amp; White &amp; Blue &amp; Green Holdings Ltd</h2-->
+			<nav id="global-nav" class="global-nav">
+				<ul id="global-nav-links">
+					<li {% if page_name == "dashboard" %} class="current" {% endif %}><a href="/{% include "includes/sprint-link.html" %}/balance">Home</a></li>
+					<li {% if page_name == "finance" %} class="current" {% endif %}><a href="/{% include "includes/sprint-link.html" %}/finance">Funding</a></li>
+					<li {% if page_name == "apprentices" %} class="current" {% endif %}><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></li>
+					<li {% if page_name == "training" %} class="current" {% endif %}><a href="/{% include "includes/sprint-link.html" %}/training">Find training</a></li>
+					<li class="top_nav looks-like-a-link-underline" style="padding: 12px 15px 10px;">Team</li>
+					<li class="top_nav looks-like-a-link-underline" style="padding: 12px 15px 10px;">Organisations</li>
+
+
+					<!--li {% if page_name == "paye" %} class="current" {% endif %}><a href="/sprint/{{ sprint }}/account/paye/index">PAYE schemes</a></li-->
+				</ul>
+			</nav>
+		</div>
 	</div>
-</div>
 </nav>
--->
+
+<!--
 <div class="phase-banner-beta">
   <p>
     <strong class="phase-tag">BETA</strong>
     <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
   </p>
 </div>
-
+-->
 
 
 {% include "includes/primary-nav.html" %}

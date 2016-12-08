@@ -1,4 +1,4 @@
-<nav id="navigation-primary" class="rj-dont-display">
+<nav id="navigation-primary-OLDOUT" class="rj-dont-display">
 				<ul class="">
 					<li class="top_nav home-nav"><a href="/{% include "includes/sprint-link.html" %}/balance">Home</a></li>
 					<li class="top_nav financial-nav"> <a href="/{% include "includes/sprint-link.html" %}/finance">Funding</a></li>
@@ -44,7 +44,7 @@ setDefaultNavStatus();
 var NavigationStatus = function() {
   var navStatus = JSON.parse(localStorage.getItem('Navigation-Status'));
     if (navStatus == "on") {
-      $( "#navigation-primary" ).removeClass( "rj-dont-display" );
+      $( "#navigation-primary-NEW" ).removeClass( "rj-dont-display" );
             $( "#removeWithNav" ).addClass( "rj-dont-display" );
                   $('<style>.breadcrumbs ol li a { display:none;}</style>').appendTo('body');
 
@@ -52,7 +52,7 @@ var NavigationStatus = function() {
 
 
   else {
-  $( "#navigation-primary" ).addClass( "rj-dont-display" );
+  $( "#navigation-primary-NEW" ).addClass( "rj-dont-display" );
 
   }
 };
