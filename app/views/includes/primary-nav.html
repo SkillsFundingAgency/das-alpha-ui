@@ -44,7 +44,7 @@ setDefaultNavStatus();
 var NavigationStatus = function() {
   var navStatus = JSON.parse(localStorage.getItem('Navigation-Status'));
     if (navStatus == "on") {
-      $( "#navigation-primary-NEW" ).removeClass( "rj-dont-display" );
+      $( "#navigation-primary" ).removeClass( "rj-dont-display" );
             $( "#removeWithNav" ).addClass( "rj-dont-display" );
                   $('<style>.breadcrumbs ol li a { display:none;}</style>').appendTo('body');
 
@@ -52,7 +52,7 @@ var NavigationStatus = function() {
 
 
   else {
-  $( "#navigation-primary-NEW" ).addClass( "rj-dont-display" );
+  $( "#navigation-primary" ).addClass( "rj-dont-display" );
 
   }
 };
