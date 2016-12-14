@@ -7,9 +7,11 @@
 {% block content %}
 
 <style>
-  .home-nav a {
-    {% include "includes/nav-on-state-css.html" %}
-  }
+
+ #navigation-primary, #kill-me {
+  display:none;
+}
+
 
   @media (min-width: 641px) and (max-width: 890px){
 .rj-alert-wrapper {
@@ -26,7 +28,7 @@
 </style>
 
 <main id="content" role="main">
-{% include "includes/phase_banner_beta_noNav.html" %}
+
 
 
   <div class="breadcrumbs">
