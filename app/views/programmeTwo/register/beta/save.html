@@ -36,8 +36,8 @@ $( document ).ready(function() {
       <div class="grid-row">
            <div class="column-two-thirds">
 
-   <h1 class="heading-xlarge" ><!--span class="heading-secondary" style="padding-top:0px">Question 2 of 4</span-->Add your details</h1>
-     <p>Enter your details to claim your funds.</p>
+   <h1 class="heading-xlarge" ><!--span class="heading-secondary" style="padding-top:0px">Question 2 of 4</span-->Get set up as a user</h1>
+    
  </div></div>
 
  
@@ -48,7 +48,7 @@ $( document ).ready(function() {
 
             <div class="form-group">
                     <label class="form-label-bold" for="full-name">Email address</label>
-                    <span class="form-hint">Enter the email address you use at work</span>
+                   <!-- <span class="form-hint">Enter the email address you use at work</span> -->
                     <input class="form-control " id="emailAddress" type="email" >
               </div>
             </fieldset>
@@ -57,7 +57,12 @@ $( document ).ready(function() {
 
               <div class="form-group">
                     <label class="form-label-bold" for="full-name">Create password</label>
-                     <span class="form-hint">Passwords should be a minimum of eight letters and <br />consist of at least one number, one uppercase letter <br />and one lowercase letter</span>
+                <span class="form-hint"><p>Your password must:</p>
+
+                  <ul><li>be between 8 and 16 characters</li>
+                    <li>include at least one uppercase letter and one lowercase letter</li>
+                    <li>include at least one number</li></ul>
+</span>
                     <input class="form-control" id="password" type="password" >
               </div>
               <div class="form-group">
@@ -65,9 +70,9 @@ $( document ).ready(function() {
                     <input class="form-control" id="confirm-password" type="password" >
               </div>
             </fieldset>
-            <p>For security, we need to send you an email.</p>
+            <p>By continuing you accept the <a href="https://ppidentity.apprenticeships.sfa.bis.gov.uk/views/sfa-das/terms-of-use.html">terms of use</a>.</p>
 
-                  <input class="button" id="saveAndContinue" type="submit" value="Send verification email">
+                  <input class="button" id="saveAndContinue" type="submit" value="Set me up">
           </form>
 
 
