@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+//jQuery( document ).ready(function() {
+     //jQuery.validate(); 
+// });
+
+
+//loopyloop stores a variable in local storage if the user is looping through the govt gateway form multiple times so I can display a confirmation page later
+var loopyLoop = function() {
+  var isLooping = 'yes';
+  localStorage.setItem("is-looping", JSON.stringify(isLooping));
+  window.location.href='govtCredentials';
+};
+
+var whereNow = function() {
+  var areWeLooping = JSON.parse(localStorage.getItem('is-looping'));
+   console.log(areWeLooping)
+    if (areWeLooping == "yes") {
+      var isLooping = 'no';
+      localStorage.setItem("is-looping", JSON.stringify(isLooping));
+    window.location.href='confirmation-PAYE';
+  } else {
+    window.location.href='friendly-name';
+  }
+};
+
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+{% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+      <div class="grid-row">
+           <div class="column-two-thirds">
+              <h1 class="heading-xlarge" >Choose your PAYE schemes</h1>
+              <p>Tell us which PAYE schemes you want to link to your apprenticeship account in order to access your funds.<p/>
+			  <div style="margin-top:50px"></div>
+			  
+              <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
+              <form action="">
+                  <legend class="visuallyhidden">PAYE scheme reference number</legend>
+                    <div class="form-group">
+                    <label class="block-label" for="checkbox1">
+                      <input id="checkbox1" type="checkbox" name="checkbox-group" value="paye-1">
+                    846/A246
+                     </label>
+                    <label class="block-label" for="checkbox2">
+                      <input id="checkbox2" type="checkbox" name="checkbox-group" value="paye-2">
+                    846/A249
+                    </label>
+                    <label class="block-label" for="checkbox3">
+                      <input id="checkbox3" type="checkbox" name="checkbox-group" value="paye-3">
+                    846/A250
+                    </label>
+                  </div>
+                </fieldset>
+			
+                <!-- function loopyLoop and whereNow are at the top of this page -->
+                  <div style="margin-top:50px"></div>
+				  
+				  <input class="button" id="saveAndContinue" onclick="whereNow()" value="Save and continue">
+				  <div style="margin-top:25px"></div>
+				  <div class="rjmakeALink" onclick="loopyLoop()"><p>Add PAYE schemes to another Government Gateway ID</p></div>
+                  
+				  
+                  
+              </form>
+            </div>
+            <div class="column-one-third"></div>
+          </div>
+
+</main>
+
+<script>
+
+
+
+
+</script>
+
+{% endblock %}

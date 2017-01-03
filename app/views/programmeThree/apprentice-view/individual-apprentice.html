@@ -1,0 +1,219 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+    .apprentice-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view">Your apprentices</a></li>
+      <li id="removeWithNav">Rob Edwards</li>
+    </ol>
+
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+              <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Rob Edwards</h1>
+            <div>
+                <!--p>
+                  You can <a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship?">pause or stop this apprenticeship</a> 
+                </p-->
+
+                <table class="table-19-font"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Status</h2></th>
+                      <th><p style="margin-top:45px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship">Pause or stop apprenticeship</a> </p> </th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="" style="width:217px">Status</td>
+                      <td class="" style="width:200px">Recieving training</td>
+                      <td class=""></td>
+                    </tr>
+
+                      </tbody>
+                </table>
+
+                <table class="table-19-font"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Apprentice</h2></th>
+                      <th><p style="margin-top:45px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/edit-apprentice">Edit apprentice</a> </p> </th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="rjTableName" style="width:217px">Apprentice name</td>
+                      <td class="" style="width:200px">Rob Edwards</td>
+                      <td class=""></td>
+                    </tr>
+                     <tr>
+                      <td class="rjTableName" style="width:217px">Date of birth</td>
+                      <td class="" style="width:200px">28 February 1997</td>
+                      <td class=""></td>
+                    </tr>
+                   </tbody>
+                </table>
+
+
+              <table class="table-19-font"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Training</h2></th>
+                      <th><p style="margin-top:45px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/edit-overview">Edit training</a> </p> </th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+
+
+                     <tr>
+                     <td class="rjTableName" style="width:217px">Apprenticeship name</td>
+                      <td class="" style="width:200px">Level 2: Aeronautical engineering</td>
+                      <td class=""></td>
+                    </tr>
+
+                    <tr>
+                      <td class="rjTableName">Training provider</td>
+                      <td class="" style="width:200px">Hackney Skills Solutions Ltd</td>
+                      <td class=""></td>
+                    </tr>
+
+                    <tr>
+                     <td class="rjTableName">Endpoint assessor</td>
+                      <td class="" style="width:200px">Pham Assessment Ltd</td>
+                      <td class=""></td>
+                    </tr>
+                      </tbody>
+                </table>
+
+
+                <table class="table-19-font"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Dates</h2></th>
+                       <th class="looks-like-a-link-underline"><p style="margin-top:45px; text-align:right"> Edit dates </p> </th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                     <td class="rjTableName" style="width:217px">Start date</td>
+                      <td class="">20 July 2018</td>
+                      <td class=""></td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">End date</td>
+                      <td class="">19 July 2020</td>
+                      <td class=""></td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">Time left</td>
+                      <td class="">10 months</td>
+                      <td class=""></td>
+                    </tr>
+                                </tbody>
+                </table>
+
+
+                <table class="table-19-font"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Payment</h2></th>
+                       <th class="looks-like-a-link-underline"><p style="margin-top:45px; text-align:right"> Edit costs </p> </th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                     <td class="rjTableName" style="width:217px">Cost</td>
+                      <td class="">£2,957.56</td>
+                      <td class=""></td>
+                    </tr>
+                    <tr>
+                     <td class="rjTableName">Amount paid</td>
+                      <td class="">£1,312.56</td>
+                      <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/paid">View</a></td>
+                    </tr>
+                     <tr>
+                     <td class="rjTableName">Balance</td>
+                      <td class="">£1,645.00</td>
+                      <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/left-to-pay">View</a></td>
+                    </tr>
+
+                  </tbody>
+                </table>
+
+          
+            </div>
+            <div style="margin-top:35px">
+
+              </div>
+            <div style="margin-top:50px"></div>
+          </div>
+
+          <div class="column-one-third">
+                      <aside class="related">
+                        <!--h2 class="heading-medium" style="margin-top:10px">Pause or stop apprentice</h2>
+                        <p>Pause or stop this apprentice</p>
+
+                    <form action="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/edit-existing-apprenticeship">
+                        <div style="margin-top:20px;"><input class="button" id="updateDetails" type="submit" value="Pause or stop apprentice"></div> 
+                    </form-->
+
+                        <h2 class="heading-medium" style="//border-top: 1px #bfc1c3 solid;//padding-top:35px">Audit log</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <p>There have been no past changes</p>
+                          </li>
+                        </ul>
+                          <!--li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/paymentplan">Add a new payment plan (OUT?)</a>
+                          </li>
+                          <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/makepayment">Make a payment</a>
+                          </li>
+                           <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/reviewpayments">Review and amend regular payments</a>
+                          </li>
+                            <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/spendingcommitments">View a summary of your spending commitments</a>
+                          </li>
+                        </ul>
+                           </nav-->
+                    </aside>
+            </div>
+        </div>
+</main>
+
+
+
+{% endblock %}
+
