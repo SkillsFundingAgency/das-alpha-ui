@@ -2,7 +2,7 @@
 
 {% block head %}
     {% include "includes/head.html" %}
-    <script src="/public/javascripts/das/edit-commitment-1.0.js"></script>
+    <script src="/public/javascripts/das/edit-commitment-1.1.js"></script>
 {% endblock %}
 
 {% block page_title %}
@@ -51,7 +51,7 @@ EventUtil.addHandler(btn, 'click', function(){
   <div class="grid-row">
            <div class="column-two-thirds">
             <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Add an apprentice</h1>
-               
+
                <div class="panel panel-border-wide">
                  <p>
                    You must add the apprentice’s first and last names – fill in as many other fields as you can. You'll be able to return later to make changes or add more information.
@@ -59,8 +59,7 @@ EventUtil.addHandler(btn, 'click', function(){
                    <p>All the fields must be complete and accurate for your training provider to get paid - this excludes the Reference field.</p>
                </div>
           <hr style=""/>
-  
-
+          <form id="myFormId">
         <fieldset>
           <legend class="visuallyhidden">Apprentice name</legend>
                 <div class="form-group" style="margin-bottom:15px">
@@ -186,16 +185,11 @@ EventUtil.addHandler(btn, 'click', function(){
         </div>
     <div class="column-two-thirds">
           <div style="margin-top:20px;"><input class="button" type="button" id="saveAndReturn" value="Save"></div>
-          <p class="looks-like-a-link-underline" style="margin-top:20px">Save, and make a copy</p>
+          <p class="looks-like-a-link-underline" id="saveAndAdd" style="margin-top:20px; cursor: pointer; cursor: hand; ">Save and add another</p>
     </div>
       <div class="column-one-third">
          <!--div style="margin-top:20px;"><input class="button delete-button" id="deleteApprenticeship" value="Delete apprentice"></div-->
       </div>
 </main>
-
-
-
-
-
 {% endblock %}
 
