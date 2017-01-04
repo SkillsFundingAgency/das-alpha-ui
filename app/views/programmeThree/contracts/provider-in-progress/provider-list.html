@@ -4,8 +4,9 @@
     {% include "includes/head.html" %}
     <script>
         var commitmentListSource = 'provider';
+        var employerOrNot = JSON.parse(localStorage.getItem('commitments.isEmployer'));
     </script>
-    <script src="/public/javascripts/das/list-commitment-1.4.js"></script>
+    <script src="/public/javascripts/das/list-commitment-1.5.js"></script>
      <script src="/public/javascripts/das/jquery.highlight-5.js"></script>
 {% endblock %}
 
@@ -26,7 +27,7 @@
 
 
 <script>
-var employerOrNot = JSON.parse(localStorage.getItem('commitments.isEmployer'));
+
 $(document).ready(function() {
   var changeStuff = function() {
   if (employerOrNot=='yes') {
@@ -35,6 +36,7 @@ $(document).ready(function() {
     $(notesStuff).addClass("rj-dont-display");
     $(addReference).addClass("rj-dont-display");
     $(commitmentStatus).addClass("rj-dont-display");
+    $(ULNTable).addClass("rj-dont-display");
 
      $(removeMe).addClass("rj-dont-display")
     }
@@ -102,30 +104,6 @@ changeUnknown();
         </div>
 </div>
 
-
-<!-- 
-
-                        <table class="" id=""> 
-                    <thead>
-                      <tr>
-                        <th scope="col" class="">Employer</th>
-                        <th scope="col" class="">Reference</th>
-                        <th scope="col" class="">Status</th>
-                        <th scope="col" class="">Note</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="">Acme Coventry Ltd</td>
-                         <td class="">98HGS3F</td>
-                        <td class="">Needs action</td>
-                        <td class="" style="max-width:400px">This is the space for a note to be added, we need to decide the maximum amount of space that we can give to this.</td>
-                    </tbody>
-                </table>
-
--->
-
-
     <!-- ----------- This is the default where there aren't any groups or cohorts added ------------ -->
     <div style="" class="rj-no-apprenticeships" id="no-apprenticeships">
         <h2 class="heading-medium"><span style="font-weight:700" id=""> 0 Apprentices</span></h2>
@@ -190,9 +168,9 @@ changeUnknown();
                       <tr>
                         <th scope="col" class=""  >Name</th>
                         <!--th scope="col" class="">Family<br />name</th-->
-                        <!--th scope="col" class="">ULN</th-->
+                        <th id="ULNTable" scope="col" class="">ULN</th>
                         <th scope="col" class="">Training dates</th>
-                        <th scope="col" class="">Endpoint Assessor</th>
+                        <!--th scope="col" class="">Endpoint Assessor</th-->
                          <th scope="col" class="">Cost</th>
                         <th scope="col" class=""></th>
                       </tr>
