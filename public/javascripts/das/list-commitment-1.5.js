@@ -1,16 +1,19 @@
 
 (function() {
+
     var view = {
         $noApprenticeshipsBlock: null,
         $apprenticeshipsBlock: null,
         $numberOfApprenticesLabel: null,
         $apprenticeshipsTableBody: null,
+        $totalCostOfApprenticesLabel: null,
 
         load: function() {
             view.$noApprenticeshipsBlock = $('#no-apprenticeships');
             view.$apprenticeshipsBlock = $('#apprenticeships');
             view.$numberOfApprenticesLabel = $('#numberOfApprentices');
             view.$apprenticeshipsTableBody = $('#apprenticeships table > tbody');
+            view.$totalCostOfApprenticesLabel = $('#totalCostOfApprentices');
 
 
         }
@@ -31,8 +34,6 @@
         $('#apprenticeships').removeClass('rj-dont-display');
               $('#bottomToolBarLotsofApprentices').addClass('rj-dont-display');
               $('#addApprenticesEmptyState').addClass('rj-dont-display')
-
-
 
         // random global variable assignment - variable is used again later -  the copy in the training header.
         numberOfApps = apprenticeships.length;
@@ -58,14 +59,31 @@
             x.innerHTML = numberOfApps + ' ' + newCopy + appsMoreThanOne;
         }
 
-        var displayCost = apprenticeship.cost ? '£' + apprenticeship.cost.format(0) : 'unknown' ;
+                 //robs ropey code to work out a fake total cost amount
+    // formats numbers as cost
+
+            var formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'GBP',
+                minimumFractionDigits: 0,
+            });
+
+        for(var bb = 0; bb < numberOfApps; bb++) ;
+              cc = bb+1;
+              dd = cc * 1256;
+        view.$totalCostOfApprenticesLabel.text(formatter.format(dd));
+      
+        //
+
+        var displayCost = apprenticeship.cost ? '£' + apprenticeship.cost.format(0) : '----' ;
         var displayStart = apprenticeship.start.month ? apprenticeship.start.month + '/' + apprenticeship.start.year :  'unknown';
         var displayFinish = apprenticeship.finish.month ? apprenticeship.finish.month + '/' + apprenticeship.finish.year : 'unknown';
         var fullName = apprenticeship.apprentice.first ? apprenticeship.apprentice.first + ' ' + apprenticeship.apprentice.last : 'unknown';
-        var allDates = apprenticeship.start.month ? apprenticeship.start.month + '/' +  + apprenticeship.start.year + ' to ' +  apprenticeship.finish.month + '/' + apprenticeship.finish.year : 'unknown';
+        var allDates = apprenticeship.start.month ? apprenticeship.start.month + '/' +  + apprenticeship.start.year + ' to ' +  apprenticeship.finish.month + '/' + apprenticeship.finish.year : '----';
         var blankField = '  '
         var changesOne = ' '
         var endpointAssessor = 'unknown'
+
 
         var $tr = $('<tr></tr>');
       //  $tr.append(makeCell(apprenticeship.training.name));
@@ -82,8 +100,12 @@
         $tr.append(makeCell(displayCost));
 
         $tr.append(makeActionCell(apprenticeship.id));
+
         return $tr;
+
+
     }
+
     function makeCell(text) {
         return $('<td style=""></td>').text(text || 'unknown');
     }

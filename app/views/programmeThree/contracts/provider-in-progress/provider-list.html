@@ -35,7 +35,6 @@ $(document).ready(function() {
     document.getElementById("providerName").textContent = "Provider:" ;
     $(notesStuff).addClass("rj-dont-display");
     $(addReference).addClass("rj-dont-display");
-    $(commitmentStatus).addClass("rj-dont-display");
     $(ULNTable).addClass("rj-dont-display");
 
      $(removeMe).addClass("rj-dont-display")
@@ -43,12 +42,13 @@ $(document).ready(function() {
 else {  
     $(notesStuff).removeClass("rj-dont-display");
     $(addReference).removeClass("rj-dont-display");
-    $(commitmentStatus).removeClass("rj-dont-display");
         };
   };
 
  var changeUnknown = function() {
   $('td').highlight('unknown');
+  $('td').highlight('null');
+  $('td').highlight('----');
 
  };
 
@@ -83,7 +83,7 @@ changeUnknown();
 <!--h1 class="heading-large">Levy account</h1-->
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
 
-<h1 class="heading-xlarge" id="commitmentsHeader">Apprentice cohort</h1>
+<h1 class="heading-xlarge" id="commitmentsHeader">Review your cohort</h1>
 
 
 
@@ -93,7 +93,7 @@ changeUnknown();
                                      <!--h2 class="heading-medium" id="commitmentsName" style="margin: 0 0 5px 0">Acme Coventry Ltd</h2-->
                                      <div id=""><h2 id="providerName" class="heading-small"  style="display:inline-block; margin:0;">Employer:&nbsp</h2 ><p id="commitmentsName" style="display:inline; margin:0;">Acme Coventry Ltd</p></div>
                                   <div id="addReference"><h2 class="heading-small"  style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">98HGS3F</p></div>
-                                  <div id="commitmentStatus"><h2 class="heading-small"  style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p  style="display:inline; margin:0;">Needs action</p></div>
+
                           </div>
             </div>
 
@@ -153,16 +153,17 @@ changeUnknown();
 
           <div>
          <hr style="margin:20px 0 0 0" />
-              <h2 class="heading-medium" style="margin:18px 0 0 0 "><span style="font-weight:700; " id="numberOfApprentices"></span> Apprentices</h2>
-              <!--h2 class="heading-medium" style="margin-top:20px; display:inline-block" >Cost <span style="font-weight:700; " >£40,961.53</span> </h2-->
-          </div> 
+              <h2 class="" style="font-size:24px; margin:18px 0 0 0; display:inline-block "><span style=" " id="numberOfApprentices"></span> Apprentices</h2>
+              <h2 class="" style=" margin-top:18px; display:inline-block; float:right" ><span id="totalCostOfApprentices" style="font-size:24px;" ></span></h2>
+          </div>
         </div>
 
         <hr style="margin:16px 0 15px 0" />
+         <div style="clear:both"></div>
 
                 <h2 class ="heading-medium"  style="margin-bottom:5px"  id="apprenticeReplaceMe"></h2>
-                <p style="margin:0px">Level: 4</p>
-                <p style="margin-top:0px">Training code: 3246</p>
+                <p style="margin:0 0 15px 0">Level: 4</p>
+                <!--p style="margin-top:0px">Training code: 3246</p-->
                 <table class="" id="">
                   <thead>
                       <tr>
