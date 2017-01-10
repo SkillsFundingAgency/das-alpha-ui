@@ -6,29 +6,15 @@
 
 {% block content %}
 
-     <script src="/public/javascripts/das/jquery.highlight-5.js"></script>
 
 <style>
   #navigation-primary {
     display:none;
   }
-
-  .highlight { font-weight:700; }
 </style>
 
-
-
 <script>
-// OTHER SCRIPT AT BOTTOM OF THE PAGE
-
- var changeUnknown = function() {
-  $('td').highlight('unknown');
-  $('td').highlight('null');
-  $('td').highlight('----');
-
- };
-
-changeUnknown();
+// SCRIPT AT BOTTOM OF THE PAGE
 </script>
 
 
@@ -55,28 +41,41 @@ changeUnknown();
 <div class="grid-row">
 
            <div class="column-two-thirds">
-  <h1 class="heading-xlarge" >Upload stopped</h1>
-    <p class="lede">There are <span style="font-weight:700">50</span> errors across <span style="font-weight:700">100</span> records that you need to fix.</p>
-                           <div style="margin-top:10px"><span class="looks-like-a-link-underline">Download full error details</span></div>
+  <h1 class="heading-xlarge" >Fix upload errors</h1>
+    <p class="lede">You attempted to upload <span style="font-weight:700">100</span> apprentices across <span style="font-weight:700">3</span> training courses.</p>
+        <p class="">There were <span style="font-weight:700">4</span> errors and <span style="font-weight:700">2</span> warnings.</p>
+
+        <div class="panel panel-border-wide alert-warning">
+           <span class="bold-small">4</span> Errors found
+        </div>
+
+
+        <div class="panel panel-border-wide alert-error">
+          <span class="bold-small">2</span> warnings found
+        </div>
       </div>
     </div>
 </div>
 <div style="margin-top:35px" >
-  <!--h2 class="heading-medium">50 Errors</h>
-  <p>You must fix these errors in your file before you reupload your apprentices</p-->
-     <h2 class="heading-medium">Error details</h2>
+  <h2 class="heading-medium">List of errors</h2>
   <table class="" id="">
                     <thead>
                       <tr>
                         <!--th scope="col">Training code</th-->
                      <th scope="col" style="width:35px;">Row</th> 
                       <th scope="col" class="">ULN</th>
-                        <th scope="col" style="min-width:145px" class="">Name</th>
+                        <th scope="col" class="">Name</th>
                         <th scope="col" class="">DOB</th>
-                       <th scope="col" style="">Errors</th>
+                        <th scope="col" class="">Training dates</th>
+                        <th scope="col" class="">Standard type</th>
+                        <th scope="col" class="">Framework type</th>
+                         <th scope="col" class="">Training cost</th>
+                         <th scope="col" class="">EPA cost</th>
+                          <th scope="col" class="">EPA Org ID</th>
+                        <th scope="col" class="">Provider ref</th>
+                         <!--th scope="col" class="">Changes</th-->
 
-
-
+                        <th scope="col" class=""></th>
                       </tr>
                     </thead>
                     <tbody class="indentedTablePadding">
@@ -85,8 +84,13 @@ changeUnknown();
                          <td class="" style="max-width:100px; word-wrap:break-word;" >8321052156</td>
                           <td  style="max-width:100px; word-wrap:break-word;">Mahershalalhashbaz de Orellana Plantagenet</td>
                            <td class="">10/10/1999</td>
-                           <td>The <span class="changeHighlightCopy">programme type</span> you've added isn't valid
-                               <br />The <span class="changeHighlightCopy">framework code</span> must not be more than 3 characters in length </td>
+                        <td class=" errorBox" style="min-width:75px"><span class="errorCopyTable">Start date cannot be empty</span><br / class="fatBR">--/-- to 11/20 </td>
+                        <td class="">3 583 4</td>
+                        <td class=""></td>
+                        <td class="">£2,000</td>
+                        <td class="">£200</td>
+                        <td class="">EPA0001</td>
+                        <td class="" style="max-width:100px; word-wrap:break-word;">CX8576748</td>
 
                       </tr>
                       <tr>
@@ -94,46 +98,90 @@ changeUnknown();
                          <td class="" style="max-width:100px; word-wrap:break-word;" >1221052101</td>
                         <td>Taylor Lucas</td>
                          <td class="">10/10/1999</td>
-                         <td>You must enter a <span class="changeHighlightCopy">pathway code</span> - you can add up to 3 characters
-                               <br />The <span class="changeHighlightCopy">standard code</span> must not be more than 5 characters in length</td>
+                        <td class=" ">11/18 to 11/20 </td>
+                         <td class="">3 583 4</td>
+                        <td class=""></td>
+                        <td class="errorBox"><span class="errorCopyTable">Enter a cost</span><br / class="fatBR">£  </td>
+                         <td class="">£200</td>
+                        <td class="">EPA0001</td>
+                        <td class="" style="max-width:100px; word-wrap:break-word;">ZZ8576746</td>
 
                       </tr>
                       <tr class="" >
                          <td class="">15</td>
                           <td class="" style="max-width:100px; word-wrap:break-word;">6621052119</td>
-                          <td class=" "><!--span class="errorCopyTable">Surname is missing</span-->Prahlad ---- </td>
+                         <td class=" errorBox"><span class="errorCopyTable">Surname is missing</span><br / class="fatBR">Prahlad </td>
                           <td class="">10/10/1999</td>
-                          <td>You must enter a <span class="changeHighlightCopy">pathway code</span> - you can add up to 3 characters
-                               <br />The <span class="changeHighlightCopy">standard code</span> must not be more than 5 characters in length</td>
+                        <td class=" ">--/-- to 11/20 <br /></td>
+                        <td class=""></td>
+                        <td class="">4</td>
+                        <td class="">£2,000</td>
+                         <td class="">£200</td>
+                        <td class="">EPA0001</td>
+                        <td class="" style="max-width:100px; word-wrap:break-word;">BG8576791</td>
                       </tr>
 
                       <tr class="">
                          <td class="">21</td>
-                          <td  class=""><!-- span class="errorCopyTable">ULN is missing</span-->----</td>
-                          <td class="">Melissa Shaw</td>
-                           <td class="">10/13/1899</td>
-                            <td>The <span class="changeHighlightCopy">training price</span> must be entered<br />The <span class="changeHighlightCopy">end point assessment</span> price is not a valid value
-                              <br />The <span class="changeHighlightCopy">learning planned end date</span> must not be more than 10 years after the learning start date
-                            </td>
+                            <td class=" errorBox"><span class="errorCopyTable">ULN is missing</span><br / class="fatBR">-------------------- </td>
+                        <td class="">Melissa Shaw</td>
+                         <td class="">10/10/1999</td>
+                        <td class=" ">11/18 to 11/20 </td>
+                        <td class="">3 583 4</td>
+                        <td class=""></td>
+                        <td class="">£2,000</td>
+                         <td class="">£200</td>
+                        <td class="">EPA0001</td>
+                         <td class="" style="max-width:100px; word-wrap:break-word;">TY8576762</td>
                       </tr>
-                       <tr class="" >
-                         <td class="">45</td>
-                          <td class="" style="max-width:100px; word-wrap:break-word;">4321052192</td>
-                          <td class=" "><!--span class="errorCopyTable">Surname is missing</span-->William ---- </td>
-                          <td class="">06/11/2000</td>
-                          <td>You must enter a <span class="changeHighlightCopy">pathway code</span> - you can add up to 3 characters
-                               <br />The <span class="changeHighlightCopy">standard code</span> must not be more than 5 characters in length</td>
+                      <tr>
+
+                   <!--
+                        <td>Brendan Hamazaki</td>
+
+                        <td class="">2421052176</td>
+                        <td class=" ">11/18 to 11/20 </td>
+                        <td class="">£2,000</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship-static">Edit</a></td>
                       </tr>
+                                            <tr>
+                        <td>Gary Barton</td>
+                        <td class="">4521052191</td>
+                        <td class=" ">11/18 to 11/20 </td>
+                        <td class="">£2,000</td>
+
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+                                            <tr>
+                        <td>Tommy Barger</td>
+                        <td class="">4121052139</td>
+                        <td class=" ">11/18 to 11/20 </td>
+                        <td class="">£2,000</td>
+
+
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+                                            <tr>
+                        <td>William Dewitt</td>
+                        <td class="">8221052149</td>
+                        <td class=" ">11/18 to 11/20 </td>
+                        <td class="">£2,000</td>
+
+
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+
+                    -->
+
                     </tbody>
                   </table>
-                  <div style="margin-top:10px"><span class="looks-like-a-link-underline">View all 50 rows</span></div>
 
 
 
-        <div style="margin-top:35px" >
-    <input class="button" type="button" id="bulk-upload-finish"  value="Back to bulk upload">
+<div style="margin-top:35px" >
+    <input class="button" id="bulk-upload-finish"  value="Do something">
 </div>
-<div style="margin-top:15px"><a href="bulk-upload-provider">Cancel</a></div>
+<div style="margin-top:15px"><a href="bulk-upload-provider">Do something else</a></div>
     <div style="margin-top:50px"></div>
     <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
 <!-- {% include "includes/start-tabs.html" %} -->
