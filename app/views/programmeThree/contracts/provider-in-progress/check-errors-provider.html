@@ -133,7 +133,7 @@ changeUnknown();
         <div style="margin-top:35px" >
     <input class="button" type="button" id="bulk-upload-finish"  value="Back to bulk upload">
 </div>
-<div style="margin-top:15px"><a href="bulk-upload-provider">Cancel</a></div>
+<div style="margin-top:15px"><a href="./provider-list">Cancel</a></div>
     <div style="margin-top:50px"></div>
     <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
 <!-- {% include "includes/start-tabs.html" %} -->
@@ -275,7 +275,7 @@ $('#bulk-upload-finish').click(function() {
             }
         }
     ]);
-    window.location.href = './provider-list';
+    window.location.href = 'upload-choose-file-provider';
 });
 
 </script>
