@@ -423,6 +423,21 @@ vertical-align: top;
 
 //end of mobile tables
 
+.notice.long .icon {
+  margin-top: 0;
+  top: 0px;
+}
+
+.alert-default-blue-thing {
+  border-color: $light-blue;
+  background-color: mix(white, $light-blue, 90%);
+}
+
+.alert-warning-red-thing {
+  border-color: $red;
+  background-color: mix(white, $mellow-red, 90%);
+}
+
 //register marrage allowance type thing
 
 .tamc-js-hidden {

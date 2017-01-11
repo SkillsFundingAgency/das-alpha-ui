@@ -2407,6 +2407,21 @@ input[type=number] {
   }
 }
 
+.notice.long .icon {
+  margin-top: 0;
+  top: 0px;
+}
+
+.alert-default-blue-thing {
+  border-color: #2b8cc4;
+  background-color: #eaf4f9;
+}
+
+.alert-warning-red-thing {
+  border-color: #b10e1e;
+  background-color: #fceaeb;
+}
+
 .tamc-js-hidden {
   display: none;
 }
