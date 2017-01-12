@@ -530,24 +530,17 @@ changeUnknown();
               <div style="margin-top:50px"></div>
         <hr style="margin:0 0 18px 0" />
         <div class="commit-bar">
-            <form class="" style="display:inline-block" action="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">
-                <input type="hidden" name="source" value="provider" />
-                <div style="display:inline-block;"><input style="display:inline" class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add an apprentice"></div>
-            </form>
-             <form class="" style="display:inline-block" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">
-                <input type="hidden" name="source" value="provider" />
-                <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px" class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Bulk upload apprentices"></div>
-            </form>
-             <!--p style="display:inline; margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">Import apprenticeships</a></p-->
-             <form class="" style="display:inline-block; float:right;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
-                    <div style="display:inline-block;"><input class="button" style="display:inline; margin:0 0 0 10px" type="submit"  id="send-to-employer"  value="Finish editing"></div>
+              <form class="" style="display:inline-block; float:left;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
+                    <div style="display:inline-block;"><input class="button" style="display:inline; " type="submit"  id="send-to-employer"  value="Save and continue"></div>
               </form>
+               <form class="" style="display:inline-block;" action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/bulk-or-single">
+                    <input type="hidden" name="source" value="provider" />
+                    <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px; " class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add more apprentices"></div>
+            </form>
         </div>
 
         <hr style="margin:20px 0 15px 0" />
       </div>
-
-
 </main>
 
  <!--button class="button">Do the thing</button-->
