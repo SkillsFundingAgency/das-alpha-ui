@@ -91,10 +91,10 @@
                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
                           Approval needed
                         </label>
-                       <!--label for="epa-update">
+                       <label for="not-started">
                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
-                          EPA update required
-                        </label-->
+                          Not started
+                        </label>
                         
                         <label for="Paused">
                         <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
@@ -156,6 +156,30 @@
                </div>
           </div>
 
+    <div class="govuk-option-select js-collapsible" >
+            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+              <div class="option-select-label">Providers</div>
+              <div class="js-selected-counter"></div></button>
+                <div class="options-container" id="case_state">
+                  <div class="js-auto-height-inner">
+                      <label for="Acme Coventry Ltd">
+                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                          Hackney Skills &amp Training
+                        </label>
+                        <label for="Cyberdyne Systems Inc">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          Skills, Skills, Skills Ltd
+                        </label>
+                        <label for="Tyrell Corp">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          Apprenticeships R Us
+                        </label>
+                                                
+
+                  </div>
+
+               </div>
+          </div>
  
 
 
@@ -163,10 +187,6 @@
         </div>
       </div>
     </div>
-
-
-
-
                 <div class="column-two-thirds">
                       <table class="">
                           <thead>
@@ -191,9 +211,6 @@
                                <td class="">Paused</td>
                                <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice-authorise-amends">View</a></td>
 
-                              
-
-                              
                             </tr>
                             <tr>
                               <td class="rjTabWidth">David Jenkins</td>
@@ -205,6 +222,12 @@
                               <td class="rjTabWidth">Mel O'Connor</td>
                               <td class="">01/05/98</td>
                                 <td class="">Stopped</td>
+                              <td class="looks-like-a-link-underline">View</td>
+                            </tr>
+                            <tr>
+                              <td class="rjTabWidth">William Hill</td>
+                              <td class="">--/--/--</td>
+                                <td class="">Not started</td>
                               <td class="looks-like-a-link-underline">View</td>
                             </tr>
                           </tbody>
