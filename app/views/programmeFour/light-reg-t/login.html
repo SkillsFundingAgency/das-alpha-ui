@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+</script>
+
+<style>
+#navigation-primary {
+  display:none ;
+}
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <!--li><a href="/">Breadcrumb here ></a></li-->
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">   
+      <h1 class="heading-xlarge">Sign in</h1>
+      <p>
+        Sign in or <a href="#">create an account</a> to manage your apprenticeship levy account.
+      </p>
+
+      <form style="max-width:100%" action="login-choose-accounts">
+        <fieldset>
+          <legend class="visuallyhidden">email address and password to sign in</legend>
+          <div class="form-group">
+            <label class="form-label-bold" for="email-address">Email address
+              <!--span class="form-hint">Here is a hint for this form field.</span-->
+            </label>
+            <input class="form-control" id="email-address" type="text">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label-bold" for="password">Password</label>
+            <input class="form-control" id="password" type="password">
+          </div>
+        </fieldset>
+        <input class="button" id="createAccountButton" type="submit" value="Sign in">
+      </form>
+      <p style="padding-top:20px">
+        <a href="#">Forgotten your password?</a>
+      </p>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+//jQuery( document ).ready(function() {
+     //jQuery.validate(); 
+// });
+
+
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/">Breadcrumb here ></a></li>
+    </ol>
+
+  </div>
+
+   <h1 class="heading-large" style="margin:0px 0 50px 0"><span class="heading-secondary" style="padding-top:0px">Question 4 of 4</span>Enter your PAYE details</h1>
+ <p>Please enter all the PAYE schemes you would like to associate with this account. Your payroll department will usually have this information<p/>
+
+
+
+     
+      <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
+<form action="/sprint3/balance" >
+  <fieldset>
+    <legend class="visuallyhidden">PAYE scheme reference number</legend>
+      <div class="form-group">
+           
+          <label class="form-label" for="PAYE-reference-number">PAYE scheme reference number</label>
+          <span class="form-hint">Ener the unique reference number for the PAYE scheme. Payroll will usually have this information</span>
+        </label>
+          <input class="form-control" id="PAYE-reference-number" type="text">
+  </fieldset>
+    <p><a href="#">Add another PAYE scheme</a></p>
+    <p><a href="#">Bulk upload PAYE schemes</a></p>
+
+      </div>
+    <input class="button" id="Finish" type="submit" value="Finish">
+
+</form>
+</main>
+
+<script>
+
+//store details entered into the form in local storage
+var createButton = document.getElementById('createAccountButton');
+EventUtil.addHandler(createButton, 'click', function(){
+              // save the form info to local storage by first putting the data into an object
+              var userDetails = {
+                email: document.getElementById('email-address').value,
+                password: document.getElementById('password').value
+            };
+
+            //store the object in local storage using json stringify
+              localStorage.setItem("login", JSON.stringify(userDetails));
+
+            //store the users email address in a cookie to repeat back to them later. Remember that we have some of the data stored in an object in local storage as well -  so we'll use that again if we need it.
+            document.cookie =  "emailAddress="  + userDetails.email 
+            // shows the cookie in the console log to check it is working
+            console.log (document.cookie)
+
+        // not needed at the moment
+
+              //hide the login form
+              //$('#login').addClass('hidden');
+              //show the quiz
+           // $('#wrapper').removeClass('hidden')
+    });
+</script>
+
+{% endblock %}

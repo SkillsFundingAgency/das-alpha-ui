@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block content %}
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<h1 class="heading-xlarge">Forecasting</h1>
+			<p>Planned Apprenticeships:</p>
+			<ul data-bind="foreach: plannedItems">
+				<li><span data-bind="text: Name"></span> ( <span data-bind="text: Quantity"></span> @ £<span data-bind="text: Price"></span> )</li>
+			</ul>
+			<p>Total Planned Cost: £<span data-bind="text: planned"></span></p>
+			<table>
+				<thead>
+					<tr>
+						<td>Month</td>
+						<td>Planned</td>
+						<td>Payroll</td>
+						<td>Levy</td>
+						<td>Difference</td>
+						<td>Balance</td>
+					</tr>
+				</thead>
+				<tbody data-bind="foreach: lines">
+					<tr>
+						<td><span data-bind="text: month"></td>
+						<td><input data-bind="value: planned, uniqueName: true"></td>
+						<td><input data-bind="value: payroll, uniqueName: true"></td>
+						<td><span data-bind="text: levyFormatted"></td>
+						<td><span data-bind="text: differenceFormatted"></td>
+						<td><span data-bind="text: balanceFormatted"></td>
+					</tr>
+				</tbody>
+			</table>
+			<canvas id="myChart" width="700" height="400"></canvas>
+		</div>
+		<div class="column-third">
+			<aside class="govuk-related-items">
+				<h2 class="heading-medium" style="margin-top: 10px">Links</h2>
+			</aside>
+		</div>
+	</div>
+	<script language="javascript" src="/public/javascripts/lockr.min.js"></script>
+<script language="javascript">
+	var payroll = Lockr.get('payroll');
+	var planned = Lockr.get('planned');
+	var selected = JSON.parse(Lockr.get('selected'));
+</script>
+<script language="javascript" src='/public/javascripts/underscore-min.js'></script>
+<script language="javascript" src="/public/javascripts/standards.js"></script>
+<script language="javascript" src="/public/javascripts/forecast.js"></script>
+{% endblock %}
+{% block script %}
+
+{% endblock %}
