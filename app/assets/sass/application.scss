@@ -433,6 +433,11 @@ vertical-align: top;
   background-color: mix(white, $govuk-blue, 90%);
 }
 
+.alert-default-green-thing {
+  border-color: $turquoise;
+  background-color: mix(white, $turquoise, 90%);
+}
+
 .alert-warning-red-thing {
   border-color: $red;
   background-color: mix(white, $mellow-red, 90%);
@@ -649,7 +654,7 @@ vertical-align: top;
     background-color: $red;
     color: #fff;
     box-shadow: 0 2px 0 #666;
-    padding-top:8px;
+    padding-top:10px;
 }
 
  .delete-button:focus, .delete-button:hover {

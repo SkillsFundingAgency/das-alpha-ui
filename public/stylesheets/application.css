@@ -2417,6 +2417,11 @@ input[type=number] {
   background-color: #e6eff6;
 }
 
+.alert-default-green-thing {
+  border-color: #28a197;
+  background-color: #eaf6f5;
+}
+
 .alert-warning-red-thing {
   border-color: #b10e1e;
   background-color: #fceaeb;
@@ -2606,7 +2611,7 @@ input[type=number] {
   background-color: #b10e1e;
   color: #fff;
   box-shadow: 0 2px 0 #666;
-  padding-top: 8px;
+  padding-top: 10px;
 }
 
 .delete-button:focus, .delete-button:hover {

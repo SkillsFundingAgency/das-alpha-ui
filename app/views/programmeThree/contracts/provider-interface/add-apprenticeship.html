@@ -29,6 +29,10 @@ EventUtil.addHandler(btn, 'click', function(){
           window.location.href='../new-contract/cohorts';
  });*/
 
+
+var whereNow = function() {
+        window.location.href='are-you-sure';
+              };
 </script>
 
 <main id="content" role="main">
@@ -184,13 +188,20 @@ EventUtil.addHandler(btn, 'click', function(){
         </div>
     <div class="column-two-thirds">
 
-          <div style="margin-top:20px;"><input class="button" type="button" id="saveAndReturn" value="Save"></div>
+          <div style="margin-top:20px; display:inline-block"><input class="button" type="button" id="saveAndReturn" value="Save"></div>
+          <div style="margin-top:20px;display:inline-block; float:right"><input class="button delete-button" onclick="whereNow()" type="button" id="deleteButton" value="Delete"></div>
+
+          <div style="clear:both"></div>
           <p class="looks-like-a-link-underline" id="saveAndAdd" style="margin-top:20px; cursor: pointer; cursor: hand; ">Save, and add another</p>
+
 
     </div>
       <div class="column-one-third">
-         <!--div style="margin-top:20px;"><input class="button delete-button" id="deleteApprenticeship" value="Delete apprentice"></div-->
+   
       </div>
 </main>
 {% endblock %}
+
+
+
 
