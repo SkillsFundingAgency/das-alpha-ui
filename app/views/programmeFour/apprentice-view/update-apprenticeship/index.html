@@ -8,10 +8,38 @@
 
 
 <style>
-  .people-nav a, .learners-nav a {
+    .apprentice-nav a {
     {% include "includes/nav-on-state-css.html" %}
   }
 </style>
+
+<script>
+
+function whereNow() {
+   var status = $('input[name=radio-group]:checked').val();
+       switch (true) {
+          case  (status == 'pause'):
+                console.log('paused')
+                localStorage.setItem("commitments.apprenticestatus", JSON.stringify('paused'));
+                 window.location.href='update-apprenticeship/effective-date';
+
+                break;
+        case  (status == 'stop'):
+            console.log('stopped')
+            localStorage.setItem("commitments.apprenticestatus", JSON.stringify('stopped'));
+             window.location.href='update-apprenticeship/effective-date';
+            break;
+        case  (status == 'unchanged'):
+            console.log('unchanged')
+             window.location.href='individual-apprentice';
+            break;
+        default:
+             console.log('gyahhhhhhhh, bork bork bork')
+            break;
+        }
+    }
+
+</script>
 
 
 <main id="content" role="main">
@@ -19,15 +47,10 @@
 {% include "includes/secondary-nav-people.html" %}
 
 
-  <div class="breadcrumbs">
+  <div class="breadcrumbs back-breadcrumb">
     <ol role="breadcrumbs">
-      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
-      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></li>
-      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view">Your apprentices</a></li>
-      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice">Rob Edwards</a></li>
-       <li id="removeWithNav">Update apprenticeship</li>
+      {% include "includes/breadcrumbs/register-back.html" %}
     </ol>
-
   </div>
 
 
@@ -38,42 +61,36 @@
            <div class="column-two-thirds">
               <h1 class="heading-xlarge" >Update apprenticeship</h1>
             <div>
-                <!--p>
-                  You can update, pause or stop the apprenticeship. 
-                </p-->
-                <!--h2 class="heading-medium">
-                  What do you want to update?
-                </h2-->
-                
+                 <p class=" lede">Telling them that there are consequences for the other side if they pause or delete:</p>
+                           <h2 class="heading-large" style="margin-bottom:0; ">Rob Edwards</h2>
+                           <h3 class="heading-small" style="margin-top:0px;color:#6F777B " >28 Febuary 1997</h3>
 
-                 <form action="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice">
-           <fieldset>
-                   <legend class="visuallyhidden">Changes</legend>
-                <label class="form-label-bold" for="apprenticeGivenName">Change apprenticeship status
-                     <span class="form-hint">You can pause or stop the apprentice by changing their status.</span>
-                    </label>
-                      <div class="form-group">
-                       <label class="block-label" for="radio-1">
-                        <input id="radio-1" type="radio" name="radio-group" value="live" checked="checked">
-                        Keep apprenticeship status unchanged
-                      </label>
-                      <label class="block-label" for="radio-2">
-                        <input id="radio-2" type="radio" name="radio-group" value="pause-apprenticeship">
-                        Pause the apprenticeship
-                      </label>
-                      <label class="block-label" for="radio-3">
-                        <input id="radio-3" type="radio" name="radio-group" value="stop-apprenticeship">
-                        Stop the apprenticeship 
-                      </label>
-                    </div>
-
-                    </fieldset>
-                  <div style="margin-top:20px;"><input class="button" id="paymentPlan" type="submit" value="Save and continue"></div>
-                  </form>
+              <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
+              <form action="friendly-name">
+                  <legend class="visuallyhidden">Delete me</legend>
+                    <div class="form-group">
+                      <label class="form-label-bold" for="">Do a thing</label>
+                    <label class="block-label" for="pause">
+                      <input id="pause" type="radio" name="radio-group" value="pause">
+                     Pause the apprenticeship
+                     </label>
+                    <label class="block-label" for="stop">
+                      <input id="stop" type="radio" name="radio-group" value="stop">
+                    Stop the apprenticeship
+                     </label>
+                     <label class="block-label" for="unchanged">
+                      <input id="unchanged" type="radio" name="radio-group" value="unchanged">
+                    Keep apprenticeship status unchanged and return me 
+                     </label>
+                  </div>
+                </fieldset>
+                                  <div style="margin-top:50px"></div>
+          <!--input class="button" id="saveAndContinue" onclick="whereNow()" value="Save and continue"-->
+          <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Continue">
+              </form>
 
             </div>
-            <div style="margin-top:35px"></div>
-            <div style="margin-top:50px"></div>
+
           </div>
 
           <div class="column-one-third">

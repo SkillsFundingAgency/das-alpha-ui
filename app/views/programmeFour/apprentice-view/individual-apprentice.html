@@ -6,6 +6,34 @@
 
 {% block content %}
 
+<script>
+        var employerOrNot = JSON.parse(localStorage.getItem('commitments.isEmployer'));
+
+    </script>
+
+
+<script>
+
+$(document).ready(function() {
+  var changeStuff = function() {
+  if (employerOrNot=='yes') {
+    // document.getElementById("commitmentsName").textContent = " Hackney Skills & Training Ltd";
+   //  document.getElementById("providerName").textContent = "Provider:" ;
+        $(trainingProvider).removeClass("rj-dont-display");
+   // $(ULNTable).addClass("rj-dont-display");
+   //  $(removeMe).addClass("rj-dont-display")
+    }
+else {
+    $(ULN).removeClass("rj-dont-display");
+    $(employer).removeClass("rj-dont-display");
+//    $(addReference).removeClass("rj-dont-display");
+        };
+  };
+
+changeStuff();
+});
+
+</script>
 
 <style>
     .apprentice-nav a {
@@ -40,7 +68,7 @@
                 <table class="table-19-font" style="margin:0"> 
                   <thead>
                     <tr>
-                      <th colspan="2"> <h2 class="heading-medium">Status</h2></th>
+                      <th colspan="2"> <h2 class="heading-medium" style="margin-top:0">Status</h2></th>
                       <th> </th>
 
                     </tr>
@@ -50,9 +78,8 @@
                 <table class="table-19-font"> 
                   <tbody>
                     <tr>
-                      <td class="" style="width:250px">Status</td>
-                      <td class="" style="width:300px">Recieving training</td>
-                      
+                      <td class="apprenticeRecordTitle" >Status</td>
+                      <td class="">Recieving training</td>
                     </tr>
 
                       </tbody>
@@ -72,14 +99,17 @@
                 <table class="table-19-font"> 
                   <tbody>
                     <tr>
-                      <td class="rjTableName" style="width:250px">Apprentice name</td>
-                      <td class="" style="width:300px">Rob Edwards</td>
-                      <td class=""></td>
+                      <td class="apprenticeRecordTitle" style="width:250px">Apprentice name</td>
+                      <td class="" style="">Rob Edwards</td>
+
                     </tr>
                      <tr>
-                      <td class="rjTableName" style="width:250px">Date of birth</td>
-                      <td class="" style="width:300px">28 February 1997</td>
-                      <td class=""></td>
+                      <td class="apprenticeRecordTitle" >Date of birth</td>
+                      <td class="" >28 February 1997</td>
+                    </tr>
+                     <tr id="ULN" class="rj-dont-display">
+                      <td class="apprenticeRecordTitle " >ULN</td>
+                      <td class="" >0123456789</td>
                     </tr>
                    </tbody>
                 </table>
@@ -96,21 +126,25 @@
 
 
                      <tr>
-                     <td class="rjTableName" style="width:217px">Apprenticeship name</td>
-                      <td class="" style="width:200px">Level 2: Aeronautical engineering</td>
-                      <td class=""></td>
+                     <td class="apprenticeRecordTitle" >Apprenticeship name</td>
+                      <td class="" >Level 2: Aeronautical engineering</td>
+
+                    </tr>
+
+                    <tr id="trainingProvider" class="rj-dont-display">
+                      <td class="apprenticeRecordTitle">Training provider</td>
+                      <td class="" >Hackney Skills Solutions Ltd</td>
+                    </tr>
+
+                    <tr id="employer" class="rj-dont-display">
+                      <td class="apprenticeRecordTitle">Employer</td>
+                      <td class="" >Acme Coventry Ltd</td>
                     </tr>
 
                     <tr>
-                      <td class="rjTableName">Training provider</td>
-                      <td class="" style="width:200px">Hackney Skills Solutions Ltd</td>
-                      <td class=""></td>
-                    </tr>
+                     <td class="apprenticeRecordTitle">Endpoint assessor</td>
+                      <td class="" >Pham Assessment Ltd</td>
 
-                    <tr>
-                     <td class="rjTableName">Endpoint assessor</td>
-                      <td class="" style="width:200px">Pham Assessment Ltd</td>
-                      <td class=""></td>
                     </tr>
                       </tbody>
                 </table>
@@ -121,25 +155,23 @@
                   <thead>
                     <tr>
                       <th colspan="2"> <h2 class="heading-medium">Dates</h2></th>
-                      
-
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                     <td class="rjTableName" style="width:217px">Start date</td>
+                     <td class="apprenticeRecordTitle" >Start date</td>
                       <td class="">20 July 2018</td>
-                      <td class=""></td>
+
                     </tr>
                     <tr>
-                     <td class="rjTableName">End date</td>
+                     <td class="apprenticeRecordTitle">End date</td>
                       <td class="">19 July 2020</td>
-                      <td class=""></td>
+
                     </tr>
                     <tr>
-                     <td class="rjTableName">Time left</td>
+                     <td class="apprenticeRecordTitle">Time left</td>
                       <td class="">10 months</td>
-                      <td class=""></td>
+
                     </tr>
                                 </tbody>
                 </table>
@@ -149,22 +181,23 @@
                 <table class="table-19-font"> 
                   <thead>
                     <tr>
-                      <th colspan="2"> <h2 class="heading-medium">Payment</h2></th>
+                      <th colspan="3"> <h2 class="heading-medium">Payment</h2></th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                     <td class="rjTableName" style="width:217px">Cost</td>
+                     <td class="apprenticeRecordTitle" style="width:217px">Cost</td>
                       <td class="">£2,957.56</td>
-                      <td class=""></td>
+                      <td></td>
+
                     </tr>
                     <tr>
-                     <td class="rjTableName">Amount paid</td>
+                     <td class="apprenticeRecordTitle">Amount paid</td>
                       <td class="">£1,312.56</td>
                       <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/paid">View</a></td>
                     </tr>
                      <tr>
-                     <td class="rjTableName">Balance</td>
+                     <td class="apprenticeRecordTitle">Balance</td>
                       <td class="">£1,645.00</td>
                       <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/left-to-pay">View</a></td>
                     </tr>
@@ -172,8 +205,6 @@
                   </tbody>
                 </table>
                 <p style="" class="looks-like-a-link-underline"> Edit costs </p> 
-
-          
             </div>
             <div style="margin-top:35px">
 
@@ -183,34 +214,15 @@
 
           <div class="column-one-third">
                       <aside class="related">
-                        <!--h2 class="heading-medium" style="margin-top:10px">Pause or stop apprentice</h2>
-                        <p>Pause or stop this apprentice</p>
-
-                    <form action="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/edit-existing-apprenticeship">
-                        <div style="margin-top:20px;"><input class="button" id="updateDetails" type="submit" value="Pause or stop apprentice"></div> 
-                    </form-->
-
-                        <h2 class="heading-medium" style="//border-top: 1px #bfc1c3 solid;//padding-top:35px">Audit log</h2>
+                        <h2 class="heading-medium" style="//border-top: 1px #bfc1c3 solid;">Changes</h2>
                         <nav role="navigation">
                       <ul class="robSideNav">
                           <li>
-                            <p>There have been no past changes</p>
+                            <p>There have been no changes to this apprentice.</p>
                           </li>
                         </ul>
-                          <!--li>
-                            <a href="/{% include "includes/sprint-link.html" %}/payment/paymentplan">Add a new payment plan (OUT?)</a>
-                          </li>
-                          <li>
-                            <a href="/{% include "includes/sprint-link.html" %}/payment/makepayment">Make a payment</a>
-                          </li>
-                           <li>
-                            <a href="/{% include "includes/sprint-link.html" %}/payment/reviewpayments">Review and amend regular payments</a>
-                          </li>
-                            <li>
-                            <a href="/{% include "includes/sprint-link.html" %}/payment/spendingcommitments">View a summary of your spending commitments</a>
-                          </li>
-                        </ul>
-                           </nav-->
+
+                           </nav>
                     </aside>
             </div>
         </div>
