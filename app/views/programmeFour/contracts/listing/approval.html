@@ -21,6 +21,19 @@
   }
 </style>
 
+<script>
+$(document).ready(function() {
+        var deletedUser = JSON.parse(localStorage.getItem('commitments.deletedCohortAlert'));
+ var showDeletedUserAlert = function() {
+   if (deletedUser=='yes') {
+     localStorage.setItem("commitments.deletedCohortAlert", JSON.stringify("nope"));
+    $(deletedUserAlertMessage).removeClass("rj-dont-display");
+   }
+ }
+showDeletedUserAlert()
+});
+</script>
+
 <main id="content" role="main">
 {% include "includes/phase_banner_beta.html" %}
 
@@ -31,6 +44,9 @@
     </ol>
   </div>
 
+   <div style= "" id="deletedUserAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
+   Cohort was deleted
+    </div>
 <div class="grid-row">
   <div class="column-two-thirds">
     <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}Approve cohorts</h1>

@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  #navigation-primary {
+    display:none;
+  }
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<div class="grid-row">
+
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Choose training</h1>
+  <p>Choose the training that this upload will be recieving</p>
+
+                <div id="searchTraining">
+                <form id="checkTrainingForm" action="add-an-apprenticeship/training-list">
+                    <input id="checkTrainingSource" name="source" type="hidden" value="employer" />
+                    <fieldset>
+                      <legend class="visuallyhidden">Enter the name of the framework or standard.</legend>
+                        <div class="form-group" style="margin-bottom:15px">
+                            <label class="form-label-bold" for="search">Apprenticeship training course
+                        <span class="form-hint">Search for the training by course name or code</span>
+                          </label>
+                            <input class="form-control" id="search-for-training" type="text">
+                        </div>
+                      </fieldset>
+                </form>
+            </div>
+
+    <div style="margin-top:35px"></div>
+    <div class="">
+        <a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/upload-choose-file-provider" class="button ">Continue</a>
+    </div>
+
+
+    <div style="margin-top:50px"></div>
+            </div>
+             <div class="column-one-third">
+            </div>
+</div>
+</main>
+
+
+
+{% endblock %}
