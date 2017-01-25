@@ -49,53 +49,20 @@
             <label class="legend" for="finder-keyword-search">Search</label>
             <input value="" type="text" name="keywords" id="finder-keyword-search" aria-controls="js-search-results-info" class="text">
           </div>
-
-
-        <!--div class="govuk-option-select js-collapsible" >
-            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
-              <div class="option-select-label">Commitment status</div>
-              <div class="js-selected-counter"></div></button>
-                <div class="options-container" id="case_state">
-                  <div class="js-auto-height-inner">
-                      <label for="new">
-                        <input name="case_type[]" value="acme-cov" id="status-new" type="checkbox" aria-controls="js-search-results-info">
-                          New (1)
-                        </label>
-                        <label for="Awaiting - Provider input">
-                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
-                          Needs your input (1)
-                        </label>
-                        <label for="Awaiting - Employer input">
-                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
-                          In progress with employer (1)
-                        </label>
-                        <label for="Approved by employer">
-                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
-                          Approved by employer (1)
-                        </label>
-
-                  </div>
-
-               </div>
-          </div-->
-
-
-
         <div class="govuk-option-select js-collapsible" >
             <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
               <div class="option-select-label">Status</div>
               <div class="js-selected-counter"></div></button>
                 <div class="options-container" id="case_state">
                   <div class="js-auto-height-inner">
-                      <label for="Approval needed">
-                       <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
-                          Approval needed
+                       <label for="Live">
+                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                          Live
                         </label>
                        <label for="not-started">
                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
                           Not started
                         </label>
-                        
                         <label for="Paused">
                         <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
                           Paused
@@ -108,9 +75,32 @@
                         <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
                          Finished
                         </label>
-                         <label for="Live">
+
+                  </div>
+               </div>
+          </div>
+
+            <div class="govuk-option-select js-collapsible" >
+            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+              <div class="option-select-label">Actions</div>
+              <div class="js-selected-counter"></div></button>
+                <div class="options-container" id="case_state">
+                  <div class="js-auto-height-inner">
+                       <label for="Live">
                         <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
-                          Live
+                          No action needed
+                        </label>
+                       <label for="not-started">
+                       <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                          Changes for review
+                        </label>
+                        <label for="Paused">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          Payment failure
+                        </label>
+                         <label for="Stopped">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          Endpoint Assessor review
                         </label>
                   </div>
                </div>
@@ -174,15 +164,9 @@
                         <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
                           Apprenticeships R Us
                         </label>
-                                                
-
                   </div>
-
                </div>
           </div>
- 
-
-
 
         </div>
       </div>
@@ -194,6 +178,7 @@
                               <th scope="col" style="padding-top:0">Name</th>
                               <th scope="col" style="padding-top:0">Date of birth</th>
                                <th scope="col" style="padding-top:0">Status</th>
+                               <th scope="col" style="padding-top:0">Action</th>
                                <th scope="col" style="padding-top:0"></th>
                             </tr>
                           </thead>
@@ -201,33 +186,45 @@
                             <tr>
                               <!--quick hack, will fix -->
                               <td class="rjTabWidth">Rob Edwards</td>
-                              <td class="">03/06/97</td>
-                              <td class="">On programme</td>
+                              <td class="">3 June 1997</td>
+                              <td class="">Live</td>
+                              <td></td>
                               <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice">View</a></td>
                             </tr>
                              <tr>
                               <td class="rjTabWidth">Susan Hamazaki</td>
-                              <td class="">12/10/95</td>
+                              <td class="">12 Oct 1995</td>
                                <td class="">Paused</td>
-                               <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice-authorise-amends">View</a></td>
+                                <td>Changes for review</td>
+                               <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice-showing-changes">View</a></td>
 
                             </tr>
                             <tr>
                               <td class="rjTabWidth">David Jenkins</td>
-                              <td class="">05/09/99</td>
-                                <td class="">Approval needed</td>
+                              <td class="">5 Sept 1999</td>
+                                <td class="">Finished</td>
+                                 <td></td>
                                <td class="looks-like-a-link-underline">View</td>
                             </tr>
                             <tr>
                               <td class="rjTabWidth">Mel O'Connor</td>
-                              <td class="">01/05/98</td>
-                                <td class="">Stopped</td>
+                              <td class="">01 May 1998</td>
+                                <td class="">Live</td>
+                                 <td>Payment failure</td>
                               <td class="looks-like-a-link-underline">View</td>
                             </tr>
                             <tr>
                               <td class="rjTabWidth">William Hill</td>
-                              <td class="">--/--/--</td>
+                              <td class="">10 Jan 1998</td>
                                 <td class="">Not started</td>
+                                 <td></td>
+                              <td class="looks-like-a-link-underline">View</td>
+                            </tr>
+                             <tr>
+                              <td class="rjTabWidth">Jenny Topham</td>
+                              <td class="">10 Jan 1998</td>
+                                <td class="">Finished</td>
+                                 <td></td>
                               <td class="looks-like-a-link-underline">View</td>
                             </tr>
                           </tbody>
