@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+
+<div class="grid-row">
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Approve apprenticeship</h1>
+
+   <p>By approving this apprenticeship you confirm you have a contract in place with:</p>
+
+           <h2 class="heading-large" style="margin-bottom:0; ">Acme Coventry Ltd</h2>
+                 <h3 class="heading-small" style="margin-top:0px;color:#6F777B " >Company number: 9021055555</h3>
+           <div style="margin-top:25px"></div>
+         <details style="margin-bottom:35px">
+                <summary><span class="summary">How do I set up a contract?</span></summary>
+                <div class="panel panel-border-narrow">
+                  <p>
+                  You must make sure that you have a valid contract with this company to train the apprentices that you have added to the platform. If you do not, payments will not be made and you may be removed from the RoTAP.
+                  </p>
+
+                </div>
+        </details>
+
+
+    <div style="margin-top:35px"></div>
+    <div class="padder-top-x">
+        <a href="/{% include "includes/sprint-link.html" %}/contracts/confirmation/confirmation-variations" class="button ">Agree and continue</a>
+        <div style="margin-top:15px"><a href="./provider-list">Cancel</a></div>
+    </div>
+
+            </div>
+</div>
+</main>
+
+
+
+
+{% endblock %}
