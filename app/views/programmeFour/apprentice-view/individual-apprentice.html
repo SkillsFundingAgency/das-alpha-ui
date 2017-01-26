@@ -8,6 +8,8 @@
 
 <script>
         var employerOrNot = JSON.parse(localStorage.getItem('commitments.isEmployer'));
+        var changeStatus =JSON.parse(localStorage.getItem('commitments.userChangeStatus'));
+                   //paused is set when the paused journey is triggered.
 
     </script>
 
@@ -22,15 +24,31 @@ $(document).ready(function() {
         $(trainingProvider).removeClass("rj-dont-display");
    // $(ULNTable).addClass("rj-dont-display");
    //  $(removeMe).addClass("rj-dont-display")
+
     }
 else {
     $(ULN).removeClass("rj-dont-display");
     $(employer).removeClass("rj-dont-display");
+
 //    $(addReference).removeClass("rj-dont-display");
         };
+
+};
+
+var showAlerts = function() {
+ switch (true) {
+             case  (changeStatus == "paused"):
+                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                  $(pausedAlertMessage).removeClass("rj-dont-display");
+              break;
+        default:
+             console.log('nothings changed on the apprentice record')
+          break;
+        }
   };
 
 changeStuff();
+showAlerts();
 });
 
 </script>
@@ -57,6 +75,10 @@ changeStuff();
 <!--h1 class="heading-large">Levy account</h1-->
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
 
+    <div style= "" id="pausedAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
+    Apprentice Rob Edwards has been paused.
+    </div>
+
   <div class="grid-row">
            <div class="column-two-thirds">
               <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Rob Edwards</h1>
@@ -79,7 +101,7 @@ changeStuff();
                   <tbody>
                     <tr>
                       <td class="apprenticeRecordTitle" >Status</td>
-                      <td class="">Recieving training</td>
+                      <td class="">Live</td>
                     </tr>
 
                       </tbody>
@@ -111,6 +133,10 @@ changeStuff();
                       <td class="apprenticeRecordTitle " >ULN</td>
                       <td class="" >0123456789</td>
                     </tr>
+                    <tr id="referenceNumber" class="">
+                      <td class="apprenticeRecordTitle " >Reference</td>
+                      <td class="" >ABC1234564</td>
+                    </tr>
                    </tbody>
                 </table>
                 <p style="margin-top:; text-align:"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/edit-apprentice">Edit apprentice</a> </p>
@@ -124,13 +150,6 @@ changeStuff();
                   </thead>
                   <tbody>
 
-
-                     <tr>
-                     <td class="apprenticeRecordTitle" >Apprenticeship name</td>
-                      <td class="" >Level 2: Aeronautical engineering</td>
-
-                    </tr>
-
                     <tr id="trainingProvider" class="rj-dont-display">
                       <td class="apprenticeRecordTitle">Training provider</td>
                       <td class="" >Hackney Skills Solutions Ltd</td>
@@ -141,14 +160,42 @@ changeStuff();
                       <td class="" >Acme Coventry Ltd</td>
                     </tr>
 
+                     <tr>
+                     <td class="apprenticeRecordTitle" >Apprenticeship name</td>
+                      <td class="" >Level 2: Aeronautical engineering</td>
+                    </tr>
+
                     <tr>
-                     <td class="apprenticeRecordTitle">Endpoint assessor</td>
-                      <td class="" >Pham Assessment Ltd</td>
+                     <td class="apprenticeRecordTitle">Training cost</td>
+                      <td class="" >£5,555.98</td>
 
                     </tr>
                       </tbody>
                 </table>
                 <p style=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/edit-overview">Edit training</a> </p>
+
+                <table class="table-19-font"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Endpoint assessor</h2></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+
+                     <tr>
+                     <td class="apprenticeRecordTitle" >Endpoint assessor</td>
+                      <td class="" >Pham assessments Ltd</td>
+
+                    </tr>
+
+                    <tr id="trainingProvider" class="">
+                      <td class="apprenticeRecordTitle">Endpoint Assessment Cost</td>
+                      <td class="" >£1,000.00</td>
+                    </tr>
+                      </tbody>
+                </table>
+                <p style=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/edit-overview">Edit endpoint assessment</a> </p>
 
 
                 <table class="table-19-font"> 
@@ -168,11 +215,11 @@ changeStuff();
                       <td class="">19 July 2020</td>
 
                     </tr>
-                    <tr>
+                    <!--tr>
                      <td class="apprenticeRecordTitle">Time left</td>
                       <td class="">10 months</td>
 
-                    </tr>
+                    </tr-->
                                 </tbody>
                 </table>
                 <p style="" class="looks-like-a-link-underline"> Edit dates </p> 
@@ -186,8 +233,8 @@ changeStuff();
                   </thead>
                   <tbody>
                     <tr>
-                     <td class="apprenticeRecordTitle" style="width:217px">Cost</td>
-                      <td class="">£2,957.56</td>
+                     <td class="apprenticeRecordTitle" style="width:217px">Total cost</td>
+                      <td class="">£6,555.98</td>
                       <td></td>
 
                     </tr>
@@ -198,13 +245,12 @@ changeStuff();
                     </tr>
                      <tr>
                      <td class="apprenticeRecordTitle">Balance</td>
-                      <td class="">£1,645.00</td>
+                      <td class="">£5,243.42</td>
                       <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/left-to-pay">View</a></td>
                     </tr>
 
                   </tbody>
                 </table>
-                <p style="" class="looks-like-a-link-underline"> Edit costs </p> 
             </div>
             <div style="margin-top:35px">
 
@@ -217,8 +263,14 @@ changeStuff();
                         <h2 class="heading-medium" style="//border-top: 1px #bfc1c3 solid;">Changes</h2>
                         <nav role="navigation">
                       <ul class="robSideNav">
-                          <li>
+                          <li id="auditNoChanges">
                             <p>There have been no changes to this apprentice.</p>
+                          </li>
+                          <li id="auditPausedWaiting">
+                            <p><span style="font-weight:700">08 May 2017.</span> RobJ changed the apprentice name to Rob Edwards from Jeff Edwards. Awaiting confirmation. TIDY THIS UP.</p>
+                          </li>
+                            <li id="auditPausedWaiting">
+                            <p><span style="font-weight:700">12 May 2017.</span> RobJ changed the status to Paused. Awaiting confirmation. TIDY THIS UP.</p>
                           </li>
                         </ul>
 

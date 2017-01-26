@@ -18,21 +18,15 @@
 function whereNow() {
    var status = $('input[name=radio-group]:checked').val();
        switch (true) {
-          case  (status == 'pause'):
-                console.log('paused')
-                localStorage.setItem("commitments.apprenticestatus", JSON.stringify('paused'));
-                 window.location.href='update-apprenticeship/effective-date';
+          case  (status == 'addMore'):
+
+                 window.location.href='choose-training-employer';
 
                 break;
-        case  (status == 'stop'):
-            console.log('stopped')
-            localStorage.setItem("commitments.apprenticestatus", JSON.stringify('stopped'));
-             window.location.href='update-apprenticeship/effective-date';
+        case  (status == 'return'):
+             window.location.href='provider-list';
             break;
-        case  (status == 'unchanged'):
-            console.log('unchanged')
-             window.location.href='individual-apprentice';
-            break;
+
         default:
              console.log('gyahhhhhhhh, bork bork bork')
             break;
@@ -59,29 +53,24 @@ function whereNow() {
 
   <div class="grid-row">
            <div class="column-two-thirds">
-              <h1 class="heading-xlarge" >Update apprenticeship</h1>
+              <h1 class="heading-xlarge" >Add more apprentices?</h1>
             <div>
-                 <p class=" lede">Telling them that there are consequences for the other side if they pause or delete:</p>
-                           <h2 class="heading-large" style="margin-bottom:0; ">Rob Edwards</h2>
-                           <h3 class="heading-small" style="margin-top:0px;color:#6F777B " >28 Febuary 1997</h3>
+                 <p class=" lede">You can add another set of apprentices:</p>
 
               <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
               <form action="friendly-name">
-                  <legend class="visuallyhidden">Delete me</legend>
+                  <legend class="visuallyhidden">Add another set of apprentices</legend>
                     <div class="form-group">
                       <label class="form-label-bold" for="">Do a thing</label>
                     <label class="block-label" for="pause">
-                      <input id="pause" type="radio" name="radio-group" value="pause">
-                     Pause the apprenticeship
+                      <input id="pause" type="radio" name="radio-group" value="addMore">
+                     Add more apprentices
                      </label>
                     <label class="block-label" for="stop">
-                      <input id="stop" type="radio" name="radio-group" value="stop">
-                    Stop the apprenticeship
+                      <input id="stop" type="radio" name="radio-group" value="return">
+                    Finish and return to review
                      </label>
-                     <label class="block-label" for="unchanged">
-                      <input id="unchanged" type="radio" name="radio-group" value="unchanged">
-                    Keep apprenticeship status unchanged and return me 
-                     </label>
+
                   </div>
                 </fieldset>
                                   <div style="margin-top:50px"></div>

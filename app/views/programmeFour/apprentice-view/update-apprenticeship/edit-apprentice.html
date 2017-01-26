@@ -46,10 +46,12 @@
                 </div>
         </fieldset>
          <fieldset>
+                   <hr style="margin-top:px"/>
             <legend class="visuallyhidden">Date of Birth</legend>
               <div class="form-date">
                 <label class="form-label-bold" for="apprenticeGivenName">Date of birth
                     </label>
+                          <span class="form-hint">For example, 01 02 1999</span>
                 <div class="form-group form-group-day">
                   <label class="form-label" for="startDay">Day</label>
                   <input class="form-control" id="startDay" name="start-day" type="number" min="1" max="31" value="28">
@@ -65,6 +67,16 @@
                 </div>
               </div>
     </fieldset>
+          <fieldset>
+           <hr style="margin-top:px"/>
+            <legend class="visuallyhidden">Add a note</legend>
+            <div class="form-group">
+            <label class="form-label-bold" for="apprenticeCost">Reference (optional)
+          <span class="form-hint">Add a reference, such as employee number or location - this can help identify this apprentice if you have more than one with the same name.</span>
+           </label>
+              <input class="form-control rj-currency-input" id="employerRef" type="text" value="" style="width:100%">
+      </div>
+    </fieldset>
           </div>
             <div class="column-one-third">
         </div>
@@ -72,6 +84,7 @@
        <form action="../">
             <div style="margin-top:35px;"><input class="button" id="updateDetails" type="submit" value="Update apprentice"></div> 
       </form>
+                <p class="looks-like-a-link-underline" id="saveAndAdd" style="margin-top:20px; cursor: pointer; cursor: hand; ">Cancel and return</p>
   </div>
 
       <div class="column-one-third">

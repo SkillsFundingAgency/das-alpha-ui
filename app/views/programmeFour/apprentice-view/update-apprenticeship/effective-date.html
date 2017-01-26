@@ -21,19 +21,6 @@
 
 <script>
 
-/* to set the saved variable on save and return (so it changed the next screen to show an apprenticeship that's been added) */
-/*var btn = document.getElementById('saveApprenticeship');
-EventUtil.addHandler(btn, 'click', function(){
-          var isAddedApp = 'yes';
-         localStorage.setItem("apprenticeship-added", JSON.stringify(isAddedApp));
-          window.location.href='../new-contract/cohorts';
- });*/
-
-</script>
-
-
-<script>
-
 $(document).on('click', 'input[type="radio"]', function (e) {
   if ($(e.target).attr('id') === 'radio-3' || $(e.target).attr('id') === 'radio-4' || $(e.target).attr('id') === 'radio-5') 
   { $('#dateInTheFuture').removeClass('js-hidden') ; } 
@@ -58,7 +45,7 @@ $(document).on('click', 'input[type="radio"]', function (e) {
 
   <div class="grid-row">
            <div class="column-two-thirds">
-            <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}When should this change happen</h1>
+            <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}When should this apprentice be paused</h1>
 
             <form action="reason">
     <input id="source" name="source" type="hidden" value="employer" />
@@ -70,14 +57,14 @@ $(document).on('click', 'input[type="radio"]', function (e) {
       </label>
         <label class=" block-label " for="radio-3">
         <input id="radio-3" type="radio" name="radio-group" value="other-org" >
-        <span >A date in the future</span>
+        <span >On a specific date</span>
       </label>
     </fieldset>
 
      <div class="js-hidden" id="dateInTheFuture" style="margin: 30px 0 0 0px">
       <div class="form-group" style="margin-bottom:0">
           <fieldset>
-            <legend class="visuallyhidden">Date of Birth</legend>
+            <legend class="visuallyhidden">Date</legend>
               <div class="form-date">
                 <label class="form-label-bold" for="apprenticeGivenName">Date the change takes affect
                   <span class="form-hint">For example, 01 09 2017</span>
@@ -102,6 +89,7 @@ $(document).on('click', 'input[type="radio"]', function (e) {
 
      <input class="button" id="saveAndContinue" type="submit" style="margin-top:35px" value="Continue">
   </form>
+                  <p class="looks-like-a-link-underline" id="saveAndAdd" style="margin-top:20px; cursor: pointer; cursor: hand; ">Cancel and return</p>
 
 
           </div>
