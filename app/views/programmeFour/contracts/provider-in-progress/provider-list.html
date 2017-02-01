@@ -22,10 +22,7 @@
     {% include "includes/nav-on-state-css.html" %}
   }
 .highlight { font-weight:700; }
-
 </style>
-
-
 
 <script>
 
@@ -40,7 +37,7 @@ $(document).ready(function() {
 
      $(removeMe).addClass("rj-dont-display")
     }
-else {  
+else {
     $(notesStuff).removeClass("rj-dont-display");
     $(addReference).removeClass("rj-dont-display");
         };
@@ -57,7 +54,6 @@ else {
    if (deletedUser=='yes') {
      localStorage.setItem("commitments.deletedUserAlert", JSON.stringify("nope"));
     $(deletedUserAlertMessage).removeClass("rj-dont-display");
-    
    }
  }
 
@@ -66,16 +62,14 @@ changeUnknown();
 showDeletedUserAlert()
 });
 
-
-
-
+var goToDelete = function() {
+  window.location.href='../provider-interface/cohort-deletion-are-you-sure';
+}
 
 </script>
 
 <main id="content" role="main">
 {% include "includes/phase_banner_beta.html" %}
-
-
 
  <div class="breadcrumbs">
     <ol role="breadcrumbs">
@@ -233,10 +227,11 @@ showDeletedUserAlert()
                     <input type="hidden" name="source" value="provider" />
                     <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px; " class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add more apprentices"></div>
             </form>
-        </div>
 
+        </div>
         <hr style="margin:20px 0 15px 0" />
       </div>
+              <div style="margin-top:20px;display:inline-block; float:right"><input class="button delete-button" onclick="goToDelete()" type="button" id="deleteButton" value="Delete this cohort"></div>
 </main>
 {% endblock %}
 
