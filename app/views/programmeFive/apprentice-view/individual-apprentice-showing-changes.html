@@ -1,0 +1,278 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .people-nav a, .learners-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view">Your apprentices</a></li>
+      <li id="removeWithNav">Rob Edwards</li>
+    </ol>
+
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+              <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}Rob Edwards</h1>
+            <div>
+               <table class=""> 
+                  <thead >
+                    <tr >
+                      <th colspan="3" style="border-bottom:0"> <h2 class="heading-medium" style="margin-top:0" >Changes</h2></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr >
+                      <td colspan="3" style="border-bottom:0"><p>Copy about changes and what to do with those changes. Probably needs a date and who made the changes.</p></td>
+                    </tr>
+                     <tr>
+                      <td class="rjTableName"></td>
+                      <td class="" style="font-weight:700; width:200px">Previous</td>
+                      <td class="" style="font-weight:700">Change</td>
+                    </tr>
+                    <tr>
+                      <td class="rjTableName">Apprentice name</td>
+                      <td class="" style="">Susan Hamazaki</td>
+                      <td class="" style="">Rob Edwards</td>
+                    </tr>
+             </tbody>
+                </table>
+<div style="margin-top:35px;">
+      <form action="../">
+            <div  style="display:inline" ><input class="button" id="updateDetails" type="submit" value="Approve all changes"></div> 
+            <p style="display:inline-block; margin:18px 0 0 10px; " class="looks-like-a-link-underline">Reject all changes</p>
+      </form>
+</div>
+
+
+<div class="rj-headings-border" style="margin:10px 0 35px 0"></div>
+
+
+            <div>
+                <!--p>
+                  If you wish to make amends to this apprentice <a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship?">pause or stop</a> it first and then <a href="">add it again</a> with the correct details.</a> 
+                </p-->
+
+                <table class="table-19-font" style="margin:0"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> </th>
+                    </tr>
+                  </thead>
+                </table>
+
+                <table class="table-19-font"> 
+                  <tbody>
+                    <tr>
+                      <td class="apprenticeRecordTitle" >Status</td>
+                      <td class="">Not started</td>
+                    </tr>
+
+                      </tbody>
+                </table>
+                <p style="margin-top:px; text-align:"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship">Edit status</a> </p>
+
+               <table class="table-19-font" style="margin:0"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Apprentice</h2></th>
+                    </tr>
+                  </thead>
+                    </table>
+
+                <table class="table-19-font"> 
+                  <tbody>
+                    <tr>
+                      <td class="apprenticeRecordTitle" style="width:250px">Name</td>
+                      <td class="" style="">Rob Edwards</td>
+
+                    </tr>
+                     <tr>
+                      <td class="apprenticeRecordTitle" >Date of birth</td>
+                      <td class="" >28 February 1997</td>
+                    </tr>
+                     <tr id="ULN" class="rj-dont-display">
+                      <td class="apprenticeRecordTitle " >ULN</td>
+                      <td class="" >0123456789</td>
+                    </tr>
+                    <tr id="referenceNumber" class="">
+                      <td class="apprenticeRecordTitle " >Internal reference</td>
+                      <td class="" >Banbury site</td>
+                    </tr>
+                     <tr id="referenceNumber" class="">
+                      <td class="apprenticeRecordTitle " >Cohort reference</td>
+                      <td class="" >98HXGFD</td>
+                    </tr>
+                   </tbody>
+                </table>
+                <p style="margin-top:; text-align:"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/edit-apprentice">Edit apprentice</a> </p>
+
+
+              <table class="table-19-font"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Training</h2></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <tr id="trainingProvider" class="rj-dont-display">
+                      <td class="apprenticeRecordTitle">Training provider</td>
+                      <td class="" >Hackney Skills Solutions Ltd</td>
+                    </tr>
+
+                    <tr id="employer" class="rj-dont-display">
+                      <td class="apprenticeRecordTitle">Employer</td>
+                      <td class="" >Acme Coventry Ltd</td>
+                    </tr>
+
+                     <tr>
+                     <td class="apprenticeRecordTitle" >Apprenticeship name</td>
+                      <td class="" >Level 2: Aeronautical engineering</td>
+                    </tr>
+
+                    <!--tr>
+                     <td class="apprenticeRecordTitle">Training cost</td>
+                      <td class="" >£5,555</td>
+                    </tr-->
+                    <!--tr>
+                     <td class="apprenticeRecordTitle">Training cost</td>
+                      <td class="" >£5,689 <span style="font-size:16px">from 22 August 2018</span></td>
+                    </tr>
+                    <tr>
+                     <td class="apprenticeRecordTitle">Training cost</td>
+                      <td class="" >£4,165 <span style="font-size:16px">from 29 August 2019</span></td>
+                    </tr-->
+
+
+                      </tbody>
+                </table>
+                <p style=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/edit-training">Edit training</a> </p>
+
+                <table class="table-19-font"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Endpoint assessor</h2></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+
+                     <tr>
+                     <td class="apprenticeRecordTitle" >Endpoint assessor</td>
+                      <td class="" >Pham assessments Ltd</td>
+
+                    </tr>
+
+                    <!--tr id="trainingProvider" class="">
+                      <td class="apprenticeRecordTitle">Endpoint Assessment Cost</td>
+                      <td class="" >£1,000</td>
+                    </tr-->
+                      </tbody>
+                </table>
+                <p style=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/edit-overview">Edit endpoint assessment</a> </p>
+
+
+                <table class="table-19-font"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Dates</h2></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                     <td class="apprenticeRecordTitle" >Start date</td>
+                      <td class="">July 2018</td>
+
+                    </tr>
+                    <tr>
+                     <td class="apprenticeRecordTitle">End date</td>
+                      <td class="">July 2020</td>
+
+                    </tr>
+                    <!--tr>
+                     <td class="apprenticeRecordTitle">Time left</td>
+                      <td class="">10 months</td>
+
+                    </tr-->
+                                </tbody>
+                </table>
+                <p style="" class="looks-like-a-link-underline">Edit dates </p> 
+
+
+                <table class="table-19-font"> 
+                  <thead>
+                    <tr>
+                      <th colspan="3"> <h2 class="heading-medium">Payment</h2></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                     <td class="apprenticeRecordTitle" style="width:217px">Total cost</td>
+                      <td class="">£6,555</td>
+                      <td></td>
+
+                    </tr>
+                    <!--tr>
+                     <td class="apprenticeRecordTitle">Amount paid</td>
+                      <td class="">£1,312</td>
+                      <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/paid">View</a></td>
+                    </tr>
+                     <tr>
+                     <td class="apprenticeRecordTitle">Balance</td>
+                      <td class="">£5,243</td>
+                      <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/left-to-pay">View</a></td>
+                    </tr-->
+
+                  </tbody>
+                </table>
+                  <p style="" class="looks-like-a-link-underline">Edit cost </p> 
+            </div>
+              </div>
+          </div>
+          <div class="column-one-third">
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="//border-top: 1px #bfc1c3 solid;">Changes</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li id="auditNoChanges">
+                            <p>There have been no changes to this apprentice.</p>
+                          </li>
+                          <li id="auditPausedWaiting">
+                            <p><span style="font-weight:700">08 May 2017.</span> RobJ changed the apprentice name to Rob Edwards from Jeff Edwards. Awaiting confirmation. ROB REMOVE THIS AND MAKE A PENDING THING.</p>
+                          </li>
+                            <li id="auditPausedWaiting">
+                            <p><span style="font-weight:700">12 May 2017.</span> RobJ changed the status to Paused. Awaiting confirmation. ROB REMOVE THIS AND MAKE A PENDING THING.</p>
+                          </li>
+                        </ul>
+
+                           </nav>
+                    </aside-->
+            </div>
+        </div>
+</main>
+
+{% endblock %}
+
