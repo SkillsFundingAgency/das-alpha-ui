@@ -82,7 +82,7 @@
 
             <div class="govuk-option-select js-collapsible" >
             <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
-              <div class="option-select-label">Actions</div>
+              <div class="option-select-label">Filter things</div>
               <div class="js-selected-counter"></div></button>
                 <div class="options-container" id="case_state">
                   <div class="js-auto-height-inner">
@@ -92,49 +92,25 @@
                         </label>
                        <label for="not-started">
                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
-                          Changes for review
+                            Changes pending
                         </label>
                         <label for="Paused">
                         <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
-                          Payment failure
+                          Payment failed
                         </label>
                          <label for="Stopped">
                         <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
-                          Endpoint Assessor review
+                          End-point assessor review needed
                         </label>
                   </div>
                </div>
           </div>
 
-          <div class="govuk-option-select js-collapsible" >
-            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
-              <div class="option-select-label">Cohort reference</div>
-              <div class="js-selected-counter"></div></button>
-                <div class="options-container" id="case_state">
-                  <div class="js-auto-height-inner">
-                       <label for="Live">
-                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
-                          98HXGFD
-                        </label>
-                       <label for="not-started">
-                       <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
-                          78JKHGS
-                        </label>
-                        <label for="Paused">
-                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
-                          HJGS897
-                        </label>
-                         <label for="Stopped">
-                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
-                          UIOY784
-                        </label>
-                  </div>
-               </div>
-          </div>
+          
 
           <div class="govuk-option-select js-collapsible" >
             <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
-              <div class="option-select-label">Training</div>
+              <div class="option-select-label">Apprenticeship training courses</div>
               <div class="js-selected-counter"></div></button>
                 <div class="options-container" id="case_state">
                   <div class="js-auto-height-inner">
@@ -174,7 +150,7 @@
 
     <div class="govuk-option-select js-collapsible" >
             <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
-              <div class="option-select-label">Providers</div>
+              <div class="option-select-label">Training providers</div>
               <div class="js-selected-counter"></div></button>
                 <div class="options-container" id="case_state">
                   <div class="js-auto-height-inner">
@@ -194,6 +170,32 @@
                </div>
           </div>
 
+          <div class="govuk-option-select js-collapsible" >
+            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+              <div class="option-select-label">Cohort reference</div>
+              <div class="js-selected-counter"></div></button>
+                <div class="options-container" id="case_state">
+                  <div class="js-auto-height-inner">
+                       <label for="Live">
+                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                          98HXGFD
+                        </label>
+                       <label for="not-started">
+                       <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                          78JKHGS
+                        </label>
+                        <label for="Paused">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          HJGS897
+                        </label>
+                         <label for="Stopped">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          UIOY784
+                        </label>
+                  </div>
+               </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -203,8 +205,8 @@
                             <tr>
                               <th scope="col" style="padding-top:0">Name</th>
                               <th scope="col" style="padding-top:0">Date of birth</th>
-                               <th scope="col" style="padding-top:0">Status</th>
-                               <th scope="col" style="padding-top:0">Action</th>
+                               <th scope="col" style="padding-top:0; width:120px">Status</th>
+                               <th scope="col" style="padding-top:0; width:150px">Do a thing</th>
                                <th scope="col" style="padding-top:0"></th>
                             </tr>
                           </thead>
@@ -212,31 +214,31 @@
                             <tr>
                               <!--quick hack, will fix -->
                               <td class="rjTabWidth">Rob Edwards</td>
-                              <td class="">3 June 1997</td>
+                              <td class="">3 Jun 1997</td>
                               <td class="">Live</td>
-                              <td></td>
+                               <td>Changes pending</td>
                               <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice">View</a></td>
                             </tr>
                              <tr>
                               <td class="rjTabWidth">Susan Hamazaki</td>
                               <td class="">12 Oct 1995</td>
                                <td class="">Paused</td>
-                                <td>Changes for review</td>
+                                <td>Changes pending</td>
                                <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice-showing-changes">View</a></td>
 
                             </tr>
                             <tr>
                               <td class="rjTabWidth">David Jenkins</td>
-                              <td class="">5 Sept 1999</td>
+                              <td class="">5 Sep 1999</td>
                                 <td class="">Finished</td>
                                  <td></td>
                                <td class="looks-like-a-link-underline">View</td>
                             </tr>
                             <tr>
                               <td class="rjTabWidth">Mel O'Connor</td>
-                              <td class="">01 May 1998</td>
+                              <td class="">1 May 1998</td>
                                 <td class="">Live</td>
-                                 <td>Payment failure</td>
+                                 <td>Payment failed</td>
                               <td class="looks-like-a-link-underline">View</td>
                             </tr>
                             <tr>
@@ -244,6 +246,13 @@
                               <td class="">10 Jan 1998</td>
                                 <td class="">Not started</td>
                                  <td></td>
+                              <td class="looks-like-a-link-underline">View</td>
+                            </tr>
+                             <tr>
+                              <td class="rjTabWidth">Harvey Dent</td>
+                              <td class="">29 Oct 2000</td>
+                                <td class="">Live</td>
+                                 <td>End-point assessor review needed</td>
                               <td class="looks-like-a-link-underline">View</td>
                             </tr>
                              <tr>
