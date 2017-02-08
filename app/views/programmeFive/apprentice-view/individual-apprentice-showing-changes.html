@@ -13,6 +13,59 @@
   }
 </style>
 
+<script>
+        var employerOrNot = JSON.parse(localStorage.getItem('commitments.isEmployer'));
+        var changeStatus =JSON.parse(localStorage.getItem('commitments.userChangeStatus'));
+                   //paused is set when the paused journey is triggered.
+
+    </script>
+
+
+<script>
+
+$(document).ready(function() {
+  var changeStuff = function() {
+  if (employerOrNot=='yes') {
+    // document.getElementById("commitmentsName").textContent = " Hackney Skills & Training Ltd";
+   //  document.getElementById("providerName").textContent = "Provider:" ;
+        $(trainingProvider).removeClass("rj-dont-display");
+   // $(ULNTable).addClass("rj-dont-display");
+   //  $(removeMe).addClass("rj-dont-display")
+
+    }
+else {
+    $(ULN).removeClass("rj-dont-display");
+    $(employer).removeClass("rj-dont-display");
+
+//    $(addReference).removeClass("rj-dont-display");
+        };
+
+};
+
+var showAlerts = function() {
+ switch (true) {
+                 case  (changeStatus == "updated"):
+                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                  $(changedAlertMessage).removeClass("rj-dont-display");
+              break;
+             case  (changeStatus == "paused"):
+                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                  $(pausedAlertMessage).removeClass("rj-dont-display");
+              break;
+
+        default:
+             console.log('nothings changed on the apprentice record')
+          break;
+        }
+  };
+
+changeStuff();
+showAlerts();
+});
+
+</script>
+
+
 
 <main id="content" role="main">
 {% include "includes/phase_banner_beta.html" %}
@@ -32,16 +85,15 @@
             <div>
               <div class="panel panel-border-wide">
                 <h2  class="heading-medium">Changes for review</h2>
-              <p>There are changes to this apprentice's details that you need to review</p>
+              <p>There are changes to this apprentice's details that you need to review. Until you've reviewed the changes, you'll only be able to edit the apprentice's status.</p>
 
             <a href="./update-apprenticeship/changes-confirm">Review changes</a>
 
-  </div>
+  </div> 
 
                 <table class="table-19-font" style="margin:0"> 
                   <thead>
                     <tr>
-       
                       <th> </th>
 
                     </tr>
