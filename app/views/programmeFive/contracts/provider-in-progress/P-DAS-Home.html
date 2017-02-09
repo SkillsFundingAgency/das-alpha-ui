@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+ #navigation-primary, #kill-me {
+  display:none;
+}
+
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<script>
+  var page_name = "dashboard";
+</script>
+
+
+{% include "includes/phase_banner_beta.html" %}
+<main id="content" role="main">
+
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+    </ol>
+  </div>
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+            <h1 class="heading-xlarge rj-headings-border" id="" >Hackney Skills &amp Training</h1>
+
+
+
+ <div class="grid-row">
+           <div class="column-two-thirds">
+            <!--h2 class="heading-large" style="margin:0px 0 50px 0">{% include "includes/account-name-number.html" %}Funding</h2-->
+         <div style="max-width:90%">
+          <div class="grid-row">
+            <div class="column-half">
+              <h3 class="heading-medium rj-top-border-mobile" style="margin-top:0;" ><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/overview">Employer requests</a></h3>
+              <p>View, review and approve employer requests</a></p>
+            </div>
+
+            <div class="column-half">
+              <h3 class="heading-medium rj-top-border-mobile" style="margin-top:0;" ><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/">Manage apprentices</a></h3>
+              <p>View and review existing apprentices that need your attention</p>
+            </div>
+          </div> 
+          <div class="grid-row">
+            <div class="column-half ">
+              <h3 class="heading-medium rj-top-border looks-like-a-link-underline-h2" style="margin-top:0; padding-top:35px"></h3>
+            </div>
+            <div class="column-half ">
+              <h3 class="heading-medium rj-top-border looks-like-a-link-underline-h2" style="margin-top:0; padding-top:35px"></h3>
+            </div>
+         </div>
+       </div>
+          </div>
+            <div class="column-one-third">
+
+            <h2 class="heading-medium" style="margin-top:0">To do:</h2>
+             <div class="rj-alert-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Apprenticeship agreements that need to be signed: 1</h2>
+                  <p class="looks-like-a-link-underline to-do-action" style="width:88%; margin: 5px 10px 5px 20px">Review your agreements</p>
+                </div>
+            </div>
+            <div class="rj-alert-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Employer requests that need your attention: 5</h2>
+                  <p class="looks-like-a-link-underline to-do-action" style="width:88%; margin: 5px 10px 5px 20px">Review your apprentices</p>
+                </div>
+            </div>
+
+            <div class="rj-alert-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Requests to change apprentice details: 5</h2>
+                  <p class="looks-like-a-link-underline to-do-action" style="width:85%; margin: 5px 10px 5px 20px">Review the changes</p>
+                </div>
+            </div>
+
+            <div class="rj-alert-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Apprentices that failed double lock: 267 </h2>
+                  <p class="looks-like-a-link-underline to-do-action" style="width:85%; margin: 5px 10px 5px 20px">Update details</p>
+                </div>
+            </div>
+        </div>
+</main>
+</script>
+
+{% endblock %}
+
