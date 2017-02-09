@@ -2537,6 +2537,12 @@ input[type=number] {
   height: 215px;
 }
 
+.alertGreyBoxSmall {
+  width: 100%;
+  background-color: #dee0e2;
+  height: 190px;
+}
+
 .epa-hint {
   font-size: 19px;
   line-height: 1.25;
