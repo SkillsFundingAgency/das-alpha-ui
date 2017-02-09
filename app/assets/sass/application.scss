@@ -575,6 +575,24 @@ vertical-align: top;
 
 { }
 
+.alertGreyBox {
+  width:100%;
+  background-color: $panel-colour;
+  height:215px;
+
+
+}
+
+.epa-hint {
+  font-size: 19px;
+    line-height: 1.25;
+    text-transform: none;
+    display: block;
+   //color: #6f777b;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
 .statusToDo {
     // text-transform: uppercase;
     font-size: 19px;

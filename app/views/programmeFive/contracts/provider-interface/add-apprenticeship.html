@@ -77,7 +77,7 @@ var whereNow = function() {
                   <input class="form-control" id="apprenticeFamilyName" type="text">
                 </div>
         </fieldset>
-         <fieldset>
+         <!--fieldset>
       <hr style=""/>
             <legend class="visuallyhidden">ULN</legend>
             <div class="form-group">
@@ -86,8 +86,8 @@ var whereNow = function() {
            </label>
               <input class="form-control " id="ULN" type="number" value="">
       </div>
-    </fieldset>
-        <hr style="margin-top:0px"/>
+    </fieldset-->
+        <hr style="margin-top:px"/>
               <div id="searchTraining">
                 <form id="checkTrainingForm" action="add-an-apprenticeship/training-list">
                     <input id="checkTrainingSource" name="source" type="hidden" value="employer" />
@@ -97,9 +97,9 @@ var whereNow = function() {
                             <label class="form-label-bold" for="search">Apprenticeship training course
                         <span class="form-hint">Search for the training by course name or code</span>
                           </label>
-                            <input class="form-control" id="search-for-training" type="text">
+                            <input class="form-control" id="search-for-training" type="text" style="width:100%">
                         </div>
-                          <input class="button button-grey-secondary" id="search-provider" type="submit" value="Find course">
+                          <!--input class="button button-grey-secondary" id="search-provider" type="submit" value="Find course"-->
                       </fieldset>
                 </form>
             </div>
@@ -172,6 +172,71 @@ var whereNow = function() {
               <input class="form-control rj-currency-input" id="apprenticeCost" type="text" value="" style="max-width:6em">
       </div>
       </fieldset>
+
+
+<!-- JAVASCRIPT ENABLED and EPAS are available -->
+
+        <fieldset>
+             <hr style="margin-top:0px"/>
+              <legend class="visuallyhidden">Add a note</legend>
+              <div class="form-group">
+              <label class="form-label-bold" for="epa">End-point assessor (optional) 
+                <span class="epa-hint">There are 5 end-point assessors available for this training course:</span>
+
+            <span class="form-hint">You'll need to add end-point assessor details before the training finishes</span>
+             </label>
+                <input class="form-control rj-currency-input" id="employerRef" type="text" value="" style="width:100%">
+                    <details style="margin-top:15px">
+                        <summary><span class="summary">What is an end-point assessor?</span></summary>
+                        <div class="panel panel-border-narrow">
+                          <p>
+                            It's a thing.
+                          </p>
+
+                          <p>
+                            Care about the thing.
+                          </p>
+                        </div>
+                      </details>
+        </div>
+      </fieldset>
+
+
+
+
+<!-- NO JAVASCRIPT AVAILABLE -->
+
+      <fieldset>
+             <hr style="margin-top:0px"/>
+              <legend class="visuallyhidden">Add a note</legend>
+              <div class="form-group">
+              <label class="form-label-bold" for="epa">End-point assessor (optional) 
+
+            <span class="form-hint">If you've chosen a standard.You'll need to add end-point assessor details before the training finishes. If you don't know what this is, ignore it for now.</span>
+             </label>
+                      <select class="form-control" id="select-box" style="width:100%">
+                        <option>EPA 1</option>
+                        <option>EPA 2</option>
+                        <option>EPA 3</option>
+                      </select>
+                    <details style="margin-top:15px">
+                        <summary><span class="summary">What is an end-point assessor?</span></summary>
+                        <div class="panel panel-border-narrow">
+                          <p>
+                            It's a thing.
+                          </p>
+
+                          <p>
+                            Care about the thing.
+                          </p>
+                        </div>
+                      </details>
+        </div>
+      </fieldset>
+
+
+<!-- End of EPA stuff -->
+
       <fieldset>
            <hr style="margin-top:0px"/>
             <legend class="visuallyhidden">Add a note</legend>
@@ -182,6 +247,31 @@ var whereNow = function() {
               <input class="form-control rj-currency-input" id="employerRef" type="text" value="" style="width:100%">
       </div>
     </fieldset>
+    <!-- JAVASCRIPT ENABLED and EPAS are NOT available -->
+           <hr style="margin-top:0px"/>
+<div class="alertGreyBox">
+<div style="padding-left:20px">
+  <h2 class="heading-small" style="padding-top:20px">End-point assessor</h2>
+  <p style="padding-right:20px">There are currently no end-point assessors for this training course - this will change.
+    <p style="">We'll ask you to choose one before the training finishes.</p>
+
+                     <details >
+                        <summary><span class="summary">What is an end-point assessor?</span></summary>
+                        <div class="panel panel-border-narrow">
+                          <p>
+                            It's a thing.
+                          </p>
+
+                          <p>
+                            Care about the thing.
+                          </p>
+                        </div>
+                      </details>
+
+</div>
+</div>
+
+
     </form>
           </div>
             <div class="column-one-third">

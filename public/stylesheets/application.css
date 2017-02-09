@@ -2531,6 +2531,21 @@ input[type=number] {
   }
 }
 
+.alertGreyBox {
+  width: 100%;
+  background-color: #dee0e2;
+  height: 215px;
+}
+
+.epa-hint {
+  font-size: 19px;
+  line-height: 1.25;
+  text-transform: none;
+  display: block;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
 .statusToDo {
   font-size: 19px;
   background-color: #912B88;
