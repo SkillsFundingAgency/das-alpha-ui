@@ -196,6 +196,13 @@ padding-left:15px;
 
 }
 
+.errorBoxBlack {
+ padding-top:18px;
+   border-bottom: 5px solid $grey-1 !important;
+  // background-color: $highlight-colour;
+
+}
+
 .fatBR {
   line-height:25px
 }
@@ -481,15 +488,7 @@ vertical-align: top;
   border-left:1px solid $border-colour; 
 }
 
-.fullWidthGreyAlert {
-  background-color: $panel-colour;
- // width:100%;
-  height:120px;
-  padding: 20px 40px 0px 40px;
-  margin: 45px 0 0px 0;
-  position:relative;
 
-}
 
 .fullWidthAnotherAlert {
   background-color: $panel-colour;
@@ -498,7 +497,15 @@ vertical-align: top;
   margin: 20px 0 0px 0;
 }
 
+.fullWidthGreyAlert {
+  background-color: $panel-colour;
+ // width:100%;
+  height:120px;
+  padding: 20px 40px 0px 40px;
+  margin: 15px 0 30px 0;
+  position:relative;
 
+}
 
 .fullWidthGreyAlert p, .fullWidthAnotherAlert p, .fullWidthGreyAlert h2, .fullWidthAnotherAlert h2  {
   text-align: center;
@@ -508,7 +515,7 @@ vertical-align: top;
 .fullWidthGreyAlert:after {
      content: '';
     position: absolute;
-    left: 10%;
+    left: 77%;
     top: 140px;
     width: 0;
     height: 0;

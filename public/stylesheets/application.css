@@ -2189,6 +2189,11 @@ input[type=number] {
   border-bottom: 5px solid #b10e1e !important;
 }
 
+.errorBoxBlack {
+  padding-top: 18px;
+  border-bottom: 5px solid #6f777b !important;
+}
+
 .fatBR {
   line-height: 25px;
 }
@@ -2457,19 +2462,19 @@ input[type=number] {
   border-left: 1px solid #bfc1c3;
 }
 
-.fullWidthGreyAlert {
-  background-color: #dee0e2;
-  height: 120px;
-  padding: 20px 40px 0px 40px;
-  margin: 45px 0 0px 0;
-  position: relative;
-}
-
 .fullWidthAnotherAlert {
   background-color: #dee0e2;
   height: 100px;
   padding: 20px 40px 0px 40px;
   margin: 20px 0 0px 0;
+}
+
+.fullWidthGreyAlert {
+  background-color: #dee0e2;
+  height: 120px;
+  padding: 20px 40px 0px 40px;
+  margin: 15px 0 30px 0;
+  position: relative;
 }
 
 .fullWidthGreyAlert p, .fullWidthAnotherAlert p, .fullWidthGreyAlert h2, .fullWidthAnotherAlert h2 {
@@ -2480,7 +2485,7 @@ input[type=number] {
 .fullWidthGreyAlert:after {
   content: '';
   position: absolute;
-  left: 10%;
+  left: 77%;
   top: 140px;
   width: 0;
   height: 0;
