@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+ #navigation-primary, #kill-me {
+  display:none;
+}
+</style>
+
+<script>
+var whereNow = function() {
+  var status = $('input[name=radio-group]:checked').val();
+  console.log(status + " hello")
+    if (status == "provider-1") {
+     window.location.href='../provider-list';
+  } else {
+    window.location.href='../does a thing';
+  }
+}; 
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+
+<div class="grid-row">
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Confirm employer identity</h1>
+
+   <p class="">This is the first time you have recieved a request from this employer. To prevent fraud, you need to make sure they are who they say they are.</p>
+   <p>The company has told us it is:</p>
+
+           <h2 class="heading-large" style="margin-bottom:0; ">Acme Coventry Ltd</h2>
+                 <h3 class="heading-small" style="margin:0px;color:#6F777B " >Company number: 10542519</h3>
+           <div style="margin-top:25px"></div>
+
+
+        <div style="">
+          <h2 class="heading-medium">How to check this company</h2>
+          <p>You can ask your contract at the company to confirm that they sent a request from their employer account with the reference number: <span style="font-weight:700">98HGS3F</span></p>
+                   <details style="margin-bottom:35px">
+                <summary><span class="summary">Where can an employer find their reference number?</span></summary>
+                <div class="panel panel-border-narrow">
+                  <p>
+                 They can find it in a place in their DAS account
+                  </p>
+
+                </div>
+        </details>
+
+          <div style="margin-top:35px"></div>
+
+              <form action="">
+                  <legend class="visuallyhidden">Delete me</legend>
+                    <div class="form-group">
+                      <label class="form-label-bold" for="">Can you confirm this is Acme Coventry Ltd?</label>
+                    <label class="block-label" for="provider-1">
+                      <input id="provider-1" type="radio" name="radio-group" value="provider-1">
+                     Yes, I confirm this is Acme Coventry Ltd
+                     </label>
+                    <label class="block-label" for="provider-2">
+                      <input id="provider-2" type="radio" name="radio-group" value="provider-2">
+                    No, I cannot confirm it is Acme Coventry Ltd
+                     </label>
+                  </div>
+                </fieldset>
+
+              </form>
+        </div>
+
+
+    <div style="margin-top:35px"></div>
+    <div class="">
+    <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Continue">
+        <div style="margin-top:15px"><a href="./provider-list">Cancel</a></div>
+    </div>
+
+            </div>
+</div>
+</main>
+
+
+
+
+{% endblock %}

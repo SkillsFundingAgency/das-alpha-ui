@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+ #navigation-primary, #kill-me {
+  display:none;
+}
+
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+
+    </ol>
+  </div>
+
+
+
+<div class="grid-row">
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Provider DAS</h1>
+
+   <p>You can:</p>
+
+     <ul class="list list-bullet">
+      <li>do a thing</li>
+    </ul>
+
+  <div style="margin-top:25px"></div>
+
+  <h2 class="heading-medium">Before you start</h2>
+     <p>You must:</p>
+      <ul class="list list-bullet">
+        <li>do this thing</a></li>
+        <li>and do that thing</li>
+      </ul>
+
+    <div style="margin-top:50px"></div>
+    <div class="padder-top-x">
+        <a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/P-DAS-Home" class="button ">Continue</a>
+    </div>
+    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
+<!-- {% include "includes/start-tabs.html" %} -->
+
+            </div>
+
+             <div class="column-one-third">
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="../login">Sign in</a>
+                          </li>
+
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+</div>
+</main>
+
+
+
+
+{% endblock %}

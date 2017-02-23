@@ -1,0 +1,551 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    {% include "includes/head.html" %}
+    <script>
+        var commitmentListSource = 'provider';
+        var employerOrNot = JSON.parse(localStorage.getItem('commitments.isEmployer'));
+    </script>
+    <!--script src="/public/javascripts/das/list-commitment-1.5.js"></script-->
+     <script src="/public/javascripts/das/jquery.highlight-5.js"></script>
+{% endblock %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+.highlight { font-weight:700; }
+
+</style>
+
+
+
+<script>
+
+$(document).ready(function() {
+  var changeStuff = function() {
+  if (employerOrNot=='yes') {
+    document.getElementById("commitmentsName").textContent = " Hackney Skills & Training Ltd";
+    document.getElementById("providerName").textContent = "Provider:" ;
+    $(notesStuff).addClass("rj-dont-display");
+    $(addReference).addClass("rj-dont-display");
+    $(ULNTable).addClass("rj-dont-display");
+
+     $(removeMe).addClass("rj-dont-display")
+    }
+else {  
+    $(notesStuff).removeClass("rj-dont-display");
+    $(addReference).removeClass("rj-dont-display");
+        };
+  };
+
+ var changeUnknown = function() {
+  $('td').highlight('unknown');
+  $('td').highlight('null');
+  $('td').highlight('----');
+
+ };
+
+changeStuff();
+changeUnknown();
+
+});
+
+
+
+
+
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+
+ <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+            <li><a href="/{% include "includes/sprint-link.html" %}/balance">Home</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/contracts/providers">Apprentices</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress">Start an apprentice</a></li>
+            <li id="removeWithNav">98HGS3F</li>
+    </ol>
+  </div>
+
+
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+<h1 class="heading-xlarge" id="commitmentsHeader">Review your cohort</h1>
+  <div class="grid-row">
+
+
+     <div class="column-third" style="" >
+                <div style="background-color:#2E358B; min-height:160px" >
+                  <h2 id="numberOfApprentices" class="bold-xxlarge" style=" color:#fff; margin: 0px 0 0px 15px; padding-top:25px">25</h2>
+                  <h2 class="heading-medium" style="color: #fff; margin: 0px 0 0px 15px;">Apprentices</h2>
+              </div>
+    </div>
+         <div class="column-third" style="" >
+                <div style="background-color:#912B88; min-height:160px" >
+                  <h2 id="numberOfApprentices" class="bold-xxlarge" style=" color:#fff; margin: 0px 0 0px 15px; padding-top:25px">10</h2>
+                  <h2 class="heading-medium" style="color: #fff; margin: 0px 0 0px 15px;">Incomplete records</h2>
+              </div>
+    </div>
+         <div class="column-third" style="" >
+                <div style="background-color:#D53880; min-height:160px" >
+                  <h2 id="totalCostOfApprentices" class="bold-xlarge" style=" color:#fff; margin: 0px 0 0px 15px; padding-top:27px">£29,002</h2>
+                  <h2 class="heading-medium" style="color: #fff; margin: 28px 0 0px 15px;">Total cost</h2>
+              </div>
+    </div>
+  </div>
+
+<div style="margin-top:35px"></div>
+  <div class="grid-row">
+           <div class="column-half">
+                           <div class="" style="padding-bottom:15px">
+                                     <!--h2 class="heading-medium" id="commitmentsName" style="margin: 0 0 5px 0">Acme Coventry Ltd</h2-->
+                                     <div id=""><h2 id="providerName" class="heading-small"  style="display:inline-block; margin:0;">Employer:&nbsp</h2 ><p id="commitmentsName" style="display:inline; margin:0;">Acme Coventry Ltd</p></div>
+                                  <div id="addReference"><h2 class="heading-small"  style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">98HGS3F</p></div>
+
+                          </div>
+            </div>
+
+        <div class="column-half" id="notesStuff">
+          <div id="removeMe" style="padding-bottom:15px">
+            <div><h2 class="heading-small" style="display:inline-block; margin:0;">Note:&nbsp</h2 ><p style=" margin:0;">No note added</p></div>
+          </div>
+        </div>
+</div>
+
+    <!-- ----------- This is the default where there aren't any groups or cohorts added ------------ -->
+
+<!-- removed for static version -->
+
+    <!-- -------------- This is shows when one apprenticeship has been added ---------- -->
+                <div style="" class="rj-has-apprenticeships" id="apprenticeships">
+
+
+       <hr style="margin:0 0 20px 0" />
+        <div class="commit-bar">
+                       <form class="" style="display:inline-block; float:left;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next-approve-error">
+                    <div style="display:inline-block;"><input class="button" style="display:inline; " type="submit"  id="send-to-employer"  value="Save and continue"></div>
+              </form>
+
+               <form class="" style="display:inline-block;" action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/bulk-or-single">
+                <input type="hidden" name="source" value="provider" />
+                <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px; " class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add more apprentices"></div>
+            </form>
+
+            <!--form class="" style="display:inline-block; margin:0 0 0 10px; " action="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">
+                <input type="hidden" name="source" value="provider" />
+                <div style="display:inline-block;"><input style="display:inline" class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add an apprentice"></div>
+            </form-->
+
+            <div style="clear:both"></div>
+             <!--p style="display:inline; margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">Import apprenticeships</a></p-->
+
+         <!-- <div>
+         <hr style="margin:20px 0 0 0" />
+              <h2 class="" style="font-size:24px; margin:18px 0 0 0; display:inline-block "><span style="" id=""></span> 25 Apprentices</h2>              <h2 class="" style="margin-top:18px; display:inline-block; float:right" ><span id="totalCostOfApprentices" style="font-size:24px;" >£29,002</span></h2>
+
+              <p>8 Incomplete records</p>
+
+          </div> -->
+        </div>
+        <hr style="margin:16px 0 15px 0" />
+         <div style="clear:both"></div>
+
+                <h2 class ="heading-medium"  style="margin-bottom:5px"  id="">17 Mechatronics Engineers</h2>
+                <p style="margin:0 0 0 0">Level: 4</p>
+                <p style="margin: margin:0 0 15px 0">Training code: 3246</p>
+                <table>
+                  <thead>
+                      <tr>
+                        <th scope="col" class=""  >Name</th>
+                        <!--th scope="col" class="">Family<br />name</th-->
+                        <th id="ULNTable" scope="col" class="">ULN</th>
+                        <th scope="col" class="">Training dates</th>
+                        <!--th scope="col" class="">Endpoint Assessor</th-->
+                         <th scope="col" class="">Cost</th>
+                        <th scope="col" class=""></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                  <tr>
+                    <td style="">
+                      Fidel McDuffy
+                    </td>
+                    <td style="">
+                      <span class="highlight"><span class="highlight">----</span></span>
+                    </td>
+                    <td style="">
+                      £1
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=a3f33bb8-8969-4471-aa9c-18f9405a16b0&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="">
+                      Anna Folk
+                    </td>
+                    <td style="">
+                      <span class="highlight"><span class="highlight">----</span></span>
+                    </td>
+                    <td style="">
+                      <span class="highlight"><span class="highlight">----</span></span>
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=ff5d8b24-a9c1-4637-9528-71925331eb09&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="">
+                      Kevin Field
+                    </td>
+                    <td style="">
+                      <span class="highlight"><span class="highlight">----</span></span>
+                    </td>
+                    <td style="">
+                      £1,500
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=f5fd8ef6-dde9-4da2-9426-ad0726e7e404&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="">
+                      Billy Smith
+                    </td>
+                    <td style="">
+                      9/2017 to <span class="highlight"><span class="highlight">----</span></span>/<span class="highlight"><span class="highlight">----</span></span>
+                    </td>
+                    <td style="">
+                      £5,000
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=2ecdf319-32c5-4f59-849f-fb50a47263f6&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="">
+                      Jeff Bloom
+                    </td>
+                    <td style="">
+                      <span class="highlight"><span class="highlight">----</span></span>
+                    </td>
+                    <td style="">
+                      £9,000
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=d672bd69-4cb0-4ced-a79b-5b6d13844dcc&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="">
+                      David Edwards
+                    </td>
+                    <td style="">
+                      11/2018 to 10/2020
+                    </td>
+                    <td style="">
+                      £1,500
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=40e73d56-39cb-4e4a-b7da-aa4134553b20&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="">
+                      Rob Andrews
+                    </td>
+                    <td style="">
+                      11/2018 to 10/2020
+                    </td>
+                    <td style="">
+                      £1,500
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=67bdc8b3-96ef-425c-b9b8-7b1bbea451f7&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="">
+                      Mellisa Shaw
+                    </td>
+                    <td style="">
+                      11/2018 to 10/2020
+                    </td>
+                    <td style="">
+                      £1,500
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=da0053f3-8a4e-4900-8896-0921b8dd0ec6&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="">
+                      Brendan Hamazaki
+                    </td>
+                    <td style="">
+                      11/2018 to 10/2020
+                    </td>
+                    <td style="">
+                      £1
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=c71bd4b1-f556-4330-84d7-bd8f40254574&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="">
+                      Gary Barton
+                    </td>
+                    <td style="">
+                      11/2018 to 10/2020
+                    </td>
+                    <td style="">
+                      £1,500
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=a86a491d-0efb-410b-9f0b-53efe150b955&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="">
+                      David Edwards
+                    </td>
+                    <td style="">
+                      11/2018 to 10/2020
+                    </td>
+                    <td style="">
+                      £1,500
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=8535b8f7-1fc4-489a-a96f-7fb1f20f61de&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="">
+                      Rob Andrews
+                    </td>
+                    <td style="">
+                      11/2018 to 10/2020
+                    </td>
+                    <td style="">
+                      £1,500
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=2bd0e5ae-1086-41e2-abbb-a424a18ace47&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="">
+                      Mellisa Shaw
+                    </td>
+                    <td style="">
+                      11/2018 to 10/2020
+                    </td>
+                    <td style="">
+                      £1,500
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=3b00ca10-ce0a-4499-829f-e0c69317f7c7&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="">
+                      Brendan Hamazaki
+                    </td>
+                    <td style="">
+                      11/2018 to 10/2020
+                    </td>
+                    <td style="">
+                      £1,500
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=eb6365f8-7d3d-4dc5-b48f-e75b93ec4dd0&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="">
+                      Gary Barton
+                    </td>
+                    <td style="">
+                      11/2018 to 10/2020
+                    </td>
+                    <td style="">
+                      £1,500
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=2215c0d6-ab76-4d6c-aafd-dd31b51a3081&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+                     <!--hr style="margin:35px 0 35px 0;"/-->
+            </div>
+               <h2 class ="heading-medium"  style="margin-bottom:5px"  id="">8 Manufacturing Engineers: Automotive</h2>
+                <p style="margin:0 0 0 0">Level: 3</p>
+                <p style="margin: margin:0 0 15px 0">Training code: 9287</p>
+                <table>
+                  <thead>
+                      <tr>
+                        <th scope="col" class=""  >Name</th>
+                        <!--th scope="col" class="">Family<br />name</th-->
+                        <th id="ULNTable" scope="col" class="">ULN</th>
+                        <th scope="col" class="">Training dates</th>
+                        <!--th scope="col" class="">Endpoint Assessor</th-->
+                         <th scope="col" class="">Cost</th>
+                        <th scope="col" class=""></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                  <tr>
+                    <td style="">
+                      Fidel McDuffy
+                    </td>
+                    <td style="">
+                      <span class="highlight"><span class="highlight">----</span></span>
+                    </td>
+                    <td style="">
+                      £1
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=a3f33bb8-8969-4471-aa9c-18f9405a16b0&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="">
+                      Anna Folk
+                    </td>
+                    <td style="">
+                      <span class="highlight"><span class="highlight">----</span></span>
+                    </td>
+                    <td style="">
+                      <span class="highlight"><span class="highlight">----</span></span>
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=ff5d8b24-a9c1-4637-9528-71925331eb09&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="">
+                      Kevin Field
+                    </td>
+                    <td style="">
+                      <span class="highlight"><span class="highlight">----</span></span>
+                    </td>
+                    <td style="">
+                      £1,500
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=f5fd8ef6-dde9-4da2-9426-ad0726e7e404&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="">
+                      Billy Smith
+                    </td>
+                    <td style="">
+                      9/2017 to <span class="highlight"><span class="highlight">----</span></span>/<span class="highlight"><span class="highlight">----</span></span>
+                    </td>
+                    <td style="">
+                      £5,000
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=2ecdf319-32c5-4f59-849f-fb50a47263f6&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="">
+                      Jeff Bloom
+                    </td>
+                    <td style="">
+                      <span class="highlight"><span class="highlight">----</span></span>
+                    </td>
+                    <td style="">
+                      £9,000
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=d672bd69-4cb0-4ced-a79b-5b6d13844dcc&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="">
+                      David Edwards
+                    </td>
+                    <td style="">
+                      11/2018 to 10/2020
+                    </td>
+                    <td style="">
+                      £1,500
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=40e73d56-39cb-4e4a-b7da-aa4134553b20&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="">
+                      Rob Andrews
+                    </td>
+                    <td style="">
+                      11/2018 to 10/2020
+                    </td>
+                    <td style="">
+                      £1,500
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=67bdc8b3-96ef-425c-b9b8-7b1bbea451f7&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="">
+                      Mellisa Shaw
+                    </td>
+                    <td style="">
+                      11/2018 to 10/2020
+                    </td>
+                    <td style="">
+                      £1,500
+                    </td>
+                    <td>
+                      <a href="../provider-interface/add-apprenticeship?id=da0053f3-8a4e-4900-8896-0921b8dd0ec6&amp;source=provider">Edit</a>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+                     <!--hr style="margin:35px 0 35px 0;"/-->
+            </div>
+
+            <div id="bottomToolBarLotsofApprentices">
+              <div style="margin-top:50px"></div>
+        <hr style="margin:0 0 18px 0" />
+        <div class="commit-bar">
+              <form class="" style="display:inline-block; float:left;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next-approve-error">
+                    <div style="display:inline-block;"><input class="button" style="display:inline; " type="submit"  id="send-to-employer"  value="Save and continue"></div>
+              </form>
+               <form class="" style="display:inline-block;" action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/bulk-or-single">
+                    <input type="hidden" name="source" value="provider" />
+                    <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px; " class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add more apprentices"></div>
+            </form>
+        </div>
+
+        <hr style="margin:20px 0 15px 0" />
+      </div>
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
+
+{% endblock %}
+

@@ -1,0 +1,140 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<script>
+ var whichMessage = JSON.parse(localStorage.getItem('commitments.completionMessage'));
+ console.log(whichMessage);
+
+ $(document).ready(function() {
+  var changeStuff = function() {
+      switch(whichMessage) {
+        case "send-amend":
+           document.getElementById("changeHeadline").innerHTML = "Sent";
+            //document.getElementById("changeRefNumber").textContent = "Hackney Skills & Training Ltd";
+            document.getElementById("changeMainCopy").innerHTML = '<p>The information you added has been sent to Hackney Skills &amp Training Ltd to enter the rest of the details.</p><p> You can view the progress in <span class=\"looks-like-a-link-underline\">apprenticeships in progress</span></p>';
+            resetStoredStuff();
+        break;
+
+        case "send-approve":
+            document.getElementById("changeHeadline").innerHTML = "Sent to provider";
+            //document.getElementById("changeRefNumber").textContent = "Hackney Skills & Training Ltd";
+            document.getElementById("changeMainCopy").innerHTML = '<p>The employer will log on to their account and see the changes you’ve made. They’ll then either approve them or send the cohort back to you to make changes.</p>';
+            resetStoredStuff();
+
+        break;
+        case "save-no-send":
+              document.getElementById("changeHeadline").innerHTML = "Saved not sent";
+            //document.getElementById("changeRefNumber").textContent = "Hackney Skills & Training Ltd";
+            document.getElementById("changeMainCopy").innerHTML = '<p>The employer will log on to their account and see the changes you’ve made. They’ll then either approve them or send the cohort back to you to make changes.</p>';
+            resetStoredStuff();
+
+        break;
+        default:
+        console.log("something weird happened and the case wasn't triggered")
+      }
+}
+changeStuff();
+});
+
+ var resetStoredStuff = function() {
+  localStorage.setItem("commitments.completionMessage", JSON.stringify("null"));
+ localStorage.setItem("commitments.isEmployer", JSON.stringify("no"));
+ }
+
+</script>
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+
+
+
+<div class="grid-row">
+                    <div class="column-two-thirds">
+
+
+             <div class="govuk-box-highlight">
+                <h1 class="bold-xlarge" id="changeHeadline" style="" >
+                  Sent
+            </div>
+ <table class="">
+                    <thead>
+                      <tr>
+                        <!--h2 class="heading-medium">Apprenticeship 1</h2-->
+                           <th scope="col"></th>
+                          <th scope="col"></th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td style="">Reference</td>
+                        <td style="font-weight:700; ;">98HGS3F</td>
+                      </tr>
+                       <tr>
+                        <td style="">Sent to</td>
+                        <td style="font-weight:700; ;">Hackney Skills and Training Ltd</td>
+                      </tr>
+                       <tr>
+                        <td style="">Sent from</td>
+                        <td style="font-weight:700; ;">Alice Jones</td>
+                      </tr>
+                      <tr>
+                        <td>On behalf of</td>
+                        <td style="font-weight:700; ">Acme Ltd Coventry</td>
+                      </tr>
+                      <tr>
+                        <td style="">Date</td>
+                        <td style="font-weight:700;  ">Thursday 18 May 2017</td>
+                      </tr>
+                      <tr>
+                        <td style="">Apprentices</td>
+                        <td style="font-weight:700;  ">23 Mechatronics Level 2 Engineers</td>
+                      </tr>
+                      <tr>
+                        <td style="">Message</td>
+                        <td style="font-weight:700;  max-width:280px">Please add the 12 x admin level 2 apprentices and 13 x engineering level 3 apprentices, as agreed on contract #51314.</td>
+                      </tr>
+                        <tr>
+
+                      </tr>
+                    </tbody>
+                </table>
+
+            <h2 class="heading-medium">What happens next?</h2>
+                <p id="changeMainCopy">The information you added has been sent to Hackney Skills &amp Training Ltd to enter the rest of the details.</p><p> You can view the progress in <span class="looks-like-a-link-underline">apprenticeships in progress</span></p>
+
+
+          </div>
+
+          <div class="column-one-third">
+
+          </div>
+        </div>
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
+
+{% endblock %}
+

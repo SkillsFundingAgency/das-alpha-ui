@@ -1,0 +1,140 @@
+<!-- ROB >>>> THIS IS A DUPE OF /contracts/provider-in-progress/overview.html -->
+
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
+<script>
+ var isAddedApp = 'yes';
+    localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
+
+</script>
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress">Home</a></li>
+            <li id="removeWithNav"><!--a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/overview"-->Review and approve apprentices</a></li>
+   
+    </ol>
+  </div>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}Review and approve apprentices</h1>
+      </div>
+</div>
+
+  <p class="lede ">You have <span style="font-weight:700">9</span> requests in progress: </p>
+<div class="grid-row " style="margin-top:10px; margin-bottom:15px">
+
+
+      <div class="column-one-quarter" style="">
+                <div class="">
+                  <h2 class="bold-xxlarge" style="text-align:center; color:#005ea5;">3</h2>
+                  <h2 class="heading-small looks-like-a-link-underline-h2" style="margin: 5px 0 0px 0px; text-align:center ">Approve</h2>
+                </div>
+      </div>
+
+      <div class="column-one-quarter" style="">
+                <div class="">
+                  <h2 class="bold-xxlarge" style="text-align:center; color:#005ea5;">1</h2>
+                  <h2 class="heading-small looks-like-a-link-underline-h2" style="margin: 5px 0 0px 0px; text-align:center ">Review</h2>
+                </div>
+      </div>
+        
+      <div class="column-one-quarter" style="">
+                <div class="">
+                  <h2 class="bold-xxlarge" style="text-align:center; color:#005ea5;">4</h2>
+                  <h2 class="heading-small looks-like-a-link-underline-h2" style="margin: 5px 0 0px 0px; text-align:center ">With providers</h2>
+                </div>
+      </div>
+
+      <div class="column-one-quarter" style="">
+                <div class="">
+                  <h2 class="bold-xxlarge" style="text-align:center; color:#005ea5;">1</h2>
+                  <h2 class="heading-small looks-like-a-link-underline-h2" style="margin: 5px 0 0px 0px; text-align:center ">Draft</h2>
+                </div>
+      </div>
+
+
+
+  </div> <!-- close grid-row  -->
+
+  
+
+
+ <table id="transactionsOUT">
+      <div class="rj-headings-border "style ="margin-bottom:5px"></div>
+
+                    <thead>
+                      <tr>
+                        <th scope="col" class="mini-pad">Provider</th>
+                        <th scope="col" >Reference</th>
+                        <th scope="col" style="">Status</th>
+                        <th class="" scope="col" style="">Last message</th>
+
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+
+                      <tr>
+                        <td class="mini-pad">Hackney Skills &amp Training Ltd</td>
+                        <td>98HGS3F</td>
+                        <td class="">Needs your approval</td>
+                        <td style="max-width:300px">This is contract ref#90210, can you add the 25 bakery assistants to it.</td>
+
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list">View</a></td>
+                      </tr>
+                      <tr>
+                        <td class="mini-pad">Hackney Skills &amp Training Ltd</td>
+                        <td>55HGS3F</td>
+                        <td class="">Ready for review</td>
+                        <td style="max-width:300px">This is a message that has been added. It runs along the bottom of the card for now.</td>
+
+                        <td class="looks-like-a-link-underline">View</td>
+                      </tr>
+                      <tr>
+                        <td class="mini-pad">Lots of skills Ltd</td>
+                        <td>999GHY4</td>
+                        <td class="">Ready for review</td>
+                        <td style="max-width:300px">This is a message that has been added. It runs along the bottom of the card for now.</td>
+
+                        <td class="looks-like-a-link-underline">View</td>
+                      </tr>
+                       <tr>
+                        <td class="mini-pad">Skills, Skills, Skills Ltd</td>
+                        <td>999GHY4</td>
+                        <td class="">Ready for review</td>
+                        <td style="max-width:300px">This is a message that has been added. It runs along the bottom of the card for now.</td>
+
+                        <td class="looks-like-a-link-underline">View</td>
+                      </tr>
+
+                    </tbody>
+                </table>
+            <div style="margin-top:60px"></div>
+      </div>
+</main>
+
+
+
+ <!--button class="button">Do the thing</button-->
+
+
+{% endblock %}
+

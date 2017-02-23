@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+       <li id="removeWithNav">Spend levy</li>
+    </ol>
+
+  </div>
+  <h1 class="heading-xlarge rj-headings-border " >{% include "includes/account-name-number.html" %}Add apprentices</h1>
+
+ <div class="grid-row">
+           <div class="column-two-thirds">
+
+          <div class="grid-row">
+            <div class="column-half ">
+              <h3 class="heading-medium" style="margin-top:0"><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract">Add an apprentice</a></h3>
+              <p class="rj-home-spacer">Add details of apprentices that you'd like to spend your levy on.</p>
+            </div>
+            <div class="column-half ">
+              <h3 class="heading-medium " style="margin-top:0; "><a href="/{% include "includes/sprint-link.html" %}/contracts/in-progress">Review cohort requests</a></h3>
+              <p class="rj-home-spacer">Review details of apprentices that you haven't approved yet.</p>
+            </div>
+          </div> 
+
+       </div>
+    </div>
+  </main>
+
+
+{% endblock %}
+
