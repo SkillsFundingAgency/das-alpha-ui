@@ -94,6 +94,7 @@ showAlerts();
               <div class="panel panel-border-wide">
                 <h2  class="heading-medium">Changes pending</h2>
               <p>There are changes to this apprentice's details that are waiting for approval by the training provider. You can continue to edit this apprentice if you need to. </p>
+              <a href="./update-apprenticeship/changes-review">View changes</a>
 
   </div>
 
@@ -102,7 +103,6 @@ showAlerts();
                 <table class="table-19-font" style="margin:0"> 
                   <thead>
                     <tr>
-       
                       <th> </th>
 
                     </tr>
@@ -114,16 +114,17 @@ showAlerts();
                     <tr>
                       <td class="apprenticeRecordTitle" >Status</td>
                       <td class="">Live</td>
+                      <td><p style="text-align:right; margin:0"><a  href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship">Edit status</a></p></td>
                     </tr>
 
                       </tbody>
                 </table>
 
 
-                  <p style=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship">Edit status</a> </p>
+                  <p style="" </p>
 
 
-                  <table class="table-19-font" style="margin:0"> 
+                  <table class="table-19-font" style="margin:0">
                   <thead>
                     <tr>
                       <th colspan="2"> <h2 class="heading-medium">Overview</h2></th>
@@ -133,6 +134,7 @@ showAlerts();
 
                    <table class="table-19-font"> 
                   <tbody>
+
                     <tr id="trainingProvider" class="rj-dont-display">
                       <td class="apprenticeRecordTitle">Training provider</td>
                       <td class="" >Hackney Skills Solutions Ltd</td>
@@ -153,7 +155,10 @@ showAlerts();
                   <thead>
                     <tr>
                       <th colspan="2"> <h2 class="heading-medium">Apprentice</h2></th>
+                      <th><p style="margin-top:45px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/change-apprenticeship-all">Edit apprentice</a> </p> </th>
+
                     </tr>
+
                   </thead>
                     </table>
 
@@ -162,22 +167,19 @@ showAlerts();
                     <tr>
                       <td class="apprenticeRecordTitle" style="width:250px">Name</td>
                       <td class="" style="">Rob Edwards</td>
-                      <td>
+                      <!--td>
                           <span id="changePending" class="statusToDo" style="width:200px">Pending</span>
-                      </td>
+                      </td-->
 
                     </tr>
                      <tr id="ULN" class="rj-dont-display">
                       <td class="apprenticeRecordTitle " >Unique learner number</td>
                       <td class="" >0123456789</td>
-                      <td></td>
+
                     </tr>
                      <tr>
                       <td class="apprenticeRecordTitle" >Date of birth</td>
                       <td class="" >28 February 1997</td>
-                       <td>
-                          <span id="changePending" class="statusToDo" style="width:200px">Pending</span>
-                      </td>
                     </tr>
                     <td class="apprenticeRecordTitle" >Apprenticeship training course</td>
                       <td class="" >Level 2: Aeronautical engineering</td>
@@ -186,20 +188,18 @@ showAlerts();
                                          <tr>
                      <td class="apprenticeRecordTitle" >End-point assessor</td>
                       <td class="" >Pham assessments Ltd</td>
-                       <td></td>
-
                     </tr>
 
                      <tr>
                      <td class="apprenticeRecordTitle" >Training start date</td>
                       <td class="">July 2018</td>
-                       <td></td>
+
 
                     </tr>
                     <tr>
                      <td class="apprenticeRecordTitle">Training end date</td>
                       <td class="">July 2020</td>
-                       <td></td>
+
 
                     </tr>
                     <tr>
@@ -212,15 +212,12 @@ showAlerts();
                     <tr id="referenceNumber" class="">
                       <td class="apprenticeRecordTitle " >Reference</td>
                       <td class="" >Banbury site</td>
-                       <td></td>
+
                     </tr>
 
                    </tbody>
                 </table>
-                <p style="margin-top:; text-align:"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/change-apprenticeship-all">Edit apprentice</a> </p>
-                
-
-
+                <p style="margin-top:; text-align:"> </p>
             </div>
               </div>
           </div>
