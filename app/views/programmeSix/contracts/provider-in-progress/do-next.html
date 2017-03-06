@@ -21,8 +21,8 @@ $( document ).ready(function() {
   var changeStuff = function() {
   if (employerOrNot=='yes') {
     document.getElementById("changeTwo").innerHTML = "Approve and send to provider";
-    document.getElementById("changeOne").innerHTML = "Send to provider to amend or add details";
-    document.getElementById("changeThree").innerHTML = "Save but do not send to provider";
+    document.getElementById("changeOne").innerHTML = "Send to provider to review or add details";
+    document.getElementById("changeThree").innerHTML = "Save but don't send to provider";
   }
 else { };
 }
@@ -77,11 +77,11 @@ else {
                       </label>
                       <label class="block-label" for="radio-1">
                         <input id="radio-1" type="radio" name="radio-group" value="send-amend">
-                       <span id="changeOne">Send to employer to amend or add details<span>
+                       <span id="changeOne">Send to employer to review or add details<span>
                       </label>
                       <label class="block-label" for="radio-3">
                         <input id="radio-3" type="radio" name="radio-group" value="save-no-send">
-                        <span id="changeThree">Save but do not send to employer</span>
+                        <span id="changeThree">Save but don't send to employer</span>
                       </label>
                     </div>
                     </fieldset>
