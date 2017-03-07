@@ -190,7 +190,7 @@ var goToDelete = function() {
                 <p style="margin:0 0 15px 0">Training code: 3246</p>
 
                  <div class="fullWidthGreyAlert panel panel-border-wide">
-                <h2 class="heading-medium" style="padding-top:20px; margin-bottom:10px" >6 Mechatronics Engineer apprenticeships above funding band maximum </h2>
+                <h2 class="heading-medium" style="padding-top:20px; margin-bottom:10px" >2 Mechatronics Engineer apprenticeships above funding band maximum </h2>
                   <p style="margin:0">The costs are above the £2,000 <a href="">maximum value of the funding band</a> for this apprenticeship. You'll need to pay the difference directly to the training provider - this can't be funded from your account.</p>
                </div>
 
@@ -214,7 +214,33 @@ var goToDelete = function() {
                         <td class=" ">11/2018 to 11/2020 </td>
                         <td class="errorBoxBlack">£2,200</td>
                          </td>
+                    </tbody>
+                </table>
 
+              <div style="margin-top:20px"></div>
+
+                <div class="fullWidthGreyAlert panel panel-border-wide">
+                <h2 class="heading-medium" style="padding-top:20px; margin-bottom:10px" >4 Mechatronics Engineer apprenticeships above funding band maximum </h2>
+                  <p style="margin:0">The costs are above the £2,000 <a href="">maximum value of the funding band</a> for this apprenticeship. You'll need to pay the difference directly to the training provider - this can't be funded from your account.</p>
+               </div>
+
+              <div style="margin-top:20px"></div>
+              
+                  <table class="" id="">
+                    <thead>
+                      <tr>
+                        <th scope="col" class=""  >Name</th>
+                        <!--th scope="col" class="">Family<br />name</th-->
+                        <th id="ULNTable" scope="col" class="">ULN</th>
+                        <th id="" scope="col" class="">Date of birth</th>
+                        <th scope="col" class="">Training dates</th>
+                        <!--th scope="col" class="">Endpoint Assessor</th-->
+                         <th scope="col" class="">Cost</th>
+                        <!--th scope="col" class=""></th>
+                      </tr-->
+                    </thead>
+                    <tbody>
+                      <tr>
                         <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
                       </tr>
                       <tr>
@@ -222,7 +248,7 @@ var goToDelete = function() {
                         <td class="">21 April 2000</td>
                         <td class=" ">11/2018 to 11/2020 </td>
                         <td class="errorBoxBlack">£2,600</td>
-                         </td>
+                         <!--/td-->
 
                         <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
                       </tr>
@@ -241,19 +267,21 @@ var goToDelete = function() {
             </div-->
 
             <div id="bottomToolBarLotsofApprentices">
-              <div style="margin-top:50px"></div>
-        <hr style="margin:0 0 18px 0" />
+              <!--div style="margin-top: 50px"></div-->
+        <!--hr style="margin:0 0 18px 0" /-->
+        
         <div class="commit-bar">
+          <div style="margin-top:50px"></div>
               <form class="" style="display:inline-block; float:left;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
                     <div style="display:inline-block;"><input class="button" style="display:inline; " type="submit"  id="send-to-employer"  value="Save and continue"></div>
               </form>
-               <form class="" style="display:inline-block;" action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/bulk-or-single">
+                <form class="" style="display:inline-block;" action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/bulk-or-single">
                     <input type="hidden" name="source" value="provider" />
                     <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px; " class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add more apprentices"></div>
-            </form>
+              </form>
 
         </div>
-        <hr style="margin:20px 0 15px 0" />
+        <!--hr style="margin:20px 0 15px 0" /-->
       </div>
               <div style="margin-top:20px;display:inline-block; float:right"><input class="button delete-button" onclick="goToDelete()" type="button" id="deleteButton" value="Delete this cohort"></div>
 </main>

@@ -88,6 +88,25 @@ var goToDelete = function() {
    <div style= "" id="deletedUserAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
     Apprentice David Jenkins was deleted
     </div>
+
+<div class="topWarning">
+  <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    Errors to fix
+  </h1>
+
+    <p>
+      Check the following details:
+    </p>
+
+    <ul class="error-summary-list">
+      <li><a href="#example-personal-details">Mechatronics engineer apprentices training dates</a></li>
+    </ul>
+
+  </div>
+</div>
+
 <div class="grid-row">
   <div class="column-two-thirds">
 
@@ -116,7 +135,7 @@ var goToDelete = function() {
                   <h2 id="totalCostOfApprentices" class="bold-xlarge" style=" color:#fff; margin: 0px 0 0px 15px; padding-top:27px">£29,002</h2>
                   <h2 class="heading-medium" style="color: #fff; margin: 28px 0 0px 15px;">Total cost</h2>
               </div>
-               <!--div style="margin-top:10px"><a href="/{% include "includes/sprint-link.html" %}/contracts/confirmation/payment-plans">View the payment schedule</a></div-->
+               <div style="margin-top:10px"><a href="/{% include "includes/sprint-link.html" %}/contracts/confirmation/payment-plans">View the payment schedule</a></div>
     </div>
   </div>
 
@@ -133,7 +152,7 @@ var goToDelete = function() {
 
         <div class="column-half" id="notesStuff">
           <div id="removeMe" style="padding-bottom:15px">
-            <div><h2 class="heading-small" style="display:inline-block; margin:0;">Note:&nbsp</h2 ><p style=" margin:0;">There is space here for a note to be added.</p></div>
+            <div><h2 class="heading-small" style="display:inline-block; margin:0;">Note:&nbsp</h2 ><p style=" margin:0;">There is space here for a note to be added by the last party to make an amend, only one of the notes will be shown although we might add a feature to show a history of notes at a later date.</p></div>
           </div>
         </div>
 </div>
@@ -180,56 +199,94 @@ var goToDelete = function() {
                 <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px; " class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add more apprentices"></div>
             </form>
             <div style="clear:both"></div>
+         
         </div>
 
         <hr style="margin:16px 0 15px 0" />
          <div style="clear:both"></div>
 
-                <h2 class ="heading-medium"  style="margin-bottom:0px"  id="apprenticeReplaceMe"></h2>
+            <h2 class ="heading-medium"  style="margin-bottom:0px">2 Mechatronics Engineers</h2>
+                <p style="margin:0">Level: 4</p>
+                <p style="margin:0 0 15px 0">Training code: 3246</p>
+                
+        
+            <h2 class ="heading-medium"  style="margin-bottom:0px">4 Mechatronics Engineers</h2>
                 <p style="margin:0">Level: 4</p>
                 <p style="margin:0 0 15px 0">Training code: 3246</p>
 
-                 <div class="fullWidthGreyAlert panel panel-border-wide">
-                <h2 class="heading-medium" style="padding-top:20px; margin-bottom:10px" >6 Mechatronics Engineer apprenticeships above funding band maximum </h2>
-                  <p style="margin:0">The costs are above the £2,000 <a href="">maximum value of the funding band</a> for this apprenticeship. You'll need to pay the difference directly to the training provider - this can't be funded from your account.</p>
-               </div>
+            <table>
+              <thead>
+                <tr>
+                  <th colspan="2">Dates and amounts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>First 6 weeks</td>
+                  <td>£109.80 per week</td>
+                </tr>
+                <tr>
+                  <td>Next 33 weeks</td>
+                  <td>£109.80 per week</td>
+                </tr>
+                <tr>
+                 <td>Total estimated pay</td>
+                  <td>£4,282.20</td>
+                </tr>
+                <tr>
+                  <td>Tell the mother’s employer</td>
+                  <td>28 days before they want to start maternity pay</td>
+                </tr>
+              </tbody>
+            </table>
 
-                <table class="" id="">
-                  <thead>
-                      <tr>
-                        <th scope="col" class=""  >Name</th>
-                        <!--th scope="col" class="">Family<br />name</th-->
-                        <th id="ULNTable" scope="col" class="">ULN</th>
-                        <th id="" scope="col" class="">Date of birth</th>
-                        <th scope="col" class="">Training dates</th>
-                        <!--th scope="col" class="">Endpoint Assessor</th-->
-                         <th scope="col" class="">Cost</th>
-                        <th scope="col" class=""></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Taylor Jones</td>
-                        <td class="">10 May 1999</td>
-                        <td class=" ">11/2018 to 11/2020 </td>
-                        <td class="errorBoxBlack">£2,200</td>
-                         </td>
-
-                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
-                      </tr>
-                      <tr>
-                        <td>Jeff Willis</td>
-                        <td class="">21 April 2000</td>
-                        <td class=" ">11/2018 to 11/2020 </td>
-                        <td class="errorBoxBlack">£2,600</td>
-                         </td>
-
-                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
-                      </tr>
-
-                    </tbody>
-                </table>
+            <div class="fullWidthGreyAlert panel panel-border-wide">
+            <h2 class="heading-medium" style="padding-top:20px; margin-bottom:10px">4 apprentices with overlapping training dates</h2>
+              <p style="margin:0">These apprentices already have records with overlapping training dates in the apprenticeship service - please check the details are correct.</p>
             </div>
+
+            
+
+            <!--table>
+              <thead>
+                <tr>
+                  <th scope="col" class=""  >Name</th>
+                  <!--th scope="col" class="">Family<br />name</th-->
+                  <!--th id="ULNTable" scope="col" class="">ULN</th-->
+                  <!--th id="" scope="col" class="">Date of birth</th>
+                  <th scope="col" class="">Training dates</th>
+                  <th scope="col" class="">Cost</th>
+                  <th scope="col" class=""></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Jeff Willis</td>
+                  <td class="">21 April 2000</td>
+                  <td class="">11/2018 to 11/2020</td>
+                  <td class="errorBoxBlack">£2,200</td>
+                </tr>
+                <tr>
+                  <td>Jane Bower</td>
+                  <td class="">16 June 2001</td>
+                  <td class="errorBoxBlack">11/2018 to 11/2020</td>
+                  <td class="">£2,000</td>
+                </tr>
+                <tr>
+                  <td>Jack  Slack</td>
+                  <td class="">21 April 2000</td>
+                  <td class="">11/2018 to 11/2020</td>
+                  <td class="errorBoxBlack">£2,200</td>
+                </tr>
+                <tr>
+                  <td>Mary Ridge</td>
+                  <td class="errorBoxBlack">16 June 2001</td>
+                  <td class="">11/2018 to 11/2020</td>
+                  <td class="">£2,000</td>
+                </tr>
+              </tbody>
+          </table>
+
 
             <!--div id="addApprenticesEmptyState" class="emptyState">
                 <div class="emptyStateAlert">
@@ -252,7 +309,7 @@ var goToDelete = function() {
                     <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px; " class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add more apprentices"></div>
             </form>
 
-        </div>
+        </div-->
         <hr style="margin:20px 0 15px 0" />
       </div>
               <div style="margin-top:20px;display:inline-block; float:right"><input class="button delete-button" onclick="goToDelete()" type="button" id="deleteButton" value="Delete this cohort"></div>

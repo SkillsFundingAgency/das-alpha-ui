@@ -2472,42 +2472,11 @@ input[type=number] {
 
 .fullWidthGreyAlert {
   border-color: #2e358b;
-  border-left: 8px solid #B10E1E;
   background-color: #eaebf3;
   height: 150px;
   padding: 20px 40px 0px 40px;
   margin: 15px 0 30px 0;
   position: relative;
-}
-
-.fullWidthGreyAlert2 {
-  border-color: #2e358b;
-  border-left: 8px solid #005EA5;
-  background-color: #eaebf3;
-  height: 150px;
-  padding: 20px 40px 0px 40px;
-  margin: 15px 0 30px 0;
-  position: relative;
-}
-
-.fullWidthBlueAlert {
-  border-color: #2e358b;
-  border-left: 8px solid #005EA5;
-  background-color: #eaebf3;
-  height: 170px;
-  padding: 20px 40px 0px 40px;
-  margin: 15px 0 30px 0;
-  position: relative;
-}
-
-.errorBoxRed {
-  padding-top: 18px;
-  border-bottom: 5px solid #B10E1E;
-}
-
-.errorBoxBlue {
-  padding-top: 18px;
-  border-bottom: 5px solid #005EA5;
 }
 
 .fullWidthGreyAlert p, .fullWidthAnotherAlert p, .fullWidthGreyAlert h2, .fullWidthAnotherAlert h2 {
@@ -2516,20 +2485,7 @@ input[type=number] {
 }
 
 .fullWidthGreyAlert:after {
-  /*content: '';*/
-  position: absolute;
-  left: 50%;
-  top: 170px;
-  width: 0;
-  height: 0;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-  border-top: 25px solid #eaebf3;
-  clear: both;
-}
-
-.fullWidthGreyAlert2:after {
-  /*content: '';*/
+  content: '';
   position: absolute;
   left: 77%;
   top: 170px;
