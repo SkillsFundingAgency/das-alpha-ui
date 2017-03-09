@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+//jQuery( document ).ready(function() {
+     //jQuery.validate(); 
+// });
+
+
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+     {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+
+  </div>
+
+
+      <div class="grid-row">
+           <div class="column-two-thirds">
+
+             <h1 class="heading-large" >Confirm PAYE removal</h1>
+             <p>Confirm that you wish to remove this PAYE scheme from your apprenticeship account. It won't be removed from the Government Gateway.</p>
+
+              <form action="confirmation-PAYE">
+                <fieldset>
+                  <h2 class="heading-medium">Would you like to remove PAYE scheme 846/A246?</h2>
+                  <legend class="visuallyhidden">Remove PAYE</legend>
+                  <div class="form-group">
+                  <label class="block-label" for="radio1">
+                    <input id="radio1" type="radio" name="radio-group" value="no-not-registered">
+                    No, leave it as is
+                  </label>
+                  <label class="block-label" for="radio2">
+                    <input id="radio2" type="radio" name="radio-group" value="yes-have-passwrod">
+                    Yes, remove it
+                  </label>
+                  </div>
+                </fieldset>
+                  <input class="button" id="saveAndContinue" type="submit" value="Save and continue">
+              </form>
+
+            </div>
+      </div>
+</main>
+<script>
+
+//store details entered into the form in local storage
+var createButton = document.getElementById('createAccountButton');
+EventUtil.addHandler(createButton, 'click', function(){
+              // save the form info to local storage by first putting the data into an object
+              var userDetails = {
+                email: document.getElementById('email-address').value,
+                password: document.getElementById('password').value
+            };
+
+            //store the object in local storage using json stringify
+              localStorage.setItem("login", JSON.stringify(userDetails));
+
+            //store the users email address in a cookie to repeat back to them later. Remember that we have some of the data stored in an object in local storage as well -  so we'll use that again if we need it.
+            document.cookie =  "emailAddress="  + userDetails.email 
+            // shows the cookie in the console log to check it is working
+            console.log (document.cookie)
+
+        // not needed at the moment
+
+              //hide the login form
+              //$('#login').addClass('hidden');
+              //show the quiz
+           // $('#wrapper').removeClass('hidden')
+    });
+</script>
+
+{% endblock %}

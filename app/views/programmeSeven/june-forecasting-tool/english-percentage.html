@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .financial-nav a, .nav-payments a{
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+</style>
+
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+<div class="grid-row">
+           <div class="column-two-thirds">
+
+    <div class="disclaimer">
+            <p>
+                <span style="font-weight:700; color: #b10e1e;margin-right:5px">Disclaimer</span>
+                <span>All figures in this tool are estimates</span>
+            </p>
+        </div>
+           <!--div class="column-two-thirds"-->
+             <h1 class="heading-xlarge" >English percentage</h1>
+
+
+
+
+                <form style ="margin-top:35px" action="">
+                  <fieldset>
+                    <legend class="visuallyhidden">English percentage</legend>
+                    <div class="form-group">
+                        <label class="form-label-bold" for="text">Roughly, what percentage of your employees live in England? <span class="form-hint">If you're unsure enter 100</span></label> 
+
+                        <input class="form-control " style="width:60px" id="accountName" type="text" ><span class="rj-percentage-symbol">%</span>
+                    </div>
+                  </fieldset>
+
+
+                  <input class="button" id="saveAndContinue" type="submit" value="Save and continue" >
+
+              </form>
+            </div>
+          </div>
+
+</main>
+
+
+
+
+
+
+
+
+{% endblock %}
+

@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+//jQuery( document ).ready(function() {
+     //jQuery.validate(); 
+// });
+
+
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+     {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+
+  </div>
+
+
+      <div class="grid-row">
+           <div class="column-two-thirds">
+             <h1 class="heading-xlarge" >Name your cohort</h1>
+             <p class="lede">Give your group of apprentices (your cohort) a name or reference, so you can identify it in the future.</p> <div class="panel panel-border-wide"><p>Your training provider will also be able to see this.</p></div>
+    </div>
+  </div>
+<div style="margin-top:15px"></div>
+              <form action="provider-or-employer">
+ <fieldset>
+          <legend class="visuallyhidden">Cohort name</legend>
+                <div class="form-group" style="margin-bottom:15px">
+                    <label class="form-label-bold" for="apprenticeGivenName">Cohort name (optional)
+                     <!--span class="form-hint">If you don't have this yet, you can leave it blank</span-->
+                    </label>
+                  <input class="form-control" id="apprenticeGivenName" type="text">
+                </div>
+               
+        </fieldset>
+
+
+                  <input class="button" id="saveAndContinue" type="submit" value="Save and continue">
+				  <div style="margin-top:25px"></div>
+				  <!--div class="rjmakeALink" onclick="loopyLoop()"><p>Create another apprenticeship account</p></div-->
+				  <!--CREATE ANOTHER APPRENTICESHIP ACCOUNT-->
+              </form>
+
+            </div>
+      </div>
+</main>
+<script>
+
+
+{% endblock %}
