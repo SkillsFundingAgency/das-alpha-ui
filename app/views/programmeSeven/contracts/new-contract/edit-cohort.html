@@ -10,15 +10,16 @@
 
 var whereNow = function() {
   var status = $('input[name=radio-group]:checked').val();
-  console.log(status)
-    if (status == "one-at-time") {
-
-
-         window.location.href='../provider-interface/add-apprenticeship?source=provider';
-  } else {
-
-    window.location.href='../provider-in-progress/employer-start-bulk-upload';
-  }
+    switch (true) {
+        case status === 'add-apprentices':
+          window.location.href='./bulk-or-single';
+          break
+        case status === 'addULN':
+          window.location.href='ADD THIS IN';
+          break;
+        default:
+          window.location.href='../provider-interface/cohort-deletion-are-you-sure';
+    }
 };
  </script>
 
@@ -37,8 +38,8 @@ $(document).ready(function() {
     //  $(removeMe).addClass("rj-dont-display")
     }
 else {
-    $(notesStuff).removeClass("rj-dont-display");
-    $(addReference).removeClass("rj-dont-display");
+    $(addULN).removeClass("rj-dont-display");
+    //$(addReference).removeClass("rj-dont-display");
         };
   };
 
@@ -81,20 +82,25 @@ changeStuff();
 
 <div class="grid-row">
            <div class="column-two-thirds">
-  <h1 class="heading-xlarge" >Choose how to add apprentices</h1>
+  <h1 class="heading-xlarge" >How do you want to edit the cohort?</h1>
 
             <form action="individual-figures">
                 <fieldset>
                   <!--h2 class="heading-medium">Choose</h2-->
-                  <legend class="visuallyhidden">How do you want to add apprentices</legend>
+                  <legend class="visuallyhidden">Edit the cohort</legend>
                   <div class="form-group">
                   <label class="block-label" for="radio1">
-                    <input id="radio1" type="radio" name="radio-group" value="one-at-time">
-                    Add one at a time
+                    <input id="radio1" type="radio" name="radio-group" value="add-apprentices">
+                    Add more apprentices
                   </label>
+                  <label class="block-label rj-dont-display" id="addULN" for="radio3">
+                    <input id="radio3"  type="radio" name="radio-group" value="addULN">
+                    Add ULN in bulk
+                  </label>
+
                   <label class="block-label" for="radio2">
-                    <input id="radio2" type="radio" name="radio-group" value="bulk-upload">
-                    Add several at the same time
+                    <input id="radio2" type="radio" name="radio-group" value="delete-cohort">
+                    Delete the cohort
                   </label>
                   </div>
                 </fieldset>

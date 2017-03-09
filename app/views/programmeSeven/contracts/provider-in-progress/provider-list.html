@@ -116,7 +116,7 @@ var goToDelete = function() {
                   <h2 id="totalCostOfApprentices" class="bold-xlarge" style=" color:#fff; margin: 0px 0 0px 15px; padding-top:27px">£29,002</h2>
                   <h2 class="heading-medium" style="color: #fff; margin: 28px 0 0px 15px;">Total cost</h2>
               </div>
-               <div style="margin-top:10px"><a href="/{% include "includes/sprint-link.html" %}/contracts/confirmation/payment-plans">View the payment schedule</a></div>
+
     </div>
   </div>
 
@@ -133,7 +133,7 @@ var goToDelete = function() {
 
         <div class="column-half" id="notesStuff">
           <div id="removeMe" style="padding-bottom:15px">
-            <div><h2 class="heading-small" style="display:inline-block; margin:0;">Note:&nbsp</h2 ><p style=" margin:0;">There is space here for a note to be added by the last party to make an amend, only one of the notes will be shown although we might add a feature to show a history of notes at a later date.</p></div>
+            <div><h2 class="heading-small" style="display:inline-block; margin:0;">Note:&nbsp</h2 ><p style=" margin:0;">There is space here for a short note to be added by the last party to make an amend.</p></div>
           </div>
         </div>
 </div>
@@ -175,10 +175,11 @@ var goToDelete = function() {
                     <div style="display:inline-block;"><input class="button" style="display:inline; " type="submit"  id="send-to-employer"  value="Save and continue"></div>
               </form>
 
-               <form class="" style="display:inline-block;" action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/bulk-or-single">
+               <form class="" style="display:inline-block;" action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/edit-cohort">
                 <input type="hidden" name="source" value="provider" />
-                <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px; " class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add more apprentices"></div>
+                <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px; " class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Edit cohort "></div>
             </form>
+            <div style="margin-top:10px; float: right"><a href="/{% include "includes/sprint-link.html" %}/contracts/confirmation/payment-plans">View the payment schedule</a></div>
             <div style="clear:both"></div>
          
         </div>
