@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  #navigation-primary {
+
+  }
+
+/*styling the upload button */
+#html_btn {
+ display:none;
+}
+
+</style>
+
+
+<script>
+$('.custom-file-upload').bind("click" , function () {
+
+        $('#html_btn').click();
+        $(anotherButton).addClass("rj-dont-display");
+        $(bulkUploadFinish).removeClass("rj-dont-display");
+        $(fakeButton).removeClass("rj-dont-display");
+        $(anotherfakeButton).removeClass("rj-dont-display");
+        localStorage.setItem("commitments.ULNupload", JSON.stringify("uploaded"));
+
+    });
+
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<div class="grid-row">
+
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Upload ULNs</h1>
+  <p>You can upload your ULN file here.</p>
+
+  <details style="margin-bottom:35px">
+  <summary><span class="summary">Help with uploading ULN files</span></summary>
+  <div class="panel panel-border-narrow">
+    <p>
+      We need some information here that helps with bulk uploads
+    </p>
+    <p>
+      We also need to explain that they should only be uploading files where the ULN has changed and not something else.
+    </p>
+  </div>
+</details>
+
+
+
+
+
+<form style="margin-top:35px" action="check-errors">
+
+<div class="custom-file-upload" id="anotherButton">Upload your CSV file</div> <input class="button delete-button rj-dont-display" id="bulkUploadFinish" type="submit" value="Cancel upload">
+<br>
+<input id="html_btn" type='file' /><br>
+</form>
+
+
+ 
+    <div style="margin-top:50px"></div>
+    <div><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list" id="fakeButton" class="rj-dont-display">Fake keep going button</a></div>
+    <div><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/ULN-error" id="anotherfakeButton" class="rj-dont-display">Fake show errors button</a></div>
+    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
+<!-- {% include "includes/start-tabs.html" %} -->
+
+            </div>
+
+             <div class="column-one-third">
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="../login">Sign in</a>
+                          </li>
+
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+</div>
+</main>
+
+
+
+
+{% endblock %}

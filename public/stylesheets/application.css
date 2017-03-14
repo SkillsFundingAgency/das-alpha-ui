@@ -2053,6 +2053,41 @@ input[type=number] {
   display:none;
 }
 */
+/* MC General Codemirror Changes */
+.CodeMirror {
+  font-size: 16px;
+  height: 100%;
+}
+
+.CodeMirror-scroll {
+  margin-bottom: -30px;
+  margin-right: -30px;
+  padding-bottom: 30px;
+  height: 100%;
+  outline: none;
+  position: relative;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  min-height: 160px;
+}
+
+.CodeMirror-scrollbar {
+  display: none;
+  z-index: -5;
+}
+
+.CodeMirror pre.CodeMirror-placeholder {
+  color: #999;
+  white-space: pre !important;
+}
+
+.codemirror-border-wrap {
+  border: 2px solid #c9c9c9;
+  border-radius: 3px;
+  margin: 0 0 24px 0;
+  max-width: 635px;
+}
+
 .clearfix:after {
   content: ".";
   display: block;
@@ -2063,6 +2098,20 @@ input[type=number] {
 
 .apprenticeRecordTitle {
   width: 250px;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  cursor: pointer;
+  background-color: #00823b;
+  box-shadow: 0 2px 0 #003618;
+  font-size: 1em;
+  line-height: 1.25;
+  color: #fff;
+  box-sizing: border-box;
+  padding: 0.5263157895em 0.7894736842em 0.2631578947em 0.7894736842em;
+  height: 38px;
+  width: 207px;
 }
 
 .no-padding {
