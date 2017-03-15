@@ -9,18 +9,19 @@
 <script>
 
 var addedNames = function() {
-  var isAddedNames = 'yes';
-  localStorage.setItem("apprenticeship-names-added", JSON.stringify(isAddedNames));
-  window.location.href='../add-apprenticeship';
+//  var isAddedNames = 'yes';
+ // localStorage.setItem("apprenticeship-names-added", JSON.stringify(isAddedNames));
+  window.location.href='./ULN-cut-and-paste-error';
 };
 
-$( document ).ready(function() {
-var textAreas = document.getElementsByTagName('textarea');
 
-Array.prototype.forEach.call(textAreas, function(elem) {
-    elem.placeholder = elem.placeholder.replace(/\\n/g, '\n');
-});
-});
+// var textAreas = document.getElementsByTagName('textarea');
+
+// Array.prototype.forEach.call(textAreas, function(elem) {
+//     elem.placeholder = elem.placeholder.replace(/\\n/g, '\n');
+// });
+// });
+
 
 </script>
 
@@ -91,13 +92,7 @@ textarea {
         </div-->
 
 <div class="codemirror-border-wrap no-margin nowrap">
-  <textarea name="import-text" data-mc-el="cutPasteBox" placeholder="
-Email Address...    First Name...    Last Name...
-Email Address...    First Name...    Last Name...
-Email Address...    First Name...    Last Name...
-Email Address...    First Name...    Last Name...
-Email Address...    First Name...    Last Name..." style="display: none;">
-</textarea>
+
 
 <div class="CodeMirror cm-s-default  CodeMirror-empty   ">
   <div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 6px; left: 35px;">
