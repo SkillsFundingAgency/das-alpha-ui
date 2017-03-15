@@ -75,7 +75,7 @@ $('.custom-file-upload').bind("click" , function () {
 
 
 
-<form style="margin-top:35px" action="check-errors">
+<form style="margin-top:35px" action="">
 
 <div class="custom-file-upload" id="anotherButton">Upload your CSV file</div> <input class="button delete-button rj-dont-display" id="bulkUploadFinish" type="submit" value="Cancel upload">
 <br>
@@ -85,8 +85,8 @@ $('.custom-file-upload').bind("click" , function () {
 
  
     <div style="margin-top:50px"></div>
-    <div><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list" id="fakeButton" class="rj-dont-display">Fake keep going button</a></div>
-    <div><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/ULN-error" id="anotherfakeButton" class="rj-dont-display">Fake show errors button</a></div>
+    <div><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list" id="fakeButton" class="rj-dont-display">successful upload</a></div>
+    <div><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/ULN-error" id="anotherfakeButton" class="rj-dont-display">errors with upload - ULN could not be matched</a></div>
     <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
 <!-- {% include "includes/start-tabs.html" %} -->
 
