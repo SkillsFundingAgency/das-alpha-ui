@@ -2103,11 +2103,11 @@ input[type=number] {
 .custom-file-upload {
   display: inline-block;
   cursor: pointer;
-  background-color: #00823b;
+  background-color: #eee;
   box-shadow: 0 2px 0 #003618;
   font-size: 1em;
   line-height: 1.25;
-  color: #fff;
+  color: #000;
   box-sizing: border-box;
   padding: 0.5263157895em 0.7894736842em 0.2631578947em 0.7894736842em;
   height: 38px;

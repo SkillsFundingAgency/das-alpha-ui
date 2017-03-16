@@ -54,9 +54,8 @@ changeUnknown();
 
 <div class="grid-row">
            <div class="column-two-thirds">
-  <h1 class="heading-xlarge" >Not all ULNs were matched</h1>
-    <p class="lede">We matched <span style="font-weight:700">95</span> entries out of <span style="font-weight:700">100 added</span>. These ULNs can be added to the apprentice records.</p>
-     <p class=""> <span style="font-weight:700">5</span> of your entries could not be matched</p>
+  <h1 class="heading-xlarge" >ULN appending stopped</h1>
+    <p class="lede">There are <span style="font-weight:700">5</span> errors across <span style="font-weight:700">100 </span> records that you need to fix.</p>
 
       </div>
     </div>
@@ -64,7 +63,7 @@ changeUnknown();
 <div style="margin-top:35px" >
   <!--h2 class="heading-medium">50 Errors</h>
   <p>You must fix these errors in your file before you reupload your apprentices</p-->
-     <h2 class="heading-medium">We could not match:</h2>
+     <h2 class="heading-medium">Error details:</h2>
   <table class="" id="">
                     <thead>
                       <tr>
@@ -83,7 +82,7 @@ changeUnknown();
                           <td  style="max-width:100px; word-wrap:break-word;">Mahershalalhashbaz de Orellana Plantagenet</td>
                            <td class="">10/10/1999</td>
                           <td class="" style="max-width:100px; word-wrap:break-word;" >8321052156</td>
-                           <td>We could not match the <span class="changeHighlightCopy">date of birth</span>
+                           <td>The <span class="changeHighlightCopy">date of birth</span> was changed.
                             </td>
 
                       </tr>
@@ -93,7 +92,7 @@ changeUnknown();
                         <td>Taylor Lucas</td>
                          <td class="">10/10/1999</td>
                          <td class="" style="max-width:100px; word-wrap:break-word;" >1221052101</td>
-                         <td>The <span class="changeHighlightCopy">first name</span> was not found</td>
+                         <td>The <span class="changeHighlightCopy">first name</span> was changed</td>
 
                       </tr>
                       <tr class="" >
@@ -102,8 +101,8 @@ changeUnknown();
                           <td class=" "><!--span class="errorCopyTable">Surname is missing</span-->Prahlad Evans </td>
                           <td class="">10/10/1999</td>
                           <td class="" style="max-width:100px; word-wrap:break-word;">6621052119</td>
-                           <td>The <span class="changeHighlightCopy">first name</span> was not found
-                               <br />The <span class="changeHighlightCopy">surname</span> was not found</td>
+                           <td>The <span class="changeHighlightCopy">first name</span> was changed
+                               <br />The <span class="changeHighlightCopy">surname</span> was changed</td>
                       </tr>
 
                       <tr class="">
@@ -121,7 +120,7 @@ changeUnknown();
                           <td class=" "><!--span class="errorCopyTable">Surname is missing</span-->William Singh </td>
                           <td class="">06/11/2000</td>
                            <td class="" style="max-width:100px; word-wrap:break-word;">4321052192</td>
-                          <td>We could not match the <span class="changeHighlightCopy">date of birth</span>
+                          <td>The <span class="changeHighlightCopy">date of birth</span> was changed
                       </tr>
                     </tbody>
                   </table>
@@ -129,15 +128,17 @@ changeUnknown();
                   <p class="">Please review these 5 and retry them.</p>
 
         <div style="margin-top:35px" >
-<form action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list">
+<form action="ULN-upload">
     <div class="" style="display: table;">
-          <div style="margin-top:20px; display:inline-block;display: table-cell; vertical-align: middle; "> <input class="button" type="submit" id="bulk-upload-finish"  value="Update and finish"></div>
-          <div style="display:inline-block; display: table-cell; vertical-align: middle;"><a href="ULN-upload" id="saveAndAdd" style="margin-top:20px; margin-left:25px;  ">Go back and upload again</a></div>
+          <div style="margin-top:20px; display:inline-block;display: table-cell; vertical-align: middle; "> <input class="button" type="submit" id="bulk-upload-finish"  value="Upload again"></div>
+          <div style="display:inline-block; display: table-cell; vertical-align: middle;"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list" id="saveAndAdd" style="margin-top:20px; margin-left:25px;  ">Cancel</a></div>
     <div style="clear:both"></div>
 </form>
     <div style="margin-top:50px"></div>
     <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
 <!-- {% include "includes/start-tabs.html" %} -->
+
+
 
             </div>
 

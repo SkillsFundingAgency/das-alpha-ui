@@ -8,9 +8,10 @@
 
 
 <style>
-  #navigation-primary {
-
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
   }
+
 
 /*styling the upload button */
 #html_btn {
@@ -21,15 +22,13 @@
 
 
 <script>
-$('.custom-file-upload').bind("click" , function () {
-
+$('.custom-file-upload').bind("click",function () {
         $('#html_btn').click();
-        $(anotherButton).addClass("rj-dont-display");
-        $(bulkUploadFinish).removeClass("rj-dont-display");
-        $(fakeButton).removeClass("rj-dont-display");
+       // $(anotherButton).addClass("rj-dont-display");
+       // $(bulkUploadFinish).removeClass("rj-dont-display");
+       // $(fakeButton).removeClass("rj-dont-display");
         $(anotherfakeButton).removeClass("rj-dont-display");
         localStorage.setItem("commitments.ULNupload", JSON.stringify("uploaded"));
-
     });
 
 </script>
@@ -38,13 +37,6 @@ $('.custom-file-upload').bind("click" , function () {
 {% include "includes/phase_banner_alpha.html" %}
 {% include "includes/secondary-nav-provider.html" %}
 
-
-  <!--div class="breadcrumbs">
-    <ol role="breadcrumbs">
-      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
-    </ol>
-
-  </div-->
 
      <div class="breadcrumbs back-breadcrumb">
     <ol role="breadcrumbs">
@@ -84,26 +76,20 @@ $('.custom-file-upload').bind("click" , function () {
 
 
  
+
+    <form style="margin-top:15px" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list">
+    <input class="button" id="search-provider" type="submit" value="Finish">
+      <!--input class="button" type="button" id="bulk-upload-finish"  value="Finish"-->
+    </form>
+    <!--div><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list" id="fakeButton" class="rj-dont-display">successful upload</a></div-->
     <div style="margin-top:50px"></div>
-    <div><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list" id="fakeButton" class="rj-dont-display">successful upload</a></div>
-    <div><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/ULN-error" id="anotherfakeButton" class="rj-dont-display">errors with upload - ULN could not be matched</a></div>
-    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
-<!-- {% include "includes/start-tabs.html" %} -->
+    <div><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/ULN-error" id="anotherfakeButton" class="rj-dont-display">errors with upload</a></div>
+
 
             </div>
 
              <div class="column-one-third">
-                      <!--aside class="related">
-                        <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
-                        <nav role="navigation">
-                      <ul class="robSideNav">
-                          <li>
-                            <a href="../login">Sign in</a>
-                          </li>
 
-                        </ul>
-                           </nav>
-                    </aside-->
             </div>
 </div>
 </main>
