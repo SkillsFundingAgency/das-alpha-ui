@@ -413,8 +413,56 @@ vertical-align: top;
   width:100%;
 }
 
+// sortable lists
 
+.sortingContainer {
+  width: 400px;
+  height: 350px;
+  margin-bottom: 0px;
+}
 
+.sortingContainer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.sortingContainer li {
+  list-style: block;
+  width: 400px;
+  height: 40px;
+  margin-bottom: 7px;
+  padding: 5px;
+  border: 1px solid;
+}
+
+#upDownButton {
+  position: relative;
+  float: right;
+  margin-right: 100px;
+}
+
+#buttonUp {
+  background-color: #00823B;
+  border: #00823B;
+  width: 100px;
+  height: 40px;
+  margin-bottom: 7px;
+  font-size: larger;
+}
+
+#buttonDown {
+  background-color: #00823B;
+  border: #00823B;
+  width: 100px;
+  height: 40px;
+  font-size: larger;
+}
+
+.selected {
+    background-color: #D3D3D3;
+}
 
 // end of feed/to do list
 
@@ -567,6 +615,17 @@ vertical-align: top;
   position:relative;
 }
 
+.fullWidthGreyAlert3 {
+  border-color: $purple;
+  border-left: 8px solid #B10E1E;
+  background-color: mix(white, $purple, 90%);
+  //width:100%;
+  height:150px;
+  padding: 20px 40px 0px 40px;
+  margin: 15px 0 30px 0;
+  position:relative;
+}
+
 .fullWidthBlueAlert {
   border-color: $purple;
   border-left: 8px solid #005EA5;
@@ -612,6 +671,21 @@ vertical-align: top;
     /*content: '';*/
     position: absolute;
     left: 77%;
+    top: 170px;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 25px solid   mix(white, $purple, 90%);
+
+
+    clear: both;
+}
+
+.fullWidthGreyAlert3:after {
+    /*content: '';*/
+    position: absolute;
+    left: 60%;
     top: 170px;
     width: 0;
     height: 0;

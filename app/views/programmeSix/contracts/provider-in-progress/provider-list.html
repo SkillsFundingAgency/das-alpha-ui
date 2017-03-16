@@ -80,8 +80,23 @@ var goToDelete = function() {
     </ol>
   </div>
 
+  <div class="topWarningRed">
+  <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
 
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    Errors to fix
+  </h1>
 
+    <p>
+      Check the following details:
+    </p>
+
+    <ul class="error-summary-list">
+      <li><a href="#example-personal-details">Mechatronics engineer apprentices training dates</a></li>
+    </ul>
+
+  </div>
+</div>
 
 <!--h1 class="heading-large">Levy account</h1-->
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
@@ -188,7 +203,12 @@ var goToDelete = function() {
 
                 <h2 class ="heading-medium"  style="margin-bottom:5px"  id="apprenticeReplaceMe"></h2>
                 <p style="margin:0">Level: 4</p>
-                <p style="margin:0 0 15px 0">Training code: 3246</p>
+                <p style="margin:0 0 15px 0">Training code: 3346</p>
+
+                <div class="fullWidthGreyAlert3 panel panel-border-wide" id="example-personal-details">
+                  <h2 class="heading-medium" style="padding-top:20px; margin-bottom:10px; text-align:center">2 apprentices with overlapping training dates</h2>
+                    <p style="margin:0; text-align:center">These apprentices already have records with overlapping training dates in the apprenticeship service - please check the details are correct. If you're unsure, contact the employer in the first instance.</p>
+                </div>
                 <table class="" id="">
                   <thead>
                       <tr>
@@ -232,7 +252,7 @@ var goToDelete = function() {
         </div>
         <hr style="margin:20px 0 15px 0" />
       </div>
-              <div style="margin-top:20px;display:inline-block; float:right"><input class="button delete-button" onclick="goToDelete()" type="button" id="deleteButton" value="Delete this cohort"></div>
+              <!--div style="margin-top:20px;display:inline-block; float:right"><input class="button delete-button" onclick="goToDelete()" type="button" id="deleteButton" value="Delete this cohort"></div-->
 </main>
 {% endblock %}
 

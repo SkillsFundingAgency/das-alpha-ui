@@ -2396,6 +2396,55 @@ input[type=number] {
   width: 100%;
 }
 
+.sortingContainer {
+  width: 400px;
+  height: 350px;
+  margin-bottom: 0px;
+}
+
+.sortingContainer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.sortingContainer li {
+  list-style: block;
+  width: 400px;
+  height: 40px;
+  margin-bottom: 7px;
+  padding: 5px;
+  border: 1px solid;
+}
+
+#upDownButton {
+  position: relative;
+  float: right;
+  margin-right: 100px;
+}
+
+#buttonUp {
+  background-color: #00823B;
+  border: #00823B;
+  width: 100px;
+  height: 40px;
+  margin-bottom: 7px;
+  font-size: larger;
+}
+
+#buttonDown {
+  background-color: #00823B;
+  border: #00823B;
+  width: 100px;
+  height: 40px;
+  font-size: larger;
+}
+
+.selected {
+  background-color: #D3D3D3;
+}
+
 @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
   /* Force table to not be like tables anymore */
   #transactions table, #transactions thead, #transactions tbody, #transactions th, #transactions td, #transactions tr {
@@ -2539,6 +2588,16 @@ input[type=number] {
   position: relative;
 }
 
+.fullWidthGreyAlert3 {
+  border-color: #2e358b;
+  border-left: 8px solid #B10E1E;
+  background-color: #eaebf3;
+  height: 150px;
+  padding: 20px 40px 0px 40px;
+  margin: 15px 0 30px 0;
+  position: relative;
+}
+
 .fullWidthBlueAlert {
   border-color: #2e358b;
   border-left: 8px solid #005EA5;
@@ -2581,6 +2640,19 @@ input[type=number] {
   /*content: '';*/
   position: absolute;
   left: 77%;
+  top: 170px;
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 25px solid #eaebf3;
+  clear: both;
+}
+
+.fullWidthGreyAlert3:after {
+  /*content: '';*/
+  position: absolute;
+  left: 60%;
   top: 170px;
   width: 0;
   height: 0;

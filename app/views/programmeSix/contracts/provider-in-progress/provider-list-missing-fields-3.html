@@ -80,9 +80,27 @@ changeUnknown();
 <!--h1 class="heading-large">Levy account</h1-->
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
 
+<div class="topWarningBlue">
+  <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1" style="border-color: #005EA5">
+
+  <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    Warnings for your attention
+  </h1> 
+
+    <p>
+      Review the following details:
+    </p>
+
+    <ul>
+      <li><a href="#example-personal-details1" style="color: #005EA5">Cost for Mechatronics engineer apprenticeship</a></li>
+      <li><a href="#example-personal-details2" style="color: #005EA5">Cost for Bakery apprenticeship</a></li>
+    </ul>
+
+  </div>
+</div>
+
 <h1 class="heading-xlarge" id="commitmentsHeader">Review your cohort</h1>
   <div class="grid-row">
-
 
      <div class="column-third" style="" >
                 <div style="background-color:#2E358B; min-height:160px" >
@@ -164,9 +182,9 @@ changeUnknown();
                 <p style="margin:0 0 0 0">Level: 4</p>
                 <p style="margin: margin:0 0 15px 0">Training code: 3246</p>
 
-              <div class="fullWidthGreyAlert2 panel panel-border-wide">
-                <h2 class="heading-medium" style="padding-top:20px; margin-bottom:10px">2 Mechatronics Engineer apprenticeships above funding band maximum</h2>
-                <p style="margin:0">The costs are above the £2,000 <a href="">maximum value of the funding band</a> for this apprenticeship. You'll need to pay the difference directly to the training provider - this can't be funded from your account.</p>
+              <div class="fullWidthGreyAlert2 panel panel-border-wide" id="example-personal-details1">
+                <h2 class="heading-medium" style="padding-top:20px; margin-bottom:10px; text-align:center">2 Mechatronics Engineer apprenticeships above funding band maximum</h2>
+                <p style="margin:0; text-align:center">The costs are above the £2,000 <a href="">maximum value of the funding band</a> for this apprenticeship. You'll need to pay the difference directly to the training provider - this can't be funded from your account.</p>
               </div>
 
                 <table>
@@ -253,9 +271,17 @@ changeUnknown();
                 </table>
                      <!--hr style="margin:35px 0 35px 0;"/-->
             </div>
-               <h2 class ="heading-medium"  style="margin-bottom:5px"  id="">2 Mechatronics Engineers</h2>
+
+              <div>
+               <h2 class ="heading-medium"  style="margin-bottom:5px"  id="">2 Bakers</h2>
                 <p style="margin:0 0 0 0">Level: 3</p>
                 <p style="margin: margin:0 0 15px 0">Training code: 9287</p>
+              </div>
+
+              <div class="fullWidthGreyAlert2 panel panel-border-wide" id="example-personal-details2">
+                <h2 class="heading-medium" style="padding-top:20px; margin-bottom:10px; text-align:center">1 Bakery apprenticeship above funding band maximum</h2>
+                <p style="margin:0; text-align:center">The costs are above the £2,000 <a href="">maximum value of the funding band</a> for this apprenticeship. You'll need to pay the difference directly to the training provider - this can't be funded from your account.</p>
+              </div>
 
                 <table>
                   <thead>
@@ -298,8 +324,8 @@ changeUnknown();
                     <td class="" style="">
                       11/2018 to 11/2020
                     </td>
-                    <td style="">
-                      £2,000
+                    <td class="errorBoxBlue" style="">
+                      £2,400
                     </td>
                     <td>
                       <a href="../provider-interface/add-apprenticeship?id=ff5d8b24-a9c1-4637-9528-71925331eb09&amp;source=provider">Edit</a>
