@@ -440,24 +440,39 @@ vertical-align: top;
 #upDownButton {
   position: relative;
   float: right;
-  margin-right: 100px;
+  margin-right: 120px;
 }
 
 #buttonUp {
   background-color: #00823B;
   border: #00823B;
-  width: 100px;
+  width: 60px;
   height: 40px;
   margin-bottom: 7px;
-  font-size: larger;
+}
+
+#buttonUp p {
+  color: #FFFFFF;
+  font-size: 2em;
+  transform: rotate(90deg);
+  vertical-align: center;
+  text-align: center;
 }
 
 #buttonDown {
   background-color: #00823B;
   border: #00823B;
-  width: 100px;
+  width: 60px;
   height: 40px;
-  font-size: larger;
+  margin-bottom: 161px;
+}
+
+#buttonDown p {
+  color: #FFFFFF;
+  font-size: 2em;
+  transform: rotate(90deg);
+  vertical-align: center;
+  text-align: center;
 }
 
 .selected {
