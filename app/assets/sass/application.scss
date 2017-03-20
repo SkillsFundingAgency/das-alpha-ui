@@ -413,10 +413,10 @@ vertical-align: top;
   width:100%;
 }
 
-// sortable lists
+// sortable lists01
 
 .sortingContainer {
-  width: 400px;
+  width: 500px;
   height: 350px;
   margin-bottom: 0px;
 }
@@ -437,10 +437,10 @@ vertical-align: top;
   border: 1px solid;
 }
 
-#upDownButton {
+#upDownButton ul {
   position: relative;
   float: right;
-  margin-right: 120px;
+  margin-right: -120px;
 }
 
 #buttonUp {
@@ -448,6 +448,7 @@ vertical-align: top;
   border: #00823B;
   width: 60px;
   height: 40px;
+  border-bottom: #000000;
   margin-bottom: 7px;
 }
 
@@ -478,6 +479,46 @@ vertical-align: top;
 .selected {
     background-color: #D3D3D3;
 }
+
+// end of sortable lists01
+
+// sortable lists02
+
+.mainTableContainer {
+  margin-left: 15px;
+}
+
+.leftTable ol {
+  list-style-position: outside;
+  list-style-type: decimal;
+}
+
+.leftTable li {
+  list-style: block;
+  width: 300px;
+  height: 40px;
+  margin-bottom: 7px;
+  padding: 5px;
+  border: 1px solid;
+}
+
+.rightTableNumbers li {
+  margin-bottom: 36px;
+}
+
+.rightTable li {
+  list-style: block;
+  width: 300px;
+  height: 40px;
+  margin-bottom: 7px;
+  padding: 5px;
+  border: 1px solid;
+}
+
+
+
+// end of sortable lists02
+
 
 // end of feed/to do list
 

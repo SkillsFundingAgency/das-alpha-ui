@@ -2397,7 +2397,7 @@ input[type=number] {
 }
 
 .sortingContainer {
-  width: 400px;
+  width: 500px;
   height: 350px;
   margin-bottom: 0px;
 }
@@ -2418,10 +2418,10 @@ input[type=number] {
   border: 1px solid;
 }
 
-#upDownButton {
+#upDownButton ul {
   position: relative;
   float: right;
-  margin-right: 120px;
+  margin-right: -120px;
 }
 
 #buttonUp {
@@ -2429,6 +2429,7 @@ input[type=number] {
   border: #00823B;
   width: 60px;
   height: 40px;
+  border-bottom: #000000;
   margin-bottom: 7px;
 }
 
@@ -2458,6 +2459,37 @@ input[type=number] {
 
 .selected {
   background-color: #D3D3D3;
+}
+
+.mainTableContainer {
+  margin-left: 15px;
+}
+
+.leftTable ol {
+  list-style-position: outside;
+  list-style-type: decimal;
+}
+
+.leftTable li {
+  list-style: block;
+  width: 300px;
+  height: 40px;
+  margin-bottom: 7px;
+  padding: 5px;
+  border: 1px solid;
+}
+
+.rightTableNumbers li {
+  margin-bottom: 36px;
+}
+
+.rightTable li {
+  list-style: block;
+  width: 300px;
+  height: 40px;
+  margin-bottom: 7px;
+  padding: 5px;
+  border: 1px solid;
 }
 
 @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
