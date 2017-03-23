@@ -1,0 +1,93 @@
+<!-- ROB >>>> THIS IS A DUPE OF /contracts/provider-in-progress/overview.html -->
+
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
+
+<style>
+ #navigation-primary, #kill-me {
+  display:none;
+}
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}Approve cohorts</h1>
+      </div>
+</div>
+
+  <p class="lede ">You have <span style="font-weight:700">4</span> cohorts that need your approval: </p>
+
+
+ <table id="transactionsOUT">
+      <div class=" "style ="margin-bottom:5px"></div>
+
+                    <thead>
+                      <tr>
+                        <th scope="col" class="mini-pad">Employer</th>
+                        <th scope="col" >Reference</th>
+                        <th class="" scope="col" style="">Last message</th>
+
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+
+                      <tr>
+                        <td class="mini-pad">Acme Coventry Ltd</td>
+                        <td>98HGS3F</td>
+                        <td style="max-width:300px">This is contract ref#90210, can you add the 25 bakery assistants to it.</td>
+
+                        <td class=""><a href="provider-validated-employer">Details</a></td>
+                      </tr>
+                      <tr>
+                        <td class="mini-pad">Cyberdyne Systems</td>
+                        <td>55HGS3F</td>
+                        <td style="max-width:300px">This is a message that has been added. It runs along the bottom of the card for now.</td>
+
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list">Details</a></td>
+                      </tr>
+                      <tr>
+                        <td class="mini-pad">Tyrell Corp</td>
+                        <td>999GHY4</td>
+                        <td style="max-width:300px">This is a message that has been added. It runs along the bottom of the card for now.</td>
+
+                        <td class="looks-like-a-link-underline">Details</td>
+                      </tr>
+                       <tr>
+                        <td class="mini-pad">Oscorp</td>
+                        <td>999GHY4</td>
+                        <td style="max-width:300px">This is a message that has been added. It runs along the bottom of the card for now.</td>
+
+                        <td class="looks-like-a-link-underline">Details</td>
+                      </tr>
+
+                    </tbody>
+                </table>
+            <div style="margin-top:60px"></div>
+      </div>
+</main>
+
+
+
+ <!--button class="button">Do the thing</button-->
+
+
+{% endblock %}
+

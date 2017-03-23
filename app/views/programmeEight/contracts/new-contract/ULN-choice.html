@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+<!-- This just directs the user to the correct place depending on which button is checked -->
+ <script>
+
+var whereNow = function() {
+  var status = $('input[name=radio-group]:checked').val();
+  console.log(status)
+    if (status == "download") {
+
+
+         window.location.href='./ULN-download';
+  } else {
+
+    window.location.href='./ULN-upload';
+  }
+};
+ </script>
+
+
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-finance.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<div class="grid-row">
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Bulk upload unique learner numbers (ULNs)</h1>
+
+  <p class="lede">Add a ULN to each apprentice in this cohort by downloading and adding details to a csv file, and re-uploading it.</p>
+
+            <form action="individual-figures">
+                <fieldset>
+                  <!--h2 class="heading-medium">Choose</h2-->
+                  <legend class="visuallyhidden">Have you dowloaded your cohort list yet?</legend>
+                  <div class="form-group">
+                     <label class="form-label-bold" for="">Have you already downloaded a CSV file of apprentices?</label>
+                  <label class="block-label" for="radio1">
+                    <input id="radio1" type="radio" name="radio-group" value="download">
+                    No, download it now
+                  </label>
+                  <label class="block-label" for="radio2">
+                    <input id="radio2" type="radio" name="radio-group" value="upload">
+                    Yes, I want to re-upload it with ULNs
+                  </label>
+                  </div>
+                </fieldset>
+                  <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Continue">
+              </form>
+
+    <div style="margin-top:50px"></div>
+        <a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/ULN-cut-paste">alternate version</a>
+    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
+<!-- {% include "includes/start-tabs.html" %} -->
+
+            </div>
+
+             <div class="column-one-third">
+                  <div style="margin-bottom:50px"></div>
+
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="../login">Sign in</a>
+                          </li>
+
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+</div>
+</main>
+
+
+
+
+
+
+
+{% endblock %}

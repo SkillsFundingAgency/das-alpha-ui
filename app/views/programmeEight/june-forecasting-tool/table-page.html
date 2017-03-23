@@ -1,0 +1,318 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .financial-nav a, .nav-payments a{
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/1.4.0/jquery.floatThead.min.js" ></script>
+<script>
+
+$(document).ready(function(){
+    $(".sticky-header").floatThead({scrollingTop:-64});
+}); 
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+<div class="grid-row">
+           <div class="column-two-thirds">
+
+    <div class="disclaimer">
+            <p>
+                <span style="font-weight:700; color: #b10e1e;margin-right:5px">Disclaimer</span>
+                <span>All figures in this tool are estimates</span>
+            </p>
+        </div>
+           <!--div class="column-two-thirds"-->
+             <h1 class="heading-xlarge" >Your estimated apprenticeship funding</h1>
+
+        <p>
+            You will pay <span class="bold-medium">£234,996</span> in levy and receive <span class="bold-medium">£232,656</span> of apprenticeship funding. 
+        </p>
+
+
+  <details>
+    <summary><span class="summary">How your funding is worked out</span></summary>
+    <div class="panel panel-border-narrow">
+      <p>
+        £10m payroll x 0.9 english percentage + 10% top = £11,004 of funding
+      </p>
+    </div>
+  </details>
+
+    </div>
+</div>
+
+
+           <div class="column-three-thirds">
+            <!--h2 class="heading-medium">Account history</h2-->
+
+                <table id="transactions" class="sticky-header">
+                  <h2 class="heading-medium" style="">Monthly funding breakdown</h2>
+                    <thead>
+                      <tr>
+                        <th colspan="3"></th>
+                        <th colspan="2" class="rj-co-funding rj-co-funding-label rj-border-right rj-border-left"><h3 class="heading-small">Co-funding</h3><!--p>
+                        If you can’t cover training costs with levy funding, you’ll need to co-fund 10% of the additional cost. The government will co-fund the other 90%.</p--></th>
+                        <th class="" ></th>
+                      </tr>
+
+                      <tr>
+                        <th class="rj-white-background"scope="col">Date</th>
+                        <th class="numeric rj-white-background" scope="col ">Credit</th>
+                        <th class="numeric rj-white-background" scope="col" >Debit</th>
+                        <th  class="numeric rj-co-funding rj-border-left" scope="col" >Your contribution</th>
+                        <th class="numeric rj-co-funding rj-border-right"  scope="col" >Govt top up</th>
+                        <th class="numeric rj-white-background rj-balance-column" scope="col">Balance</th>
+                      </tr>
+                    </thead>
+                    <!--tbody data-bind="foreach: statementLines">
+                        <tr>
+                            <td data-bind="text: displayDate"></td>
+                            <td data-bind="text: description"></td>
+                            <td class="numeric" data-bind="text: displayCredit"></td>
+                            <td class="numeric negative" data-bind="text: displayDebit">-</td>
+                            <td class="numeric" data-bind="text: $parent.calculateRunningTotal($index)"></td>
+                            <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/debit-details">View</td>
+                            <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/credit-details">View</td>
+                        </tr-->
+                      <tr>
+                        <td>April 2017</td>
+                        <td class="numeric ">-</td>
+                        <td class="numeric">£1,350</td>
+                        <td class="numeric rj-co-funding rj-border-left">£450</td>
+                        <td class="numeric rj-co-funding rj-border-right">£900</td>
+                        <td class="numeric ">£0</td>
+                      </tr>
+                      <tr>
+                        <td>May 2017</td>
+                        <td class="numeric ">£19,388</td>
+                        <td class="numeric">£1,350</td>
+                        <td class="numeric rj-co-funding rj-border-left">£0</td>
+                        <td class="numeric rj-co-funding rj-border-right">£0</td>
+                        <td class="numeric ">£18,038</td>
+                      </tr>
+                      <tr>
+                        <td>June 2017</td>
+                        <td class="numeric ">£19,388</td>
+                        <td class="numeric">£1,350</td>
+                        <td class="numeric rj-co-funding rj-border-left">£0</td>
+                        <td class="numeric rj-co-funding rj-border-right">£0</td>
+                        <td class="numeric ">£36,076</td>
+                      </tr>
+                                            <tr>
+                        <td>July 2017</td>
+                        <td class="numeric ">£19,388</td>
+                        <td class="numeric">£1,350</td>
+                        <td class="numeric rj-co-funding rj-border-left">£0</td>
+                        <td class="numeric rj-co-funding rj-border-right">£0</td>
+                        <td class="numeric ">£36,076</td>
+                      </tr>
+                                            <tr>
+                        <td>August 2017</td>
+                        <td class="numeric ">£19,388</td>
+                        <td class="numeric">£1,350</td>
+                        <td class="numeric rj-co-funding rj-border-left">£0</td>
+                        <td class="numeric rj-co-funding rj-border-right">£0</td>
+                        <td class="numeric ">£36,076</td>
+                      </tr>
+                                            <tr>
+                        <td>September 2017</td>
+                        <td class="numeric ">£19,388</td>
+                        <td class="numeric">£1,350</td>
+                        <td class="numeric rj-co-funding rj-border-left">£0</td>
+                        <td class="numeric rj-co-funding rj-border-right">£0</td>
+                        <td class="numeric ">£36,076</td>
+                      </tr>
+                                            <tr>
+                        <td>October 2017</td>
+                        <td class="numeric ">£19,388</td>
+                        <td class="numeric">£1,350</td>
+                        <td class="numeric rj-co-funding rj-border-left">£0</td>
+                        <td class="numeric rj-co-funding rj-border-right">£0</td>
+                        <td class="numeric ">£36,076</td>
+                      </tr>
+                                            <tr>
+                        <td>November 2017</td>
+                        <td class="numeric ">£19,388</td>
+                        <td class="numeric">£1,350</td>
+                        <td class="numeric rj-co-funding rj-border-left">£0</td>
+                        <td class="numeric rj-co-funding rj-border-right">£0</td>
+                        <td class="numeric ">£36,076</td>
+                      </tr>
+                                            <tr>
+                        <td>December 2017</td>
+                        <td class="numeric ">£19,388</td>
+                        <td class="numeric">£1,350</td>
+                        <td class="numeric rj-co-funding rj-border-left">£0</td>
+                        <td class="numeric rj-co-funding rj-border-right">£0</td>
+                        <td class="numeric ">£36,076</td>
+                      </tr>
+                                                                  <tr>
+                        <td>January 2018</td>
+                        <td class="numeric ">£19,388</td>
+                        <td class="numeric">£1,350</td>
+                        <td class="numeric rj-co-funding rj-border-left">£0</td>
+                        <td class="numeric rj-co-funding rj-border-right">£0</td>
+                        <td class="numeric ">£36,076</td>
+                      </tr>
+                                                                  <tr>
+                        <td>February 2018</td>
+                        <td class="numeric ">£19,388</td>
+                        <td class="numeric">£1,350</td>
+                        <td class="numeric rj-co-funding rj-border-left">£0</td>
+                        <td class="numeric rj-co-funding rj-border-right">£0</td>
+                        <td class="numeric ">£36,076</td>
+                      </tr>
+                                                                  <tr>
+                        <td>March 2018</td>
+                        <td class="numeric ">£19,388</td>
+                        <td class="numeric">£1,350</td>
+                        <td class="numeric rj-co-funding rj-border-left">£0</td>
+                        <td class="numeric rj-co-funding rj-border-right">£0</td>
+                        <td class="numeric ">£36,076</td>
+                      </tr>
+                                                                  <tr>
+                        <td>April 2018</td>
+                        <td class="numeric ">£19,388</td>
+                        <td class="numeric">£1,350</td>
+                        <td class="numeric rj-co-funding rj-border-left">£0</td>
+                        <td class="numeric rj-co-funding rj-border-right">£0</td>
+                        <td class="numeric ">£36,076</td>
+                      </tr>
+                                                                  <tr>
+                        <td>May 2018</td>
+                        <td class="numeric ">£19,388</td>
+                        <td class="numeric">£1,350</td>
+                        <td class="numeric rj-co-funding rj-border-left">£0</td>
+                        <td class="numeric rj-co-funding rj-border-right">£0</td>
+                        <td class="numeric ">£36,076</td>
+                      </tr>
+                      <tr>
+                        <td>June 2018</td>
+                        <td class="numeric ">£19,388</td>
+                        <td class="numeric">£1,350</td>
+                        <td class="numeric rj-co-funding rj-border-left">£0</td>
+                        <td class="numeric rj-co-funding rj-border-right">£0</td>
+                        <td class="numeric ">£36,076</td>
+                      </tr>
+                      <tr>
+                        <td>July 2018</td>
+                        <td class="numeric ">£19,388</td>
+                        <td class="numeric">£1,350</td>
+                        <td class="numeric rj-co-funding rj-border-left">£0</td>
+                        <td class="numeric rj-co-funding rj-border-right">£0</td>
+                        <td class="numeric ">£36,076</td>
+                      </tr>
+                      <tr>
+                        <td>August 2018</td>
+                        <td class="numeric ">£19,388</td>
+                        <td class="numeric">£1,350</td>
+                        <td class="numeric rj-co-funding rj-border-left">£0</td>
+                        <td class="numeric rj-co-funding rj-border-right">£0</td>
+                        <td class="numeric ">£36,076</td>
+                      </tr>
+                      <tr>
+                        <td>September 2018</td>
+                        <td class="numeric ">£19,388</td>
+                        <td class="numeric">£1,350</td>
+                        <td class="numeric rj-co-funding rj-border-left">£0</td>
+                        <td class="numeric rj-co-funding rj-border-right">£0</td>
+                        <td class="numeric ">£36,076</td>
+                      </tr>
+
+                   </tbody>
+             </table>
+<h2 class="heading-medium">Expiring funds</h2><p>Funds will expire after they have been unused for 18 months. You have expiring funds in your figures below</p>
+
+               <table id="transactions" class="sticky-header">
+                    <thead>
+                      <tr>
+                        <th class="rj-white-background"scope="col">Date</th>
+                        <th class="numeric rj-white-background" scope="col ">Funding</th>
+                        <th class="numeric rj-white-background" scope="col" >Training cost</th>
+                        <th  class="numeric rj-co-funding rj-border-left" scope="col" >Your contribution</th>
+                        <th class="numeric rj-co-funding rj-border-right"  scope="col" >Govt top up</th>
+                        <th class="numeric rj-white-background rj-balance-column" scope="col">Balance</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                        <td>June 2018</td>
+                        <td class="numeric ">£19,388</td>
+                        <td class="numeric">£1,350</td>
+                        <td class="numeric rj-co-funding rj-border-left">£0</td>
+                        <td class="numeric rj-co-funding rj-border-right">£0</td>
+                        <td class="numeric ">£36,076 <span class="sunset-funds">£11,776 expired</span></td>
+                      </tr>
+                      <tr>
+                        <td>July 2018</td>
+                        <td class="numeric ">£19,388</td>
+                        <td class="numeric">£1,350</td>
+                        <td class="numeric rj-co-funding rj-border-left">£0</td>
+                        <td class="numeric rj-co-funding rj-border-right">£0</td>
+                        <td class="numeric ">£36,076 <span class="sunset-funds">£11,776 expired</span></td>
+                      </tr>
+                      <tr>
+                        <td>August 2018</td>
+                        <td class="numeric ">£19,388</td>
+                        <td class="numeric">£1,350</td>
+                        <td class="numeric rj-co-funding rj-border-left">£0</td>
+                        <td class="numeric rj-co-funding rj-border-right">£0</td>
+                        <td class="numeric ">£36,076 <span class="sunset-funds">£11,776 expired</span></td>
+                      </tr>
+                      <tr>
+                        <td>September 2018</td>
+                        <td class="numeric ">£19,388</td>
+                        <td class="numeric">£1,350</td>
+                        <td class="numeric rj-co-funding rj-border-left">£0</td>
+                        <td class="numeric rj-co-funding rj-border-right">£0</td>
+                        <td class="numeric ">£36,076 <span class="sunset-funds">£11,776 expired</span></td>
+                      </tr>
+             
+                    </tbody>
+
+
+                   
+                </table>
+
+  </div>
+
+
+
+</main>
+
+
+
+
+
+
+
+{% endblock %}
+

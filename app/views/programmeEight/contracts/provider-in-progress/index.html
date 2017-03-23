@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+ #navigation-primary, #kill-me {
+  display:none;
+}
+
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+
+    </ol>
+  </div>
+
+
+
+<div class="grid-row">
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Add and update apprentice records as a training provider</h1>
+
+   <p>This service is for training providers that are registered with the Apprenticeship Service to:</p>
+
+     <ul class="list list-bullet">
+      <li>respond to apprentice training requests from employers</li>
+       <li>add and update details of apprentices they're training</li>
+    </ul>
+
+  <div style="margin-top:25px"></div>
+
+  <h2 class="heading-medium">Before you start</h2>
+     <p>You need to have an account with the government's Information Management Services system (Idams) to use this.</p>
+     <p>You'll get your account details when you register as an apprenticeship training provider.</p>    
+
+    <div style="margin-top:50px"></div>
+    <div class="padder-top-x">
+        <a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/P-DAS-Home" class="button ">Start now</a>
+    </div>
+              <div style="margin-top:50px"></div>
+             <p>You can contact the Apprenticeship Service for advice or help using the service.</p>
+             <h3>Apprenticeship Service</h3>
+             <p>Telephone: 0800 015 0600  <a href="https://www.gov.uk/call-charges">Find out about call charges</a></p>
+    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
+<!-- {% include "includes/start-tabs.html" %} -->
+
+            </div>
+
+             <div class="column-one-third">
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="../login">Sign in</a>
+                          </li>
+
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+</div>
+</main>
+
+
+
+
+{% endblock %}

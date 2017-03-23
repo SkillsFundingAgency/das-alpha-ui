@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+
+/*styling the upload button */
+#html_btn {
+ display:none;
+}
+
+</style>
+
+
+<script>
+$('.custom-file-upload').bind("click",function () {
+        $('#html_btn').click();
+       // $(anotherButton).addClass("rj-dont-display");
+       // $(bulkUploadFinish).removeClass("rj-dont-display");
+       // $(fakeButton).removeClass("rj-dont-display");
+        $(anotherfakeButton).removeClass("rj-dont-display");
+        localStorage.setItem("commitments.ULNupload", JSON.stringify("uploaded"));
+    });
+
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<div class="grid-row">
+
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Add unique learner numbers</h1>
+  <p>You can add unique learner numbers to apprentices in this cohort using a CSV file.</p>
+
+  <details style="margin-bottom:35px">
+  <summary><span class="summary">Help with uploading ULN files</span></summary>
+  <div class="panel panel-border-narrow">
+    <p>
+      Add some help and guidance here.
+    </p>
+  </div>
+</details>
+
+
+
+
+
+<form style="margin-top:35px" action="">
+
+<div class="custom-file-upload" id="anotherButton">Upload your CSV file</div> <input class="button delete-button rj-dont-display" id="bulkUploadFinish" type="submit" value="Cancel upload">
+<br>
+<input id="html_btn" type='file' /><br>
+</form>
+
+
+ 
+
+    <form style="margin-top:15px" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list">
+    <input class="button" id="search-provider" type="submit" value="Finish">
+      <!--input class="button" type="button" id="bulk-upload-finish"  value="Finish"-->
+    </form>
+    <!--div><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list" id="fakeButton" class="rj-dont-display">successful upload</a></div-->
+    <div style="margin-top:50px"></div>
+    <div><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/ULN-error" id="anotherfakeButton" class="rj-dont-display">errors with upload</a></div>
+
+
+            </div>
+
+             <div class="column-one-third">
+
+            </div>
+</div>
+</main>
+
+
+
+
+{% endblock %}

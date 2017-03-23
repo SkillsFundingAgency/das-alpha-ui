@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+ <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+            <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/contracts/providers">Commitment</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/contracts/in-progress">Commitment in progress</a></li>
+            <li id="removeWithNav">ID 98HGS3F</li>
+    </ol>
+  </div>
+
+
+
+<div class="grid-row">
+        <div class="column-two-thirds">
+             <div class="govuk-box-highlight" style="padding-bottom:35px">
+                <h1 class="bold-xlarge">
+                  Instructions sent
+                </h1>
+
+            </div>
+
+          <div style="" >
+          
+          <table class=""> 
+                    <thead>
+                      <tr>
+                        <!--h2 class="heading-medium">Apprenticeship 1</h2-->
+                           <th scope="col"></th>
+                          <th scope="col"></th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td style="">Reference</td>
+                        <td style="font-weight:700; ;">98HGS3F</td>
+                      </tr>
+                       <tr>
+                        <td style="">Sent to</td>
+                        <td style="font-weight:700; ;">Hackney Skills and Training Ltd</td>
+                      </tr>
+                       <tr>
+                        <td style="">Sent from</td>
+                        <td style="font-weight:700; ;">Alice Jones</td>
+                      </tr>
+                      <tr>
+                        <td>On behalf of</td>
+                        <td style="font-weight:700; ">Acme Ltd Coventry</td>
+                      </tr>
+                      <tr>
+                        <td style="">Date</td>
+                        <td style="font-weight:700;  ">Thursday 18 May 2017</td>
+                      </tr>
+                      <tr>
+                        <td style="">Message</td>
+                        <td style="font-weight:700;  max-width:280px">Please add the 12 x admin level 2 apprentices and 13 x engineering level 3 apprentices, as agreed on contract #51314.</td>
+                      </tr>
+                        <tr>
+
+                      </tr>
+                    </tbody>
+                </table>
+
+            <h2 class="heading-medium">What happens next?</h2>
+            <p class="">Your training provider will review your request and contact you as soon as possible - either with questions or to ask you to review the details they've added.</p>
+          
+          </div>
+
+
+
+
+            </div>
+              <div class="column-one-third">
+          </div>
+        </div>
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
+
+{% endblock %}
+

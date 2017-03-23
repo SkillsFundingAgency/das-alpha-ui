@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<script>
+
+var addedNames = function() {
+//  var isAddedNames = 'yes';
+ // localStorage.setItem("apprenticeship-names-added", JSON.stringify(isAddedNames));
+  window.location.href='./ULN-cut-and-paste-error';
+};
+
+
+// var textAreas = document.getElementsByTagName('textarea');
+
+// Array.prototype.forEach.call(textAreas, function(elem) {
+//     elem.placeholder = elem.placeholder.replace(/\\n/g, '\n');
+// });
+// });
+
+
+</script>
+
+<style>
+  #navigation-primary {
+  }
+
+table th {
+  border-bottom:0px;
+}
+textarea {
+    display: inline-block;
+    padding: 6px 0 0 6px;
+    margin-bottom: 2em;
+    vertical-align: middle;
+    border-radius: 3px;
+    min-width: 50px;
+    max-width: 635px;
+    width: 100%;
+    min-height: 32px;
+    background-color: #ffffff;
+    border: 2px solid #c9c9c9;
+    height: auto;
+    line-height: 1.6em;
+  }
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<div class="grid-row">
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Append ULNs</h1>
+  <p>We will attempt to match the ULN to the learners in the cohort.</p>
+  <p>Add the Unique Learner Number to the names and date of birth of your learners.  Put one record on each line</p>
+          </div>
+</div>
+ 
+ <div class="grid-row">
+           <div class="column-two-thirds">
+<form action="provider-list">
+  <fieldset>
+    <legend class="visuallyhidden">provider contact details and message - optional</legend>
+      <div class="form-group">
+
+        <!--div>
+          <p style="display:inline">Firstname</p>
+            <p style="display:inline; padding-left:60px">Lastname</p>
+             <p style="display:inline; padding-left:60px">Date of birth</p>
+              <p style="display:inline; padding-left:50px">ULN</p>
+        </div-->
+
+<div class="codemirror-border-wrap no-margin nowrap">
+
+
+<div class="CodeMirror cm-s-default  CodeMirror-empty   ">
+  <div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 6px; left: 35px;">
+    <textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0">
+    </textarea>
+  </div>
+  <div class="CodeMirror-hscrollbar" style="left: 29px;">
+    <div style="height: 100%; min-height: 1px; width: 0px;">
+    </div>
+  </div>
+  <div class="CodeMirror-vscrollbar">
+    <div style="min-width: 1px; height: 0px;">
+    </div>
+  </div>
+  <div class="CodeMirror-scrollbar-filler">
+  </div>
+  <div class="CodeMirror-gutter-filler">
+  </div>
+  <div class="CodeMirror-scroll" tabindex="-1">
+    <div class="CodeMirror-sizer" style="margin-left: 15px; margin-top:5px; min-width: 7px; min-height: 32px;">
+      <div style="position: relative; top: 0px;">
+        <div class="CodeMirror-lines">
+        <div style="position: relative; outline: none;">
+        <pre class="CodeMirror-placeholder" style="height: 0px; overflow: visible;">
+First Name...            Last Name...             Date of Birth...            ULN....
+First Name...            Last Name...             Date of Birth...            ULN....
+First Name...            Last Name...             Date of Birth...            ULN....
+First Name...            Last Name...             Date of Birth...            ULN....
+First Name...            Last Name...             Date of Birth...            ULN....
+First Name...            Last Name...             Date of Birth...            ULN....
+</pre>
+<!--div class="CodeMirror-measure">
+  <div style="width: 50px; height: 50px; overflow-x: scroll;">
+  </div>
+</div-->
+<!--div class="CodeMirror-measure">
+
+</div-->
+
+<!--div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 24px;">&nbsp;</div></div><div class="CodeMirror-code"><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;"></div></div><pre class=""><span style="padding-right: 0.1px;"><span>​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 32px;"></div><div class="CodeMirror-gutters" style="height: 140px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 28px;"></div></div-->
+
+</div></div></div>
+
+      </div>
+    </fieldset>
+
+
+
+    <input class="button" id="search-provider" onclick="addedNames()" type="button" value="Match ULNs">
+</form>
+    <div style="margin-top:50px"></div>
+    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
+<!-- {% include "includes/start-tabs.html" %} -->
+ </div>
+
+</div>
+</main>
+
+<script>
+//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+
+
+{% endblock %}
