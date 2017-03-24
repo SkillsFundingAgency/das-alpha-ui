@@ -55,8 +55,20 @@ var whereNow = function() {
   <fieldset>
     <legend class="visuallyhidden">provider contact details and message - optional</legend>
       <div class="form-group">
-          <label class="form-label-bold" for="message">Instructions</label>
-           <span class="form-hint">For example, please add the 12 admin level 2 apprentices and 13 engineering level 3 apprentices.</span>
+          <!--label class="form-label-bold" for="message">Instructions</label>
+           <span class="form-hint">For example, please add the 12 admin level 2 apprentices and 13 engineering level 3 apprentices.</span-->
+          
+          <div class="notice">
+            <i class="icon icon-important">
+            <span class="visuallyhidden">Warning</span>
+            </i>
+            <strong class="bold-small">
+            You must not include any information that’s unlawful, threatening, libellous, defamatory, obscene, pornographic or that would violate any law.
+            </strong>
+          </div>
+
+          <div style="margin-top:35px"></div>
+
           <textarea class="form-control" id="message" type="text" style="width:100%"  rows="5" ></textarea>
       </div>
     </fieldset>
