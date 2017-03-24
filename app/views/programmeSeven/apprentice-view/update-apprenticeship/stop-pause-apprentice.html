@@ -13,7 +13,7 @@
   }
 </style>
 
-<script>
+<!--script>
 
 function whereNow() {
    var status = $('input[name=radio-group]:checked').val();
@@ -21,13 +21,13 @@ function whereNow() {
           case  (status == 'pause'):
                 console.log('paused')
                 localStorage.setItem("commitments.apprenticestatus", JSON.stringify('paused'));
-                 window.location.href='update-apprenticeship/effective-date';
+                 window.location.href='update-apprenticeship/are-you-sure';
 
                 break;
         case  (status == 'stop'):
             console.log('stopped')
             localStorage.setItem("commitments.apprenticestatus", JSON.stringify('stopped'));
-             window.location.href='update-apprenticeship/reason';
+             window.location.href='update-apprenticeship/are-you-sure';
             break;
         case  (status == 'unchanged'):
             console.log('unchanged')
@@ -39,7 +39,23 @@ function whereNow() {
         }
     }
 
-</script>
+</script-->
+
+<script>
+var whereNow = function() {
+  var status = $('input[name=radio-group]:checked').val();
+  console.log(status)
+    if (status == "pause") {
+         var isAddedApp = 'yes';
+         localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
+         window.location.href='are-you-sure-pause';
+  } else {
+      var isAddedApp = 'no';
+      localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
+    window.location.href='are-you-sure';
+  }
+};
+ </script>
 
 
 <main id="content" role="main">

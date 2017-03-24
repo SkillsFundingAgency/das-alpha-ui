@@ -13,7 +13,7 @@
   }
 </style>
 
-<script>
+<!--script>
 
 function whereNow() {
    var status = $('input[name=radio-group]:checked').val();
@@ -39,7 +39,23 @@ function whereNow() {
         }
     }
 
-</script>
+</script-->
+
+<script>
+var whereNow = function() {
+  var status = $('input[name=radio-group]:checked').val();
+  console.log(status)
+    if (status == "stop") {
+         var isAddedApp = 'yes';
+         localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
+         window.location.href='individual-apprentice-no-changes3';
+  } else {
+      var isAddedApp = 'no';
+      localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
+    window.location.href='are-you-sure';
+  }
+};
+ </script>
 
 
 <main id="content" role="main">
@@ -76,7 +92,7 @@ function whereNow() {
                     <tbody>
                       <tr>
                         <td>Name</td>
-                        <td style="font-weight:700; font-size:19px">Rob Edwards</td>
+                        <td style="font-weight:700; font-size:19px">James Apan</td>
                       </tr>
                        <tr>
                         <td>Date of birth</td>
