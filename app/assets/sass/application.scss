@@ -537,7 +537,14 @@ vertical-align: top;
   border: 1px solid;
 }
 
+// confirmation message
 
+.alert-success {
+  border-color: $turquoise;
+  background-color: mix(white, $turquoise, 90%);
+}
+
+// end of confirmation message
 
 
 // end of sortable lists02
