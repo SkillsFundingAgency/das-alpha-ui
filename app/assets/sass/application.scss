@@ -539,6 +539,15 @@ vertical-align: top;
 
 // end of sortable lists02
 
+// alert panel for paused or stopped apprentice
+
+.alert-success {
+  border-color: $turquoise;
+  background-color: mix(white, $turquoise, 90%);
+}
+
+// end of alert panel for paused or stopped apprentice
+
 
 // end of feed/to do list
 

@@ -48,7 +48,7 @@ var whereNow = function() {
     if (status == "stop") {
          var isAddedApp = 'yes';
          localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
-         window.location.href='individual-apprentice-no-changes3';
+         window.location.href='individual-apprentice-no-changes4';
   } else {
       var isAddedApp = 'no';
       localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
@@ -77,7 +77,7 @@ var whereNow = function() {
            <div class="column-two-thirds">
               <h1 class="heading-xlarge" >Pause apprentice</h1>
             <div>
-                 <!--p class=" lede">Telling them that there are consequences for the other side if they pause or delete:</p-->
+                 <p class=" lede">You’re about to pause this apprentice and any payments you’ve authorised to their training provider. You’ll be able to return and resume the apprentice again later.</p>
 
  <table class=""> 
                     <!--thead>
@@ -124,14 +124,14 @@ var whereNow = function() {
               <form action="friendly-name">
                   <legend class="visuallyhidden">Delete me</legend>
                     <div class="form-group">
-                      <label class="form-label-bold" style="margin-bottom: 30px" for="">Would you like to permanently stop payments for this apprentice?</label>
+                      <label class="form-label-bold" style="margin-bottom: 30px" for="">Would you like to pause this apprentice?</label>
                       <label class="block-label" for="stop">
                         <input id="stop" type="radio" name="radio-group" value="stop">
-                      Yes, pause payments for this apprentice
+                      Yes, pause this apprentice
                        </label>
                        <label class="block-label" for="unchanged">
                         <input id="unchanged" type="radio" name="radio-group" value="unchanged">
-                      No, don't pause payments for this apprentice
+                      No, don’t pause this apprentice
                      </label>
                   </div>
                 </fieldset>
