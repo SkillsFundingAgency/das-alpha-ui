@@ -38,9 +38,10 @@ else {
 
 
 <style>
-    .apprentice-nav a  {
-    {% include "includes/nav-on-state-css.html" %}
-  }
+
+ #navigation-primary, #kill-me {
+  display:none;
+}
 </style>
 
 
@@ -49,11 +50,9 @@ else {
 {% include "includes/secondary-nav-people.html" %}
 
 
-  <div class="breadcrumbs">
+  <div class="breadcrumbs back-breadcrumb">
     <ol role="breadcrumbs">
-      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
-      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></li>
-       <li id="removeWithNav">Your apprentices</li>
+      {% include "includes/breadcrumbs/register-back.html" %}
     </ol>
   </div>
 
@@ -127,7 +126,14 @@ else {
                         <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
                           Payment failed
                         </label>
-  
+                        <label for="Datalock">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          Data lock failure
+                        </label>
+                        <label for="Datalock">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          Pending ILR change
+                        </label>
                          <label for="Stopped">
                         <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
                           End-point assessor review needed
@@ -288,13 +294,26 @@ else {
                                  <td></td>
                                <td class="looks-like-a-link-underline">View</td>
                             </tr>
-
                             <tr>
-                              <td class="rjTabWidth">William Wing</td>
+                              <td class="rjTabWidth">Mel O&#39;Connor</td>
+                              <td class="">1 May 1998</td>
+                                <td class="">Live</td>
+                                 <td>Data lock error</td>
+                             <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice-data-lock-failure">View</a></td>
+                            </tr>
+                             <tr>
+                              <td class="rjTabWidth">Bill O&#39;Neil</td>
+                              <td class="">30 Dec 1998</td>
+                                <td class="">Live</td>
+                                 <td>Pending ILR change</td>
+                             <td><a href="">View</a></td>
+                            </tr>
+                            <tr>
+                              <td class="rjTabWidth">Charles Patel</td>
                               <td class="">1 June 2001</td>
                                 <td class="">Live</td>
                                  <td>Payment failure</td>
-                             <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice-payment-failure">View</a></td>
+                             <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/provider-payment-failure/individual-apprentice-payment-failure">View</a></td>
                             </tr>
                             <tr>
                               <td class="rjTabWidth">William Hill</td>
