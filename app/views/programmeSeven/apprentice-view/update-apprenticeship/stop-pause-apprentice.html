@@ -45,14 +45,14 @@ function whereNow() {
 var whereNow = function() {
   var status = $('input[name=radio-group]:checked').val();
   console.log(status)
-    if (status == "pause") {
+    if (status == "stop") {
          var isAddedApp = 'yes';
          localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
-         window.location.href='are-you-sure-pause';
+         window.location.href='effective-date2';
   } else {
-      var isAddedApp = 'no';
+      var isAddedApp = 'pause';
       localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
-    window.location.href='are-you-sure';
+    window.location.href='are-you-sure-pause';
   }
 };
  </script>

@@ -46,7 +46,7 @@ var whereNow = function() {
     if (status == "acme-coventry") {
          var isAddedApp = 'yes';
          localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
-         window.location.href='individual-apprentice-no-changes5';
+         window.location.href='are-you-sure';
   } else {
       var isAddedApp = 'no';
       localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
@@ -60,12 +60,12 @@ var whereNow = function() {
             <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}When should this apprentice be stopped</h1>
 
             <form action="reason">
-    <input id="source" name="source" type="hidden" value="employer" />
+    <input id="source" name="source" type="hidden" value="employer"/>
     <fieldset>
       <legend class="visuallyhidden">Access to the service</legend>
       <label class="block-label " for="radio-1">
-        <input id="radio-1" type="radio" name="radio-group" value="acme-coventry" id="" >
-        <span  id="">Immediately</span>
+        <input id="radio-1" type="radio" name="radio-group" value="acme-coventry">
+        <span>Immediately</span>
       </label>
         <label class=" block-label " for="radio-3">
         <input id="radio-3" type="radio" name="radio-group" value="other-org" >
@@ -98,7 +98,7 @@ var whereNow = function() {
     </fieldset>
       </div>
 
-     <input class="button" id="saveAndContinue" type="submit" style="margin-top:35px" value="Continue">
+     <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" style="margin-top:35px" value="Continue">
 
                   <p class="looks-like-a-link-underline" id="saveAndAdd" style="margin-top:20px; cursor: pointer; cursor: hand; ">Cancel and return</p>
 
