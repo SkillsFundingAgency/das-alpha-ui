@@ -52,7 +52,7 @@ else {
 
   <div class="breadcrumbs back-breadcrumb">
     <ol role="breadcrumbs">
-      {% include "includes/breadcrumbs/register-back.html" %}
+    
     </ol>
   </div>
 
@@ -182,28 +182,6 @@ else {
                </div>
           </div>
 
-    <div class="govuk-option-select js-collapsible" >
-            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
-              <div class="option-select-label">Training providers</div>
-              <div class="js-selected-counter"></div></button>
-                <div class="options-container" id="case_state">
-                  <div class="js-auto-height-inner">
-                      <label for="Acme Coventry Ltd">
-                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
-                          Hackney Skills &amp Training
-                        </label>
-                        <label for="Cyberdyne Systems Inc">
-                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
-                          Skills, Skills, Skills Ltd
-                        </label>
-                        <label for="Tyrell Corp">
-                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
-                          Apprenticeships R Us
-                        </label>
-                  </div>
-               </div>
-          </div>
-
           <div class="govuk-option-select js-collapsible" >
             <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
               <div class="option-select-label">Organisation</div>
@@ -258,8 +236,8 @@ else {
                             <tr>
                               <th scope="col" style="padding-top:0">Name</th>
                               <th scope="col" style="padding-top:0">Date of birth</th>
-                               <th scope="col" style="padding-top:0; width:120px">Training status</th>
-                               <th scope="col" style="padding-top:0; width:150px">Record status</th>
+                               <th scope="col" style="padding-top:0; width:90px">Training status</th>
+                               <th scope="col" style="padding-top:0; width:200px">Record status</th>
                                <th scope="col" style="padding-top:0"></th>
                             </tr>
                           </thead>
@@ -321,6 +299,15 @@ else {
                                 <td class="">Waiting to start</td>
                                  <td></td>
                               <td class="looks-like-a-link-underline">View</td>
+                            </tr>
+                            <tr>
+                              <td class="rjTabWidth">Fred Birtwhistle</td>
+                              <td class="">28 Apr 2001</td>
+                                <td class="">Live</td>
+                                 <td>- Data lock adjustment <br />- Payment adjustment</td>
+                               
+                             <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/provider-payment-failure/individual-apprentice-multiple-failure-provider">View</a></td>
+
                             </tr>
                              <tr>
                               <td class="rjTabWidth">Harvey Dent</td>

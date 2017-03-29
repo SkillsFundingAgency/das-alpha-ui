@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
+
+<style>
+    .apprentice-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+
+
+       <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+               {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Fred Birtwhistle</h1>
+    <p class="lede">There are things that need doing.</p>
+  </div>
+</div>
+
+            <div>
+                        <table class="">
+                          <thead>
+                            <tr>
+                               <th scope="col" style="padding-top:0">Issue</th>
+                               <th scope="col" style="padding-top:0">Payment period</th>
+                                 <th scope="col" style="padding-top:0"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!--tr>
+                             <td>Change request</td>
+                             <td> 01 October 2017 to 01 July 2018</td>
+                              <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice-showing-changes">View</a></td>
+                            </tr>
+                            <tr-->
+                              <!--quick hack, will fix -->
+                              <td class="">Data lock failure</td>
+                              <td class=""> 01 October 2017 to 01 November 2017</td>
+                              <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/data-lock-triage">View</a></td>
+                            </tr>
+                            <tr>
+                              <td>Past payment adjustment</td>
+                              <td>01 June 2017 to 01 July 2017</td>
+                               <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/provider-payment-failure/past-adjustment-data-lock-triage">View</a></td>
+                            </tr>
+                            <!--tr>
+                              <td>Endpoint assessment review</td>
+                              <td></td>
+                              <td class="looks-like-a-link-underline">View</td>
+                            </tr-->
+                          </tbody>
+                      </table>
+
+</div>
+
+
+
+                 </div>
+             </div>
+</main>
+
+
+
+{% endblock %}
+

@@ -59,10 +59,9 @@ showAlerts();
 </script>
 
 <style>
-
- #navigation-primary, #kill-me {
-  display:none;
-}
+    .apprentice-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
 </style>
 
 
@@ -73,7 +72,7 @@ showAlerts();
 
   <div class="breadcrumbs back-breadcrumb">
     <ol role="breadcrumbs">
-          <a href="./manage-list-provider" class="link-back">Back to list of apprentices</a>
+          <a href="/{% include "includes/sprint-link.html" %}/apprentice-view/" class="link-back">Back to list of apprentices</a>
     </ol>
   </div>
 
@@ -82,41 +81,50 @@ showAlerts();
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
 
     <div style= "" id="pausedAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
-    You've stopped payments for Rob Edwards
+    You've stopped payments for Mel O'Connor
     </div>
     <div style= "" id="changedAlertMessage" class="success-summary rj-dont-display "> 
       <h3 class="heading-medium">Thing happened</h3>
-    <p>You suggested changes for Mel O'Connor. Your employer needs to approve these changes.</p>
+    <p>Your changes were made.</p>
     </div>
 
   <div class="grid-row">
            <div class="column-two-thirds">
               <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}Mel O'Connor</h1>
-            <div>
-              <div class="panel panel-border-wide" style="padding-top: 35px; padding-bottom:35px ">
-                <h2  class="heading-medium">Data lock error</h2>
-              <p>There was a data lock error caused by a thing. Please take a look and do something. </p>
-              <a href="./update-apprenticeship/data-lock-triage">Deal with the data lock failure</a>
 
-  </div>
+              <div>
 
 
+              <!--div class="panel panel-border-wide " style="padding-top: 35px; padding-bottom:35px ">
+                <h2  class="heading-medium">Payment failure</h2>
+              <p>There was a payment failure for this apprentice. Your training provider has not been paid.</P><P> We have alerted your training provider and they are looking into it.</p>
+            </div-->
 
-                <table class="table-19-font" style="margin:0"> 
+            <!--div class="panel panel-border-wide  " style="padding-top: 35px; padding-bottom:35px ">
+                <h2  class="heading-medium">Payment failure</h2>
+              <p>There was a payment failure for this apprentice. Your training provider has not been paid.</p><p>Your training provider is fixing this problem</p>
+            </div-->
+
+             <div class="panel panel-border-wide  " style="padding-top: 35px; padding-bottom:35px ">
+                <h2  class="heading-medium">Change request</h2>
+              <p>There was a data mismatch for this apprentice. Your training provider has requested a change.</p><p>If you do not accept this change your provider might not be paid on time.</p>
+              <a href="./das-change-confirm-employer-data-lock-fail">View change request</a>
+            </div>
+
+                <table class="table-19-font" style="margin:0">
                   <thead>
                     <tr>
                       <th> </th>
-
                     </tr>
                   </thead>
                 </table>
 
-                <table class="table-19-font"> 
+                <table class="table-19-font">
                   <tbody>
                     <tr>
                       <td class="apprenticeRecordTitle" >Status</td>
                       <td class="">Live</td>
-                      <td><p style="text-align:right; margin:0"><!--a  href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship">Edit status</a--></p></td>
+                      <td><p style="text-align:right; margin:0"><a  href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship">Edit status</a></p></td>
                     </tr>
 
                       </tbody>
@@ -124,8 +132,6 @@ showAlerts();
 
 
                   <p style="" </p>
-
-
                   <table class="table-19-font" style="margin:0">
                   <thead>
                     <tr>
@@ -134,7 +140,7 @@ showAlerts();
                   </thead>
                     </table>
 
-                   <table class="table-19-font"> 
+                   <table class="table-19-font">
                   <tbody>
 
                     <tr id="trainingProvider" class="rj-dont-display">
@@ -157,7 +163,7 @@ showAlerts();
                   <thead>
                     <tr>
                       <th colspan="2"> <h2 class="heading-medium">Apprentice</h2></th>
-                      <th><p style="margin-top:45px; text-align:right"><!--a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/change-apprenticeship-all">Edit apprentice</a--> </p> </th>
+                      <th><!--p style="margin-top:45px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/change-apprenticeship-all">Edit apprentice</a> </p--> </th>
 
                     </tr>
 
@@ -168,7 +174,7 @@ showAlerts();
                   <tbody>
                     <tr>
                       <td class="apprenticeRecordTitle" style="width:250px">Name</td>
-                      <td class="" style="">Mel O'Connor</td>
+                      <td class="" style="">William Wing</td>
                       <!--td>
                           <span id="changePending" class="statusToDo" style="width:200px">Pending</span>
                       </td-->

@@ -59,10 +59,9 @@ showAlerts();
 </script>
 
 <style>
-
- #navigation-primary, #kill-me {
-  display:none;
-}
+    .apprentice-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
 </style>
 
 
@@ -73,7 +72,7 @@ showAlerts();
 
   <div class="breadcrumbs back-breadcrumb">
     <ol role="breadcrumbs">
-          <a href="./manage-list-provider" class="link-back">Back to list of apprentices</a>
+                {% include "includes/breadcrumbs/register-back.html" %}
     </ol>
   </div>
 
@@ -84,39 +83,41 @@ showAlerts();
     <div style= "" id="pausedAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
     You've stopped payments for Rob Edwards
     </div>
-    <div style= "" id="changedAlertMessage" class="success-summary rj-dont-display "> 
-      <h3 class="heading-medium">Thing happened</h3>
-    <p>You suggested changes for Mel O'Connor. Your employer needs to approve these changes.</p>
+    <div style= "" id="changedAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
+    You suggested changes to -change- -change-, -change-, -change- for Rob Edwards. Your training provider needs to approve these changes.
     </div>
 
   <div class="grid-row">
            <div class="column-two-thirds">
-              <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}Mel O'Connor</h1>
-            <div>
-              <div class="panel panel-border-wide" style="padding-top: 35px; padding-bottom:35px ">
-                <h2  class="heading-medium">Data lock error</h2>
-              <p>There was a data lock error caused by a thing. Please take a look and do something. </p>
-              <a href="./update-apprenticeship/data-lock-triage">Deal with the data lock failure</a>
+              <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}Fred Birtwhistle</h1>
 
-  </div>
+              <div>
+
+<div>
 
 
+             <div class="panel panel-border-wide" style="padding-top: 35px; padding-bottom:35px ">
+                <h2  class="heading-medium">Items for your attention</h2>
+              <p>There are multiple items for your review - these may affect payments for this apprentice.</p><p></p>
+              <a href="./fred-birtwhistle-list-issues">View items</a>
+            </div>
 
-                <table class="table-19-font" style="margin:0"> 
+
+
+                <table class="table-19-font" style="margin:0">
                   <thead>
                     <tr>
                       <th> </th>
-
                     </tr>
                   </thead>
                 </table>
 
-                <table class="table-19-font"> 
+                <table class="table-19-font">
                   <tbody>
                     <tr>
                       <td class="apprenticeRecordTitle" >Status</td>
                       <td class="">Live</td>
-                      <td><p style="text-align:right; margin:0"><!--a  href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship">Edit status</a--></p></td>
+                      <td><!--p style="text-align:right; margin:0"><a  href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship">Edit status</a></p--></td>
                     </tr>
 
                       </tbody>
@@ -124,8 +125,6 @@ showAlerts();
 
 
                   <p style="" </p>
-
-
                   <table class="table-19-font" style="margin:0">
                   <thead>
                     <tr>
@@ -134,7 +133,7 @@ showAlerts();
                   </thead>
                     </table>
 
-                   <table class="table-19-font"> 
+                   <table class="table-19-font">
                   <tbody>
 
                     <tr id="trainingProvider" class="rj-dont-display">
@@ -146,7 +145,7 @@ showAlerts();
                       <td class="" >Acme Coventry Ltd</td>
                     </tr>
                      <tr id="referenceNumber" class="">
-                      <td class="apprenticeRecordTitle " >Cohort reference</td>
+                      <td class="apprenticeRecordTitle">Cohort reference</td>
                       <td class="" >98HXGFD</td>
                     </tr>
                    </tbody>
@@ -157,7 +156,7 @@ showAlerts();
                   <thead>
                     <tr>
                       <th colspan="2"> <h2 class="heading-medium">Apprentice</h2></th>
-                      <th><p style="margin-top:45px; text-align:right"><!--a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/change-apprenticeship-all">Edit apprentice</a--> </p> </th>
+                      <th><!--p style="margin-top:45px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/change-apprenticeship-all">Edit apprentice</a> </p--> </th>
 
                     </tr>
 
@@ -168,7 +167,7 @@ showAlerts();
                   <tbody>
                     <tr>
                       <td class="apprenticeRecordTitle" style="width:250px">Name</td>
-                      <td class="" style="">Mel O'Connor</td>
+                      <td class="" style="">Charles Patel</td>
                       <!--td>
                           <span id="changePending" class="statusToDo" style="width:200px">Pending</span>
                       </td-->
