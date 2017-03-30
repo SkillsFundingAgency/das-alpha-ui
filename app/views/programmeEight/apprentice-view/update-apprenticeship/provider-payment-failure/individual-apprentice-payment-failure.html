@@ -20,7 +20,7 @@ $(document).ready(function() {
 
 var showAlerts = function() {
  switch (true) {
-                 case  (changeStatus == "updated"):
+              case  (changeStatus == "updated"):
                   localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
                   $(changedAlertMessage).removeClass("rj-dont-display");
                   $(changesPendingPanel).removeClass("rj-dont-display");
@@ -85,6 +85,8 @@ showAlerts();
 <!--h1 class="heading-large">Levy account</h1-->
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
 
+
+<!--GREEN PANELS -->
      <div style= "" id="pausedAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
     You've stopped payments for Charles Patel
     </div>
@@ -98,6 +100,19 @@ showAlerts();
     <p>Your rejected the changes. Your provider has been notified.</p>
     </div>
 
+<!-- PURPLE PANELS -->
+      <div style= "" id="dataLockPanel" class="info-summary rj-dont-display "> 
+                <h2  class="heading-medium">Payment failure</h2>
+              <p>There was a payment failure for this apprentice. You will not be paid for this apprentice for this month.</p><p></p>
+              <a href="./pay-fail-data-lock-triage">Do something about the problem</a>
+    </div>
+
+        <div style= "" id="changesPendingPanel" class="info-summary rj-dont-display "> 
+            <h2  class="heading-medium">Changes pending</h2>
+              <p>There are changes to this apprentice's details that are waiting for approval by your employer. You can continue to edit this apprentice if you need to.</p>
+              <a href="./update-apprenticeship/data-lock-triage">View changes</a>
+    </div>
+
   <div class="grid-row">
            <div class="column-two-thirds">
               <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}Charles Patel</h1>
@@ -105,17 +120,7 @@ showAlerts();
               <div>
 
 
-             <div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="dataLockPanel">
-                <h2  class="heading-medium">Payment failure</h2>
-              <p>There was a payment failure for this apprentice. You will not be paid for this apprentice for this month.</p><p></p>
-              <a href="./pay-fail-data-lock-triage">Do something about the problem</a>
-            </div>
 
-              <div class="panel panel-border-wide rj-dont-display rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="changesPendingPanel">
-                <h2  class="heading-medium">Changes Pending</h2>
-              <p>There are changes to this apprentice's details that are waiting for approval by your employer. You can continue to edit this apprentice if you need to.</p>
-              <a href="./update-apprenticeship/data-lock-triage">View changes</a>
-            </div>
 
                 <table class="table-19-font" style="margin:0">
                   <thead>
