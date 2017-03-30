@@ -52,7 +52,7 @@
 
   <div class="breadcrumbs back-breadcrumb">
     <ol role="breadcrumbs">
-   <a href="../contracts/provider-in-progress/P-DAS-Home" class="link-back">Back to menu</a>
+   <a href="../contracts/provider-in-progress/P-DAS-Home" class="link-back">Back to home</a>
     </ol>
   </div>
 
@@ -122,17 +122,21 @@
                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
                             Changes pending
                         </label>
+                        <label for="not-started">
+                       <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                            Changes for review
+                        </label>
                         <label for="Paused">
                         <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
                           Payment failed
                         </label>
                         <label for="Datalock">
                         <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
-                          Data lock failure
+                          ILR data mismatch
                         </label>
                         <label for="Datalock">
                         <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
-                          Pending ILR change
+                          ILR changes pending
                         </label>
                          <label for="Stopped">
                         <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
@@ -276,7 +280,7 @@
                               <td class="rjTabWidth">Mel O&#39;Connor</td>
                               <td class="">1 May 1998</td>
                                 <td class="">Live</td>
-                                 <td id="melDataLockError" >Data lock error</td>
+                                 <td id="melDataLockError" >ILR data mismatch</td>
                                  <td class="rj-dont-display" id="melPending">Pending ILR Change</td>
                              <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice-data-lock-failure">View</a></td>
                             </tr>
@@ -284,14 +288,14 @@
                               <td class="rjTabWidth">Bill O&#39;Neil</td>
                               <td class="">30 Dec 1998</td>
                                 <td class="">Live</td>
-                                 <td>Pending ILR change</td>
+                                 <td>ILR changes pending</td>
                              <td><a href="nopagehere">View</a></td>
                             </tr>
                             <tr>
                               <td class="rjTabWidth">Charles Patel</td>
                               <td class="">1 June 2001</td>
                                 <td class="">Live</td>
-                                 <td>Payment failure</td>
+                                 <td>Payment failed</td>
                              <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/provider-payment-failure/individual-apprentice-payment-failure">View</a></td>
                             </tr>
                             <tr>
@@ -305,7 +309,7 @@
                               <td class="rjTabWidth">Fred Birtwhistle</td>
                               <td class="">28 Apr 2001</td>
                                 <td class="">Live</td>
-                                 <td>- Data lock adjustment <br />- Payment adjustment</td>
+                                 <td>- ILR data mismatch<br />- Payment adjustment</td>
                              <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/provider-payment-failure/individual-apprentice-multiple-failure-provider">View</a></td>
 
                             </tr>

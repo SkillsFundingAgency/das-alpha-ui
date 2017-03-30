@@ -31,7 +31,7 @@ function whereNow() {
             break;
         case  (status == 'ILR'):
             console.log('ILR')
-              localStorage.setItem("commitments.userChangeStatus", JSON.stringify("ilrChangesPending"));
+              // localStorage.setItem("commitments.userChangeStatus", JSON.stringify("ilrChangesPending"));
              window.location.href='../individual-apprentice-data-lock-failure';
             break;
         default:
@@ -61,9 +61,9 @@ function whereNow() {
 
   <div class="grid-row">
            <div class="column-two-thirds">
-              <h1 class="heading-xlarge" >Details of ILR data mismatch</h1>
+              <h1 class="heading-xlarge" >ILR changes pending</h1>
             <div>
-                 <p class=" ">Details for this apprentice are different in your organisation's ILR submission.</p>
+
             <table class=""> 
               <tbody>
                      <tr>
@@ -86,23 +86,20 @@ function whereNow() {
               <form action="friendly-name">
                   <legend class="visuallyhidden">Deal with it</legend>
                     <div class="form-group">
-                      <label class="form-label-bold" for="">Do you want to change the details in the apprenticeship service?</label>
+                      <label class="form-label-bold" for="">Do you still plan to fix the mismatch through the ILR?</label>
                     <!--label class="block-label" for="pause">
                       <input id="pause" type="radio" name="radio-group" value="pause">
                      Pause the apprenticeship
                      </label-->
                     <label class="block-label" for="DAS">
-                      <input id="DAS" type="radio" name="radio-group" value="DAS">
-                    Yes, continue to update details
+                      <input id="DAS" type="radio" name="radio-group" value="ILR">
+                    Yes, leave as is 
                      </label>
                       <label class="block-label" for="ILR">
-                      <input id="ILR" type="radio" name="radio-group" value="ILR">
-                    No, I'll update them through the ILR instead
+                      <input id="ILR" type="radio" name="radio-group" value="DAS">
+                    No, update details in the apprenticeship service
                      </label>
-                     <label class="block-label" for="Change_later">
-                      <input id="Change_later" type="radio" name="radio-group" value="Change_later">
-                    Leave for now
-                     </label>
+ 
                   </div>
                 </fieldset>
             <div style="margin-top:50px"></div>

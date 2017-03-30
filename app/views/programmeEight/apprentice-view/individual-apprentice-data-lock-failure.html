@@ -30,6 +30,11 @@ var showAlerts = function() {
                   localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
                   $(pausedAlertMessage).removeClass("rj-dont-display");
               break;
+              case  (changeStatus == "ilrChangesPending"):
+                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                  $(ilrChangesPanel).removeClass("rj-dont-display");
+                  $(ilrAlertMessage).removeClass("rj-dont-display");
+              break;
 
         default:
          $(dataLockPanel).removeClass("rj-dont-display");
@@ -89,8 +94,11 @@ showAlerts();
     You've stopped payments for Rob Edwards
     </div>
     <div style= "" id="changedAlertMessage" class="success-summary rj-dont-display ">
-      <h3 class="heading-medium">Thing happened</h3>
+      <h3 class="heading-medium">Status changed</h3>
     <p>You suggested changes for Mel O'Connor. Your employer needs to approve these changes.</p>
+    </div>
+       <div style= "" id="ilrAlertMessage" class="success-summary rj-dont-display ">
+      <h3 class="heading-medium">Status changed</h3>
     </div>
 
   <div class="grid-row">
@@ -105,9 +113,15 @@ showAlerts();
             </div>
 
             <div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="dataLockPanel">
-                <h2  class="heading-medium">Data lock error</h2>
-              <p>There was a data lock error caused by a thing. Please take a look and do something.</p>
-              <a href="./update-apprenticeship/data-lock-triage">Deal with the data lock failure</a>
+                <h2  class="heading-medium">ILR data mismatch</h2>
+              <p>This apprentice's details are different in your organisation's ILR submission. This may result in a payment failure.</p>
+              <a href="./update-apprenticeship/data-lock-triage">View details</a>
+            </div>
+
+                <div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="ilrChangesPanel">
+                <h2  class="heading-medium">ILR changes pending</h2>
+              <p>Remember to update and re-submit your ILR records.</p>
+              <a href="./update-apprenticeship/ILR-changes-pending">View details</a>
             </div>
 
 
