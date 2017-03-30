@@ -6,18 +6,38 @@
 
 {% block content %}
 
-<script>
-        var employerOrNot = JSON.parse(localStorage.getItem('commitments.isEmployer'));
+  <script>
+        var employerOrNot = "no" // fixed because this is a provider only page
         var changeStatus =JSON.parse(localStorage.getItem('commitments.userChangeStatus'));
                    //paused is set when the paused journey is triggered.
-
-    </script>
+ </script>
 
 
 <script>
 
 $(document).ready(function() {
-  var changeStuff = function() {
+
+
+var showAlerts = function() {
+ switch (true) {
+                 case  (changeStatus == "updated"):
+                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                  $(changedAlertMessage).removeClass("rj-dont-display");
+                  $(changesPendingPanel).removeClass("rj-dont-display");
+              break;
+             case  (changeStatus == "paused"):
+                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                  $(pausedAlertMessage).removeClass("rj-dont-display");
+              break;
+
+        default:
+         $(dataLockPanel).removeClass("rj-dont-display");
+             console.log('nothings changed on the apprentice record')
+          break;
+        }
+  };
+
+    var changeStuff = function() {
   if (employerOrNot=='yes') {
     // document.getElementById("commitmentsName").textContent = " Hackney Skills & Training Ltd";
    //  document.getElementById("providerName").textContent = "Provider:" ;
@@ -35,33 +55,18 @@ else {
 
 };
 
-var showAlerts = function() {
- switch (true) {
-                 case  (changeStatus == "updated"):
-                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
-                  $(changedAlertMessage).removeClass("rj-dont-display");
-              break;
-             case  (changeStatus == "paused"):
-                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
-                  $(pausedAlertMessage).removeClass("rj-dont-display");
-              break;
-
-        default:
-             console.log('nothings changed on the apprentice record')
-          break;
-        }
-  };
-
 changeStuff();
 showAlerts();
 });
 
 </script>
 
+
 <style>
-    .apprentice-nav a {
-    {% include "includes/nav-on-state-css.html" %}
-  }
+
+ #navigation-primary, #kill-me {
+  display:none;
+}
 </style>
 
 
@@ -72,7 +77,7 @@ showAlerts();
 
   <div class="breadcrumbs back-breadcrumb">
     <ol role="breadcrumbs">
-          <a href="../apprentice-view" class="link-back">Back to list of apprentices</a>
+          <a href="/{% include "includes/sprint-link.html" %}/apprentice-view/manage-list-provider" class="link-back">Back to list of apprentices</a>
     </ol>
   </div>
 
@@ -80,11 +85,17 @@ showAlerts();
 <!--h1 class="heading-large">Levy account</h1-->
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
 
-    <div style= "" id="pausedAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
-    You've stopped payments for Rob Edwards
+     <div style= "" id="pausedAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
+    You've stopped payments for Charles Patel
     </div>
-    <div style= "" id="changedAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
-    You suggested changes to -change- -change-, -change-, -change- for Rob Edwards. Your training provider needs to approve these changes.
+    <div style= "" id="changedAlertMessage" class="success-summary rj-dont-display "> 
+      <h3 class="heading-medium">Thing happened</h3>
+    <p>You suggested changes for Charles Patel. Your employer needs to approve these changes.</p>
+    </div>
+
+    <div style= "" id="changesRejectedMessage" class="success-summary rj-dont-display ">
+      <h3 class="heading-medium">Thing happened</h3>
+    <p>Your rejected the changes. Your provider has been notified.</p>
     </div>
 
   <div class="grid-row">
@@ -94,10 +105,16 @@ showAlerts();
               <div>
 
 
-             <div class="panel panel-border-wide" style="padding-top: 35px; padding-bottom:35px ">
+             <div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="dataLockPanel">
                 <h2  class="heading-medium">Payment failure</h2>
               <p>There was a payment failure for this apprentice. You will not be paid for this apprentice for this month.</p><p></p>
               <a href="./pay-fail-data-lock-triage">Do something about the problem</a>
+            </div>
+
+              <div class="panel panel-border-wide rj-dont-display rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="changesPendingPanel">
+                <h2  class="heading-medium">Changes Pending</h2>
+              <p>There are changes to this apprentice's details that are waiting for approval by your employer. You can continue to edit this apprentice if you need to.</p>
+              <a href="./update-apprenticeship/data-lock-triage">View changes</a>
             </div>
 
                 <table class="table-19-font" style="margin:0">

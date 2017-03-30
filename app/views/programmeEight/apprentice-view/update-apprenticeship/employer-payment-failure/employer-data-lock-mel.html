@@ -40,6 +40,12 @@ var showAlerts = function() {
                  case  (changeStatus == "updated"):
                   localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
                   $(changedAlertMessage).removeClass("rj-dont-display");
+                  $(editButton).removeClass("rj-dont-display");
+              break;
+              case  (changeStatus == "rejected"):
+                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                  $(changesRejectedMessage).removeClass("rj-dont-display");
+                  $(editButton).removeClass("rj-dont-display");
               break;
              case  (changeStatus == "paused"):
                   localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
@@ -48,6 +54,7 @@ var showAlerts = function() {
 
         default:
              console.log('nothings changed on the apprentice record')
+             $(changeRequestPanel).removeClass("rj-dont-display");
           break;
         }
   };
@@ -85,7 +92,12 @@ showAlerts();
     </div>
     <div style= "" id="changedAlertMessage" class="success-summary rj-dont-display "> 
       <h3 class="heading-medium">Thing happened</h3>
-    <p>Your changes were made.</p>
+    <p>The changes were made.</p>
+    </div>
+
+        <div style= "" id="changesRejectedMessage" class="success-summary rj-dont-display "> 
+      <h3 class="heading-medium">Thing happened</h3>
+    <p>Your rejected the changes. Your provider has been notified.</p>
     </div>
 
   <div class="grid-row">
@@ -105,7 +117,7 @@ showAlerts();
               <p>There was a payment failure for this apprentice. Your training provider has not been paid.</p><p>Your training provider is fixing this problem</p>
             </div-->
 
-             <div class="panel panel-border-wide  " style="padding-top: 35px; padding-bottom:35px ">
+             <div class="panel panel-border-wide rj-dont-display" id="changeRequestPanel" style="padding-top: 35px; padding-bottom:35px ">
                 <h2  class="heading-medium">Change request</h2>
               <p>There was a data mismatch for this apprentice. Your training provider has requested a change.</p><p>If you do not accept this change your provider might not be paid on time.</p>
               <a href="./das-change-confirm-employer-data-lock-fail">View change request</a>
@@ -163,7 +175,7 @@ showAlerts();
                   <thead>
                     <tr>
                       <th colspan="2"> <h2 class="heading-medium">Apprentice</h2></th>
-                      <th><!--p style="margin-top:45px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/change-apprenticeship-all">Edit apprentice</a> </p--> </th>
+                      <th><p style="margin-top:45px; text-align:right" id="editButton" class="rj-dont-display"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/change-apprenticeship-all">Edit apprentice</a> </p> </th>
 
                     </tr>
 

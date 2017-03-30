@@ -609,7 +609,7 @@ vertical-align: top;
   #transactions td:nth-of-type(6):before { content: ""; font-weight:400;  color: #0b0c0c;}
 }
 
-$info-colour:$light-blue;
+$info-colour:$purple;
 $success-colour:$turquoise;
 $warning-colour:$orange;
 
@@ -748,7 +748,7 @@ $warning-colour:$orange;
 .sfa-govuk-box-highlight {
     padding-left:0.5em;
     padding-right:0.5em;
-}                
+}
 
 //end of mobile tables
 

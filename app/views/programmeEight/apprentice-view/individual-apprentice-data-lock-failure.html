@@ -7,7 +7,7 @@
 {% block content %}
 
 <script>
-        var employerOrNot = JSON.parse(localStorage.getItem('commitments.isEmployer'));
+        var employerOrNot = "no" // this is the providers page so setting this.
         var changeStatus =JSON.parse(localStorage.getItem('commitments.userChangeStatus'));
                    //paused is set when the paused journey is triggered.
 
@@ -17,7 +17,28 @@
 <script>
 
 $(document).ready(function() {
-  var changeStuff = function() {
+
+
+var showAlerts = function() {
+ switch (true) {
+                 case  (changeStatus == "updated"):
+                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                  $(changedAlertMessage).removeClass("rj-dont-display");
+                  $(changesPendingPanel).removeClass("rj-dont-display");
+              break;
+             case  (changeStatus == "paused"):
+                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                  $(pausedAlertMessage).removeClass("rj-dont-display");
+              break;
+
+        default:
+         $(dataLockPanel).removeClass("rj-dont-display");
+             console.log('nothings changed on the apprentice record')
+          break;
+        }
+  };
+
+    var changeStuff = function() {
   if (employerOrNot=='yes') {
     // document.getElementById("commitmentsName").textContent = " Hackney Skills & Training Ltd";
    //  document.getElementById("providerName").textContent = "Provider:" ;
@@ -34,23 +55,6 @@ else {
         };
 
 };
-
-var showAlerts = function() {
- switch (true) {
-                 case  (changeStatus == "updated"):
-                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
-                  $(changedAlertMessage).removeClass("rj-dont-display");
-              break;
-             case  (changeStatus == "paused"):
-                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
-                  $(pausedAlertMessage).removeClass("rj-dont-display");
-              break;
-
-        default:
-             console.log('nothings changed on the apprentice record')
-          break;
-        }
-  };
 
 changeStuff();
 showAlerts();
@@ -84,7 +88,7 @@ showAlerts();
     <div style= "" id="pausedAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
     You've stopped payments for Rob Edwards
     </div>
-    <div style= "" id="changedAlertMessage" class="success-summary rj-dont-display "> 
+    <div style= "" id="changedAlertMessage" class="success-summary rj-dont-display ">
       <h3 class="heading-medium">Thing happened</h3>
     <p>You suggested changes for Mel O'Connor. Your employer needs to approve these changes.</p>
     </div>
@@ -92,13 +96,19 @@ showAlerts();
   <div class="grid-row">
            <div class="column-two-thirds">
               <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}Mel O'Connor</h1>
-            <div>
-              <div class="panel panel-border-wide" style="padding-top: 35px; padding-bottom:35px ">
-                <h2  class="heading-medium">Data lock error</h2>
-              <p>There was a data lock error caused by a thing. Please take a look and do something. </p>
-              <a href="./update-apprenticeship/data-lock-triage">Deal with the data lock failure</a>
 
-  </div>
+
+              <div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="changesPendingPanel">
+                <h2  class="heading-medium">Changes Pending</h2>
+              <p>There are changes to this apprentice's details that are waiting for approval by your employer. You can continue to edit this apprentice if you need to.</p>
+              <a href="./update-apprenticeship/data-lock-triage">View changes</a>
+            </div>
+
+            <div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="dataLockPanel">
+                <h2  class="heading-medium">Data lock error</h2>
+              <p>There was a data lock error caused by a thing. Please take a look and do something.</p>
+              <a href="./update-apprenticeship/data-lock-triage">Deal with the data lock failure</a>
+            </div>
 
 
 

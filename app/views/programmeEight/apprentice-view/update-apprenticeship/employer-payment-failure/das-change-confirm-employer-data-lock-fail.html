@@ -18,21 +18,17 @@
 function whereNow() {
    var status = $('input[name=radio-group]:checked').val();
        switch (true) {
-          case  (status == 'pause'):
-                console.log('paused')
-                localStorage.setItem("commitments.apprenticestatus", JSON.stringify('thing_is_done'));
-                 window.location.href='employer-data-lock-mel';
-
-                break;
-        case  (status == 'stop'):
-            console.log('stopped')
+         
+        case  (status == 'approve'):
+            console.log('approve')
             localStorage.setItem("commitments.userChangeStatus", JSON.stringify("updated"));
              window.location.href='employer-data-lock-mel';
             break;
-        case  (status == 'unchanged'):
-            console.log('unchanged')
-             window.location.href='employer-data-lock-mel';
-            break;
+           case  (status == 'reject'):
+                console.log('reject')
+                localStorage.setItem("commitments.userChangeStatus", JSON.stringify('rejected'));
+                 window.location.href='employer-data-lock-mel';
+                break;
         default:
              console.log('gyahhhhhhhh, bork bork bork')
             break;
@@ -93,12 +89,12 @@ function whereNow() {
                       <input id="pause" type="radio" name="radio-group" value="pause">
                      Pause the apprenticeship
                      </label-->
-                    <label class="block-label" for="stop">
-                      <input id="stop" type="radio" name="radio-group" value="stop">
+                    <label class="block-label" for="approve">
+                      <input id="approve" type="radio" name="radio-group" value="approve">
                     Yes, approve these changes
                      </label>
-                     <label class="block-label" for="unchanged">
-                      <input id="unchanged" type="radio" name="radio-group" value="unchanged">
+                     <label class="block-label" for="reject">
+                      <input id="reject" type="radio" name="radio-group" value="reject">
                      No, reject these changes
                      </label>
                   </div>

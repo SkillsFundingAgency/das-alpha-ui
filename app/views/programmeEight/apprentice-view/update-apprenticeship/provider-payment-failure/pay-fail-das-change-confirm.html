@@ -20,13 +20,13 @@ function whereNow() {
        switch (true) {
           case  (status == 'yes'):
                 console.log('yes')
-                //localStorage.setItem("commitments.apprenticestatus", JSON.stringify('thing_is_done'));
+                localStorage.setItem("commitments.userChangeStatus", JSON.stringify('updated'));
                  window.location.href='./individual-apprentice-payment-failure';
 
                 break;
         case  (status == 'no'):
             console.log('no')
-           // localStorage.setItem("commitments.userChangeStatus", JSON.stringify("updated"));
+            localStorage.setItem("commitments.userChangeStatus", JSON.stringify("rejected"));
              window.location.href='./individual-apprentice-payment-failure';
             break;
         // case  (status == 'cancel'):
@@ -114,7 +114,7 @@ function whereNow() {
           </div>
 
           <div class="column-one-third">
-                       <aside class="related">
+                       <!--aside class="related">
                         <h2 class="heading-medium" style="margin-top:10px">Note to Rob -</h2>
                         <nav role="navigation">
                       <ul class="robSideNav">
@@ -124,7 +124,7 @@ function whereNow() {
 
                         </ul>
                            </nav>
-                    </aside>
+                    </aside-->
             </div>
         </div>
 </main>

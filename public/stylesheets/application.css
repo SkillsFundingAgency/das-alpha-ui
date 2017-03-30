@@ -2669,21 +2669,21 @@ input[type=number] {
 }
 
 .info-summary {
-  border-color: #2b8cc4;
+  border-color: #2e358b;
 }
 
 @media (min-width: 641px) {
   .info-summary {
-    border-color: #2b8cc4;
+    border-color: #2e358b;
   }
 }
 
 .info-summary .info-summary-list a {
-  color: #2b8cc4;
+  color: #2e358b;
 }
 
 .info-summary .info-dismiss {
-  color: #2b8cc4;
+  color: #2e358b;
 }
 
 .success-summary {
