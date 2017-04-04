@@ -247,6 +247,62 @@ var whereNow = function() {
               <input class="form-control rj-currency-input" id="employerRef" type="text" value="" style="width:100%">
       </div>
     </fieldset>
+      
+    <fieldset>
+
+      <div class="form-group">
+          <label class="form-label-bold" for="apprenticeCost">Reference (optional)
+          <span class="form-hint">Add a reference, such as employee number or location - this can help identify this apprentice if you have more than one with the same name</span>
+           </label>
+           <textarea class="form-control" data-val-length-max="240" type="text" ></textarea>
+              <span class="sfa-form-control-after">
+                <span class="maxchar-count">100</span>
+                <span class="maxchar-text"> characters remaining</span>
+              </span>
+      </div>
+      
+    </fieldset>
+
+    <!--Javascript for character count-->
+
+    <script>
+
+      characterCount = function(n) {
+        console.log(n);
+        var i = $(n)
+          , r = i.attr("data-val-length-max")
+          , e = i.val()
+          , h = (e.match(/\n/g) || []).length
+          , o = e.length + h
+          , u = Math.abs(r - o)
+          , f = i.closest(".form-group").find(".maxchar-count")
+          , t = i.closest(".form-group").find(".maxchar-text")
+          , s = i.closest(".form-group").find(".aria-limit");
+        if (r)
+            f.text(u);
+        else {
+            t.hide();
+            return
+        }
+        o > r ? (f.parent().addClass("has-error"),
+        t.text(" characters over the limit"),
+        s.text("Character limit has been reached, you must type fewer than " + r + " characters"),
+        u == 1 ? t.text(" character over the limit") : t.text(" characters over the limit")) : (f.parent().removeClass("has-error"),
+        t.text(" characters remaining"),
+        s.text(""),
+        u == 1 ? t.text(" character remaining") : t.text(" characters remaining"))
+      }
+      $("textarea").on("keyup", function() {
+          console.log(this);
+          characterCount(this);
+      });
+      $("textarea").each(function() {
+          characterCount(this);
+      });
+      
+
+    </script>
+
     <!-- JAVASCRIPT ENABLED and EPAS are NOT available -->
            <hr style="margin-top:0px"/>
 <div class="alertGreyBox">

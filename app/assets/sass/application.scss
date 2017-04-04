@@ -549,7 +549,22 @@ vertical-align: top;
 // end of alert panel for paused or stopped apprentice
 
 
-// end of feed/to do list
+// character count
+
+.sfa-form-control-after {
+    font-size: 16px;
+    line-height: 1.25;
+    display: block;
+    color: $secondary-text-colour;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    @include media(tablet){
+      font-size: 19px;
+      line-height: 1.31579;
+    }
+}
+
+// end of character count
 
 // Mobile tables
 
