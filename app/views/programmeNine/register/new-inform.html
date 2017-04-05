@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+//jQuery( document ).ready(function() {
+     //jQuery.validate(); 
+// });
+
+
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+<div class="breadcrumbs">
+    <ol role="breadcrumbs">
+<!--the breadcrumb for the inform pages is in the following template -->
+       {% include "includes/breadcrumbs/inform-bread.html" %}
+    </ol>
+</div>
+
+        <div class="grid-row">
+
+            <div class="column-two-thirds">
+                <h1 class="heading-xlarge">Levy heading</h1>
+               
+
+                <h2 class="heading-medium">Subheading</h2>
+                <p>
+
+                    <body>                <p class="">The government is committed to boosting productivity by investing in human capital. As part of this, the government is committed to developing vocational skills, and to increasing the quantity and quality of apprenticeships. It has committed to an additional 3 million apprenticeship starts in England by 2020. The levy will help to deliver new apprenticeships and it will support quality training by putting employers at the centre of the system. Employers who are committed to training will be able to get back more than they put in by training sufficient numbers of apprentices.</p>
+
+
+
+
+            </div>
+
+                      <!--the side bar for the inform pages is in the following template -->
+                        {% include "includes/side-bars/inform.html" %}
+
+
+        </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,161 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<div class="grid-row">
+
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Add training provider details</h1>
+ 
+<form action="provider-list">
+  <fieldset>
+    <legend class="visuallyhidden">Find your provider</legend>
+      <div class="form-group">
+          <label class="form-label-bold" for="search">UK Provider Reference Number
+        </label>
+          <input class="form-control" id="find-a-provider" type="text">
+      </div>
+      
+      <details>
+        <summary><span class="summary">What is a UK Provider Reference Number?</span></summary>
+        <div class="panel panel-border-narrow">
+          
+          <p>A UK Provider Reference Number (UKPRN) is a unique, 8-digit number 
+            that identifies a training provider. Your training provider can tell you their UKPRN.
+          </p>
+ 
+        </div>
+    </details>
+          
+    </fieldset>
+    <input class="button" id="search-provider" type="submit" value="Continue">
+</form>
+
+    <div style="margin-top:50px"></div>
+    <!--details style="margin-bottom:25px">
+  <summary><span class="summary">What is a UKPRN?</span></summary>
+  <div class="panel panel-border-narrow" >
+    <p>
+      A UK provider registration number (UKPRN) is a unique number that each training provider has to help identify them. Your training provider will be able to tell you their UKPRN.
+    </p>
+  </div>
+</details-->
+
+
+
+    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
+<!-- {% include "includes/start-tabs.html" %} -->
+
+            </div>
+
+             <div class="column-one-third">
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="../login">Sign in</a>
+                          </li>
+
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+</div>
+</main>
+
+<script>
+//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+
+
+
+$( document ).ready(function() {
+
+  // change the tabs themselves to active - should be in the above but isn't working because it's looking for a not li so I added this as a quick fix.
+
+  $("ul#tabs-nav li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs-nav li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#tabs-nav li.active").removeClass("active");
+            $("ul#tabs-nav li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+  $('ul.tabs-nav').each(function(){
+    // For each set of tabs, we want to keep track of
+    // which tab is active and its associated content
+    var $active, $content, $links = $(this).find('a');
+
+
+
+    // If the location.hash matches one of the links, use that as the active tab.
+    // If no match is found, use the first link as the initial active tab.
+    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+   // $active.addClass('active');
+   console.log($active)
+
+    $content = $($active[0].hash);
+
+    // Hide the remaining content
+    $links.not($active).each(function () {
+      $(this.hash).hide();
+    }); 
+
+    // Bind the click event handler
+    $(this).on('click', 'a', function(e){
+      // Make the old tab inactive.
+    //  $active.removeClass('active');
+      $content.hide();
+
+      // Update the variables with the new link and content
+    //  $active = $(this);
+      $content = $(this.hash);
+
+      // Make the tab active.
+     // $active.addClass('active');
+      $content.show();
+
+      // Prevent the anchor's default click action
+      e.preventDefault();
+    });
+  });
+
+
+</script>
+
+
+{% endblock %}

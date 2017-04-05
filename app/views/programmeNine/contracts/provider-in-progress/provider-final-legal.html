@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+ #navigation-primary, #kill-me {
+  display:none;
+}
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+
+<div class="grid-row">
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Approve apprenticeship</h1>
+
+   <p>By approving this cohort you confirm you already have a contract in place with:</p>
+
+           <h2 class="heading-large" style="margin-bottom:0; ">Acme Coventry Ltd</h2>
+                 <h3 class="heading-small" style="margin-top:0px;color:#6F777B " >Company number: 9021055555</h3>
+           <div style="margin-top:25px"></div>
+         <details style="margin-bottom:35px">
+                <summary><span class="summary">Why do I need a contract?</span></summary>
+                <div class="panel panel-border-narrow">
+                  <p>
+                  You must make sure you have a contract in place to train the apprentices of any employer that you&#39;re working with. If you don&#39;t have a contract, you won&#39;t be paid through the Apprenticeship Levy and you may be removed from the Register of Apprenticeship Training Providers.
+                  </p>
+
+                </div>
+        </details>
+
+        <div style=" ">
+          <h2 class="heading-medium">Are you training your own employees?</h2>
+          <p>Please let us know if you are training your own employees on this contract. </p>
+          <form>
+                 <legend class="visuallyhidden">Delete me</legend>
+                    <div class="form-group">
+                    <label class="block-label" for="provider-1">
+                      <input id="provider-1" type="radio" name="radio-group" value="provider-1">
+                     Yes, I am training my own employees
+                     </label>
+                    <label class="block-label" for="provider-2">
+                      <input id="provider-2" type="radio" name="radio-group" value="provider-2">
+                    No, I am not training my own employees
+                     </label>
+                  </div>
+                </fieldset>
+              </form>
+        </div>
+
+
+    <div style="margin-top:35px"></div>
+    <div class="padder-top-x">
+        <a href="/{% include "includes/sprint-link.html" %}/contracts/confirmation/confirmation-variations" class="button ">Agree and approve</a>
+        <div style="margin-top:15px"><a href="./provider-list">Cancel</a></div>
+    </div>
+
+            </div>
+</div>
+</main>
+
+
+
+
+{% endblock %}

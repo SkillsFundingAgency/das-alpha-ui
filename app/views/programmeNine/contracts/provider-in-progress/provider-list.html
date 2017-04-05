@@ -1,0 +1,254 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    {% include "includes/head.html" %}
+    <script>
+        var commitmentListSource = 'provider';
+        var employerOrNot = JSON.parse(localStorage.getItem('commitments.isEmployer'));
+        var deletedUser = JSON.parse(localStorage.getItem('commitments.deletedUserAlert'));
+         var showULN = JSON.parse(localStorage.getItem('commitments.ULNupload'));
+    </script>
+    <script src="/public/javascripts/das/list-commitment-1.6.js"></script>
+     <script src="/public/javascripts/das/jquery.highlight-5.js"></script>
+{% endblock %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+.highlight { font-weight:700; }
+</style>
+
+<script>
+
+$(document).ready(function() {
+  var changeStuff = function() {
+  if (employerOrNot=='yes') {
+    document.getElementById("commitmentsName").textContent = " Hackney Skills & Training Ltd";
+    document.getElementById("providerName").textContent = "Provider:" ;
+    $(notesStuff).addClass("rj-dont-display");
+    $(addReference).addClass("rj-dont-display");
+    $(ULNTable).addClass("rj-dont-display");
+
+     $(removeMe).addClass("rj-dont-display")
+    }
+else {
+    $(notesStuff).removeClass("rj-dont-display");
+    $(addReference).removeClass("rj-dont-display");
+        };
+  };
+
+ var changeUnknown = function() {
+  $('td').highlight('unknown');
+  $('td').highlight('null');
+  $('td').highlight('----');
+
+ };
+
+ var showDeletedUserAlert = function() {
+   if (deletedUser=='yes') {
+     localStorage.setItem("commitments.deletedUserAlert", JSON.stringify("nope"));
+    $(deletedUserAlertMessage).removeClass("rj-dont-display");
+   }
+ };
+
+  var ULNupload = function() {
+   if (showULN =='uploaded') {
+     localStorage.setItem("commitments.ULNupload", JSON.stringify("nope"));
+    $(ULNisDONE).removeClass("rj-dont-display");
+   }
+ }
+
+changeStuff();
+changeUnknown();
+showDeletedUserAlert()
+ULNupload ()
+});
+
+var goToDelete = function() {
+  window.location.href='../provider-interface/cohort-deletion-are-you-sure';
+}
+
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+ <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+            <li><a href="/{% include "includes/sprint-link.html" %}/balance">Home</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/contracts/providers">Apprentices</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress">Start an apprentice</a></li>
+            <li id="removeWithNav">98HGS3F</li>
+    </ol>
+  </div>
+
+
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+   <div style= "" id="deletedUserAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
+    Apprentice David Jenkins was deleted
+    </div>
+
+       <div style= "" id="ULNisDONE" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
+    All your ULNs were successfully added
+    </div>
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+    <h1 class="heading-xlarge" id="commitmentsHeader">Review your cohort</h1>
+      </div>
+</div>
+
+
+  <div class="grid-row">
+
+
+     <div class="column-third" style="" >
+                <div style="background-color:#2E358B; min-height:160px" >
+                  <h2 id="numberOfApprentices" class="bold-xxlarge" style=" color:#fff; margin: 0px 0 0px 15px; padding-top:25px">25</h2>
+                  <h2 class="heading-medium" style="color: #fff; margin: 0px 0 0px 15px;">Apprentices</h2>
+              </div>
+    </div>
+         <div class="column-third" style="" >
+                <div style="background-color:#912B88; min-height:160px" >
+                  <h2 id="numberOfApprentices" class="bold-xxlarge" style=" color:#fff; margin: 0px 0 0px 15px; padding-top:25px">10</h2>
+                  <h2 class="heading-medium" style="color: #fff; margin: 0px 0 0px 15px;">Incomplete records</h2>
+              </div>
+    </div>
+         <div class="column-third" style="" >
+                <div style="background-color:#D53880; min-height:160px" >
+                  <h2 id="totalCostOfApprentices" class="bold-xlarge" style=" color:#fff; margin: 0px 0 0px 15px; padding-top:27px">£29,002</h2>
+                  <h2 class="heading-medium" style="color: #fff; margin: 28px 0 0px 15px;">Total cost</h2>
+              </div>
+
+    </div>
+  </div>
+
+<div style="margin-top:35px"></div>
+  <div class="grid-row" style="padding-bottom:15px">
+           <div class="column-half" >
+                           <div class="" >
+                                     <!--h2 class="heading-medium" id="commitmentsName" style="margin: 0 0 5px 0">Acme Coventry Ltd</h2-->
+                                     <div id=""><h2 id="providerName" class="heading-small"  style="display:inline-block; margin:0;">Employer:&nbsp</h2 ><p id="commitmentsName" style="display:inline; margin:0;">Acme Coventry Ltd</p></div>
+                                  <div id="addReference"><h2 class="heading-small"  style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">98HGS3F</p></div>
+
+                          </div>
+            </div>
+
+        <div class="column-half" id="notesStuff">
+          <div id="removeMe" style="padding-bottom:15px">
+            <div><h2 class="heading-small" style="display:inline-block; margin:0;">Message:&nbsp</h2 ><p style=" margin:0;">There is space here for a short note to be added by the last party to make an amend.</p></div>
+          </div>
+        </div>
+</div>
+
+    <!-- ----------- This is the default where there aren't any groups or cohorts added ------------ -->
+    <div style="" class="rj-no-apprenticeships" id="no-apprenticeships">
+        <h2 class="heading-medium"><span style="font-weight:700" id=""> 0 Apprentices</span></h2>
+        <hr style="margin:0 0 18px 0" />
+        <div class="commit-bar">
+        <!--form class="" style="display:inline-block; float:left;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
+                    <div style="display:inline-block;"><input class="button" style="display:inline; margin:0 0 0 10px" type="submit"  id="send-to-employer"  value="Finish editing"></div>
+              </form>
+            <form class="" style="display:inline-block; float:right;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">
+                <input type="hidden" name="source" value="provider" />
+                <div style="display:inline-block;"><input style="display:inline" class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add an apprentice"></div>
+            </form>
+             <form class="" style="display:inline-block" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">
+                <input type="hidden" name="source" value="provider" />
+                <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px" class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Bulk upload apprentices"></div>
+            </form>
+
+             <form class="" style="display:inline-block; float:right;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
+                    <div style="display:inline-block;"><input class="button" style="display:inline; margin:0 0 0 10px" type="submit"  id="send-to-employer"  value="Finish editing"></div>
+              </form-->
+              <h2 class="heading-medium">USERS WILL NEVER SEE THIS PAGE IN THIS STATE</h2>
+              <a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/bulk-or-single">ADD SOME APPRENTICES TO FIX THIS PAGE</a>
+        </div>
+
+        <hr style="margin:16px 0 15px 0" />
+    </div>
+
+    <!-- -------------- This is shows when one apprenticeship has been added ---------- -->
+                <div style="" class="rj-has-apprenticeships" id="apprenticeships">
+
+
+       <hr style="margin:0 0 20px 0" />
+        <div class="commit-bar">
+              <form class="" style="display:inline-block; float:left;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
+                    <div style="display:inline-block;"><input class="button" style="display:inline; " type="submit"  id="send-to-employer"  value="Save and continue"></div>
+              </form>
+
+               <form class="" style="display:inline-block;" action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/edit-cohort">
+                <input type="hidden" name="source" value="provider" />
+                <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px; " class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Edit cohort "></div>
+            </form>
+            <div style="margin-top:10px; float: right"><a href="/{% include "includes/sprint-link.html" %}/contracts/confirmation/payment-plans">View the payment schedule</a></div>
+            <div style="clear:both"></div>
+         
+        </div>
+
+        <hr style="margin:16px 0 15px 0" />
+         <div style="clear:both"></div>
+
+                <h2 class ="heading-medium"  style="margin-bottom:5px"  id="apprenticeReplaceMe"></h2>
+                <p style="margin:0">Level: 4</p>
+                <p style="margin:0 0 15px 0">Training code: 3246</p>
+                <table class="" id="">
+                  <thead>
+                      <tr>
+                        <th scope="col" class=""  >Name</th>
+                        <!--th scope="col" class="">Family<br />name</th-->
+                        <th id="ULNTable" scope="col" class="">ULN</th>
+                        <th id="" scope="col" class="">Date of birth</th>
+                        <th scope="col" class="">Training dates</th>
+                        <!--th scope="col" class="">Endpoint Assessor</th-->
+                         <th scope="col" class="">Cost</th>
+                        <th scope="col" class=""></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <!--div id="addApprenticesEmptyState" class="emptyState">
+                <div class="emptyStateAlert">
+                  <div class="emptyStateCopy">
+                    <p>You haven't added any apprentices yet. Use the options on this page to add apprentices.</p>
+
+                  </div>
+                </div>
+            </div-->
+
+            <div id="bottomToolBarLotsofApprentices">
+              <div style="margin-top:50px"></div>
+        <hr style="margin:0 0 18px 0" />
+        <div class="commit-bar">
+              <form class="" style="display:inline-block; float:left;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
+                    <div style="display:inline-block;"><input class="button" style="display:inline; " type="submit"  id="send-to-employer"  value="Save and continue"></div>
+              </form>
+               <form class="" style="display:inline-block;" action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/bulk-or-single">
+                    <input type="hidden" name="source" value="provider" />
+                    <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px; " class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Edit cohort"></div>
+            </form>
+
+        </div>
+        <hr style="margin:20px 0 15px 0" />
+      </div>
+
+</main>
+{% endblock %}
+
