@@ -267,11 +267,19 @@ showAlerts();
 
           <div style="margin-top: 35px"></div>
 
-            <div class="change-history-content" style="border-left: 4px solid #BFC1C3; height: 510px; width: 100%;">
+        <div id="tabs-container">
+                <ul class="tabs-menu" style="margin-bottom: 35px">
+                  <li class="current"><a href="#tab-1">Activity</a></li>
+                  <li><a href="#tab-2">To Do</a></li>
+                </ul>
+          <div class="tab">
+            <div id="tab-1" class="tab-content">
 
-              <h2 class="heading-medium" style="margin-top: 0; margin-left: 20px">Change history</h2>
+              <div class="change-history-content" style="border-left: 4px solid #BFC1C3; height: 510px; width: 100%;">
+
+              <!--h2 class="heading-medium" style="margin-top: 0; margin-left: 20px">Change history</h2-->
                 
-                <h2 class="heading-small" style="margin-left: 20px">2 hours ago</h2>
+                <h2 class="heading-small" style="clear: left; margin-left: 20px">2 hours ago</h2>
                   <ul style="list-style-type: disc;">
                     <li class="font-xsmall" style="margin-left: 40px"><span style="font-weight: 700">Tom Smith</span> approved a change in <span style="font-weight: 700">cost</span> from <span style="font-weight: 700">£2,000</span> to <span style="font-weight: 700">£2,500</span> on 23 Mar 2017</li>
                   </ul>
@@ -293,6 +301,24 @@ showAlerts();
                   </ul>
 
             </div>
+
+            </div>
+          </div>
+
+        </div>
+
+            <script>
+              $(document).ready(function() {
+                  $(".tabs-menu a").click(function(event) {
+                      event.preventDefault();
+                      $(this).parent().addClass("current");
+                      $(this).parent().siblings().removeClass("current");
+                      var tab = $(this).attr("href");
+                      $(".tab-content").not(tab).css("display", "none");
+                      $(tab).fadeIn();
+                  });
+              });              
+            </script>
 
         </div>
 

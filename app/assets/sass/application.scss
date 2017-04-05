@@ -566,6 +566,28 @@ vertical-align: top;
 
 // end of character count
 
+// tabbed content
+
+.tabs-menu {
+    height: 30px;
+    margin-left: 20px;
+    float: left;
+    clear: both;
+}
+
+.tabs-menu li {
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    margin-right: 60px;
+    background-color: #ccc;
+    border-top: 1px solid #d4d4d1;
+    border-right: 1px solid #d4d4d1;
+    border-left: 1px solid #d4d4d1;
+}
+
+// end of tabbed content
+
 // Mobile tables
 
 @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
@@ -871,16 +893,6 @@ $warning-colour:$orange;
   position:relative;
 }
 
-.fullWidthBlueAlert {
-  border-color: $purple;
-  border-left: 8px solid #005EA5;
-  background-color: mix(white, $purple, 90%);
-  //width:100%;
-  height:170px;
-  padding: 20px 40px 0px 40px;
-  margin: 15px 0 30px 0;
-  position:relative;
-}
 
 .errorBoxRed {
   padding-top:18px;
@@ -915,7 +927,7 @@ $warning-colour:$orange;
 .fullWidthGreyAlert2:after {
     /*content: '';*/
     position: absolute;
-    left: 77%;
+    left: 76%;
     top: 170px;
     width: 0;
     height: 0;
@@ -928,6 +940,21 @@ $warning-colour:$orange;
 }
 
 .fullWidthGreyAlert3:after {
+    /*content: '';*/
+    position: absolute;
+    left: 60%;
+    top: 170px;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 25px solid   mix(white, $purple, 90%);
+
+
+    clear: both;
+}
+
+.fullWidthBlueAlert:after {
     /*content: '';*/
     position: absolute;
     left: 60%;
