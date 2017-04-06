@@ -103,7 +103,7 @@ showAlerts();
 
   <div class="grid-row">
            <div class="column-two-thirds">
-              <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}Harvey Dent</h1>
+              <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}Bill O'Neil</h1>
 
 
               <div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="changesPendingPanel">
@@ -113,9 +113,9 @@ showAlerts();
             </div>
 
             <div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="dataLockPanel">
-                <h2  class="heading-medium">ILR data mismatch</h2>
-              <p>This apprentice's details are different in your organisation's ILR submission. This may result in a payment failure.</p>
-              <a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/data-lock-triage-restart-apprenticeship">View details</a>
+                <h2  class="heading-medium">ILR changes pending</h2>
+              <p>There is an ILR data mismatch, you stated that you will deal with this by altering the ILR.</p>
+              <a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/provider-payment-failure/ILR-changes-pending-reverse">View details</a>
             </div>
 
                 <div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="ilrChangesPanel">
@@ -190,7 +190,7 @@ showAlerts();
                   <tbody>
                     <tr>
                       <td class="apprenticeRecordTitle" style="width:250px">Name</td>
-                      <td class="" style="">Harvey Dent</td>
+                      <td class="" style="">Bill O'Neil</td>
                       <!--td>
                           <span id="changePending" class="statusToDo" style="width:200px">Pending</span>
                       </td-->

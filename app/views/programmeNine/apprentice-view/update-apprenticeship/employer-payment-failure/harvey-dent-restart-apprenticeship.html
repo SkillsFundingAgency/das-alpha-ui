@@ -7,7 +7,7 @@
 {% block content %}
 
 <script>
-        var employerOrNot = "no" // this is the providers page so setting this.
+        var employerOrNot = "yes" // this is the employers page so fixing this.
         var changeStatus =JSON.parse(localStorage.getItem('commitments.userChangeStatus'));
                    //paused is set when the paused journey is triggered.
 
@@ -30,14 +30,14 @@ var showAlerts = function() {
                   localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
                   $(pausedAlertMessage).removeClass("rj-dont-display");
               break;
-              case  (changeStatus == "ilrChangesPending"):
-                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
-                  $(ilrChangesPanel).removeClass("rj-dont-display");
-                  $(ilrAlertMessage).removeClass("rj-dont-display");
-              break;
+          //    case  (changeStatus == "ilrChangesPending"):
+           //       localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+            //      $(ilrChangesPanel).removeClass("rj-dont-display");
+            //      $(ilrAlertMessage).removeClass("rj-dont-display");
+            //  break;
 
         default:
-         $(dataLockPanel).removeClass("rj-dont-display");
+         $(changesPendingPanel).removeClass("rj-dont-display");
              console.log('nothings changed on the apprentice record')
           break;
         }
@@ -68,10 +68,9 @@ showAlerts();
 </script>
 
 <style>
-
- #navigation-primary, #kill-me {
-  display:none;
-}
+    .apprentice-nav a  {
+    {% include "includes/nav-on-state-css.html" %}
+  }
 </style>
 
 
@@ -82,7 +81,7 @@ showAlerts();
 
   <div class="breadcrumbs back-breadcrumb">
     <ol role="breadcrumbs">
-          <a href="./manage-list-provider" class="link-back">Back to list of apprentices</a>
+          <a href="/{% include "includes/sprint-link.html" %}/apprentice-view/" class="link-back">Back to list of apprentices</a>
     </ol>
   </div>
 
@@ -95,7 +94,7 @@ showAlerts();
     </div>
     <div style= "" id="changedAlertMessage" class="success-summary rj-dont-display ">
       <!--h3 class="heading-medium">Status changed</h3-->
-    <p>Changes sent to employer for approval </p>
+    <p>Change instructions sent to employer </p>
     </div>
        <div style= "" id="ilrAlertMessage" class="success-summary rj-dont-display ">
       <h3 class="heading-medium">Status changed</h3>
@@ -107,22 +106,24 @@ showAlerts();
 
 
               <div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="changesPendingPanel">
-                <h2  class="heading-medium">Changes Pending</h2>
-              <p>There are changes to this apprentice's details that are waiting for approval by the employer.</p>
-              <a href="./update-apprenticeship/data-lock-triage">View changes</a>
+                <h2  class="heading-medium">Changes for review</h2>
+              <p>There are changes to this apprentice's details that you need to review. Until you've reviewed the changes, you'll only be able to edit the apprentice's status.</p>
+              <a href="./employer-change-must-start-and-stop">Review changes</a>
             </div>
 
-            <div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="dataLockPanel">
+            <!--div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="dataLockPanel">
                 <h2  class="heading-medium">ILR data mismatch</h2>
               <p>This apprentice's details are different in your organisation's ILR submission. This may result in a payment failure.</p>
               <a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/data-lock-triage-restart-apprenticeship">View details</a>
-            </div>
+            </div-->
 
-                <div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="ilrChangesPanel">
+                <!--div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="ilrChangesPanel">
                 <h2  class="heading-medium">ILR changes pending</h2>
               <p>Remember to update and re-submit your ILR records.</p>
               <a href="./update-apprenticeship/ILR-changes-pending">View details</a>
-            </div>
+            </div-->
+
+
 
                 <table class="table-19-font" style="margin:0"> 
                   <thead>
@@ -138,7 +139,7 @@ showAlerts();
                     <tr>
                       <td class="apprenticeRecordTitle" >Status</td>
                       <td class="">Live</td>
-                      <td><p style="text-align:right; margin:0"><!--a  href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship">Edit status</a--></p></td>
+                      <td><p style="text-align:right; margin:0"><a  href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship">Edit status</a></p></td>
                     </tr>
 
                       </tbody>
