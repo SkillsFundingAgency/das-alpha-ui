@@ -72,20 +72,19 @@ var whereNow = function() {
                   <input class="form-control" id="apprenticeFamilyName" type="text" value="Edwards">
                 </div>
         </fieldset>
-         <fieldset>
-      <hr style=""/>
-            <legend class="visuallyhidden">ULN</legend>
-            <div class="form-group">
-            <label class="form-label-bold" for="ULN">Unique learner number
-           <!--span class="form-hint">This field is usually completed by training providers</span-->
-           </label>
-              <input class="form-control " id="ULN" type="number" value="0123456789">
-      </div>
-    </fieldset>
-  <hr style="margin-top:0px"/>
 
-    <div class="form-group">
-              <fieldset>
+        <div style="margin-top:30px"></div>
+
+        <hr style="margin-top:0px"/>
+         
+            <div class="form-group">
+                <label class="form-label-bold" for="ULN">Unique learner number</label>
+                <p>0123456789</p>
+              <hr style="margin-top:0px"/>
+            </div>
+
+
+          <fieldset>
                 <legend>
                   <span class="form-label-bold">
                     Date of birth
@@ -106,33 +105,23 @@ var whereNow = function() {
                     <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016" value="1997">
                   </div>
                 </div>
-         
 
-            </div>
-     
+          </fieldset>
 
-   
-              <div id="searchTraining">
-                <form id="checkTrainingForm" action="add-an-apprenticeship/training-list">
-                    <input id="checkTrainingSource" name="source" type="hidden" value="employer" />
-                    <fieldset>
-                             <hr style="margin-top:0px"/>
-                      <legend class="visuallyhidden">Enter the name of the framework or standard.</legend>
-                        <div class="form-group" style="margin-bottom:15px">
-                            <label class="form-label-bold" for="search">Apprenticeship training course
-                        <span class="form-hint">Search for the training by course name or code</span>
-                          </label>
-                            <input class="form-control" style="width:100%" id="search-for-training" type="text" value="Level 2: Aeronautical engineering">
-                        </div>
-                          <!--input class="button button-grey-secondary" id="search-provider" type="submit" value="Find course"-->
-                      </fieldset>
-                </form>
-            </div>
+        <div style="margin-top:30px"></div>
 
-            <!--div id="displayTraining" style="display: none;clear: both;">
-                <label class="form-label-bold" for="apprenticeCost">Apprenticeship training course</label>
+        <hr style="margin-top:0px"/>
 
-                <div class=" " style="background-color:#fff; border: 0; padding: 18px 0px 15px 0px;" >
+          <div id="displayTraining">
+              <label class="form-label-bold" for="apprenticeCost">Apprenticeship training course</label>
+              <p>Level 2: Aeronautical engineering</p>
+          </div>
+
+        <div style="margin-top:30px"></div>
+
+        <hr style="margin-top:0px"/>
+
+                <!--div class=" " style="background-color:#fff; border: 0; padding: 18px 0px 15px 0px;" >
                     <span style="">Mechatronics technician</span>
                     <span class="">
                       <div><p style="display:inline-block; margin:0;">Training code:&nbsp</p ><p style="display:inline; margin:0;">9267</p></div>
@@ -143,9 +132,18 @@ var whereNow = function() {
                  <p class="looks-like-a-link-underline">Change course</p>
             </div-->
 
-                <hr style=""/>
+          <div id="displayTraining">
+              <label class="form-label-bold" for="apprenticeCost">Planned training start date</label>
+              <p>07 2017</p>
+          </div>
 
-            <div class="form-group">
+        <div style="margin-top:30px"></div>
+
+        <hr style="margin-top:0px"/>
+
+
+
+            <!--div class="form-group">
             <fieldset>
               <legend>
                 <span class="form-label-bold">Planned training start date</span>
@@ -163,9 +161,18 @@ var whereNow = function() {
                 </div>
               </div>
             </fieldset>
-      </div>
+      </div-->
 
-        <div class="form-group">
+          <div id="displayTraining">
+              <label class="form-label-bold" for="apprenticeCost">Planned training finish date</label>
+              <p>09 2019</p>
+          </div>
+
+        <!--div style="margin-top:30px"></div-->
+
+        <!--hr style="margin-top:0px"/-->
+
+        <!--div class="form-group">
             <fieldset>
               <legend>
                 <span class="form-label-bold" style="">Planned training finish date</span>
@@ -184,19 +191,34 @@ var whereNow = function() {
               </div>
             </fieldset>
 
-      </div>
+      </div-->
+
+        <!--div id="displayTraining">
+                <label class="form-label-bold" for="apprenticeCost">Total agreed training cost</label>
+                <p>£6,555</p>
+            </div>
+
+          <div style="margin-top:0px"></div>
+
+          <hr style="margin-top:0px"/-->
 
         <fieldset>
            <hr style="margin-top:0px"/>
             <legend class="visuallyhidden">Cost per apprenticeship</legend>
-            <div class="form-group">
+          <div class="form-group">
             <label class="form-label-bold" for="apprenticeCost">Total agreed training cost
            </label>
                 <span class="form-hint">For example, for £1,500 enter 1500</span>
               <span class="rj-currency-symbol">£</span>
               <input class="form-control rj-currency-input" id="apprenticeCost" type="text" value="6,555" style="max-width:6em">
-      </div>
+          </div>
       </fieldset>
+
+      <div style="margin-top:0px">
+
+        <hr style="margin-top:0px"/>
+
+      </div>
 
       <fieldset>
         <hr style="margin-top:0px"/>
