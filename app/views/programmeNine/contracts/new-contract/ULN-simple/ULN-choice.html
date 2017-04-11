@@ -53,21 +53,21 @@ var whereNow = function() {
            <div class="column-two-thirds">
   <h1 class="heading-xlarge" >Bulk upload unique learner numbers (ULNs)</h1>
 
-  <p class="lede">Add a ULN to each apprentice in this cohort by downloading and adding details to a csv file, and re-uploading it.</p>
+  <p class="lede">Add a ULN to each apprentice in this cohort by uploading a csv file of first name, last name, date of birth and ULN.</p>
 
             <form action="individual-figures">
                 <fieldset>
                   <!--h2 class="heading-medium">Choose</h2-->
                   <legend class="visuallyhidden">Have you dowloaded your cohort list yet?</legend>
                   <div class="form-group">
-                     <label class="form-label-bold" for="">Have you already downloaded a CSV file of apprentices?</label>
+                     <label class="form-label-bold" for="">Do you want to download a template for this cohort?</label>
                   <label class="block-label" for="radio1">
                     <input id="radio1" type="radio" name="radio-group" value="download">
-                    No, download it now
+                    Yes, download the template
                   </label>
                   <label class="block-label" for="radio2">
                     <input id="radio2" type="radio" name="radio-group" value="upload">
-                    Yes, I want to re-upload it with ULNs
+                    No, I already have the file
                   </label>
                   </div>
                 </fieldset>
@@ -75,8 +75,7 @@ var whereNow = function() {
               </form>
 
     <div style="margin-top:50px"></div>
-        <div><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/ULN-cut-paste">alternate version 1</a></div>
-         <div><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/ULN-simple/ULN-choice">alternate version 2</a></div>
+
     <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
 <!-- {% include "includes/start-tabs.html" %} -->
 
