@@ -86,14 +86,27 @@ function whereNow() {
 
                  <ul class="list list-bullet">
                       <li>change the apprentice's status to 'stopped'</li>
-                      <li>create a new record for the apprentice, using the updated training course details</li>
+                      <li>add the apprentice to a new cohort, using the updated details</li>
                   </ul>
+
+                  <div class="panel panel-border-wide">
+  <p>
+    The apprentice's new training start date must be at least the day after the stop date of their current course.
+  </p>
+</div>
+
+
               
-         <div style="margin-top:50px"></div>
-          <!--input class="button" id="saveAndContinue" onclick="whereNow()" value="Save and continue"-->
-          <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Continue to status change">
-              </form>
-              <p class="looks-like-a-link-underline" id="saveAndAdd" style="margin-top:20px; cursor: pointer; cursor: hand; ">Cancel and return</p>
+      
+
+
+            <div style="margin-top:35px" >
+                <form action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list">
+                    <div class="" style="display: table;">
+                          <!--div style="margin-top:20px; display:inline-block;display: table-cell; vertical-align: middle; "> <input class="button"  type="button" onclick="whereNow()" value="Continue to status change"></div-->
+                          <div style=""><a href="./harvey-dent-restart-apprenticeship" id="saveAndAdd" style="margin-top:20px; ;  ">Back to apprentice details</a></div>
+                </form>
+           <div style="clear:both"></div>
 
 
                 <!--table class="">
