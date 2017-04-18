@@ -17,10 +17,19 @@ var whereNow = function() {
         case status === 'addULN':
           window.location.href='./ULN-choice';
           break;
+          case status === 'one-at-time':
+          window.location.href='../provider-interface/add-apprenticeship?source=provider';
+          break;
+          case status === 'bulk-upload':
+          window.location.href='../provider-in-progress/employer-start-bulk-upload';
+          break;
+
+
         default:
           window.location.href='../provider-interface/cohort-deletion-are-you-sure';
     }
 };
+
  </script>
 
 <script>
@@ -87,19 +96,25 @@ changeStuff();
             <form action="individual-figures">
                 <fieldset>
                   <!--h2 class="heading-medium">Choose</h2-->
-                  <legend class="visuallyhidden">Edit the cohort</legend>
+                            <!--h2 class="heading-medium">Choose</h2-->
+                  <legend class="visuallyhidden">How do you want to add apprentices</legend>
                   <div class="form-group">
                   <label class="block-label" for="radio1">
-                    <input id="radio1" type="radio" name="radio-group" value="add-apprentices">
-                    Add more apprentices
+                    <input id="radio1" type="radio" name="radio-group" value="one-at-time">
+                    Add one apprentice at a time
                   </label>
+                  <label class="block-label" for="radio2">
+                    <input id="radio2" type="radio" name="radio-group" value="bulk-upload">
+                    Add several apprentices at the same time
+                  </label>
+
                   <label class="block-label rj-dont-display" id="addULN" for="radio3">
                     <input id="radio3"  type="radio" name="radio-group" value="addULN">
                     Add unique learner numbers (ULNs) to apprentices
                   </label>
 
-                  <label class="block-label" for="radio2">
-                    <input id="radio2" type="radio" name="radio-group" value="delete-cohort">
+                  <label class="block-label" for="radio4">
+                    <input id="radio4" type="radio" name="radio-group" value="delete-cohort">
                     Delete the cohort
                   </label>
                   </div>
