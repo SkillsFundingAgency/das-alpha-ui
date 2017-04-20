@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  /*styling the upload button */
+#html_btn {
+ display:none;
+}
+</style>
+
+<script>
+
+
+var uploadAlert = function() {
+      $( "#upload-alert" ).removeClass( "rj-dont-display" );
+};
+
+</script>
+
+<script>
+$('.custom-file-upload').bind("click",function () {
+        $('#html_btn').click();
+       // $(anotherButton).addClass("rj-dont-display");
+       // $(bulkUploadFinish).removeClass("rj-dont-display");
+       // $(fakeButton).removeClass("rj-dont-display");
+       // $(anotherfakeButton).removeClass("rj-dont-display");
+ 
+        $( "#upload-alert" ).removeClass( "rj-dont-display" );
+        $( "#upload-button-form" ).addClass( "rj-dont-display" );
+         $( "#bulk-upload-finish" ).removeClass( "rj-dont-display" );
+    });
+
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<div class="grid-row">
+
+         
+  <h1 class="heading-xlarge" >Exisitng uploads</h1>
+
+
+   <p>Please choose a bulk upload to overwrite</p>
+
+    <table class="" style="margin-top:35px"> 
+                    <thead>
+                       <tr>
+                        <th style="">Course</td>
+                          <th style="">Duration</td>
+                        <th style="">File name</td>
+                        <th style=""></td>
+                      </tr>
+                    </thead>
+                      <tbody>
+                       <tr>
+                        <td style="">Mechatronics engineer, Level 4</td>
+                        <td style="">15 Months</td>
+                        <td style="">acme-apprentices-final.xlsx</td>
+                        <td><a href="choose-training-employer">Update</a></td>
+                      </tr>
+                    <tr>
+                        <td style="">Mechatronics engineer, Level 3</td>
+                        <td style="">18 Months</td>
+                        <td style="">acme-apprentices-final2.xlsx</td>
+                        <td><a href="choose-training-employer">Update</a></td>
+                      </tr>
+                    </tbody>
+        </table>
+
+   <!--div style="margin-top:35px"></div>
+    <div class="">
+        <a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/choose-training-employer" class="button">Add more apprentices</a>
+    </div-->
+
+
+        
+
+</div>
+</main>
+
+
+
+{% endblock %}

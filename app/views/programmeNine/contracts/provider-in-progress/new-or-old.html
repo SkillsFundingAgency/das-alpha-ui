@@ -18,13 +18,13 @@
 function whereNow() {
    var status = $('input[name=radio-group]:checked').val();
        switch (true) {
-          case  (status == 'addMore'):
+          case  (status == 'overwrite'):
 
-                 window.location.href='choose-training-employer';
+                 window.location.href='existing-uploads-review';
 
                 break;
-        case  (status == 'return'):
-             window.location.href='provider-list';
+        case  (status == 'addmore'):
+             window.location.href='choose-training-employer';
             break;
 
         default:
@@ -55,22 +55,22 @@ function whereNow() {
 
   <div class="grid-row">
            <div class="column-two-thirds">
-              <h1 class="heading-xlarge" >Apprentices added</h1>
+              <h1 class="heading-xlarge" >Add or change</h1>
             <div>
               
               <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
               <form action="friendly-name">
                   <legend class="visuallyhidden">do a bulk upload again</legend>
                     <div class="form-group">
-                      <label class="form-label-bold" for="">Would you like bulk upload more apprentices?</label>
+                      <label class="form-label-bold" for="">Do you ant to overwite a past bulk upload?</label>
                     <label class="block-label" for="pause">
-                      <input id="pause" type="radio" name="radio-group" value="addMore">
-                     Yes, bulk upload apprentices to another training course
+                      <input id="pause" type="radio" name="radio-group" value="overwrite">
+                     Yes, I want to overwrite with new information
                      </label>
 
                     <label class="block-label" for="stop">
-                      <input id="stop" type="radio" name="radio-group" value="return">
-                    No, review cohort
+                      <input id="stop" type="radio" name="radio-group" value="addmore">
+                    No, I want to add new apprentices
                      </label>
 
                   </div>
