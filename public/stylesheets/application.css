@@ -2088,6 +2088,18 @@ input[type=number] {
   max-width: 635px;
 }
 
+.attachment-thumb {
+  margin-bottom: 20px;
+}
+
+.attachment-thumb img {
+  display: block;
+  width: 80px;
+  height: 115px;
+  background: #fff;
+  outline: 5px solid rgba(11, 12, 12, 0.1);
+}
+
 .clearfix:after {
   content: ".";
   display: block;
