@@ -1,0 +1,241 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<script>
+
+function whereNow() {
+   var status = $('input[name=radio-group]:checked').val();
+       switch (true) {
+          case  (status == 'bulk'):
+
+                 window.location.href='upload-choose-file-provider';
+
+                break;
+        case  (status == 'single'):
+             window.location.href='individual-bulk-upload';
+            break;
+
+        default:
+             console.log('gyahhhhhhhh, bork bork bork')
+            break;
+        }
+    }
+
+</script>
+
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<div class="grid-row">
+
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >How do you want to add?</h1>
+    <p class="lede">You can upload using a file or add in line</p>
+
+
+            <div>
+              <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
+              <form action="friendly-name">
+                  <legend class="visuallyhidden">do a bulk upload again</legend>
+                    <div class="form-group">
+                      <label class="form-label-bold" for="">How do you want to add apprentices?</label>
+                    <label class="block-label" for="pause">
+                      <input id="pause" type="radio" name="radio-group" value="bulk">
+                     Bulk upload from a file
+                     </label>
+
+                    <label class="block-label" for="stop">
+                      <input id="stop" type="radio" name="radio-group" value="single">
+                   Add them in another way
+                     </label>
+
+                  </div>
+                </fieldset>
+                                  <div style="margin-top:50px"></div>
+          <!--input class="button" id="saveAndContinue" onclick="whereNow()" value="Save and continue"-->
+          <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Continue">
+              </form>
+            </div>
+
+
+    <div style="margin-top:50px"></div>
+    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
+<!-- {% include "includes/start-tabs.html" %} -->
+
+            </div>
+
+             <div class="column-one-third">
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="../login">Sign in</a>
+                          </li>
+
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+</div>
+</main>
+
+<script>
+
+// Add the stuff confirmation into the page when clicked to simulate resending the email
+/*var btn = document.getElementById('bulk-upload-finish');
+EventUtil.addHandler(btn, 'click', function(){
+        var isUploaded = 'yes';
+        localStorage.setItem("apprenticeship-added.bulk-upload", JSON.stringify(isUploaded));
+        window.location.href='./provider-list';
+ });*/
+
+$('#bulk-upload-finish').click(function() {
+    window.das.commitments.addApprenticeships([
+        {
+            training: {
+                code: 1,
+                name: "Mechatronics Engineer"
+            },
+            start: {
+                month: 11,
+                year: 2018
+            },
+            finish:
+            {
+                month: 10,
+                year: 2020
+            },
+            cost: 1500,
+            apprentice: {
+                first: "David",
+                last: "Edwards",
+                uln: 9021001209
+            }
+        },
+        {
+            training: {
+                code: 1,
+                name: "Mechatronics Engineer"
+            },
+            start: {
+                month: 11,
+                year: 2018
+            },
+            finish:
+            {
+                month: 10,
+                year: 2020
+            },
+            cost: 1500,
+            apprentice: {
+                first: "Rob",
+                last: "Andrews",
+                uln: 8780601583
+            }
+        },
+        {
+            training: {
+                code: 1,
+                name: "Mechatronics Engineer"
+            },
+            start: {
+                month: 11,
+                year: 2018
+            },
+            finish:
+            {
+                month: 10,
+                year: 2020
+            },
+            cost: 1500,
+            apprentice: {
+                first: "Mellisa",
+                last: "Shaw",
+                uln: 6421001981
+            }
+        },
+        {
+            training: {
+                code: 1,
+                name: "Mechatronics Engineer"
+            },
+            start: {
+                month: 11,
+                year: 2018
+            },
+            finish:
+            {
+                month: 10,
+                year: 2020
+            },
+            cost: 1500,
+            apprentice: {
+                first: "Brendan",
+                last: "Hamazaki",
+                uln: 67210012321
+            }
+        },
+        {
+            training: {
+                code: 1,
+                name: "Mechatronics Engineer"
+            },
+            start: {
+                month: 11,
+                year: 2018
+            },
+            finish:
+            {
+                month: 10,
+                year: 2020
+            },
+            cost: 1500,
+            apprentice: {
+                first: "Gary",
+                last: "Barton",
+                uln: 21210012876
+            }
+        }
+    ]);
+    window.location.href = 'add-more-cohorts-bulk-upload';
+});
+
+</script>
+
+
+
+
+
+{% endblock %}
