@@ -72,8 +72,7 @@ function whereNow() {
 <div class="grid-row">
 
            <div class="column-two-thirds">
-  <h1 class="heading-xlarge" >How do you want to add?</h1>
-    <p class="lede">You can upload using a file or add in line</p>
+  <h1 class="heading-xlarge" >Choose how to add apprentices</h1>
 
 
             <div>
@@ -81,20 +80,19 @@ function whereNow() {
               <form action="friendly-name">
                   <legend class="visuallyhidden">do a bulk upload again</legend>
                     <div class="form-group">
-                      <label class="form-label-bold" for="">How do you want to add apprentices?</label>
+                       <fieldset class="inline">
+                      <label class="form-label-bold" for="">Do you want to use a file to add apprentice details?</label>
                     <label class="block-label" for="pause">
                       <input id="pause" type="radio" name="radio-group" value="bulk">
-                     Bulk upload from a file
+                     Yes
                      </label>
 
                     <label class="block-label" for="stop">
                       <input id="stop" type="radio" name="radio-group" value="single">
-                   Add them in another way
+                   No
                      </label>
-
                   </div>
                 </fieldset>
-                                  <div style="margin-top:50px"></div>
           <!--input class="button" id="saveAndContinue" onclick="whereNow()" value="Save and continue"-->
           <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Continue">
               </form>

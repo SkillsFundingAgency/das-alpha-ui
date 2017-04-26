@@ -24,7 +24,6 @@ function whereNow() {
 
                 break;
         case  (status == 'addmore'):
-            
              window.location.href='existing-uploads-review';
             break;
 
@@ -56,22 +55,22 @@ function whereNow() {
 
   <div class="grid-row">
            <div class="column-two-thirds">
-              <h1 class="heading-xlarge" >Add or edit apprentice details</h1>
+              <h1 class="heading-xlarge" >Add or replace apprentice details</h1>
 
             <div>
               <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
               <form action="friendly-name">
                   <legend class="visuallyhidden">do a bulk upload again</legend>
                     <div class="form-group">
-                      <label class="form-label-bold" for="">Do you want to add or edit apprentices?</label>
+                      <label class="form-label-bold" for="">What do you want to do?</label>
                     <label class="block-label" for="pause">
                       <input id="pause" type="radio" name="radio-group" value="overwrite">
-                     Add several apprentices to the same course
+                     Add new apprentices
                      </label>
 
                     <label class="block-label" for="stop">
                       <input id="stop" type="radio" name="radio-group" value="addmore">
-                    Edit all apprentices on a training course
+                    Replace all apprentices on an existing course
                      </label>
 
                   </div>
@@ -89,7 +88,6 @@ function whereNow() {
                         <h2 class="heading-medium" style="margin-top:10px">Provider management</h2>
                         <nav role="navigation">
                       <ul class="robSideNav">
-                        
                           <li>
                             <a href="/{% include "includes/sprint-link.html" %}/payment/paymentplan">Add a new payment plan (OUT?)</a>
                           </li>
