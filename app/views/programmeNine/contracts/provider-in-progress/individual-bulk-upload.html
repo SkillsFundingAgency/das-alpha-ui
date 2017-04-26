@@ -109,7 +109,7 @@
       var inputCounter = 1;
 
       $(document).find('.list-item-wrapper-vertical .grid-row').each(function () {
-        $(this).find('h2').text('Item ' + listCounter);
+        $(this).find('h2').text('Apprentice ' + listCounter);
 
         if ($(this).find('.remove-list-item-vertical').length === 0) {
           $(this).find('.column-one-third:last').append('<a id="remove-item-vertical-' + listCounter + '" class="remove-list-item-vertical" href="#">Remove this</a>');
@@ -210,26 +210,21 @@
         </div>
 
 <div style="margin-top:35px"></div>
-
     <div class="list-item-wrapper-vertical">
       <div class="grid-row">
         <div class="column-two-thirds">
           <div class="form-group-compound">
             <h2 class="heading-medium">Apprentice 1</h2>
-
             <div class="form-group">
               <label class="form-label-bold" for="field-1">
                 First name
               </label>
-
               <input type="text" class="form-control" id="field-1" name="field-1">
             </div>
-
             <div class="form-group">
               <label class="form-label-bold" for="field-2">
                 Last name
               </label>
-
               <input type="text" class="form-control" id="field-2" name="field-2">
             </div>
 
@@ -245,19 +240,19 @@
                 <div class="form-date">
                   <div class="form-group form-group-day">
                     <label class="form-label" for="dob-day">Day</label>
-                    <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint" value="28">
+                    <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint" value="">
                   </div>
                   <div class="form-group form-group-month">
                     <label class="form-label" for="dob-month">Month</label>
-                    <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12" value="02">
+                    <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12" value="">
                   </div>
                   <div class="form-group form-group-year">
                     <label class="form-label" for="dob-year">Year</label>
-                    <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016" value="1997">
+                    <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016" value="">
                   </div>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="margin-bottom:0">
                 <hr style="margin-top:0px"/>
               <label class="form-label-bold" for="field-4">
                 Unique Learner Number
@@ -265,8 +260,6 @@
 
               <input type="text" class="form-control" id="field-4" name="field-4">
             </div>
-
-
           </div>
         </div>
 
@@ -279,16 +272,18 @@
       <div class="grid-row">
         <div class="column-two-thirds">
           <div class="form-group">
-            <button id="add-button" class="button button-add-another-vertical">Add another</button>
+            <button id="add-button" class="button button-add-another-vertical">Add another apprentice</button>
+
           </div>
+
         </div>
       </div>
     </div>
-
+<hr style="margin-top:5px"/>
 
 <form style="margin-top:35px" action="">
     <!--input class="button" id="search-provider" type="submit" value="Upload file"-->
-     <input class="button " type="button" id="bulk-upload-finish"  value="Finish">
+     <input class="button " type="button" id="bulk-upload-finish"  value="Finish and return ">
 </form>
     <div style="margin-top:50px"></div>
     <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
