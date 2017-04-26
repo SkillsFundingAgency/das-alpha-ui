@@ -7,6 +7,8 @@
         var employerOrNot = JSON.parse(localStorage.getItem('commitments.isEmployer'));
         var deletedUser = JSON.parse(localStorage.getItem('commitments.deletedUserAlert'));
          var showULN = JSON.parse(localStorage.getItem('commitments.ULNupload'));
+         var bulkUploadType =  JSON.parse(localStorage.getItem('commitments.bulkUploadType'));
+
     </script>
     <script src="/public/javascripts/das/list-commitment-1.6.js"></script>
      <script src="/public/javascripts/das/jquery.highlight-5.js"></script>
@@ -51,12 +53,19 @@ else {
 
  };
 
- var showDeletedUserAlert = function() {
+ var showAlerts = function() {
    if (deletedUser=='yes') {
      localStorage.setItem("commitments.deletedUserAlert", JSON.stringify("nope"));
     $(deletedUserAlertMessage).removeClass("rj-dont-display");
    }
+
+    if (bulkUploadType!='nope') {
+     localStorage.setItem("commitments.bulkUploadType", JSON.stringify("nope"));
+    $(bulkUploadAlertMessage).removeClass("rj-dont-display");
+   }
  };
+
+
 
   var ULNupload = function() {
    if (showULN =='uploaded') {
@@ -67,7 +76,7 @@ else {
 
 changeStuff();
 changeUnknown();
-showDeletedUserAlert()
+showAlerts()
 ULNupload ()
 });
 
@@ -100,6 +109,10 @@ var goToDelete = function() {
 
        <div style= "" id="deletedUserAlertMessage" class="success-summary rj-dont-display"> 
             <p>   Apprentice David Jenkins was deleted</p>
+        </div>
+
+       <div style= "" id="bulkUploadAlertMessage" class="success-summary rj-dont-display"> 
+            <p>   Thing was done</p>
         </div>
 
        <!--div style= "" id="ULNisDONE" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>

@@ -7,6 +7,15 @@
 {% block content %}
 
 
+
+<script>
+       // var employerOrNot = "no" // this is the providers page so setting this.
+     //   var changeStatus =JSON.parse(localStorage.getItem('commitments.userChangeStatus'));
+      //  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                   //paused is set when the paused journey is triggered.
+
+</script>
+
 <style>
   .people-nav a {
     {% include "includes/nav-on-state-css.html" %}
@@ -21,11 +30,14 @@ function whereNow() {
        switch (true) {
           case  (status == 'bulk'):
 
-                 window.location.href='upload-choose-file-provider';
+                 window.location.href='employer-start-bulk-upload';
+                 localStorage.setItem("commitments.bulkUploadType", JSON.stringify("file"));
 
                 break;
         case  (status == 'single'):
-             window.location.href='individual-bulk-upload';
+
+             window.location.href='choose-training-employer';
+            localStorage.setItem("commitments.bulkUploadType", JSON.stringify("inline"));
             break;
 
         default:

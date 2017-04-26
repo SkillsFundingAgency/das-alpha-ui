@@ -14,6 +14,26 @@
 </style>
 
 
+<script>
+
+function whereNow() {
+   var status = JSON.parse(localStorage.getItem('commitments.bulkUploadType'));
+       switch (true) {
+          case  (status == 'file'):
+                 window.location.href='upload-choose-file-provider';
+                break;
+        case  (status == 'inline'):
+             window.location.href='add-price';
+            break
+        default:
+             console.log('gyahhhhhhhh, bork bork bork')
+            break;
+        }
+    }
+
+</script>
+
+
 <main id="content" role="main">
 {% include "includes/phase_banner_alpha.html" %}
 {% include "includes/secondary-nav-provider.html" %}
@@ -56,11 +76,12 @@
 
     <div style="margin-top:20px"></div>
     <div class="">
-        <a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/upload-choose-file-provider" class="button ">Continue</a>
+        <!--a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/upload-choose-file-provider" class="button ">Continue</a-->
+       <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Continue">
     </div>
-    <div style="margin-top:50px">
+    <!--div style="margin-top:50px">
            <a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/add-price" >version 2</a>
-    </div>
+    </div-->
 
     <div style="margin-top:50px"></div>
             </div>
