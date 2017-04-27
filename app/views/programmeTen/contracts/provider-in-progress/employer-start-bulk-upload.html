@@ -12,6 +12,13 @@
   }
 </style>
 
+<script>
+$(document).ready(function() {
+  // Need this because some future pages use JS to  figure out which page to go to.
+   localStorage.setItem("commitments.bulkUploadType", JSON.stringify("file"));
+});
+</script>
+
 <main id="content" role="main">
 {% include "includes/phase_banner_beta.html" %}
 {% include "includes/secondary-nav-provider.html" %}
@@ -34,9 +41,10 @@
   <div style="margin-top:25px"></div>
 
              <h2 class="heading-medium">Before you start</h2>
+             <p>You must:</p>
       <ul class="list list-bullet">
-        <li>You must know the name of the apprenticeship training course each apprentice is taking</li>
-        <li>You should have prepared a file with all the relevant apprentice details - the template can help with this</li>
+        <li>know the name of the apprenticeship training course each apprentice is taking</li>
+        <li>have seperate files of apprentices for each individual training course and level</li>
       </ul>
 
     <div style="margin-top:35px"></div>

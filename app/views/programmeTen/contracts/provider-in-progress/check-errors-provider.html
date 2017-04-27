@@ -9,13 +9,10 @@
      <script src="/public/javascripts/das/jquery.highlight-5.js"></script>
 
 <style>
-  #navigation-primary {
-    display:none;
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
   }
-
-  .highlight { font-weight:700; }
 </style>
-
 
 
 <script>
@@ -85,8 +82,8 @@ changeUnknown();
                          <td class="" style="max-width:100px; word-wrap:break-word;" >8321052156</td>
                           <td  style="max-width:100px; word-wrap:break-word;">Mahershalalhashbaz de Orellana Plantagenet</td>
                            <td class="">10/10/1999</td>
-                           <td>The <span class="changeHighlightCopy">programme type</span> you've added isn't valid
-                               <br />The <span class="changeHighlightCopy">framework code</span> must not be more than 3 characters in length </td>
+                           <td>You must enter a <span class="changeHighlightCopy">training price</span>
+                             </td>
 
                       </tr>
                       <tr>
@@ -94,26 +91,18 @@ changeUnknown();
                          <td class="" style="max-width:100px; word-wrap:break-word;" >1221052101</td>
                         <td>Taylor Lucas</td>
                          <td class="">10/10/1999</td>
-                         <td>You must enter a <span class="changeHighlightCopy">pathway code</span> - you can add up to 3 characters
-                               <br />The <span class="changeHighlightCopy">standard code</span> must not be more than 5 characters in length</td>
+                         <td>You must enter a <span class="changeHighlightCopy">start date</span> </td>
 
                       </tr>
-                      <tr class="" >
-                         <td class="">15</td>
-                          <td class="" style="max-width:100px; word-wrap:break-word;">6621052119</td>
-                          <td class=" "><!--span class="errorCopyTable">Surname is missing</span-->Prahlad ---- </td>
-                          <td class="">10/10/1999</td>
-                          <td>You must enter a <span class="changeHighlightCopy">pathway code</span> - you can add up to 3 characters
-                               <br />The <span class="changeHighlightCopy">standard code</span> must not be more than 5 characters in length</td>
-                      </tr>
+
 
                       <tr class="">
                          <td class="">21</td>
                           <td  class=""><!-- span class="errorCopyTable">ULN is missing</span-->----</td>
                           <td class="">Melissa Shaw</td>
                            <td class="">10/13/1899</td>
-                            <td>The <span class="changeHighlightCopy">training price</span> must be entered<br />The <span class="changeHighlightCopy">end point assessment</span> price is not a valid value
-                              <br />The <span class="changeHighlightCopy">learning planned end date</span> must not be more than 10 years after the learning start date
+                            <td>You must enter a <span class="changeHighlightCopy">training price</span> <br />You must enter a <span class="changeHighlightCopy">start date</span> 
+                              <br />You must enter a  <span class="changeHighlightCopy">unique learner number</span> 
                             </td>
                       </tr>
                        <tr class="" >
@@ -121,8 +110,8 @@ changeUnknown();
                           <td class="" style="max-width:100px; word-wrap:break-word;">4321052192</td>
                           <td class=" "><!--span class="errorCopyTable">Surname is missing</span-->William ---- </td>
                           <td class="">06/11/2000</td>
-                          <td>You must enter a <span class="changeHighlightCopy">pathway code</span> - you can add up to 3 characters
-                               <br />The <span class="changeHighlightCopy">standard code</span> must not be more than 5 characters in length</td>
+                          <td>You must enter a <span class="changeHighlightCopy">last name</span> 
+                               </td>
                       </tr>
                     </tbody>
                   </table>
@@ -131,12 +120,18 @@ changeUnknown();
 
 
         <div style="margin-top:35px" >
-    <input class="button" type="button" id="bulk-upload-finish"  value="Back to bulk upload">
+          <!--
+    <input class="button" type="button" id="bulk-upload-finish"  value="Replace file">
 </div>
 <div style="margin-top:15px"><a href="./provider-list">Cancel</a></div>
     <div style="margin-top:50px"></div>
-    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
-<!-- {% include "includes/start-tabs.html" %} -->
+  -->
+
+   <div class="" style="display: table;">
+          <div style="margin-top:20px; display:inline-block;display: table-cell; vertical-align: middle; "><input class="button" type="button" id="bulk-upload-finish"  value="Back to file upload"> </div>
+          <div style="display:inline-block; display: table-cell; vertical-align: middle;"><a href="./provider-list"  style="margin-top:20px; margin-left:25px; cursor: pointer; cursor: hand; ">Cancel</a></div>
+          <div style="clear:both"></div>
+  </div>
 
             </div>
 

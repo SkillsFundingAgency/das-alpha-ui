@@ -34,7 +34,6 @@ $('.custom-file-upload').bind("click",function () {
        // $(bulkUploadFinish).removeClass("rj-dont-display");
        // $(fakeButton).removeClass("rj-dont-display");
        // $(anotherfakeButton).removeClass("rj-dont-display");
-    
         $( "#upload-alert" ).removeClass( "rj-dont-display" );
         $( "#upload-button-form" ).addClass( "rj-dont-display" );
          $( "#bulk-upload-finish" ).removeClass( "rj-dont-display" );
@@ -64,16 +63,15 @@ $('.custom-file-upload').bind("click",function () {
 <div class="grid-row">
 
            <div class="column-two-thirds">
-  <h1 class="heading-xlarge" >Bulk upload apprentices</h1>
+  <h1 class="heading-xlarge" >Choose bulk upload file</h1>
     <p>You can add details of multiple apprentices to your chosen training course using a Microsoft Excel, CSV or ODS file.</p>
-    <table class=""> 
+    <table class="">
                     <!--thead>
                       <tr>
                         <h2 class="heading-medium">Apprenticeship 1</h2>
                            <th scope="col"></th>
                           <th scope="col"></th>
                            <th scope="col"></th>
-
                       </tr>
                     </thead-->
                     <tbody>
@@ -93,14 +91,10 @@ $('.custom-file-upload').bind("click",function () {
                         <td><a href="choose-training-employer">Change</a></td>
                       </tr>
                         <tr class="rj-dont-display" id="upload-alert">
-                        <td style="width:191px">File to upload</td>
+                        <td style="width:191px">File</td>
                         <td style="font-weight:700; font-size:19px; width:337px">Acme-apprentices.xlsx</td>
- 
                         <td class="looks-like-a-link-underline">Change</td>
                       </tr>
-
-
-
                     </tbody>
                 </table>
 
@@ -108,23 +102,27 @@ $('.custom-file-upload').bind("click",function () {
 
 
   <form style="margin-top:35px" action="" id="upload-button-form">
-                <div class="custom-file-upload" id="anotherButton">Upload your file</div> 
+                <div class="custom-file-upload" id="anotherButton">Choose file</div> 
                 <br>
                 <input id="html_btn" type='file' /><br>
     </form>
 
-<div>
 
-
-</div>
-
-<form style="margin-top:35px" action="check-errors-provider">
+<form style="margin-top:35px" action="./provider-list">
     <!--input class="button" id="search-provider" type="submit" value="Upload file"-->
-     <input class="button rj-dont-display" type="button" id="bulk-upload-finish"  value="Continue">
+     <input class="button rj-dont-display" type="button" id="bulk-upload-finish"  value="Add and finish">
 </form>
-    <div style="margin-top:50px"></div>
+
     <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
 <!-- {% include "includes/start-tabs.html" %} -->
+
+<div>
+    <div style="margin-top:50px">
+           <a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/check-errors-provider" >error</a><br />
+            <a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/matched-apprentices-upload" >matches</a>
+    </div>
+
+</div>
 
             </div>
 
@@ -262,7 +260,7 @@ $('#bulk-upload-finish').click(function() {
             }
         }
     ]);
-    window.location.href = 'add-more-cohorts-bulk-upload';
+    window.location.href = './provider-list';
 });
 
 </script>
