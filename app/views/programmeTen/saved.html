@@ -1,0 +1,150 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/sprint2/balance">Breadcrumb here</a></li>
+    </ol>
+
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+              <h1 class="heading-large" style="margin:0px 0 50px 0">Standards and providers</h1>
+            <div> 
+             <h2 class="bold-medium">Saved standards and providers</h2>
+              <p>
+                  The following list of providers and standards have been saved by you. From here you can review your saved choices and send an expression of interest to the provider which will start the quote process.
+                </p>
+            </div>
+            
+                        <div class="column details" style="border-bottom: 1px solid #bfc1c3;padding: 15px 0;position: relative;">
+                            <div ><h2 class="heading-medium" style"margin: 0"><a target="_blank=" href="http://127.0.0.1/skillsFundingNonNode/sprint_6_4/proDetails.html?proId=304587">Ability professional training limited</a></h2></div>
+                             <div><h2 class="heading-small" style="display:inline-block; margin:0;">Standard:&nbsp</h2 ><p style="display:inline-block; margin:0;">Network Engineer</p></div>
+                            <div><h2 class="heading-small" style="display:inline-block; margin:0;">Distance:&nbsp</h2 ><p style="display:inline-block; margin:0;">Training can take place at your location</p></div>
+                            <div><h2 class="heading-small" style="display:inline-block; margin:0;">Website:&nbsp</h2><p style="display:inline-block; margin:0;"><a href="#">http://www.training.ac/</a></p></div>
+                            
+                                 <div><h2 class="heading-small" style="display:inline-block; margin:0;">Contact:&nbsp</h2 ><p style="display:inline-block; margin:0;">Miles Dyson</p></div>
+                                 <div><h2 class="heading-small" style="display:inline-block; margin:0;">Email:&nbsp</h2 ><p style="display:inline-block; margin:0;"><a href="#">miles.dyson@cyberdyne.com</a></p></div>
+                                  <div><h2 class="heading-small" style="display:inline-block; margin:0;">Telephone:&nbsp</h2 ><p style="display:inline-block; margin:0;">0207 333 5555</p></div>
+                              <form action="/sprint3/employerPortal/next">
+                                <input class="button" style="margin-top:30px" id="saveAndContinue" type="submit" value="Request a quote">
+                              </form>
+                           </div>
+          
+
+            <div style="margin-top:50px"></div>
+          </div>
+
+          <div class="column-one-third">
+                      <aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Account </h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="#">Which employers pay levy</a>
+                          </li>
+                          <li>
+                            <a href="#">How to view your levy account</a>
+                          </li>
+                          <li>
+                            <a href="/sprint3/employerPortal/upgrade/">Get access to the "DAS"</a>
+                          </li>
+                        </ul>
+                           </nav>
+                           <h2 class="heading-medium ">Providers</h2>
+                        <nav role="navigation">
+                           <ul class="robSideNav">
+                           <li>
+                            <a href="/sprint2/find">Find a standard & provider</a>
+                          </li>
+                          <li>
+                            <a href="/sprint2/pay"></a>
+                          </li>
+                      </ul>
+                    </nav>
+                    </aside>
+            </div>
+        </div>
+
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+$( document ).ready(function() {
+
+  // change the tabs themselves to active - should be in the above but isn't working because it's looking for a not li so I added this as a quick fix.
+
+  $("ul#tabs-nav li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs-nav li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#tabs-nav li.active").removeClass("active");
+            $("ul#tabs-nav li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+  $('ul.tabs-nav').each(function(){
+    // For each set of tabs, we want to keep track of
+    // which tab is active and its associated content
+    var $active, $content, $links = $(this).find('a');
+
+
+
+    // If the location.hash matches one of the links, use that as the active tab.
+    // If no match is found, use the first link as the initial active tab.
+    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+   // $active.addClass('active');
+   console.log($active)
+
+    $content = $($active[0].hash);
+
+    // Hide the remaining content
+    $links.not($active).each(function () {
+      $(this.hash).hide();
+    }); 
+
+    // Bind the click event handler
+    $(this).on('click', 'a', function(e){
+      // Make the old tab inactive.
+    //  $active.removeClass('active');
+      $content.hide();
+
+      // Update the variables with the new link and content
+    //  $active = $(this);
+      $content = $(this.hash);
+
+      // Make the tab active.
+     // $active.addClass('active');
+      $content.show();
+
+      // Prevent the anchor's default click action
+      e.preventDefault();
+    });
+  });
+
+
+</script>
+
+{% endblock %}
+

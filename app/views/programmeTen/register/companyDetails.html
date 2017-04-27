@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+//jQuery( document ).ready(function() {
+     //jQuery.validate(); 
+// });
+
+
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/">Breadcrumb here ></a></li>
+    </ol>
+
+  </div>
+
+   <h1 class="heading-xlarge" ><span class="heading-secondary" style="padding-top:0px">Question 2 of 4</span>Company details</h1>
+
+
+
+
+     
+      <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
+<form action="/sprint3/employerPortal/upgrade/govtCredentials" >
+  <fieldset>
+    <legend class="visuallyhidden">company details</legend>
+      <div class="form-group">
+           
+          <label class="form-label" for="full-name">Company name</label>
+          <span class="form-hint">The name of your company when initially created</span>
+
+        </label>
+          <input class="form-control" id="companyName" type="text">
+        </fieldset>
+         <fieldset>
+      <legend class="visuallyhidden">companies house number</legend>
+      </div>
+      <div class="form-group">
+          <label class="form-label" for="companies-house-number">Companies House number</label>
+          <span class="form-hint">The number used to register the company with Companies House</span>
+          <input class="form-control" id="companies-house-number" type="text">
+      </div>
+      <div class="form-group">
+          <label class="form-label" for="registered-office-address">Registered office address</label>
+          <span class="form-hint">The address used to register the company with Companies House</span>
+          <textarea class="form-control" id="registered-office-address" cols="30" rows="6"></textarea>
+      </div>
+        <legend class="visuallyhidden">Terms and conditions</legend>
+      <div class="form-group">
+      <label class="block-label" for="radio-1">
+        <input id="radio-1" type="checkbox" name="checkbox-group" value="agree-with-terms">
+        I agree with the terms and conditions
+      </label>
+    </fieldset>
+    <input class="button" id="saveAndContinue" type="submit" value="Save and continue">
+
+</form>
+</main>
+
+<script>
+
+//store details entered into the form in local storage
+var createButton = document.getElementById('createAccountButton');
+EventUtil.addHandler(createButton, 'click', function(){
+              // save the form info to local storage by first putting the data into an object
+              var userDetails = {
+                email: document.getElementById('email-address').value,
+                password: document.getElementById('password').value
+            };
+
+            //store the object in local storage using json stringify
+              localStorage.setItem("login", JSON.stringify(userDetails));
+
+            //store the users email address in a cookie to repeat back to them later. Remember that we have some of the data stored in an object in local storage as well -  so we'll use that again if we need it.
+            document.cookie =  "emailAddress="  + userDetails.email 
+            // shows the cookie in the console log to check it is working
+            console.log (document.cookie)
+
+        // not needed at the moment
+
+              //hide the login form
+              //$('#login').addClass('hidden');
+              //show the quiz
+           // $('#wrapper').removeClass('hidden')
+    });
+</script>
+
+{% endblock %}

@@ -1,0 +1,279 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<script>
+        var employerOrNot = JSON.parse(localStorage.getItem('commitments.isEmployer'));
+        var changeStatus =JSON.parse(localStorage.getItem('commitments.userChangeStatus'));
+                   //paused is set when the paused journey is triggered.
+
+    </script>
+
+
+<script>
+
+$(document).ready(function() {
+  var changeStuff = function() {
+  if (employerOrNot=='yes') {
+    // document.getElementById("commitmentsName").textContent = " Hackney Skills & Training Ltd";
+   //  document.getElementById("providerName").textContent = "Provider:" ;
+        $(trainingProvider).removeClass("rj-dont-display");
+   // $(ULNTable).addClass("rj-dont-display");
+   //  $(removeMe).addClass("rj-dont-display")
+
+    }
+else {
+    $(ULN).removeClass("rj-dont-display");
+    $(employer).removeClass("rj-dont-display");
+
+//    $(addReference).removeClass("rj-dont-display");
+        };
+
+};
+
+var showAlerts = function() {
+ switch (true) {
+                 case  (changeStatus == "updated"):
+                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                  $(changedAlertMessage).removeClass("rj-dont-display");
+                  $(editButton).removeClass("rj-dont-display");
+              break;
+              case  (changeStatus == "rejected"):
+                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                  $(changesRejectedMessage).removeClass("rj-dont-display");
+                  $(editButton).removeClass("rj-dont-display");
+              break;
+             case  (changeStatus == "paused"):
+                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                  $(pausedAlertMessage).removeClass("rj-dont-display");
+              break;
+
+        default:
+             console.log('nothings changed on the apprentice record')
+             $(changeRequestPanel).removeClass("rj-dont-display");
+          break;
+        }
+  };
+
+changeStuff();
+showAlerts();
+});
+
+</script>
+
+<style>
+    .apprentice-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+  <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+          <a href="/{% include "includes/sprint-link.html" %}/apprentice-view/" class="link-back">Back to list of apprentices</a>
+    </ol>
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+    <div style= "" id="pausedAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
+    You've stopped payments for Mel O'Connor
+    </div>
+    <div style= "" id="changedAlertMessage" class="success-summary rj-dont-display "> 
+     
+     <p>Apprentice updated</p>
+    </div>
+
+        <div style= "" id="changesRejectedMessage" class="success-summary rj-dont-display "> 
+      <!--h3 class="heading-medium">Thing happened</h3-->
+    <p>Changes rejected</p>
+    </div>
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+              <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}Mel O'Connor</h1>
+
+              <div>
+
+
+              <!--div class="panel panel-border-wide " style="padding-top: 35px; padding-bottom:35px ">
+                <h2  class="heading-medium">Payment failure</h2>
+              <p>There was a payment failure for this apprentice. Your training provider has not been paid.</P><P> We have alerted your training provider and they are looking into it.</p>
+            </div-->
+
+            <!--div class="panel panel-border-wide  " style="padding-top: 35px; padding-bottom:35px ">
+                <h2  class="heading-medium">Payment failure</h2>
+              <p>There was a payment failure for this apprentice. Your training provider has not been paid.</p><p>Your training provider is fixing this problem</p>
+            </div-->
+
+             <div class="panel panel-border-wide rj-dont-display" id="changeRequestPanel" style="padding-top: 35px; padding-bottom:35px ">
+                <h2  class="heading-medium">Change for review</h2>
+              <p>There are changes to this apprentice's details that you need to review.</p>
+              <a href="./das-change-confirm-employer-data-lock-fail">Review changes</a>
+            </div>
+
+                <table class="table-19-font" style="margin:0">
+                  <thead>
+                    <tr>
+                      <th> </th>
+                    </tr>
+                  </thead>
+                </table>
+
+                <table class="table-19-font">
+                  <tbody>
+                    <tr>
+                      <td class="apprenticeRecordTitle" >Status</td>
+                      <td class="">Live</td>
+                      <td><p style="text-align:right; margin:0"><a  href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship">Edit status</a></p></td>
+                    </tr>
+
+                      </tbody>
+                </table>
+
+
+                  <p style="" </p>
+                  <table class="table-19-font" style="margin:0">
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Overview</h2></th>
+                    </tr>
+                  </thead>
+                    </table>
+
+                   <table class="table-19-font">
+                  <tbody>
+
+                    <tr id="trainingProvider" class="rj-dont-display">
+                      <td class="apprenticeRecordTitle">Training provider</td>
+                      <td class="" >Hackney Skills Solutions Ltd</td>
+                    </tr>
+                   <tr id="employer" class="rj-dont-display">
+                      <td class="apprenticeRecordTitle">Employer</td>
+                      <td class="" >Acme Coventry Ltd</td>
+                    </tr>
+                     <tr id="referenceNumber" class="">
+                      <td class="apprenticeRecordTitle " >Cohort reference</td>
+                      <td class="" >98HXGFD</td>
+                    </tr>
+                   </tbody>
+                </table>
+
+
+               <table class="table-19-font" style="margin:0"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Apprentice</h2></th>
+                      <th><p style="margin-top:45px; text-align:right" id="editButton" class="rj-dont-display"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/change-apprenticeship-all">Edit apprentice</a> </p> </th>
+
+                    </tr>
+
+                  </thead>
+                    </table>
+
+                <table class="table-19-font"> 
+                  <tbody>
+                    <tr>
+                      <td class="apprenticeRecordTitle" style="width:250px">Name</td>
+                      <td class="" style="">William Wing</td>
+                      <!--td>
+                          <span id="changePending" class="statusToDo" style="width:200px">Pending</span>
+                      </td-->
+
+                    </tr>
+                     <tr id="ULN" class="rj-dont-display">
+                      <td class="apprenticeRecordTitle " >Unique learner number</td>
+                      <td class="" >0123456789</td>
+
+                    </tr>
+                     <tr>
+                      <td class="apprenticeRecordTitle" >Date of birth</td>
+                      <td class="" >28 February 1997</td>
+                    </tr>
+                    <td class="apprenticeRecordTitle" >Apprenticeship training course</td>
+                      <td class="" >Level 2: Aeronautical engineering</td>
+                       <td></td>
+                    </tr>
+                     <!--tr>
+                     <td class="apprenticeRecordTitle" >End-point assessor</td>
+                      <td class="" >Pham assessments Ltd</td>
+                    </tr-->
+
+                     <tr>
+                     <td class="apprenticeRecordTitle" >Training start date</td>
+                      <td class="">July 2018</td>
+
+
+                    </tr>
+                    <tr>
+                     <td class="apprenticeRecordTitle">Training end date</td>
+                      <td class="">July 2020</td>
+
+
+                    </tr>
+                    <tr>
+                     <td class="apprenticeRecordTitle" style="width:217px">Total cost of training</td>
+                      <td class="">£6,555</td>
+                       <td></td>
+
+
+                    </tr>
+                    <tr id="referenceNumber" class="">
+                      <td class="apprenticeRecordTitle " >Reference</td>
+                      <td class="" >Banbury site</td>
+
+                    </tr>
+
+                   </tbody>
+                </table>
+                <p style="margin-top:; text-align:"> </p>
+            </div>
+              </div>
+          </div>
+          <div class="column-one-third">
+            
+                                  <br />
+                      <aside>
+                      <h2 class="heading-medium" style="margin-top: 0; margin-left: 20px">Change history</h2>
+                
+                <h2 class="heading-small" style="margin-left: 20px">2 hours ago</h2>
+                  <ul style="list-style-type: disc;">
+                    <li class="font-xsmall" style="margin-left: 40px"><span style="font-weight: 700">Tom Smith</span> approved a change in <span style="font-weight: 700">cost</span> from <span style="font-weight: 700">£2,000</span> to <span style="font-weight: 700">£2,500</span> on 23 Mar 2017</li>
+                  </ul>
+
+                <h2 class="heading-small" style="margin-left: 20px">1 day ago</h2>
+                  <ul style="list-style-type: disc;">
+                    <li class="font-xsmall" style="margin-left: 40px"><span style="font-weight: 700">Tom Smith</span> approved a change in <span style="font-weight: 700">cost</span> from <span style="font-weight: 700">£2,000</span> to <span style="font-weight: 700">£2,500</span> on 23 Mar 2017</li>
+                    <li class="font-xsmall" style="margin-left: 40px"><span style="font-weight: 700">Tom Smith</span> approved a change in <span style="font-weight: 700">cost</span> from <span style="font-weight: 700">£2,000</span> to <span style="font-weight: 700">£2,500</span> on 23 Mar 2017</li>
+                  </ul>
+
+                <h2 class="heading-small" style="margin-left: 20px">3 days ago</h2>
+                  <ul style="list-style-type: disc;">
+                    <li class="font-xsmall" style="margin-left: 40px"><span style="font-weight: 700">Tom Smith</span> approved a change in <span style="font-weight: 700">cost</span> from <span style="font-weight: 700">£2,000</span> to <span style="font-weight: 700">£2,500</span> on 23 Mar 2017</li>
+                  </ul>
+
+                <h2 class="heading-small" style="margin-left: 20px">1 week ago</h2>
+                  <ul style="list-style-type: disc;">
+                    <li class="font-xsmall" style="margin-left: 40px"><span style="font-weight: 700">Tom Smith</span> approved a change in <span style="font-weight: 700">cost</span> from <span style="font-weight: 700">£2,000</span> to <span style="font-weight: 700">£2,500</span> on 23 Mar 2017</li>
+                  </ul>
+                    </aside>
+
+            </div>
+        </div>
+</main>
+
+
+
+{% endblock %}
+

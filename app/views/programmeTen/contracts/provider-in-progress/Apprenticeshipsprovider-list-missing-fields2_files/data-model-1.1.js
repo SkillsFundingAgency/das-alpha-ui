@@ -1,0 +1,350 @@
+(function() {
+    var viewModel = function(storedData) {
+        var self = this;
+
+        // Properties
+        self.systemDate = ko.observable(storedData.systemDate);
+        self.displaySystemDate = ko.computed(function() {
+            return moment(self.systemDate()).format('DD MMMM YYYY');
+        });
+
+        self.quickCreateStartDate = ko.observable('2016-08-10');
+        self.quickCreateNumberOfMonths= ko.observable(24);
+        self.quickCreateMonthlyAmount = ko.observable();
+        self.declarations = ko.observableArray(ko.utils.arrayMap(storedData.declarations, function (declaration) {
+            return new declarationViewModel(declaration);
+        }));
+        self.commitments = ko.observableArray(ko.utils.arrayMap(storedData.commitments, function (commitment) {
+            return new commitmentViewModel(commitment);
+        }));
+        self.statementLines = ko.computed(function() {
+            var lines = [];
+
+            for(var i = 0; i < self.declarations().length; i++) {
+                var declarationLines = self.declarations()[i].createStatementLines();
+                for(var j = 0; j < declarationLines.length; j++) {
+                    lines.push(declarationLines[j]);
+                }
+            }
+
+            for(var i = 0; i < self.commitments().length; i++) {
+                var commitmentLines = self.commitments()[i].createStatementLines(self.systemDate());
+                for(var j = 0; j < commitmentLines.length; j++) {
+                    lines.push(commitmentLines[j]);
+                }
+            }
+
+            return lines.sort(function(a,b){return new Date(b.date) - new Date(a.date);});
+        });
+        self.commitmentsEndDate = ko.computed(function() {
+            var commitments = self.commitments().sort(function(a,b){return new Date(b.endDate) - new Date(a.endDate);});
+            return moment(commitments[0].endDate()).format('DD MMMM YYYY');
+        });
+        self.commitedSpending = ko.computed(function() {
+            var yearStart = moment(self.systemDate());
+            var yearEnd = moment(self.systemDate()).add(1,'Y');
+
+            var lines = [];
+            for(var i = 0; i < self.commitments().length; i++) {
+                var commitmentLines = self.commitments()[i].createStatementLines('9999-12-30');
+                for(var j = 0; j < commitmentLines.length; j++) {
+                    if(moment(commitmentLines[j].date).isAfter(yearStart)) {
+                        lines.push(commitmentLines[j]);
+                    }
+                }
+            }
+            lines = lines.sort(function(a,b){return new Date(a.date) - new Date(b.date);});
+
+            var aggregations = [];
+
+            var yearTotal = 0;
+            for(var i = 0; i < lines.length; i++) {
+                var line = lines[i];
+                var date = moment(line.date);
+                if(date.isAfter(yearEnd)) {
+                    aggregations.push({
+                        from: yearStart.format('DD MMMM YYYY'),
+                        to: yearEnd.format('DD MMMM YYYY'),
+                        total: '£' + yearTotal.format()
+                    });
+
+                    yearStart.add(1, 'Y');
+                    yearEnd.add(1, 'Y');
+                    yearTotal = 0;
+                }
+                yearTotal += line.amount * -1;
+            }
+            aggregations.push({
+                from: yearStart.format('DD MMMM YYYY'),
+                to: self.commitmentsEndDate(),
+                total: '£' + yearTotal.format()
+            });
+
+            return aggregations;
+        });
+        self.displayBalance = ko.computed(function () {
+            var total = 0;
+            for(var i = 0; i < self.statementLines().length; i++) {
+                total += self.statementLines()[i].amount;
+            }
+            return "£" + total.format();
+        });
+
+        self.providers = ko.observableArray(ko.utils.arrayMap(storedData.providers, function (provider) {
+            return new providerViewModel(provider);
+        }));
+        self.filterText = ko.observable();
+        self.filteredProviders = ko.computed(function () {
+            if (!self.filterText()) {
+                return self.providers();
+            } else {
+                return ko.utils.arrayFilter(self.providers(), function (provider) {
+                    return provider.providerName().toLowerCase().indexOf(self.filterText().toLowerCase()) > -1;
+                });
+            }
+        });
+
+        // Methods
+        self.quickCreateDeclarations = function() {
+            var date = moment(self.quickCreateStartDate());
+            var amount = parseInt(self.quickCreateMonthlyAmount());
+            var numberOfMonths = parseInt(self.quickCreateNumberOfMonths());
+
+            for(var i = 0; i < numberOfMonths; i++) {
+                self.declarations.push(new declarationViewModel({
+                    date: date.format('YYYY-MM-DD'),
+                    amount: amount
+                }));
+                date.add(1, 'M');
+            }
+        };
+        self.addDeclaration = function() {
+            self.declarations.push(new declarationViewModel({}));
+        };
+        self.removeDeclaration = function(declaration) {
+            self.declarations.remove(declaration);
+        };
+        self.clearDeclarations = function() {
+            self.declarations.removeAll();
+        };
+        self.addCommitment = function() {
+            self.commitments.push(new commitmentViewModel({}));
+        };
+        self.removeCommitment = function(commitment) {
+            self.commitments.remove(commitment);
+        };
+
+        self.addProvider = function() {
+            self.providers.push(new providerViewModel());
+        };
+        self.removeProvider = function(provider) {
+            self.providers.remove(provider);
+        };
+
+        self.calculateRunningTotal = function(toLineIndex) {
+            var runningTotal = 0;
+            var lines = self.statementLines();
+            for(var i = lines.length - 1; i >= toLineIndex(); i--) {
+                runningTotal += lines[i].amount;
+            }
+            return "£" + runningTotal.format();
+        };
+
+        self.saveData = function () {
+            storeData(self);
+        };
+    };
+    var declarationViewModel = function(storedData) {
+        var self = this;
+
+        if(!storedData) {
+            storedData = {amount:0};
+        }
+
+        self.date = ko.observable(storedData.date);
+        self.amount = ko.observable(storedData.amount);
+        self.description = ko.computed(function() {
+            return 'Skills Funding Agency ' + moment(self.date()).format('MMMM YYYY') + ' Payment';
+        });
+
+
+        self.createStatementLines = function() {
+            var amount = parseInt(self.amount());
+            if(isNaN(amount)){
+                amount=0;
+            }
+            var topup = amount * 0.1;
+
+            return [
+                    {
+                        date: self.date(),
+                        displayDate: moment(self.date()).format('DD MMMM YYYY'),
+                        description: 'Skills Funding Agency ' + moment(self.date()).format('MMMM YYYY') + ' Payment',
+                        amount: amount,
+                        displayCredit: '£' + amount.format(),
+                        displayDebit: ''
+                    },
+                    {
+                        date: self.date(),
+                        displayDate: moment(self.date()).format('DD MMMM YYYY'),
+                        description: 'SFA 10% Bonus Funds ' + moment(self.date()).format('MMMM YYYY'),
+                        amount: topup,
+                        displayCredit: '£' + topup.format(),
+                        displayDebit: ''
+                    }
+                ]
+        }
+    };
+    var commitmentViewModel = function(storedData){
+        var self = this;
+
+        if(!storedData) {
+            storedData = {};
+        }
+
+        self.provider = ko.observable(storedData.provider);
+        self.startDate = ko.observable(storedData.startDate);
+        self.endDate = ko.observable(storedData.endDate);
+        self.monthlyPayment = ko.observable(storedData.monthlyPayment);
+
+        self.createStatementLines = function(systemDate) {
+            var date = moment(self.startDate());
+            var commitmentEnd = moment(self.endDate());
+            var systemEnd = moment(systemDate);
+            var lines = [];
+
+            while(date.isBefore(commitmentEnd) && date.isBefore(systemEnd)) {
+                var amount = parseInt(self.monthlyPayment());
+                if(isNaN(amount)) {
+                    amount = 0;
+                }
+                amount *= -1;
+
+                lines.push({
+                    date: date.format('YYYY-MM-DD'),
+                    displayDate: date.format('DD MMMM YYYY'),
+                    description: 'Payment to provider ' + self.provider(),
+                    amount: amount,
+                    displayCredit: '',
+                    displayDebit: '£' + amount.format()
+                });
+
+                date.add(1,'M');
+            }
+
+            return lines;
+        }
+    };
+    var providerViewModel =function(storedData) {
+        var self = this;
+
+        if(!storedData) {
+            storedData = {};
+        }
+
+        self.providerName = ko.observable(storedData.providerName);
+        self.reference = ko.observable(storedData.reference);
+        self.standards = ko.observable(storedData.standards);
+    }
+
+
+    $(document).ready(function () {
+        ko.applyBindings(new viewModel(getStoredData()));
+    });
+
+    function storeData(viewModel) {
+        var data = {
+            systemDate: viewModel.systemDate(),
+            declarations: convertDeclarations(viewModel),
+            commitments: convertCommitments(viewModel),
+            providers: convertProviders(viewModel)
+        };
+
+        localStorage.dasData = JSON.stringify(data);
+        alert('Saved');
+    }
+    function convertDeclarations(viewModel) {
+        var vmDeclarations = viewModel.declarations();
+        var declarations = [];
+        for(var i = 0; i < vmDeclarations.length; i++) {
+            var declaration = vmDeclarations[i];
+            declarations.push({
+                date: declaration.date(),
+                amount: declaration.amount()
+            });
+        }
+        return declarations;
+    }
+    function convertCommitments(viewModel) {
+        var vmCommitments = viewModel.commitments();
+        var commitments = [];
+        for(var i = 0; i < vmCommitments.length; i++) {
+            var commitment = vmCommitments[i];
+            commitments.push({
+                provider: commitment.provider(),
+                startDate: commitment.startDate(),
+                endDate: commitment.endDate(),
+                monthlyPayment: commitment.monthlyPayment()
+            });
+        }
+        return commitments;
+    }
+    function convertProviders(viewModel) {
+        var vmProviders = viewModel.providers();
+        var providers = [];
+        for(var i = 0; i < vmProviders.length; i++) {
+            var provider = vmProviders[i];
+            providers.push({
+                providerName: provider.providerName(),
+                reference: provider.reference(),
+                standards: provider.standards()
+            });
+        }
+        return providers;
+    }
+    function getStoredData() {
+        if(!localStorage.dasData) {
+            return makeDefaultData();
+        }
+        var data = JSON.parse(localStorage.dasData);
+        console.log(data);
+        return data;
+    }
+
+    function makeDefaultData() {
+        return {
+            systemDate: '2018-08-20',
+            declarations: [
+
+                {date:'2017-02-10',amount:652},
+                {date:'2017-03-10',amount:652},
+                {date:'2017-04-10',amount:652},
+                {date:'2017-05-10',amount:652},
+                {date:'2017-06-10',amount:652},
+                {date:'2017-07-10',amount:652},
+                {date:'2017-08-10',amount:652},
+                {date:'2017-09-10',amount:652},
+                {date:'2017-10-10',amount:652},
+                {date:'2017-11-10',amount:652},
+                {date:'2017-12-10',amount:652},
+                {date:'2018-01-10',amount:704},
+                {date:'2018-02-10',amount:704},
+                {date:'2018-03-10',amount:704},
+                {date:'2018-04-10',amount:704},
+                {date:'2018-05-10',amount:704},
+                {date:'2018-06-10',amount:704},
+                {date:'2018-07-10',amount:704},
+                {date:'2018-08-10',amount:704}
+            ],
+            commitments: [
+                {provider:'Hackney Skills and Training Ltd',startDate:'2017-08-15',endDate:'2020-08-15',monthlyPayment:379},
+                {provider:'Lots of skills Ltd',startDate:'2017-10-08',endDate:'2019-10-08',monthlyPayment:347}
+            ],
+            providers: [
+                {providerName:"Hackney Skills and Training Ltd",reference:"98HGS3F", standards:"14 Aerospace engineering standards"},
+                {providerName:"Learning management, skills and business training Ltd",reference:"HGHN734557", standards:"1 Aerospace engineering standards"},
+                {providerName:"Lots of skills Ltd",reference:"NMJ786563", standards:"1 Aerospace engineering standards"}
+            ]
+        }
+    }
+})();

@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+ #navigation-primary, #kill-me {
+  display:none;
+}
+</style>
+
+<script>
+var whereNow = function() {
+  var status = $('input[name=radio-group]:checked').val();
+  console.log(status + " hello")
+    if (status == "provider-1") {
+     window.location.href='../provider-list';
+  } else {
+    window.location.href='../does a thing';
+  }
+}; 
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+
+<div class="grid-row">
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Confirm employer</h1>
+
+  <p class="">You've received a new cohort from Acme Coventry Ltd:</p>
+           <h3 class="heading-small" style="margin:0px;color:#6F777B " >Name: Acme Coventry Ltd</h3>
+                 <h3 class="heading-small" style="margin:0px;color:#6F777B " >Registered address: 1 Some Street, Some Place, Coventry, CV1 1AA</h3>
+             <h3 class="heading-small" style="margin:0px;color:#6F777B " >Companies House number: 10542519</h3>
+           <div style="margin-top:25px"></div>
+
+
+              <form action="">
+                  <legend class="visuallyhidden">Delete me</legend>
+                    <div class="form-group">
+                      <label class="form-label-bold" for="">Have you agreed to provide apprenticeship training to Acme Coventry Ltd?</label>
+                    <label class="block-label" for="provider-1">
+                      <input id="provider-1" type="radio" name="radio-group" value="provider-1">
+                     Yes
+                     </label>
+                    <label class="block-label" for="provider-2">
+                      <input id="provider-2" type="radio" name="radio-group" value="provider-2">
+                    No
+                     </label>
+                </div>
+              </form>
+        </div>
+  </div>
+
+    <div style="margin-top:35px"></div>
+    <div class="">
+    <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Continue">
+        <div style="margin-top:15px"><a href="./provider-list">Cancel</a></div>
+    </div>
+
+            </div>
+</div>
+</main>
+
+
+
+
+{% endblock %}

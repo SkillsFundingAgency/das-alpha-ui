@@ -1,0 +1,274 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+
+  /*styling the upload button */
+#html_btn {
+ display:none;
+}
+</style>
+
+<script>
+
+
+var uploadAlert = function() {
+      $( "#upload-alert" ).removeClass( "rj-dont-display" );
+};
+
+</script>
+
+<script>
+$('.custom-file-upload').bind("click",function () {
+        $('#html_btn').click();
+       // $(anotherButton).addClass("rj-dont-display");
+       // $(bulkUploadFinish).removeClass("rj-dont-display");
+       // $(fakeButton).removeClass("rj-dont-display");
+       // $(anotherfakeButton).removeClass("rj-dont-display");
+    
+        $( "#upload-alert" ).removeClass( "rj-dont-display" );
+        $( "#upload-button-form" ).addClass( "rj-dont-display" );
+         $( "#bulk-upload-finish" ).removeClass( "rj-dont-display" );
+    });
+
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<div class="grid-row">
+
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Bulk upload apprentices</h1>
+    <p>You can add details of multiple apprentices to your chosen training course using a Microsoft Excel, CSV or ODS file.</p>
+    <table class=""> 
+                    <!--thead>
+                      <tr>
+                        <h2 class="heading-medium">Apprenticeship 1</h2>
+                           <th scope="col"></th>
+                          <th scope="col"></th>
+                           <th scope="col"></th>
+
+                      </tr>
+                    </thead-->
+                    <tbody>
+                      <tr>
+                        <td style="padding-top:0"></td>
+                        <td style="padding-top:0"></td>
+                        <td style="padding-top:0"></td>
+                      </tr>
+                       <tr>
+                        <td style="width:191px">Chosen training course</td>
+                        <td style="font-weight:700; font-size:19px; width:337px">Mechatronics engineer, Level 4</td>
+                        <td><a href="choose-training-employer">Change</a></td>
+                      </tr>
+                    <tr>
+                        <td style="width:191px">Course length</td>
+                        <td style="font-weight:700; font-size:19px; width:337px">24 months</td>
+                        <td><a href="choose-training-employer">Change</a></td>
+                      </tr>
+                        <tr class="rj-dont-display" id="upload-alert">
+                        <td style="width:191px">File to upload</td>
+                        <td style="font-weight:700; font-size:19px; width:337px">Acme-apprentices.xlsx</td>
+ 
+                        <td class="looks-like-a-link-underline">Change</td>
+                      </tr>
+
+
+
+                    </tbody>
+                </table>
+
+
+
+
+  <form style="margin-top:35px" action="" id="upload-button-form">
+                <div class="custom-file-upload" id="anotherButton">Upload your file</div> 
+                <br>
+                <input id="html_btn" type='file' /><br>
+    </form>
+
+<div>
+
+
+</div>
+
+<form style="margin-top:35px" action="check-errors-provider">
+    <!--input class="button" id="search-provider" type="submit" value="Upload file"-->
+     <input class="button rj-dont-display" type="button" id="bulk-upload-finish"  value="Continue">
+</form>
+    <div style="margin-top:50px"></div>
+    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
+<!-- {% include "includes/start-tabs.html" %} -->
+
+            </div>
+
+             <div class="column-one-third">
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="../login">Sign in</a>
+                          </li>
+
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+</div>
+</main>
+
+<script>
+
+// Add the stuff confirmation into the page when clicked to simulate resending the email
+/*var btn = document.getElementById('bulk-upload-finish');
+EventUtil.addHandler(btn, 'click', function(){
+        var isUploaded = 'yes';
+        localStorage.setItem("apprenticeship-added.bulk-upload", JSON.stringify(isUploaded));
+        window.location.href='./provider-list';
+ });*/
+
+$('#bulk-upload-finish').click(function() {
+    window.das.commitments.addApprenticeships([
+        {
+            training: {
+                code: 1,
+                name: "Mechatronics Engineer"
+            },
+            start: {
+                month: 11,
+                year: 2018
+            },
+            finish:
+            {
+                month: 10,
+                year: 2020
+            },
+            cost: 1500,
+            apprentice: {
+                first: "David",
+                last: "Edwards",
+                uln: 9021001209
+            }
+        },
+        {
+            training: {
+                code: 1,
+                name: "Mechatronics Engineer"
+            },
+            start: {
+                month: 11,
+                year: 2018
+            },
+            finish:
+            {
+                month: 10,
+                year: 2020
+            },
+            cost: 1500,
+            apprentice: {
+                first: "Rob",
+                last: "Andrews",
+                uln: 8780601583
+            }
+        },
+        {
+            training: {
+                code: 1,
+                name: "Mechatronics Engineer"
+            },
+            start: {
+                month: 11,
+                year: 2018
+            },
+            finish:
+            {
+                month: 10,
+                year: 2020
+            },
+            cost: 1500,
+            apprentice: {
+                first: "Mellisa",
+                last: "Shaw",
+                uln: 6421001981
+            }
+        },
+        {
+            training: {
+                code: 1,
+                name: "Mechatronics Engineer"
+            },
+            start: {
+                month: 11,
+                year: 2018
+            },
+            finish:
+            {
+                month: 10,
+                year: 2020
+            },
+            cost: 1500,
+            apprentice: {
+                first: "Brendan",
+                last: "Hamazaki",
+                uln: 67210012321
+            }
+        },
+        {
+            training: {
+                code: 1,
+                name: "Mechatronics Engineer"
+            },
+            start: {
+                month: 11,
+                year: 2018
+            },
+            finish:
+            {
+                month: 10,
+                year: 2020
+            },
+            cost: 1500,
+            apprentice: {
+                first: "Gary",
+                last: "Barton",
+                uln: 21210012876
+            }
+        }
+    ]);
+    window.location.href = 'add-more-cohorts-bulk-upload';
+});
+
+</script>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+            <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/contracts/providers">Apprentices</a></li>
+            <li id="removeWithNav">Add an apprentice</li>
+    </ol>
+
+  </div>
+
+
+<div class="grid-row">
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Add an apprentice</h1>
+
+   <p>Add details of one or more apprentices to your account, and authorise payments to their training provider.</p>
+
+  <div style="margin-top:25px"></div>
+
+  <h2 class="heading-medium">Before you start</h2>
+     <p>You must:</p>
+      <ul class="list list-bullet">
+        <li>know the names of your apprentices</li>
+        <li>know your training provider's UK Provider Reference Number (UKPRN) - your training provider can tell you this</li>
+        <li>make sure the organisation that's named on the contract you have with your training provider is in your account - 
+          <a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract">view organisations in this account</a></li>
+        <li>make sure the PAYE scheme that each apprentice is paid through is in your account - <a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract">view PAYE schemes in this account</a></li>
+             </ul>
+
+    <div style="margin-top:50px"></div>
+    <div class="padder-top-x">
+        <a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/choose-legal" class="button button-start">Start now</a>
+    </div>
+    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
+<!-- {% include "includes/start-tabs.html" %} -->
+
+            </div>
+
+             <div class="column-one-third">
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="../login">Sign in</a>
+                          </li>
+
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+</div>
+</main>
+
+
+
+
+{% endblock %}

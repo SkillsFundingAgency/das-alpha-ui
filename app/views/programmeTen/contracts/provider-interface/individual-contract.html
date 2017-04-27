@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+
+  #navigation-primary {
+    display:none;
+  }
+</style>
+
+<script>
+/* needs to swap the divs out later on if an apprenticeship has been added */
+
+// this is now in the global custom.js file as things were breaking because of the url switching jquery
+
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+            <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Add contract details</h1>
+
+            <p class="">To be paid on this contract you need to add apprenticeship details to it, when you've finished you can send the contract back to the employer for verification.</p>
+            <h2 class="heading-medium" style="margin-bottom:10px">Acme Ltd Coventry</h2>
+            <p style="margin-bottom:5px"><span style="font-weight:700">Contract ID:</span> 98HGS3F </p>
+            <p><span style="font-weight:700">Employer message:</span> Hi Jane, this is the contract we agreed last week for 12 bakery assistants and 3 aeronautical engineers. Call me on 07477 555 1596 if you have any problems.  </p>
+
+
+            <div class="rj-contract-verify">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-medium" style="margin: 22px 0 5px 20px">Verify employer</h2>
+                  <p style="width:90%; margin: 10px 0px 5px 20px; overflow:auto">This employer has not been verified as a real employer, please "do the thing" to verify the employer. You can add data to this contract but cannot confirm until it is done.</p>
+                  <p  style="width:100%; margin: 15px 0 5px 20px"><a href="#">Verify employer</a></p>
+                </div>
+            </div>
+
+            <div style="" class="rj-no-apprenticeships" id="no-apprenticeships">
+                  <h2 class="heading-medium">Apprenticeships</h2>
+                  <p>This contract has <span style="font-weight:700">0</span> apprenticeships</p>
+                  <p><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-apprenticeship">Add an apprenticeship</a></p>
+                  <p><a href="#">Bulk upload apprenticeships</a></p>
+            </div>
+            <div style="" class="rj-has-apprenticeships" id="apprenticeships">
+              <h2 class="heading-medium">Apprenticeships</h2>
+                  <p>This contract has <span style="font-weight:700">1</span> apprenticeship</p>
+                  <p><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-apprenticeship">Add another apprenticeship</a></p>
+                  <p><a href="#">Bulk upload apprenticeships</a></p>
+                <form action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/review-contract">
+                      <div style="margin-top:20px;"><input class="button" id="paymentPlan" type="submit" value="Review contract and finish"></div>
+                </form>
+            </div>
+
+          </div>
+            <div class="column-one-third">
+
+        </div>
+
+
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
+
+{% endblock %}
+

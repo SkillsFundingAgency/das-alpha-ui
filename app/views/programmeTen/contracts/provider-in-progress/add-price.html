@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+
+<script>
+
+/* to set the saved variable on save and return (so it changed the next screen to show an apprenticeship that's been added) */
+var btn = document.getElementById('continueOnward');
+EventUtil.addHandler(btn, 'click', function(){
+          window.location.href='bulk-dates';
+ });
+
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+            <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Cost per apprenticeship</h1>
+
+             <fieldset>
+
+            <legend class="visuallyhidden">Total agreed apprenticeship price (excluding VAT)</legend>
+            <div class="form-group">
+            <label class="form-label-bold" for="search">Total agreed apprenticeship price (excluding VAT)
+          <span class="form-hint">Enter the price, including any end-point assessment costs, in whole pounds. For example, for £1,500 enter 1500.</span>
+           </label>
+              <span class="rj-currency-symbol">£</span>
+              <input class="form-control rj-currency-input"style="max-width:6em" id="apprenticeCost " type="text" value="">
+      </div>
+    </fieldset>
+
+          <div style="margin-top:5px;"><input class="button" type="button" id="continueOnward" onclick="addedApp()" value="Continue"></div>
+
+
+
+
+
+          </div>
+            <div class="column-one-third">
+
+
+        </div>
+
+
+
+</main>
+
+
+
+
+
+{% endblock %}
+

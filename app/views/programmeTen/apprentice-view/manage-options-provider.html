@@ -1,0 +1,86 @@
+<!-- ROB >>>> THIS IS A DUPE OF /contracts/provider-in-progress/overview.html -->
+
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
+<script>
+ var isAddedApp = 'yes';
+    localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
+
+</script>
+<style>
+
+ #navigation-primary, #kill-me {
+  display:none;
+}
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}Manage apprentices</h1>
+      </div>
+</div>
+
+
+
+<div class="grid-row" >
+  <div class="column-two-thirds">
+
+    <a style="display:block" href="./manage-list-provider">  <div class="column-one-half" style="padding-left:0" >
+                <div style="background-color:#912B88; min-height:180px" >
+                  <h2 class="bold-xxlarge" style=" color:#fff; margin: 0px 0 0px 15px; padding-top:25px">1,900</h2>
+                  <h2 class="heading-small" style="color: #fff; margin: 25px 0 0px 15px; font-size:24px">Apprentices</h2>
+                </div>
+      </div> </a>
+
+     <a style="display:block" href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/provider-payment-failure/provider-payment-failures">  <div class="column-one-half" style="padding-right:0">
+               <div style="background-color:#912B88; min-height:180px" >
+                  <h2 class="bold-xxlarge" style=" color:#fff; margin: 0px 0 0px 15px; padding-top:25px">5</h2>
+                  <h2 class="heading-small" style="color: #fff; margin: 25px 0 0px 15px;font-size:24px">ILR data mismatchs</h2>
+                </div>
+      </div></a>
+       <a style="display:block" href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/provider-change-requests/">  <div class="column-one-half" style="padding-left:0; margin-top:35px" >
+               <div style="background-color:#912B88; min-height:180px" >
+                  <h2 class="bold-xxlarge" style=" color:#fff; margin: 0px 0 0px 15px; padding-top:25px">2</h2>
+                  <h2 class="heading-small" style="color: #fff; margin: 25px 0 0px 15px;font-size:24px">Changes in progress</h2>
+                </div>
+      </div></a>
+
+      <!--div class="column-one-half" style="padding-right:0; margin-top:35px">
+                 <div style="background-color:#912B88; min-height:180px" >
+                  <h2 class="bold-xxlarge" style=" color:#fff; margin: 0px 0 0px 15px; padding-top:25px">8</h2>
+                  <h2 class="heading-small" style="color: #fff; margin: 25px 0 0px 15px;font-size:24px">Things</h2>
+                </div>
+      </div-->
+
+      </div>
+  </div> <!-- close grid-row  -->
+            <div style="margin-top:60px"></div>
+      </div>
+</main>
+
+
+
+ <!--button class="button">Do the thing</button-->
+
+
+{% endblock %}
+
