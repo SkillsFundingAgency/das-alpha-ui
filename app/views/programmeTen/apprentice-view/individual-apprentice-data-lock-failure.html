@@ -86,6 +86,32 @@ showAlerts();
     </ol>
   </div>
 
+             <div style= "" id="changesPendingPanel" class="info-summary rj-dont-display"> 
+              <h2  class="heading-medium">Changes Pending</h2>
+                 <div class="grid-row">
+                 <div class="column-two-thirds">
+                     <p>There are changes to this apprentice's details that are waiting for approval by the employer.</p>
+                  </div></div>
+                 <a href="./update-apprenticeship/data-lock-triage">View changes</a>
+            </div>
+
+             <div style= "" id="dataLockPanel" class="info-summary rj-dont-display"> 
+              <h2  class="heading-medium">ILR data mismatch</h2>
+                 <div class="grid-row">
+                 <div class="column-two-thirds">
+                     <p>This apprentice's details are different in your organisation's ILR submission. This may result in a payment failure.</p>
+                  </div></div>
+                  <a href="./update-apprenticeship/data-lock-triage">View details</a>
+            </div>
+
+                         <div style= "" id="ilrChangesPanel" class="info-summary rj-dont-display"> 
+              <h2  class="heading-medium">ILR changes pending</h2>
+                 <div class="grid-row">
+                 <div class="column-two-thirds">
+                       <p>Remember to update and re-submit your ILR records.</p>
+                  </div></div>
+                 <a href="./update-apprenticeship/ILR-changes-pending">View details</a>
+            </div>
 
 <!--h1 class="heading-large">Levy account</h1-->
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
@@ -106,23 +132,6 @@ showAlerts();
               <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}Mel O'Connor</h1>
 
 
-              <div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="changesPendingPanel">
-                <h2  class="heading-medium">Changes Pending</h2>
-              <p>There are changes to this apprentice's details that are waiting for approval by the employer.</p>
-              <a href="./update-apprenticeship/data-lock-triage">View changes</a>
-            </div>
-
-            <div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="dataLockPanel">
-                <h2  class="heading-medium">ILR data mismatch</h2>
-              <p>This apprentice's details are different in your organisation's ILR submission. This may result in a payment failure.</p>
-              <a href="./update-apprenticeship/data-lock-triage">View details</a>
-            </div>
-
-                <div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="ilrChangesPanel">
-                <h2  class="heading-medium">ILR changes pending</h2>
-              <p>Remember to update and re-submit your ILR records.</p>
-              <a href="./update-apprenticeship/ILR-changes-pending">View details</a>
-            </div>
 
 
 
