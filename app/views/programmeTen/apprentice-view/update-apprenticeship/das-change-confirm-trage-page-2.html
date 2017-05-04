@@ -20,14 +20,13 @@ function whereNow() {
        switch (true) {
           case  (status == 'yes'):
                 console.log('yes')
-                localStorage.setItem("commitments.userChangeStatus", JSON.stringify("updated"));
-                 window.location.href='../individual-apprentice-data-lock-failure';
+                localStorage.setItem("commitments.userChangeStatusTWO", JSON.stringify("updatedMismatch2"));
+                 window.location.href='./error-task-list';
 
                 break;
         case  (status == 'no'):
             console.log('no')
-            
-             window.location.href='../individual-apprentice-data-lock-failure';
+             window.location.href='./error-task-list';
             break;
      //   case  (status == 'unchanged'):
      //       console.log('unchanged')
@@ -59,7 +58,8 @@ function whereNow() {
 
   <div class="grid-row">
            <div class="column-two-thirds">
-              <h1 class="heading-xlarge" >Change apprentice details</h1>
+                <h1 class="heading-xlarge" style="margin-bottom:5px" >Change apprentice details</h1>
+               <h2 class="bold-medium" style="margin-bottom:60px; color:#6F777B">Mismatch 2 of 2</h2>
             <div>
                  <p>A request will be sent to Acme Coventry Ltd to approve the following change in the apprenticeship service.</p>
 
@@ -91,52 +91,28 @@ function whereNow() {
          <div style="margin-top:50px"></div>
             <table class=""> 
               <tbody>
-                <h2 class="heading-small" style="">Change 1</h2>
-                     <tr>
-                      <td class="rjTableName" style="width:250px; font-weight:700;  ">THING</td>
-                      <td class="" style="font-weight:700; width:250px">Effective date</td>
-                      <td class="" style="font-weight:700;">Cost</td>
-                    </tr>
-                                        <tr>
-                      <td class="rjTableName">Current</td>
-                      <td class="rjTableName" style="">Date missing</td>
-                      <td style="">£6,554</td>
 
-                    </tr>
+               does this need the context of the date?
+                <!--h2 class="heading-small" style="">Change 1</h2-->
                      <tr>
-                      <td class="rjTableName">Change to</td>
-                      <td class="rjTableName" style="font-weight:700; ">04 May 2017</td>
-                      <td style="font-weight:700;">£6,555</td>
+                      <td class="rjTableName" style="width:250px; font-weight:700;  "></td>
+                      <td class="" style="font-weight:700; width:">Current</td>
+                      <td class="" style="font-weight:700;">Change to</td>
+                    </tr>
+                    <!--tr>
+                      <td class="rjTableName">From date</td>
+                      <td class="rjTableName" style="">07 Oct 2017  </td>
+                      <td style="font-weight:700; font-size:19px">04 May 2017</td>
 
+                    </tr-->
+                     <tr>
+                      <td class="rjTableName">Cost</td>
+                      <td class="rjTableName" style=" ">£6,554</td>
+                      <td style="font-weight:700; font-size:19px">£6,555</td>
                     </tr>
 
              </tbody>
             </table>
-            <div style="margin-top:50px"></div>
-            <table class="" style=""> 
-              <tbody>
-                <h2 class="heading-small" style="">Change 2</h2>
-                     <tr>
-                      <td class="rjTableName" style="width:250px; font-weight:700; ">THING</td>
-                      <td class="" style="font-weight:700; width:250px">Effective date</td>
-                      <td class="" style="font-weight:700;">Cost</td>
-                    </tr>
-                      <tr>
-                     <td class="rjTableName">Current</td>
-                      <td class="rjTableName" style=" ">20 May 2018 </td>
-                      <td style=" ">£6,554</td>
-
-                    </tr>
-                     <tr>
-                     <td class="rjTableName">Change to</td>
-                      <td class="rjTableName">20 May 2018 </td>
-                      <td style="font-weight:700; ">£6,555</td>
-
-                    </tr>
-
-             </tbody>
-            </table>
-
 
               <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
               <form action="friendly-name">
@@ -159,7 +135,7 @@ function whereNow() {
                 </fieldset>
                                   <div style="margin-top:50px"></div>
           <!--input class="button" id="saveAndContinue" onclick="whereNow()" value="Save and continue"-->
-          <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Finish">
+          <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Continue">
               </form>
                               <!--p class="looks-like-a-link-underline" id="saveAndAdd" style="margin-top:20px; cursor: pointer; cursor: hand; ">Cancel and return</p-->
 
@@ -172,7 +148,6 @@ function whereNow() {
                         <h2 class="heading-medium" style="margin-top:10px">Provider management</h2>
                         <nav role="navigation">
                       <ul class="robSideNav">
-                        
                           <li>
                             <a href="/{% include "includes/sprint-link.html" %}/payment/paymentplan">Add a new payment plan (OUT?)</a>
                           </li>

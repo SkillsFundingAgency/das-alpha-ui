@@ -1,0 +1,215 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+
+#navigation-primary, #kill-me {
+  display:none ;
+}
+
+</style>
+
+<script>
+ var status1 = JSON.parse(localStorage.getItem('commitments.userChangeStatus'));
+ var status2 = JSON.parse(localStorage.getItem('commitments.userChangeStatusTWO'));
+// var forecastDone = JSON.parse(localStorage.getItem('registration.forecastComplete'));
+console.log(status)
+$(document).ready(function() {
+ var changeStuff = function() {
+ switch (true) {
+                 case  (status1 == "ilrChangesPendingMismatch1"):
+                //  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                  $(oneILR).removeClass("rj-dont-display");
+                 // $(changesPendingPanel).removeClass("rj-dont-display");
+              break;
+             case  (status1 == "updatedMismatch1"):
+                // localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                 $(oneChanges).removeClass("rj-dont-display");
+              break;
+
+
+        default:
+         //$(dataLockPanel).removeClass("rj-dont-display");
+             console.log('nothings changed on the first mismatch ')
+          break;
+        }
+      }
+
+var changeMoreStuff = function() {
+ switch (true) {
+
+              case  (status2 == "ilrChangesPendingMismatch2"):
+                 //  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                  $(twoILR).removeClass("rj-dont-display");
+              break;
+               case  (status2 == "updatedMismatch2"):
+                 // localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                  $(twoChanges).removeClass("rj-dont-display");
+              break;
+
+        default:
+         //$(dataLockPanel).removeClass("rj-dont-display");
+             console.log('nothings changed on the second mismatch')
+          break;
+        }
+  }
+
+changeStuff();
+changeMoreStuff();
+});
+
+
+var clearStorage = function() {
+      localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+       localStorage.setItem("commitments.userChangeStatusTWO", JSON.stringify("nope"));
+       window.location.href='error-task-list';
+  }
+
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+     {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+
+  </div>
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <!--h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Set up your levy account</h1>
+                    <h1 class="heading-large" style="margin-bottom:0;">Funds to spend</h1>
+                <h2 class="bold-xxlarge" style="margin-top:0px;color:#6F777B">£90,000</h2>
+                <p class="bold-xsmall">as of 26 November 2017</p>
+              -->
+        <h1 class="heading-xlarge " onclick="clearStorage()" >{% include "includes/account-name-number.html" %}ILR data mismatches</h1>
+        <p>Some things are wrong, please do the thing</p>
+
+
+  <table class="table-19-font" style="margin:0">
+                  <thead>
+                    <tr>
+                      <th colspan="2"> </th>
+                    </tr>
+                  </thead>
+                    </table>
+
+                   <table class=""> 
+                  <tbody>
+
+                    <tr class="">
+                      <td class="apprenticeRecordTitle " style="width:250px">Name</td>
+                      <td class="" style="font-weight:700; font-size:19px">Mel O'Connor</td>
+
+
+                    </tr>
+                     <tr id="ULN" class="">
+                      <td class="apprenticeRecordTitle " >Unique learner number</td>
+                      <td style="font-weight:700; font-size:19px" >0123456789</td>
+
+                    </tr>
+                     <tr>
+                      <td class="apprenticeRecordTitle" >Date of birth</td>
+                      <td style="font-weight:700; font-size:19px" >28 February 1997</td>
+                    </tr>
+                   </tbody>
+                </table>
+  </div>
+</div>
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h2 class="heading-medium">2 things are wrong</h2>
+<p class="">Please do the thing</a>
+</p>
+
+
+
+
+
+<div style="margin-top:25px">
+                      <table class="">
+                          <thead>
+                            <tr>
+                              <th scope="col" style="padding-top:0"></th>
+                               <th scope="col" style="padding-top:0"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                             <tr id="" class="">
+                                 <td style="font-size:28px;  font-weight:700; width:200px "><a style=" color:#005ea5;" href="./data-lock-triage-v2">1. Mismatch one</a></td>
+                                 <td >
+                                  <span id="oneILR" class="statusToDo rj-dont-display" style="margin-left: 170px;">ILR changes pending</span>
+                                  <span id="oneChanges" class="statusToDo rj-dont-display" style="margin-left: 170px;">Changes pending</span>
+                                </td>
+                              </tr>
+                             <tr>
+                              <td style="font-size:28px;  font-weight:700;width:210px "><a style=" color:#005ea5;" href="./data-lock-mismatch-triage-page-2">2. Mismatch two</a></td>
+                                <td >
+                                  <span id="twoILR" class="statusToDo rj-dont-display" style="margin-left: 170px;">ILR changes pending</span>
+                                  <span id="twoChanges" class="statusToDo rj-dont-display" style="margin-left: 170px;">Changes pending</span>
+                                </td>
+                              </tr>
+                          </tbody>
+                      </table>
+</div>
+</div>
+</div>
+  <form action="/{% include "includes/sprint-link.html" %}/balance">
+    <div style="margin-top:20px"></div>
+
+    <p style="margin-top:15px"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice-data-lock-failure">Nope out<a/></p>
+  </form>
+</main>
+{% endblock %}
+
+<!--
+
+  <div style="margin-top:25px">
+                      <table class="">
+                          <thead>
+                            <tr>
+                              <th scope="col" style="padding-top:0"></th>
+                               <th scope="col" style="padding-top:0"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                             <tr>
+
+                              <td style="font-size:28px; color:#005ea5; font-weight:700;">1. Invite team members</td>
+                                <td >
+                                  <span id="teamMemberOne" class="statusToDo rj-dont-display">1 Team member added</span>
+                                  <span id="teamMemberTwo" class="statusToDo rj-dont-display">2 Team members added</span>
+                                </td>
+                              </tr>
+                              <tr>
+
+                              <td style="font-size:28px;  font-weight:700; "><a style="text-decoration:none; color:#005ea5;" href="/{% include "includes/sprint-link.html" %}/forecast">2. Forecast your funds</a></td>
+                               <td> <span id="forecastComplete" class="statusToDo rj-dont-display">Forecast added on 20 May 2017</span> </td>
+                              </tr>
+                             <tr>
+
+                              <td style="font-size:28px; color:#005ea5; font-weight:700;">3. Explore training courses and providers</td>
+                                <td class="looks-like-a-link-underline"></td>
+                              </tr>
+                             <tr>
+
+                              <td style="font-size:28px; color:#005ea5; font-weight:700;">4. Learn more about Endpoint Assesment</td>
+                                <td class="looks-like-a-link-underline"></td>
+                              </tr>
+
+                          </tbody>
+                      </table>
+</div>
+
+-->
