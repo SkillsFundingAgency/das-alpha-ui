@@ -254,8 +254,7 @@ var goToDelete = function() {
                 </div>
             </div-->
 
-            <div id="bottomToolBarLotsofApprentices">
-              <div style="margin-top:50px"></div>
+            <!--div id="bottomToolBarLotsofApprentices">
         <!--hr style="margin:0 0 18px 0" /-->
         <!--div class="commit-bar">
               <form class="" style="display:inline-block; float:left;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
@@ -288,25 +287,25 @@ var goToDelete = function() {
            <hr style="margin:20px 0 15px 0"/>
          -->
 
-      <div class="margin-top:50px"></div>
 <!--hr style="margin:20px 0 15px 0"/-->
-      <nav class="govuk-previous-and-next-navigation" role="navigation" aria-label="Pagination">
-          <ul class="group">
-      <li class="previous-page">
-        <a href="/financial-assistance-mobilised-service/appeal-to-the-tribunal" rel="prev">
-          <span class="pagination-part-title">Previous</span>
-          <span class="pagination-label">Apprentices 1 to 25</span>
-        </a>
-      </li>
-      <li class="next-page">
-        <a href="/financial-assistance-mobilised-service/what-happens-at-a-tribunal-hearing" rel="next">
-          <span class="pagination-part-title">Next</span>
-          <span class="pagination-label">Apprentices 26 to 50</span>
-        </a>
-      </li>
-  </ul>
-</nav>
-<!--hr style="margin:20px 0 15px 0"/-->
+              <div class="page-navigation">
+                    <a class="page-navigation__btn previous">
+                        <i class="arrow-button fa fa-angle-left"></i>
+                        <span class="description">Previous <span class="hide-mob"></span></span>
+                        <span class="counter">1<span class="prevPage"></span> of <span class="totalPage">25 apprentices</span></span>
+                    </a>
+
+
+
+                    <a style="" class="page-navigation__btn next">
+                        <i class="arrow-button fa fa-angle-right"></i>
+                        <span class="description">Next <span class="hide-mob"></span></span>
+                        <span class="counter">26 <span class="nextPage"></span> to <span class="totalPage">50 apprentices</span></span>
+                    </a>
+
+                </div>
+
+
     </div>
 </main>
 {% endblock %}

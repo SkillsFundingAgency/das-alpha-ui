@@ -886,6 +886,63 @@ $warning-colour:$orange;
 }
 
 
+.page-navigation {
+    padding-top: 10px;
+        .page-navigation__btn {
+            display: inline-block;
+            font-size: 1em;
+            margin-right: -4px;
+            overflow: hidden;
+            padding: 1.2em 0.6em;
+            text-decoration: none;
+            vertical-align: top;
+            width: 50%;
+            box-sizing: border-box;
+            &:hover, &:focus {
+                background-color: #F8F8F8;                
+            }
+            &:active, &:focus {
+                background-color: #f8f8f8                
+            }
+            &:hover .arrow-button {
+                color: #2e8aca                
+            }
+            &.previous {
+                text-align: left;
+            }
+            &.next {
+                text-align: right;
+                .arrow-button {
+                     float: right;
+                     margin-left: 10px;
+                     margin-right: 0   
+                }
+            }
+                .description {
+                    display: block;
+                }
+                .counter {
+                    display: block;
+                    font-size: 14px;
+                }
+                .arrow-button {
+                    color: #2e358b;
+                    float: left;
+                    font-size: 3.5em;
+                    margin-right: 10px;
+                    margin-top: -0.2em
+                }
+        }
+}
+
+@media (max-width: 640px) {
+    .page-navigation {
+        .hide-mob {
+            display: none
+        }
+    }
+}
+
 
 // Share notification styles
 .error-summary, .info-summary, .success-summary, .warning-summary {
