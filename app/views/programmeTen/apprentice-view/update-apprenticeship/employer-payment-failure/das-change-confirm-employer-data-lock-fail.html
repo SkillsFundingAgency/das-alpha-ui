@@ -18,7 +18,6 @@
 function whereNow() {
    var status = $('input[name=radio-group]:checked').val();
        switch (true) {
-         
         case  (status == 'approve'):
             console.log('approve')
             localStorage.setItem("commitments.userChangeStatus", JSON.stringify("updated"));
@@ -55,30 +54,149 @@ function whereNow() {
 
   <div class="grid-row">
            <div class="column-two-thirds">
-              <h1 class="heading-xlarge" >Confirm changes</h1>
+              <h1 class="heading-xlarge" >Review changes</h1>
             <div>
-                       <!--p class=" ">Hackney Skills &amp Training have suggested the following changes to the apprentice record.</p-->
                  <!--p class=" lede">Telling them that there are consequences for the other side if they pause or delete:</p-->
-
-            
-
-                <table class=""> 
-                  <tbody>
-                     <tr>
-                      <td class="rjTableName"></td>
-                      <td class="rjTableName" style="font-weight:700;">Period</td>
-                      <td class="" style="font-weight:700;">Current</td>
-                      <td class="" style="font-weight:700">Change to</td>
-                    </tr>
+            <table class="" style="margin:0">
+                  <thead>
                     <tr>
-                      <td class="rjTableName">Total cost<br />of training</td>
-                      <td class="rjTableName">04 May 2017 to<br /> 19 May 2018</td>
-                      <td style="">£6,555</td>
-                      <td style="font-weight:700; font-size:19px">£7,000</td>
-                  </tbody>
+                      <th colspan="2"> </th>
+                    </tr>
+                  </thead>
+                    </table>
+
+                   <table class=""> 
+                  <tbody>
+
+                    <tr class="">
+                      <td class="apprenticeRecordTitle " style="width:250px">Name</td>
+                      <td class="" style="">Mel O'Connor</td>
+
+
+                    </tr>
+
+                     <tr>
+                      <td class="apprenticeRecordTitle" >Date of birth</td>
+                      <td style="" >28 February 1997</td>
+                    </tr>
+                   </tbody>
                 </table>
-                <div style="margin-top:35px"></div>
-            
+            <div style="margin-top:50px"></div>
+    
+
+
+            <!--table class="">
+              <tbody>
+                <h2 class="heading-small" style="">Change 1</h2>
+                     <tr>
+                      <td class="rjTableName" style=" font-weight:700;width:240px "></td>
+                      <td class="" style="font-weight:700;width:240px">Currently</td>
+                      <td class="" style="font-weight:700;width:240px;font-size:19px">Change to</td>
+                    </tr>
+                                        <tr>
+                      <td class="rjTableName">From date</td>
+                      <td class="rjTableName" style="">01 September 2017</td>
+                      <td  style="font-weight:700;font-size:19px ">01 August 2017</td>
+
+                    </tr>
+                     <tr>
+                      <td class="rjTableName">Cost</td>
+                      <td class="rjTableName" style="" >£2,000</td>
+                      <td style="font-weight:700; font-size:19px">£3,000</td>
+                    </tr>
+             </tbody>
+            </table-->
+            <!--div style="margin-top:50px"></div>
+            <table class="" style="">
+              <tbody>
+                <h2 class="heading-small" style="">Payment period 2</h2>
+                <p>No changes</p>
+
+             <tr>
+                      <td class="rjTableName" style=" font-weight:700;width:240px  "></td>
+                      <td class="" style="font-weight:700;width:240px">Current</td>
+                      <td class="" style="font-weight:700;width:240px;font-size:19px"></td>
+                    </tr>
+                                        <tr>
+                      <td class="rjTableName">Effective date</td>
+                      <td class="rjTableName" style="">01 September 2017</td>
+                      <td style="font-weight:700; font-size:19px"></td>
+
+                    </tr>
+                     <tr>
+                      <td class="rjTableName">Cost</td>
+                      <td class="rjTableName" >£2,000</td>
+                      <td style="font-weight:700; font-size:19px"></td>
+
+                    </tr>
+
+             </tbody>
+            </table-->
+          </div>
+        </div>
+
+<div style="margin: 0 15px ">
+        <div class="column-full">
+            <div>
+
+              <div style="display:inline-block; width:420px" >
+            <table class="" > 
+                                          <tbody>
+                                            <div>
+                                            <h2 class="heading-small" style="">Currently</h2>
+                                          </div>
+
+                                        <div style="margin-top:15px"></div>
+                                                 <tr>
+                                                  <td class="" style="font-weight:700;width:220px">From date</td>
+                                                  <td class="" style="font-weight:700; ">Total agreed apprenticeship price (excluding VAT)</td>
+                                                </tr>
+                                                  <tr>
+                                                  <td class="rjTableName" style="">01 Sept 2017 to 01 Oct 2017</td>
+                                                  <td style="">£2,000</td>
+
+                                                </tr>
+                                                  <tr>
+                                                  <td class="rjTableName" style="">01 Nov 2017 to 03 Sept 2018</td>
+                                                  <td style="">£7,000</td>
+                                                </tr>
+                                                 <tr>
+                                                  <td class="rjTableName" style="">04 Sept 2018 to 04 Oct 2018</td>
+                                                  <td style="">£7,555</td>
+
+                                                </tr>
+                                         </tbody>
+                 </table>
+               </div>
+            <div style="display:inline-block; width:420px; margin-left:30px" >
+                 <table class="">
+                                          <tbody>
+                                            <div>
+                                            <h2 class="heading-small" style=" ">Change to</h2>
+                                          </div>
+                                        <div style="margin-top:15px"></div>
+                                                 <tr>
+                                                  <td class="" style="font-weight:700;width:220px;">From date</td>
+                                                  <td class="" style="font-weight:700;">Total agreed apprenticeship price (excluding VAT)</td>
+                                                </tr>
+                                                  <tr>
+                                                  <td class="" style="font-weight:700;">01 Aug 2017 to 01 Oct 2017</td>
+                                                  <td class="" style="font-weight:700">£3,000</td>
+                                                </tr>
+                                                  <tr>
+                                                  <td class="rjTableName" style="">01 Nov 2017 to 03 Sept 2018</td>
+                                                  <td style="">£7,000</td>
+                                                </tr>
+                                                 <tr>
+                                                  <td class="rjTableName" style="">04 Sept 2018 to 04 Oct 2018</td>
+                                                  <td class="" style="">£7,555</td>
+                                                </tr>
+                                         </tbody>
+                 </table>
+
+
+               </div> 
+        </div>
 
               <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
               <form action="friendly-name">
@@ -100,8 +218,6 @@ function whereNow() {
                   </div>
                 </fieldset>
                 <div style="margin-top:50px"></div>
-      
-
 
           <!--input class="button" id="saveAndContinue" onclick="whereNow()" value="Save and continue"-->
           <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Finish">
@@ -117,7 +233,6 @@ function whereNow() {
                         <h2 class="heading-medium" style="margin-top:10px">Provider management</h2>
                         <nav role="navigation">
                       <ul class="robSideNav">
-                        
                           <li>
                             <a href="/{% include "includes/sprint-link.html" %}/payment/paymentplan">Add a new payment plan (OUT?)</a>
                           </li>
@@ -139,65 +254,6 @@ function whereNow() {
 
  <!--button class="button">Do the thing</button-->
 
-<script>
-//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
-$( document ).ready(function() {
-
-  // change the tabs themselves to active - should be in the above but isn't working because it's looking for a not li so I added this as a quick fix.
-
-  $("ul#tabs-nav li").click(function(e){
-        if (!$(this).hasClass("active")) {
-            var tabNum = $(this).index();
-            var nthChild = tabNum+1;
-            $("ul#tabs-nav li.active").removeClass("active");
-            $(this).addClass("active");
-            $("ul#tabs-nav li.active").removeClass("active");
-            $("ul#tabs-nav li:nth-child("+nthChild+")").addClass("active");
-        }
-    });
-});
-
-  $('ul.tabs-nav').each(function(){
-    // For each set of tabs, we want to keep track of
-    // which tab is active and its associated content
-    var $active, $content, $links = $(this).find('a');
-
-
-
-    // If the location.hash matches one of the links, use that as the active tab.
-    // If no match is found, use the first link as the initial active tab.
-    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
-   // $active.addClass('active');
-   console.log($active)
-
-    $content = $($active[0].hash);
-
-    // Hide the remaining content
-    $links.not($active).each(function () {
-      $(this.hash).hide();
-    }); 
-
-    // Bind the click event handler
-    $(this).on('click', 'a', function(e){
-      // Make the old tab inactive.
-    //  $active.removeClass('active');
-      $content.hide();
-
-      // Update the variables with the new link and content
-    //  $active = $(this);
-      $content = $(this.hash);
-
-      // Make the tab active.
-     // $active.addClass('active');
-      $content.show();
-
-      // Prevent the anchor's default click action
-      e.preventDefault();
-    });
-  });
-
-
-</script>
 
 {% endblock %}
 
