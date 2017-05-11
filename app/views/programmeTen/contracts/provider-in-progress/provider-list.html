@@ -256,8 +256,8 @@ var goToDelete = function() {
 
             <div id="bottomToolBarLotsofApprentices">
               <div style="margin-top:50px"></div>
-        <hr style="margin:0 0 18px 0" />
-        <div class="commit-bar">
+        <!--hr style="margin:0 0 18px 0" /-->
+        <!--div class="commit-bar">
               <form class="" style="display:inline-block; float:left;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
                     <div style="display:inline-block;"><input class="button" style="display:inline; " type="submit"  id="send-to-employer"  value="Save and continue"></div>
               </form>
@@ -266,10 +266,48 @@ var goToDelete = function() {
                     <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px; " class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Edit cohort"></div>
             </form>
 
-        </div>
-        <hr style="margin:20px 0 15px 0" />
-      </div>
+        </div-->
 
+        <!--
+        <hr style="margin:20px 0 20px 0" />
+
+         <div class="pager">
+
+                <div class="pager-controls">
+                  <ul class="pager-items">
+                    <li>1</li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                  </ul>
+                  <a class="pager-next" href="#">Next</a>
+                </div>
+                <div class="pager-summary">Showing 1 &ndash; 50 of 146 apprentices</div>
+          </div>
+           <hr style="margin:20px 0 15px 0"/>
+         -->
+
+      <div class="margin-top:50px"></div>
+<!--hr style="margin:20px 0 15px 0"/-->
+      <nav class="govuk-previous-and-next-navigation" role="navigation" aria-label="Pagination">
+          <ul class="group">
+      <li class="previous-page">
+        <a href="/financial-assistance-mobilised-service/appeal-to-the-tribunal" rel="prev">
+          <span class="pagination-part-title">Previous</span>
+          <span class="pagination-label">Apprentices 1 to 25</span>
+        </a>
+      </li>
+      <li class="next-page">
+        <a href="/financial-assistance-mobilised-service/what-happens-at-a-tribunal-hearing" rel="next">
+          <span class="pagination-part-title">Next</span>
+          <span class="pagination-label">Apprentices 26 to 50</span>
+        </a>
+      </li>
+  </ul>
+</nav>
+<!--hr style="margin:20px 0 15px 0"/-->
+    </div>
 </main>
 {% endblock %}
 
