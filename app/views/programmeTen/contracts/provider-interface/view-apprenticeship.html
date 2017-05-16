@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    {% include "includes/head.html" %}
+    <script src="/public/javascripts/das/edit-commitment-1.1.js"></script>
+{% endblock %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  #navigation-primary, #kill-me {
+    display:none;
+  }
+</style>
+
+
+
+<script>
+
+/* to set the saved variable on save and return (so it changed the next screen to show an apprenticeship that's been added) */
+/*var btn = document.getElementById('saveApprenticeship');
+EventUtil.addHandler(btn, 'click', function(){
+          var isAddedApp = 'yes';
+         localStorage.setItem("apprenticeship-added", JSON.stringify(isAddedApp));
+          window.location.href='../new-contract/cohorts';
+ });*/
+
+
+var whereNow = function() {
+        window.location.href='are-you-sure';
+              };
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+          <a href="../provider-in-progress/provider-list-view-only" class="link-back">Back to cohort view</a>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+            <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}View apprentice details</h1>
+
+
+
+
+
+
+
+                <table class=""> 
+                  <tbody>
+                    <tr>
+                      <td class="apprenticeRecordTitle" style="width:250px">First name</td>
+                      <td class="" style="font-size:19px; font-weight:700 ">Rob</td>
+                    </tr>
+                    <tr>
+                      <td class="apprenticeRecordTitle" style="width:250px">Last name</td>
+                      <td class="" style="font-size:19px; font-weight:700 ">Edwards</td>
+                    </tr>
+                     <tr id="ULN" class="">
+                      <td class="apprenticeRecordTitle " >Unique learner number</td>
+                      <td class="" style="font-size:19px; font-weight:700 ">8321052156</td>
+
+                    </tr>
+                     <tr>
+                      <td class="apprenticeRecordTitle" >Date of birth</td>
+                      <td class="" style="font-size:19px; font-weight:700">03 June 1997</td>
+                    </tr>
+                                        <tr>
+                    <td class="apprenticeRecordTitle" >Apprenticeship training course</td>
+                      <td class="" style="font-size:19px; font-weight:700">Mechatronics engineer: Level 4</td>
+    
+                    </tr>
+                     <tr>
+                     <td class="apprenticeRecordTitle" >Planned training start date</td>
+                      <td class="" style="font-size:19px; font-weight:700">November 2018</td>
+
+
+                    </tr>
+                    <tr>
+                     <td class="apprenticeRecordTitle">Planned training end date</td>
+                      <td class="" style="font-size:19px; font-weight:700">--</td>
+
+
+                    </tr>
+
+                     <!--tr>
+                     <td class="apprenticeRecordTitle" >End-point assessor</td>
+                      <td class="" >Pham assessments Ltd</td>
+                    </tr-->
+
+
+                    <tr>
+                     <td class="apprenticeRecordTitle" style="width:217px">Total agreed apprenticeship price (excluding VAT)</td>
+                      <td class="" style="font-size:19px; font-weight:700">£2,000</td>
+             
+
+
+                    </tr>
+                    <tr id="referenceNumber" class="">
+                      <td class="apprenticeRecordTitle " >Reference</td>
+                      <td class="" style="font-size:19px; font-weight:700" >Banbury site</td>
+
+                    </tr>
+
+                   </tbody>
+                </table>
+
+                <a href="../provider-in-progress/provider-list-view-only">Return to cohort view</a>
+
+    <!-- JAVASCRIPT ENABLED and EPAS are NOT available -->
+
+
+    </form>
+          </div>
+            <div class="column-one-third">
+        </div>
+
+</main>
+{% endblock %}
+
+
+
+
