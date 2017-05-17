@@ -2545,18 +2545,25 @@ input[type=number] {
 }
 
 .tabs-menu {
-  height: 30px;
-  margin-left: 15px;
+  height: 33px;
+  margin-top: 0px;
+  margin-bottom: 18px;
+  margin-left: 20px;
   float: left;
-  clear: both;
 }
 
 .tabs-menu li {
-  height: 30px;
-  line-height: 30px;
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
   float: left;
-  margin-right: 20px;
-  background-color: #fff;
+  text-align: center;
+  margin-right: 5px;
+  color: #000;
+  background-color: #DEE0E2;
+  border-top: 1px solid #d4d4d1;
+  border-right: 1px solid #d4d4d1;
+  border-left: 1px solid #d4d4d1;
 }
 
 .tabs-menu li.current {
@@ -2567,9 +2574,9 @@ input[type=number] {
 }
 
 .tabs-menu li a {
-  padding: 10px;
-  /*text-transform: uppercase;*/
-  color: #6F777B;
+  padding: 15px;
+  margin-top: 0px;
+  color: #005EA5;
   text-decoration: none;
 }
 
@@ -2577,12 +2584,30 @@ input[type=number] {
   color: #000;
 }
 
-.history-table {
-  border-collapse: collapse;
+.tabs-menu li a:focus {
+  background: none;
+  border: 0;
+  outline: 0;
 }
 
-.history-table, td, th {
-  padding: 0;
+/*----- Tabs content -------*/
+.tab {
+  position: relative;
+  border: 1px solid #fff;
+  background-color: #fff;
+  clear: both;
+  margin-left: 20px;
+  border-top-color: #d4d4d1;
+  margin-bottom: 10px;
+}
+
+.tab-content {
+  padding: 0px;
+  display: none;
+}
+
+#tab-1 {
+  display: block;
 }
 
 @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {

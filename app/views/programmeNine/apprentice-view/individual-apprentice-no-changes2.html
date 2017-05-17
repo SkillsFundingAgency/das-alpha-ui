@@ -72,19 +72,19 @@ showAlerts();
   </div>
 
 
-<!--h1 class="heading-large">Levy account</h1-->
- <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
-
-    <div style= "" id="pausedAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
-    You've stopped payments for Rob Edwards
-    </div>
-    <div style= "" id="changedAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
-    You suggested changes to -change- -change-, -change-, -change- for Rob Edwards. Your training provider needs to approve these changes.
-    </div>
-
   <div class="grid-row">
            <div class="column-two-thirds">
+
+  
+
               <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}James Apan</h1>
+
+              <div class="panel panel-border-wide" id="changeRequestPanel" style="padding-top: 35px; padding-bottom:35px ">
+                <h2  class="heading-medium">Change for review</h2>
+              <p>There are changes to this apprentice's details that you need to review.</p>
+              <a href="./das-change-confirm-employer-data-lock-fail">Review changes</a>
+              </div>
+
                 <table class="table-19-font" style="margin:0"> 
                   <thead>
                     <tr>
@@ -293,7 +293,7 @@ showAlerts();
                   <tbody>
                     <tr>
                       <td class="heading-small" style="border: none; padding: 0px 0px 0px 0px">1 day ago</td>
-                      <td style="border: none; padding: 0px 0px 0px 105px"><a href="">Show details</a></td>
+                      <!--td style="border: none; padding: 0px 0px 0px 105px"><a href="">Show details</a></td-->
                     </tr> 
                   </tbody>
                 </table>
@@ -328,11 +328,10 @@ showAlerts();
                   <tbody>
                     <tr>
                       <td class="heading-small" style="border: none; padding: 0px 0px 0px 0px">1 week ago</td>
-                      <td style="border: none; padding: 0px 0px 0px 92px"><a href="">Show details</a></td>
+                      <!--td style="border: none; padding: 0px 0px 0px 92px"><a href="">Show details</a></td-->
                     </tr> 
                   </tbody>
-                </table>
-
+                </table
                   <ul style="list-style-type: disc;">
                     <li class="font-xsmall" style="margin-left: 40px"><span style="font-weight: 700">Jo Reynolds</span> rejected a change in <span style="font-weight: 700">training start date</span> from <span style="font-weight: 700">1 June</span> to <span style="font-weight: 700">2 June</span> on 23 Mar 2017</li>
                   </ul>

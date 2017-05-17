@@ -578,20 +578,25 @@ vertical-align: top;
 
 // end of character count
 
-// change history tabs
+// settings tabs
 
 .tabs-menu {
-    height: 20px;
+    height: 33px;
+    margin-top: 0px;
+    margin-bottom: 18px;
+    margin-left: 20px;
     float: left;
-    clear: both;
 }
 
 .tabs-menu li {
-    height: 20px;
-    line-height: 30px;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
     float: left;
-    margin-right: 10px;
-    background-color: #ccc;
+    text-align: center;
+    margin-right: 5px;
+    color: #000;
+    background-color: #DEE0E2;
     border-top: 1px solid #d4d4d1;
     border-right: 1px solid #d4d4d1;
     border-left: 1px solid #d4d4d1;
@@ -605,44 +610,44 @@ vertical-align: top;
 }
 
 .tabs-menu li a {
-    padding: 0px;
-    text-transform: uppercase;
-    color: #fff;
+    padding: 15px;
+    margin-top: 0px;
+    color: #005EA5;
     text-decoration: none; 
 }
 
 .tabs-menu .current a {
-    color: #2e7da3;
+    color: #000;
 }
 
+.tabs-menu li a:focus{
+  background: none;
+  border: 0;
+  outline: 0;
+}
+
+/*----- Tabs content -------*/
+
 .tab {
-    border: 1px solid #d4d4d1;
+    position: relative;
+    border: 1px solid #fff;
     background-color: #fff;
-    float: left;
-    margin-bottom: 20px;
-    width: auto;
+    clear: both;
+    margin-left: 20px;
+    border-top-color: #d4d4d1;
+    margin-bottom: 10px;
 }
 
 .tab-content {
-    width: 100%;
-    padding: 20px;
+    padding: 0px;
     display: none;
 }
-
 #tab-1 {
  display: block;   
 }
 
-// end change history tabs
+// end of settings tabs
 
-
-// change history
-
-.history-table, tr, td {
-  border; none;
-}
-
-// end of change history
 
 // Mobile tables
 

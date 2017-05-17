@@ -1,0 +1,373 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<script>
+        var employerOrNot = JSON.parse(localStorage.getItem('commitments.isEmployer'));
+        var changeStatus =JSON.parse(localStorage.getItem('commitments.userChangeStatus'));
+                   //paused is set when the paused journey is triggered.
+
+    </script>
+
+
+<script>
+
+$(document).ready(function() {
+  var changeStuff = function() {
+  if (employerOrNot=='yes') {
+    // document.getElementById("commitmentsName").textContent = " Hackney Skills & Training Ltd";
+   //  document.getElementById("providerName").textContent = "Provider:" ;
+        $(trainingProvider).removeClass("rj-dont-display");
+   // $(ULNTable).addClass("rj-dont-display");
+   //  $(removeMe).addClass("rj-dont-display")
+
+    }
+else {
+    $(ULN).removeClass("rj-dont-display");
+    $(employer).removeClass("rj-dont-display");
+
+//    $(addReference).removeClass("rj-dont-display");
+        };
+
+};
+
+var showAlerts = function() {
+ switch (true) {
+             case  (changeStatus == "paused"):
+                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                  $(pausedAlertMessage).removeClass("rj-dont-display");
+              break;
+        default:
+             console.log('nothings changed on the apprentice record')
+          break;
+        }
+  };
+
+changeStuff();
+showAlerts();
+});
+
+</script>
+
+<style>
+    .apprentice-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+      <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+     <div style= "" id="changedAlertMessage" class="success-summary">
+      <!--h3 class="heading-medium">Status changed</h3-->
+    <p>Apprentice updated.</p>
+    </div>
+
+              <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}James Apan</h1>
+
+                <table class="table-19-font" style="margin:0"> 
+                  <thead>
+                    <tr>
+                      <th> </th>
+
+                    </tr>
+                  </thead>
+                </table>
+
+                <table class="table-19-font"> 
+                  <tbody>
+                    <tr>
+                      <td class="apprenticeRecordTitle" >Status</td>
+                      <td class="">Live</td>
+                      <td><p style="text-align:right; margin:0"><a  href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/stop-pause-apprentice">Edit status</a></p></td>
+                    </tr>
+
+                      </tbody>
+                </table>
+
+               <table class="table-19-font" style="margin:0"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Apprentice</h2></th>
+                      <th><p style="margin-top:45px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/edit-apprentice">Edit apprentice</a> </p> </th>
+                    </tr>
+                  </thead>
+                </table>
+
+                <table class="table-19-font"> 
+                  <tbody>
+                    <tr>
+                      <td class="apprenticeRecordTitle" style="width:250px">Apprentice name</td>
+                      <td class="" style="">Rob Edwards</td>
+
+                    </tr>
+                     <tr>
+                      <td class="apprenticeRecordTitle" >Date of birth</td>
+                      <td class="" >28 February 1997</td>
+                    </tr>
+                     <tr id="ULN" class="rj-dont-display">
+                      <td class="apprenticeRecordTitle " >ULN</td>
+                      <td class="" >0123456789</td>
+                    </tr>
+                    <tr id="referenceNumber" class="">
+                      <td class="apprenticeRecordTitle " >Reference</td>
+                      <td class="" >ABC1234564</td>
+                    </tr>
+                   </tbody>
+                </table>
+                <!--p style="margin-top:; text-align:"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/edit-apprentice">Edit apprentice</a> </p-->
+
+                <table class="table-19-font" style="margin:0"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Cost</h2></th>
+                      <th><p style="margin-top:45px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/edit-overview">Edit cost</a> </p> </th>
+                    </tr>
+                  </thead>
+                </table>
+
+                <table class="table-19-font" style=""> 
+                <tbody>
+                    <tr>
+                     <td class="apprenticeRecordTitle">Total cost</td>
+                      <td class="" >£5,555 <span style="font-size:16px"></span></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+
+               <table class="table-19-font" style="margin:0"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Training</h2></th>
+                      <th><p style="margin-top:45px; text-align:right"><!--a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/edit-training">Edit training</a--></p> </th>
+                    </tr>
+                  </thead>
+                </table>
+
+            <table class="table-19-font" style=""> 
+                <tbody>
+                    <tr id="trainingProvider" class="rj-dont-display">
+                      <td class="apprenticeRecordTitle">Training provider</td>
+                      <td class="" >Hackney Skills Solutions Ltd</td>
+                    </tr>
+
+                    <tr id="employer" class="rj-dont-display">
+                      <td class="apprenticeRecordTitle">Employer</td>
+                      <td class="" >Acme Coventry Ltd</td>
+                    </tr>
+
+                     <tr>
+                     <td class="apprenticeRecordTitle" >Apprenticeship name</td>
+                      <td class="" >Level 2: Aeronautical engineering</td>
+                    </tr>
+                      </tbody>
+                </table>
+                <!--p style=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/edit-training">Edit training</a> </p-->
+
+             <table class="table-19-font" style="margin:0"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Endpoint assessor</h2></th>
+                      <th><p style="margin-top:45px; text-align:right"><!--a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/edit-overview">Edit endpoint assessment</a--></p> </th>
+                    </tr>
+                  </thead>
+                </table>
+
+            <table class="table-19-font" style=""> 
+                <tbody>
+                     <tr>
+                      <td class="apprenticeRecordTitle" >Endpoint assessor</td>
+                      <td class="" >Pham assessments Ltd</td>
+                    </tr>
+                </tbody>
+                </table>
+                <!--p style=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/edit-overview">Edit endpoint assessment</a> </p-->
+
+              <table class="table-19-font" style="margin:0"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Dates</h2></th>
+                      <!--th><p style="margin-top:45px; text-align:right; " class="looks-like-a-link-underline"> Edit dates </p>  </th-->
+                    </tr>
+                  </thead>
+                </table>
+
+            <table class="table-19-font" style=""> 
+                <tbody>
+                    <tr>
+                     <td class="apprenticeRecordTitle" >Start date</td>
+                      <td class="">20 July 2018</td>
+
+                    </tr>
+                    <tr>
+                     <td class="apprenticeRecordTitle">End date</td>
+                      <td class="">19 July 2020</td>
+
+                    </tr>
+                    <!--tr>
+                     <td class="apprenticeRecordTitle">Time left</td>
+                      <td class="">10 months</td>
+
+                    </tr-->
+                                </tbody>
+                </table>
+                <!--p style="" class="looks-like-a-link-underline"> Edit dates </p--> 
+                <!--table class="table-19-font"> 
+                  <thead>
+                    <tr>
+                      <th colspan="3"> <h2 class="heading-medium">Payment plan</h2></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                     <td class="apprenticeRecordTitle">Amount paid</td>
+                      <td class="">£1,312</td>
+                      <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/paid">View</a></td>
+                    </tr>
+                     <tr>
+                     <td class="apprenticeRecordTitle">Balance</td>
+                      <td class="">£5,243</td>
+                      <td class=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/left-to-pay">View</a></td>
+                    </tr>
+
+                  </tbody>
+                </table-->
+
+            <div style="margin-top:35px"></div>
+            <div style="margin-top:50px"></div>
+          </div>
+
+            <!--div class="change-history-header">
+              <h2 class="heading-medium" style="margin-top: 0; margin-left: 20px">Change history</h2>
+              <a href="#">Show all</a>
+            </div-->
+
+        <div class="column-one-third">
+
+          <div style="margin-top: 35px"></div>
+
+            <div class="change-history-content" style="border-left: 4px solid #BFC1C3; height: 700px; width: 100%;">
+
+              <h2 class="heading-medium" style="margin-top: 0; margin-left: 20px">Change history</h2>
+                
+                 <table style="margin-left: 20px;">
+                  <tbody>
+                    <tr>
+                      <td class="heading-small" style="border: none; padding: 0px 0px 0px 0px">1 minute ago</td>
+                      <td style="border: none; padding: 0px 0px 0px 83px"><!--a href="">Show details</a--></td>
+                    </tr> 
+                  </tbody>
+                </table>
+
+                <!--h2 class="heading-small" style="margin-left: 20px">2 hours ago</h2-->
+                  <ul style="list-style-type: disc;">
+                    <li class="font-xsmall" style="margin-left: 40px"><span style="font-weight: 700">Matt Smith</span> approved a change in <span style="font-weight: 700">cost</span> from <span style="font-weight: 700">£6,555</span> to <span style="font-weight: 700">£7,000</span> from 3 June 2017</li>
+                  </ul>
+
+                <hr style="margin-left: 20px"/>
+
+                <table style="margin-left: 20px;">
+                  <tbody>
+                    <tr>
+                      <td class="heading-small" style="border: none; padding: 0px 0px 0px 0px">2 hours ago</td>
+                      <td style="border: none; padding: 0px 0px 0px 83px"><!--a href="">Show details</a--></td>
+                    </tr> 
+                  </tbody>
+                </table>
+
+                <!--h2 class="heading-small" style="margin-left: 20px">2 hours ago</h2-->
+                  <ul style="list-style-type: disc;">
+                    <li class="font-xsmall" style="margin-left: 40px"><span style="font-weight: 700">Jo Reynolds</span> approved a change in <span style="font-weight: 700">cost</span> from <span style="font-weight: 700">£2,000</span> to <span style="font-weight: 700">£2,500</span> from 3 June 2017</li>
+                  </ul>
+
+                <hr style="margin-left: 20px"/>
+
+                <!--h2 class="heading-small" style="margin-left: 20px">1 day ago</h2-->
+
+                <table style="margin-left: 20px;">
+                  <tbody>
+                    <tr>
+                      <td class="heading-small" style="border: none; padding: 0px 0px 0px 0px">1 day ago</td>
+                      <!--td style="border: none; padding: 0px 0px 0px 105px"><a href="">Show details</a></td-->
+                    </tr> 
+                  </tbody>
+                </table>
+
+                  <ul style="list-style-type: disc;">
+                    <li class="font-xsmall" style="margin-left: 40px"><span style="font-weight: 700">Matt Smith</span> rejected a change in <span style="font-weight: 700">cost</span> from <span style="font-weight: 700">£2,000</span> to <span style="font-weight: 700">£3,500</span> from 2 June 2017</li>
+                    <li class="font-xsmall" style="margin-left: 40px"><span style="font-weight: 700">Matt Smith</span> approved a change in <span style="font-weight: 700">name</span> from <span style="font-weight: 700">Jim Apan</span> to <span style="font-weight: 700">James Apan</span> from 2 June 2017</li>
+                  </ul>
+
+                <hr style="margin-left: 20px"/>
+
+                <!--h2 class="heading-small" style="margin-left: 20px">3 days ago</h2-->
+
+                <table style="margin-left: 20px;">
+                  <tbody>
+                    <tr>
+                      <td class="heading-small" style="border: none; padding: 0px 0px 0px 0px">3 days ago</td>
+                      <td style="border: none; padding: 0px 0px 0px 91px"><!--a href="">Show details</a--></td>
+                    </tr> 
+                  </tbody>
+                </table>
+
+                  <ul style="list-style-type: disc;">
+                    <li class="font-xsmall" style="margin-left: 40px"><span style="font-weight: 700">Jo Reynolds</span> approved a change in <span style="font-weight: 700">training start date</span> from <span style="font-weight: 700">1 June</span> to <span style="font-weight: 700">3 June</span> on 29 May 2017</li>
+                  </ul>
+
+            </div>
+
+        </div>
+
+        <!--table class="table-19-font" style=""> 
+                <tbody>
+                     <tr>
+                      <td class="apprenticeRecordTitle" >Endpoint assessor</td>
+                      <td class="" >Pham assessments Ltd</td>
+                    </tr>
+                </tbody>
+                </table-->
+
+
+
+          <!--div class="column-one-third">
+                      <aside class="related">
+                        <h2 class="heading-medium" style="//border-top: 1px #bfc1c3 solid;">Change history</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li id="auditPausedWaiting">
+                            <p><span style="font-weight:700">08 May 2017.</span> RobJ changed the apprentice name to Rob Edwards from Jeff Edwards. Awaiting confirmation. ROB REMOVE THIS AND MAKE A PENDING THING.</p>
+                          </li>
+                            <li id="auditPausedWaiting">
+                            <p><span style="font-weight:700">12 May 2017.</span> RobJ changed the status to Paused. Awaiting confirmation. ROB REMOVE THIS AND MAKE A PENDING THING.</p>
+                          </li>
+                        </ul>
+
+                           </nav>
+                    </aside>
+            </div-->
+        </div>
+</main>
+
+
+
+{% endblock %}
+
