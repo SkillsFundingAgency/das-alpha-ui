@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+       <li id="removeWithNav">Spend levy</li>
+    </ol>
+
+  </div>
+        <h1 class="heading-xlarge rj-headings-border " >{% include "includes/account-name-number.html" %}Settings</h1>
+
+          <div class="grid-row">
+              <div class="column-two-thirds">
+
+              <h2 class="heading-medium" style="margin-top:0">Account settings:</h2>
+
+                <div class="form-group" style="margin-bottom:25px">
+                          <label class="form-label-bold" for="apprenticeGivenName">Your team
+                          </label>
+                </div>
+                <div class="form-group" style="margin-bottom:50px">
+                          <label class="form-label-bold" for="apprenticeGivenName">Rename your levy account
+                          </label>
+                </div>
+
+
+        <h2 class="heading-medium" style="margin-top:0">Personal settings:</h2>
+
+
+                <div class="form-group" style="margin-bottom: 25px">
+                    <label class="form-label-bold" for="apprenticeGivenName">First name
+                    </label>
+                  <input class="form-control" id="apprenticeGivenName" placeholder="James" type="text">
+                </div>
+
+                <div class="form-group" style="margin-bottom:25px">
+                    <label class="form-label-bold" for="apprenticeFamilyName">Last name
+                    </label>
+                  <input class="form-control" id="apprenticeGivenName" placeholder="Watson" type="text">
+                  </div>
+                <div class="form-group" style="margin-bottom:25px">
+                    <label class="form-label-bold" for="apprenticeGivenName">Email
+                    </label>
+                  <input class="form-control" id="apprenticeGivenName" placeholder="jameswatson@address.com" type="text">
+                  </div>
+                <div class="form-group" style="margin-bottom:25px">
+                    <label class="form-label-bold" for="apprenticeFamilyName">Change your password
+                    </label>
+                  <input class="form-control" id="apprenticeGivenName" placeholder="&#0149;&#0149;&#0149;&#0149;&#0149;&#0149;&#0149;&#0149;" type="text">
+                </div>
+                <div class="form-group" style="margin-bottom:25px">
+                    <label class="form-label-bold" for="apprenticeFamilyName">Email notifications
+                    <span class="form-hint">Choose whether to receive emails when there are things that change or that you need to do</span>
+                    </label>
+                </div>
+                <div class="form-group" style="margin-bottom:40px">
+                    <label class="block-label" for="stop">
+                      <input id="stop" type="radio" name="radio-group" value="stop">
+                    Yes
+                     </label>
+                     <label class="block-label" for="unchanged">
+                      <input id="unchanged" type="radio" name="radio-group" value="unchanged">
+                     No
+                     </label>
+                  </div>
+
+                <form action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/ULN-upload">
+                    <div class="" style="display: table;">
+                          <div style="margin-top:20px; display:inline-block;display: table-cell; vertical-align: middle; "><input class="button" id="saveAndContinue" type="submit" value="Update"></div>
+                          <div style="display:inline-block; display: table-cell; vertical-align: middle;"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list" id="saveAndAdd" style="margin-top:20px; margin-left:25px;  ">Cancel</a></div>
+                    <div style="clear:both"></div>
+                </form>
+          
+      
+        </div>
+    </div>
+  </main>
+
+
+{% endblock %}
+
