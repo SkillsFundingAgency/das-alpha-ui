@@ -578,8 +578,6 @@ vertical-align: top;
 
 // end of character count
 
-// tabs
-
 // settings tabs
 
 .tabs-menu {
@@ -628,55 +626,6 @@ vertical-align: top;
   outline: 0;
 }
 
-// end of settings tabs
-
-todo tabs
-
-.tabs-menu-todo {
-    height: 33px;
-    margin-top: 0px;
-    margin-bottom: 18px;
-    float: left;
-}
-
-.tabs-menu-todo li {
-    display: inline-block;
-    height: 50px;
-    line-height: 50px;
-    float: left;
-    text-align: center;
-    margin-right: 5px;
-    color: #000;
-    background-color: #DEE0E2;
-    border-top: 1px solid #d4d4d1;
-    border-right: 1px solid #d4d4d1;
-    border-left: 1px solid #d4d4d1;
-}
-
-.tabs-menu-todo li.current {
-    position: relative;
-    background-color: #fff;
-    border-bottom: 1px solid #fff;
-    z-index: 5;
-}
-
-.tabs-menu-todo li a {
-    padding: 15px;
-    margin-top: 0px;
-    color: #005EA5;
-    text-decoration: none; 
-}
-
-.tabs-menu-todo .current a {
-    color: #000;
-}
-
-.tabs-menu-todo li a:focus{
-  background: none;
-  border: 0;
-  outline: 0;
-}
-
 /*----- Tabs content -------*/
 
 .tab {
@@ -693,34 +642,11 @@ todo tabs
     padding: 0px;
     display: none;
 }
-
-.tab-todo {
-    position: relative;
-    border: 1px solid #fff;
-    background-color: #fff;
-    clear: both;
-    margin-left: 0px;
-    border-top-color: #d4d4d1;
-    margin-bottom: 10px;
-}
-
-.tab-todo-content {
-    padding: 0px;
-    display: none;
-}
 #tab-1 {
  display: block;   
 }
 
-// end of tabs
-
-// settings radio buttons
-
-.block-label {
-  position: relative;
-  background: #fff;
-  padding: 0px 10px 0px 10px;
-}
+// end of settings tabs
 
 
 // Mobile tables
@@ -1132,7 +1058,7 @@ $warning-colour:$orange;
 
 // Warning notification styles
 .warning-summary {
-  border-color:#005EA5;
+  border-color:$warning-colour;
 
   @include media(tablet) {
     border-color:$warning-colour;
@@ -1146,12 +1072,6 @@ $warning-colour:$orange;
   .warning-dismiss {
     color: $warning-colour;
   }
-}
-
-.warning-summary-blue {
-  width: 400px;
-  padding: 10px;
-  border-color: 2px #005EA5;
 }
 
 // ==========================================================================
