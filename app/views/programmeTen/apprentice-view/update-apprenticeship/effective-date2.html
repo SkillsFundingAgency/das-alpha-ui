@@ -59,7 +59,7 @@ var whereNow = function() {
            <div class="column-two-thirds">
             <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Date of status change</h1>
 
-            <p class="form-label-bold" style="margin-bottom: 30px">When did this apprentice stop?</p>
+            <p class="form-label-bold" style="">When did this apprentice stop?</p>
 
             <form action="reason">
     <input id="source" name="source" type="hidden" value="employer"/>
@@ -75,7 +75,7 @@ var whereNow = function() {
       </label>
     </fieldset>
 
-     <!--div class="js-hidden" id="dateInTheFuture" style="margin: 30px 0 0 0px"-->
+     <div class="js-hidden" id="dateInTheFuture" style="margin: 0px 0 0 0px">
       <div class="form-group" style="margin-bottom:30px">
           <fieldset>
             <legend class="visuallyhidden">Date</legend>
@@ -99,6 +99,7 @@ var whereNow = function() {
               </div>
     </fieldset>
       </div>
+    </div>
 
      <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" style="margin-top:35px" value="Continue">
 

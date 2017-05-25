@@ -18,13 +18,13 @@ var whereNow = function() {
   var status = $('input[name=radio-group]:checked').val();
   console.log(status)
     if (status == "stop") {
-         var isAddedApp = 'yes';
-         localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
-         window.location.href='individual-apprentice-no-changes5';
+         var status = 'stopped';
+          localStorage.setItem("commitments.userChangeStatus", JSON.stringify(status));
+         window.location.href='employer-payment-failure/harvey-dent-restart-apprenticeship';
   } else {
-      var isAddedApp = 'no';
-      localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
-    window.location.href='are-you-sure';
+      var status = 'notStopped';
+       localStorage.setItem("commitments.userChangeStatus", JSON.stringify(status));
+    window.location.href='employer-payment-failure/harvey-dent-restart-apprenticeship';
   }
 };
  </script>
@@ -68,7 +68,7 @@ var whereNow = function() {
                     <tbody>
                       <tr>
                         <td>Name</td>
-                        <td style="font-weight:700; font-size:19px">James Apan</td>
+                        <td style="font-weight:700; font-size:19px">Harvey Dent</td>
                       </tr>
                        <tr>
                         <td>Date of birth</td>

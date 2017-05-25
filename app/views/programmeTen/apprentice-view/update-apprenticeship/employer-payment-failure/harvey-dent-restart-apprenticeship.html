@@ -21,14 +21,17 @@ $(document).ready(function() {
 
 var showAlerts = function() {
  switch (true) {
-                 case  (changeStatus == "updated"):
+                 case  (changeStatus == "stopped"):
                   localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                  $(changesPendingPanel).addClass("rj-dont-display");
                   $(changedAlertMessage).removeClass("rj-dont-display");
-                  $(changesPendingPanel).removeClass("rj-dont-display");
+                  $(statusLive).addClass("rj-dont-display");
+                  $(statusStopped).removeClass("rj-dont-display");
+                   $(editStatus).addClass("rj-dont-display");
               break;
-             case  (changeStatus == "paused"):
+             case  (changeStatus == "notStopped"):
                   localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
-                  $(pausedAlertMessage).removeClass("rj-dont-display");
+                  $(changesRejectedMessage).removeClass("rj-dont-display");
               break;
           //    case  (changeStatus == "ilrChangesPending"):
            //       localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
@@ -84,7 +87,19 @@ showAlerts();
           <a href="/{% include "includes/sprint-link.html" %}/apprentice-view/" class="link-back">Back to list of apprentices</a>
     </ol>
   </div>
-                <div style= "" id="changesPendingPanel" class="info-summary "> 
+
+      <div style= "" id="changedAlertMessage" class="success-summary rj-dont-display "> 
+
+     <p>You've stopped payments for Harvey Dent</p>
+    </div>
+
+        <div style= "" id="changesRejectedMessage" class="success-summary rj-dont-display "> 
+      <!--h3 class="heading-medium">Thing happened</h3-->
+    <p>No changes made</p>
+    </div>
+
+
+             <div style= "" id="changesPendingPanel" class="info-summary "> 
               <h2  class="heading-medium">Change requested</h2>
                  <div class="grid-row">
                  <div class="column-two-thirds">
@@ -97,13 +112,8 @@ showAlerts();
 <!--h1 class="heading-large">Levy account</h1-->
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
 
-    <div style= "" id="pausedAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
-    You've stopped payments for Rob Edwards
-    </div>
-    <div style= "" id="changedAlertMessage" class="success-summary rj-dont-display ">
-      <!--h3 class="heading-medium">Status changed</h3-->
-    <p>Change instructions sent to employer </p>
-    </div>
+
+
        <div style= "" id="ilrAlertMessage" class="success-summary rj-dont-display ">
       <h3 class="heading-medium">Status changed</h3>
     </div>
@@ -111,24 +121,6 @@ showAlerts();
   <div class="grid-row">
            <div class="column-two-thirds">
               <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}Harvey Dent</h1>
-
-
-         
-
-            <!--div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="dataLockPanel">
-                <h2  class="heading-medium">ILR data mismatch</h2>
-              <p>This apprentice's details are different in your organisation's ILR submission. This may result in a payment failure.</p>
-              <a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/data-lock-triage-restart-apprenticeship">View details</a>
-            </div-->
-
-                <!--div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="ilrChangesPanel">
-                <h2  class="heading-medium">ILR changes pending</h2>
-              <p>Remember to update and re-submit your ILR records.</p>
-              <a href="./update-apprenticeship/ILR-changes-pending">View details</a>
-            </div-->
-
-
-
                 <table class="table-19-font" style="margin:0"> 
                   <thead>
                     <tr>
@@ -142,8 +134,9 @@ showAlerts();
                   <tbody>
                     <tr>
                       <td class="apprenticeRecordTitle" >Status</td>
-                      <td class="">Live</td>
-                      <td><p style="text-align:right; margin:0"><a  href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/update-harvey-dent">Edit status</a></p></td>
+                      <td id="statusLive"class="">Live</td>
+                      <td id="statusStopped"class="rj-dont-display">Stopped</td>
+                      <td><p id="editStatus" style="text-align:right; margin:0"><a  href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/stop-pause-apprentice">Edit status</a></p></td>
                     </tr>
 
                       </tbody>
