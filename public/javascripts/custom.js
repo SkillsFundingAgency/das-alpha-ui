@@ -130,7 +130,7 @@ var defaultSprint = function() {
  var sprintNow = JSON.parse(localStorage.getItem('sprint-number'));
  console.log(sprintNow);
     if (sprintNow == null) {
-      sprintNow = "programmeOne";
+      sprintNow = "programmeTen";
       localStorage.setItem("sprint-number", JSON.stringify(sprintNow));
   } else {
   }
