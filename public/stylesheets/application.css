@@ -2053,12 +2053,6 @@ input[type=number] {
   display:none;
 }
 */
-.block-label {
-  position: relative;
-  background: #fff;
-  padding: 0px 10px 0px 10px;
-}
-
 /* MC General Codemirror Changes */
 .CodeMirror {
   font-size: 16px;
