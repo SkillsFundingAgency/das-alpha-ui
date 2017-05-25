@@ -84,7 +84,15 @@ showAlerts();
           <a href="/{% include "includes/sprint-link.html" %}/apprentice-view/" class="link-back">Back to list of apprentices</a>
     </ol>
   </div>
-
+                <div style= "" id="changesPendingPanel" class="info-summary "> 
+              <h2  class="heading-medium">Change requested</h2>
+                 <div class="grid-row">
+                 <div class="column-two-thirds">
+                    <p>The apprentice's training provider has asked you to stop this apprentice and then add them to a new cohort using updated training details.</p>
+                  </div></div>
+                  <!--a href="./update-apprenticeship/data-lock-triage">View details</a-->
+                  <div> <a href="./employer-change-must-start-and-stop">View details of request</a></div>
+            </div>
 
 <!--h1 class="heading-large">Levy account</h1-->
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
@@ -105,11 +113,7 @@ showAlerts();
               <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}Harvey Dent</h1>
 
 
-              <div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="changesPendingPanel">
-                <h2  class="heading-medium">Change requested</h2>
-              <p>The apprentice's training provider has asked you to stop this apprentice and then add them to a new cohort using updated training details.</p>
-              <a href="./employer-change-must-start-and-stop">View details of request</a>
-            </div>
+         
 
             <!--div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="dataLockPanel">
                 <h2  class="heading-medium">ILR data mismatch</h2>
@@ -139,7 +143,7 @@ showAlerts();
                     <tr>
                       <td class="apprenticeRecordTitle" >Status</td>
                       <td class="">Live</td>
-                      <td><p style="text-align:right; margin:0"><a  href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship">Edit status</a></p></td>
+                      <td><p style="text-align:right; margin:0"><a  href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/update-harvey-dent">Edit status</a></p></td>
                     </tr>
 
                       </tbody>

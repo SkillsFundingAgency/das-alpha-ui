@@ -35,17 +35,20 @@ else {
 
 };
 
+// does more than show alerts
 var showAlerts = function() {
  switch (true) {
                  case  (changeStatus == "updated"):
                   localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
                   $(changedAlertMessage).removeClass("rj-dont-display");
                   $(editButton).removeClass("rj-dont-display");
+                  $(newPrice).removeClass("rj-dont-display");
+                  $(originalPrice).addClass("rj-dont-display");
               break;
               case  (changeStatus == "rejected"):
                   localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
                   $(changesRejectedMessage).removeClass("rj-dont-display");
-                  $(editButton).removeClass("rj-dont-display");
+
               break;
              case  (changeStatus == "paused"):
                   localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
@@ -192,7 +195,7 @@ showAlerts();
                   <tbody>
                     <tr>
                       <td class="apprenticeRecordTitle" style="width:250px">Name</td>
-                      <td class="" style="">William Wing</td>
+                      <td class="" style="">Mel O'Connor</td>
                       <!--td>
                           <span id="changePending" class="statusToDo" style="width:200px">Pending</span>
                       </td-->
@@ -230,7 +233,8 @@ showAlerts();
                     </tr>
                     <tr>
                      <td class="apprenticeRecordTitle" style="width:217px">Total cost of training</td>
-                      <td class="">£6,555</td>
+                      <td id="originalPrice" class="" style="">£2,000</td>
+                      <td id="newPrice" class="rj-dont-display" style="">£2,110</td>
                        <td></td>
 
 
@@ -250,10 +254,9 @@ showAlerts();
 
           <div class="column-one-third">
             <!--
-                                  <br />
+                <br />
                       <aside>
                       <h2 class="heading-medium" style="margin-top: 0; margin-left: 20px">Change history</h2>
-                
                 <h2 class="heading-small" style="margin-left: 20px">2 hours ago</h2>
                   <ul style="list-style-type: disc;">
                     <li class="font-xsmall" style="margin-left: 40px"><span style="font-weight: 700">Tom Smith</span> approved a change in <span style="font-weight: 700">cost</span> from <span style="font-weight: 700">£2,000</span> to <span style="font-weight: 700">£2,500</span> on 23 Mar 2017</li>
