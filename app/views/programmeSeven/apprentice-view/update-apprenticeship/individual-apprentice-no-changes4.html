@@ -72,16 +72,30 @@ showAlerts();
   </div>
 
 
-  <div class="grid-row">
-    <div class="column-two-thirds">
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
 
-     <div style= "" id="changedAlertMessage" class="success-summary">
-      <!--h3 class="heading-medium">Status changed</h3-->
-    <p>Apprentice updated.</p>
+    <div style= "" id="pausedAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
+    You've stopped payments for Rob Edwards
+    </div>
+    <div style= "" id="changedAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
+    You suggested changes to -change- -change-, -change-, -change- for Rob Edwards. Your training provider needs to approve these changes.
     </div>
 
-              <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}James Apan</h1>
+    <div class="grid-row">
+      <div class="column-two-thirds">
 
+          <div style="margin-top:35px"></div>
+
+            <div class="topWarningBlue">
+            <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1" style="border-color: #28A197">
+              <p>
+                Apprentice paused.
+              </p>
+            </div>
+            </div>
+
+              <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}James Apan</h1>
                 <table class="table-19-font" style="margin:0"> 
                   <thead>
                     <tr>
@@ -95,8 +109,8 @@ showAlerts();
                   <tbody>
                     <tr>
                       <td class="apprenticeRecordTitle" >Status</td>
-                      <td class="">Live</td>
-                      <td><p style="text-align:right; margin:0"><a  href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/stop-pause-apprentice">Edit status</a></p></td>
+                      <td class="">Paused</td>
+                      <td><p style="text-align:right; margin:0"><a  href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/stop-pause-apprentice2">Edit status</a></p></td>
                     </tr>
 
                       </tbody>
@@ -147,7 +161,7 @@ showAlerts();
                 <tbody>
                     <tr>
                      <td class="apprenticeRecordTitle">Total cost</td>
-                      <td class="" >£7,000 <span style="font-size:16px"></span></td>
+                      <td class="" >£5,555 <span style="font-size:16px"></span></td>
                     </tr>
                   </tbody>
                 </table>
@@ -194,10 +208,10 @@ showAlerts();
             <table class="table-19-font" style=""> 
                 <tbody>
                      <tr>
-                      <td class="apprenticeRecordTitle" >Endpoint assessor</td>
+                     <td class="apprenticeRecordTitle" >Endpoint assessor</td>
                       <td class="" >Pham assessments Ltd</td>
                     </tr>
-                </tbody>
+                      </tbody>
                 </table>
                 <!--p style=""><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/edit-overview">Edit endpoint assessment</a> </p-->
 
@@ -260,93 +274,38 @@ showAlerts();
               <a href="#">Show all</a>
             </div-->
 
-        <div class="column-one-third">
+        <!--div class="column-one-third">
 
           <div style="margin-top: 35px"></div>
 
-            <div class="change-history-content" style="border-left: 4px solid #BFC1C3; height: 1010px; width: 100%;">
+            <div class="change-history-content" style="border-left: 4px solid #BFC1C3; height: 510px; width: 100%;">
 
               <h2 class="heading-medium" style="margin-top: 0; margin-left: 20px">Change history</h2>
                 
-                 <table style="margin-left: 20px;">
-                  <tbody>
-                    <tr>
-                      <td class="heading-small" style="border: none; padding: 0px 0px 0px 0px">1 minute ago</td>
-                      <td style="border: none; padding: 0px 0px 0px 83px"><!--a href="">Show details</a--></td>
-                    </tr> 
-                  </tbody>
-                </table>
-
-                <!--h2 class="heading-small" style="margin-left: 20px">2 hours ago</h2-->
+                <h2 class="heading-small" style="margin-left: 20px">2 hours ago</h2>
                   <ul style="list-style-type: disc;">
-                    <li class="font-small" style="margin-left: 40px">Total price changed from £6,555 to £7,000 from 13 July 2017. Change requested by Jo Reynolds. Approved by Matt Smith.</li>
+                    <li class="font-xsmall" style="margin-left: 40px"><span style="font-weight: 700">Tom Smith</span> approved a change in <span style="font-weight: 700">cost</span> from <span style="font-weight: 700">£2,000</span> to <span style="font-weight: 700">£2,500</span> on 23 Mar 2017</li>
                   </ul>
 
-                <hr style="margin-left: 20px"/>
-
-                <table style="margin-left: 20px;">
-                  <tbody>
-                    <tr>
-                      <td class="heading-small" style="border: none; padding: 0px 0px 0px 0px">2 hours ago</td>
-                      <td style="border: none; padding: 0px 0px 0px 83px"><!--a href="">Show details</a--></td>
-                    </tr> 
-                  </tbody>
-                </table>
-
-                <!--h2 class="heading-small" style="margin-left: 20px">2 hours ago</h2-->
+                <h2 class="heading-small" style="margin-left: 20px">1 day ago</h2>
                   <ul style="list-style-type: disc;">
-                    <li class="font-small" style="margin-left: 40px">Total cost changed from £6,555 to £7,555 from July 2017. Change requested by Matt Smith. Approved by Jo Reynolds.</li>
+                    <li class="font-xsmall" style="margin-left: 40px"><span style="font-weight: 700">Tom Smith</span> approved a change in <span style="font-weight: 700">cost</span> from <span style="font-weight: 700">£2,000</span> to <span style="font-weight: 700">£2,500</span> on 23 Mar 2017</li>
+                    <li class="font-xsmall" style="margin-left: 40px"><span style="font-weight: 700">Tom Smith</span> approved a change in <span style="font-weight: 700">cost</span> from <span style="font-weight: 700">£2,000</span> to <span style="font-weight: 700">£2,500</span> on 23 Mar 2017</li>
                   </ul>
 
-                <hr style="margin-left: 20px"/>
-
-                <!--h2 class="heading-small" style="margin-left: 20px">1 day ago</h2-->
-
-                <table style="margin-left: 20px;">
-                  <tbody>
-                    <tr>
-                      <td class="heading-small" style="border: none; padding: 0px 0px 0px 0px">1 day ago</td>
-                      <!--td style="border: none; padding: 0px 0px 0px 105px"><a href="">Show details</a></td-->
-                    </tr> 
-                  </tbody>
-                </table>
-
+                <h2 class="heading-small" style="margin-left: 20px">3 days ago</h2>
                   <ul style="list-style-type: disc;">
-                    <li class="font-small" style="margin-left: 40px">Rejected by Matt Smith: Total cost change from £6,555 to £7,555 from July 2017.</li>
-                    <li class="font-small" style="margin-left: 40px">Name changed from Jim Apan to James Apan from July 2017. Change requested by Anna Thomas. Approved by Matt Smith.</li>
+                    <li class="font-xsmall" style="margin-left: 40px"><span style="font-weight: 700">Tom Smith</span> approved a change in <span style="font-weight: 700">cost</span> from <span style="font-weight: 700">£2,000</span> to <span style="font-weight: 700">£2,500</span> on 23 Mar 2017</li>
                   </ul>
 
-                <hr style="margin-left: 20px"/>
-
-                <!--h2 class="heading-small" style="margin-left: 20px">3 days ago</h2-->
-
-                <table style="margin-left: 20px;">
-                  <tbody>
-                    <tr>
-                      <td class="heading-small" style="border: none; padding: 0px 0px 0px 0px">14 June 2017</td>
-                      <td style="border: none; padding: 0px 0px 0px 91px"><!--a href="">Show details</a--></td>
-                    </tr> 
-                  </tbody>
-                </table>
-
+                <h2 class="heading-small" style="margin-left: 20px">1 week ago</h2>
                   <ul style="list-style-type: disc;">
-                    <li class="font-small" style="margin-left: 40px">Training start date changed from June 2017 to July 2017. Change requested by Matt Smith. Approved by Jo Reynolds.</li>
+                    <li class="font-xsmall" style="margin-left: 40px"><span style="font-weight: 700">Tom Smith</span> approved a change in <span style="font-weight: 700">cost</span> from <span style="font-weight: 700">£2,000</span> to <span style="font-weight: 700">£2,500</span> on 23 Mar 2017</li>
                   </ul>
-
-               <p style="margin-top:30px; text-align:right"><a href="">View all changes</a></p>   
 
             </div>
 
-        </div>
-
-        <!--table class="table-19-font" style=""> 
-                <tbody>
-                     <tr>
-                      <td class="apprenticeRecordTitle" >Endpoint assessor</td>
-                      <td class="" >Pham assessments Ltd</td>
-                    </tr>
-                </tbody>
-                </table-->
+        </div-->
 
 
 

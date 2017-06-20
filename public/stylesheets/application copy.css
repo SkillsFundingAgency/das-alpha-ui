@@ -2579,9 +2579,6 @@ input[type=number] {
   outline: 0;
 }
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 /*.tabs-menu-todo {
     height: 33px;
     margin-top: 0px;
@@ -2627,9 +2624,6 @@ input[type=number] {
   outline: 0;
 }
 
-=======
->>>>>>> origin/master
->>>>>>> Stashed changes
 /*----- Tabs content -------*/
 .tab {
   position: relative;
@@ -2646,13 +2640,25 @@ input[type=number] {
   display: none;
 }
 
+.tab-todo {
+  position: relative;
+  border: 1px solid #fff;
+  background-color: #fff;
+  clear: both;
+  margin-left: 0px;
+  border-top-color: #d4d4d1;
+  margin-bottom: 10px;
+}
+
+.tab-todo-content {
+  padding: 0px;
+  display: none;
+}
+
 #tab-1 {
   display: block;
 }
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 hr.vertical-line {
   width: 2px;
   background-color: blue;
@@ -2660,9 +2666,6 @@ hr.vertical-line {
   float: left;
 }
 
-=======
->>>>>>> origin/master
->>>>>>> Stashed changes
 @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
   /* Force table to not be like tables anymore */
   #transactions table, #transactions thead, #transactions tbody, #transactions th, #transactions td, #transactions tr {
@@ -2866,6 +2869,12 @@ hr.vertical-line {
 
 .warning-summary .warning-dismiss {
   color: #f47738;
+}
+
+.warning-summary-blue {
+  width: 400px;
+  padding: 10px;
+  border-color: 2px #005EA5;
 }
 
 .sfa-govuk-box-highlight {
