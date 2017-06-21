@@ -119,6 +119,21 @@
   
               </div>
 
+            <script>
+
+              $(document).ready(function() {
+              $(".tabs-menu a").click(function(event) {
+              event.preventDefault();
+              $(this).parent().addClass("current");
+              $(this).parent().siblings().removeClass("current");
+              var tab = $(this).attr("href");
+              $(".tab-content").not(tab).css("display", "none");
+              $(tab).fadeIn();
+              });
+              });  
+
+            </script>
+
               
 
             <!--!h2 class="heading-medium" style="margin-top:0">To do:</h2>
