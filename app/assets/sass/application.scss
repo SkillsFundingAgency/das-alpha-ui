@@ -67,7 +67,19 @@
     max-width: 635px;
 }
 
+.attachment-thumb {
+ //margin-left: 100px;
+ margin-bottom: 20px
+}
 
+
+.attachment-thumb img{
+    display: block;
+    width: 80px;
+    height: 115px;
+    background: #fff;
+    outline: 5px solid rgba(11,12,12,0.1);
+}
 
 
 // clears floats
@@ -99,7 +111,7 @@
     box-sizing: border-box;
     padding: 0.5263157895em 0.7894736842em 0.2631578947em 0.7894736842em;
     height:38px;
-    width:207px;
+    //width:170px;
 }
 
 // adding new users inline
@@ -615,61 +627,6 @@ vertical-align: top;
   outline: 0;
 }
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-// end of settings tabs
-
-//todo tabs
-
-/*.tabs-menu-todo {
-    height: 33px;
-    margin-top: 0px;
-    margin-bottom: 18px;
-    float: left;
-}
-
-.tabs-menu-todo li {
-    display: inline-block;
-    height: 50px;
-    line-height: 50px;
-    float: left;
-    text-align: center;
-    margin-right: 5px;
-    color: #000;
-    background-color: #DEE0E2;
-    border-top: 1px solid #d4d4d1;
-    border-right: 1px solid #d4d4d1;
-    border-left: 1px solid #d4d4d1;
-}
-
-.tabs-menu-todo li.current {
-    position: relative;
-    background-color: #fff;
-    border-bottom: 1px solid #fff;
-    z-index: 5;
-}
-
-.tabs-menu-todo li a {
-    padding: 15px;
-    margin-top: 0px;
-    color: #005EA5;
-    text-decoration: none; 
-}
-
-.tabs-menu-todo .current a {
-    color: #000;
-}
-
-.tabs-menu-todo li a:focus{
-  background: none;
-  border: 0;
-  outline: 0;
-}
-
-=======
->>>>>>> origin/master
->>>>>>> Stashed changes
 /*----- Tabs content -------*/
 
 .tab {
@@ -690,24 +647,7 @@ vertical-align: top;
  display: block;   
 }
 
-<<<<<<< Updated upstream
 // end of settings tabs
-=======
-<<<<<<< HEAD
-// end of tabs
-
-//vertical lines
-
-hr.vertical-line {
-  width: 2px;
-  background-color: blue;
-  height: 100%;
-  float: left;
-}
-=======
-// end of settings tabs
->>>>>>> origin/master
->>>>>>> Stashed changes
 
 
 // Mobile tables
@@ -781,6 +721,242 @@ $warning-colour:$orange;
         }
     }
 }
+
+
+// Pagination
+.pager {
+    margin-top: .3125em;
+    margin-bottom: 1.25em
+}
+
+@media (min-width: 641px) {
+    .pager {
+        margin-top: .26316em;
+        margin-bottom: 1.05263em
+    }
+}
+
+.pager-items {
+    display: none
+}
+
+@media (min-width: 641px) {
+    .pager-items {
+        display: inline
+    }
+    .pager-items li {
+        display: inline;
+        margin: 0 5px
+    }
+    .pager-items li:first-child {
+        margin-left: 0
+    }
+    .pager-items li:last-child {
+        margin-right: 0
+    }
+}
+
+.pager-prev,
+.pager-next {
+    margin-right: 10px
+}
+
+@media (min-width: 641px) {
+    .pager-prev,
+    .pager-next {
+        margin-right: 0
+    }
+}
+
+@media (min-width: 641px) {
+    .pager-prev {
+        margin-right: 10px
+    }
+}
+
+@media (min-width: 641px) {
+    .pager-next {
+        margin-left: 10px
+    }
+}
+
+@media (min-width: 641px) {
+    .pager-controls {
+        float: right
+    }
+}
+
+// Pagination 2
+
+
+.govuk-previous-and-next-navigation {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 30px
+}
+
+.govuk-previous-and-next-navigation ul {
+    margin: 0;
+    padding: 0
+}
+
+.govuk-previous-and-next-navigation li {
+ 
+    font-weight: 400;
+    text-transform: none;
+    font-size: 14px;
+    line-height: 1.14286;
+    float: left;
+    list-style: none;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    width: 49%
+}
+
+@media (min-width: 641px) {
+    .govuk-previous-and-next-navigation li {
+        font-size: 16px;
+        line-height: 1.25
+    }
+}
+
+.govuk-previous-and-next-navigation li a {
+    display: block;
+    color: #000;
+    text-decoration: none
+}
+
+.govuk-previous-and-next-navigation li a:hover,
+.govuk-previous-and-next-navigation li a:active {
+    background-color: #f8f8f8
+}
+
+.govuk-previous-and-next-navigation li a .pagination-part-title {
+
+    font-weight: 400;
+    text-transform: none;
+    font-size: 20px;
+    line-height: 1.11111;
+    margin-bottom: 0.1em;
+    display: block
+}
+
+@media (min-width: 641px) {
+    .govuk-previous-and-next-navigation li a .pagination-part-title {
+        font-size: 27px;
+        line-height: 1.25
+    }
+}
+
+.govuk-previous-and-next-navigation li.next-page a:before,
+.govuk-previous-and-next-navigation li.previous-page a:before {
+    margin-top: -4px;
+    display: block;
+    width: 30px;
+    height: 38px;
+    content: " "
+}
+
+.govuk-previous-and-next-navigation li.next-page a:before {
+    background: transparent url(https://assets.publishing.service.gov.uk/static/govuk-component/arrow-sprite-0fa429eadf557102b8e1ca6bf7220f7e61812efbc4f52ed40e5aedd11474635f.png) no-repeat -102px -11px;
+    margin-right: -32px;
+    float: right
+}
+
+.govuk-previous-and-next-navigation li.previous-page a:before {
+    background: transparent url(https://assets.publishing.service.gov.uk/static/govuk-component/arrow-sprite-0fa429eadf557102b8e1ca6bf7220f7e61812efbc4f52ed40e5aedd11474635f.png) no-repeat -20px -11px;
+    margin-left: -32px;
+    float: left
+}
+
+.govuk-previous-and-next-navigation li.previous-page {
+    float: left;
+    text-align: left
+}
+
+.govuk-previous-and-next-navigation li.previous-page a {
+    padding: 0.75em 0 0.75em 3em
+}
+
+.govuk-previous-and-next-navigation li.next-page {
+    float: right;
+    text-align: right
+}
+
+.govuk-previous-and-next-navigation li.next-page a {
+    padding: 0.75em 3em 0.75em 0
+}
+
+@media (max-width: 640px) {
+    .govuk-previous-and-next-navigation li.previous-page,
+    .govuk-previous-and-next-navigation li.next-page {
+        float: none;
+        width: 100%
+    }
+    .govuk-previous-and-next-navigation li.next-page a {
+        text-align: right
+    }
+}
+
+
+.page-navigation {
+    padding-top: 10px;
+        .page-navigation__btn {
+            display: inline-block;
+            font-size: 1em;
+            margin-right: -4px;
+            overflow: hidden;
+            padding: 1.2em 0.6em;
+            text-decoration: none;
+            vertical-align: top;
+            width: 50%;
+            box-sizing: border-box;
+            &:hover, &:focus {
+                background-color: #F8F8F8;                
+            }
+            &:active, &:focus {
+                background-color: #f8f8f8                
+            }
+            &:hover .arrow-button {
+                color: #2e8aca                
+            }
+            &.previous {
+                text-align: left;
+            }
+            &.next {
+                text-align: right;
+                .arrow-button {
+                     float: right;
+                     margin-left: 10px;
+                     margin-right: 0   
+                }
+            }
+                .description {
+                    display: block;
+                }
+                .counter {
+                    display: block;
+                    font-size: 14px;
+                }
+                .arrow-button {
+                    color: #2e358b;
+                    float: left;
+                    font-size: 3.5em;
+                    margin-right: 10px;
+                    margin-top: -0.2em
+                }
+        }
+}
+
+@media (max-width: 640px) {
+    .page-navigation {
+        .hide-mob {
+            display: none
+        }
+    }
+}
+
 
 // Share notification styles
 .error-summary, .info-summary, .success-summary, .warning-summary {
@@ -1170,9 +1346,9 @@ $warning-colour:$orange;
 .statusToDo {
     // text-transform: uppercase;
     font-size: 19px;
-    background-color: #912B88;
+    background-color: $purple;
     color: white;
-    padding: 5px 9px 4px 9px;
+    padding: 5px 12px 4px 12px;
 }
 
 .noMarginTop {
