@@ -269,26 +269,22 @@ function whereNow() {
                               <label class="form-label-bold" for="search">What do you want to do?</label>
                   <label class="block-label" for="radio1">
                     <input id="radio1" type="radio" name="radio-group" value="doTheThing">
-                   Add them to this cohort as new apprentices
+                   Add them as new records
                   </label>
                   <label class="block-label" for="radio2">
                     <input id="radio2" type="radio" name="radio-group" value="doTheThing">
-                    Use the details to update your existing apprentices
+                    Overwrite the existing records
+                  </label>
+
+                  <label class="block-label " id="addULN" for="radio3">
+                    <input id="radio3"  type="radio" name="radio-group" value="cancel">
+                     Cancel bulk upload
                   </label>
 
                   </div>
                 </fieldset>
-
-                </form>
-
-                  <div style="margin-top:20px; display:inline-block;display: table-cell; vertical-align: middle; "><input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Finish"></div>
-            
-
-              <!--div class="" style="display: table;">
-                    <div style="margin-top:20px; display:inline-block;display: table-cell; vertical-align: middle; "><input class="button" type="button" id="bulk-upload-finish"  value="Finish"> </div-->
-
-              <div style="display:inline-block; display: table-cell; vertical-align: middle;"><a href="./provider-list"  style="margin-top:20px; margin-left:25px; cursor: pointer; cursor: hand; ">Cancel bulk upload</a></div>
-                    <div style="clear:both"></div>
+                  <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Finish">
+              </form>
 
 
 

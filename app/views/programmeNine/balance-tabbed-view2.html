@@ -110,7 +110,7 @@
                 
                 <div class="tabs-panel" id="tab-2">
                   <div class="tabs-panel-inner text">
-                    <h3>Activity</h3>
+                    <h3>Change history</h3>
                     <p>Some content would go here for tab 2.</p>
                   </div>
                 </div>
@@ -118,6 +118,21 @@
               </div>
   
               </div>
+
+            <script>
+
+              $(document).ready(function() {
+              $(".tabs-menu a").click(function(event) {
+              event.preventDefault();
+              $(this).parent().addClass("current");
+              $(this).parent().siblings().removeClass("current");
+              var tab = $(this).attr("href");
+              $(".tab-content").not(tab).css("display", "none");
+              $(tab).fadeIn();
+              });
+              });  
+
+            </script>
 
               
 

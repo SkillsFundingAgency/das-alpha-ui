@@ -1,0 +1,169 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+       <li id="removeWithNav">Spend levy</li>
+    </ol>
+
+  </div>
+  <h1 class="heading-xlarge">{% include "includes/account-name-number.html" %}Review your cohort</h1>
+
+  <hr style="margin:0 0 20px 0" />
+        <div class="commit-bar">
+              <form class="" style="display:inline-block; float:left;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
+                    <div style="display:inline-block;"><input class="button" style="display:inline; " type="submit"  id="send-to-employer"  value="Save and continue"></div>
+              </form>
+
+              <form class="" style="display:inline-block;" action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/bulk-or-single">
+                <input type="hidden" name="source" value="provider" />
+                <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px; " class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add more apprentices"></div>
+              </form>
+            <div style="clear:both"></div>
+        </div>
+
+  <h2 class ="heading-medium"  style="margin-bottom:0px">2 Mechatronics Engineers</h2>
+    <p style="margin:0">Level: 4</p>
+    <p style="margin:0 0 15px 0">Training code: 3246</p>
+
+  <!--div class="fullWidthGreyAlert panel panel-border-wide">
+  <h2 class="heading-medium" style="padding-top:20px; margin-bottom:10px">1 Mechatronics Engineer apprenticeship above funding band maximum </h2>
+    <p style="margin:0">The costs are above the £2,000 <a href="">maximum value of the funding band</a> for this apprenticeship. You'll need to pay the difference directly to the training provider - this can't be funded from your account.</p>
+  </div-->
+
+  <table class="" id="">
+    <thead>
+      <tr>
+        <th scope="col" class=""  >Name</th>
+        <!--th scope="col" class="">Family<br />name</th-->
+        <!--th id="ULNTable" scope="col" class="">ULN</th-->
+        <th id="" scope="col" class="">Date of birth</th>
+        <th scope="col" class="">Training dates</th>
+        <th scope="col" class="">Cost</th>
+        <th scope="col" class=""></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Taylor Jones</td>
+        <td class="">10 May 1999</td>
+        <td class=" ">11/2018 to 11/2020 </td>
+        <td class="errorBoxBlack">£2,200</td>
+      </tr>
+      <tr>
+        <td>Will Smith</td>
+        <td class="">30 October 1999</td>
+        <td class=" ">11/2018 to 11/2020 </td>
+        <td class="errorBoxBlack">£2,200</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class ="heading-medium"  style="margin-bottom:0px">4 Mechatronics Engineers</h2>
+    <p style="margin:0">Level: 4</p>
+    <p style="margin:0 0 15px 0">Training code: 3246</p>
+
+  <div class="fullWidthGreyAlert panel panel-border-wide">
+  <h2 class="heading-medium" style="padding-top:20px; margin-bottom:10px">2 Mechatronics Engineer apprenticeships above funding band maximum </h2>
+    <p style="margin:0">The costs are above the £2,000 <a href="">maximum value of the funding band</a> for this apprenticeship. You'll need to pay the difference directly to the training provider - this can't be funded from your account.</p>
+  </div>
+
+  <table class="" id="">
+    <thead>
+      <tr>
+        <th scope="col" class=""  >Name</th>
+        <!--th scope="col" class="">Family<br />name</th-->
+        <!--th id="ULNTable" scope="col" class="">ULN</th-->
+        <th id="" scope="col" class="">Date of birth</th>
+        <th scope="col" class="">Training dates</th>
+        <th scope="col" class="">Cost</th>
+        <th scope="col" class=""></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Jeff Willis</td>
+        <td class="">21 April 2000</td>
+        <td class=" ">11/2018 to 11/2020</td>
+        <td class="errorBoxBlack">£2,200</td>
+      </tr>
+      <tr>
+        <td>Jane Bower</td>
+        <td class="">16 June 2001</td>
+        <td class=" ">11/2018 to 11/2020</td>
+        <td class="errorBoxBlack">£2,200</td>
+      </tr>
+      <tr>
+        <td>Jack  Slack</td>
+        <td class="">21 April 2000</td>
+        <td class=" ">11/2018 to 11/2020</td>
+        <td class="errorBoxBlack">£2,200</td>
+      </tr>
+      <tr>
+        <td>Mary Ridge</td>
+        <td class="">16 June 2001</td>
+        <td class=" ">11/2018 to 11/2020</td>
+        <td class="errorBoxBlack">£2,200</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class ="heading-medium"  style="margin-bottom:0px">2 Mechatronics Engineers</h2>
+    <p style="margin:0">Level: 4</p>
+    <p style="margin:0 0 15px 0">Training code: 3246</p>
+
+  <div class="fullWidthGreyAlert panel panel-border-wide">
+  <h2 class="heading-medium" style="padding-top:20px; margin-bottom:10px">1 Mechatronics Engineer apprenticeships above funding band maximum </h2>
+    <p style="margin:0">The costs are above the £2,000 <a href="">maximum value of the funding band</a> for this apprenticeship. You'll need to pay the difference directly to the training provider - this can't be funded from your account.</p>
+  </div>
+
+  <table class="" id="">
+    <thead>
+      <tr>
+        <th scope="col" class=""  >Name</th>
+        <!--th scope="col" class="">Family<br />name</th-->
+        <!--th id="ULNTable" scope="col" class="">ULN</th-->
+        <th id="" scope="col" class="">Date of birth</th>
+        <th scope="col" class="">Training dates</th>
+        <th scope="col" class="">Cost</th>
+        <th scope="col" class=""></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Jeff Willis</td>
+        <td class="">21 April 2000</td>
+        <td class=" ">11/2018 to 11/2020</td>
+        <td class="errorBoxBlack">£2,200</td>
+      </tr>
+      <tr>
+        <td>Jane Bower</td>
+        <td class="">16 June 2001</td>
+        <td class=" ">11/2018 to 11/2020</td>
+        <td class="errorBoxBlack">£2,200</td>
+      </tr>
+    </tbody>
+  </table>
+
+  </main>
+
+
+{% endblock %}

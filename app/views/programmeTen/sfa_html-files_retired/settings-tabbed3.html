@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+       <li id="removeWithNav">Spend levy</li>
+    </ol>
+
+  </div>
+  <h1 class="heading-xlarge rj-headings-border " >{% include "includes/account-name-number.html" %}Account settings</h1>
+
+ <div class="grid-row">
+           <!--div class="column-two-thirds"-->
+
+          <!--div class="grid-row"-->
+      <div id="tabs-container">
+        <ul class="tabs-menu">
+            <li class="current"><a href="#tab-1">Team</a></li>
+            <li><a href="#tab-2">Levy</a></li>
+        </ul>
+    <div class="tab" style="width: 950px">
+
+        <div id="tab-1" class="tab-content" style="margin-top: 30px">
+          <div class="form-group" style="margin-bottom:25px">
+              <label class="form-label-bold" for="apprenticeGivenName">Your team</label>
+          </div>
+
+        </div>
+
+
+        <div id="tab-2" class="tab-content" style="margin-top: 30px">
+            
+                <div class="form-group" style="margin-bottom:40px">
+                    <label class="form-label-bold" for="apprenticeGivenName">Rename your levy account</label>
+                  <input class="form-control" id="apprenticeGivenName" placeholder="My brand new levy account" type="text">
+                </div>
+        </div>
+                
+              <form action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/ULN-upload">
+                  <div class="" style="display: table;">
+                        <div style="margin-top:20px; display:inline-block;display: table-cell; vertical-align: middle; "><input class="button" id="saveAndContinue" type="submit" value="Update"></div>
+                        <div style="display:inline-block; display: table-cell; vertical-align: middle;"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list" id="saveAndAdd" style="margin-top:20px; margin-left:25px;  ">Cancel</a></div>
+                  <div style="clear:both"></div>
+              </form>
+
+            </div>
+        
+        </div>
+           
+        </div>
+            
+        </div>
+
+        <script>
+
+          $(document).ready(function() {
+          $(".tabs-menu a").click(function(event) {
+          event.preventDefault();
+          $(this).parent().addClass("current");
+          $(this).parent().siblings().removeClass("current");
+          var tab = $(this).attr("href");
+          $(".tab-content").not(tab).css("display", "none");
+          $(tab).fadeIn();
+          });
+          });  
+
+        </script>
+        </div>
+      </div> 
+
+       <!--/div-->
+    </div>
+  </main>
+
+
+{% endblock %}
+
