@@ -39,3 +39,4 @@ jspm_packages
 # ide files
 .idea/*.*
 .idea/**/*.*
+.DS_Store
