@@ -88,75 +88,95 @@
 
           </div>
 
-            <div class="column-one-third">
+          <div class="column-one-third">
+            <div id="tabs-container" style="margin-left: 0px">
+              <ul class="tabs-menu">
+                <li class="current"><a href="#tab-1">To do</a></li>
+                <li><a href="#tab-2">Activity</a></li>
+              </ul>
+            <div class="tab" style="width: 275px"></div>
+            <div id="tab-1" class="tab-content" style="margin-top: 30px">
 
-            <div class="tabs">
-  
-              <div class="tabs-nav">
-                <ul class="tabs-list">
-                  <li><a href="#tab-1">Tab 1</a></li>
-                  <li><a href="#tab-2">Tab 2</a></li>
-                </ul>
-              </div>
-              
-              <div class="tabs-content">
-              
-                <div class="tabs-panel" id="tab-1">
-                  <div class="tabs-panel-inner text">
-                    <h3>Action needed</h3>
-                    <p>Some content would go here for tab 1.</p>
-                  </div>
-                </div>
-                
-                <div class="tabs-panel" id="tab-2">
-                  <div class="tabs-panel-inner text">
-                    <h3>Activity</h3>
-                    <p>Some content would go here for tab 2.</p>
-                  </div>
-                </div>
-              
-              </div>
-  
-              </div>
+            <p><span style="font-weight: 700">2 agreements need to be signed</span> in order to spend funds.</p>
+            <p style="text-align: right"><a href="">See details</a></p>
 
-              
+            <hr>
 
-            <!--!h2 class="heading-medium" style="margin-top:0">To do:</h2>
+            <p><span style="font-weight: 700">3 cohorts ready for review.</span></p>
+            <p style="text-align: right"><a href="">See details</a></p>
 
-            <div class="rj-alert-wrapper">
-                <div class="rj-alert-copy">
-                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Forecast: not completed  </h2>
-                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action><a href="/{% include "includes/sprint-link.html" %}/forecast/">Calculate your available spend</a></p>
-                </div>
+            <hr>
+
+            <p><span style="font-weight: 700">Agreement needs to be signed</span> for Good Content ltd to spend funds.</p>
+            <p style="text-align: right"><a href="">See details</a></p>
+
+            <hr>
+
+            <p><span style="font-weight: 700">1 cohort ready for review.</span></p>
+            <p style="text-align: right"><a href="">See details</a></p>
+
+            <hr>
+
+            <p><span style="font-weight: 700">Agreement needs to be signed</span> for Good Content ltd to spend funds.</p>
+            <p style="text-align: right"><a href="">See details</a></p>
+
+            <hr>
+
             </div>
 
-            <div class="rj-alert-wrapper">
-                <div class="rj-alert-copy">
-                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Requests that need your attention: 5</h2>
-                  <p class="looks-like-a-link-underline to-do-action" style="width:88%; margin: 5px 10px 5px 20px">Review your apprentices</p>
-                </div>
+            <div id="tab-2" class="tab-content" style="margin-top: 30px">
+
+            <p><span style="font-weight: 700">Today at 5:35</span></p>
+            <p><span style="list-style-type: disc; font-weight: 700">Failed payment:</span> £5,000 to Anne Smith for Acme Training ltd on 17 July 2017</p>
+            <p ></p>
+            <p style="font: small; text-align: right"><a href="">See details</a></p>
+
+            <hr>
+
+            <p style="">Yesterday at 5:35</p>
+            <p><span style="font-weight: 700">Outgoing payments made:</span> £14,500 for 17 July 2017</p>
+            <p style="text-align: right"><a href="">See details</a></p>
+
+            <hr>
+
+            <p style="">Yesterday at 5:35</p>
+            <p><span style="font-weight: 700">Tesco Food ltd has been added</span> to your account by Pete Kowalczyk</p>
+            <p style="text-align: right"><a href="">See details</a></p>
+
+            <hr>
+
+            <p><span style="font-weight: 700">3 cohorts updated</span> by Pete Kowalczyk</p>
+            <p style="text-align: right"><a href="">See details</a></p>
+
+            <hr>
+
+            <p><span style="font-weight: 700">12 apprentice details updated</span> by Pete Kowalczyk</p>
+            <p style="text-align: right"><a href="">See details</a></p>
+
+            <hr>
+
             </div>
 
-            <div class="rj-alert-wrapper">
-                <div class="rj-alert-copy">
-                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Requests to change apprentice details: 50</h2>
-                  <p class="looks-like-a-link-underline to-do-action" style="width:85%; margin: 5px 10px 5px 20px">Review the changes</p>
-                </div>
             </div>
 
-            <div class="rj-alert-wrapper">
-                <div class="rj-alert-copy">
-                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Apprentices that failed double lock: 12 </h2>
-                  <p class="looks-like-a-link-underline to-do-action" style="width:85%; margin: 5px 10px 5px 20px">Update details</p>
-                </div>
-            </div>
+            <script>
 
-            <div class="rj-alert-wrapper">
-                <div class="rj-alert-copy">
-                  <h2 class="heading-small" style="margin: 22px 10px 5px 20px">Staff with access to account: 1 </h2>
-                  <p class="looks-like-a-link-underline to-do-action" style="width:85%; margin: 5px 10px 5px 20px">Grant access to others</p>
-                </div>
-            </div-->
+            $(document).ready(function() {
+            $(".tabs-menu a").click(function(event) {
+            event.preventDefault();
+            $(this).parent().addClass("current");
+            $(this).parent().siblings().removeClass("current");
+            var tab = $(this).attr("href");
+            $(".tab-content").not(tab).css("display", "none");
+            $(tab).fadeIn();
+            });
+            });  
+
+            </script>
+
+
+
+
 
 
 
