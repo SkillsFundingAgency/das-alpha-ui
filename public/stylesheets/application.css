@@ -2644,6 +2644,53 @@ input[type=number] {
   display: block;
 }
 
+.timeline {
+  padding-top: 0px;
+  padding-right: 15px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+
+.timeline {
+  position: relative;
+  width: 100%;
+  background: #FFF;
+}
+
+.timeline::before {
+  margin-left: +0%;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 1px;
+  background: #BFC1C3;
+  top: 30px;
+  bottom: 10px;
+}
+
+.timeline .body {
+  width: 100%;
+  margin-left: 20px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.timeline .body::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #BFC1C3;
+  border-radius: 100%;
+  left: -25px;
+  top: 24%;
+  z-index: 99;
+}
+
 hr.vertical-line {
   width: 2px;
   background-color: blue;
