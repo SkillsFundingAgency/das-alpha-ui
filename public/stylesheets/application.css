@@ -2543,16 +2543,16 @@ input[type=number] {
 
 .tabs-menu li {
   display: inline-block;
-  height: 50px;
-  line-height: 50px;
+  height: 51px;
+  line-height: 51px;
   float: left;
   text-align: center;
   margin-right: 5px;
   color: #000;
-  background-color: #DEE0E2;
-  border-top: 1px solid #d4d4d1;
-  border-right: 1px solid #d4d4d1;
-  border-left: 1px solid #d4d4d1;
+  background-color: #BFC1C3;
+  border-top: 1px solid #BFC1C3;
+  border-right: 1px solid #BFC1C3;
+  border-left: 1px solid #BFC1C3;
 }
 
 .tabs-menu li.current {
