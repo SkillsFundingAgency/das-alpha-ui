@@ -251,8 +251,26 @@ $(document).ready(function() {
       $("body").html($("body").html().replace(/change-me-url/g, urlToBeChanged));
   });
 
+//floating menu EMPLOYER
+$(window).scroll(function(){
+    if ($(window).scrollTop() >= 100) {
+       $('.floating-menu').addClass('fixed-header');
+	      $('.js-float').addClass('width-adjust');
+    }
+    else {
+       $('.floating-menu').removeClass('fixed-header');
+	     $('.js-float').removeClass('width-adjust');
+    }
+});
 
-
-
+//floating menu PROVIDER
+$(window).scroll(function(){
+    if ($(window).scrollTop() >= 100) {
+       $('#floating-menu').addClass('fixed-header');
+    }
+    else {
+       $('#floating-menu').removeClass('fixed-header');
+    }
+});
 
 

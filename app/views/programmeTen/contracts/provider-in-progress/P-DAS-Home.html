@@ -12,6 +12,11 @@
   display:none;
 }
 
+.header-organisation{
+	margin-bottom:40px;
+	
+}
+
 
   @media (min-width: 641px) and (max-width: 890px){
 .rj-alert-wrapper {
@@ -25,23 +30,60 @@
 }
 }
 
+
 </style>
 
 <script>
   var page_name = "dashboard";
 </script>
 
+<!-- FLOATING MENU HTML -->
+<div id="floating-menu-prov">
+    <div id="floating-menu">
+    	<div class="js-float">
+    			<p>Your training provider account</p>   
+                 <ul id="service-info-list" role="navigation">
+                    <li><a href="/" class="link-user-profile">Mr A DASTEST1</a></li>
+                    <li><a href="/signout">Sign out</a></li>
+                 </ul>
+         </div>
+    </div>
+</div>
+
+<div id="provider-nav">
+	<div class="header-organisation">
+		<div class="header-inner">
+			<!--h2 class="heading-medium">Red &amp; White &amp; Blue &amp; Green Holdings Ltd</h2-->
+			<nav id="global-nav" class="global-nav">
+				<ul id="global-nav-links"> 
+				
+                                <li><a href="/programmeTen/contracts/provider-in-progress/P-DAS-Home" role="menuitem" class="">Home</a></li>
+                                <li><a href="/programmeTen/apprentice-view/manage-options-provider" role="menuitem">Manage your apprentices</a></li>
+                                <li><a href="/programmeTen/contracts/provider-in-progress/overview" role="menuitem" class="">Your cohorts</a></li>
+                            </ul>
+			
+			</nav>
+		</div>
+	</div>
+</div>
+<!-- END FLOATING MENU HTML -->
 
 {% include "includes/phase_banner_beta.html" %}
 <main id="content" role="main">
 
 
 
-  <div class="breadcrumbs">
+ <!-- <div class="breadcrumbs">
     <ol role="breadcrumbs">
       <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
     </ol>
-  </div>
+  </div> -->
+
+
+
+
+
+
 
 <!--h1 class="heading-large">Levy account</h1-->
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->

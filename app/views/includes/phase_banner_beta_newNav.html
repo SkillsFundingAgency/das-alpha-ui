@@ -9,33 +9,41 @@
 		        </p>
 		    </div>
 		</div>
-<nav id="navigation-primary" class="rj-dont-display">
-		<a href="#user-nav" class="js-toggle js-hidden-desktop menu-closed nav-menu-link" data-target="#user-nav">Settings</a>
-		<nav id="user-nav" class="js-hidden-mobile">
-			<ul>
-				<li class="top-level"><a href="/sprint{{sprint}}/user/index" class="js-toggle menu-closed" data-target="#nav-companies">Change levy account</a>
-					<ul id="nav-companies" class="js-hidden-mobile">
-						<li><a href="#">ABC Solutions Ltd</a></li>
-						<li><a href="#">Brighton Lights Ltd</a></li>
-						<li><a href="#">Doors &amp; Hinges Co</a></li>
-						<li class="selected"><a href="#">Red &amp; White &amp; Blue &amp; Green Holdings Ltd</a></li>
-						<li class="add-account"><a href="#">Add an another levy account</a></li>
-					</ul>
-				</li>
-				<li class="top-level"><a href="#">Help</a></li>
-				<li class="top-level"><a href="#" class="js-toggle menu-closed" data-target="#nav-user">Joe Bloggs</a>
-					<ul id="nav-user" class="js-hidden-mobile">
-						<li><a href="#">Sign out</a></li>
-					</ul>
-				</li>
-			</ul>
+  	</div>
+</div>
+  
+        
+<div id="floating-menu-holder">
+	<nav id="navigation-primary" class="floating-menu">
+    	<div class="js-float">
+		<p class="floating-head-text">Your employer account </p>		
+			<a href="#user-nav" class="js-toggle js-hidden-desktop menu-closed nav-menu-link" data-target="#user-nav">Settings</a>
+				<nav id="user-nav" class="js-hidden-mobile">
+                    <ul>
+                        <li class="top-level">
+                        <a href="/sprint{{sprint}}/user/index" class="js-toggle menu-closed" data-target="#nav-companies">Change levy account</a>
+                            <ul id="nav-companies" class="js-hidden-mobile">
+                                <li><a href="#">ABC Solutions Ltd</a></li>
+                                <li><a href="#">Brighton Lights Ltd</a></li>
+                                <li><a href="#">Doors &amp; Hinges Co</a></li>
+                                <li class="selected"><a href="#">Red &amp; White &amp; Blue &amp; Green Holdings Ltd</a></li>
+                                <li class="add-account"><a href="#">Add an another levy account</a></li>
+                            </ul>
+                        </li>
+                        <li class="top-level"><a href="#">Help</a></li>
+                        <li class="top-level"><a href="#" class="js-toggle menu-closed" data-target="#nav-user">Joe Bloggs</a>
+                            <ul id="nav-user" class="js-hidden-mobile">
+                                <li><a href="#">Sign out</a></li>
+                            </ul>
+                     </li>
+                    </ul>
+				</nav>	
+              </div> <!-- js-float end -->
 		</nav>
-	</div>
 </div>
 
-	<div class="header-organisation" id="kill-me">
+<div class="header-organisation" id="kill-me">
 		<div class="header-inner">
-			<!--h2 class="heading-medium">Red &amp; White &amp; Blue &amp; Green Holdings Ltd</h2-->
 			<nav id="global-nav" class="global-nav">
 				<ul id="global-nav-links">
 					<li class="home-nav"><a href="/{% include "includes/sprint-link.html" %}/balance">Home</a></li>
@@ -44,15 +52,11 @@
 					<li class="apprentice-nav"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/">Manage</a></li>
 					<li class="provider-nav"><a href="/{% include "includes/sprint-link.html" %}/training">Training</a></li>
 					<li class="top_nav looks-like-a-link-underline" style="padding: 12px 15px 10px;">Team</li>
-					<!--li class="top_nav looks-like-a-link-underline" style="padding: 12px 15px 10px;">Organisations</li-->
-
-
-					<!--li {% if page_name == "paye" %} class="current" {% endif %}><a href="/sprint/{{ sprint }}/account/paye/index">PAYE schemes</a></li-->
 				</ul>
 			</nav>
 		</div>
-	</div>
-</nav>
+</div>
+
 
 <!--
 <div class="phase-banner-beta">
