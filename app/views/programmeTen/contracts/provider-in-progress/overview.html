@@ -21,20 +21,21 @@
 }
 </style>
 
-
-<main id="content" role="main">
-{% include "includes/phase_banner_beta.html" %}
-
-<div id="floating-menu">
-<p>Your training provider account</p>
-
-						<ul id="service-info-list" role="navigation">
-                            <li><a href="/" class="link-user-profile">Mr A DASTEST1</a></li>
-                            <li><a href="/signout">Sign out</a></li>
-                        </ul>
+<!-- FLOATING MENU HTML -->
+<div id="floating-menu-prov">
+    <div id="floating-menu">
+    	<div class="js-float">
+    			<p>Your training provider account</p>   
+                 <ul id="service-info-list" role="navigation">
+                    <li><a href="/" class="link-user-profile">Mr A DASTEST1</a></li>
+                    <li><a href="/signout">Sign out</a></li>
+                 </ul>
+         </div>
+    </div>
 </div>
 
-<div class="header-organisation">
+<div id="provider-nav">
+	<div class="header-organisation">
 		<div class="header-inner">
 			<!--h2 class="heading-medium">Red &amp; White &amp; Blue &amp; Green Holdings Ltd</h2-->
 			<nav id="global-nav" class="global-nav">
@@ -47,8 +48,12 @@
 			
 			</nav>
 		</div>
+	</div>
 </div>
+<!-- END FLOATING MENU HTML -->
 
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
 
      <div class="breadcrumbs back-breadcrumb">
     <ol role="breadcrumbs">
