@@ -2665,7 +2665,7 @@ tr.total td {
 /*floating menu style - EMPLOYER */
 #floating-menu-holder{
        width: 100%;
-    background: #912B88;
+    background: $brown;
     float: left;
 
 }
@@ -2675,7 +2675,7 @@ tr.total td {
 	max-width:960px;
 	width:100%;
 	border-bottom:1px solid #bfc1c3;
-	background:#912B88;
+	background:$brown;
 	color:#fff;
     z-index:1000;
     margin:0 auto;
@@ -2710,7 +2710,8 @@ tr.total td {
     .fixed-header p.floating-head-text{
         max-width:960px;
         margin:0 auto;
-        margin-top: 10px;
+        margin-top: 0px;
+        padding: 5px 0;
     }
     /* - END floating menu style */
 
@@ -2719,7 +2720,7 @@ tr.total td {
 #floating-menu-prov{
 
     width: 100%;
-    background: #006435;
+    background: $grass-green;
     float: left;
     padding:10px 0;
 }
@@ -2728,7 +2729,7 @@ tr.total td {
     clear: both;
     width: 100%;
    
-    background: #006435;
+    background: $grass-green;
     color: #fff;
     z-index: 1000;
     max-width: 960px;
@@ -2747,11 +2748,15 @@ tr.total td {
     margin-right: 20px;
 	}
 
+.fixed-header #service-info-list{
+  display:none;
+}
+
 #floating-menu-prov .fixed-header {
   position: fixed;
   top:0; left:0;
   max-width: 100%; 
-  padding:10px 0;
+  padding:5px 0;
 }
 
 #floating-menu-prov .width-adjust{
@@ -2759,7 +2764,9 @@ tr.total td {
     margin: 0 auto;
 }
 
-
+.fixed-header nav{
+  display:none;
+}
 
 /* END - Floating menu styles */
 
