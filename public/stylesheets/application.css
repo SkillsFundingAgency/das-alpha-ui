@@ -4526,3 +4526,112 @@ tr.total td {
 .govuk-box-highlight a:visited {
   color: #912B88;
 }
+
+/*floating menu style - EMPLOYER */
+#floating-menu-holder {
+  width: 100%;
+  background: #912B88;
+  float: left;
+}
+
+.floating-menu {
+  clear: both;
+  max-width: 960px;
+  width: 100%;
+  border-bottom: 1px solid #bfc1c3;
+  background: #912B88;
+  color: #fff;
+  z-index: 1000;
+  margin: 0 auto;
+}
+
+.floating-menu nav#user-nav {
+  clear: none;
+}
+
+.floating-menu nav#user-nav > ul li.top-level > a {
+  color: #fff;
+}
+
+.floating-menu #user-nav ul li a.menu-closed:before {
+  border-left-color: #fff;
+}
+
+.floating-menu p.floating-head-text {
+  float: left;
+  margin: 10px 0 0 0;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+#floating-menu-holder .fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+}
+
+#floating-menu-holder .width-adjust {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.fixed-header p.floating-head-text {
+  max-width: 960px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+/* - END floating menu style */
+/* Floating menu styles - PROVIDER*/
+#floating-menu-prov {
+  width: 100%;
+  background: #006435;
+  float: left;
+  padding: 10px 0;
+}
+
+#floating-menu {
+  clear: both;
+  width: 100%;
+  background: #006435;
+  color: #fff;
+  z-index: 1000;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+#floating-menu a {
+  color: #fff;
+}
+
+#floating-menu p {
+  float: left;
+  margin: 0;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+#floating-menu #service-info-list {
+  float: right;
+}
+
+#floating-menu #service-info-list li {
+  float: left;
+  margin-right: 20px;
+}
+
+#floating-menu-prov .fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  padding: 10px 0;
+}
+
+#floating-menu-prov .width-adjust {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* END - Floating menu styles */
