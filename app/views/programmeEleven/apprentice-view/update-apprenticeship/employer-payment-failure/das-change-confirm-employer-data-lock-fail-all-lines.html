@@ -1,0 +1,249 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+    .apprentice-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<script>
+
+function whereNow() {
+   var status = $('input[name=radio-group]:checked').val();
+       switch (true) {
+        case  (status == 'approve'):
+            console.log('approve')
+            localStorage.setItem("commitments.userChangeStatus", JSON.stringify("updated"));
+             window.location.href='employer-data-lock-mel';
+            break;
+           case  (status == 'reject'):
+                console.log('reject')
+                localStorage.setItem("commitments.userChangeStatus", JSON.stringify('rejected'));
+                 window.location.href='employer-data-lock-mel';
+                break;
+        default:
+             console.log('gyahhhhhhhh, bork bork bork')
+            break;
+        }
+    }
+
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+  <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+              <h1 class="heading-xlarge" >Review changes</h1>
+            <div>
+
+            <table class="" style="margin:0">
+                  <thead>
+                    <tr>
+                      <th colspan="2"> </th>
+                    </tr>
+                  </thead>
+                    </table>
+
+                   <table class=""> 
+                  <tbody>
+
+                    <tr class="">
+                      <td class="apprenticeRecordTitle " style="width:250px">Name</td>
+                      <td class="" style="">Mel O'Connor</td>
+                    </tr>
+
+                     <tr>
+                      <td class="apprenticeRecordTitle" >Date of birth</td>
+                      <td style="" >28 February 1997</td>
+                    </tr>
+                   </tbody>
+                </table>
+            <div style="margin-top:35px"></div>
+                    <p class=" ">Hackney Skills & Training have suggested these changes:</p>
+
+            <!--table class="">
+              <tbody>
+                <h2 class="heading-small" style="">Change 1</h2>
+                     <tr>
+                      <td class="rjTableName" style=" font-weight:700;width:240px "></td>
+                      <td class="" style="font-weight:700;width:240px">Currently</td>
+                      <td class="" style="font-weight:700;width:240px;font-size:19px">Change to</td>
+                    </tr>
+                                        <tr>
+                      <td class="rjTableName">From date</td>
+                      <td class="rjTableName" style="">01 September 2017</td>
+                      <td  style="font-weight:700;font-size:19px ">01 August 2017</td>
+
+                    </tr>
+                     <tr>
+                      <td class="rjTableName">Cost</td>
+                      <td class="rjTableName" style="" >£2,000</td>
+                      <td style="font-weight:700; font-size:19px">£3,000</td>
+                    </tr>
+             </tbody>
+            </table-->
+            <!--div style="margin-top:50px"></div>
+            <table class="" style="">
+              <tbody>
+                <h2 class="heading-small" style="">Payment period 2</h2>
+                <p>No changes</p>
+
+             <tr>
+                      <td class="rjTableName" style=" font-weight:700;width:240px  "></td>
+                      <td class="" style="font-weight:700;width:240px">Current</td>
+                      <td class="" style="font-weight:700;width:240px;font-size:19px"></td>
+                    </tr>
+                                        <tr>
+                      <td class="rjTableName">Effective date</td>
+                      <td class="rjTableName" style="">01 September 2017</td>
+                      <td style="font-weight:700; font-size:19px"></td>
+
+                    </tr>
+                     <tr>
+                      <td class="rjTableName">Cost</td>
+                      <td class="rjTableName" >£2,000</td>
+                      <td style="font-weight:700; font-size:19px"></td>
+
+                    </tr>
+
+             </tbody>
+            </table-->
+
+
+
+            <div>
+              <div style="display:inline-block; width:295px" >
+            <table class="" > 
+                                          <tbody>
+                                            <div>
+                                            <h2 class="heading-small" style="font-weight:700">Currently</h2>
+                                          </div>
+
+                                        <div style="margin-top:15px"></div>
+                                                 <tr>
+                                                  <td class="" style="width:150px">From date</td>
+                                                  <td class="numeric" style="width:190px ">Total apprenticeship training price</td>
+                                                </tr>
+                                                <tr>
+                                                  <td class="rjTableName" style="">01 Sep 2017</td>
+                                                  <td class="numeric" style="">£2,000</td>
+                                                </tr>
+                                                  <tr>
+                                                  <td class="rjTableName" style="">01 Nov 2017 </td>
+                                                  <td class="numeric" style="">£2,000</td>
+                                                </tr>
+                                                 <!--tr>
+                                                  <td class="rjTableName" style="">04 June 2018 </td>
+                                                  <td class="numeric" style="">£2,000</td>
+
+                                                </tr-->
+                                         </tbody>
+                 </table>
+               </div>
+            <div style="display:inline-block; width:295px; margin-left:30px" >
+                 <table class="">
+                                          <tbody>
+                                            <div>
+                                            <h2 class="heading-small" style="font-weight:700 ">Change to</h2>
+                                          </div>
+                                        <div style="margin-top:15px"></div>
+                                                 <tr>
+                                                  <td class="" style="width:150px">From date</td>
+                                                  <td class="numeric" style="width:190px ">Total apprenticeship training price</td>
+                                                </tr>
+                                                  <tr>
+                                                  <td class="" style="font-weight:700; font-siz">01 Aug 2017</td>
+                                                  <td class="numeric" style="font-weight:700;">£3,000</td>
+                                                </tr>
+                                                <tr>
+                                                  <td class="rjTableName" style="">01 Nov 2017</td>
+                                                  <td class="numeric" style="">£2,000</td>
+                                                </tr>
+                                                 <!--tr>
+                                                  <td class="rjTableName" style="">04 June 2018 </td>
+                                                  <td class="numeric" style="">£2,100</td>
+                                                </tr-->
+                                         </tbody>
+                 </table>
+               </div>
+        </div>
+
+
+
+              <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
+              <form action="friendly-name">
+                  <legend class="visuallyhidden">Confirm changes</legend>
+                    <div class="form-group">
+                      <label class="form-label-bold" for="">Do you want to make these changes?</label>
+                    <!--label class="block-label" for="pause">
+                      <input id="pause" type="radio" name="radio-group" value="pause">
+                     Pause the apprenticeship
+                     </label-->
+                    <label class="block-label" for="approve">
+                      <input id="approve" type="radio" name="radio-group" value="approve">
+                    Yes, change these details
+                     </label>
+                     <label class="block-label" for="reject">
+                      <input id="reject" type="radio" name="radio-group" value="reject">
+                     No, don't change these details
+                     </label>
+                  </div>
+                </fieldset>
+                <div style="margin-top:50px"></div>
+
+          <!--input class="button" id="saveAndContinue" onclick="whereNow()" value="Save and continue"-->
+          <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Finish">
+              </form>
+                              <!--p class="looks-like-a-link-underline" id="saveAndAdd" style="margin-top:20px; cursor: pointer; cursor: hand; ">Cancel and return</p-->
+            </div>
+          </div>
+          <div class="column-one-third">
+                       <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Provider management</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/paymentplan">Add a new payment plan (OUT?)</a>
+                          </li>
+                          <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/makepayment">Make a payment</a>
+                          </li>
+                           <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/reviewpayments">Review and amend regular payments</a>
+                          </li>
+                            <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/spendingcommitments">View a summary of your spending commitments</a>
+                          </li>
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+        </div>
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
+{% endblock %}
+

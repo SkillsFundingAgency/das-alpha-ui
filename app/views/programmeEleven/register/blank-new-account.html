@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/">Apprenticeship account</a></li>
+    </ol>
+
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+              <h1 class="heading-large" >Claim your apprenticeship funding</h1>
+            <div> 
+             <p>If you are an employer with a payroll of more than £3 million you can claim and manage your apprenticeship funding in this account.</p>
+             <p>To claim your funding you will need to tell us which PAYE schemes you want to use in this account.</p>
+              <p>You can have more than one apprenticeship account and put different PAYE scemes in these accounts, but you cannot move your funding between apprenticeship accounts.</p>
+              <p>
+                  You will need to enter a Government Gateway ID for every PAYE Scheme that you want to include in your apprenticeship account.
+              </p>
+              <p>Once you have added the PAYE schemes you will have the opportunity to invite other users to access the account.</p>
+            </div>
+                <div class="padder-top-x">
+                <a href="/{% include "includes/sprint-link.html" %}/register/govtCredentials" class="button">Claim your funds</a>
+                </div>
+                  <div style="margin-top:50px"></div>
+                  <p class="rjTemp"><a  href="saved-provider-new-account">Save a provider variation</a></p>
+                  <p class="rjTemp"><a href="#">Post a vacancy variation</a></p>
+                  <p class="rjTemp"><a href="#">Spending tools variation?</a></p>
+              </div>
+
+          <div class="column-one-third">
+
+                      <aside class="related">
+                        <p class="font-xsmall">Account number: DF9 0832 778<p>
+                        <h2 class="heading-medium" style="margin-top:10px">Manage apprenticeships </h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/register/govtCredentials">Claim your funds</a>
+                          </li>
+                          <li>
+                            <a href="#">Find & save a standard & provider</a>
+                          </li>
+                          <li>
+                            <a href="#">Post a vacancy</a>
+                          </li>
+                        </ul>
+                           </nav>
+                           <!--h2 class="heading-medium ">Providers</h2>
+                        <nav role="navigation">
+                           <ul class="robSideNav">
+                           <li>
+                            <a href="/sprint2/find">Find a standard & provider</a>
+                          </li>
+                          <li>
+                            <a href="/sprint2/pay"></a>
+                          </li>
+                      </ul>
+                    </nav-->
+                    </aside>
+            </div>
+        </div>
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+$( document ).ready(function() {
+
+  // change the tabs themselves to active - should be in the above but isn't working because it's looking for a not li so I added this as a quick fix.
+
+  $("ul#tabs-nav li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs-nav li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#tabs-nav li.active").removeClass("active");
+            $("ul#tabs-nav li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+  $('ul.tabs-nav').each(function(){
+    // For each set of tabs, we want to keep track of
+    // which tab is active and its associated content
+    var $active, $content, $links = $(this).find('a');
+
+
+
+    // If the location.hash matches one of the links, use that as the active tab.
+    // If no match is found, use the first link as the initial active tab.
+    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+   // $active.addClass('active');
+   console.log($active)
+
+    $content = $($active[0].hash);
+
+    // Hide the remaining content
+    $links.not($active).each(function () {
+      $(this.hash).hide();
+    }); 
+
+    // Bind the click event handler
+    $(this).on('click', 'a', function(e){
+      // Make the old tab inactive.
+    //  $active.removeClass('active');
+      $content.hide();
+
+      // Update the variables with the new link and content
+    //  $active = $(this);
+      $content = $(this.hash);
+
+      // Make the tab active.
+     // $active.addClass('active');
+      $content.show();
+
+      // Prevent the anchor's default click action
+      e.preventDefault();
+    });
+  });
+
+
+</script>
+
+{% endblock %}
+

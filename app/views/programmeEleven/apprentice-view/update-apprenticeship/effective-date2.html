@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    {% include "includes/head.html" %}
+
+{% endblock %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .apprentice-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+
+<script>
+
+$(document).on('click', 'input[type="radio"]', function (e) {
+  if ($(e.target).attr('id') === 'radio-3' || $(e.target).attr('id') === 'radio-4' || $(e.target).attr('id') === 'radio-5') 
+  { $('#dateInTheFuture').removeClass('js-hidden') ; } 
+      else {$('#dateInTheFuture').addClass('js-hidden');};
+});
+
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+<script>
+var whereNow = function() {
+  var status = $('input[name=radio-group]:checked').val();
+  console.log(status)
+    if (status == "acme-coventry") {
+         var isAddedApp = 'yes';
+         localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
+         window.location.href='are-you-sure';
+  } else {
+      var isAddedApp = 'no';
+      localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
+    window.location.href='are-you-sure';
+  }
+};
+</script>
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+            <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Date of status change</h1>
+
+            <p class="form-label-bold" style="">When did this apprentice stop?</p>
+
+            <form action="reason">
+    <input id="source" name="source" type="hidden" value="employer"/>
+    <fieldset>
+      <legend class="visuallyhidden">Access to the service</legend>
+      <label class="block-label " for="radio-1">
+        <input id="radio-1" type="radio" name="radio-group" value="acme-coventry">
+        <span>Today</span>
+      </label>
+        <label class=" block-label " for="radio-3">
+        <input id="radio-3" type="radio" name="radio-group" value="other-org" >
+        <span >Before today</span>
+      </label>
+    </fieldset>
+
+     <div class="js-hidden" id="dateInTheFuture" style="margin: 0px 0 0 0px">
+      <div class="form-group" style="margin-bottom:30px">
+          <fieldset>
+            <legend class="visuallyhidden">Date</legend>
+              <div class="form-date">
+                <label class="form-label-bold" style="margin-top: 30px"  for="apprenticeGivenName">Date the change took affect
+                  <span class="form-hint">The earliest date you can enter is 01 09 2017</span>
+                    </label>
+                <div class="form-group form-group-day">
+                  <label class="form-label" for="startDay">Day</label>
+                  <input class="form-control" id="startDay" name="start-day" type="number" min="1" max="31" value="">
+                </div>
+                <div class="form-group form-group-month">
+                  <label class="form-label" for="startMonth">Month</label>
+                  <input class="form-control" id="startMonth" name="start-month" type="number" min="1" max="12" value="">
+                </div>
+                <div class="form-group form-group-year">
+
+                  <label class="form-label" for="startYear">Year</label>
+                  <input class="form-control" id="startYear" name="start-year" type="number" min="2017" max="2020" value="">
+                </div>
+              </div>
+    </fieldset>
+      </div>
+    </div>
+
+     <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" style="margin-top:35px" value="Continue">
+
+                  <p class="looks-like-a-link-underline" id="saveAndAdd" style="margin-top:20px; cursor: pointer; cursor: hand; ">Cancel and return</p>
+
+
+          </div>
+
+      <div class="column-one-third">
+      </div>
+</main>
+
+
+
+
+
+{% endblock %}
+

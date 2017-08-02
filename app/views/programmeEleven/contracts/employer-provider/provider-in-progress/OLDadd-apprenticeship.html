@@ -1,0 +1,170 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  #navigation-primary {
+    display:none;
+  }
+</style>
+
+
+
+<script>
+
+/* to set the saved variable on save and return (so it changed the next screen to show an apprenticeship that's been added) */
+var btn = document.getElementById('saveApprenticeship');
+EventUtil.addHandler(btn, 'click', function(){
+          var isAddedApp = 'yes';
+         localStorage.setItem("apprenticeship-added", JSON.stringify(isAddedApp));
+          window.location.href='../provider-in-progress/provider-list';
+ });
+
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+            <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Add an apprenticeship</h1>
+
+            <p class="">Add the details of your apprenticeship below. If you don't have the information now you can leave it blank and add it later</p>
+            <form action="training-list">
+                <fieldset>
+                  <legend class="visuallyhidden">Enter the name of the framework or standard.</legend>
+                    <div class="form-group" style="margin-bottom:15px">
+                        <label class="form-label-bold" for="search">Find training type
+                        <span class="form-hint">Search by name or training code </span>
+                      </label>
+                        <input class="form-control" id="search-for-training" type="text">
+
+                    </div>
+                      <input class="button button-grey-secondary" id="search-provider" type="submit" value="Find training type">
+                  </fieldset>
+
+            </form>
+            <form style="margin-top:30px">
+              <hr />
+            <div class="form-group">
+            <fieldset>
+              <legend>
+                <span class="form-label-bold">Projected start date</span>
+              </legend>
+              <div class="form-date">
+                <div class="form-group form-group-month">
+                  <label class="form-label" for="dob-month">Month</label>
+                  <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                </div>
+                <div class="form-group form-group-year">
+                  <label class="form-label" for="dob-year">Year</label>
+                  <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2030">
+                </div>
+              </div>
+            </fieldset>
+      </div>
+
+        <div class="form-group">
+            <fieldset>
+              <legend>
+                <span class="form-label-bold">Projected finish date</span>
+              </legend>
+              <div class="form-date">
+                <div class="form-group form-group-month">
+                  <label class="form-label" for="dob-month">Month</label>
+                  <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                </div>
+                <div class="form-group form-group-year">
+                  <label class="form-label" for="dob-year">Year</label>
+                  <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2030">
+                </div>
+              </div>
+            </fieldset>
+
+      </div>
+
+        <fieldset>
+           <hr style="margin-top:0px"/>
+            <legend class="visuallyhidden">Cost per apprenticeship</legend>
+            <div class="form-group">
+            <label class="form-label-bold" for="search">Cost of apprenticeship
+          <!--span class="form-hint">Here is a hint for this form field.</span-->
+           </label>
+              <span class="rj-currency-symbol">£</span>
+              <input class="form-control rj-currency-input" id="apprenticeCost " type="text" value="">
+      </div>
+    </fieldset>
+           <hr style="margin-top:0px"/>
+        <fieldset>
+          <legend class="visuallyhidden">Apprentice name</legend>
+                <div class="form-group" style="margin-bottom:15px">
+                    <label class="form-label-bold" for="search">Apprentice given name
+                     <!--span class="form-hint">If you don't have this yet, you can leave it blank</span-->
+                    </label>
+                  <input class="form-control" id="apprentice-given-name" type="text">
+                </div>
+                <div class="form-group" style="margin-bottom:15px">
+                    <label class="form-label-bold" for="search">Apprentice family name
+                     <!--span class="form-hint">If you don't have this yet, you can leave it blank</span-->
+                    </label>
+                  <input class="form-control" id="apprentice-family-name" type="text">
+                </div>
+        </fieldset>
+        <fieldset>
+           <hr style=""/>
+            <legend class="visuallyhidden">ULN</legend>
+            <div class="form-group">
+            <label class="form-label-bold" for="search">Unique learner number
+           <!--span class="form-hint">If you don't have this yet, you can leave it blank</span-->
+           </label>
+              <input class="form-control " id="ULN " type="text" value="">
+      </div>
+    </fieldset>
+
+
+
+
+    </form>
+
+          <div style="margin-top:20px;"><input class="button" id="saveApprenticeship" onclick="addedApp()" value="Save and return"></div>
+          <p class="looks-like-a-link-underline" style="margin-top:20px">Save and clone this apprenticeship</p>
+
+
+
+
+          </div>
+            <div class="column-one-third">
+
+
+        </div>
+
+
+
+</main>
+
+
+
+
+
+{% endblock %}
+

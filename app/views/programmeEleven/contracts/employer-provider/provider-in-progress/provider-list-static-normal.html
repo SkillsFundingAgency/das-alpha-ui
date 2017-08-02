@@ -1,0 +1,363 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    {% include "includes/head.html" %}
+    <!--script>
+        var commitmentListSource = 'provider';
+    </script>
+    <script src="/public/javascripts/das/list-commitment-1.0.js"></script-->
+{% endblock %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<script>
+/* needs to swap the divs out later on if an apprenticeship has been added */
+
+// this is now in the global custom.js file as things were breaking because of the url switching jquery
+
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+
+ <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+            <li><a href="/{% include "includes/sprint-link.html" %}/balance">Provider home</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/contracts/providers">Commitments in progress</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress">View commitments</a></li>
+            <li  id="removeWithNav">98HGS3F</li>
+    </ol>
+  </div>
+
+
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+<h1 class="heading-xlarge">Apprentice cohort</h1>
+  <div class="grid-row">
+           <div class="column-half">
+             <!--div class="govuk-box-highlight">
+                <h1 class="bold-xlarge">
+                  Commitment started
+                </h1>
+                <p>Your commitment reference number is <br>
+                  <strong class="heading-medium">98HGS3F</strong>
+                </p>
+            </div-->
+
+
+              
+
+                        <div class="" style="padding-bottom:35px">
+                                   <div id=""><h2 id="providerName" class="heading-small"  style="display:inline-block; margin:0;">Employer:&nbsp</h2 ><p id="commitmentsName" style="display:inline; margin:0;">Acme Coventry Ltd</p></div>
+                                    <div id=""><h2 class="heading-small"  style="display:inline-block; margin:0;">Cohort name:&nbsp</h2 ><p style="display:inline; margin:0;">Mechatronics August 2018</p></div>
+                                  <div><h2 class="heading-small" style="display:inline-block; margin:0;">Reference:&nbsp</h2 ><p style="display:inline; margin:0;">98HGS3F</p></div>
+                                  <div><h2 class="heading-small" style="display:inline-block; margin:0;">Status:&nbsp</h2 ><p style="display:inline; margin:0;">Needs your approval</p></div>
+
+                                  
+                      </div>
+            </div>
+
+        <div class="column-half" id="notesStuff">
+          <div class="" style="padding-bottom:35px">
+            <div><h2 class="heading-small" style="display:inline-block; margin:0;">Note:&nbsp</h2 ><p style=" margin:0;">Hi Sarah, we've made the amends as requested. If you're happy can you approve it and we can start the training.</p></div>
+
+          </div>
+                      <!--aside class="related">
+                        <nav role="navigation">
+                      <h2 class="heading-medium" style="margin-top:35px">Finished editing</h2>
+                        <p >When you've finished, tell us and you can send to employer for additional details or approval  </p>
+                                <form class="" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
+                                    <div style="margin-top:20px;"><input class="button" type="submit"  id="send-to-employer"  value="Finshed editing"></div>
+                                </form-->
+                           </nav>
+                    </aside>
+            </div>
+        </div>
+
+
+            <!--div class="rj-contract-verify">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-medium" style="margin: 22px 0 5px 20px">SFA Contracts</h2>
+                  <p style="width:90%; margin: 10px 0px 5px 20px; overflow:auto">You can continue to set up your programme, but you cannot submit it until you have agreed to your contract with the SFA.</p>
+                  <p  style="width:100%; margin: 15px 0 0px 20px"><a href="#">Sign contracts</a></p>
+                </div>
+            </div-->
+
+
+    <!-- ----------- This is the default where there aren't any groups or cohorts added ------------ -->
+
+
+
+
+    <!-- -------------- This is shows when one apprenticeship has been added ---------- -->
+                <div style="margin-top:45px" class="rj-has-apprenticeships" id="apprenticeships">
+                  <h2 class="heading-medium"><span style="font-weight:700" id="numberOfApprentices"></span> 15 Apprenticeships</h2>
+                  <!--hr style="margin-top:35px"/-->
+
+                 <!--form class="" action="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">
+                    <input type="hidden" name="source" value="provider" />
+                    <div style="margin-top:20px;"><input class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add an apprenticeship"></div>
+                  </form-->
+                  <!--p><a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/provider-interface/add-apprenticeship">Add a new apprenticeship group</a></p-->
+                  <!--p style="margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">Import apprenticeships</a></p-->
+
+                  <hr style="margin:0 0 18px 0" />
+        <div class="commit-bar">
+            <form class="" style="display:inline-block" action="/{% include "includes/sprint-link.html" %}/contracts/provider-interface/add-apprenticeship">
+                <input type="hidden" name="source" value="provider" />
+                <div style="display:inline-block;"><input style="display:inline" class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add an apprenticeship"></div>
+            </form>
+             <form class="" style="display:inline-block" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">
+                <input type="hidden" name="source" value="provider" />
+                <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px" class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Import apprenticeships"></div>
+            </form>
+             <!--p style="display:inline; margin-top:20px"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/bulk-upload-provider">Import apprenticeships</a></p-->
+             <form class="" style="display:inline-block; float:right;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
+                    <div style="display:inline-block;"><input class="button" style="display:inline; margin:0 0 0 10px" type="submit"  id="send-to-employer"  value="Finshed editing"></div>
+              </form-->
+        </div>
+
+              <hr style="margin:20px 0 15px 0" />
+
+               <div class="fullWidthGreyAlert">
+                <h2 class="heading-medium" style="padding-top:20px; margin-bottom:10px" >6 Mechatronics Engineers changed</h2>
+                  <p style="margin:0">Changes your provider has made have been listed next to the record.</p>
+               </div>
+
+                <h2 class ="heading-medium"  style="margin-bottom:5px"  id="apprenticeReplaceMe">10 Mechatronics Engineers</h2>
+                <p style="margin:0px">Level: 4</p>
+                <p style="margin-top:0px">Training code: 3246</p>
+                <table class="" id="">
+                    <thead>
+                      <tr>
+                        <!--th scope="col">Training code</th-->
+                     <!--  <th scope="col">Training type</th> -->
+                        <th scope="col" class="">Name</th>
+                        <!-- th scope="col" class="">Family<br />name</th-->
+                        <th scope="col" class="">ULN</th>
+                        <th scope="col" class="">Training dates</th>
+                        <!--th scope="col" class="">End<br />date</th-->
+                         <th scope="col" class="">Cost</th>
+                         <th scope="col" class="">Changes</th>
+
+                        <th scope="col" class=""></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Rob Edwards</td>
+
+                        <td class="">8321052156</td>
+                        <td class=" ">11/18 to 11/20 </td>
+
+                        <td class="">£2,000</td>
+                        <td class="">
+                        Start date from <span class="changeHighlightCopy">11/19</span> 
+                         <br />End date from <span class="changeHighlightCopy">11/21</span> 
+                        <br />Cost from <span class="changeHighlightCopy">£5,000.93</span> 
+                      </td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+                      <tr>
+                        <td>Taylor Lucas</td>
+                        <td class="">1221052101</td>
+                        <td class=" ">11/18 to 11/20 </td>
+                        <td class="">£2,000</td>
+
+                         <td class="">
+                         </td>
+
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+                      <tr>
+                        <td>Prahlad Naik</td>
+                        <td class="">6621052119</td>
+                        <td class=" ">11/18 to 11/20 </td>
+                        <td class="">£2,000</td>
+
+                         <td class="">
+                          Given name from <span class="changeHighlightCopy">Pralad Nak</span> 
+                       
+
+                         </td>
+
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+                                            <tr>
+                        <td>Jeff Bloggs</td>
+                        <td class="">8621052198</td>
+                        <td class=" ">11/18 to 11/20 </td>
+                        <td class="">£2,000</td>
+
+                         <td class="" >
+                         </td>
+
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+                                            <tr>
+                        <td  style="max-width:100px; word-wrap:break-word;">Mahershalalhashbaz Tollemache-Tollemache de Orellana Plantagenet</td>
+                        <!--td style="max-width:160px; word-wrap:break-word;">Tollemache-Tollemache de Orellana Plantagenet</td-->
+                        <td class="">21210521523</td>
+                        <td class=" ">11/18 to 11/20 </td>
+                        <td class="">£2,000</td>
+
+                         <td class="">
+                         Name from <span class="changeHighlightCopy">Rob andrew</span> 
+                       </span> 
+
+                         </td>
+
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+                                            <tr>
+                        <td>Melissa Shaw</td>
+                        <td class="">8921052156</td>
+                        <td class=" ">11/18 to 11/20 </td>
+                        <td class="">£2,000</td>
+
+                         <td class="">
+ 
+                         </td>
+
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+                                            <tr>
+                        <td>Brendan Hamazaki</td>
+
+                        <td class="">2421052176</td>
+                        <td class=" ">11/18 to 11/20 </td>
+                        <td class="">£2,000</td>
+
+                         <td class="">
+                            Cost from <span class="changeHighlightCopy">£5,000.93</span> 
+                         </td>
+
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+                                            <tr>
+                        <td>Gary Barton</td>
+                        <td class="">4521052191</td>
+                        <td class=" ">11/18 to 11/20 </td>
+                        <td class="">£2,000</td>
+
+                         <td class="">
+
+                         </td>
+
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+                                            <tr>
+                        <td>Tommy Barger</td>
+                        <td class="">4121052139</td>
+                        <td class=" ">11/18 to 11/20 </td>
+                        <td class="">£2,000</td>
+                         <td class="">
+
+                        End date from <span class="changeHighlightCopy">11/21</span> 
+                        <br />Cost from <span class="changeHighlightCopy">£5,000.93</span> 
+                         </td>
+
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+                                            <tr>
+                        <td>William Dewitt</td>
+                        <td class="">8221052149</td>
+                        <td class=" ">11/18 to 11/20 </td>
+                        <td class="">£2,000</td>
+                         <td class="">
+                         Name from <span class="changeHighlightCopy">Pralad Defoe</span> 
+                         </td>
+
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+
+                    </tbody>
+                </table>
+                     <!--hr style="margin:35px 0 35px 0;"/-->
+
+
+                <h2 class ="heading-medium"  style="margin-bottom:5px"  id="apprenticeReplaceMe">5 Bakery Assistants</h2>
+                <p style="margin:0px">Level: 2</p>
+                <p style="margin-top:0px">Training code: 6863</p>
+                <table class="" id="">
+                    <thead>
+                      <tr>
+                        <!--th scope="col">Training code</th-->
+                     <!--  <th scope="col">Training type</th> -->
+                        <th scope="col" class="">Name</th>
+
+                        <th scope="col" class="">ULN</th>
+                        <th scope="col" class="">Traning dates</th>
+
+                         <th scope="col" class="">Cost</th>
+                            <th scope="col" class="">Changes</th>
+                        <th scope="col" class=""></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Mayu Hirano</td>
+                        <td class="">6421052104</td>
+                        <td class=" ">10/18 to 09/19</td>
+
+                        <td class="">£1,492</td>
+                        <td></td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+                      <tr>
+                        <td>Rajeshwari Pillai</td>
+                        <td class="">0921052112</td>
+                        <td class=" ">10/18 to 09/19</td>
+                        <td class="">£1,492</td>
+                        <td></td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+                       <tr>
+                        <td>Hoai Mi Le</td>
+                        <td class="">7821052148</td>
+                        <td class=" ">10/18 to 09/19</td>
+                        <td class="">£1,492</td>
+                        <td></td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+                      <tr>
+                        <td>Raven Welsh</td>
+                        <td class="">6121052198</td>
+                        <td class=" ">10/18 to 09/19</td>
+                        <td class="">£1,492</td>
+                        <td></td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+                      <tr>
+                        <td>Nana Friedman</td>
+                        <td class="">49210521521</td>
+                        <td class=" ">10/18 to 09/19</td>
+                        <td class="">£1,492</td>
+                        <td></td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
+
+{% endblock %}
+

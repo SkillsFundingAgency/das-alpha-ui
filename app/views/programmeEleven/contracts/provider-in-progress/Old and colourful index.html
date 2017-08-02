@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  SFS
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+ #navigation-primary, #kill-me {
+  display:none;
+}
+
+
+  @media (min-width: 641px) and (max-width: 890px){
+.rj-alert-wrapper {
+  height:135px;
+}
+}
+
+  @media (min-width: 641px) and (max-width: 700px){
+.rj-alert-wrapper {
+  height:160px;
+}
+}
+
+</style>
+
+<script>
+ var isAddedApp = 'no';
+    localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
+
+</script>
+
+<main id="content" role="main">
+
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress">SFS home</a></li>
+    </ol>
+  </div>
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+
+          <div class="grid-row" >
+  <div class="column-two-thirds">
+     <h1 class="heading-xlarge rj-headings-border" id="" >Hackney Skills &amp Training</h1>
+
+    <a style="display:block" href="#">  <div class="column-one-half" style="padding-left:0" >
+                <div style="background-color:#912B88; min-height:140px" >
+                  <h2 class="bold-large" style="font-size:32px; color:#fff; margin: 0px 0 0px 15px; padding-top:25px">Contracts</h2>
+                </div>
+                                 <div style="background-color:#AD60A6; min-height:40px" ><h2 class="heading-small" style="color: #fff; margin: 0px 0 0px 15px; padding-top:8px">7 new alerts to review</h2></div>
+      </div> </a>
+
+    <a style="display:block" href="#">  <div class="column-one-half" style="padding-right:0" >
+                <div style="background-color:#912B88; min-height:140px" >
+                  <h2 class="bold-large" style="font-size:32px; color:#fff; margin: 0px 0 0px 15px; padding-top:25px">Funding claims</h2>
+                </div>
+               <div style="background-color:#AD60A6; min-height:40px" ><h2 class="heading-small" style="color: #fff; margin: 0px 0 0px 15px; padding-top:8px">3 new alerts to review</h2></div>
+      </div> </a>
+    <a style="display:block" href="#">  <div class="column-one-half" style="padding-left:0; margin-top:35px" >
+                <div style="background-color:#912B88; min-height:140px" >
+                  <h2 class="bold-large" style="font-size:32px; color:#fff; margin: 0px 0 0px 15px; padding-top:25px">Statistics</h2>
+                </div>
+                                 <div style="background-color:#AD60A6; min-height:40px" ><h2 class="heading-small" style="color: #fff; margin: 0px 0 0px 15px; padding-top:8px">2 new alerts to review</h2></div>
+      </div> </a>
+
+      <a style="display:block" href="#">  <div class="column-one-half" style="padding-right:0; padding-right:0; margin-top:35px" >
+                <div style="background-color:#912B88; min-height:140px" >
+                  <h2 class="bold-large" style="font-size:32px; color:#fff; margin: 0px 0 0px 15px; padding-top:25px">Sub-contracting</h2>
+                </div>
+              <div style="background-color:#AD60A6; min-height:40px" ><h2 class="heading-small" style="color: #fff; margin: 0px 0 0px 15px; padding-top:8px">7 new alerts to review</h2></div>
+      </div> </a>
+
+          <a style="display:block" href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/P-DAS-Home">  <div class="column-one-half" style="padding-left:0; padding-left:0; margin-top:35px" >
+                <div style="background-color:#D53880; min-height:180px" >
+                  <h2 class="bold-large" style="font-size:32px; color:#fff; margin: 0px 0 0px 15px; padding-top:25px">Apprenticeship <br />Service</h2>
+                </div>
+
+      </div> </a>
+
+    <!--a style="display:block" href="#">  <div class="column-one-half" style="padding-right:0; margin-top:35px" >
+                <div style="background-color:#D53880; min-height:140px" >
+                  <h2 class="bold-large" style="font-size:32px; color:#fff; margin: 0px 0 0px 15px; padding-top:25px">Apprentices</h2>
+                </div>
+                 <div style="background-color:#E06AA0; min-height:40px" ><h2 class="heading-small" style="color: #fff; margin: 0px 0 0px 15px; padding-top:8px">3 new alerts to review</h2></div>
+      </div> </a-->
+
+
+<!-- purple version
+
+            <a style="display:block" href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/overview">  <div class="column-one-half" style="padding-left:0; padding-left:0; margin-top:35px" >
+                <div style="background-color:#2E358B; min-height:140px" >
+                  <h2 class="bold-large" style="font-size:32px; color:#fff; margin: 0px 0 0px 15px; padding-top:25px">Employer <br />requests</h2>
+                </div>
+                                 <div style="background-color:#6268A8; min-height:40px" ><h2 class="heading-small" style="color: #fff; margin: 0px 0 0px 15px; padding-top:8px">43 new alerts to review</h2></div>
+      </div> </a>
+
+end of purple version -->
+
+  </div>
+  </div> <!-- close grid-row  -->
+
+
+
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
+</script>
+
+{% endblock %}
+
