@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+#navigation-primary, #kill-me {
+  display:none ;
+}
+
+</style>
+
+ <script>
+var whereNow = function() {
+  var status = $('input[name=only-user]:checked').val();
+  console.log(status)
+    if (status == "true") {
+        var addingAnother = 'No';
+        localStorage.setItem("registration.addingAnotherUser", JSON.stringify(addingAnother));
+         window.location.href='onboarding/things-to-do';
+  } else {
+            var addingAnother = 'yes';
+        localStorage.setItem("registration.addingAnotherUser", JSON.stringify(addingAnother));
+    window.location.href='onboarding/invite';
+  }
+};
+ </script>
+
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+     {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+      <div class="grid-row">
+           <div class="column-two-thirds">
+             <h1 class="heading-xlarge" >Who will organise your training programme?</h1>
+             <!--p>Invite somebody to spend your levy funds.</p-->
+
+              <form action="thought-about-accounts">
+                    <div class="">
+
+
+        <legend class="visuallyhidden">Will you be organising training?</legend>
+                    <div class="form-group">
+                      <label class="form-label-bold" for="only-person-true">Will you be organising training?</label>
+                    <label class="block-label" for="only-person-true">
+                      <input id="only-person-true" type="radio" name="only-user" value="true">
+                     Yes, I will organise training
+                     </label>
+                    <label class="block-label" for="only-person-false">
+                      <input id="only-person-false" type="radio" name="only-user" value="false">
+                    No, I need to invite a colleague to organise training
+                     </label>
+                  </div>
+                        </fieldset>
+                    </div>
+
+                  <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Continue">
+
+				  <!--div class="rjmakeALink" onclick="loopyLoop()"><p>Create another apprenticeship account</p></div-->
+				  <!--CREATE ANOTHER APPRENTICESHIP ACCOUNT-->
+              </form>
+
+            </div>
+      </div>
+</main>
+
+
+{% endblock %}

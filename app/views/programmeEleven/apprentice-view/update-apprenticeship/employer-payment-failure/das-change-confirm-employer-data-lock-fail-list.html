@@ -1,0 +1,205 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+    .apprentice-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<script>
+
+function whereNow() {
+   var status = $('input[name=radio-group]:checked').val();
+       switch (true) {
+         // case  (status == 'pause'):
+             //   console.log('paused')
+              //  localStorage.setItem("commitments.apprenticestatus", JSON.stringify('thing_is_done'));
+              //   window.location.href='update-apprenticeship/effective-date';
+              //  break;
+        case  (status == 'DAS'):
+            console.log('DAS')
+           // localStorage.setItem("commitments.userChangeStatus", JSON.stringify("updated"));
+             window.location.href='das-change-confirm-employer-data-lock-fail-changes-confirm';
+            break;
+        case  (status == 'ILR'):
+            console.log('ILR')
+              localStorage.setItem("commitments.userChangeStatus", JSON.stringify("ilrChangesPending"));
+             window.location.href='../individual-apprentice-data-lock-failure';
+            break;
+        default:
+             console.log('default triggered - taking back to record')
+             window.location.href='das-change-confirm-employer-data-lock-fail-changes-confirm';
+            break;
+        }
+    }
+
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+  <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+              <h1 class="heading-xlarge" >Review changes</h1>
+            <div>
+               <p class=" ">There are mismatches between the data in the apprenticeship service and what your provider has told us.</p>
+
+ 
+          <table class="" style="margin:0">
+                  <thead>
+                    <tr>
+                      <th colspan="2"> </th>
+                    </tr>
+                  </thead>
+                    </table>
+
+                   <table class=""> 
+                  <tbody>
+
+                    <tr class="">
+                      <td class="apprenticeRecordTitle " style="width:250px">Name</td>
+                      <td class="" style="">Mel O'Connor</td>
+
+
+                    </tr>
+                     <tr>
+                      <td class="apprenticeRecordTitle" >Date of birth</td>
+                      <td style="" >28 February 1997</td>
+                    </tr>
+                   </tbody>
+                </table>
+                          <div style="margin-top:50px"></div>
+
+                 <div style="margin-top:50px"></div>
+            <table class=""> 
+              <tbody>
+                <h2 class="heading-small" style="">Payment period 1</h2>
+                     <tr>
+                      <td class="rjTableName" style="font-weight:700;  "></td>
+                      <td class="" style="font-weight:700;width:240px">Apprenticeship service</td>
+                      <td class="" style="font-weight:700;">Data from provider</td>
+                    </tr>
+                    <tr>
+                      <td class="rjTableName">From date</td>
+                      <td class="rjTableName" style="">01 September 2017</td>
+                      <td style="">01 August 2017</td>
+
+                    </tr>
+                     <tr>
+                      <td class="rjTableName" >Cost</td>
+                      <td class="rjTableName" style="f">£2,000</td>
+                      <td style="">£3,000</td>
+
+                    </tr>
+
+             </tbody>
+            </table>
+
+
+            <div style="margin-top:50px"></div>
+            <table class="" style="">
+              <tbody>
+                <h2 class="heading-small" style="">Payment period 2</h2>
+               <tr>
+                      <td class="rjTableName" style="font-weight:700;  "></td>
+                      <td class="" style="font-weight:700;width:240px ">Apprenticeship service</td>
+                      <td class="" style="font-weight:700;">Data from provider</td>
+                    </tr>
+                                        <tr>
+                      <td class="rjTableName">From date</td>
+                      <td class="rjTableName" style="">01 September 2017</td>
+                      <td style="">01 September 2017</td>
+
+                    </tr>
+                     <tr>
+                      <td class="rjTableName" >Cost</td>
+                      <td class="rjTableName" style="f">£2,000</td>
+                      <td style="">£2,000</td>
+
+                    </tr>
+
+             </tbody>
+            </table>
+
+
+              <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
+              <!--form action="friendly-name">
+                  <legend class="visuallyhidden">Deal with it</legend>
+                    <div class="form-group">
+                      <label class="form-label-bold" for="">Do you need to update any of these details in your ILR submission?</label>
+
+                    <label class="block-label" for="DAS">
+                      <input id="DAS" type="radio" name="radio-group" value="ILR">
+                    Yes, I'm going to update my ILR and resubmit
+                     </label>
+                      <label class="block-label" for="ILR">
+                      <input id="ILR" type="radio" name="radio-group" value="DAS">
+                    No, I'd like to request these details are overwritten with the ILR
+                     </label>
+                     <label class="block-label" for="Change_later">
+                      <input id="Change_later" type="radio" name="radio-group" value="Change_later">
+                    Leave for now
+                     </label>
+                  </div>
+                </fieldset>
+            <div style="margin-top:50px"></div> -->
+          <!--input class="button" id="saveAndContinue" onclick="whereNow()" value="Save and continue"-->
+          <div style="margin-top:35px"></div>
+          <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Continue to changes">
+          put a cancel button in
+              </form>
+
+
+            </div>
+
+          </div>
+
+          <div class="column-one-third">
+                       <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Provider management</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/paymentplan">Add a new payment plan (OUT?)</a>
+                          </li>
+                          <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/makepayment">Make a payment</a>
+                          </li>
+                           <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/reviewpayments">Review and amend regular payments</a>
+                          </li>
+                            <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/spendingcommitments">View a summary of your spending commitments</a>
+                          </li>
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+        </div>
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
+{% endblock %}
+

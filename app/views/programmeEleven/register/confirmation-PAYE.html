@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+//jQuery( document ).ready(function() {
+     //jQuery.validate(); 
+// });
+
+
+//loopyloop stores a variable in local storage if the user is looping through the govt gateway form multiple times so I can display a confirmation page later
+var loopyLoop = function() {
+  var isLooping = 'yes';
+  localStorage.setItem("is-looping", JSON.stringify(isLooping));
+  window.location.href='govtCredentials';
+};
+
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+{% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+      <div class="grid-row">
+           <div class="column-two-thirds">
+              <h1 class="heading-xlarge" >Review your PAYE schemes</h1>
+              <p>Review the PAYE schemes you have added to your apprenticeship account.<p/>
+              <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
+              <form action="/{% include "includes/sprint-link.html" %}/register/friendly-name" >
+                  <legend class="visuallyhidden">PAYE scheme reference number</legend>
+                  <table class="table-19-font">
+                          <thead>
+                            <tr>
+                              <th scope="col" class="">PAYE scheme</th>
+                               <th scope="col"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="">846/A246</td>
+                              <td><a href="are-you-sure">Remove</a></td>
+                            </tr>
+                             <tr>
+                              <td class="">846/A249</td>
+                              <td><a href="#">Remove</a></td>
+                            </tr>
+                            <tr>
+                              <td class="">846/A250</td>
+                              <td><a href="#">Remove</a></td>
+                            </tr>
+                            <tr>
+                              <td class="">846/A260</td>
+                              <td><a href="#">Remove</a></td>
+                            </tr>
+                          </tbody>
+                      </table>
+
+                <!-- function loopyLoop and whereNow are at the top of this page -->
+                  <div class="rjmakeALink" style="margin-top:25px" onclick="loopyLoop()"><p>Save and add another set of PAYE schemes</p></div>
+                  <input class="button" id="saveAndContinue"  type="submit" value="Save and continue">
+              </form>
+
+            </div>
+            <div class="column-one-third"></div>
+          </div>
+
+</main>
+
+<script>
+
+
+
+
+</script>
+
+{% endblock %}

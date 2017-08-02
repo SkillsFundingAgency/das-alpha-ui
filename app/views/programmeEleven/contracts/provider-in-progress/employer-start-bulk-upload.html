@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<script>
+$(document).ready(function() {
+  // Need this because some future pages use JS to  figure out which page to go to.
+   localStorage.setItem("commitments.bulkUploadType", JSON.stringify("file"));
+});
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+
+<div class="grid-row">
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Bulk upload apprentices</h1>
+
+   <p>You can add details for more than one apprentice at the same time - you must use a template to do this.</p>
+
+  <div style="margin-top:25px"></div>
+
+             <h2 class="heading-medium">Before you start</h2>
+             <p>You must:</p>
+      <ul class="list list-bullet">
+        <li>use a template to create a separate file for each individual training course and level - each file should only list the apprentices for that apprenticeship</li>
+        <li>know the full name, date of birth, planned start and end dates, apprenticeship training course and apprenticeship training price for each apprentice you're adding</li>
+      </ul>
+
+    <div style="margin-top:35px"></div>
+    <div class="padder-top-x">
+        <a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/choose-training-employer" class="button ">Continue</a>
+          <!--a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/choose-training-employer" class="button ">Continue</a-->
+    </div>
+    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
+<!-- {% include "includes/start-tabs.html" %} -->
+
+            </div>
+
+             <div class="column-one-third" style="margin-top: 20px">
+                      <aside class="related">
+                        <h2 class="heading-medium" style="margin-top:20px" >Download a template</h2>
+                          <p>Add apprentice details to a template, then use it for the bulk upload.</p>
+                          <div class="attachment-thumb">
+                                           <img src="https://www.gov.uk/government/assets/pub-cover-spreadsheet-471052e0d03e940bbc62528a05ac204a884b553e4943e63c8bffa6b8baef8967.png">
+                         </div>
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="#">Download as MS Excel (78KB)</a>
+                          </li>
+                        </ul>
+                    </aside>
+            </div>
+</div>
+</main>
+
+
+
+
+{% endblock %}

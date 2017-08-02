@@ -1,0 +1,113 @@
+<!-- ROB >>>> THIS IS A DUPE OF /contracts/provider-in-progress/overview.html -->
+
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
+<script>
+ var isAddedApp = 'yes';
+    localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
+
+</script>
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<script>
+$(document).ready(function() {
+        var deletedUser = JSON.parse(localStorage.getItem('commitments.deletedCohortAlert'));
+ var showDeletedUserAlert = function() {
+   if (deletedUser=='yes') {
+     localStorage.setItem("commitments.deletedCohortAlert", JSON.stringify("nope"));
+    $(deletedUserAlertMessage).removeClass("rj-dont-display");
+   }
+ }
+showDeletedUserAlert()
+});
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+   <div style= "" id="deletedUserAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
+   Cohort was deleted
+    </div>
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}Cohorts for review</h1>
+      </div>
+</div>
+
+  <p class="lede ">You have <span style="font-weight:700">9</span> cohorts ready for review: </p>
+
+
+ <table id="transactionsOUT">
+      <div class=" "style ="margin-bottom:5px"></div>
+
+                    <thead>
+                      <tr>
+                        <th scope="col" class="mini-pad">Provider</th>
+                        <th scope="col" >Cohort reference</th>
+                        <th class="" scope="col" style="">Last message</th>
+
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+
+                      <tr>
+                        <td class="mini-pad">Hackney Skills &amp Training Ltd</td>
+                        <td>98HGS3F</td>
+                        <td style="max-width:300px">This is contract ref#90210, can you add the 25 bakery assistants to it.</td>
+
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list">Details</a></td>
+                      </tr>
+                      <tr>
+                        <td class="mini-pad">Hackney Skills &amp Training Ltd</td>
+                        <td>55HGS3F</td>
+                        <td style="max-width:300px">This is a message that has been added. It runs along the bottom of the card for now.</td>
+
+                        <td class="looks-like-a-link-underline">Details</td>
+                      </tr>
+                      <tr>
+                        <td class="mini-pad">Lots of skills Ltd</td>
+                        <td>999GHY4</td>
+                        <td style="max-width:300px">This is a message that has been added. It runs along the bottom of the card for now.</td>
+
+                        <td class="looks-like-a-link-underline">Details</td>
+                      </tr>
+                       <tr>
+                        <td class="mini-pad">Skills, Skills, Skills Ltd</td>
+                        <td>999GHY4</td>
+                        <td style="max-width:300px">This is a message that has been added. It runs along the bottom of the card for now.</td>
+
+                        <td class="looks-like-a-link-underline">Details</td>
+                      </tr>
+
+                    </tbody>
+                </table>
+            <div style="margin-top:60px"></div>
+      </div>
+</main>
+
+
+
+ <!--button class="button">Do the thing</button-->
+
+
+{% endblock %}
+

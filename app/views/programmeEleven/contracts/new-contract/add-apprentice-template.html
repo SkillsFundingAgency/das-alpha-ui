@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+        
+            <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+            <li><a href="/{% include "includes/sprint-link.html" %}/contracts/providers">Apprentices</a></li>
+            <li id="removeWithNav">Add an apprentice</li>
+    </ol>
+
+  </div>
+
+  <!--div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div-->
+
+
+<div class="grid-row">
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Add an apprentice</h1>
+
+   <p>Add details of one or more apprentices to your account, and authorise payments to their training provider.</p>
+
+  <div style="margin-top:25px"></div>
+
+  <h2 class="heading-medium">Before you start</h2>
+     <p>You must:</p>
+      <ul class="list list-bullet">
+        <li>know the names of your apprentices</li>
+        <li>know your training provider's UK Provider Reference Number (UKPRN) - your training provider can tell you this</li>
+        <li>make sure the organisation that's named on the contract you have with your training provider is in your account - 
+          <a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract">view organisations in this account</a></li>
+        <li>make sure the PAYE scheme that each apprentice is paid through is in your account - <a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract">view PAYE schemes in this account</a></li>
+             </ul>
+
+    <div style="margin-top:50px"></div>
+    <div class="padder-top-x">
+        <a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/choose-legal" class="button button-start">Start now</a>
+    </div>
+    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
+<!-- {% include "includes/start-tabs.html" %} -->
+
+            </div>
+
+             <div class="column-one-third" style="margin-top: 20px">
+                      <aside class="related">
+                        <h2 class="heading-medium" style="margin-top:20px" >Adding multiple apprentices?</h2>
+                          <p>Download a template and add apprentice details to it, then use it to add them all at the same time.</p>
+                          <div class="attachment-thumb">
+                                           <img src="https://www.gov.uk/government/assets/pub-cover-spreadsheet-471052e0d03e940bbc62528a05ac204a884b553e4943e63c8bffa6b8baef8967.png">
+                         </div>
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="#">Download as MS Excel (78KB)</a>
+                          </li>
+                           <li>
+                            <a href="#">Download as CSV (78KB)</a>
+                          </li>
+                           <li>
+                            <a href="#">Download as ODS (78KB)</a>
+                          </li>
+
+                        </ul>
+                    </aside>
+            </div>
+</div>
+</main>
+
+
+
+
+{% endblock %}
