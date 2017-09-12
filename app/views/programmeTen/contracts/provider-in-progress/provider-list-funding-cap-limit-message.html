@@ -6,11 +6,8 @@
         var commitmentListSource = 'provider';
         var employerOrNot = JSON.parse(localStorage.getItem('commitments.isEmployer'));
         var deletedUser = JSON.parse(localStorage.getItem('commitments.deletedUserAlert'));
-         var showULN = JSON.parse(localStorage.getItem('commitments.ULNupload'));
-         var bulkUploadType =  JSON.parse(localStorage.getItem('commitments.bulkUploadType'));
-
     </script>
-    <script src="/public/javascripts/das/list-commitment-1.6.js"></script>
+    <!--script src="/public/javascripts/das/list-commitment-1.6.js"></script-->
      <script src="/public/javascripts/das/jquery.highlight-5.js"></script>
 {% endblock %}
 
@@ -53,31 +50,16 @@ else {
 
  };
 
- var showAlerts = function() {
+ var showDeletedUserAlert = function() {
    if (deletedUser=='yes') {
      localStorage.setItem("commitments.deletedUserAlert", JSON.stringify("nope"));
     $(deletedUserAlertMessage).removeClass("rj-dont-display");
-   }
-
-    if (bulkUploadType!='nope') {
-     localStorage.setItem("commitments.bulkUploadType", JSON.stringify("nope"));
-    $(bulkUploadAlertMessage).removeClass("rj-dont-display");
-   }
- };
-
-
-
-  var ULNupload = function() {
-   if (showULN =='uploaded') {
-     localStorage.setItem("commitments.ULNupload", JSON.stringify("nope"));
-    $(ULNisDONE).removeClass("rj-dont-display");
    }
  }
 
 changeStuff();
 changeUnknown();
-showAlerts()
-ULNupload ()
+showDeletedUserAlert()
 });
 
 var goToDelete = function() {
@@ -103,27 +85,9 @@ var goToDelete = function() {
 
 <!--h1 class="heading-large">Levy account</h1-->
  <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
-   <!--div style= "" id="deletedUserAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
+   <div style= "" id="deletedUserAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
     Apprentice David Jenkins was deleted
-    </div-->
-
-       <div style= "" id="deletedUserAlertMessage" class="success-summary rj-dont-display"> 
-            <p>   Apprentice David Jenkins was deleted</p>
-        </div>
-
-       <div style= "" id="bulkUploadAlertMessage" class="success-summary rj-dont-display"> 
-            <p>Apprentices added</p>
-        </div>
-
-       <!--div style= "" id="ULNisDONE" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
-    All your ULNs were successfully added
-    </div-->
-
-        <div style= "" id="ULNisDONE" class="success-summary rj-dont-display"> 
-            <p>  All your ULNs were successfully added</p>
-        </div>
-
-
+    </div>
 <div class="grid-row">
   <div class="column-two-thirds">
 
@@ -152,13 +116,13 @@ var goToDelete = function() {
                   <h2 id="totalCostOfApprentices" class="bold-xlarge" style=" color:#fff; margin: 0px 0 0px 15px; padding-top:27px">£29,002</h2>
                   <h2 class="heading-medium" style="color: #fff; margin: 28px 0 0px 15px;">Total cost</h2>
               </div>
-
+               <!--div style="margin-top:10px"><a href="/{% include "includes/sprint-link.html" %}/contracts/confirmation/payment-plans">View the payment schedule</a></div-->
     </div>
   </div>
 
 <div style="margin-top:35px"></div>
   <div class="grid-row" style="padding-bottom:15px">
-           <div class="column-third" >
+           <div class="column-half" >
                            <div class="" >
                                      <!--h2 class="heading-medium" id="commitmentsName" style="margin: 0 0 5px 0">Acme Coventry Ltd</h2-->
                                      <div id=""><h2 id="providerName" class="heading-small"  style="display:inline-block; margin:0;">Employer:&nbsp</h2 ><p id="commitmentsName" style="display:inline; margin:0;">Acme Coventry Ltd</p></div>
@@ -167,18 +131,18 @@ var goToDelete = function() {
                           </div>
             </div>
 
-        <div class="column-two-thirds" id="notesStuff">
+        <div class="column-half" id="notesStuff">
           <div id="removeMe" style="padding-bottom:15px">
-            <div><h2 class="heading-small" style="display:inline-block; margin:0;">Message:&nbsp</h2 ><p style=" margin:0;">There is space here for a short note to be added by the last party to make an amend.</p></div>
+            <div><h2 class="heading-small" style="display:inline-block; margin:0;">Note:&nbsp</h2 ><p style=" margin:0;">There is space here for a note to be added.</p></div>
           </div>
         </div>
 </div>
 
     <!-- ----------- This is the default where there aren't any groups or cohorts added ------------ -->
     <div style="" class="rj-no-apprenticeships" id="no-apprenticeships">
-        <h2 class="heading-medium"><span style="font-weight:700" id=""> 0 Apprentices</span></h2>
+        <!--h2 class="heading-medium"><span style="font-weight:700" id=""> 0 Apprentices</span></h2-->
         <hr style="margin:0 0 18px 0" />
-        <div class="commit-bar">
+        <!--div class="commit-bar">
         <!--form class="" style="display:inline-block; float:left;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
                     <div style="display:inline-block;"><input class="button" style="display:inline; margin:0 0 0 10px" type="submit"  id="send-to-employer"  value="Finish editing"></div>
               </form>
@@ -194,52 +158,158 @@ var goToDelete = function() {
              <form class="" style="display:inline-block; float:right;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
                     <div style="display:inline-block;"><input class="button" style="display:inline; margin:0 0 0 10px" type="submit"  id="send-to-employer"  value="Finish editing"></div>
               </form-->
-              <h2 class="heading-medium">USERS WILL NEVER SEE THIS PAGE IN THIS STATE</h2>
+              <!--h2 class="heading-medium">USERS WILL NEVER SEE THIS PAGE IN THIS STATE</h2>
               <a href="/{% include "includes/sprint-link.html" %}/contracts/new-contract/bulk-or-single">ADD SOME APPRENTICES TO FIX THIS PAGE</a>
         </div>
 
         <hr style="margin:16px 0 15px 0" />
-    </div>
+    </div-->
 
     <!-- -------------- This is shows when one apprenticeship has been added ---------- -->
-                <div style="" class="rj-has-apprenticeships" id="apprenticeships">
+                <!--div style="" class="rj-has-apprenticeships" id="apprenticeships"-->
 
 
-       <hr style="margin:0 0 20px 0" />
+       <!--hr style="margin:0 0 20px 0" /-->
         <div class="commit-bar">
               <form class="" style="display:inline-block; float:left;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
                     <div style="display:inline-block;"><input class="button" style="display:inline; " type="submit"  id="send-to-employer"  value="Save and continue"></div>
               </form>
 
-               <form class="" style="display:inline-block;" action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/edit-cohort">
+               <form class="" style="display:inline-block;" action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/bulk-or-single">
                 <input type="hidden" name="source" value="provider" />
-                <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px; " class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add apprentices "></div>
+                <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px; " class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add more apprentices"></div>
             </form>
-            <div style="margin-top:10px; float: right"><a href="/{% include "includes/sprint-link.html" %}/contracts/confirmation/payment-plans">View the payment schedule</a></div>
+            <form style="display:inline-block; float:right"><input class="button delete-button" onclick="goToDelete()" type="button" id="deleteButton" value="Delete this cohort"></form>
+
             <div style="clear:both"></div>
-         
         </div>
 
         <hr style="margin:16px 0 15px 0" />
          <div style="clear:both"></div>
 
-                <h2 class ="heading-medium"  style="margin-bottom:5px"  id="apprenticeReplaceMe"></h2>
+                <h2 class ="heading-medium"  style="margin-bottom:0px">2 Mechatronics Engineers</h2>
                 <p style="margin:0">Level: 4</p>
                 <p style="margin:0 0 15px 0">Training code: 3246</p>
+
+                <div style="margin-top:30px">
+
+                <div>
+                <div class="vertical-line" style="border-left: thick solid #005EA5; float: left;">
+                <h2 class="heading-small" style="padding-bottom: 15px; margin-left:20px">2 apprentices are above their funding band maximum</h2>
+                <p style="margin-left: 20px">The maximum amount of <a href="">levy funds you can use on this training</a> is £2,000 per apprenticeship. You need to pay any extra costs directly to Hackney Skills & Training ltd.</p>
+                </div>
+                
+                </div>
+
+                <div style="clear: both"></div>
+
+                <div style="margin-top: 30px"></div>
+
                 <table class="" id="">
                   <thead>
                       <tr>
                         <th scope="col" class=""  >Name</th>
                         <!--th scope="col" class="">Family<br />name</th-->
-                        <th id="" scope="col" class="" style="width: 100px">ULN</th>
+                        <th id="ULNTable" scope="col" class="">ULN</th>
                         <th id="" scope="col" class="">Date of birth</th>
                         <th scope="col" class="">Training dates</th>
                         <!--th scope="col" class="">Endpoint Assessor</th-->
-                        <th scope="col" class="" style="padding-top:0; width: 100px">Cost</th>
-                         <!--th scope="col" style="padding-top:0"></th-->
+                         <th scope="col" class="">Cost</th>
+                        <th scope="col" class=""></th>
                       </tr>
                     </thead>
                     <tbody>
+                      <tr>
+                        <td>Taylor Jones</td>
+                        <td class="">10 May 1999</td>
+                        <td class=" ">11/2018 to 11/2020 </td>
+                        <td class="errorBoxBlack">£2,200</td>
+                         </td>
+
+                        <td class="" style="text-align: right"><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+                      <tr>
+                        <td>Jeff Willis</td>
+                        <td class="">21 April 2000</td>
+                        <td class=" ">11/2018 to 11/2020 </td>
+                        <td class="errorBoxBlack">£2,600</td>
+                         </td>
+
+                        <td class="" style="text-align: right"><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+
+                    </tbody>
+                </table>
+
+                <h2 class ="heading-medium"  style="margin-bottom:0px">4 BAE Engineers</h2>
+                <p style="margin:0">Level: 4</p>
+                <p style="margin:0 0 15px 0">Training code: 3246</p>
+
+                <div style="margin-top:30px">
+
+                <div>
+                <div class="vertical-line" style="border-left: thick solid #005EA5; float: left;">
+                <h2 class="heading-small" style="padding-bottom: 15px; margin-left:20px">2 apprentices are above their funding band maximum</h2>
+                <p style="margin-left: 20px">The maximum amount of <a href="">levy funds you can use on this training</a> is £2,000 per apprenticeship. You need to pay any extra costs directly to Hackney Skills & Training ltd.</p>
+                </div>
+                </div>
+
+                <div style="clear: both"></div>
+
+                <div style="margin-top: 30px"></div>
+
+                <table class="" id="">
+                  <thead>
+                      <tr>
+                        <th scope="col" class=""  >Name</th>
+                        <!--th scope="col" class="">Family<br />name</th-->
+                        <th id="ULNTable" scope="col" class="">ULN</th>
+                        <th id="" scope="col" class="">Date of birth</th>
+                        <th scope="col" class="">Training dates</th>
+                        <!--th scope="col" class="">Endpoint Assessor</th-->
+                         <th scope="col" class="">Cost</th>
+                        <th scope="col" class=""></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Danny Sparham</td>
+                        <td class="">10 May 1999</td>
+                        <td class=" ">11/2018 to 11/2020 </td>
+                        <td class="errorBoxBlack">£2,200</td>
+                         </td>
+
+                        <td class="" style="text-align: right"><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+                      <tr>
+                        <td>Marco Smith</td>
+                        <td class="">21 April 2000</td>
+                        <td class=" ">11/2018 to 11/2020 </td>
+                        <td class="errorBoxBlack">£2,600</td>
+                         </td>
+
+                        <td class="" style="text-align: right"><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+
+                      <tr>
+                        <td>Tom Bailey</td>
+                        <td class="">10 May 1999</td>
+                        <td class="">11/2018 to 11/2020 </td>
+                        <td class="">£2,200</td>
+                         </td>
+
+                        <td class="" style="text-align: right"><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
+
+                      <tr>
+                        <td>Lucy Diamond</td>
+                        <td class="">10 May 1999</td>
+                        <td class="">11/2018 to 11/2020 </td>
+                        <td class="">£2,200</td>
+                         </td>
+
+                        <td class="" style="text-align: right"><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
+                      </tr>
 
                     </tbody>
                 </table>
@@ -254,59 +324,21 @@ var goToDelete = function() {
                 </div>
             </div-->
 
-            <!--div id="bottomToolBarLotsofApprentices">
-        <!--hr style="margin:0 0 18px 0" /-->
+            <div id="bottomToolBarLotsofApprentices">
+              <div style="margin-top:50px"></div>
+        <hr style="margin:0 0 18px 0" />
         <!--div class="commit-bar">
               <form class="" style="display:inline-block; float:left;" action="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/do-next">
                     <div style="display:inline-block;"><input class="button" style="display:inline; " type="submit"  id="send-to-employer"  value="Save and continue"></div>
               </form>
-               <form class="" style="display:inline-block;" action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/edit-cohort">
+               <form class="" style="display:inline-block;" action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/bulk-or-single">
                     <input type="hidden" name="source" value="provider" />
-                    <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px; " class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Edit cohort"></div>
+                    <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 10px; " class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Add more apprentices"></div>
             </form>
 
         </div-->
-
-        <!--
-        <hr style="margin:20px 0 20px 0" />
-
-         <div class="pager">
-
-                <div class="pager-controls">
-                  <ul class="pager-items">
-                    <li>1</li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                  </ul>
-                  <a class="pager-next" href="#">Next</a>
-                </div>
-                <div class="pager-summary">Showing 1 &ndash; 50 of 146 apprentices</div>
-          </div>
-           <hr style="margin:20px 0 15px 0"/>
-         -->
-
-<!--hr style="margin:20px 0 15px 0"/-->
-              <div class="page-navigation">
-                    <a class="page-navigation__btn previous">
-                        <i class="arrow-button fa fa-angle-left"></i>
-                        <span class="description">Previous <span class="hide-mob"></span></span>
-                        <span class="counter">Apprentices 1<span class="prevPage"></span> to <span class="totalPage">25 </span></span>
-                    </a>
-
-
-
-                    <a style="" class="page-navigation__btn next">
-                        <i class="arrow-button fa fa-angle-right"></i>
-                        <span class="description">Next <span class="hide-mob"></span></span>
-                        <span class="counter">Apprentices 26 <span class="nextPage"></span> to <span class="totalPage">50 </span></span>
-                    </a>
-
-                </div>
-
-
-    </div>
+      </div>
+              <!--div style="margin-top:20px;display:inline-block; float:right"><input class="button delete-button" onclick="goToDelete()" type="button" id="deleteButton" value="Delete this cohort"></div-->
 </main>
 {% endblock %}
 

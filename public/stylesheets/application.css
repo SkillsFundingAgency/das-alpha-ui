@@ -2698,6 +2698,11 @@ hr.vertical-line {
   float: left;
 }
 
+.form-address-group .p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
   /* Force table to not be like tables anymore */
   #transactions table, #transactions thead, #transactions tbody, #transactions th, #transactions td, #transactions tr {
