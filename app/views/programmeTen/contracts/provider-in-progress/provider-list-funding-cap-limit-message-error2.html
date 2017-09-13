@@ -88,19 +88,29 @@ var goToDelete = function() {
    <div style= "" id="deletedUserAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
     Apprentice David Jenkins was deleted
     </div>
-<div class="grid-row">
 
-<div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1" style="border-color: #005EA5">
+ <div class="grid-row">
+  <!--div class="column-two-thirds"-->    
+
+<div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
 
       <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
-        There are 4 issues on this page that need your attention
+        There are 3 issues on this page that need your attention
       </h2>
 
+      <ul class="error-summary-list">
+        <li><a href="#mechatronics-engineers">Start date in previous year: Mechatronics Engineers, Level: 4</a></li>
+      </ul>
+      <ul class="error-summary-list">
+        <li><a href="#bae-engineers">Overlapping training dates: BAE Engineers, Level: 4</a></li>
+      </ul>
+
     </div>
-  <!--div class="column-two-thirds"-->
 
     <h1 class="heading-xlarge" id="commitmentsHeader">Review your cohort</h1>
       </div>
+</div>
+
 </div>
 
 
@@ -195,18 +205,17 @@ var goToDelete = function() {
         <hr style="margin:16px 0 15px 0" />
          <div style="clear:both"></div>
 
-                <h2 class ="heading-medium"  style="margin-bottom:0px">2 Mechatronics Engineers</h2>
+                <h2 class ="heading-medium"  style="margin-bottom:0px"><a name="mechatronics-engineers">2 Mechatronics Engineers</a></h2>
                 <p style="margin:0">Level: 4</p>
                 <p style="margin:0 0 15px 0">Training code: 3246</p>
 
                 <div style="margin-top:30px">
 
                 <div>
-                <div class="vertical-line" style="border-left: thick solid #005EA5; float: left;">
-                <h2 class="heading-small" style="padding-bottom: 15px; margin-left:20px">2 apprentices are above their funding band maximum</h2>
-                <p style="margin-left: 20px">The maximum amount of <a href="">levy funds you can use on this training</a> is £2,000 per apprenticeship. You need to pay any extra costs directly to Hackney Skills & Training ltd.</p>
+                <div class="vertical-line" style="border-left: thick solid #B10E1E; float: left;">
+                <h2 class="heading-small" style="padding-bottom: 15px; margin-left:20px">Start dates can't be in the previous academic year</h2>
+                <p style="margin-left: 20px">The earliest date you can use is 08 2017.</p>
                 </div>
-                
                 </div>
 
                 <div style="clear: both"></div>
@@ -230,8 +239,8 @@ var goToDelete = function() {
                       <tr>
                         <td>Taylor Jones</td>
                         <td class="">10 May 1999</td>
-                        <td class=" ">11/2018 to 11/2020 </td>
-                        <td class="errorBoxBlack">£2,200</td>
+                        <td class="errorBoxRed">11/2018 to 11/2020 </td>
+                        <td class="">£2,200</td>
                          </td>
 
                         <td class="" style="text-align: right"><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
@@ -239,8 +248,8 @@ var goToDelete = function() {
                       <tr>
                         <td>Jeff Willis</td>
                         <td class="">21 April 2000</td>
-                        <td class=" ">11/2018 to 11/2020 </td>
-                        <td class="errorBoxBlack">£2,600</td>
+                        <td class="">11/2018 to 11/2020 </td>
+                        <td class="">£2,600</td>
                          </td>
 
                         <td class="" style="text-align: right"><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
@@ -249,16 +258,16 @@ var goToDelete = function() {
                     </tbody>
                 </table>
 
-                <h2 class ="heading-medium"  style="margin-bottom:0px">4 BAE Engineers</h2>
+                <h2 class ="heading-medium"  style="margin-bottom:0px"><a name="bae-engineers">4 BAE Engineers</a></h2>
                 <p style="margin:0">Level: 4</p>
                 <p style="margin:0 0 15px 0">Training code: 3246</p>
 
                 <div style="margin-top:30px">
 
                 <div>
-                <div class="vertical-line" style="border-left: thick solid #005EA5; float: left;">
-                <h2 class="heading-small" style="padding-bottom: 15px; margin-left:20px">2 apprentices are above their funding band maximum</h2>
-                <p style="margin-left: 20px">The maximum amount of <a href="">levy funds you can use on this training</a> is £2,000 per apprenticeship. You need to pay any extra costs directly to Hackney Skills & Training ltd.</p>
+                <div class="vertical-line" style="border-left: thick solid #B10E1E; float: left;">
+                <h2 class="heading-small" style="padding-bottom: 15px; margin-left:20px">Apprentices can't have overlapping training dates</h2>
+                <p style="margin-left: 20px">Please update training dates to ensure they do not overlap.</p>
                 </div>
                 </div>
 
@@ -283,8 +292,8 @@ var goToDelete = function() {
                       <tr>
                         <td>Danny Sparham</td>
                         <td class="">10 May 1999</td>
-                        <td class=" ">11/2018 to 11/2020 </td>
-                        <td class="errorBoxBlack">£2,200</td>
+                        <td class="errorBoxRed">11/2018 to 11/2020 </td>
+                        <td class="">£2,200</td>
                          </td>
 
                         <td class="" style="text-align: right"><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>
@@ -292,8 +301,8 @@ var goToDelete = function() {
                       <tr>
                         <td>Marco Smith</td>
                         <td class="">21 April 2000</td>
-                        <td class=" ">11/2018 to 11/2020 </td>
-                        <td class="errorBoxBlack">£2,600</td>
+                        <td class="errorBoxRed">11/2018 to 11/2020 </td>
+                        <td class="">£2,600</td>
                          </td>
 
                         <td class="" style="text-align: right"><a href="/{% include "includes/sprint-link.html" %}/ontracts/provider-interface/add-apprenticeship-static">Edit</a></td>

@@ -1,0 +1,182 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+       <li id="removeWithNav">Spend levy</li>
+    </ol>
+
+  </div>
+  <h1 class="heading-xlarge rj-headings-border " >{% include "includes/account-name-number.html" %}Settings</h1>
+
+ <div class="grid-row">
+           <!--div class="column-two-thirds"-->
+
+          <!--div class="grid-row"-->
+      <div id="tabs-container">
+        <ul class="tabs-menu">
+            <li class="current"><a href="#tab-1">Name</a></li>
+            <li><a href="#tab-2">Email</a></li>
+            <li><a href="#tab-3">Password</a></li>
+            <li><a href="#tab-4">Notifications</a></li>
+        </ul>
+    <div class="tab" style="width: 950px">
+
+        <div id="tab-1" class="tab-content" style="margin-top: 30px">
+          <div class="form-group" style="margin-bottom:25px">
+              <label class="form-label-bold" for="apprenticeGivenName">First name</label>
+                  <input class="form-control" id="apprenticeGivenName" placeholder="James" type="text">
+          </div>
+          <div class="form-group" style="margin-bottom:40px">
+              <label class="form-label-bold" for="apprenticeFamilyName">Last name</label>
+                  <input class="form-control" id="apprenticeFamilyName" placeholder="Watson" type="text">
+          </div>
+
+        </div>
+
+
+        <div id="tab-2" class="tab-content" style="margin-top: 30px">
+            
+                <div class="form-group" style="margin-bottom:25px">
+                    <label class="form-label-bold" for="apprenticeGivenName">New email address
+                    </label>
+                  <input class="form-control" id="apprenticeGivenName" placeholder="" type="text">
+                </div>
+
+                <div class="form-group" style="margin-bottom:40px">
+                    <label class="form-label-bold" for="apprenticeGivenName">Re-type email address
+                    </label>
+                  <input class="form-control" id="apprenticeGivenName" placeholder="" type="text">
+                </div>
+        </div>
+
+        <div id="tab-3" class="tab-content" style="margin-top: 30px">
+            <div class="form-group" style="margin-bottom:25px">
+                <label class="form-label-bold" for="apprenticeFamilyName">Current password</label>
+                  <input class="form-control" id="apprenticeFamilyName" placeholder="" type="text">
+            </div>
+
+            <div class="form-group" style="margin-bottom:25px">
+                <label class="form-label-bold" for="apprenticeFamilyName">Create new password</label>
+                  <span class="form-hint">Password requires upper and lowercase letters, a number and at least 8 characters</span>
+                  <input class="form-control" id="apprenticeFamilyName" placeholder="" type="text">
+            </div>
+
+            <div class="form-group" style="margin-bottom:40px">
+                <label class="form-label-bold" for="apprenticeFamilyName">Re-type password</label>
+                  <input class="form-control" id="apprenticeFamilyName" placeholder="" type="text">
+            </div>
+
+        </div>
+
+        <div id="tab-4" class="tab-content" style="margin-top: 30px">
+
+                <div class="form-group" style="margin-bottom:25px">
+                    <label class="form-label-bold" for="apprenticeFamilyName">Email notifications
+                        <span class="form-hint">Choose whether to receive emails when there are things that change or that you need to do</span>
+                    </label>
+                </div>
+
+                <table style="margin-bottom:40px">
+                  <caption class="visuallyhidden">Caption to identify a table</caption>
+                  <thead>
+                      <tr>
+                        <th scope="col">Levy account name</th>
+                        <th class="numeric" scope="col">Yes</th>
+                        <th class="numeric" scope="col">No</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                        <td>Whitbread</td>
+                        <td></td>
+
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>Travis Perkins</td>
+                        <td>
+
+                        </td>
+                        <td>
+                          
+                        </td>
+                      </tr>
+                      <tr>
+                       <td>Tesco</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                  </tbody>
+                </table>
+                    <!--details style="margin-bottom:30px">
+                      <summary><span class="summary">Help with notifications</span></summary>
+                      <div class="panel panel-border-narrow">
+                        <p>
+                          If you’re not sure about your nationality, try to find out from an official document like a passport or national ID card.
+                        </p>
+                        <p>
+                          We need to know your nationality so we can work out which elections you’re entitled to vote in. If you can’t provide your nationality, you’ll have to send copies of identity documents through the post.
+                        </p>
+                      </div>
+                    </details-->
+
+        </div>
+                
+              <form action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/ULN-upload">
+                  <div class="" style="display: table;">
+                        <div style="margin-top:20px; display:inline-block;display: table-cell; vertical-align: middle; "><input class="button" id="saveAndContinue" type="submit" value="Update"></div>
+                        <div style="display:inline-block; display: table-cell; vertical-align: middle;"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list" id="saveAndAdd" style="margin-top:20px; margin-left:25px;  ">Cancel</a></div>
+                  <div style="clear:both"></div>
+              </form>
+
+            </div>
+        
+        </div>
+           
+        </div>
+            
+        </div>
+
+        <script>
+
+          $(document).ready(function() {
+          $(".tabs-menu a").click(function(event) {
+          event.preventDefault();
+          $(this).parent().addClass("current");
+          $(this).parent().siblings().removeClass("current");
+          var tab = $(this).attr("href");
+          $(".tab-content").not(tab).css("display", "none");
+          $(tab).fadeIn();
+          });
+          });  
+
+        </script>
+        </div>
+      </div> 
+
+       <!--/div-->
+    </div>
+  </main>
+
+
+{% endblock %}
+
