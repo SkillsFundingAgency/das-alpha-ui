@@ -1,0 +1,177 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    {% include "includes/head.html" %}
+
+{% endblock %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .apprentice-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+            <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Edit training</h1>
+        <fieldset>
+
+          <table class="table-19-font"> 
+                  <tbody>
+                    <tr>
+                      <td class="apprenticeRecordTitle" >Name</td>
+                      <td class="">Rob Edwards</td>
+                       <td></td>
+                    </tr>
+                    <tr>
+
+                     <tr>
+                     <td class="apprenticeRecordTitle">Unique larner number</td>
+                      <td class="">0123456789</td>
+                    </tr>
+
+                    <tr>
+                     <td class="apprenticeRecordTitle" style="width:217px">Provider</td>
+                      <td class="">Hackney Skills Solutions Ltd</td>
+                       <td></td>
+
+
+                    </tr>
+                    <!--tr id="referenceNumber" class="">
+                      <td class="apprenticeRecordTitle " >Reference</td>
+                      <td class="" >Banbury site</td>
+
+                    </tr-->
+
+                   </tbody>
+                 </table>
+           
+        </fieldset>
+
+         <fieldset>
+          <!--hr style="margin-top: 25px"/-->
+            <legend class="visuallyhidden">Apprenticeship</legend>
+                <div class="form-group" style="margin: 40px 0 15px 0;">
+                    <label class="form-label-bold" for="" style="margin: 0 0 10px 0">Apprenticeship training course
+                      <span class="form-hint">Search for the training by course name or code</span>
+                    </label>
+                  <input class="form-control" id="apprenticeFamilyName" type="text" style="width:100%" value=" Level 2: Aeronautical engineering">
+                </div>
+          </fieldset>
+          <fieldset>
+
+          <fieldset>
+              <hr style="margin-top: 15px"/>
+                <span class="form-label-bold">Planned training start date</span>
+                <p>07 2017</p>
+          </fieldset>
+
+            <!--div class="form-group"-->
+            <fieldset>
+              <hr style="margin-top: 0px"/>
+                <span class="form-label-bold">Planned training finish date</span>
+                <p>09 2019</p>
+            </fieldset>
+            <!--/div-->
+
+            <!--div class="form-group"-->
+            <fieldset>
+              <hr style="margin-top: 0px"/>
+                <label class="form-label-bold" for="apprenticeCost">Total agreed training cost</label>
+                  <p><span class="rj-currency-symbol">£</span>6,555</p>  
+            </fieldset>
+
+            <!--/div-->
+
+            <!--div class="panel panel-border-wide">
+              <p>If you want to change the total agreed apprenticeship price, you’ll need to ask your training provider to make the changes on your behalf. We’ll ask you to approve any changes they make.</p>
+            </div-->
+
+            <!--div class="vertical-line" style="border-left: thick solid #005EA5; float: left;">
+            <p style="margin-left: 20px">If you want to change the total agreed apprenticeship price, you’ll need to ask your training provider to make the changes on your behalf. We’ll ask you to approve any changes they make.</p>
+            </div-->
+
+            <!--div style="clear: left;"></div-->
+
+            <div style="margin-bottom: 0px"></div>
+  
+      <!--fieldset>
+           <hr style="margin-top:0px"/>
+            <legend class="visuallyhidden">Add a note</legend>
+            <div class="form-group">
+            <label class="form-label-bold" for="apprenticeCost">Reference (optional)
+          <span class="form-hint">Add a reference, such as employee number or location - this won’t be seen by the training provider.</span>
+           </label>
+              <input class="form-control rj-currency-input" id="employerRef" type="text" value="Banbury site" style="width:100%">
+      </div>
+    </fieldset-->
+        <!--fieldset>
+           <hr style="margin-top:px"/>
+      <legend class="visuallyhidden">Cost per apprenticeship</legend>
+      <div class="form-group">
+            <label class="form-label-bold" for="apprenticeCost">Total agreed training cost until 21 August 2018
+           </label>
+                <span class="form-hint">For example, for £1,500 enter 1500</span>
+              <span class="rj-currency-symbol">£</span>
+              <input class="form-control rj-currency-input" id="apprenticeCost" type="text" value="5,555" style="max-width:6em">
+      </div>
+      </fieldset>
+       <fieldset>
+           <hr style="margin-top:px"/>
+            <legend class="visuallyhidden">Cost per apprenticeship</legend>
+       <div class="form-group">
+            <label class="form-label-bold" for="apprenticeCost">Total agreed training cost from 22 August 2018
+           </label>
+                <span class="form-hint">For example, for £1,500 enter 1500</span>
+              <span class="rj-currency-symbol">£</span>
+              <input class="form-control rj-currency-input" id="apprenticeCost" type="text" value="5,689" style="max-width:6em">
+      </div>
+      </fieldset>
+       <fieldset>
+           <hr style="margin-top:px"/>
+            <legend class="visuallyhidden">Cost per apprenticeship</legend>
+        <div class="form-group">
+            <label class="form-label-bold" for="apprenticeCost">Total agreed training cost from 22 August 2018
+           </label>
+                <span class="form-hint">For example, for £1,500 enter 1500</span>
+              <span class="rj-currency-symbol">£</span>
+              <input class="form-control rj-currency-input" id="apprenticeCost" type="text" value="4,165" style="max-width:6em">
+      </div>
+      </fieldset-->
+          </div>
+    <div class="column-two-thirds">
+       <form action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/ULN-upload">
+          <div class="" style="display: table; margin: 30px 0 0 0;">
+            <div style="margin-top:20px; display:inline-block;display: table-cell; vertical-align: middle; "><input class="button" id="saveAndContinue" type="submit" value="Update"></div>
+            <div style="display:inline-block; display: table-cell; vertical-align: middle;"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list" id="saveAndAdd" style="margin-top:20px; margin-left:25px;  ">Cancel</a></div>
+          <div style="clear:both"></div>
+      </form>
+    </div>
+
+      <div class="column-one-third">
+         <!--div style="margin-top:20px;"><input class="button delete-button" id="deleteApprenticeship" value="Delete apprentice"></div-->
+      </div>
+</main>
+
+
+
+
+
+{% endblock %}
+

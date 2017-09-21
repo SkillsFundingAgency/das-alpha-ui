@@ -53,20 +53,6 @@ var whereNow = function() {
   </div>
 
   <div class="grid-row">
-
-    <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
-
-      <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
-        There are errors on this page that need your attention
-      </h2>
-
-      <ul class="error-summary-list">
-        <li><a href="#mechatronics-engineers">The earliest start date you can enter is 08 2017</a></li>
-      </ul>
-      
-
-    </div>
-
            <div class="column-two-thirds">
             <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Add apprentice details</h1>
 
@@ -116,7 +102,45 @@ var whereNow = function() {
                           <!--input class="button button-grey-secondary" id="search-provider" type="submit" value="Find course"-->
                       </fieldset>
                 </form>
+
+                <!--form class="" style="display:inline-block;" action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/bulk-or-single">
+                  <input type="hidden" name="source" value="provider" />
+                    <div style="display:inline-block;"><input style="display:inline; margin:0 0 0 0px; " class="button-grey-secondary button " type="submit"  id="bulk-upload"  value="Choose an End-point assessor"></div>
+                </form-->
+
+              
+                <div class="form-group" style="margin-top: 0px">
+              <label class="form-label-bold" for="epa">End-point assessor
+               <span class="form-hint">There are 3 end-point assessors available for this training course. You'll need to choose one now or before the training finishes.</span>
+            <!--span class="form-hint" style="margin-top: -10px">You'll need to add end-point assessor details before the training finishes</span-->
+             </label>
+                      <select class="form-control" id="select-box" style="width:100%; margin-top: 10px; margin-bottom: 30px;">
+                        <option>Please select an end-point assessor</option>
+                        <option>Institute of Mechanical Engineers</option>
+                        <option>EPA 2</option>
+                        <option>EPA 3</option>
+                      </select>
+
+                      <!--div class="form-address-group" style="margin-left: 0px; margin-top: -10px;">
+                        <p style="margin:0; font-size: smaller;"><span style="font-weight:700">Email:</span> <a href="">epa@imeche.org</a></p>
+                        <p style="margin:0; font-size: smaller;"><span style="font-weight:700">Phone:</span> 020 7304 6970</p>
+                         <p style="margin:0; font-size: smaller;"><span style="font-weight:700">Web:</span> <a href="">www.imeche.org/engtech</a></p>
+                      </div-->
+
+
+                    <details style="margin-top: -10px">
+                        <summary><span class="summary">What is an end-point assessor?</span></summary>
+                        <div class="panel panel-border-narrow">
+                          <p>An end-point assessor carries out the final, independent assessment of the apprentice. The apprentice cannot complete their apprenticeship until they pass the end-point assessment. End-point assessment only applies to Standards.</p>
+
+                          <p><a href="https://www.gov.uk/government/publications/apprenticeship-funding-and-performance-management-rules-2017-to-2018">Find out more about end-point assessors</a></p>
+                        </div>
+                      </details>
+                </div>
+
             </div>
+
+            <hr style="margin-top: 10px"/>
 
             <div id="displayTraining" style="display: none;clear: both;">
                 <label class="form-label-bold" for="apprenticeCost">Apprenticeship training course</label>
@@ -134,7 +158,7 @@ var whereNow = function() {
 
                 <hr style=""/>
 
-            <div class="form-group form-group-error">
+            <div class="form-group" style="margin-top: 20px">
             <fieldset>
               <legend>
                 <span class="form-label-bold">Planned training start date</span>
@@ -322,7 +346,7 @@ var whereNow = function() {
 
     <!-- JAVASCRIPT ENABLED and EPAS are NOT available -->
            <hr style="margin-top:0px"/>
-<div class="alertGreyBox">
+<!--div class="alertGreyBox">
 <div style="padding-left:20px">
   <h2 class="heading-small" style="padding-top:20px">End-point assessments</h2>
   <p style="padding-right:20px">If you've chosen an apprenticeship standard, we'll ask you to confirm the <a href="https://www.gov.uk/government/collections/register-of-apprentice-assessment-organisations">apprentice 
@@ -330,7 +354,7 @@ var whereNow = function() {
     <p style="">Apprenticeship frameworks have different assessment arrangements and don't need end-point assessments.</p>
 
 </div>
-</div>
+</div-->
     </form>
           </div>
             <div class="column-one-third">

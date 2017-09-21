@@ -90,22 +90,13 @@ showAlerts();
   <div class="grid-row">
            <div class="column-two-thirds">
               <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}Rob Edwards</h1>
-            <!--div>
-              <div class="panel panel-border-wide">
+            <div>
+              <!--div class="panel panel-border-wide">
                 <h2  class="heading-medium">Changes pending</h2>
               <p>There are changes to this apprentice's details that are waiting for approval by the training provider. You can continue to edit this apprentice if you need to. </p>
               <a href="./update-apprenticeship/changes-review">View changes</a>
 
   </div-->
-
-             <div id="tabs-container">
-              <ul class="tabs-menu">
-                <li class="current"><a href="#tab-1">Summary</a></li>
-                <li><a href="#tab-2">Payments</a></li>
-              </ul>
-            <div class="tab" style="width: 650px">
-
-            <div id="tab-1" class="tab-content" style="margin-top: 30px; margin-left: -20px;">
 
 
 
@@ -182,25 +173,43 @@ showAlerts();
 
                     </tr>
                      <tr id="ULN">
-                      <td class="apprenticeRecordTitle " >Unique learner number</td>
+                      <td class="apprenticeRecordTitle ">Unique learner number</td>
                       <td class="" >0123456789</td>
-
                     </tr>
                      <tr>
-                      <td class="apprenticeRecordTitle" >Date of birth</td>
+                      <td class="apprenticeRecordTitle">Date of birth</td>
                       <td class="" >28 February 1997</td>
                     </tr>
-                    <td class="apprenticeRecordTitle" >Apprenticeship training course</td>
+                    <tr>
+                      <td class="apprenticeRecordTitle">Reference</td>
+                      <td class="">Banbury site</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+
+                <table class="table-19-font" style="margin:0"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Training course</h2></th>
+                      <th><p style="margin-top:45px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/change-apprenticeship-all">Edit training</a> </p> </th>
+
+                    </tr>
+
+                  </thead>
+                    </table>
+
+                <table class="table-19-font"> 
+                  <tbody>
+                    <tr>
+                      <td class="apprenticeRecordTitle" >Apprenticeship training course</td>
                       <td class="" >Level 2: Aeronautical engineering</td>
                        <td></td>
                     </tr>
-                                         <tr>
-                     <td class="apprenticeRecordTitle" >End-point assessor</td>
-                      <td class="" >Pham assessments Ltd</td>
-                    </tr>
+                    <tr>
 
                      <tr>
-                     <td class="apprenticeRecordTitle" >Training start date</td>
+                     <td class="apprenticeRecordTitle">Training start date</td>
                       <td class="">July 2018</td>
 
 
@@ -214,112 +223,45 @@ showAlerts();
                     <tr>
                      <td class="apprenticeRecordTitle" style="width:217px">Total cost of training</td>
                       <td class="">£6,555</td>
-                       <td></td>
-
-
                     </tr>
-                    <tr id="referenceNumber" class="">
-                      <td class="apprenticeRecordTitle " >Reference</td>
-                      <td class="" >Banbury site</td>
 
-                    </tr>
 
                    </tbody>
+                 </table>
+
+                   <table class="table-19-font" style="margin:0"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">End-point assessor</h2></th>
+
+               <span class="form-hint">There are 3 end-point assessors available for this training course. You'll need to choose one now or before the training finishes.</span>
+            <!--span class="form-hint" style="margin-top: -10px">You'll need to add end-point assessor details before the training finishes</span-->
+            
+                      <th><p style="margin-top:45px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/change-apprenticeship-all">Add end-point assessor</a> </p> </th>
+                    </tr>
+                  </thead>
                 </table>
 
-                </div>
+                    
+                <table class="table-19-font"> 
+                  <tbody>
+                    </tr>
+                    <td class="apprenticeRecordTitle">End-point assessor</td>
+                      <td class="">Institute of Mechanical Engineers</td>
+                    </tr>
+                  </tbody>
+                </table>
 
 
-
-                <!--p style="margin-top:; text-align:"> </p>
+                </table>
+                <p style="margin-top:; text-align:"> </p>
             </div>
               </div>
           </div>
           <div class="column-one-third">
 
             </div>
-        </div-->
-
-        <div id="tab-2" class="tab-content" style="margin-top: 30px; margin-left: -20px;">
-
-          
-          <div class="grid-row">
-
-          <div class="column-third" style="margin-top: 30px; margin-bottom: 30px;" >
-                <div style="background-color:#DEE0E2; min-height:100px;" >
-                  <h2 id="numberOfApprentices" class="bold" style=" color:#0B0C0C; margin: 0px 0 0px 30px; padding-top:25px;">Monthly payment</h2>
-                  <h2 class="heading-medium" style="color: #0B0C0C; margin: 0px 0 0px 55px;">£349.60</h2>
-              </div>
-          </div>
-          <div class="column-third" style="margin-top: 30px" >
-                <div style="background-color:#DEE0E2; min-height:100px" >
-                  <h2 id="numberOfApprentices" class="bold" style=" color:#0B0C0C; margin: 0px 0 0px 30px; padding-top:25px">20% end payment</h2>
-                  <h2 class="heading-medium" style="color: #0B0C0C; margin: 0px 0 0px 75px;">£1,311</h2>
-                </div>
-          </div>
-          <div class="column-third" style="margin-top: 30px" >
-                <div style="background-color:#DEE0E2; min-height:100px" >
-                  <h2 id="totalCostOfApprentices" class="bold" style=" color:#0B0C0C; margin: 0px 0 0px 17px; padding-top:25px">Total cost of training</h2>
-                  <h2 class="heading-medium" style="color: #0B0C0C; margin: 0px 0 0px 60px;">£6,555</h2>
-              </div>
-               <!--div style="margin-top:10px"><a href="/{% include "includes/sprint-link.html" %}/contracts/confirmation/payment-plans">View the payment schedule</a></div-->
-          </div>
-
-    
-            <div class="" style="margin-left:15px">          
-
-                <table class="table-19-font"> 
-                  <tbody>
-                    <tr>
-                      <td class="apprenticeRecordTitle">Actual start date</td>
-                      <td class="">15 July 2018</td>
-                    </tr>
-                    <tr>
-                      <td class="apprenticeRecordTitle">Planned end date</td>
-                      <td class="">30 September 2019</td>
-                    </tr>
-                    <tr></tr>
-                    <tr id="trainingProvider" class="">
-                      <td class="apprenticeRecordTitle">Number of monthly payments</td>
-                      <td class="">15</td>
-                    </tr>
-                  </tbody>
-                </table>
-
-            </div>  
-  </div>
-
         </div>
-
-
-
-                <p style="margin-top:; text-align:"> </p>
-            </div>
-              </div>
-          <!--/div-->
-          <!--div class="column-one-third"-->
-
-            <!--/div-->
-        <!--/div-->
-
-
-        <script>
-
-          $(document).ready(function() {
-          $(".tabs-menu a").click(function(event) {
-          event.preventDefault();
-          $(this).parent().addClass("current");
-          $(this).parent().siblings().removeClass("current");
-          var tab = $(this).attr("href");
-          $(".tab-content").not(tab).css("display", "none");
-          $(tab).fadeIn();
-          });
-          });  
-
-        </script>
-
-        </div>
-
 </main>
 
 
