@@ -100,7 +100,7 @@
                         </label>
                          <label for="Stopped">
                         <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
-                          EPA due now
+                          
                         </label>
                   </div>
                </div>
@@ -108,7 +108,7 @@
 
           
 
-          <div class="govuk-option-select js-collapsible" >
+          <!--div class="govuk-option-select js-collapsible" >
             <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
               <div class="option-select-label">Apprenticeship training courses</div>
               <div class="js-selected-counter"></div></button>
@@ -146,7 +146,7 @@
                   </div>
 
                </div>
-          </div>
+          </div-->
 
     <div class="govuk-option-select js-collapsible" >
             <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
@@ -156,25 +156,21 @@
                   <div class="js-auto-height-inner">
                       <label for="Acme Coventry Ltd">
                         <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
-                          Due in the next 3 months
+                          Due now
                         </label>
                         <label for="Cyberdyne Systems Inc">
                         <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
-                          Due in the next 6 months
+                          Due in 3 months
                         </label>
                         <label for="Tyrell Corp">
                         <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
-                          Due in the next 12 months
-                        </label>
-                        <label for="Tyrell Corp">
-                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
-                          Due in the next 24 months
+                          Due in 6 months
                         </label>
                   </div>
                </div>
           </div>
 
-    <div class="govuk-option-select js-collapsible" >
+    <!--div class="govuk-option-select js-collapsible" >
             <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
               <div class="option-select-label">Training providers</div>
               <div class="js-selected-counter"></div></button>
@@ -194,9 +190,9 @@
                         </label>
                   </div>
                </div>
-          </div>
+          </div-->
 
-          <div class="govuk-option-select js-collapsible" >
+          <!--div class="govuk-option-select js-collapsible" >
             <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
               <div class="option-select-label">Organisation</div>
               <div class="js-selected-counter"></div></button>
@@ -213,9 +209,9 @@
 
                   </div>
                </div>
-          </div>
+          </div-->
 
-          <div class="govuk-option-select js-collapsible" >
+          <!--div class="govuk-option-select js-collapsible" >
             <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
               <div class="option-select-label">Cohort reference</div>
               <div class="js-selected-counter"></div></button>
@@ -239,7 +235,7 @@
                         </label>
                   </div>
                </div>
-          </div>
+          </div-->
 
         </div>
       </div>
@@ -248,10 +244,11 @@
                       <table class="">
                           <thead>
                             <tr>
-                              <th scope="col" style="padding-top:0">Name</th>
-                              <th scope="col" style="padding-top:0; width: 120px">Date of birth</th>
-                               <th scope="col" style="padding-top:0; width:100px">Status</th>
-                               <th scope="col" style="padding-top:0; width:120px">Alerts</th>
+                              <th scope="col" style="padding-top:0; width: 120px">Name</th>
+                              <th scope="col" style="padding-top:0; width: 100px">Date of birth</th>
+                               <th scope="col" style="padding-top:0; width: 80px">Status</th>
+                               <th scope="col" style="padding-top:0; width: 100px">Alerts</th>
+                               <th scope="col" style="padding-top: 0; width: 60px">EPA</th>
                                <th scope="col" style="padding-top:0;"></th>
                             </tr>
                           </thead>
@@ -261,57 +258,65 @@
                               <td class="rjTabWidth">Rob Edwards</td>
                               <td class="">3 Jun 1997</td>
                               <td class="">Live</td>
-                               <td>Changes pending</td>
-                              <td style="text-align: right;"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice">View</a></td>
+                              <td></td>
+                              <td>Due now</td>
+                              <td style="text-align: right;"><a href="programmeTen/apprentice-view/edit-apprentice/individual-apprentice/individual-apprentice4"</a></td>
                             </tr>
-                             <tr>
+                            <tr>
                               <td class="rjTabWidth">Susan Hamazaki</td>
                               <td class="">12 Oct 1995</td>
-                               <td class="">Paused</td>
-                                <td>Changes for review</td>
-                               <td style="text-align: right;"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice-showing-changes">View</a></td>
+                              <td class="">Paused</td>
+                              <td></td>
+                              <td>&#x2714</td>
+                              <td style="text-align: right;"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice-showing-changes">View</a></td>
 
                             </tr>
-                                                        <tr>
+                            <tr>
                               <td class="rjTabWidth">James Apan</td>
                               <td class="">30 Oct 2001</td>
-                                <td class="">Live</td>
-                                 <td></td>
-                               <td style="text-align: right;"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice-no-changes2">View</a></td>
+                              <td class="">Live</td>
+                              <td></td>
+                              <td>Due in 3 months</td>
+                              <td style="text-align: right;"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice-no-changes2">View</a></td>
                             </tr>
                             <tr>
                               <td class="rjTabWidth">David Jenkins</td>
                               <td class="">5 Sep 1999</td>
-                                <td class="">Finished</td>
-                                 <td></td>
-                               <td class="looks-like-a-link-underline" style="text-align: right;">View</td>
+                              <td class="">Live</td>
+                              <td></td>
+                              <td>N/A</td>
+                              <td class="looks-like-a-link-underline" style="text-align: right;">View</td>
                             </tr>
                             <tr>
                               <td class="rjTabWidth">Mel O'Connor</td>
                               <td class="">1 May 1998</td>
-                                <td class="">Live</td>
-                                 <td>Payment failed</td>
-                             <td style="text-align: right;"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice-payment-failure">View</a></td>
+                              <td class="">Live</td>
+                              <td></td>
+                              <td>&#x2714</td>
+                              <td style="text-align: right;"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice-payment-failure">View</a></td>
                             </tr>
                             <tr>
                               <td class="rjTabWidth">William Hill</td>
                               <td class="">10 Jan 1998</td>
-                                <td class="">Waiting to start</td>
-                                 <td></td>
+                              <td class="">Waiting to start</td>
+                              <td></td>
+                              <td>Due in 6 months</td>
                               <td class="looks-like-a-link-underline" style="text-align: right;">View</td>
                             </tr>
                              <tr>
                               <td class="rjTabWidth">Harvey Dent</td>
                               <td class="">29 Oct 2000</td>
-                                <td class="">Live</td>
-                                 <td>EPA due now</td>
+                              <td class="">Live</td>
+                              <td></td>
+                              <td>&#x2714</td>
                               <td class="looks-like-a-link-underline" style="text-align: right;">View</td>
                             </tr>
                              <tr>
                               <td class="rjTabWidth">Jenny Topham</td>
                               <td class="">10 Jan 1998</td>
-                                <td class="">Stopped</td>
-                                 <td></td>
+                              <td class="">Stopped</td>
+                              <td></td>
+                              <td>&#x2714</td>
                               <td class="looks-like-a-link-underline" style="text-align: right;">View</td>
                             </tr>
                           </tbody>
