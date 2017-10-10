@@ -72,7 +72,9 @@ showAlerts();
 
   <div class="breadcrumbs back-breadcrumb">
     <ol role="breadcrumbs">
-          <a href="/programmeTen/apprentice-view/edit-apprentice/manage-apprentice-epa5" class="link-back">Back to manage your apprentices</a>
+
+      <a href="/programmeTen/apprentice-view/edit-apprentice/manage-apprentice-epa8" class="link-back">Back to manage your apprentices</a>
+          <!--a href="../apprentice-view" class="link-back">Back to manage your apprentices</a-->
     </ol>
   </div>
 
@@ -89,19 +91,12 @@ showAlerts();
 
   <div class="grid-row">
 
-    <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1" style="border-color: #005EA5">
-
-      <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
-        There are items on this page that need your attention
-      </h2>
-      <ul class="">
-        <li><a href="#add-epa">You need to add an end-point assessor</a></li>
-      </ul>
+    <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1" style="border-color: #28A197">
+      <p>Apprentice updated</p>
     </div>
-  <div class="column-two-thirds">
-              
-    <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}Rob Edwards</h1>
-    <div>
+           <div class="column-two-thirds">
+              <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}Rob Edwards</h1>
+            <div>
               <!--div class="panel panel-border-wide">
                 <h2  class="heading-medium">Changes pending</h2>
               <p>There are changes to this apprentice's details that are waiting for approval by the training provider. You can continue to edit this apprentice if you need to. </p>
@@ -180,16 +175,14 @@ showAlerts();
                       <td class="" style="">Rob Edwards</td>
                       <td></td>
                     </tr>
-
-                     <tr id="ULN">
+                     <!--tr id="ULN">
                       <td class="apprenticeRecordTitle " >Unique learner number</td>
                       <td class="" >0123456789</td>
-                      <td></td>
-                    </tr>
 
+                    </tr-->
                      <tr>
                       <td class="apprenticeRecordTitle" >Date of birth</td>
-                      <td class="" >28 February 1997</td>
+                      <td class="" >3 June 1997</td>
                       <td></td>
                     </tr>
 
@@ -212,7 +205,7 @@ showAlerts();
                     <tr>
                       <td class="apprenticeRecordTitle" >Apprenticeship training course</td>
                       <td class="" >Level 2: Aeronautical engineering</td>
-                      <td></td>
+                       <td></td>
                     </tr>
                     <tr>
 
@@ -221,77 +214,50 @@ showAlerts();
                       <td class="">July 2018</td>
                       <td></td>
                     </tr>
-                    
+
                     <tr>
                      <td class="apprenticeRecordTitle">Training end date</td>
                       <td class="">July 2020</td>
                       <td></td>
                     </tr>
-                    
+
                     <tr>
-                      <td class="apprenticeRecordTitle" style="width:217px">Total cost of training</td>
+                     <td class="apprenticeRecordTitle" style="width:217px">Total cost of training</td>
                       <td class="">£6,555</td>
                       <td></td>
                     </tr>
 
                     <tr id="referenceNumber" class="">
-                      <td class="apprenticeRecordTitle " >Reference</td>
-                      <td class="" >Banbury site</td>
+                      <td class="apprenticeRecordTitle">Reference</td>
+                      <td class="">Banbury site</td>
                       <td></td>
                     </tr>
 
                    </tbody>
                  </table>
 
-                 <div>
-                   <form style="display: inline-block; float: left; margin-top: 20px"><h2 class="heading-medium"><a name="add-epa"> End-point assessor</a></h2></form>
-                   <form style="display: inline-block; float: right; margin: 62px 24px 0 0"><p><a href="/programmeTen/apprentice-view/edit-apprentice/end-point-assessor/edit-end-point-assessor1">Add end-point assessor</a></p></form>
-                 </div>
-
-                 <div style="clear:both"></div>
-
-                  <!--table class="table-19-font" style="margin:0"> 
+                   <table class="table-19-font" style="margin:0"> 
                   <thead>
                     <tr>
                       <th colspan="2"> <h2 class="heading-medium">End-point assessor</h2></th>
-                      <th><p style="margin-top:45px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/change-apprenticeship-all">Edit end-point assessor</a> </p> </th>
-                    </tr>
-                  </thead>
-                </table-->
-
-                <div style="margin-bottom: 0px;">
-                <div class="vertical-line" style="border-left: thick solid #005EA5; float: left;">
-                <!--h2 class="heading-small" style="padding-bottom: 15px; margin-left:20px">Provider added EPA</h2-->
-                <p style="margin: 5px 0 10px 20px">In order for the apprentice to complete their training, you'll need to add an end-point assessor.</p>
-                </div>
-                
-                </div>
-
-                <div style="clear: both"></div>
-
-                <div style="margin-top: 0px"></div>
-                    
-                <table class="table-19-font" style="margin:0"> 
-                  <thead>
-                    <tr>
-                      <th> </th>
-
+                      <th><p style="margin-top:45px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/edit-apprentice/end-point-assessor/edit-end-point-assessor3">Edit end-point assessor</a> </p> </th>
                     </tr>
                   </thead>
                 </table>
 
-                <table class="table-19-font" style="margin: 0 0 0 0"> 
+                    
+                <table class="table-19-font"> 
                   <tbody>
                     </tr>
                     <td class="apprenticeRecordTitle" style="vertical-align: top;">End-point assessor</td>
-                      <!--td class="" style="">Institute of Mechanical Engineers
+                      <td class="" style="">Institute of Mechanical Engineers
                         <div style="margin-top: 10px; margin-bottom: 10px">
                         <span><p style="margin:0 0 0 0; font-size: smaller;"><span style="font-weight:700">Email:</span> <a href="">epa@imeche.org</a></p>
                             <p style="margin:0; font-size: smaller;"><span style="font-weight:700">Phone:</span> 020 7304 6970</p>
                             <p style="margin:0; font-size: smaller;"><span style="font-weight:700">Web:</span> <a href="">www.imeche.org/engtech</a></p>
                         </span>
                         </div>
-                      </td-->
+                      </td>
                     </tr>
                   </tbody>
                 </table>
