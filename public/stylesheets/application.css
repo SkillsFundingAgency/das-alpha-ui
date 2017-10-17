@@ -2243,6 +2243,11 @@ input[type=number] {
   border-bottom: 5px solid #2e358b !important;
 }
 
+.errorBoxRed {
+  padding-top: 18px;
+  border-bottom: 5px solid #B10E1E !important;
+}
+
 .fatBR {
   line-height: 25px;
 }
