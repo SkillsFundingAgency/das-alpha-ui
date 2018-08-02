@@ -1,0 +1,181 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+
+#navigation-primary, #kill-me {
+  display:none ;
+}
+
+</style>
+
+<script>
+var userAdded = JSON.parse(localStorage.getItem('registration.addingAnotherUser'));
+var forecastDone = JSON.parse(localStorage.getItem('registration.forecastComplete'));
+console.log(forecastDone)
+$(document).ready(function() {
+  var changeStuff = function() {
+  if (userAdded=='yes' && forecastDone !="yes") {
+   // document.getElementById("commitmentsName").textContent = " Hackney Skills & Training Ltd";
+   // document.getElementById("providerName").textContent = "Provider:" ;
+    $(confirmationAdded).removeClass("rj-dont-display")
+   $(teamMemberOne).removeClass("rj-dont-display");
+  //  $(addReference).addClass("rj-dont-display");
+   // $(commitmentStatus).addClass("rj-dont-display");
+   //  $(addDate).addClass("rj-dont-display")
+    }
+else {  
+  //  $(notesStuff).removeClass("rj-dont-display");
+  //  $(addReference).removeClass("rj-dont-display");
+  //  $(commitmentStatus).removeClass("rj-dont-display");
+  //  $(addDate).removeClass("rj-dont-display")
+        };
+
+if (userAdded=='yes' & forecastDone =="yes") {
+   $(teamMemberOne).removeClass("rj-dont-display");
+   $(forecastComplete).removeClass("rj-dont-display");
+    }
+else {  };
+if (userAdded=='No' & forecastDone =="yes") {
+   $(forecastComplete).removeClass("rj-dont-display");
+    }
+else {  };
+if (userAdded=='No' ) {
+   $(trainingProviders).removeClass("rj-dont-display");
+   $(endpointAssessment).removeClass("rj-dont-display");
+    }
+else {  };
+
+  }
+changeStuff();
+});
+
+</script>
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds column-minimum">
+
+      <h1 class="heading-large">
+        Non-Levy Thing
+      </h1>
+
+      <ol class="task-list">
+        <li>
+          <h2 class="task-list-section">
+            <span class="task-list-section-number">1. </span> Check before you start
+          </h2>
+          <ul class="task-list-items">
+            <li class="task-list-item">
+              <a class="task-name" href="#" aria-describedby="eligibility-completed">
+                Check eligibility
+              </a>
+              <strong class="task-completed" id="eligibility-completed">Completed</strong>
+            </li>
+            <li class="task-list-item">
+              <a class="task-name" href="#" aria-describedby="read-declaration-completed">
+                Do a thing
+              </a>
+              <!--strong class="task-completed" id="read-declaration-completed">Completed</strong-->
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="task-list-section">
+            <span class="task-list-section-number">2. </span> Prepare application
+          </h2>
+          <ul class="task-list-items">
+            <li class="task-list-item">
+              <a class="task-name" href="#" aria-describedby="company-information-completed">
+                Company information
+              </a>
+              <strong class="task-completed" id="company-information-completed">Completed</strong>
+            </li>
+            <li class="task-list-item">
+              <a class="task-name" href="#" aria-describedby="contact-details-completed">
+                Your contact details
+              </a>
+              <strong class="task-completed" id="contact-details-completed">Completed</strong>
+            </li>
+            <li class="task-list-item">
+              <a class="task-name" href="#">
+                List convictions
+              </a>
+            </li>
+            <li class="task-list-item">
+              <a class="task-name" href="#">
+                Provide financial evidence
+              </a>
+            </li>
+            <li class="task-list-item">
+              <a class="task-name" href="#" aria-describedby="medical-information-completed">
+                Give medical information
+              </a>
+              <strong class="task-completed" id="medical-information-completed">Completed</strong>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="task-list-section">
+            <span class="task-list-section-number">3. </span> Apply
+          </h2>
+          <ul class="task-list-items">
+            <li class="task-list-item">
+              <a class="task-name" href="#">
+                Submit and pay
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+<!--
+
+  <div style="margin-top:25px">
+                      <table class="">
+                          <thead>
+                            <tr>
+                              <th scope="col" style="padding-top:0"></th>
+                               <th scope="col" style="padding-top:0"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                             <tr>
+
+                              <td style="font-size:28px; color:#005ea5; font-weight:700;">1. Invite team members</td>
+                                <td >
+                                  <span id="teamMemberOne" class="statusToDo rj-dont-display">1 Team member added</span>
+                                  <span id="teamMemberTwo" class="statusToDo rj-dont-display">2 Team members added</span>
+                                </td>
+                              </tr>
+                              <tr>
+
+                              <td style="font-size:28px;  font-weight:700; "><a style="text-decoration:none; color:#005ea5;" href="/{% include "includes/sprint-link.html" %}/forecast">2. Forecast your funds</a></td>
+                               <td> <span id="forecastComplete" class="statusToDo rj-dont-display">Forecast added on 20 May 2017</span> </td>
+                              </tr>
+                             <tr>
+
+                              <td style="font-size:28px; color:#005ea5; font-weight:700;">3. Explore training courses and providers</td>
+                                <td class="looks-like-a-link-underline"></td>
+                              </tr>
+                             <tr>
+
+                              <td style="font-size:28px; color:#005ea5; font-weight:700;">4. Learn more about Endpoint Assesment</td>
+                                <td class="looks-like-a-link-underline"></td>
+                              </tr>
+
+                          </tbody>
+                      </table>
+</div>
+
+-->

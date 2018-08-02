@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+    .apprentice-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<script>
+
+function whereNow() {
+   var status = $('input[name=radio-group]:checked').val();
+       switch (true) {
+          case  (status == 'pause'):
+                console.log('paused')
+                localStorage.setItem("commitments.apprenticestatus", JSON.stringify('paused'));
+                 window.location.href='update-apprenticeship/effective-date';
+
+                break;
+        case  (status == 'stop'):
+            console.log('stopped')
+            localStorage.setItem("commitments.apprenticestatus", JSON.stringify('stopped'));
+             window.location.href='update-apprenticeship/reason';
+            break;
+        case  (status == 'unchanged'):
+            console.log('unchanged')
+             window.location.href='individual-apprentice';
+            break;
+        default:
+             console.log('gyahhhhhhhh, bork bork bork')
+            break;
+        }
+    }
+
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+  <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+              <h1 class="heading-xlarge" >Change apprentice status</h1>
+            <div>
+
+ <table class="">
+                    <tbody>
+                      <tr>
+                        <td>Name</td>
+                        <td style="font-weight:700; font-size:19px">Harvey Dent</td>
+                      </tr>
+                       <tr>
+                        <td>Date of birth</td>
+                        <td style="font-weight:700; font-size:19px">28 February 1997</td>
+                      </tr>
+                    </tbody>
+                </table>
+
+              <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
+              <form action="friendly-name">
+                  <legend class="visuallyhidden">Delete me</legend>
+                    <div class="form-group">
+                      <label class="form-label-bold" for="">Would you like to permanently stop payments for this apprentice?</label>
+
+                    <label class="block-label" for="stop">
+                      <input id="stop" type="radio" name="radio-group" value="stop">
+                    Yes, stop the apprentice
+                     </label>
+                     <label class="block-label" for="unchanged">
+                      <input id="unchanged" type="radio" name="radio-group" value="unchanged">
+                    No, don't stop this apprentice
+                     </label>
+                  </div>
+                </fieldset>
+                                  <div style="margin-top:50px"></div>
+          <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Continue">
+              </form>
+
+            </div>
+
+          </div>
+
+          <div class="column-one-third">
+            </div>
+        </div>
+</main>
+
+
+{% endblock %}
+

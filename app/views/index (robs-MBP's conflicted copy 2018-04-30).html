@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-half">
+
+          <h1 class="heading-large">Claim my Funds</h1>
+
+          <p>
+            <a href="/{% include "includes/sprint-link.html" %}/login">Sign in to the service</a>
+          </p>
+          <p>
+            <a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a>
+          </p>
+          <p>
+            <a href="/{% include "includes/sprint-link.html" %}/register/govtCredentials">Gov Gateway</a>
+          </p>
+
+
+
+	   </div>
+     <div class="column-half">
+         <h1 class="heading-large">Add apprentices</h1>
+                    <p>
+            <a href="/{% include "includes/sprint-link.html" %}/contracts/providers">Employer add</a>
+          </p>
+          <p>
+            <a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/">Provider review</a>
+          </p>
+         <h2 class="heading-medium">Flat screens</h2> 
+          <p>
+            <a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list-static-normal">Show changes (needs tidying)</a>
+          </p>
+          <p>
+            <a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list-error">Error when sending for approval (in progress)</a>
+          </p>
+     </div>
+
+
+
+
+  </div>
+   <h1 class="heading-large">Admin and other</h1>
+            <p style="">
+            <a href="/proto-admin">admin page (change sprint, name and navigation)</a>
+          </p>
+</main>
+
+{% endblock %}
+
+

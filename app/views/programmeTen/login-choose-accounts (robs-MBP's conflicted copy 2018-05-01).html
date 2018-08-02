@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+
+
+</script>
+
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <!--li><a href="/">Breadcrumb here ></a></li-->
+    </ol>
+
+  </div>
+
+ 
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                   <h1 class="heading-xlarge">Choose account</h1>
+
+                  <p>You have several accounts registered to: rob@acmeltd.com</p>
+                  <p>Please choose the account you wish to view. </p>
+                      <table class="table-19-font">
+                          <thead>
+                            <tr>
+                              <th scope="col">Account name</th>
+                              <th scope="col" class="">Account number</th>
+                               <th scope="col"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="rjTabWidth">Acme Ltd, Coventry</td>
+                              <td class="">DF9 0832 778</td>
+                              <td><a href="/{% include "includes/sprint-link.html" %}/balance">View</a></td>
+                            </tr>
+                             <tr>
+                              <td class="rjTabWidth">Anvil Pty Headquarters</td>
+                              <td class="">JJ1 9983 222</td>
+                              <td class="looks-like-a-link-underline">View</td>
+                            </tr>
+                            <tr>
+                              <td class="rjTabWidth">Acme Oxford St, London</td>
+                              <td class="">ZZ1 7634 826</td>
+                              <td class="looks-like-a-link-underline">View</td>
+                            </tr>
+                            <tr>
+                              <td class="rjTabWidth">Anvil Pty, Cheletenham High St</td>
+                              <td class="">FF9 1647 842</td>
+                              <td class="looks-like-a-link-underline">View</td>
+                            </tr>
+                          </tbody>
+                      </table>
+                </div>
+          </div>  
+
+</main>
+
+<script>
+
+//store details entered into the form in local storage
+var createButton = document.getElementById('createAccountButton');
+EventUtil.addHandler(createButton, 'click', function(){
+              // save the form info to local storage by first putting the data into an object
+              var userDetails = {
+                email: document.getElementById('email-address').value,
+                password: document.getElementById('password').value
+            };
+
+            //store the object in local storage using json stringify
+              localStorage.setItem("login", JSON.stringify(userDetails));
+
+    });
+</script>
+
+{% endblock %}

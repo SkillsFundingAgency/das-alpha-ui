@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-finance.html" %}
+
+
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<div class="grid-row">
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Find and forecast</h1>
+
+    <p class="lede">We can help you estimate how much an apprenticeship will cost and what you will have to contribute..</p>
+
+    <h2 class="heading-medium">Before you start</h2>
+    <p>You will need the following info:</p>
+  <ul class="list list-bullet">
+    <li>how many apprentices you want to take on</li>
+  </ul>
+
+
+    <div style="margin-top:50px"></div>
+    <div class="padder-top-x">
+        <a href="/{% include "includes/sprint-link.html" %}/NLD-find/findOne" class="button button-start">Start</a>
+    </div>
+    <div style="margin-top:50px"></div>
+
+
+            </div>
+
+             <div class="column-one-third">
+
+            </div>
+</div>
+</main>
+
+
+{% endblock %}

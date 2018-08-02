@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    {% include "includes/head.html" %}
+
+{% endblock %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .apprentice-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+
+<script>
+
+/* to set the saved variable on save and return (so it changed the next screen to show an apprenticeship that's been added) */
+/*var btn = document.getElementById('saveApprenticeship');
+EventUtil.addHandler(btn, 'click', function(){
+          var isAddedApp = 'yes';
+         localStorage.setItem("apprenticeship-added", JSON.stringify(isAddedApp));
+          window.location.href='../new-contract/cohorts';
+ });*/
+
+
+var whereNow = function() {
+        window.location.href='pay-fail-das-change-confirm';
+              };
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+    <!-- <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+          <a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice" class="link-back">Back to apprentice details</a>
+    </ol>
+  </div> -->
+
+    <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+            <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Request changes</h1>
+     <form id="myFormId">
+        <fieldset>
+            <legend class="visuallyhidden">Cost per apprenticeship</legend>
+       <div class="form-group">
+            <label class="form-label-bold" for="apprenticeCost">Total agreed training cost
+           </label>
+                <span class="form-hint">We have prefilled the amount in the ILR</span>
+              <span class="rj-currency-symbol">£</span>
+              <input class="form-control rj-currency-input" id="apprenticeCost" type="text" value="7,000" style="max-width:6em">
+      </div>
+      </fieldset>
+
+    </form>
+    <div class="" style="display: table;">
+
+          <div style="margin-top:20px; display:inline-block;display: table-cell; vertical-align: middle; "><input class="button" onClick="whereNow()" type="button" id="saveAndReturn" value="Continue"> </div>
+          <div style="display:inline-block; display: table-cell; vertical-align: middle;"><p class="looks-like-a-link-underline" id="saveAndAdd" style="margin-top:20px; margin-left:25px; cursor: pointer; cursor: hand; ">Cancel and return</p></div>
+          <div style="clear:both"></div>
+</div>
+
+    </div>
+      <div class="column-one-third">
+   
+      </div>
+</main>
+{% endblock %}
+
+
+
+

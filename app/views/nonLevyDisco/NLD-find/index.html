@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+    <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+  <h1 class="heading-xlarge rj-headings-border " >{% include "includes/account-name-number.html" %}Find training</h1>
+
+ <div class="grid-row">
+           <div class="column-two-thirds">
+
+          <div class="grid-row">
+            <div class="column-half">
+              <h3 class="heading-medium" style="margin-top:0"><a href="/{% include "includes/sprint-link.html" %}/NLD-find/findStart">Find training</a></h3>
+              <p class="rj-home-spacer">Find training and evaluate providers</p>
+            </div>
+            <div class="column-half ">
+              <h3 class="heading-medium " style="margin-top:0; "><a href="/{% include "includes/sprint-link.html" %}/contracts/in-progress">Saved training</a></h3>
+              <p class="rj-home-spacer">Review saved training</p>
+            </div>
+          </div>
+
+         <div class="grid-row">
+             <div class="column-half">
+              <h3 class="heading-medium rj-top-border" style="margin-top:0;padding-top:35px  " ><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/">Estimate cost</a></h3>
+              <p>Estimate training costs</p>
+            </div>
+            <div class="column-half ">
+           <h3 class="heading-medium rj-top-border" style="margin-top:0;padding-top:35px "><a href="/{% include "includes/sprint-link.html" %}/finance"> </a></h3>
+            </div>
+         </div>
+
+       </div>
+    </div>
+  </main>
+
+
+{% endblock %}
+

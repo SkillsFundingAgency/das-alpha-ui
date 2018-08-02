@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+    .apprentice-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<script>
+
+function whereNow() {
+   var status = $('input[name=radio-group]:checked').val();
+       switch (true) {
+          case  (status == 'pause'):
+                 window.location.href='are-you-sure-pause';
+                break;
+        case  (status == 'stop'):
+                var isAddedApp = 'yes';
+                localStorage.setItem("commitments.isEmployer", JSON.stringify(isAddedApp));
+                window.location.href='effective-date2';
+            break;
+        case  (status == 'unchanged'):
+                var status = 'notStopped';
+                 localStorage.setItem("commitments.userChangeStatus", JSON.stringify(status));
+              window.location.href='employer-payment-failure/harvey-dent-restart-apprenticeship';
+            break;
+        default:
+             console.log('gyahhhhhhhh, bork bork bork')
+            break;
+        }
+    }
+
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+  <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+              <h1 class="heading-xlarge" >Change apprentice status</h1>
+            <div>
+              <form action="friendly-name">
+                  <legend class="visuallyhidden">Delete me</legend>
+                    <div class="form-group">
+                      <label class="form-label-bold" style="" for="">What status change do you want to make?</label>
+                    <label class="block-label" for="pause">
+                      <input id="pause" type="radio" name="radio-group" value="pause">
+                     Pause
+                     </label>
+                    <label class="block-label" for="stop">
+                      <input id="stop" type="radio" name="radio-group" value="stop">
+                    Stop
+                     </label>
+                     <label class="block-label" for="unchanged">
+                      <input id="unchanged" type="radio" name="radio-group" value="unchanged">
+                    Don’t change the status
+                     </label>
+                  </div>
+                </fieldset>
+                                  <div style="margin-top:60px"></div>
+          <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" value="Continue">
+              </form>
+
+
+            </div>
+
+          </div>
+
+          <div class="column-one-third">
+
+            </div>
+        </div>
+</main>
+
+{% endblock %}
+

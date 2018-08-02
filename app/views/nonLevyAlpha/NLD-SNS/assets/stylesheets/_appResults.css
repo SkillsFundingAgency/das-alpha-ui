@@ -1,0 +1,118 @@
+#framework-results li h2,
+#standard-results li h2 {
+    margin-top: 0;
+}
+
+#framework-results li h2:first-letter,
+#standard-results li h2:first-letter {
+    text-transform: uppercase;
+}
+
+#trailblazerMessage {
+    border: 5px solid #2B8CC4;
+    background: white;
+    padding: 15px;
+}
+
+#resultCount {
+    display: none;
+}
+
+#standard-results li {
+    display: none;
+}
+
+#framework-results {
+    padding-top: 15px;
+}
+
+.result {
+    position: relative;
+    overflow: auto;
+}
+
+.bold-small.label,
+ol li span.label {
+    background: #F8F8F8;
+    padding: 0 5px;
+    color: #6F777B;
+    font-weight: normal;
+    display: inline;
+    background: grey;
+    padding: 0 5px;
+    font-size: 16px;
+    border-radius: 3px;
+    color: white;
+    font-weight: 900;
+}
+
+ol li .details {
+    width: 80%;
+    float: left;
+}
+
+ol li .shortlist {
+    width: 20%;
+    float: left;
+    text-align: center;
+    color: #005ea5;
+}
+
+.v2 ol li .details {
+    width: 70%;
+}
+
+.v2 ol li .shortlist {
+    width: 30%;
+}
+
+ol li .shortlist:hover {
+    color: #2e8aca;
+    cursor: pointer;
+}
+
+ol li .shortlist i {
+    font-size: 2em;
+}
+
+ol li .shortlist span {
+    display: none;
+}
+
+#back-link {
+    margin-top: 60px;
+}
+
+.fixed-container.fixed {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background: white;
+    left: 0;
+    top: 0;
+}
+
+.fixed-container.fixed .account-info {
+    padding: 10px 20px;
+}
+
+@media (min-width: 641px) {
+    ol li .shortlist span {
+        width: 100%;
+        display: block;
+        float: left;
+        margin-top: 10px;
+        text-decoration: underline;
+    }
+}
+
+@media (max-width: 641px) {
+    #results legend {
+        color: #005ea5;
+        text-decoration: underline;
+        font-weight: 200l
+    }
+    #back-link {
+        margin-top: 0;
+    }
+}

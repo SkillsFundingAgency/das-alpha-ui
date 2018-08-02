@@ -1,0 +1,2685 @@
+// Import GOV.UK elements, this will import the frontend toolkit and some base styles.
+// Take a look in _govuk-elements.scss to see which files are imported.
+@import 'govuk-elements';
+
+// Take a look at patterns.scss to see which files are imported.
+@import 'patterns';
+
+// If you need to create a page as part of your journey, but without GOV.UK branding
+// See localhost:3000/examples/unbranded/
+.unbranded {
+  background: $white;
+  // Use the universal selector and !important to *ALWAYS OVERRIDE* GDS Transport
+  * {
+    font-family: Arial !important;
+  }
+
+  // Remove GOV.UK footer styles
+#footer {
+    border: 0;
+    background: $white;
+  }
+}
+
+
+.link-back {
+  margin:0 !important;
+}
+
+  //Temporary links used to show variations can be removed by making this display none
+
+.rjTemp {
+   //display: none;
+}
+
+// temp remove the breadcrumb trail
+
+/* .breadcrumbs ol li a {
+  display:none;
+}
+*/
+
+
+
+/* MC General Codemirror Changes */
+.CodeMirror{font-size: 16px; height:100%; }
+.CodeMirror-scroll {
+    margin-bottom: -30px;
+    margin-right: -30px;
+    padding-bottom: 30px;
+    height: 100%;
+    outline: none;
+    position: relative;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+     min-height: 160px;
+
+}
+.CodeMirror-scrollbar {display: none; z-index: -5;}
+
+.CodeMirror pre.CodeMirror-placeholder {color:#999; white-space: pre !important;}
+
+
+.codemirror-border-wrap  {
+    border: 2px solid #c9c9c9;
+    border-radius: 3px;
+    margin: 0 0 24px 0;
+    max-width: 635px;
+}
+
+
+
+
+// clears floats
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+// Apprentice records
+
+.apprenticeRecordTitle {
+  width:250px;
+}
+
+//
+
+.custom-file-upload {
+    display: inline-block;
+    cursor: pointer;
+    background-color: #eee;
+    box-shadow: 0 2px 0 #003618;
+    font-size: 1em;
+    line-height: 1.25;
+    color: #000;
+    box-sizing: border-box;
+    padding: 0.5263157895em 0.7894736842em 0.2631578947em 0.7894736842em;
+    height:38px;
+    width:207px;
+}
+
+// adding new users inline
+
+
+    .no-padding {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .remove-list-item {
+      display: inline-block;
+      margin-top: 1.6em;
+    }
+
+    .list-item-wrapper {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .list-item-wrapper .heading-small,
+    .list-item-wrapper .heading-medium,
+    .list-item-wrapper .heading-large,
+    .list-item-wrapper .heading-xlarge {
+      margin-top: 0;
+    }
+
+    .list-item-wrapper .column-one-third .list-item {
+      width: 100%;
+    }
+
+    .list-item-wrapper .column-one-third input {
+      width: 90%;
+    }
+
+    .button-add-another {
+      background-color: #eee;
+      color: #000;
+      box-shadow: 0 2px 0 #666;
+    }
+
+    .button-add-another:hover {
+      background-color: #ccc;
+      color: #000;
+      box-shadow: 0 2px 0 #666;
+    }
+
+    .button-add-another:focus {
+      background-color: #ccc;
+      color: #000;
+      box-shadow: 0 2px 0 #666;
+    }
+
+    @media (max-width: 640px) {
+      .list-item-wrapper .column-one-third input {
+        width: 100%;
+      }
+
+      .no-padding {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .button-add-another {
+        width: 90%;
+        margin: auto;
+        display: block;
+      }
+    }
+
+.alert-success {
+    border-color: $turquoise;
+    // background-color: #eaf6f5;
+    background-color: $turquoise;
+  }
+
+.alert-success h2 {
+    color:#fff;
+    display:inline-block;
+    margin-top:4px;
+  }
+
+.alert-success .fa-check {
+  color: #fff;
+  display:inline-block;
+  margin-right:10px;
+}
+
+
+// end of adding new users inline
+
+.emptyState {
+width:100%;
+margin-top: 35px;
+}
+
+.emptyStateAlert {
+    // border: 1px solid #bfc1c3;
+  border-left: 10px solid $light-blue;
+  width: 100%;
+ min-height: 70px;
+  margin:0 auto;
+  background-color: #eaf4f9;
+}
+
+.emptyStateCopy {
+  // text-align: center;
+  padding-top:19px;
+}
+
+.emptyStateCopy p {
+padding-left:15px;
+}
+
+.errorRow {
+  border: 5px solid $error-colour !important;
+}
+
+.errorCell {
+ border: 0;
+}
+
+.errorCopyTable {
+
+  font-size: 16px;
+  font-weight:700;
+  color:$error-colour;
+}
+
+.indentedTablePadding tr td {
+ padding-left: 2px;
+}
+
+.errorBox {
+ padding-top:18px;
+   border-bottom: 5px solid $error-colour !important;
+  // background-color: $highlight-colour;
+
+}
+
+.errorBoxBlack {
+ padding-top:18px;
+   border-bottom: 5px solid $purple !important;
+  // background-color: $highlight-colour;
+
+}
+
+.errorBoxRed {
+ padding-top:18px;
+   border-bottom: 5px solid #B10E1E !important;
+  // background-color: $highlight-colour;
+
+.fatBR {
+  line-height:25px
+}
+
+.fa-check {
+  color:#28a197;
+}
+
+.fa-times {
+  color:#a1acb2;
+}
+
+.align-center-columns {
+  text-align:center;
+}
+
+.form-label-bold {
+  margin-bottom:5px;
+}
+
+
+  @media (min-width: 640px) {
+      .activation-code {
+  max-width:6em
+}
+
+      }
+
+// contracts 
+
+.commit-bar {
+
+}
+
+
+.drag-upload {
+  min-height:150px;
+  min-width: 300px;
+  background-color: $panel-colour;
+margin-top:-6px;
+}
+
+.drag-upload p {
+  text-align:center;
+  padding-top:65px;
+  font-weight:700;
+}
+
+.rj-contract-verify {
+  // border: 1px solid #bfc1c3;
+  width: 100%;
+ min-height: 200px;
+  margin-top:25px;
+  background-color: $panel-colour;
+}
+
+
+
+.rj-dont-display {
+  display:none;
+}
+
+.rj-pound-sign {
+  height: 1em;
+  width:1em;
+  background-color: $grey-2;
+  display:inline-block;
+  margin-right:3px;
+  padding: 4px 0 11px 4px;
+}
+
+
+.rj-headings-border {
+  padding-bottom:20px; border-bottom: 4px solid #BFC1C3;
+}
+
+.rj-headings-border-top {
+  padding-top:20px; border-top: 4px solid #BFC1C3;
+}
+
+.rj-home-spacer {
+  margin-bottom:35px;
+}
+
+.rj-commitments-border {
+  padding-bottom:20px; border-bottom: 4px solid $govuk-blue;
+}
+
+.mini-pad {
+  padding-left:0px;
+}
+
+@media (min-width: 641px) {
+.rj-roles-choice {
+  width:66%;
+}
+}
+
+// To do list of actions - or feed
+
+.rj-alert-wrapper {
+  // border: 1px solid #bfc1c3;
+  border-left: 4px solid #005EA5;
+  width: 100%;
+  min-height: 120px;
+  margin-top:15px;
+  background-color: $grey-3;
+}
+
+.rj-alert-wrapper-history {
+  // border: 1px solid #bfc1c3;
+  border-left: 4px solid #005EA5;
+  width: 100%;
+  min-height: 240px;
+  margin-top: 15px;
+  background-color: #FFF;
+}
+
+.rj-alert-wrapper-history2 {
+  // border: 1px solid #bfc1c3;
+  border-left: 4px solid #005EA5;
+  width: 100%;
+  min-height: 240px;
+  margin-top: 0px;
+  background-color: #FFF;
+}
+
+.rj-number-alert {
+  border-right: 1px solid #bfc1c3;
+  width: 90px;
+  height: 80px;
+  background-color: #005EA5;
+  color: #FFF;
+  display:inline-block;
+}
+
+.rj-number-alert h2 {
+  font-size:48px;
+ text-align: center;
+ padding-top: 18px;
+}
+
+.single-number h2 {
+  text-align: center;
+ padding-top: 18px;
+}
+
+.rj-number-filter {
+  border-right: 1px solid #bfc1c3;
+  width: 120px;
+  height: 90px;
+  background-color: #005EA5;
+  color: #FFF;
+  display:inline-block;
+}
+
+.rj-number-filter h2 {
+  font-size:48px;
+ text-align: center;
+ padding-top: 19px;
+}
+
+.number-filter-single-number h2 {
+  text-align: center;
+ padding-top: 18px;
+}
+
+.hitBoxFilter {
+  border: 1px solid #bfc1c3;
+  max-height:90px;
+}
+
+.rj-alert-copy {
+  display:inline-block;
+  height:80px;
+vertical-align: top;
+}
+
+
+.rj-alert-copy-inner {
+  display:block;
+  vertical-align: top;
+  width:100%;
+}
+
+.change-history-header h2 {
+  float: left;
+}
+
+.change-history-header a {
+  float: right;
+}
+
+// sortable lists01
+
+.tableContainer {
+  width: 650px;
+  margin-left: 0px;
+}
+
+.tableNumbers li {
+  margin-bottom: 36px;
+}
+
+.table li {
+  list-style: block;
+  width: 375px;
+  height: 40px;
+  margin-bottom: 7px;
+  padding: 5px;
+  border: 1px solid;
+}
+
+#upDownButton ul {
+  position: relative;
+  float: right;
+  margin-right: -120px;
+}
+
+#buttonUp {
+  background-color: #00823B;
+  border: #00823B;
+  width: 60px;
+  height: 40px;
+  border-bottom: #000000;
+  margin-bottom: 7px;
+}
+
+#buttonUp p {
+  color: #FFFFFF;
+  font-size: 2em;
+  transform: rotate(90deg);
+  vertical-align: center;
+  text-align: center;
+}
+
+#buttonDown {
+  background-color: #00823B;
+  border: #00823B;
+  width: 60px;
+  height: 40px;
+  margin-bottom: 161px;
+}
+
+#buttonDown p {
+  color: #FFFFFF;
+  font-size: 2em;
+  transform: rotate(90deg);
+  vertical-align: center;
+  text-align: center;
+}
+
+.selected {
+    background-color: #D3D3D3;
+}
+
+// end of sortable lists01
+
+// sortable lists02
+
+.mainTableContainer {
+  margin-left: 15px;
+}
+
+.leftTable ol {
+  list-style-position: outside;
+  list-style-type: decimal;
+}
+
+.leftTable li {
+  list-style: block;
+  width: 300px;
+  height: 40px;
+  margin-bottom: 7px;
+  padding: 5px;
+  border: 1px solid;
+}
+
+.rightTableNumbers li {
+  margin-bottom: 36px;
+}
+
+.rightTable li {
+  list-style: block;
+  width: 300px;
+  height: 40px;
+  margin-bottom: 7px;
+  padding: 5px;
+  border: 1px solid;
+}
+
+// end of sortable lists02
+
+// alert panel for paused or stopped apprentice
+
+.alert-success {
+  border-color: $turquoise;
+  background-color: mix(white, $turquoise, 90%);
+}
+
+// end of alert panel for paused or stopped apprentice
+
+
+// character count
+
+.sfa-form-control-after {
+    font-size: 16px;
+    line-height: 1.25;
+    display: block;
+    color: $secondary-text-colour;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    @include media(tablet){
+      font-size: 19px;
+      line-height: 1.31579;
+    }
+}
+
+// end of character count
+
+// settings tabs
+
+.tabs-menu {
+    height: 33px;
+    margin-top: 0px;
+    margin-bottom: 18px;
+    margin-left: 0px;
+    float: left;
+}
+
+.tabs-menu li {
+    display: inline-block;
+    height: 51px;
+    line-height: 52px;
+    float: left;
+    text-align: center;
+    margin-right: 5px;
+    color: #000;
+    background-color: #BFC1C3;
+    border-top: 1px solid #BFC1C3;
+    border-right: 1px solid #BFC1C3;
+    border-left: 1px solid #BFC1C3;
+}
+
+.tabs-menu li.current {
+    position: relative;
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+    z-index: 5;
+}
+
+.tabs-menu li a {
+    padding: 15px;
+    margin-top: 0px;
+    color: #005EA5;
+    text-decoration: none; 
+}
+
+.tabs-menu .current a {
+    color: #000;
+}
+
+.tabs-menu li a:focus{
+  background: none;
+  border: 0;
+  outline: 0;
+}
+
+// end of settings tabs
+
+//todo tabs
+
+/*.tabs-menu-todo {
+    height: 33px;
+    margin-top: 0px;
+    margin-bottom: 18px;
+    float: left;
+}
+
+.tabs-menu-todo li {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    text-align: center;
+    margin-right: 5px;
+    color: #000;
+    background-color: #DEE0E2;
+    border-top: 1px solid #d4d4d1;
+    border-right: 1px solid #d4d4d1;
+    border-left: 1px solid #d4d4d1;
+}
+
+.tabs-menu-todo li.current {
+    position: relative;
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+    z-index: 5;
+}
+
+.tabs-menu-todo li a {
+    padding: 15px;
+    margin-top: 0px;
+    color: #005EA5;
+    text-decoration: none; 
+}
+
+.tabs-menu-todo .current a {
+    color: #000;
+}
+
+.tabs-menu-todo li a:focus{
+  background: none;
+  border: 0;
+  outline: 0;
+}
+
+/*----- Tabs content -------*/
+
+.tab {
+    position: relative;
+    border: 1px solid #fff;
+    background-color: #fff;
+    clear: both;
+    margin-left: 20px;
+    border-top-color: #d4d4d1;
+    margin-bottom: 10px;
+}
+
+.tab-content {
+    padding: 0px;
+    display: none;
+}
+#tab-1 {
+ display: block;   
+}
+
+
+// end of tabs
+
+// timeline
+
+.timeline {
+  padding-top: 0px;
+  padding-right: 15px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+
+}
+
+.timeline {
+  position: relative;
+  width: 100%;
+  background: #FFF;
+}
+
+.timeline::before {
+  margin-left: +0%;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 1px;
+  background: #BFC1C3;
+  top: 30px;
+  bottom: 10px;
+}
+
+.timeline .body {
+  width: 100%;
+  margin-left: 20px;
+  margin-bottom: 30px;
+  position: relative;;
+}
+
+.timeline .body::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #BFC1C3;
+  border-radius: 100%;
+  left: -25px;
+  top: 24%;
+  z-index: 99;
+}
+
+//end of timeline
+
+//vertical lines
+
+hr.vertical-line {
+  width: 2px;
+  background-color: blue;
+  height: 100%;
+  float: left;
+}
+
+//end of vertical lines
+
+//edit page elements 
+
+.form-address-group .p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+//end edit page elements
+
+
+// Mobile tables
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
+
+  /* Force table to not be like tables anymore */
+  #transactions table, #transactions thead, #transactions tbody, #transactions th, #transactions td, #transactions tr { 
+    display: block; 
+  }
+  
+  /* Hide table headers (but not display: none;, for accessibility) */
+  #transactions thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+
+  }
+
+   
+
+
+  #transactions tr { border-left: 1px solid $grey-2; margin-top:10px; border-right: 1px solid $grey-2;border-top: 1px solid $grey-2; }
+  
+  #transactions td { 
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid $grey-2; 
+    position: relative;
+    padding-left: 50%; 
+    font-size: 16px;
+    font-weight:700;
+  }
+
+   #transactions .numeric {
+    text-align:left !important;
+   }
+  
+  #transactions td:before { 
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 11px;
+    left: 6px;
+    width: 45%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+  }
+  
+  /*
+  Label the data
+  */
+  #transactions td:nth-of-type(1):before { content: "Date"; font-weight:400; }
+  #transactions td:nth-of-type(2):before { content: "Description"; font-weight:400; }
+  #transactions td:nth-of-type(3):before { content: "Credit"; font-weight:400; }
+  #transactions td:nth-of-type(4):before { content: "Debit"; font-weight:400; }
+  #transactions td:nth-of-type(5):before { content: "Balance"; font-weight:400; }
+  #transactions td:nth-of-type(6):before { content: ""; font-weight:400;  color: #0b0c0c;}
+}
+
+$info-colour:$purple;
+$success-colour:$turquoise;
+$warning-colour:$orange;
+
+// Container for notifications, to reduce space between them wehen there are multiple
+.notifications { 
+    .error-summary,.warning-summary,.success-summary,.info-summary{
+        margin-bottom:0px !important;
+        &:last-child {
+           margin-bottom:100px; 
+        }
+    }
+}
+
+// Share notification styles
+.error-summary, .info-summary, .success-summary, .warning-summary {
+    border-width: 4px;
+    border-style: solid;
+
+    margin-top: $gutter-half;
+    margin-bottom: $gutter-half;
+    padding: $gutter-half 10px;
+
+    @include media(tablet) {
+        border-width: 5px;
+        border-style: solid;
+
+        margin-top: $gutter;
+        margin-bottom: $gutter;
+
+        padding: $gutter-two-thirds $gutter-half $gutter-half;
+    }
+
+    @include ie-lte(6) {
+        zoom: 1;
+    }
+
+    // Use the GOV.UK outline focus style
+    &:focus {
+        outline: 3px solid $focus-colour;
+    }
+
+    p {
+        margin-bottom: 10px;
+    }
+
+    &-heading {
+        margin-top: 0;
+    }
+    
+    @for $index from 1 through 6 {
+        h#{$index}{
+        }
+        h#{$index}[class^="heading-"] {
+            margin: 0;
+        }
+    }
+    
+    &-list {
+    padding-left: 0;
+        li {
+            @include media(tablet) {
+            margin-bottom: 5px;
+            }
+        }
+        a {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    }  
+}
+
+.info-dismiss, .success-dismiss, .warning-dismiss {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+// Info notification styles
+.info-summary {
+  border-color:$info-colour;
+
+  @include media(tablet) {
+    border-color:$info-colour;
+  }
+
+  .info-summary-list {
+    a {
+      color: $info-colour;
+    }
+  }
+  .info-dismiss {
+    color: $info-colour;
+  }
+}
+
+// Success notification styles
+.success-summary {
+  border-color:$success-colour;
+
+  @include media(tablet) {
+    border-color:$success-colour;
+  }
+
+  .success-summary-list {
+    a {
+      color: $success-colour;
+    }
+  }
+  .success-dismiss {
+    color: $success-colour;
+  }
+}
+
+// Warning notification styles
+.warning-summary {
+  border-color:$warning-colour;
+
+  @include media(tablet) {
+    border-color:$warning-colour;
+  }
+
+  .warning-summary-list {
+    a {
+      color: $warning-colour;
+    }
+  }
+  .warning-dismiss {
+    color: $warning-colour;
+  }
+}
+
+// ==========================================================================
+// This is a modifiation of the GDS pattern .govuk-box.highlight to include
+// padding on the inside of the box, incase of a long title
+// ==========================================================================
+
+.sfa-govuk-box-highlight {
+    padding-left:0.5em;
+    padding-right:0.5em;
+}
+
+//end of mobile tables
+
+.notice.long .icon {
+  margin-top: 0;
+  top: 0px;
+}
+
+.alert-default-blue-thing {
+  border-color: $purple;
+ // background-color: mix(white, $purple, 97%);
+}
+
+.alert-default-green-thing {
+  border-color: $turquoise;
+  border:5px;
+ // background-color: mix(white, $turquoise, 90%);
+}
+
+.alert-red-border {
+
+}
+
+.panel-alert-border {
+
+}
+
+.alert-warning-red-thing {
+  border-color: $red;
+  background-color: mix(white, $mellow-red, 90%);
+}
+
+//register marrage allowance type thing
+
+.tamc-js-hidden {
+  display : none;
+}
+
+.error-inline {
+  margin-top: 15px;
+  clear: both;
+  background-color: #fef7f7;
+}
+
+.validation-summary {
+    border: 5px solid #b10e1e;
+    padding: 15px 30px;
+    margin-bottom: 30px;
+}
+
+
+
+// Commitment screens
+
+.changeHighlightCopy {
+  font-weight:700;
+}
+
+.thereAreChanges {
+  background-color:#DEE0E2; 
+  border-right:1px solid $border-colour; 
+  border-left:1px solid $border-colour; 
+}
+
+
+
+.fullWidthAnotherAlert {
+    border-color: $purple;
+  background-color: mix(white, $purple, 90%);
+  height:100px;
+  padding: 20px 40px 0px 40px;
+  margin: 20px 0 0px 0;
+}
+
+.fullWidthGreyAlert {
+  border-color: $purple;
+  border-left: 8px solid #B10E1E;
+  background-color: mix(white, $purple, 90%);
+  //width:100%;
+  height:150px;
+  padding: 20px 40px 0px 40px;
+  margin: 15px 0 30px 0;
+  position:relative;
+}
+
+.fullWidthGreyAlert2 {
+  border-color: $purple;
+  border-left: 8px solid #005EA5;
+  background-color: mix(white, $purple, 90%);
+  //width:100%;
+  height:150px;
+  padding: 20px 40px 0px 40px;
+  margin: 15px 0 30px 0;
+  position:relative;
+}
+
+.fullWidthGreyAlert3 {
+  border-color: $purple;
+  border-left: 8px solid #B10E1E;
+  background-color: mix(white, $purple, 90%);
+  //width:100%;
+  height:150px;
+  padding: 20px 40px 0px 40px;
+  margin: 15px 0 30px 0;
+  position:relative;
+}
+
+
+.errorBoxRed {
+  padding-top:18px;
+  border-bottom: 5px solid #B10E1E;
+}
+
+.errorBoxBlue {
+  padding-top:18px;
+  border-bottom: 5px solid #005EA5;
+}
+
+.fullWidthGreyAlert p, .fullWidthAnotherAlert p, .fullWidthGreyAlert h2, .fullWidthAnotherAlert h2  {
+  text-align: center;
+  margin-top:0;
+}
+
+.fullWidthGreyAlert:after {
+    /*content: '';*/
+    position: absolute;
+    left: 50%;
+    top: 170px;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 25px solid   mix(white, $purple, 90%);
+
+
+    clear: both;
+}
+
+.fullWidthGreyAlert2:after {
+    /*content: '';*/
+    position: absolute;
+    left: 76%;
+    top: 170px;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 25px solid   mix(white, $purple, 90%);
+
+
+    clear: both;
+}
+
+.fullWidthGreyAlert3:after {
+    /*content: '';*/
+    position: absolute;
+    left: 60%;
+    top: 170px;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 25px solid   mix(white, $purple, 90%);
+
+
+    clear: both;
+}
+
+.fullWidthBlueAlert:after {
+    /*content: '';*/
+    position: absolute;
+    left: 60%;
+    top: 170px;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 25px solid   mix(white, $purple, 90%);
+
+
+    clear: both;
+}
+
+
+// james funding toolkit
+.rj-co-funding {
+  background-color: $panel-colour;
+  width:143px;
+  border-top: 1px solid $grey-4; 
+}
+
+.rj-white-background {
+  background-color: #fff
+}
+
+.rj-border-left {
+     border-left: 1px solid $grey-4; 
+}
+
+.rj-border-right {
+     border-right: 1px solid $grey-4; 
+}
+
+
+.rj-co-funding-label {
+
+}
+
+.rj-co-funding-label p  {
+  padding: 0px 10px 10px 20px;
+  margin-bottom: 0px;
+}
+
+.rj-co-funding-label h3 {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 10px
+}
+
+.sunset-funds {
+    display: block;
+    color: red;
+}
+
+
+
+@media (min-width: 641px) {
+.table-19-font td, .table-19-font th {
+  font-size:19px !important;
+  line-height: 1.3157894737;
+}
+}
+
+.first-para-spacing
+
+{ }
+
+.alertGreyBox {
+  width:100%;
+  background-color: $panel-colour;
+  height:215px;
+}
+
+.alertGreyBoxSmall {
+  width:100%;
+  background-color: $panel-colour;
+  height:190px;
+}
+
+.epa-hint {
+  font-size: 19px;
+    line-height: 1.25;
+    text-transform: none;
+    display: block;
+   //color: #6f777b;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.statusToDo {
+    // text-transform: uppercase;
+    font-size: 19px;
+    background-color: #912B88;
+    color: white;
+    padding: 5px 9px 4px 9px;
+}
+
+.noMarginTop {
+    margin-top:0px !important;
+}
+
+.smallMarginBotom {
+    margin-bottom:2px !important;
+}
+
+.looks-like-a-link {
+    color:#005ea5;
+    font-weight:700;
+    text-decoration:underline;
+}
+
+.looks-like-a-link-underline {
+    color:#005ea5;
+    font-weight:400;
+    text-decoration:underline;
+}
+
+.looks-like-a-link-underline-h2 {
+    color:#005ea5;
+    font-weight:700;
+    text-decoration:underline;
+}
+
+.space-at-bottom {
+    border-bottom: 1px solid #bfc1c3;
+    padding: 15px 0;
+    position: relative;
+}
+
+.rj-top-border {
+  padding-top: 20px;
+  border-top: 1px solid #bfc1c3;
+}
+
+.rj-currency-symbol {
+  font-weight:700;
+}
+
+.rj-currency-title {
+  margin-left: 15px
+}
+
+.rj-percentage-symbol {
+ margin-left: 5px;
+ font-weight:700;
+}
+
+.button-clear, .button-clear:focus, .button-clear:hover {
+    border: none;
+    background: none;
+    color: #005ea5;
+    text-decoration: underline;
+    box-shadow: none;
+    display:block;
+    margin-top: 10px;
+    padding-left: 0;
+  }
+
+.button-grey-secondary {
+    background-color: #eee;
+    color: #000;
+    box-shadow: 0 2px 0 #666;
+}
+
+
+.button-grey-secondary:focus, .button-grey-secondary:hover {
+    background-color: darken(#eee ,4);
+    color:#000;
+}
+
+.delete-button, {
+    background-color: $red;
+    color: #fff;
+    box-shadow: 0 2px 0 #666;
+    padding-top:10px;
+}
+
+ .delete-button:focus, .delete-button:hover {
+    background-color: darken($red ,4);
+}
+
+.inline-form {
+  display:inline-block;
+}
+
+.delete-form {
+  float:right;
+}
+
+    .list-item-wrapper-vertical {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .list-item-wrapper-vertical input {
+      width: 80%;
+    }
+
+    .list-item-wrapper-vertical .remove-list-item-vertical {
+      margin-top: 4.4em;
+      display: block;
+    }
+
+    .list-item-wrapper-vertical .heading-medium {
+      margin-top: 0;
+    }
+
+    .button-add-another-vertical {
+      background-color: #eee;
+      color: #000;
+      box-shadow: 0 2px 0 #666;
+    }
+
+    .button-add-another-vertical:hover {
+      background-color: #ccc;
+      color: #000;
+      box-shadow: 0 2px 0 #666;
+    }
+
+    .button-add-another-vertical:focus {
+      background-color: #ccc;
+      color: #000;
+      box-shadow: 0 2px 0 #666;
+    }
+
+    @media (max-width: 640px) {
+      .list-item-wrapper-vertical inpit {
+        width: 100%;
+      }
+
+      .button-add-another-vertical {
+        width: 90%;
+        margin: auto;
+        display: block;
+      }
+    }
+
+
+
+@media (max-width: 641px) {
+.rj-top-border-mobile {
+  padding-top: 35px;
+  border-top: 1px solid #bfc1c3;
+  }
+
+.rj-bottom-border-mobile {
+  padding-bottom: 35px;
+  border-bottom: 1px solid #bfc1c3;
+  }
+
+.rj-currency-title {
+  margin-left: 19px;
+}
+
+.rj-currency-input {
+ width:93% !important;
+ margin-left: 3px;
+
+  }
+
+}
+
+.graphGoesHere {
+    width:100%;
+    min-height:300px;
+    height:auto;
+    background-color: #fff;
+}
+
+.rjCashMoney {
+    font-size: 2.5em;
+    line-height: 1;
+    display: block;
+    // color: #08c;
+    font-weight: 700;
+}
+
+.home-figures {
+    display:inline-block;
+    margin-right: 50px;
+}
+
+.rjBackButton {
+    text-decoration: underline;
+    cursor: pointer; cursor: hand;
+}
+
+.rjFormTwoThirds {
+    min-width:85%;
+}
+
+.rjmakeALink {
+    text-decoration: underline;
+    cursor: pointer; cursor: hand;
+    color: #005ea5;
+}
+
+.rjmakeALink:visited {
+    color:#4c2c92;
+}
+
+
+.rjHMRCLogo {
+    max-width: 240px;
+    max-height: 184px;
+    margin-bottom:50px;
+
+}
+
+.rjExitButton {
+    display:inline-block; 
+    margin: 15px 0 0 25px 
+
+}
+
+.rjHMRCLogo  img {
+    height: 100%;
+    width: 100%;
+}
+
+.rjSearchButton{
+    display:inline-block !important;
+    padding: 0.9rem 1.2rem 0.5rem 1rem;
+    box-shadow:0 0 0;
+    webkit-box-shadow:0 0 0;
+    moz-box-shadow:0 0 0;
+    margin-left: -4px;
+}
+
+#organisation-name,{
+    width:76%;
+}
+
+ #contract-search {
+    width:85%;
+}
+
+@media (max-width: 640px) {
+#organisation-name,  #contract-search {
+    width: 100%;
+    }
+.rjSearchButton {
+    margin: 5px 0 0 0;
+  }
+}
+
+
+//navigation
+
+/** 
+ * nav and logo styles. 
+ */
+
+ // temp remove secondary navigation
+
+ #navigation-secondary {
+  display:none;
+ }
+
+
+/* this is  like this to allow jquery to change the class easily, when the nav moves.*/
+.top_nav a:link {/**text-decoration: none; color:#0b0c0c;*/ }
+
+
+
+
+
+// end of navigation
+
+@media (max-width: 640px) {
+.rjHideOnTablet {
+    display:none;
+    }
+
+    .rjExitButton {
+    display:inline-block; 
+    margin: 25px 0 0 0; 
+}
+
+}
+
+
+.rjTabWidth {
+    max-width:250px;
+}
+
+/*
+.rjTableName {
+    color:#6f777b;
+    font-weight: 700;
+}
+*/
+
+.rjChangeButton {
+        background-color: #dee0e2;
+    position: relative;
+    display: -moz-inline-stack;
+    display: inline-block;
+    padding: 0.5em 0.5em 0.15em 0.5em;
+    border: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -webkit-box-shadow: 0 2px 0 #b5babe;
+    -moz-box-shadow: 0 2px 0 #b5babe;
+    box-shadow: 0 2px 0 #b5babe;
+    font-size: 1em;
+    line-height: 1.25;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    color: #0b0c0c;
+    overflow: hidden;
+
+}
+
+
+
+// Related items
+// (These styles will be moved to GOV.UK elements, duplicating here for now.)
+.govuk-related-items {
+  margin-top: $gutter;
+  border-top: 10px solid $govuk-blue;
+  padding-top: 5px;
+
+  .heading-medium {
+    margin-top: 0.3em;
+    margin-bottom: 0.5em
+  }
+
+  li {
+    margin-bottom: 10px;
+    list-style-type: none;
+  }
+}
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+// Robs custom styles here
+
+.related {
+    border-top: 10px solid #005ea5;
+    padding-top: 5px;
+}
+
+.related li {
+    margin-bottom: 0.75em;
+    padding-left: 0;
+}
+
+.related ul {
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+.robH2Spacing {
+    margin-top: 0.3em ;
+    margin-bottom: 0.5em ;
+}
+
+.robBalance {
+font-size: 80px;
+font-weight:700;
+line-height:1;
+}
+
+.robPence {
+font-size:16px;
+line-height: 1;
+}
+
+.make-it-bold {
+    font-weight:700;
+}
+
+.negativeNumber {
+    color: #DC143C;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+
+
+.robPence {
+font-size:16px;
+line-height: 1;
+}
+}
+
+.robColumnDetails {
+    border-bottom: 1px solid #bfc1c3;
+    padding: 15px 0 50px 0;
+    position: relative;
+}
+
+.facetedResults {
+    border-bottom: 1px solid #bfc1c3;
+    padding: 35px 0 35px 0;
+    position: relative;
+
+}
+
+.facetedFlexBox {
+  display:flex; 
+  
+
+}
+
+.flexGrowaBit {
+margin-left:20px;
+}
+
+.firstThing {
+min-width:285px;
+}
+
+// commit list
+
+.commitResults {
+    border-bottom: 1px solid #bfc1c3;
+    padding: 35px 0 35px 0;
+    position: relative;
+
+
+}
+
+.commitFlexBox {
+  display:inline-flex; 
+width:100%;
+  flex-wrap:nowrap;
+}
+
+.flexElement {
+flex:2;
+}
+
+
+.flexElementMiddle {
+flex:8;
+}
+
+.commitTweak {
+  padding:30%;
+}
+
+.commitCheck label {
+ background-color: #fff;
+ border:0;
+}
+
+.commitCheck {
+margin-top:-10px;
+flex:1;
+}
+
+.viewButton {
+  margin:0 auto; 
+  width:4em
+}
+
+
+
+.commitCheck .block-label [type="checkbox"]+span, .commitCheck .block-label [type="radio"]+span {
+    width: 25px;
+    height: 25px;
+    left: 14px;
+    top: 16px;
+}
+
+.commitCheck .block-label [type="checkbox"]+span, .commitCheck .block-label [type="radio"]+span {
+    position: absolute;
+    left: 17px;
+    top: 14px;
+    background: #fff;
+    display: inline-block;
+    border: 2px solid #0b0c0c;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.commitCheck .block-label [type="checkbox"]+span {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.commitCheck .block-label.selected [type="checkbox"]+span .inner, .commitCheck .block-label [type="checkbox"]:checked+span .inner {
+    background: url(https://www.signin.service.gov.uk/assets/icons/checkbox-tick-4a0921cc74631fe3000b07e0644698a602afa1541df7aec61d30624cc643b972.png) 0 0 no-repeat;
+}
+
+.commitCheck  .block-label [type="checkbox"]+span .inner, .commitCheck .block-label [type="radio"]+span .inner {
+    width: 19px;
+    height: 19px;
+  }
+
+  .commitCheck .block-label [type="checkbox"]+span .inner, .commitCheck .block-label [type="radio"]+span .inner {
+    display: inherit;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    border: 3px solid #fff;
+  }
+
+
+
+///
+
+
+//spacers
+
+.twenty-top {
+  margin-top:20px;
+}
+
+// Custom mobile tables stuff
+
+@media (max-width: 640px) {
+
+}
+
+// Remove the bullets on the side navi
+
+.robSideNav{
+ list-style-type: none;
+}
+
+
+
+//tabs - taken from the DVLA tab implementation
+
+// remove the yellow focus from the navi tab as it is not needed. or is it....
+.nav-tabs a:focus {
+  outline:none;
+}
+// end
+
+.nav-tabs {
+    zoom: 1;
+    background: #fff;
+    padding: 0;
+    position: relative
+}
+
+.nav-tabs:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+
+.nav-tabs ol,
+.nav-tabs ul,
+.nav-tabs .tabs-nav {
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 5
+}
+
+@media (max-width: 640px) {
+    .nav-tabs ol,
+    .nav-tabs ul,
+    .nav-tabs .tabs-nav {
+        float: none;
+        margin: 0 -16px
+    }
+}
+
+.nav-tabs li,
+.nav-tabs .tabs-nav li {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.14286;
+    font-weight: 400;
+    text-transform: none;
+    padding: 0;
+    margin: 0;
+    float: left
+}
+
+@media (min-width: 641px) {
+    .nav-tabs li,
+    .nav-tabs .tabs-nav li {
+        font-size: 19px;
+        line-height: 1.25
+    }
+}
+
+@media (max-width: 640px) {
+    .nav-tabs li,
+    .nav-tabs .tabs-nav li {
+        float: none
+    }
+}
+
+.nav-tabs li a,
+.nav-tabs .tabs-nav li a {
+    border: solid 1px #fff;
+    border-bottom: none;
+    float: left;
+    height: 2.25em;
+    line-height: 2.25em;
+    margin-bottom: -1px;
+    padding: 0 1em 0 1em;
+    position: relative;
+    text-align: center;
+    top: 0
+}
+
+@media (max-width: 640px) {
+    .nav-tabs li a,
+    .nav-tabs .tabs-nav li a {
+        display: block;
+        position: static;
+        float: none;
+        height: auto;
+        line-height: 3.5em;
+        padding: 0 16px;
+        text-align: left;
+        margin-bottom: 0;
+        border-bottom: 1px solid #bfc1c3
+    }
+}
+
+.nav-tabs li a:hover,
+.nav-tabs .tabs-nav li a:hover {
+    background-color: #bfc1c3
+}
+
+.nav-tabs li.active a,
+.nav-tabs .tabs-nav li.active a {
+    background-color: #fff;
+    border: solid 1px #bfc1c3;
+    border-bottom: solid 1px #fff;
+    color: #0b0c0c;
+    position: relative;
+    text-decoration: none;
+    z-index: 5
+}
+
+@media (max-width: 640px) {
+    .nav-tabs li.active a,
+    .nav-tabs .tabs-nav li.active a {
+        border: none;
+        border-bottom: 1px solid #bfc1c3
+    }
+}
+
+.nav-tabs li.active a:hover,
+.nav-tabs .tabs-nav li.active a:hover {
+    color: inherit
+}
+
+.nav-tabs li:first-child a,
+.nav-tabs .tabs-nav li:first-child a {
+    margin-left: 0
+}
+
+@media (max-width: 640px) {
+    .nav-tabs li:first-child a,
+    .nav-tabs .tabs-nav li:first-child a {
+        border-left: none;
+        border-top: 1px solid #bfc1c3
+    }
+}
+
+@media (max-width: 640px) {
+    .tab-content {
+        margin: 0 -1em
+    }
+}
+
+.tab-content .tab-pane {
+    padding: 1em 1em 0 1em;
+    border-top: solid 1px #bfc1c3;
+    clear: both;
+    width: auto
+}
+
+@media (max-width: 640px) {
+    .tab-content .tab-pane {
+        border-top: none;
+        padding: 0
+    }
+}
+
+.tab-content .inner {
+    padding: 0em 2.5em 1em
+}
+
+@media (max-width: 640px) {
+    .tab-content .inner {
+        padding: 0 1em 1em;
+        border-bottom: solid 1px #C9D0D0
+    }
+}
+
+.tab-content h1.visuallyhidden+h2 {
+    margin-top: 2em
+}
+
+.tab-content p {
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0
+}
+
+.tab-content em {
+    font-style: normal;
+    font-weight: bold
+}
+
+.tab-content nav {
+    margin: 1em -1.375em 0
+}
+
+.js-tab-content .programme-progression li,
+.js-tab-content .js-heading-tab {
+    border-bottom: solid 1px #bfc1c3;
+    list-style: none
+}
+
+.js-tab-content .programme-progression li a,
+.js-tab-content .programme-progression li h1,
+.js-tab-content .js-heading-tab a,
+.js-tab-content .js-heading-tab h1 {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 2.64706;
+    font-weight: 400;
+    text-transform: none;
+    background: #FFF url(https://assets.digital.cabinet-office.gov.uk/static/accordian-arrow-0753eda0cd8d71b5d9b5053abf172100c03b94b49e7f24d82e0f6551302a0aca.png) no-repeat 100% -2px;
+    display: block;
+    padding: 0 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: underline;
+    top: 0
+}
+
+@media (min-width: 641px) {
+    .js-tab-content .programme-progression li a,
+    .js-tab-content .programme-progression li h1,
+    .js-tab-content .js-heading-tab a,
+    .js-tab-content .js-heading-tab h1 {
+        font-size: 24px;
+        line-height: 1.875
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 20 / 10),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+    .js-tab-content .programme-progression li a,
+    .js-tab-content .programme-progression li h1,
+    .js-tab-content .js-heading-tab a,
+    .js-tab-content .js-heading-tab h1 {
+        background-image: url(https://assets.digital.cabinet-office.gov.uk/static/accordian-arrow-2x-2b998c05ceb1dadeb373b9aff059470cd6ae4557f5d768020531e1616c0e170d.png);
+        background-size: 45px 90px
+    }
+}
+
+.js-tab-content .programme-progression li a:hover,
+.js-tab-content .programme-progression li h1:hover,
+.js-tab-content .js-heading-tab a:hover,
+.js-tab-content .js-heading-tab h1:hover {
+    background-color: #dee0e2
+}
+
+.js-tab-content .programme-progression li.active,
+.js-tab-content .js-heading-tab.active {
+    text-decoration: none
+}
+
+.js-tab-content .programme-progression li.active a,
+.js-tab-content .programme-progression li.active h1,
+.js-tab-content .js-heading-tab.active a,
+.js-tab-content .js-heading-tab.active h1 {
+    background-position: 100% -48px;
+    background-color: #dee0e2;
+    color: #0b0c0c;
+    text-decoration: none
+}
+
+.js-tab-content .js-heading-tab {
+    margin: 0;
+    clear: both
+}
+
+.js-tab-content .js-heading-tab h1 {
+    padding: 0
+}
+
+.js-tab-content .tab-shiftlink {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 400;
+    text-transform: none;
+    position: absolute;
+    left: -9999em
+}
+
+@media (min-width: 641px) {
+    .js-tab-content .tab-shiftlink {
+        font-size: 19px;
+        line-height: 1.31579
+    }
+}
+
+@media (max-width: 640px) {
+    .js-tab-content .tab-shiftlink {
+        position: static;
+        left: auto
+    }
+}
+
+@media (max-width: 640px) {
+    .js-tab-content .js-tab-container {
+        min-height: 0
+    }
+    .js-tab-content .js-tab-pane {
+        border-bottom: solid 1px #bfc1c3
+    }
+    .js-tab-content .js-tab-container:first-child {
+        border-top: solid 1px #bfc1c3
+    }
+}
+
+.transaction .js-tab-content {
+    overflow: hidden
+}
+
+
+//New navigation
+
+
+
+.header-global__title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+    padding: 0;
+    @include media(tablet) {
+        font-size: 32px;
+    }
+    a {
+        border-bottom: 1px solid #000;
+        color: #fff;
+        display: inline-block;
+        padding: 2px 0;
+        text-decoration: none;
+    }
+}
+
+
+
+
+.header-user {
+  background: $grey-4;
+}
+
+.header-user, 
+.header-organisation {
+  border-bottom: 1px solid $grey-2;
+}
+
+.header-inner {
+  @extend #content;
+  padding: 0;
+}
+
+
+.header-organisation h2 {
+  padding: 0;
+  margin-top: .75em;
+  margin-bottom: 0;
+}
+
+.js-hidden-mobile {
+  display: none;
+  @include media(tablet) {
+    display: block;
+  }
+}
+
+.js-hidden-desktop {
+  display: block;
+  @include media(tablet) {
+    display: none;
+  }
+}
+
+$nav-padding: 15px;
+
+a.nav-menu-link {
+  float: right;
+  clear: both;
+  margin: 10px 0;
+  font-size: 14px;
+  padding-left: 15px !important;
+  color: #000;
+  text-decoration: none;
+  &:before {
+    left: 5px !important;
+    margin-top: -6px !important;
+  }
+}
+
+nav#user-nav {
+  font-size: 14px;
+  clear: both;
+  @include media(tablet) {
+        font-size: 16px;
+    }
+  > ul {
+    list-style:none;
+    margin-left: -$nav-padding;
+    margin-right: -$nav-padding;
+    position: relative;
+    @include media(tablet) {
+      float: right;
+      margin: 0;  
+    }
+    li {
+      border-top: 1px solid $grey-2;
+      @include media(tablet) {
+        border: none; 
+      }
+      a {
+        padding: 12px $nav-padding 10px 20px;
+                display: block;
+      }
+      li { 
+        a {
+          padding-left: $nav-padding * 1;
+        }
+      }
+    }
+    li.top-level {
+      > a {
+        text-decoration: none;
+        color: $black
+      }
+      &.open {
+        ul li.selected a {
+          padding-left: 20px;
+          background-image: url('/public/images/tick.png');
+          background-repeat: no-repeat;
+          background-position: 0px 14px;
+          background-size: 15px;
+          text-decoration: none;
+          color: $black;
+          margin-left: $nav-padding * 1;
+        } 
+      }
+      @include media(tablet) {
+        display: inline-block;
+        float: left;
+        > a {
+          padding-top: 10px;
+          padding-bottom: 8px;
+          margin: 3px 0;
+           &.js-toggle {
+                    padding-left: 25px;
+                  }
+        } 
+        ul {
+          display: none;
+        }
+        &.open {
+          position: relative;
+          ul {
+            display: block;
+            position: absolute;
+            width: 250px;
+            top: 100%;
+            right: 0;
+            background: $grey-4;
+            border: 1px solid $grey-2;
+            z-index: 100;
+            li {
+              margin: 0 10px;
+              border-bottom: 1px solid $grey-2;
+              &:last-child {
+                border: none;
+              }
+              a {
+                padding-left: 0;
+                padding-right: 0;
+              }
+              &.selected a {
+                
+                margin-left: 0;
+              }
+            }
+          }
+        }
+        a.menu-open,
+        a.menu-open:focus {
+          background: $grey-4;
+          border: 1px solid $grey-2;
+          border-bottom: none;
+          position: relative;
+          margin-bottom: -1px;
+          z-index: 101;
+        }
+      }
+    }
+  }
+}
+
+
+
+a.menu-open, 
+a.menu-closed {
+  padding-left: 20px;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    border-color: transparent;
+    border-width: 7px 4px;
+    border-style: solid;
+    display: block;
+    width: 0;
+    height: 0;
+    top: 50%;
+    margin-top: -4px;
+  }
+}
+
+a.menu-open:before {
+  border-top-color: black;
+}
+
+a.menu-closed:before {
+  border-left-color: black;
+  border-width: 4px 7px;
+}
+
+nav.global-nav {
+  @extend %contain-floats;
+  font-size: 14px;
+  @include media(tablet) {
+        font-size: 16px;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        margin-left: -$nav-padding;
+        margin-rightr: -$nav-padding;
+        padding: 0;
+        position: relative;
+        li {
+            display: inline-block;
+            float: left;
+            a {
+                padding: 12px $nav-padding 10px;
+                display: block;
+                position: relative;
+                &:focus {
+                    outline: 0;
+                }
+
+            }
+            &.current {
+                a {
+                    color: black;
+                    text-decoration:none;
+                    &:after {
+                        content: "";
+                        display: block;
+                        height: 5px;
+                        position: absolute;
+                        left: $nav-padding;
+                        right: $nav-padding;
+                        bottom: -1px;
+                        z-index: 1;
+                        background: $govuk-blue;
+                    }
+                }
+            }
+            &.more-link {
+              a {
+                position: absolute;
+              }
+              @include media(tablet) {
+              display: none;   
+              }
+            }
+        }
+    }
+    ul#global-nav-links-secondary {
+      float: none;
+      clear: both;
+      margin-right: -$nav-padding;
+      @include media(tablet) {
+        float: left;
+        clear: none;
+        margin-left: 0;
+      }
+      li {
+        display: block;
+        float: none;
+        border-top: 1px solid $grey-2;
+        @include media(tablet) {
+          float: left;
+          border: none;
+        }
+      }
+    }
+}
+
+nav.global-nav ul {
+  @include media(desktop) {
+    font-size: 19px;
+  }
+  li.sa-stacker {
+    float: right;
+    ul {
+      display: none;
+    }
+    &.sa-open {
+      ul {
+        display: block;
+        position: absolute;
+        background: white;
+        left: $nav-padding;
+        right: -$nav-padding;
+        border-bottom: 2px solid $grey-2;
+        li {
+            display: block;
+            float: none;
+            border-top: 1px solid $grey-2;
+            
+          }
+      }
+    }
+  }
+  
+}
+
+.service-info {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.service-info .logo {
+  margin-top: 0.78947em;
+}
+
+.service-info .organisation-logo {
+  font-family: Helvetica, Arial;
+  font-weight: 400;
+  display: block;
+  position: relative;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 3px 0 2px 0;
+  text-decoration: none;
+  padding: 3px 0 2px 30px;
+  background-image: url("../images/hmrc_crest_18px.png");
+  background-position: 5px center;
+  background-repeat: no-repeat;
+  border-left: 2px solid #009390;
+}
+
+.service-info .organisation-logo-medium {
+  font-size: 18px;
+  line-height: 22px;
+  padding: 3px 0 2px 38px;
+  background-image: url("../images/hmrc_crest_18px_x2.png");
+  background-size: auto 26px;
+  border-left: 2px solid #009390;
+  white-space: nowrap;
+}
+
+.button.text-link {
+    background-color: transparent;
+    box-shadow: none;
+    text-decoration: underline;
+    color: #005ea5;
+    border: none;
+}
+
+.hgroup {
+  margin-bottom: 30px;
+}
+
+@media (min-width: 641px) {
+  .hgroup {
+    margin-bottom: 60px;
+  }
+}
+
+/* HTML Guideance styles */
+.html-publications-show:after,
+.html-publications-show .publication-external:after,
+.html-publications-show .publication-header:after,
+.html-publications-show .publication-content .govspeak .contact:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.html-publications-show:after,
+.html-publications-show .publication-external:after,
+.html-publications-show .publication-header:after,
+.html-publications-show .publication-content .govspeak .contact:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.html-publications-show {
+  padding: 15px 15px 90px;
+}
+
+.html-publications-show .publication-header {
+  background: #2b8cc4;
+  padding: 10px 15px;
+  margin: 0 -15px;
+}
+
+.html-publications-show .publication-header .headings {
+  overflow: hidden;
+}
+
+.html-publications-show .publication-header .headings .document-type {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.11111;
+  font-weight: 400;
+  text-transform: none;
+  display: block;
+  margin: 20px 0 0;
+}
+
+.html-publications-show .publication-header .headings h1 {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 32px;
+  line-height: 1.09375;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: bold;
+  margin: 5px 0 15px;
+  color: #fff;
+}
+
+.html-publications-show .publication-header .headings p {
+  margin: 15px 0 20px;
+  color: #fff;
+}
+
+.html-publications-show .in-page-navigation {
+  color: #fff;
+  margin: 0 0 40px;
+  width: 100%;
+}
+
+.html-publications-show .in-page-navigation h2 {
+  font-weight: bold;
+}
+
+.html-publications-show .in-page-navigation ol {
+  padding-left: 30px;
+  list-style-type: decimal;
+}
+
+.html-publications-show .in-page-navigation ol li {
+  list-style: decimal;
+  font-weight: bold;
+}
+
+.html-publications-show .in-page-navigation a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.html-publications-show .publication-header a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.html-publications-show .publication-content {
+  position: relative;
+  z-index: 2;
+}
+
+.html-publications-show .publication-content .govspeak h2, #whitehall-wrapper .html-publications-show .publication-content .govspeak h3 {
+  font-weight: bold;
+  color: black;
+  margin-top: 30px;
+}
+
+.html-publications-show .publication-content .govspeak h2 .number {
+  background: #fff;
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+.html-publications-show .publication-content .govspeak h3 {
+  font-weight: bold;
+  color: black;
+  margin-top: 30px;
+}
+
+.html-publications-show .publication-content .govspeak h3 .number {
+  background: #fff;
+  color: #6f777b;
+  padding-right: 10px;
+}
+
+.html-publications-show .govspeak h4, .html-publications-show .govspeak h5, .html-publications-show .govspeak h6 {
+  font-size: 19px;
+  line-height: 1.31579;
+}
+
+@media (min-width: 641px) {
+  .html-publications-show .publication-header {
+    padding: 0 30px;
+    margin: 0 -15px;
+  }
+  .html-publications-show .publication-header .headings .document-type {
+    font-size: 27px;
+    line-height: 1.11111;
+  }
+  .html-publications-show .publication-header .headings .document-type {
+    margin: 75px 0 10px;
+  }
+  .html-publications-show .publication-header .headings h1 {
+    font-size: 48px;
+    line-height: 1.04167;
+  }
+  .html-publications-show .publication-header .headings h1 {
+    margin-bottom: 60px;
+  }
+  .html-publications-show .publication-content .govspeak {
+    width: 75%;
+    float: right;
+  }
+  .html-publications-show .publication-content .govspeak h2, #whitehall-wrapper .html-publications-show .publication-content .govspeak h3 {
+    margin-top: 80px;
+  }
+  .html-publications-show .publication-content .govspeak h2 {
+    font-size: 36px;
+    line-height: 1.11111;
+  }
+  .html-publications-show .publication-content .govspeak h2 {
+    margin: 60px 0 15px;
+  }
+  .html-publications-show .publication-content .govspeak h2 .number {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 53px;
+    line-height: 1.03774;
+    font-weight: 400;
+    text-transform: none;
+    font-weight: bold;
+    position: absolute;
+    margin: -30px 0 0 -25%;
+    width: 22%;
+    padding: 35px 0 30px 3%;
+  }
+  .html-publications-show .publication-content .govspeak h2 .number {
+    font-size: 80px;
+    line-height: 1;
+  }
+  .html-publications-show .publication-content .govspeak h3 {
+    font-size: 27px;
+    line-height: 1.11111;
+  }
+  .html-publications-show .publication-content .govspeak h3 {
+    margin-top: 80px;
+  }
+  .html-publications-show .publication-content .govspeak h3 .number {
+    padding-right: 0;
+    display: inline-block;
+    width: 75px;
+    margin-left: -75px;
+  }
+  .html-publications-show .publication-content .govspeak h4, #whitehall-wrapper .html-publications-show .publication-content .govspeak h5, #whitehall-wrapper .html-publications-show .publication-content .govspeak h6 {
+    font-weight: bold;
+    color: black;
+    margin-top: 30px;
+  }
+}
+
+
+.govuk-box-highlight {
+    padding: 1em 0;
+}
+.govuk-box-highlight p {
+    margin-bottom: 0;
+}
+
+.related {
+    border-top-color: $govuk-blue;
+    border-top-style: solid;
+    border-top-width: 10px;
+    margin-top: 20px;
+}
+
+
+.visually-hidden, .hidden, .vh {
+    display: none;
+}
+
+table {
+    margin-bottom: 20px;
+}
+
+tr.total th {
+    border: none;
+}
+
+tr.total td {
+    border-bottom: 2px solid #0b0c0c;
+    font-weight: 700;
+}
+
+.govuk-box-highlight a {
+    color: white;
+    &:hover {
+        color: #2b8cc4;
+    }
+    &:visited {
+        color: #912B88;
+    }
+}
+
+
+
+
+
+
+
+//     end

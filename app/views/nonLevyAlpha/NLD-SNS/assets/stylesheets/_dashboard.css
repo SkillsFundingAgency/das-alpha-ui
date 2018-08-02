@@ -1,0 +1,306 @@
+section.shortlist-item {
+    margin-bottom: 20px;
+}
+
+.notice {
+    padding: 15px;
+    border: 1px solid #d4d4d4;
+    margin-top: 20px;
+}
+
+.notice strong.bold-small {
+    position: relative;
+    top: -10px;
+}
+
+.table-section.active+tbody {
+    display: table-row-group;
+}
+
+.table-section+tbody {
+    display: none;
+}
+
+.table-section.active+tbody th,
+.table-section.active+tbody td:nth-child(2) {
+    padding-left: 20px;
+}
+
+.shortlist-item .provider-item {
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #BFC1C3;
+    clear: both;
+    background: white;
+}
+
+.shortlist-item ul.cd-accordion-menu {
+    margin-bottom: 20px;
+}
+
+.shortlist-item .provider-item h4 {
+    margin-top: 0px;
+}
+
+.shortlist-item ul.cd-accordion-menu .button {
+    margin-bottom: 5px;
+}
+
+.shortlist-item table tr:last-child td {
+    border-bottom: none;
+}
+
+.shortlist-item .provider-item tr td:nth-child(2) {
+    display: none;
+}
+
+.shortlist-item h3 {
+    padding-right: 150px;
+}
+
+.shortlist-item .delete,
+.warning-item .delete,
+.shortlist-item .view,
+.warning-item .view {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 16px;
+}
+
+.shortlist-item .view,
+.warning-item .view {
+    right: 100px;
+}
+
+.shortlist-item table .delete,
+.shortlist-item table .view {
+    position: relative;
+    top: 0;
+    right: 0;
+    float: right;
+}
+
+.shortlist-item table i {
+    font-size: 26px;
+    margin: 0;
+    text-align: right;
+    width: 100%;
+}
+
+#menu {
+    margin-top: 10px;
+}
+
+#menu li {
+    width: auto;
+    float: left;
+    margin-right: 20px;
+    font-weight: 900;
+}
+
+ul.horizontal-menu {
+    margin: 10px 0 0;
+    float: left;
+    width: 100%;
+}
+
+ul.horizontal-menu li {
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+}
+
+.shortlist-item h3 + p {
+    margin-bottom: 10px;
+}
+
+.actions li {
+    float: left;
+    margin-right: 10px;
+}
+
+i {
+    margin-right: 5px;
+}
+
+.action-item,
+.shortlist-item,
+.warning-item {
+    position: relative;
+//    background: #F8F8F8;
+    border-left: 4px solid #005EA5;
+    padding: 0 10px;
+    padding-left: 20px;
+    margin-bottom: 0.8333333333em;
+    float: left;
+    width: 100%;
+}
+
+.warning-item {
+    border-left-color: #B10E1E;
+}
+
+.dismiss a {
+    color: #0B0C0C;
+}
+
+#navigation-primary {
+    /* background-color:#CCC; */
+    margin-top: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #bfc1c3;
+    position: relative;
+    width: 100%;
+    min-height: 45px;
+}
+
+#navigation-secondary {
+    /* background-color:#DDE0E2; */
+    background-color: #fff;
+    border-bottom: 1px solid #bfc1c3;
+    position: relative;
+    width: 100%;
+    min-height: 35px;
+}
+
+#navigation-primary ul {
+    padding-top: 11px;
+}
+
+#navigation-secondary ul {
+    padding-top: 6px;
+}
+
+#navigation-primary li {
+    list-style: none;
+    list-style-image: none;
+    display: inline;
+    margin: 12px 12px 12px 0px;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+#navigation-secondary li {
+    list-style: none;
+    list-style-image: none;
+    display: inline;
+    margin: 12px;
+    font-size: 16px;
+}
+
+#navigation-primary li.right-info {
+    float: right;
+    margin-top: 0;
+    margin-right: 0;
+}
+
+.home-nav {
+    background-color: #ffbf47;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+
+}
+
+/* this is  like this to allow jquery to change the class easily, when the nav moves.*/
+.top_nav a:link {
+    text-decoration: none;
+    color: #0b0c0c;
+}
+.highlight_nav a:link {
+    text-decoration: none;
+    color: black;
+}
+#navigation-primary a:visited,
+#navigation-secondary a:visited {
+    text-decoration: none;
+    color: #0b0c0c;
+}
+#navigation-primary a:active,
+#navigation-secondary a:active {
+    text-decoration: none;
+    color: #0b0c0c;
+}
+#navigation-primary a:hover,
+#navigation-secondary a:active {
+    text-decoration: none;
+    color: #0b0c0c;
+}
+.has-children > label::after {
+    background: url("../images/accordian-plus-2x.png") no-repeat -3px -4px;
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    background-size: cover;
+}
+@media (max-width: 640px) {
+    .right-info {
+        float: none;
+    }
+    
+    #navigation-primary li {
+        list-style: none;
+        list-style-image: none;
+        display: inline;
+        margin: 12px 6px 15px 6px;
+        font-size: 16px;
+        font-weight: 400;
+    }
+}
+@media screen and (min-width: 640px) {
+    .shortlist-item .provider-item tr td:nth-child(2) {
+        display: table-cell;
+    }
+}
+@media screen and (max-width: 640px) {
+    .shortlist-item .delete,
+    {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .shortlist-item .view {
+        display: none;
+    }
+    
+    .shortlist-item h3 {
+        padding-right: 80px;
+    }
+    
+    .shortlist-item .delete {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .shortlist-item .delete span {
+        /*   display: none; */
+    }
+    
+    .shortlist-item table tr td:last-child {
+        padding-right: 0;
+    }
+    
+    .phase-banner {
+        padding: 8px 15px;
+    }
+    
+    #shortlistResult .column-two-thirds {
+        margin: 0 -15px;
+    }
+    
+    #shortlistResult .shortlist-item {
+        border-left: none;
+        border-top: 4px solid #005EA5;
+        margin-bottom: 0;
+        padding: 10px;
+    }
+    
+    #shortlistResult .shortlist-item ul.cd-accordion-menu {
+        margin-bottom: 0;
+    }
+}

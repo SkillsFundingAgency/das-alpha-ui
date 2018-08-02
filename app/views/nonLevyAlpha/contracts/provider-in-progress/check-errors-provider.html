@@ -1,0 +1,279 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+     <script src="/public/javascripts/das/jquery.highlight-5.js"></script>
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<script>
+// OTHER SCRIPT AT BOTTOM OF THE PAGE
+
+ var changeUnknown = function() {
+  $('td').highlight('unknown');
+  $('td').highlight('null');
+  $('td').highlight('----');
+
+ };
+
+changeUnknown();
+</script>
+
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<div class="grid-row">
+
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Upload stopped</h1>
+    <p class="lede">There are <span style="font-weight:700">50</span> errors across <span style="font-weight:700">100</span> records that you need to fix before you can add your apprentices.</p>
+                           <div style="margin-top:10px"><span class="looks-like-a-link-underline">Download full error details</span></div>
+      </div>
+    </div>
+</div>
+<div style="margin-top:35px" >
+  <!--h2 class="heading-medium">50 Errors</h>
+  <p>You must fix these errors in your file before you reupload your apprentices</p-->
+     <h2 class="heading-medium">Error details</h2>
+  <table class="" id="">
+                    <thead>
+                      <tr>
+                        <!--th scope="col">Training code</th-->
+                     <th scope="col" style="width:35px;">Row</th> 
+                        <th scope="col" style="min-width:145px" class="">Name</th>
+                        <th scope="col" class="">Date of birth</th>
+                       <th scope="col" style="">Errors</th>
+                       <th><span class="looks-like-a-link-underline"></span></th>
+
+
+
+                      </tr>
+                    </thead>
+                    <tbody class="indentedTablePadding">
+                      <tr class="errorMargin">
+                         <td  class="">1</td>
+                          <td  style="max-width:100px; word-wrap:break-word;">Mahershalalhashbaz de Orellana Plantagenet</td>
+                           <td class="">10/10/1999</td>
+                           <td>You must enter a <span class="changeHighlightCopy">training price</span>
+                             </td>
+                          <td><span class="looks-like-a-link-underline">Edit</span></td>
+
+                      </tr>
+                      <tr>
+                        <td class="">4</td>
+                        <td>Taylor Lucas</td>
+                         <td class="">10/10/1999</td>
+                         <td>You must enter a <span class="changeHighlightCopy">start date</span> </td>
+                         <td><span class="looks-like-a-link-underline">Edit</span></td>
+                      </tr>
+
+
+                      <tr class="">
+                         <td class="">21</td>
+                          <td class="">Melissa Shaw</td>
+                           <td class="">10/13/1899</td>
+                            <td>You must enter a <span class="changeHighlightCopy">training price</span> <br />You must enter a <span class="changeHighlightCopy">start date</span> 
+                              <!--br />You must enter a  <span class="changeHighlightCopy">unique learner number</span--> 
+                            </td>
+                            <td><span class="looks-like-a-link-underline">Edit</span></td>
+                      </tr>
+                       <tr class="" >
+                         <td class="">45</td>
+                          <td class=" "><!--span class="errorCopyTable">Surname is missing</span-->William ---- </td>
+                          <td class="">06/11/2000</td>
+                          <td>You must enter a <span class="changeHighlightCopy">last name</span> 
+                               </td>
+                          <td><span class="looks-like-a-link-underline">Edit</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div style="margin-top:10px"><span class="looks-like-a-link-underline">View all 50 rows</span></div>
+
+
+
+        <div style="margin-top:35px" >
+          <!--
+    <input class="button" type="button" id="bulk-upload-finish"  value="Replace file">
+</div>
+<div style="margin-top:15px"><a href="./provider-list">Cancel</a></div>
+    <div style="margin-top:50px"></div>
+  -->
+
+   <div class="" style="display: table;">
+          <div style="margin-top:20px; display:inline-block;display: table-cell; vertical-align: middle; "><input class="button" type="button" id="bulk-upload-finish"  value="Go back and upload a new file"> </div>
+          <div style="display:inline-block; display: table-cell; vertical-align: middle;"><a href="./provider-list"  style="margin-top:20px; margin-left:25px; cursor: pointer; cursor: hand; ">Cancel bulk upload</a></div>
+          <div style="clear:both"></div>
+  </div>
+
+            </div>
+
+             <div class="column-one-third">
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="../login">Sign in</a>
+                          </li>
+
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+</div>
+</main>
+
+
+<script>
+
+// Add the stuff confirmation into the page when clicked to simulate resending the email
+/*var btn = document.getElementById('bulk-upload-finish');
+EventUtil.addHandler(btn, 'click', function(){
+        var isUploaded = 'yes';
+        localStorage.setItem("apprenticeship-added.bulk-upload", JSON.stringify(isUploaded));
+        window.location.href='./provider-list';
+ });*/
+
+$('#bulk-upload-finish').click(function() {
+    window.das.commitments.addApprenticeships([
+        {
+            training: {
+                code: 1,
+                name: "Mechatronics Engineer"
+            },
+            start: {
+                month: 11,
+                year: 2018
+            },
+            finish:
+            {
+                month: 10,
+                year: 2020
+            },
+            cost: 1500,
+            apprentice: {
+                first: "David",
+                last: "Edwards",
+                uln: 9021001209
+            }
+        },
+        {
+            training: {
+                code: 1,
+                name: "Mechatronics Engineer"
+            },
+            start: {
+                month: 11,
+                year: 2018
+            },
+            finish:
+            {
+                month: 10,
+                year: 2020
+            },
+            cost: 1500,
+            apprentice: {
+                first: "Rob",
+                last: "Andrews",
+                uln: 8780601583
+            }
+        },
+        {
+            training: {
+                code: 1,
+                name: "Mechatronics Engineer"
+            },
+            start: {
+                month: 11,
+                year: 2018
+            },
+            finish:
+            {
+                month: 10,
+                year: 2020
+            },
+            cost: 1500,
+            apprentice: {
+                first: "Mellisa",
+                last: "Shaw",
+                uln: 6421001981
+            }
+        },
+        {
+            training: {
+                code: 1,
+                name: "Mechatronics Engineer"
+            },
+            start: {
+                month: 11,
+                year: 2018
+            },
+            finish:
+            {
+                month: 10,
+                year: 2020
+            },
+            cost: 1500,
+            apprentice: {
+                first: "Brendan",
+                last: "Hamazaki",
+                uln: 67210012321
+            }
+        },
+        {
+            training: {
+                code: 1,
+                name: "Mechatronics Engineer"
+            },
+            start: {
+                month: 11,
+                year: 2018
+            },
+            finish:
+            {
+                month: 10,
+                year: 2020
+            },
+            cost: 1500,
+            apprentice: {
+                first: "Gary",
+                last: "Barton",
+                uln: 21210012876
+            }
+        }
+    ]);
+    window.location.href = 'upload-choose-file-provider';
+});
+
+</script>
+
+
+
+{% endblock %}

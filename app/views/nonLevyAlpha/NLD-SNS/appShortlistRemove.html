@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+
+<script>
+function whereNow() {
+        console.log("shortlist button clicked: " + appCount);
+
+            console.log("is shortlisted");
+            $("i", this).removeClass("fa-star").addClass("fa-star-o");
+            $("span", this).text("Shortlist");
+            appCount--;
+            Cookies.set("appCount", appCount);
+            console.log(appCount);
+             window.location.href='../NLD-SNS/dashboard';
+
+    }
+</script>
+
+
+
+    <link href="/public/ty/assets/stylesheets/main.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/elements-page.css" rel="stylesheet" />    
+    <link href="/public/ty/assets/stylesheets/_app.css" rel="stylesheet" />
+
+    <script src="/public/ty/assets/javascripts/govuk-template.js" type="javascript/text"></script>
+
+
+
+
+
+        <main id="content" role="main">
+           <div class="grid-row breadcrumb" style="margin-top:25px">
+                <div class="column-two-thirds"><a href="./" class="link-back">Back</a>
+                </div>
+                <div class="column-third">
+                    <div class="account-info" id="bannerSignedIn">
+                        <a href="dashboard" title="Shortlist"><i class="fa fa-list-alt"></i>Shortlisted training and providers
+ (<span>0</span>)</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="grid-row">
+
+                <div class="column-two-thirds">
+                    <h1 class="heading-xlarge">Remove shortlisted apprenticeship</h1>
+                    <p class="lede">Do you want to remove the apprenticeship:
+                        <br /> <span class="bold-medium">Investment Operations Administrator</span>?</p>
+                    <p>Doing this will also remove these shortlisted training providers:</p>
+                    <ul class="list list-bullet">
+                        <li>BEAMINSTER SCHOOL </li>
+                        <li>THE BISHOP OF WINCHESTER ACADEMY </li>
+                        <li>COOMBE DEAN SCHOOL ACADEMY TRUST </li>
+                    </ul>
+
+                     <input class="button" id="saveAndContinue" type="button" onclick="whereNow()" style="margin-top:-10px" value="Remove all">
+                    <!--<a href="appResults.html">Back to search results</a>
+                    <a href="appResults.html">Back to shortlist</a>-->
+
+                    <br clear="all" />
+                    <label class="block-label" for="ignoreWarning">Don't show this message again
+                        <input type="checkbox" id="ignoreWarning" />
+                    </label>
+                </div>
+                <div class="column-third"></div>
+
+            </div>
+
+
+
+
+
+
+        </main>
+
+
+
+
+        <!-- Placed at the end of the document so the pages load faster -->
+
+        <script src="/public/ty/assets/javascripts/marked.min.js"></script>
+        <script src="/public/ty/assets/javascripts/underscore-min.js"></script>
+        <script src="/public/ty/assets/javascripts/js.cookie.js"></script>
+        <script src="/public/ty/assets/javascripts/_app.js"></script>
+
+
+
+{% endblock %}

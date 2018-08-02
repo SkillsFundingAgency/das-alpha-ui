@@ -1,0 +1,184 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+
+//jQuery( document ).ready(function() {
+     //jQuery.validate(); 
+// });
+
+
+</script>
+<style>
+
+#navigation-primary {
+  display:none ;
+}
+
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+<div class="breadcrumbs">
+    <ol role="breadcrumbs">
+<!--the breadcrumb for the inform pages is in the following template -->
+       {% include "includes/breadcrumbs/inform-bread.html" %}
+    </ol>
+</div>
+
+        <div class="grid-row">
+
+            <div class="column-two-thirds">
+                <h1 class="heading-xlarge">Access my apprenticeship funding</h1>
+                <div class="grid-row">
+                    <div class="column-half">
+                      <!--the navigation for the inform pages is in the following template -->
+                        {% include "includes/inform-nav.html" %}
+                    </div>
+                </div>
+
+                <h2 class="heading-large">4. How much you have to spend</h2>
+                <p>The amount you have to spend on apprenticeships depends on how much you paid in levy plus a few other calculations </P>
+                  <p>We have developed a set of calculators that will help you work out the amount you are likely to have to spend</p>
+                  <p><a href="/{% include "includes/sprint-link.html" %}/register/calculate">Calculate the amount you have to spend.</a></p>
+                  <p>To work out how much you have to spend we make the following calculations</p>
+                  <h2 class="heading-medium">1. The amount of levy you have paid</h2>
+
+                <p class="">The levy will be charged at a rate of 0.5% of an employer’s pay bill. Levy payments will be collected monthly by HM Revenue and Customs (HMRC) through Pay as You Earn (PAYE), payable alongside tax and National Insurance. Pay bill will be based on total employee earnings subject to Class 1 secondary National Insurance Contributions (NICs).</p>
+                <h2 class="heading-medium">2. The £15,000 allowance</h2>
+                <p>There will be a £15,000 fixed annual allowance for employers to offset against their levy payment. A connected person rule, similar to the one used for the Employment Allowance, will mean that employers who operated multiple payrolls will only be able to claim one allowance for the levy</p>
+                <h2 class="heading-medium">3. English fraction</h2>
+                <p>The proportion of payroll for an employer that is directly attributable to their English operations (separate from Scottish, Welsh or Northern Irish operations). This will be automatically calculated by HMRC using data on postcode of employee's home address. 
+                <p>Calculation will be calculated and published once a year, employers will not have the opportunity to appeal as the calculation will be made based on data submitted by employers. </p>
+                <p>New Employers that have not had calculation run yet for that year, HMRC will use 81% until the next calculation run.</p>
+                <h2 class="heading-medium">4. Government top up</h2>
+                <p>The government will apply a 10% top-up to monthly funds entering levy paying employers digital accounts, for apprenticeship training in England, from April 2017. All funds entering a levy payer’s account will be increased, so every £1 will be increased to £1.10 in value.</p>
+
+                <h2 class="heading-medium">Examples of employer levy funds</h2>
+                <h3 class="heading-small">Example 1:</h3>
+                <p>Employer of 250 employees, each with a gross salary of £20,000 would pay:</p>
+                 <ul class="list list-bullet">
+                    <li>Pay bill: 250 x £20,000 = £5,000,000</li>
+                    <li>Levy sum: 0.5% x £5,000,000 = £25,000</li>
+                  <li>Allowance: £25,000 - £15,000 = £10,000 annual levy payment</li>
+                  <li>Payment: £10,000 * 0.8 English Fraction = £8,000</li>
+                   <li>SFA funding: £8,000 * 1.1 Top Up = <span style="font-weight:700">£8,800 to spend on apprenticeships</spend></li>
+                </ul>  
+                <h3 class="heading-small">Example 2:</h3>
+                <p>Employer of 100 employees, each with a gross salary of £20,000 would pay:</p>
+                 <ul class="list list-bullet">
+                    <li>Pay bill: 100 x £20,000 = £2,000,000</li>
+                    <li>Levy sum: 0.5% x £2,000,000 = £10,000</li>
+                    <li>Allowance: £10,000 - £15,000 = £0 annual levy payment and funds</li>
+                </ul>  
+                  <p>We have developed a set of calculators that will help you work out the amount you are likely to have to spend</p>
+                  <p style="margin-bottom:50px"><a href="/{% include "includes/sprint-link.html" %}/register/calculate">Calculate the amount you have to spend.</a></p>
+
+
+
+
+
+                <!--<p class="form-hint">Search or browse to find your business type or the skill you’re looking for, eg Engineering or Accountant.</p>-->
+
+
+                <div class="page-navigation">
+                    <a href="/{% include "includes/sprint-link.html" %}/register/inform_5" style="visibility: hidden;" class="page-navigation__btn previous">
+                        <i class="arrow-button fa fa-angle-left"></i>
+                        <span class="description">Previous <span class="hide-mob">page</span></span>
+                        <span class="counter">4 of 6</span>
+                    </a>
+
+
+
+                    <a href="/{% include "includes/sprint-link.html" %}/register/inform_5" style="" class="page-navigation__btn next">
+                        <i class="arrow-button fa fa-angle-right"></i>
+                        <span class="description">Next <span class="hide-mob">page</span></span>
+                        <span class="counter">How much you have to spend</span>
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+                      <!--the side bar for the inform pages is in the following template -->
+                        {% include "includes/side-bars/inform.html" %}
+
+
+        </div>
+</main>
+
+<script>
+//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+
+
+
+$( document ).ready(function() {
+
+  // change the tabs themselves to active - should be in the above but isn't working because it's looking for a not li so I added this as a quick fix.
+
+  $("ul#tabs-nav li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs-nav li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#tabs-nav li.active").removeClass("active");
+            $("ul#tabs-nav li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+  $('ul.tabs-nav').each(function(){
+    // For each set of tabs, we want to keep track of
+    // which tab is active and its associated content
+    var $active, $content, $links = $(this).find('a');
+
+
+
+    // If the location.hash matches one of the links, use that as the active tab.
+    // If no match is found, use the first link as the initial active tab.
+    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+   // $active.addClass('active');
+   console.log($active)
+
+    $content = $($active[0].hash);
+
+    // Hide the remaining content
+    $links.not($active).each(function () {
+      $(this.hash).hide();
+    }); 
+
+    // Bind the click event handler
+    $(this).on('click', 'a', function(e){
+      // Make the old tab inactive.
+    //  $active.removeClass('active');
+      $content.hide();
+
+      // Update the variables with the new link and content
+    //  $active = $(this);
+      $content = $(this.hash);
+
+      // Make the tab active.
+     // $active.addClass('active');
+      $content.show();
+
+      // Prevent the anchor's default click action
+      e.preventDefault();
+    });
+  });
+
+
+</script>
+
+
+{% endblock %}

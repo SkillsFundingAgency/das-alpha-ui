@@ -1,0 +1,532 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<!--script>
+
+$(document).on('click', 'input[type="radio"]', function (e) {
+  if ($(e.target).attr('id') === 'radio-3' || $(e.target).attr('id') === 'radio-4' || $(e.target).attr('id') === 'radio-5') 
+  { $('#other-organisation-options').removeClass('js-hidden') ; } 
+       else {$('#other-organisation-options').addClass('js-hidden');};
+});
+
+</script-->
+
+<script>
+ $(".shortlist.app").click(function (e) {
+        e.preventDefault();
+        console.log("shortlist button clicked: " + appCount);
+
+
+        if ($("i", this).hasClass("fa-star-o")) {
+            console.log("isnt shortlisted");
+            appCount = appCount + 1;
+            console.log(appCount);
+            Cookies.set("appCount", appCount);
+            $("i", this).removeClass("fa-star-o").addClass("fa-star");
+            $("span", this).text("Remove from shortlist");
+            $("#bannerSignedIn span").text(Number(proCount) + Number(appCount));
+
+        } else {
+            console.log("is shortlisted");
+            $("i", this).removeClass("fa-star").addClass("fa-star-o");
+            $("span", this).text("Add to shortlist");
+            appCount--;
+            Cookies.set("appCount", appCount);
+            console.log(appCount);
+            $("#bannerSignedIn span").text(Number(proCount) + Number(appCount));
+        }
+    })
+</script>
+
+    <link href="/public/ty/assets/stylesheets/main.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/elements-page.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/animate.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/_app.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/_appResults.css" rel="stylesheet" />
+
+    <script src="/public/ty/assets/javascripts/govuk-template.js" type="javascript/text"></script>
+
+
+    <main id="content" role="main">
+
+            <div class="grid-row breadcrumb" style="margin-top:25px">
+                <div class="column-two-thirds"><a href="./" class="link-back">Back</a>
+                </div>
+                <div class="column-third">
+                    <div class="account-info" id="bannerSignedIn">
+                        <a href="dashboard" title="Shortlist"><i class="fa fa-list-alt"></i>Shortlisted training and providers
+ (<span>0</span>)</a>
+                    </div>
+                </div>
+            </div>
+
+
+        <div id="search" class="grid-row">
+
+            <div class="column-two-thirds">
+
+
+
+                <h1 class="heading-xlarge">Search results</h1>
+
+
+                    <form action="" >
+                      <fieldset>
+
+                          <div class="form-group">
+
+                              <label class="form-label-bold " for="password">Showing 120 search results for:</label>
+                              <input class="form-control " id=" " type="text"  style="width:75%; margin-right:10px; height:41px" value="admin"><input class="button" id="calculate" type="submit" value="Search">
+                          </div>
+                        </fieldset>
+
+                    </form>
+                      <H3 class="heading-medium">Filter results </H3>
+                </div>
+
+
+                <!--p>Results labelled <span class="bold-small label">New</span> are apprenticeship standards developed by employer groups.</p-->
+
+                <!--<details>
+                    <summary>
+                        What is a 'new' apprenticeship?
+                    </summary>
+                    <p>Apprenticeships labelled <span class="bold-small label">new</span> are developed by employers for employers.</p>
+                </details>-->
+
+            </div>
+
+
+
+        </div>
+        <div id="results" class="grid-row ">
+            <div class="column-third ">
+                <div id="facets">
+                    <form>
+
+                        <h3 class="hide-desktop heading-medium"><a href="#">Edit search <i class="fa fa-chevron-right"></i></a> </h3>
+
+                        <div class="inner group related-subsection hide-mob">
+
+                            <!--ul class="cd-accordion-menu hidden">
+                                <li class="has-children">
+                                    <input type="checkbox" name="group-3" id="group-3" checked class="hidden">
+                                    <label class="bold-small" for="group-3">Apprenticeship Level</label>
+                                    <div class="container">
+                                        <fieldset class="apprenticeshipLevel">
+                                            <div class="form-group">
+
+                                                <label class="block mts" for="duration-2">
+                                                    <input id="duration-2" name="duration-2" type="checkbox" value="2">Level 2 (8)</label>
+
+                                                <label class="block mts" for="duration-3">
+                                                    <input id="duration-3" name="duration-3" type="checkbox" value="3">Level 3 (2)</label>
+
+                                                <label class="block mts" for="duration-4">
+                                                    <input id="duration-4" name="duration-4" type="checkbox" value="4">Level 4 (10)</label>
+
+                                                <label class="block mts" for="duration-5">
+                                                    <input id="duration-5" name="duration-5" type="checkbox" value="5">Level 5 (8)</label>
+
+                                                <label class="block mts" for="duration-6">
+                                                    <input id="duration-6" name="duration-6" type="checkbox" value="6">Level 6 (5)</label>
+
+                                                <label class="block mts" for="duration-7">
+                                                    <input id="duration-7" name="duration-7" type="checkbox" value="7">Level 7 (9)</label>
+                                            </div>
+                                        </fieldset>
+                                        <details>
+                                            <summary>
+                                                <span class="summary">Help with levels</span>
+                                            </summary>
+                                            <div class="panel panel-border-wide">
+                                                <p>Apprenticeships are graded by levels based on the apprentice’s existing qualifications and skills.</p>
+                                                <a rel="external" href="https://www.gov.uk/what-different-qualification-levels-mean/compare-different-qualification-levels" target="_blank">More about levels</a>
+                                            </div>
+                                        </details>
+                                    </div>
+                                </li>
+                            </ul-->
+
+                            <ul class="cd-accordion-menu">
+                                <li class="has-children">
+                                    <input type="checkbox" name="group-3" id="group-3" checked class="hidden">
+                                    <label class="bold-small" style="padding-left:15px" for="group-3">Apprenticeship Level</label>
+
+                                    <div class="container">
+
+                                        <fieldset class="apprenticeshipLevel">
+                                            <div class="form-group">
+
+
+                                                <label class="block mts" for="duration-2">
+                                                    <input id="duration-2" name="duration-2" type="checkbox" value="2">Level 2 (8)
+                   
+
+                                                </label>
+
+                                                <label class="block mts" for="duration-3">
+                                                    <input id="duration-3" name="duration-3" type="checkbox" value="3">Level 3 (2)</label>
+
+                                                <label class="block mts" for="duration-4">
+                                                    <input id="duration-4" name="duration-4" type="checkbox" value="4">Level 4 (10)</label>
+
+                                                <label class="block mts" for="duration-5">
+                                                    <input id="duration-5" name="duration-5" type="checkbox" value="5">Level 5 (8)</label>
+
+                                                <label class="block mts" for="duration-6">
+                                                    <input id="duration-6" name="duration-6" type="checkbox" value="6">Level 6 (5)</label>
+
+                                                <label class="block mts" for="duration-7">
+                                                    <input id="duration-7" name="duration-7" type="checkbox" value="7">Level 7 (9)</label>
+
+                                                <label class="block mts" for="duration-7">
+                                                    <input id="duration-7" name="duration-7" type="checkbox" disabled value="7">Level 8 (0)</label>
+                                            </div>
+                                        </fieldset>
+                                        <details>
+                                            <summary>
+                                                <span class="summary">Help with levels</span>
+                                            </summary>
+                                            <div class="panel panel-border-wide">
+                                                <p>Apprenticeships are graded by levels based on the apprentice’s existing qualifications and skills.</p>
+                                                <a rel="external" href="https://www.gov.uk/what-different-qualification-levels-mean/compare-different-qualification-levels" target="_blank">More about levels</a>
+                                            </div>
+                                        </details>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <!--ul class="cd-accordion-menu hidden">
+                                <li class="has-children">
+                                    <input type="checkbox" name="group-3" id="group-3" checked class="hidden">
+                                    <label class="bold-small" for="group-3">Apprenticeship Level</label>
+
+                                    <div class="container">
+
+                                        <fieldset class="apprenticeshipLevel">
+                                            <div class="form-group">
+
+
+                                                <label class="block mts" for="duration-2">
+                                                    <input id="duration-2" name="duration-2" type="checkbox" value="2">Level 2 (8)</label>
+
+                                                <label class="block mts" for="duration-3">
+                                                    <input id="duration-3" name="duration-3" type="checkbox" value="3">Level 3 (2)</label>
+
+                                                <label class="block mts" for="duration-4">
+                                                    <input id="duration-4" name="duration-4" type="checkbox" value="4">Level 4 (10)</label>
+
+                                                <label class="block mts" for="duration-5">
+                                                    <input id="duration-5" name="duration-5" type="checkbox" value="5">Level 5 (8)</label>
+
+                                                <label class="block mts" for="duration-6">
+                                                    <input id="duration-6" name="duration-6" type="checkbox" value="6">Level 6 (5)</label>
+
+                                                <label class="block mts" for="duration-7">
+                                                    <input id="duration-7" name="duration-7" type="checkbox" value="7">Level 7 (9)</label>
+                                            </div>
+                                        </fieldset>
+                                        <details>
+                                            <summary>
+                                                <span class="summary">Help with levels</span>
+                                            </summary>
+                                            <div class="panel panel-border-wide">
+                                                <p>Apprenticeships are graded by levels based on the apprentice’s existing qualifications and skills.</p>
+                                                <a rel="external" href="https://www.gov.uk/what-different-qualification-levels-mean/compare-different-qualification-levels" target="_blank">More about levels</a>
+                                            </div>
+                                        </details>
+                                    </div>
+                                </li>
+                            </ul-->
+
+                            <!--ul class="cd-accordion-menu hidden">
+                                <li class="has-children">
+                                    <input type="checkbox" name="group-5" id="group-5" checked class="hidden">
+                                    <label class="bold-small" for="group-5">Apprenticeship status</label>
+
+                                    <div class="container">
+
+                                        <fieldset class="apprenticeshipLevel">
+                                            <div class="form-group">
+
+
+                                                <label class="block mts" for="duration-2">
+                                                    <input id="duration-2" name="duration-2" type="checkbox" value="2">Ready for delivery (44)</label>
+
+                                                <label class="block mts" for="duration-3">
+                                                    <input id="duration-3" name="duration-3" type="checkbox" value="3">In-development (2)</label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </li>
+                            </ul-->
+
+                            <!--ul class="cd-accordion-menu hidden">
+                                <li class="has-children">
+                                    <input type="checkbox" name="group-4" id="group-4" checked class="hidden">
+                                    <label class="bold-small" for="group-4">Apprenticeship Duration</label>
+
+                                    <div class="container">
+                                        <fieldset class="apprenticeshipDuration">
+                                            <div class="form-group">
+                                                <label class="block mts" for="level-1">
+                                                    <input id="level-1" name="level-1" type="checkbox" value="3">2 years (4)</label>
+
+                                                <label class="block mts" for="level-2">
+                                                    <input id="level-2" name="level-2" type="checkbox" value="3">3 years (8)</label>
+
+                                                <label class="block mts" for="level-3">
+                                                    <input id="level-3" name="level-3" type="checkbox" value="3">4 years (2)</label>
+                                            </div>
+                                            <details>
+                                                <summary>
+                                                    <span class="summary">Help with duration</span>
+                                                </summary>
+                                                <div class="panel">
+                                                    <p>Number in parenthesis indicates number of training providers found for each level.</p>
+                                                </div>
+                                            </details>
+                                        </fieldset>
+                                    </div>
+                                </li>
+                            </ul-->
+                        </div>
+
+                        <div class="form-group form-group-compound">
+                            <button class="button no-btm-margin" id="search-button" name="SearchAction" value="Search">Update results</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="column-two-thirds">
+                <ol id="framework-results">
+                    <li class="result visible result-12 animated none" id="0801" data-type="standard">
+                        <div class="column details">
+                            <h2 class="heading-small results-header"><a href="appDetails_s_a">Financial Services Administrator</a> </h2>
+                            <dl><dt class="min_length">Level:</dt>
+                                <dd class="level"><span>3 (equivalent to A levels at grades A to E)</span></dd><dt class="min_length">Typical length:</dt>
+                                <dd class="min_length"><span>12 to 18 months</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>Add to shortlist</span></div>
+                    </li>
+                    <li class="result visible result-13 animated none" id="0822" data-type="standard">
+                        <div class="column details">
+                            <!--h2 class="heading-medium"><a href="appDetails_s_a.html?trainingId=0822">Investment Operations Administrator</a> <span class="label">New</span></h2-->
+                             <h2 class="heading-small results-header"><a href="appDetails_s_a.html">Investment Operations Administrator</a> </h2>
+                            <dl><dt class="min_length">Level:</dt>
+                                <dd class="level"><span>2 (equivalent to GCSEs at grades A* to C)</span></dd><dt class="min_length">Typical length:</dt>
+                                <dd class="min_length"><span>12 to 18 months</span></dd>
+                            </dl>
+                        </div>
+                        <!--div data-toggle="dialog" data-target="dialog-1" class="shortlist app" id="appShortlistRemove"><i class="fa fa-star hidden"></i><span>Remove from shortlist</span></div-->
+                         <div class="shortlist app"><i class="fa fa-star-o "></i></div>
+                    </li>
+                    <li class="result visible result-14 animated none" id="0825" data-type="standard">
+                        <div class="column details">
+                            <h2 class="heading-small results-header"><a href="appDetails_s_a.html?trainingId=0825">Workplace pensions consultant or administrator
+</a> </h2>
+                            <dl><dt class="min_length">Level:</dt>
+                                <dd class="level"><span>3 (equivalent to A levels at grades A to E)</span></dd><dt class="min_length">Typical length:</dt>
+                                <dd class="min_length"><span>18 to 24 months</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>Add to shortlist</span></div>
+                    </li>
+                    <li class="result visible result-1 animated none" id="0049" data-type="framework">
+                        <div class="column details">
+                            <h2 class="heading-small results-header"><a href="appDetails_f.html?trainingId=0049">Business and Administration</a></h2>
+                            <dl><dt class "level"="">Level</dt>
+                                <dd class="level"><span>3 (equivalent to A levels at grades A to E)</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>Add to shortlist</span></div>
+                    </li>
+                    <li class="result visible result-2 animated none" id="0050" data-type="framework">
+                        <div class="column details">
+                            <h2 class="heading-small results-header"><a href="appDetails_f.html?trainingId=0050">Business and Administration: Legal Administration</a></h2>
+                            <dl><dt class "level"="">Level</dt>
+                                <dd class="level"><span>3 (equivalent to A levels at grades A to E)</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>Add to shortlist</span></div>
+                    </li>
+                    <li class="result visible result-3 animated none" id="0051" data-type="framework">
+                        <div class="column details">
+                            <h2 class="heading-small results-header"><a href="appDetails_f.html?trainingId=0051">Business and Administration: Medical Administration</a></h2>
+                            <dl><dt class "level"="">Level</dt>
+                                <dd class="level"><span>3 (equivalent to A levels at grades A to E)</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>Add to shortlist</span></div>
+                    </li>
+                    <li class="result visible result-4 animated jp-hidden" id="0052" data-type="framework">
+                        <div class="column details">
+                            <h2 class="heading-small results-header"><a href="appDetails_f.html?trainingId=0052">Business and Administration</a></h2>
+                            <dl><dt class "level"="">Level</dt>
+                                <dd class="level"><span>2 (equivalent to GCSEs at grades A* to C)</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>Add to shortlist</span></div>
+                    </li>
+                    <li class="result visible result-5 animated jp-hidden" id="0053" data-type="framework">
+                        <div class="column details">
+                            <h2 class="heading-small results-header"><a href="appDetails_f.html?trainingId=0053">Business and Administration: Legal Administration</a></h2>
+                            <dl><dt class "level"="">Level</dt>
+                                <dd class="level"><span>2 (equivalent to GCSEs at grades A* to C)</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>Add to shortlist</span></div>
+                    </li>
+                    <li class="result visible result-6 animated jp-hidden" id="0054" data-type="framework">
+                        <div class="column details">
+                            <h2 class="heading-small results-header"><a href="appDetails_f.html?trainingId=0054">Business and Administration: Medical Administration</a></h2>
+                            <dl><dt class "level"="">Level</dt>
+                                <dd class="level"><span>2 (equivalent to GCSEs at grades A* to C)</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>Add to shortlist</span></div>
+                    </li>
+                    <li class="result visible result-7 animated jp-hidden" id="0055" data-type="framework">
+                        <div class="column details">
+                            <h2 class="heading-small results-header"><a href="appDetails_f.html?trainingId=0055">Business and Professional Administration</a></h2>
+                            <dl><dt class "level"="">Level</dt>
+                                <dd class="level"><span>4 (equivalent to certificate of higher education)</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>shortlist </span></div>
+                    </li>
+                    <li class="result visible result-8 animated jp-hidden" id="0057" data-type="framework">
+                        <div class="column details">
+                            <h2 class="heading-small results-header"><a href="appDetails_f.html?trainingId=0057">Business, Administration and Finance</a></h2>
+                            <dl><dt class "level"="">Level</dt>
+                                <dd class="level"><span>2 (equivalent to GCSEs at grades A* to C)</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>shortlist </span></div>
+                    </li>
+                    <li class="result visible result-9 animated jp-hidden" id="0058" data-type="framework">
+                        <div class="column details">
+                            <h2 class="heading-small results-header"><a href="appDetails_f.html?trainingId=0058">Business, Administration and Finance</a></h2>
+                            <dl><dt class "level"="">Level</dt>
+                                <dd class="level"><span>3 (equivalent to A levels at grades A to E)</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>shortlist </span></div>
+                    </li>
+                    <li class="result visible result-10 animated jp-hidden" id="0059" data-type="framework">
+                        <div class="column details">
+                            <h2 class="heading-small results-header"><a href="appDetails_f.html?trainingId=0059">Business, Administration and Finance</a></h2>
+                            <dl><dt class "level"="">Level</dt>
+                                <dd class="level"><span>4 (equivalent to certificate of higher education)</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>shortlist </span></div>
+                    </li>
+                    <li class="result visible result-11 animated jp-hidden" id="0060" data-type="framework">
+                        <div class="column details">
+                            <h2 class="heading-small results-header"><a href="appDetails_f.html?trainingId=0060">Business, Administration and Finance</a></h2>
+                            <dl><dt class "level"="">Level</dt>
+                                <dd class="level"><span>5 (equivalent to foundation degree)</span></dd>
+                            </dl>
+                        </div>
+                        <div class="shortlist app"><i class="fa fa-star-o "></i><span>shortlist </span></div>
+                    </li>
+                </ol>
+                <div id="pagedat">
+
+                </div>
+                <div class="page-navigation">
+                    <a class="page-navigation__btn previous"> </a>
+
+
+
+                    <a style="" class="page-navigation__btn next">
+                        <i class="arrow-button fa fa-angle-right"></i>
+                        <span class="description">Next <span class="hide-mob">page</span></span>
+                        <span class="counter">Page <!--span class="nextPage"></span-->1 of 2<!--span class="totalPage"></span--></span>
+                    </a>
+
+                </div>
+
+                <div class="form-group" id="resultCount">
+                    <label for="results-per-page" class="heading-small inline">Display results</label>
+                    <select id="results-per-page" name="resultsPerPage">
+                        <option selected="selected" value="5">5 per page</option>
+                        <option value="10">10 per page</option>
+                        <option value="25">25 per page</option>
+                        <option value="50">50 per page</option>
+                    </select>
+                </div>
+            </div>
+            <div class="dialog" id="dialog-1" aria-hidden="true">
+
+                <div class="dialog-holder" aria-labelledby="title-1" aria-describedby="content-1" role="alertdialog">
+
+                    <div class="dialog-content" id="content-1" role="document" tabindex="0">
+
+                        <h1 class="dialog-heading" id="title-1">Remove shortlisted apprenticeship</h1>
+
+                        <form class="form">
+
+                            <p>Do you want to remove the apprenticeship:</p>
+                            <p class="bold-small">Investment Operations Administrator?</p>
+                            <p>Doing this will also remove these shortlisted training providers:</p>
+                            <ul class="list list-bullet">
+                                <li>BEAMINSTER SCHOOL </li>
+                                <li>THE BISHOP OF WINCHESTER ACADEMY </li>
+                                <li>COOMBE DEAN SCHOOL ACADEMY TRUST </li>
+                            </ul>
+
+                            <div class="dialog-actions">
+                                <button class="button" type="submit">Remove all</button>
+                                <a class="dialog-cancel" href="#">Cancel</a>
+                            </div>
+
+                            <button class="dialog-close" aria-label="close" type="button">
+                                <span class="icon icon-close">x</span>
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+    </main>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/public/ty/assets/javascripts/d3.min.js"></script>
+    <script src="/public/ty/assets/javascripts/c3.min.js"></script>
+    <script src="/public/ty/assets/javascripts/marked.min.js"></script>
+    <script src="/public/ty/assets/javascripts/underscore-min.js"></script>
+    <script src="/public/ty/assets/javascripts/js.cookie.js"></script>
+    <script src="/public/ty/assets/javascripts/tinysort.min.js"></script>
+    <script src="/public/ty/assets/javascripts/jPages.min.js"></script>
+    <script src="/public/ty/assets/javascripts/_app.js"></script>
+    <script src="/public/ty/assets/javascripts/_appResults.js" id="data" xmlData="/public/ty/assets/data/appList.xml"></script>
+
+
+
+    <script>
+        $("#appShortlistRemove").click(function (e) {
+            $("#dialog-1").attr("aria-hidden", "false")
+                //            e.preventDefault();
+                //location.replace("appShortlistRemove.html");
+
+        })
+    </script>
+
+
+{% endblock %}

@@ -1,0 +1,144 @@
+/* Mobile First CSS */
+
+h1 span {
+    margin-right: 5px;
+    text-transform: lowercase;
+    display: inline-block;
+}
+
+h1 span:first-letter {
+    text-transform: uppercase !important;
+}
+
+address {
+    font-style: normal;
+}
+
+address.panel {
+    padding: 0.2894736842em;
+    margin-bottom: 0.2894736842em;
+}
+
+aside dl dt {
+    font-weight: 900;
+    float: left;
+    padding-right: 5px;
+    width: 100%;
+}
+
+#qaCharts {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#qaCharts li {
+    width: 100%;
+    text-align: center;
+}
+
+#qaCharts li div {
+    text-align: center;
+}
+
+#save-vacancy-link i {
+    margin-right: 5px;
+}
+
+#qaCharts2 .c3-bars path {
+    stroke: white !important;
+    stroke-width: 2px;
+}
+
+#qaCharts2 .c3 {
+    width: 80%;
+    float: left;
+}
+
+#qaCharts2 .c3 + span {
+    padding-top: 10px;
+    float: left;
+    width: 20%;
+}
+
+#qaCharts2 h4 {
+    float: left;
+    width: 100%;
+    margin-bottom: -10px;
+}
+
+.column-third .shortlist {
+    text-align: center;
+}
+
+.column-two-thirds .shortlist {
+    float: left;
+    display: block;
+}
+
+.shortlist i {
+    margin-right: 5px;
+}
+
+.shortlist.footer {
+    border: none;
+    padding: 0;
+    display: block;
+    margin: 0;
+}
+
+
+/* Tablet Small Desktop */
+
+@media (min-width: 641px) {
+    .attachment-full-width h2 {
+        margin-top: 0;
+    }
+    .shortlist {
+        display: block;
+    }
+    .shortlist.footer {
+        display: block;
+    }
+}
+
+
+/* Large Desktop */
+
+@media (min-width: 1020px) {
+    #qaCharts {
+        -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    #qaCharts li {
+        -webkit-flex-basis: 25%;
+        -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
+        max-width: 25%;
+    }
+    #qaCharts li:nth-child(2) {
+        -webkit-flex-basis: 25%;
+        -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
+        max-width: 25%;
+    }
+    .related #qaCharts li {
+        -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+        max-width: 50%;
+        text-align: left
+    }
+    .related #qaCharts li svg {
+        float: left;
+    }
+}

@@ -1,0 +1,267 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<script>
+        var employerOrNot = "no" // this is the providers page so setting this.
+        var changeStatus =JSON.parse(localStorage.getItem('commitments.userChangeStatus'));
+                   //paused is set when the paused journey is triggered.
+
+    </script>
+
+
+<!--script>
+
+$(document).ready(function() {
+
+
+var showAlerts = function() {
+ switch (true) {
+                 case  (changeStatus == "updated"):
+                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                  $(changedAlertMessage).removeClass("rj-dont-display");
+                  $(changesPendingPanel).removeClass("rj-dont-display");
+              break;
+             case  (changeStatus == "paused"):
+                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                  $(pausedAlertMessage).removeClass("rj-dont-display");
+              break;
+              case  (changeStatus == "ilrChangesPending"):
+                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                  $(ilrChangesPanel).removeClass("rj-dont-display");
+                  $(ilrAlertMessage).removeClass("rj-dont-display");
+              break;
+
+        default:
+         $(dataLockPanel).removeClass("rj-dont-display");
+             console.log('nothings changed on the apprentice record')
+          break;
+        }
+  };
+
+    var changeStuff = function() {
+  if (employerOrNot=='yes') {
+    // document.getElementById("commitmentsName").textContent = " Hackney Skills & Training Ltd";
+   //  document.getElementById("providerName").textContent = "Provider:" ;
+        $(trainingProvider).removeClass("rj-dont-display");
+   // $(ULNTable).addClass("rj-dont-display");
+   //  $(removeMe).addClass("rj-dont-display")
+
+    }
+else {
+    $(ULN).removeClass("rj-dont-display");
+    $(employer).removeClass("rj-dont-display");
+
+//    $(addReference).removeClass("rj-dont-display");
+        };
+
+};
+
+changeStuff();
+showAlerts();
+});
+
+</script-->
+
+<style>
+
+ #navigation-primary, #kill-me {
+  display:none;
+}
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+  <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+          <a href="./manage-list-provider" class="link-back">Back to list of apprentices</a>
+    </ol>
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+    <div style= "" id="pausedAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
+    You've stopped payments for Rob Edwards
+    </div>
+    <div style= "" id="changedAlertMessage" class="success-summary">
+    <p>Request cancelled and update sent to employer.</p>
+    </div>
+       <div style= "" id="ilrAlertMessage" class="success-summary rj-dont-display ">
+      <h3 class="heading-medium">Status changed</h3>
+    </div>
+
+    <!--div style= "" id="dataLockPanel" class="info-summary"> 
+              <h2  class="heading-medium">Change requested</h2>
+                 <div class="grid-row">
+                 <div class="column-two-thirds">
+                     <p>You've asked the employer to stop this apprentice and then add them to a new cohort using updated training details.</p>
+                  </div></div>
+                     <div> <a href="./update-apprenticeship/data-lock-triage-two-columns">View details of request</a></div>
+            </div-->
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+              <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}Harvey Dent</h1>
+
+
+              <div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="changesPendingPanel">
+                <h2  class="heading-medium">Changes Pending</h2>
+              <p>There are changes to this apprentice's details that are waiting for the employer to do something.</p>
+              <a href="./update-apprenticeship/data-lock-triage">View changes</a>
+            </div>
+
+            <div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="dataLockPanel">
+                <h2  class="heading-medium">ILR data mismatch</h2>
+              <p>This apprentice's details are different in your organisation's ILR submission. This may result in a payment failure.</p>
+              <a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/data-lock-triage-restart-apprenticeship">View details</a>
+            </div>
+
+                <div class="panel panel-border-wide rj-dont-display" style="padding-top: 35px; padding-bottom:35px" id="ilrChangesPanel">
+                <h2  class="heading-medium">ILR changes pending</h2>
+              <p>Remember to update and re-submit your ILR records.</p>
+              <a href="./update-apprenticeship/ILR-changes-pending">View details</a>
+            </div>
+
+
+
+                <table class="table-19-font" style="margin:0"> 
+                  <thead>
+                    <tr>
+                      <th> </th>
+
+                    </tr>
+                  </thead>
+                </table>
+
+                <table class="table-19-font"> 
+                  <tbody>
+                    <tr>
+                      <td class="apprenticeRecordTitle" >Status</td>
+                      <td class="">Live</td>
+                      <td><p style="text-align:right; margin:0"><!--a  href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship">Edit status</a--></p></td>
+                    </tr>
+
+                      </tbody>
+                </table>
+
+
+                  <p style="" </p>
+
+
+                  <table class="table-19-font" style="margin:0">
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Overview</h2></th>
+                    </tr>
+                  </thead>
+                    </table>
+
+                   <table class="table-19-font"> 
+                  <tbody>
+
+                    <tr id="trainingProvider" class="rj-dont-display">
+                      <td class="apprenticeRecordTitle">Training provider</td>
+                      <td class="" >Hackney Skills Solutions Ltd</td>
+                    </tr>
+                   <tr id="employer" class="rj-dont-display">
+                      <td class="apprenticeRecordTitle">Employer</td>
+                      <td class="" >Acme Coventry Ltd</td>
+                    </tr>
+                     <tr id="referenceNumber" class="">
+                      <td class="apprenticeRecordTitle " >Cohort reference</td>
+                      <td class="" >98HXGFD</td>
+                    </tr>
+                   </tbody>
+                </table>
+
+
+               <table class="table-19-font" style="margin:0"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Apprentice</h2></th>
+                      <th><p style="margin-top:45px; text-align:right"><!--a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/change-apprenticeship-all">Edit apprentice</a--> </p> </th>
+
+                    </tr>
+
+                  </thead>
+                    </table>
+
+                <table class="table-19-font"> 
+                  <tbody>
+                    <tr>
+                      <td class="apprenticeRecordTitle" style="width:250px">Name</td>
+                      <td class="" style="">Harvey Dent</td>
+                      <!--td>
+                          <span id="changePending" class="statusToDo" style="width:200px">Pending</span>
+                      </td-->
+
+                    </tr>
+                     <tr id="ULN" class="rj-dont-display">
+                      <td class="apprenticeRecordTitle " >Unique learner number</td>
+                      <td class="" >0123456789</td>
+
+                    </tr>
+                     <tr>
+                      <td class="apprenticeRecordTitle" >Date of birth</td>
+                      <td class="" >28 February 1997</td>
+                    </tr>
+                    <td class="apprenticeRecordTitle" >Apprenticeship training course</td>
+                      <td class="" >Level 2: Aeronautical engineering</td>
+                       <td></td>
+                    </tr>
+                     <!--tr>
+                     <td class="apprenticeRecordTitle" >End-point assessor</td>
+                      <td class="" >Pham assessments Ltd</td>
+                    </tr-->
+
+                     <tr>
+                     <td class="apprenticeRecordTitle" >Training start date</td>
+                      <td class="">July 2018</td>
+
+
+                    </tr>
+                    <tr>
+                     <td class="apprenticeRecordTitle">Training end date</td>
+                      <td class="">July 2020</td>
+
+
+                    </tr>
+                    <tr>
+                     <td class="apprenticeRecordTitle" style="width:217px">Total cost of training</td>
+                      <td class="">£6,555</td>
+                       <td></td>
+
+
+                    </tr>
+                    <tr id="referenceNumber" class="">
+                      <td class="apprenticeRecordTitle " >Reference</td>
+                      <td class="" >Banbury site</td>
+
+                    </tr>
+
+                   </tbody>
+                </table>
+                <p style="margin-top:; text-align:"> </p>
+            </div>
+              </div>
+          </div>
+          <div class="column-one-third">
+
+            </div>
+        </div>
+</main>
+
+
+
+{% endblock %}
+

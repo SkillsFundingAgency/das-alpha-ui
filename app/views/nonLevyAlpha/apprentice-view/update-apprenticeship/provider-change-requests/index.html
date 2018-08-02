@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
+
+<style>
+ #navigation-primary, #kill-me {
+  display:none;
+}
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+
+
+       <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+          <a href="/{% include "includes/sprint-link.html" %}/apprentice-view/manage-options-provider" class="link-back">Back</a>
+    </ol>
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Change requests</h1>
+    <!--p class="lede">All apprentices who are currently on your programme and need no action.</p-->
+  </div>
+</div>
+
+  <table class="">
+                          <thead>
+                            <tr>
+                              <th scope="col" style="padding-top:0">Name</th>
+                              <th scope="col" style="padding-top:0">Date of birth</th>
+                              <th scope="col" style="padding-top:0">ULN</th>
+                               <th scope="col" style="padding-top:0">Status</th>
+                                 <th scope="col" style="padding-top:0"></th>
+                                  <th scope="col" style="padding-top:0"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <!--quick hack, will fix -->
+                              <td class="rjTabWidth">Rob Edwards</td>
+                              <td class="">1 Jun 1997</td>
+                              <td class="">0123456789</td>
+                              <td class="">Changes pending</td>
+                             <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice">View apprentice <br />details</a></td>
+                               <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/changes-review">View <br />changes</a></td>
+                            </tr>
+                             <tr>
+                              <td class="rjTabWidth">Susan Hamazaki</td>
+                              <td class="">30 Dec 1998</td>
+                            <td class="">6789012345</td>
+                             <td>Changes for review</td>
+                            <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice-showing-changes">View apprentice <br />details</a></td>
+                              <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/changes-confirm">View <br />changes</a></td>
+                            </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </div>
+</main>
+
+
+
+{% endblock %}

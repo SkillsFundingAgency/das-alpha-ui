@@ -1,0 +1,292 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .financial-nav a, .nav-payments a{
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-finance.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+
+    <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+  <div class="">
+           <!--div class="column-two-thirds"-->
+             <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Reserved funding</h1>
+
+               <!--p class="lede">
+                  On this page you can view every transaction in and out of your account.
+                </p-->
+        <div>
+          </div>
+            <!--h2 class="heading-medium">Account history</h2-->
+                <table id="transactions">
+                  <!--h2 class="heading-medium">Transactions</h2-->
+                    <thead>
+                      <tr>
+                        <th scope="col" style="width:150px">Valid until</th>
+                        <th scope="col" style="width:80px">Quantity</th>
+                        <th scope="col" style="width:250px">Apprenticeship</th>
+                        <!--th class="" scope="col" style="text-align:right">Maximum cost</th-->
+                        <th scope="col" style="text-align:right">Government funding</th>
+                        <th class="" scope="col" style="text-align:right">Your contribution</th>
+
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+
+                      <tr>
+                        <td>15 August 2018</td>
+                         <td class="">5</td>
+                        <td>Mechatronics engineer: Level 4</td>
+                             <!--td class="numeric">£5,500</td-->
+                        <td class="numeric">£5,000</td>
+                        <td class="numeric ">£500</td>
+
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/nld-claim/current/viewOne">View</a></td>
+                      </tr>
+                      <tr>
+                        <td>10 August 2018</td>
+                          <td class="">5</td>
+                        <td>Accounting: Level 2</td>
+                          <!--td class="numeric">£5,500</td-->
+                        <td class="numeric">5,000</td>
+                        <td class="numeric ">£500</td>
+
+                       <td class=""><a href="/{% include "includes/sprint-link.html" %}/nld-claim/current/viewTwo">View</a></td>
+                      </tr>
+                      <!--tr>
+                        <td>10 August 2018</td>
+                        <td>Levy credit August 2018 </td>
+                        <td class="numeric ">£704</td>
+                        <td class="numeric negative">&nbsp</span></td>
+                        <td class="numeric">£5,649</td>
+                       <td class=""><a href="/{% include "includes/sprint-link.html" %}/finance/credit-details">View</a></td>
+                      </tr>
+                      <tr>
+                        <td>08 August 2018</td>
+                        <td>Payment to provider Lots of skills Ltd</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric ">£347</td>
+                        <td class="numeric">£4,945</td>
+                        <td class="looks-like-a-link-underline">View</td>
+                      </tr>
+                      <tr>
+                        <td>15 July 2018</td>
+                        <td>Payment to provider Hackney Skills and Training Ltd</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric ">£379</td>
+                        <td class="numeric">£5,292</td>
+                        <td class="looks-like-a-link-underline">View</td>
+                      </tr>
+                       <tr>
+                        <td>10 July 2018</td>
+                        <td>Levy credit July 2018 10% bonus payment</td>
+                        <td class="numeric">£70</td>
+                        <td class="numeric negative">&nbsp</td>
+                        <td class="numeric">£5,671</td>
+                        <td class="looks-like-a-link-underline">View</td>
+                      </tr>
+                      <tr>
+                        <td>10 July 2018</td>
+                        <td>Levy credit July 2018</td>
+                        <td class="numeric">£704</td>
+                        <td class="numeric negative">&nbsp</td>
+                        <td class="numeric">£5,601</td>
+                        <td class="looks-like-a-link-underline">View</td>
+                      </tr>
+                      <tr>
+                        <td>08 July 2018</td>
+                        <td>Payment to provider Lots of skills Ltd</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric ">£347</td>
+                        <td class="numeric">£4,897</td>
+                        <td class="looks-like-a-link-underline">View</td>
+                      </tr>
+                      <tr>
+                        <td>15 June 2018</td>
+                        <td>Payment to provider Hackney Skills and Training Ltd</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric negative">£379</td>
+                        <td class="numeric">£5,244</td>
+                        <td class="looks-like-a-link-underline">View</td>
+                      </tr>
+                      <tr>
+                        <td>10 June 2018</td>
+                        <td>Levy credit June 2018</td>
+                        <td class="numeric">£704</td>
+                        <td class="numeric negative">&nbsp</td>
+                        <td class="numeric">£5,623</td>
+                        <td class="looks-like-a-link-underline">View</td>
+                      </tr>
+                                                               <tr>
+                        <td>10 June 2018</td>
+                        <td>Levy credit June 2018 10% bonus payment</td>
+                        <td class="numeric">£70</td>
+                        <td class="numeric negative">&nbsp</td>
+                        <td class="numeric">£4,919</td>
+                        <td class="looks-like-a-link-underline">View</td>
+                      </tr>
+                      <tr>
+                        <td>08 June 2018</td>
+                        <td>Payment to provider Lots of Skills Ltd</td>
+                        <td class="numeric">&nbsp</td>
+                        <td class="numeric">£347</td>
+                        <td class="numeric">£4,849</td>
+                        <td class="looks-like-a-link-underline">View</td>
+                      </tr>
+                      <!--tr>
+                        <td>15 May 2018</td>
+                        <td>Payment to provider Hackney Skills and Training Ltd</td>
+                        <td class="numeric"></td>
+                        <td class="numeric ">£379</td>
+                        <td class="numeric">£5,195</td>
+                        <td class="looks-like-a-link-underline">View</td>
+                      </tr>
+                                            <tr>
+                        <td>10 May 2018</td>
+                        <td>Skills Funding Agency May 2018 10% bonus payment</td>
+                        <td class="numeric">£70</td>
+                        <td class="numeric negative"></td>
+                        <td class="numeric">£5,574</td>
+                        <td class="looks-like-a-link-underline">View</td>
+                      </tr>
+                                            <tr>
+                        <td>10 May 2018</td>
+                        <td>Skills Funding Agency May 2018 Payment</td>
+                        <td class="numeric">£704</td>
+                        <td class="numeric negative"></td>
+                        <td class="numeric">£5,504</td>
+                        <td class="looks-like-a-link-underline">View</td>
+                      </tr>
+                       <tr>
+                        <td>08 May 2018</td>
+                        <td>Payment to provider Lots of skills Ltd</td>
+                        <td class="numeric"></td>
+                        <td class="numeric ">£347</td>
+                        <td class="numeric">£4,800</td>
+                        <td class="looks-like-a-link-underline">View</td>
+                      </tr>
+                       <tr>
+                        <td>15 April 2018</td>
+                        <td>Payment to provider Hackney Skills and Training Ltd</td>
+                        <td class="numeric"></td>
+                        <td class="numeric ">£379</td>
+                        <td class="numeric">£5,147</td>
+                        <td class="looks-like-a-link-underline">View</td>
+                      </tr>
+                      <tr>
+                        <td>10 April 2018</td>
+                        <td>Skills Funding Agency April 2018 10% bonus payment</td>
+                        <td class="numeric">£70</td>
+                        <td class="numeric "></td>
+                        <td class="numeric">£5,526</td>
+                        <td class="looks-like-a-link-underline">View</td>
+                      </tr>
+                      <tr>
+                        <td>10 April 2018</td>
+                        <td>Skills Funding Agency April 2018 Payment</td>
+                        <td class="numeric">£704</td>
+                        <td class="numeric "></td>
+                        <td class="numeric">£5,455</td>
+                        <td class="looks-like-a-link-underline">View</td>
+                      </tr-->
+                    </tbody>
+                </table>
+  </div>
+
+
+</main>
+
+
+
+ <!--button class="button">Do the thing</button-->
+
+<script>
+//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+$( document ).ready(function() {
+
+  // change the tabs themselves to active - should be in the above but isn't working because it's looking for a not li so I added this as a quick fix.
+
+  $("ul#tabs-nav li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs-nav li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#tabs-nav li.active").removeClass("active");
+            $("ul#tabs-nav li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+  $('ul.tabs-nav').each(function(){
+    // For each set of tabs, we want to keep track of
+    // which tab is active and its associated content
+    var $active, $content, $links = $(this).find('a');
+
+
+
+    // If the location.hash matches one of the links, use that as the active tab.
+    // If no match is found, use the first link as the initial active tab.
+    $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+   // $active.addClass('active');
+   console.log($active)
+
+    $content = $($active[0].hash);
+
+    // Hide the remaining content
+    $links.not($active).each(function () {
+      $(this.hash).hide();
+    }); 
+
+    // Bind the click event handler
+    $(this).on('click', 'a', function(e){
+      // Make the old tab inactive.
+    //  $active.removeClass('active');
+      $content.hide();
+
+      // Update the variables with the new link and content
+    //  $active = $(this);
+      $content = $(this.hash);
+
+      // Make the tab active.
+     // $active.addClass('active');
+      $content.show();
+
+      // Prevent the anchor's default click action
+      e.preventDefault();
+    });
+  });
+
+
+</script>
+
+{% endblock %}
+

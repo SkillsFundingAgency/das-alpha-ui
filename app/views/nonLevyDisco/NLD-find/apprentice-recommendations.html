@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .financial-nav a, .nav-forecast a{
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-finance.html" %}
+
+
+
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+  <h1 class="heading-xlarge" >Popular apprenticeships</h1>
+  <p>There are <span style="font-weight:700">9</span> popular apprenticeships that we think are relevant to your business. </p>
+<div>
+
+<div class="grid-row">
+  <div class="column-one-third">
+                <div class="rj-nudge-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-medium" style="margin: 22px 10px 5px 20px"><A HREF="#">Solicitor</A></h2>
+                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action><span style="font-weight:700">Level 7:</span> (equivalent to master’s degree) </p>
+                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action>Progressing legal matters and transactions, applying legal knowledge and commercial judgement to produce solutions which meet clients' needs.</p>
+                </div>
+            </div>
+
+              <div class="rj-nudge-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-medium" style="margin: 22px 10px 5px 20px"><A HREF="https://findapprenticeshiptraining.sfa.bis.gov.uk/Apprenticeship/Standard/40?keywords=lawyer">Legal Services: Property</A></h2>
+                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action><span style="font-weight:700">Level 3:</span> (equivalent to A levels at grades A to E)</p>
+                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action>Able to provide junior paralegal assistance during the conveyancing process.</p>
+                </div>
+            </div>
+    </div>
+      <div class="column-one-third">
+                <div class="rj-nudge-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-medium" style="margin: 22px 10px 5px 20px"><A HREF="#">Paralegal</A></h2>
+                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action><span style="font-weight:700">Level 3:</span> (equivalent to A levels at grades A to E) </p>
+                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action>Providing legal support, including administrative tasks, carrying out research and drafting legal documents and forms.</p>
+                </div>
+            </div>
+
+              <div class="rj-nudge-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-medium" style="margin: 22px 10px 5px 20px"><A HREF="https://findapprenticeshiptraining.sfa.bis.gov.uk/Apprenticeship/Standard/40?keywords=lawyer">Licensed conveyancer</A></h2>
+                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action><span style="font-weight:700">Level 6:</span> (equivalent to bachelor's degree)</p>
+                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action>Responsible for legal matters relating to the transfer of ownership of land or property, managing client portfolios and providing conveyancing legal services.</p>
+                </div>
+            </div>
+    </div>
+
+      <div class="column-one-third">
+            <div class="rj-nudge-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-medium" style="margin: 22px 10px 5px 20px"><A HREF="#">Chartered legal executive </A></h2>
+                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action><span style="font-weight:700">Level 6:</span> (equivalent to bachelor's degree) </p>
+                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action>Providing legal services to clients and colleagues.</p>
+                </div>
+            </div>
+
+              <div class="rj-nudge-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-medium" style="margin: 22px 10px 5px 20px"><A HREF="https://findapprenticeshiptraining.sfa.bis.gov.uk/Apprenticeship/Standard/40?keywords=lawyer">Legal Services: Commercial Litigation</A></h2>
+                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action><span style="font-weight:700">Level 4:</span> (equivalent to certificate of higher education)</p>
+                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action>Responsible for legal matters commercial litigation.</p>
+                </div>
+            </div>
+    </div>
+</div>
+</main>
+
+
+{% endblock %}
+
+
+

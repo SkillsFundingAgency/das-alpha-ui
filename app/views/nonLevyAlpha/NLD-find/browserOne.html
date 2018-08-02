@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .financial-nav a, .nav-forecast a{
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-finance.html" %}
+
+
+
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+
+
+  <h1 class="heading-xlarge" >Choose your apprenticeship category</h1>
+  <p>There are <span style="font-weight:700">15 </span> categories of apprenticeship:</p>
+<div>
+
+<div class="grid-row">
+
+  <div class="column-half">
+
+
+    <div class="browseListingAlpha">
+        <h3 class="heading-medium"><a href="">Accountancy</a></h3>
+          <div class="browseListingItems">
+              <p style="width:75%">Accountancy apprenticeships cover book keeping, credit control, debt collection, insurance, investment management and accountancy.</p>
+          </div>
+
+
+    </div>
+        <div class="browseListingAlpha">
+        <h3 class="heading-medium"><a href="./lawApprenticeList">Legal</a></h3>
+          <p style="width:80%">Legal apprenticeshps include solicitors, paralegals, conveyancing and other specialised legal roles. </p>
+    </div>
+
+
+</div>
+  <div class="column-half">
+          <div class="browseListingAlpha">
+        <h3 class="heading-medium"><a href="#">Engineering</a></h3>
+          <p style="width:80%">Engineering apprenticeships range from the generalist to specialist space, automotive, manufactuing and aerospace specialists.</p>
+    </div>
+
+  </div>
+
+<div style="margin-top:50px"></div>
+            </div>
+             <div class="column-one-third">
+
+
+
+
+            </div>
+</div>
+</main>
+
+
+{% endblock %}
+
+
+

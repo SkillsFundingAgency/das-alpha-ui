@@ -1,0 +1,295 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<script>
+        var employerOrNot = JSON.parse(localStorage.getItem('commitments.isEmployer'));
+        var changeStatus =JSON.parse(localStorage.getItem('commitments.userChangeStatus'));
+                   //paused is set when the paused journey is triggered.
+
+    </script>
+
+
+<script>
+
+$(document).ready(function() {
+  var changeStuff = function() {
+  if (employerOrNot=='yes') {
+    // document.getElementById("commitmentsName").textContent = " Hackney Skills & Training Ltd";
+   //  document.getElementById("providerName").textContent = "Provider:" ;
+        $(trainingProvider).removeClass("rj-dont-display");
+   // $(ULNTable).addClass("rj-dont-display");
+   //  $(removeMe).addClass("rj-dont-display")
+
+    }
+else {
+    $(ULN).removeClass("rj-dont-display");
+    $(employer).removeClass("rj-dont-display");
+
+//    $(addReference).removeClass("rj-dont-display");
+        };
+
+};
+
+var showAlerts = function() {
+ switch (true) {
+                 case  (changeStatus == "updated"):
+                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                  $(changedAlertMessage).removeClass("rj-dont-display");
+              break;
+             case  (changeStatus == "paused"):
+                  localStorage.setItem("commitments.userChangeStatus", JSON.stringify("nope"));
+                  $(pausedAlertMessage).removeClass("rj-dont-display");
+              break;
+
+        default:
+             console.log('nothings changed on the apprentice record')
+          break;
+        }
+  };
+
+changeStuff();
+showAlerts();
+});
+
+</script>
+
+<style>
+    .apprentice-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+  <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+          <a href="../apprentice-view" class="link-back">Back to manage your apprentices</a>
+    </ol>
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+    <div style= "" id="pausedAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
+    You've stopped payments for Rob Edwards
+    </div>
+    <div style= "" id="changedAlertMessage" class="panel panel-border-wide alert-default-green-thing rj-dont-display ">  <i class="fa fa-check "style="padding-right:5px"></i>
+    You suggested changes to -change- -change-, -change-, -change- for Rob Edwards. Your training provider needs to approve these changes.
+    </div>
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+              <h1 class="heading-xlarge " >{% include "includes/account-name-number.html" %}Rob Edwards</h1>
+            <div>
+              <!--div class="panel panel-border-wide">
+                <h2  class="heading-medium">Changes pending</h2>
+              <p>There are changes to this apprentice's details that are waiting for approval by the training provider. You can continue to edit this apprentice if you need to. </p>
+              <a href="./update-apprenticeship/changes-review">View changes</a>
+
+  </div-->
+
+
+
+                <table class="table-19-font" style="margin:0"> 
+                  <thead>
+                    <tr>
+                      <th> </th>
+
+                    </tr>
+                  </thead>
+                </table>
+
+                <table class="table-19-font"> 
+                  <tbody>
+                    <tr>
+                      <td class="apprenticeRecordTitle" >Status</td>
+                      <td class="">Live</td>
+                      <td><p style="text-align:right; margin:0"><a  href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship">Edit status</a></p></td>
+                    </tr>
+
+                      </tbody>
+                </table>
+
+
+                  <p style="" </p>
+
+
+                  <table class="table-19-font" style="margin:0">
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Overview</h2></th>
+                    </tr>
+                  </thead>
+                    </table>
+
+                   <table class="table-19-font"> 
+                  <tbody>
+
+                    <tr id="trainingProvider" class="rj-dont-display">
+                      <td class="apprenticeRecordTitle">Training provider</td>
+                      <td class="" >Hackney Skills Solutions Ltd</td>
+                    </tr>
+                   <tr id="employer" class="rj-dont-display">
+                      <td class="apprenticeRecordTitle">Employer</td>
+                      <td class="" >Acme Coventry Ltd</td>
+                    </tr>
+                     <tr id="referenceNumber" class="">
+                      <td class="apprenticeRecordTitle " >Cohort reference</td>
+                      <td class="" >98HXGFD</td>
+                    </tr>
+                   </tbody>
+                </table>
+
+
+               <table class="table-19-font" style="margin:0"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Apprentice</h2></th>
+                      <th><p style="margin-top:45px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/change-apprenticeship-all">Edit apprentice</a> </p> </th>
+
+                    </tr>
+
+                  </thead>
+                    </table>
+
+                <table class="table-19-font"> 
+                  <tbody>
+                    <tr>
+                      <td class="apprenticeRecordTitle" style="width:250px">Name</td>
+                      <td class="" style="">Rob Edwards</td>
+                      <!--td>
+                          <span id="changePending" class="statusToDo" style="width:200px">Pending</span>
+                      </td-->
+
+                    </tr>
+                     <tr id="ULN">
+                      <td class="apprenticeRecordTitle " >Unique learner number</td>
+                      <td class="" >0123456789</td>
+
+                    </tr>
+                     <tr>
+                      <td class="apprenticeRecordTitle" >Date of birth</td>
+                      <td class="" >28 February 1997</td>
+                    </tr>
+
+                    <!--tr>
+                      <td class="apprenticeRecordTitle">Reference</td>
+                      <td>Banbury site</td>
+                    </tr-->
+
+                  <!--/tbody>
+                </table>
+
+                <table class="table-19-font" style="margin:0"> 
+                  <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">Training course</h2></th>
+                      <th><p style="margin-top:45px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/change-apprenticeship-all">Edit training course</a> </p> </th>
+
+                    </tr>
+
+                  </thead>
+                    </table>
+
+                <table class="table-19-font"> 
+                  <tbody-->
+                    <tr>
+                      <td class="apprenticeRecordTitle" >Apprenticeship training course</td>
+                      <td class="" >Level 2: Aeronautical engineering</td>
+                       <td></td>
+                    </tr>
+                    <tr>
+
+                     <tr>
+                     <td class="apprenticeRecordTitle">Training start date</td>
+                      <td class="">July 2018</td>
+                    </tr>
+
+
+                    </tr>
+                    <tr>
+                     <td class="apprenticeRecordTitle">Training end date</td>
+                      <td class="">July 2020</td>
+                    </tr>
+
+                    <tr>
+                     <td class="apprenticeRecordTitle" style="width:217px">Total cost of training</td>
+                      <td class="">£6,555</td>
+                       <td></td>
+                    </tr>
+                    <tr id="referenceNumber" class="">
+                      <td class="apprenticeRecordTitle " >Reference</td>
+                      <td class="" >Banbury site</td>
+
+                    </tr>
+
+                   </tbody>
+                 </table>
+
+                 <div class="" style="margin-top: 35px;">
+
+                 <h2 class="heading-medium" style="display: inline-block;">End-point assessor</h2>
+                 <!--p style="text-align: right;"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/change-apprenticeship-all">Edit not available</a> </p-->
+
+                 <!--div style="clear: both"></div-->
+
+                 </div>
+
+                 <div>
+                   <span class="form-hint">There are no end-point assessors for this training course yet. New organisations are added regularly so please check back at a later date to update these details.</span>
+                 </div>
+
+                 <!--fieldset>
+                   <table class="table-19-font" style="margin:0"> 
+                    <thead>
+                    <tr>
+                      <th colspan="2"> <h2 class="heading-medium">End-point assessor</h2></th>
+                      <th><p style="margin-top: 0px; text-align:right"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/change-apprenticeship-all">Edit not available</a> </p> 
+                      </th>
+                    </tr>
+                  </thead>
+                  <span class="form-hint">There are no end-point assessors for this training course yet. New organisations are added regularly so please check back at a later date to update these details.</span>
+                  </table>
+                </fieldset-->
+
+               
+                  
+                
+
+                   
+                <!--table class="table-19-font"> 
+                  <tbody>
+                    </tr>
+                    <td class="apprenticeRecordTitle">End-point assessor</td>
+                      <td class="">Institute of Mechanical Engineers</td>
+                    </tr>
+                  </tbody>
+                </table-->
+                </fieldset>
+
+
+                </table>
+                <p style="margin-top:; text-align:"> </p>
+            </div>
+              </div>
+          </div>
+          <div class="column-one-third">
+
+            </div>
+        </div>
+</main>
+
+
+
+{% endblock %}
+

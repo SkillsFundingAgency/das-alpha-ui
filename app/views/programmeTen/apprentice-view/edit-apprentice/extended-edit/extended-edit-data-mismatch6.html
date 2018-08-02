@@ -1,0 +1,163 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    {% include "includes/head.html" %}
+
+{% endblock %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .apprentice-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Review changes</h1>
+
+        <p>BARNFIELD COLLEGE has requested the following changes.</p>
+        
+        <fieldset>
+            <table class="table-19-font"> 
+                  <tbody>
+                    <tr>
+                      <td class="apprenticeRecordTitle" >Name</td>
+                      <td class="">Rob Edwards</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="apprenticeRecordTitle" style="width:217px">Apprenticeship training course</td>
+                      <td class="">Level 2: Aeronautical Engineering</td>
+                      <td></td>
+                    </tr>
+                   </tbody>
+                </table>
+        </fieldset>
+
+<div class="form-group" style="margin: 20px 0 0px 0">
+  <label class="form-label-bold" for="epa">Change 1</label>
+</div>
+
+<form>
+  <fieldset>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col" style="width: 200px"></th>
+          <th scope="col">Currently</th>
+          <th scope="col">Change to</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>From date</td>
+          <td>1 Jun 2017</td>
+          <td>1 Jun 2017</td>
+        </tr>
+        <tr>
+          <td>Apprenticeship training course</td>
+          <td>The Power Sector: Wind Turbine Installation and Commissioning, Level: 3</td>
+          <td>Health and Social Care: Adult Social Care, Level: 3</td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+</form>
+
+<div class="form-group" style="margin: 20px 0 0px 0">
+  <label class="form-label-bold" for="epa">Change 2</label>
+</div>
+
+<form>
+  <fieldset>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col" style="width: 200px"></th>
+          <th scope="col">Currently</th>
+          <th scope="col" style="padding-left: 115px">Change to</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>From date</td>
+          <td>1 Jun 2017</td>
+          <td style="padding-left: 115px">1 Jun 2017</td>
+        </tr>
+        <tr>
+          <td>Total apprenticeship<br> training price</td>
+          <td>£1,000</td>
+          <td style="padding-left: 115px">£2,000</td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+</form>
+
+        
+
+
+
+
+<div class="form-group" style="margin: 20px 0 20px 0">
+  <label class="form-label-bold" for="epa">Are you happy to approve these changes?</label>
+</div>
+
+  
+
+<div class="" style="margin: 20px 0 0 0"></div>
+
+        <form action="individual-figures">
+          <fieldset>
+                  <!--h2 class="heading-medium">Choose</h2-->
+                  <legend class="visuallyhidden">Choose provider to enter details</legend>
+                  <div class="form-group">
+                  <label class="block-label" for="radio1">
+                    <input id="radio1" type="radio" name="radio-group" value="employer">
+                    Yes, approve these changes
+                  </label>
+                  <label class="block-label" for="radio2">
+                    <input id="radio2" type="radio" name="radio-group" value="provider">
+                    No, reject these changes
+                  </label>
+                  </div>
+          </fieldset>
+        </form>
+        
+          </div>
+    <div class="column-two-thirds">
+       <form action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/ULN-upload">
+          <div class="" style="display: table; margin: 30px 0 0 0;">
+            <div style="margin-top:20px; display:inline-block;display: table-cell; vertical-align: middle; "><input class="button" id="saveAndContinue" type="submit" value="Finish"></div>
+            <div style="display:inline-block; display: table-cell; vertical-align: middle;"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list" id="saveAndAdd" style="margin-top:20px; margin-left:25px;  ">Cancel</a></div>
+          <div style="clear:both"></div>
+      </form>
+    </div>
+
+      <div class="column-one-third">
+         <!--div style="margin-top:20px;"><input class="button delete-button" id="deleteApprenticeship" value="Delete apprentice"></div-->
+      </div>
+</main>
+
+
+
+
+
+{% endblock %}
+

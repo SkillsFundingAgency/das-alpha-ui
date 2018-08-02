@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .financial-nav a, .nav-forecast a{
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-finance.html" %}
+
+
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+       <a href="" class="link-back" onclick="goBack()">Back</a>
+    </ol>
+  </div>
+
+
+<div class="grid-row">
+           <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Check what funding is available</h1>
+
+    <p class="">You can get help from the government to pay for apprenticeship training.</p>
+    <p>The amount you get depends on whether you pay the apprenticeship levy or not. You pay the levy if you’re an employer with a <a href="#">pay bill over £3 million each year.</a></p>
+
+    <h2 class="heading-medium">If you don’t need to pay the levy</h2>
+    <p>You pay 10% towards the cost of training and assessing your apprentice. You need to:</p>
+    <ul class="list list-bullet">
+      <li>agree a payment schedule with the training organisation</li>
+      <li>pay them directly for the training</li>
+    </ul>
+    <p>The government will pay the rest (90%) up to the <a href="">funding band maximum</a>. They’ll pay it directly to the training organisation.</p>
+    <p>You could be eligible for <a href="">extra funding</a> depending on both your and your apprentice’s circumstances.</p>
+
+       <h2 class="heading-medium">If you pay the levy</h2>
+       <p>You’ll receive funds to spend on training and assessing your apprentices. The government will add 10%</p>
+       <p>How you get your funds and pay for training depends on whether you’re in:</p>
+       <ul class="list list-bullet">
+        <li><a href="">England</a></li>
+        <li><a href="">Scotland</a></li>
+        <li><a href="">Wales</a></li>
+        <li><a href="">Northern Ireland</a></li>
+      </ul>
+
+             <div class="column-one-third">
+          </div>
+</div>
+</main>
+
+
+{% endblock %}

@@ -1,0 +1,573 @@
+
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<script>
+// this fixes the negative count bug
+   $(document).ready(function () {
+
+function fixBug() {
+         if (appCount < 0) {
+                 appCount = 0
+                 Cookies.set("appCount", appCount);
+        } else {};
+
+         if (proCount < 0) {
+                 proCount = 0
+                 Cookies.set("proCount", proCount);
+        } else {}
+}
+fixBug()
+});
+
+
+// this removes number 4 on a click rather than going to the page that asks if you are sure.
+function deleteMe() {
+    console.log("arse")
+            $("a.delete").parents("tr").remove();
+            $(".delete a").parents(".app").remove();
+            $("#4").addClass("hidden")
+            appCount--;
+            Cookies.set("appCount", appCount);
+
+        if (appCount < 1) {
+                  $("#5").show();
+                   $("#6").hide();
+        } else {}
+
+           
+}
+</script>
+
+    <link href="/public/ty/assets/stylesheets/main.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/elements-page.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/flexboxgrid.min.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/_app.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/_dashboard.css" rel="stylesheet" />
+
+
+    <script src="/public/ty/assets/javascripts/govuk-template.js" type="javascript/text"></script>
+
+    <main id="content" role="main">
+
+    <div class="breadcrumbs back-breadcrumb">
+            <div class="column-two-thirds">
+                <ol role="breadcrumbs">
+                       {% include "includes/breadcrumbs/register-back.html" %}
+                </ol>
+            </div>
+            <div class="column-third">
+                <!--div class="account-info" id="bannerSignedIn">
+                    <a href="dashboard" title="Shortlist"><i class="fa fa-list-alt"></i>Shortlisted training and providers(<span>0</span>)</a>
+                </div-->
+             </div>
+    </div>
+
+        <!--    <nav class="primary-nav">
+            <div class="outer-block">
+                <ul>
+                    <li><a href="pta-home-1">Home</a></li>
+                    <li><a href="#" class="active-nav-item">Find training and providers</a></li>
+                    <li><a href="paye-home-v4">Manage your money</a></li>
+                    <li><a href="#">Manage your apprentice</a></li>
+                </ul>
+            </div>
+        </nav>
+-->
+
+        <h1 class="heading-large">
+                Your shortlisted training and providers</h1>
+
+
+        <div class="grid-row" id="shortlistResult">
+
+            <div class="column-two-thirds">
+
+
+                <article class="shortlist-item" id="1">
+                    <h3 class="heading-small"><a href="appDetails_s_a">Investment operations administrator</a></h3>
+                    <p>Providing operational and administrative support in investment management teams.</p>
+                    <p class="font-xsmall"><span class="bold-xsmall">Level:</span> 2 (equivalent to GCSEs at grades A* to C)</p>
+
+                    <div class="delete"><a href="appShortlistRemove"><i class="fa fa-trash hidden"></i>Remove</a></div>
+
+                    <ul class="cd-accordion-menu">
+                        <li class="has-children">
+                            <input type="checkbox" name="group-1" id="group-1" class="hidden">
+                            <label class="bold-xsmall" for="group-1">Shortlisted training providers <span class="font-xsmall">(1)</span></label>
+
+                            <div class="container">
+
+                                <fieldset class="apprenticeshipLevel">
+
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="proDetails">Hertford regional college</a>
+                                                    <div>Portland, DT5 2NA
+                                                    </div>
+                                                    <div>
+                                                        <span>Employer satisfaction: </span>
+                                                        <span class="bold-xsmall">77%</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Learner satisfaction: </span>
+                                                        <span class="bold-xsmall">77%</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Achievement rate:</span>
+                                                        <span class="bold-xsmall">75%</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="hide-desktop"><i class="fa fa-trash"></i></a>
+                                                    <a href="#" class="delete hide-mob">Remove</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </fieldset>
+                                <a href="appResults" class="button">Find more training providers</a>
+                            </div>
+                        </li>
+                    </ul>
+
+
+                    <!--ul class="cd-accordion-menu">
+                        <li class="has-children">
+                            <input type="checkbox" name="group-11" id="group-11" class="hidden">
+                            <label class="bold-xsmall" for="group-11">Shortlisted assessment organisations <span class="font-xsmall">(1)</span></label>
+
+                            <div class="container">
+
+                                <fieldset class="apprenticeshipLevel">
+
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="proDetails">Training 2000 Ltd	</a>
+                                                    <div>Portland, DT5 2NA
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <a href="#" class="hide-desktop"><i class="fa fa-trash"></i></a>
+                                                    <a href="#" class="delete hide-mob">Remove</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </fieldset>
+                                <a href="appResults" class="button">Find more assessment organisations</a>
+
+                            </div>
+                        </li>
+                    </ul-->
+                </article>
+
+
+                <article class="shortlist-item" id="2">
+                    <h3 class="heading-small"><a href="appDetails_s_a">Workplace pensions consultant or administrator</a></h3>
+                    <p>Providing information on pensions schemes an organisation’s employees or clients.
+                    </p>
+                    <p class="font-xsmall"><span class="bold-xsmall">Level:</span> 3 (equivalent to 5 GCSEs A* to C)</p>
+
+                    <div class="delete"><a href="appShortlistRemove"><i class="fa fa-trash hidden"></i>Remove</a></div>
+
+                    <ul class="cd-accordion-menu">
+                        <li class="has-children">
+                            <input type="checkbox" name="group-2" id="group-2" class="hidden">
+                            <label class="bold-xsmall" for="group-2">Shortlisted training providers <span class="font-xsmall">(2)</span></label>
+
+                            <div class="container">
+
+                                <fieldset class="apprenticeshipLevel">
+
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="proDetails">Paragon</a>
+                                                    <div>Dorset, BH1 4NB
+                                                    </div>
+                                                    <div>
+                                                        <span>Employer satisfaction: </span>
+                                                        <span class="bold-xsmall">77%</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Learner satisfaction: </span>
+                                                        <span class="bold-xsmall">77%</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Achievement rate:</span>
+                                                        <span class="bold-xsmall">75%</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="hide-desktop"><i class="fa fa-trash"></i></a>
+                                                    <a href="#" class="delete hide-mob">Remove</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="proDetails">Wesc foundation school</a>
+                                                    <div>Exeter, EX2 6HA
+                                                    </div>
+                                                    <div>
+                                                        <span>Employer satisfaction: </span>
+                                                        <span class="bold-xsmall">77%</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Learner satisfaction: </span>
+                                                        <span class="bold-xsmall">77%</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Achievement rate:</span>
+                                                        <span class="bold-xsmall">75%</span>
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="hide-desktop"><i class="fa fa-trash"></i></a>
+                                                    <a href="#" class="delete hide-mob">Remove</a></td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </fieldset>
+                                <a href="appResults" class="button">Find more training providers</a>
+
+                            </div>
+                        </li>
+                    </ul>
+
+
+                    <!--ul class="cd-accordion-menu">
+                        <li class="has-children">
+                            <input type="checkbox" name="group-22" id="group-22" class="hidden">
+                            <label class="bold-xsmall" for="group-22">Shortlisted assessment organisations <span class="font-xsmall">(2)</span></label>
+
+                            <div class="container">
+
+                                <fieldset class="apprenticeshipLevel">
+
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="proDetails">Pearson Education Ltd	</a>
+                                                    <div>Dorset, BH1 4NB
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="hide-desktop"><i class="fa fa-trash"></i></a>
+                                                    <a href="#" class="delete hide-mob">Remove</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="proDetails">Oxford Cambridge &amp; RSA Examinations	</a>
+                                                    <div>Exeter, EX2 6HA
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="hide-desktop"><i class="fa fa-trash"></i></a>
+                                                    <a href="#" class="delete hide-mob">Remove</a></td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </fieldset>
+                                <a href="appResults" class="button">Find more assessment organisations</a>
+
+                            </div>
+                        </li>
+                    </ul-->
+                </article>
+                <article class="shortlist-item" id="3">
+                    <h3 class="heading-small"><a href="appDetails_s_a">Paralegal</a></h3>
+                    <p>Provide business advice to public, private and not-for-profit organisations.
+                    </p>
+                    <p class="font-xsmall"><span class="bold-xsmall">Level:</span> 2 (equivalent to GCSEs at grades A* to C)</p>
+                    <div class="delete"><a href="appShortlistRemove"><i class="fa fa-trash hidden"></i><span>Remove</span></a></div>
+                    <ul class="cd-accordion-menu">
+                        <li class="has-children">
+                            <input type="checkbox" name="group-3" id="group-3" class="hidden">
+                            <label class="bold-xsmall" for="group-3">Shortlisted training providers <span class="font-xsmall">(3)</span></label>
+
+                            <div class="container">
+
+                                <fieldset>
+
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="proDetails">Hemel College</a>
+                                                    <div>Hemel Hempsted, HP3 3AL
+
+                                                    </div>
+
+                                                    <div>
+                                                        <span>Employer satisfaction: </span>
+                                                        <span class="bold-xsmall">77%</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Learner satisfaction: </span>
+                                                        <span class="bold-xsmall">77%</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Achievement rate:</span>
+                                                        <span class="bold-xsmall">75%</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="hide-desktop"><i class="fa fa-trash"></i></a>
+                                                    <a href="#" class="delete hide-mob">Remove</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="proDetails">Nuneaton adult learning centre</a>
+                                                    <div>Nuneaton, CV11 6RR
+
+                                                    </div>
+                                                    <div>
+                                                        <span>Employer satisfaction: </span>
+                                                        <span class="bold-xsmall">77%</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Learner satisfaction: </span>
+                                                        <span class="bold-xsmall">77%</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Achievement rate:</span>
+                                                        <span class="bold-xsmall">75%</span>
+                                                    </div>
+
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="hide-desktop"><i class="fa fa-trash"></i></a>
+                                                    <a href="#" class="delete hide-mob">Remove</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href="proDetails">Great Baddow High</a>
+                                                    <div>Nuneaton, CV11 6RR
+
+                                                    </div>
+                                                    <div>
+                                                        <span>Employer satisfaction: </span>
+                                                        <span class="bold-xsmall">77%</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Learner satisfaction: </span>
+                                                        <span class="bold-xsmall">77%</span>
+                                                    </div>
+                                                    <div>
+                                                        <span>Achievement rate:</span>
+                                                        <span class="bold-xsmall">75%</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="hide-desktop"><i class="fa fa-trash"></i></a>
+                                                    <a href="#" class="delete hide-mob">Remove</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <a href="appResults" class="button">Find more training providers</a>
+                                </fieldset>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+                <article class="shortlist-item" id="4">
+                    <h3 class="heading-small"><a href="appDetails_s_a">Investment operations administrator</a></h3>
+                    <p>Providing operational and administrative support in investment management teams.
+                    </p>
+                    <p class="font-xsmall"><span class="bold-xsmall">Level:</span> 2 (equivalent to GCSEs at grades A* to C)</p>
+
+                    <div class="delete" onclick="deleteMe()"><a href="#"><i class="fa fa-trash hidden"></i>Remove</a></div>
+                    <ul class="cd-accordion-menu">
+                        <li class="has-children">
+                            <input type="checkbox" name="group-4" id="group-4" class="hidden" checked="">
+                            <label class="bold-xsmall" for="group-4">Shortlisted training providers <span class="font-xsmall">(0)</span></label>
+
+                            <div class="container">
+
+                                <fieldset class="apprenticeshipLevel">
+
+                                    <p class="font-xsmall">You don't have any shortlisted training providers for this apprenticeship.</p>
+                                    <a href="proSearch" class="button">Find training providers</a>
+                                </fieldset>
+                            </div>
+                        </li>
+                    </ul>
+
+
+                </article>
+                <div id="6"> <!--a href="appResults" class="button">Find more apprenticeship training</a--></div>
+
+
+                <article class="warning-item" id="5">
+                    <h3 class="heading-small">Shortlist empty</h3>
+                    <p class="font-xsmall">You don't have any apprenticeship training shortlisted.</p>
+
+                    <a href="appResults" class="button">Find apprenticeship training</a>
+
+                </article>
+
+                <div><a href="/{% include "includes/sprint-link.html" %}/NLD-start/non-levy-list">Back to the list thing</a></div>
+
+
+
+
+            </div>
+
+            <div class="column-third"></div>
+
+        </div>
+
+    </main>
+
+<script>
+     $(document).ready(function () {
+
+
+         $(".label-danger").click(function (e) {
+             e.preventDefault();
+             $(this).parentsUntil(".table").next().css({
+                 "color": "red"
+             }).hide();
+             $(this).parentsUntil(".table-section").hide();
+         })
+
+         $(".remove-provider").click(function (e) {
+             $(this).parentsUntil("tbody").hide();
+         })
+
+
+
+         //   $("#dashboard").text(Cookies.getJSON("appArray"));
+         //     $("#dashboard2").text(Cookies.getJSON("proArray"));
+
+
+         $(".toggleProviders").click(function (e) {
+             e.preventDefault();
+
+             //   if ($(".provider-item.hidden").length) {
+             if ($(this).parent().parent().parent().next().hasClass("hidden")) {
+                 $("span", this).text("Hide training providers");
+                 //$(".provider-item").removeClass("hidden");
+                 $(this).parent().parent().parent().next().removeClass("hidden");
+
+                 $("i", this).removeClass("fa-eye").addClass("fa-eye-slash")
+             } else {
+                 $("span", this).text("Show training providers");
+                 $(".provider-item").addClass("hidden");
+                 //$(this).parents().css("color", "green");
+
+                 $("i", this).removeClass("fa-eye-slash").addClass("fa-eye")
+             }
+         });
+
+
+         console.log("_app: " + appCount + " _pro: " + proCount);
+
+
+         // #4 is the incomplete shortlist-item
+         // #5 is the notice
+         // #6 is add more (ROB ADDITION)
+
+         if (appCount == 1 && proCount == 0) {
+             //if there is 1 app and 0 pros
+             console.log("if 2: a1 p0");
+             $("#4").show();
+             $("#1,#2,#3,#5").hide();
+         } else if (proCount == 1 && appCount == 1) {
+             // if there is 1 app and 1 pro (assume its nested)
+             console.log("if 3: a1 p1");
+             $("#2,#3,#4,#5").hide();
+             $("#1").show();
+         } else if (proCount == 1 && appCount == 2) {
+             // if theres two apps and 1 pro
+             $("#2,#3,#5").hide();
+             console.log("if 4: a2 p1");
+         } else if (proCount == 2 && appCount == 2) {
+             // show two complete shortlisted items
+             $("#5,#4,#3").hide();
+             console.log("if 5: a2 p2");
+
+         } else if (proCount == 0 && appCount == 2) {
+             // show two complete shortlisted items
+             $("#5,#4,#3").hide();
+             console.log("if 5: a2 p0");
+
+         } else if (proCount == 0 && appCount == 3) {
+             // show two complete shortlisted items
+             $("#5,#4").hide();
+             console.log("if 5: a3 p0");
+
+         } else if (proCount == 2 && appCount == 3) {
+             // show 2 complete and 1 incomplete
+             $("#5,#3").hide();
+             console.log("if 6: a3 p2");
+         } else if (proCount == 3 && appCount == 3) {
+             // show 3 complete apprenticeships
+             console.log("if 7: a3 p3");
+             $("#5,#4").hide();
+         } else if (proCount == 1 && appCount == 0) {
+             $("#2,#3,#4,#5").hide();
+             console.log("if 8: a0 p1");
+         } else if (proCount == 2 && appCount == 0) {
+             $("#3,#4,#5").hide();
+         }
+         if (proCount == 3 && appCount == 0) {
+             console.log("if 9: a0 p2");
+             $("#4,#5").hide();
+         } else if (proCount == 0 && appCount == 0) {
+             //if there is nothing shortlisted show the notice
+             $("#1,#2,#3,#4,#6").hide();
+             console.log("if 1 : a0 p0");
+             $("#5").show();
+         } else {
+             $("#5").hide();
+         }
+
+
+         $("body").on("keydown", function (event) {
+
+             if (event.which == 49) {
+                 //1
+                 $("#1").toggle();
+             } else if (event.which == 50) {
+                 //2
+                 $("#2").toggle()
+             } else if (event.which == 51) {
+                 //3
+                 $("#3").toggle()
+             } else if (event.which == 52) {
+                 //4
+                 $("#4").toggle()
+             } else if (event.which == 53) {
+                 //5
+                 $("#5").toggle()
+             } else if (event.which == 54) {
+                 //6
+                 $("#6").toggle()
+             }
+         });
+
+  
+
+     });
+     </script>
+
+
+
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="/public/ty/assets/javascripts/marked.min.js"></script>
+    <script src="/public/ty/assets/javascripts/underscore-min.js"></script>
+    <script src="/public/ty/assets/javascripts/js.cookie.js"></script>
+    <script src="/public/ty/assets/javascripts/footable.all.min.js"></script>
+    <script src="/public/ty/assets/javascripts/_app.js"></script>
+    <script src="/public/ty/assets/javascripts/_dashboard.js" id="xmlDataApp" xmlData="/public/ty/assets/data/appList.xml"></script>
+
+
+
+{% endblock %}

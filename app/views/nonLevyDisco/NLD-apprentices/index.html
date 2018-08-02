@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+    <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+  
+  <h1 class="heading-xlarge rj-headings-border " >{% include "includes/account-name-number.html" %}Apprentices</h1>
+
+ <div class="grid-row">
+           <div class="column-two-thirds">
+
+          <div class="grid-row">
+            <div class="column-half ">
+              <h3 class="heading-medium" style="margin-top:0"><a href="/{% include "includes/sprint-link.html" %}/#">Set up trusted providers</a></h3>
+              <p class="rj-home-spacer">These are your providers who can set up and add apprentices to your account</p>
+            </div>
+            <div class="column-half ">
+              <h3 class="heading-medium " style="margin-top:0; "><a href="/{% include "includes/sprint-link.html" %}/#">New apprentices for review</a></h3>
+              <p class="rj-home-spacer">New apprentices awaiting confirmation</p>
+            </div>
+          </div>
+
+
+          <div class="grid-row">
+             <div class="column-half">
+              <h3 class="heading-medium rj-top-border" style="margin-top:0;padding-top:35px  " ><a href="/{% include "includes/sprint-link.html" %}/NLD-apprentices/apprentice-list">Current apprentices</a></h3>
+              <p>You can view your apprentices that are currently being reviewed</p>
+            </div>
+            <div class="column-half ">
+           <h3 class="heading-medium rj-top-border" style="margin-top:0;padding-top:35px "><a href="/{% include "includes/sprint-link.html" %}/finance"> </a></h3>
+
+            </div>
+         </div>
+                </div>
+    </div>
+  </main>
+
+
+{% endblock %}
+

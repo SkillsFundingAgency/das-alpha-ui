@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
+
+<style>
+ #navigation-primary, #kill-me {
+  display:none;
+}
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+
+
+       <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+          <a href="/{% include "includes/sprint-link.html" %}/apprentice-view/manage-options-provider" class="link-back">Back</a>
+    </ol>
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}ILR data mismatch</h1>
+    <!--p class="lede">All apprentices who are currently on your programme and need no action.</p-->
+  </div>
+</div>
+           <table class="">
+                          <thead>
+                            <tr>
+                              <th scope="col" style="padding-top:0">Name</th>
+                              <th scope="col" style="padding-top:0">Date of birth</th>
+                              <th scope="col" style="padding-top:0">ULN</th>
+                               <th scope="col" style="padding-top:0">Status</th>
+                               <!--th scope="col" style="padding-top:0; width:300px">Mismatch</th-->
+                                 <th scope="col" style="padding-top:0"></th>
+                                  <th scope="col" style="padding-top:0"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <!--quick hack, will fix -->
+                              <td class="rjTabWidth">Mel O'Connor</td>
+                              <td class="">1 May 1998</td>
+                              <td class="">0123456789</td>
+                              <td class="">Payment will fail on 4 July 2017</td>
+                             <!-- <td class="">- Total cost of training<br />- Planned training start date</td>-->
+                               <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice-data-lock-failure">View apprentice <br />details</a></td>
+                                  <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/data-lock-triage">View <br />mismatch</a></td>
+                            </tr>
+                             <tr>
+                              <td class="rjTabWidth">Bill O'Neil</td>
+                              <td class="">30 Dec 1998</td>
+                               <td class="">1234567890</td>
+                             <td>ILR change pending</td>
+                           <!--  <td>Total cost of training</td> -->
+                              <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/Bill-oneil-restart-apprenticeship">View apprentice <br />details</a></td>
+                                   <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/provider-payment-failure/ILR-changes-pending-reverse">View <br />mismatch</a></td>
+                            </tr>
+                            <tr>
+                              <td class="rjTabWidth">Fred Birtwhistle</td>
+                              <td class="">28 Apr 2001</td>
+                               <td class="">2345678901</td>
+                              <td>Payment failed on 4 June 2017</td>
+                            <!--  <td>A thing happened</td> -->
+                               <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/provider-payment-failure/individual-apprentice-multiple-failure-provider">View apprentice <br />details</a></td>
+                                   <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/provider-payment-failure/individual-apprentice-multiple-failure-provider">View <br />mismatch</a></td>
+                            </tr>
+                            <tr>
+                              <td class="rjTabWidth">Charles Patel</td>
+                              <td class="">01 May 1998</td>
+                               <td class="">4567890123</td>
+                              <td>Payment failed on 4 June 2017</td>
+                            <!--  <td>Total cost of training</td> -->
+                              <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/provider-payment-failure/individual-apprentice-payment-failure">View apprentice <br />details</a></td>
+                               <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/provider-payment-failure/individual-apprentice-payment-failure">View <br />mismatch</a></td>
+                            </tr>
+                             <tr>
+                              <td class="rjTabWidth">Harvey Dent</td>
+                              <td class="">29 Oct 2000</td>
+                               <td class="">5678901234</td>
+                              <td>Payment failed on 4 June 2017</td>
+                            <!--  <td>Apprenticeship training course</td> -->
+                               <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/harvey-dent-restart-apprenticeship">View apprentice <br />details</a></td>
+                                 <td><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/update-apprenticeship/data-lock-triage-restart-apprenticeship">View <br />mismatch</a></td>
+                            </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </div>
+</main>
+
+
+
+{% endblock %}

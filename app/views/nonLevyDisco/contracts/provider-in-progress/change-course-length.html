@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+
+<script>
+
+/* to set the saved variable on save and return (so it changed the next screen to show an apprenticeship that's been added) */
+var btn = document.getElementById('continueOnward');
+EventUtil.addHandler(btn, 'click', function(){
+          window.location.href='upload-choose-file-provider';
+ });
+
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+            <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Choose course duration</h1>
+            <p>Choose the length that your apprentices will be studying for.</p>
+             <fieldset>
+
+            <legend class="visuallyhidden">Course length</legend>
+            <div class="form-group">
+            <label class="form-label-bold" for="search">Course length
+          <span class="form-hint">Enter the length of time in months <!-- For example, for £1,500 enter 1500.</span> -->
+           </label>
+           
+              <input class="form-control" style="max-width:4em" id="apprenticeCost " type="text" value="">
+      </div>
+    </fieldset>
+
+          <div style="margin-top:5px;"><input class="button" type="button" id="continueOnward" onclick="addedApp()" value="Continue"></div>
+
+
+
+
+
+          </div>
+            <div class="column-one-third">
+
+
+        </div>
+
+
+
+</main>
+
+
+
+
+
+{% endblock %}
+

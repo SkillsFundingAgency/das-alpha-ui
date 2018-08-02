@@ -1,0 +1,274 @@
+
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+ 
+<script>
+
+ $(".shortlist.app").click(function (e) {
+        e.preventDefault();
+        console.log("shortlist button clicked: " + appCount);
+        if ($("i", this).hasClass("fa-star-o")) {
+            console.log("isnt shortlisted");
+            appCount = appCount + 1;
+            console.log(appCount);
+            Cookies.set("appCount", appCount);
+            $("i", this).removeClass("fa-star-o").addClass("fa-star");
+            $("span", this).text("Remove from shortlist");
+           $("#bannerSignedIn span").text(Number(proCount) + Number(appCount));
+
+        } else {
+            console.log("is shortlisted");
+            $("i", this).removeClass("fa-star").addClass("fa-star-o");
+            $("span", this).text("Shortlist this apprenticeship");
+            appCount--;
+            Cookies.set("appCount", appCount);
+            console.log(appCount);
+           $("#bannerSignedIn span").text(Number(proCount) + Number(appCount));
+        }
+    })
+
+</script>
+    <link href="/public/ty/assets/stylesheets/main.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/elements-page.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/_app.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/_appDetails.css" rel="stylesheet" />
+
+
+    <script src="/public/ty/assets/javascripts/govuk-template.js" type="javascript/text"></script>
+
+        <main id="content" role="main">
+            <div class="grid-row breadcrumb" style="margin-top:25px">
+                <div class="column-two-thirds"><a href="./" class="link-back">Back</a>
+                </div>
+                <div class="column-third">
+                    <div class="account-info" id="bannerSignedIn">
+                        <a href="dashboard" title="Shortlist"><i class="fa fa-list-alt"></i>Shortlisted training and providers
+ (<span>0</span>)</a>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                    <div class="">
+                        <h1 class="heading-xlarge">
+                      <span class="stnName">Financial services administrator</span></h1>
+
+                        <!--<h3 class="heading-small">Role</h3>-->
+                        <p class="lede">This is an apprenticeship standard developed by a group of employers. It sets out what the apprentice needs to achieve and how they will be assessed.
+
+                        </p>
+                        <!--<ul class="list list-bullet">
+                            <li>what the apprentice needs to achieve in this position</li>
+                            <li>how the apprentice will be assessed</li>
+                        </ul>-->
+                    </div>
+                </div>
+                <div class="column-third hide-mob">
+                    <div class="container related-container ctaContainer panel panel-width-thin">
+                        <ul class="list list-link" style="text-align: center;">
+                            <li><a href="proSearch" class="findProviders button"><i class="fa fa-search hidden"></i>Find training providers</a></li>
+                            <li class="shortlist app"><a href="#" class=""><i class="fa fa-star-o "></i><span>Shortlist this apprenticeship</span></a></li>
+                        </ul>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <section class="cat-10 cat">
+                <h2 class="heading-large">Summary of this apprenticeship standard</h2>
+
+                <div class="grid-row attachment-full-width">
+                    <div class="column-third">
+                        <h2 class="heading-small">Overview of role</h2></div>
+                    <div class="column-two-thirds">
+                        <div class="stnOverview">Providing administrative support to a financial organisation, to provide a high quality and compliant service.
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-row attachment-full-width">
+                    <div class="column-third">
+                        <h2 class="heading-small">Level</h2></div>
+                    <div class="column-two-thirds">
+                        <div class="stnLevel">3 (equivalent to A levels at grades A to E)
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-row attachment-full-width">
+                    <div class="column-third">
+                        <h2 class="heading-small">Typical length</h2></div>
+                    <div class="column-two-thirds">
+                        <span class="appFrom">12</span><span class="ifRange"> to </span><span class="appTo">18</span> months
+                    </div>
+                </div>
+                <div class="grid-row attachment-full-width">
+                    <div class="column-third">
+                        <h2 class="heading-small">Entry requirements</h2></div>
+                    <div class="column-two-thirds">
+                        <div class="stnEntry">
+                            <p>Set by employer. Candidates will usually have 1 of the following:
+                            </p>
+                            <p>level 2 maths and English, ideally as part of 5 GCSEs grades A to C equivalent qualifications or prior experience</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="grid-row attachment-full-width">
+                    <div class="column-third">
+                        <h2 class="heading-small">Training costs</h2></div>
+                    <div class="column-two-thirds">
+                        <div class="stnEntry">
+                            <p style="margin:0">Maximum total cost <span style="padding-left:100px; font">£3,000 per apprentice </span></p>
+                            <p style="margin:0">Government will pay <span style="padding-left:100px">£2,700 per apprentice</span></p>
+                            <p style="margin:0; font-weight:700">Costs to you <span style="padding-left:172px; font-weight:700">£300 per apprentice</span></p>
+                            <p style="font-size:16px; padding: 0px 0 0 0px"><a href="https://gov.uk/guidance/pay-apprenticeship-levy" style="font-size:16px; padding: 0px 0 0 0px">If your pay bill is more than £3 million a year, the cost of training will be different </a></p>
+                                    </li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-row attachment-full-width">
+                    <div class="column-third">
+                        <h2 class="heading-small">What apprentices will learn</h2></div>
+                    <div class="column-two-thirds">
+                        <div class="stnLearn">
+                            <ul class="list list-bullet">
+                                <li>the financial services market
+                                </li>
+                                <li>the financial services regulatory framework
+                                </li>
+                                <li>ethics and key principles of the financial advice process
+                                </li>
+                                <li>the purpose and technical content of financial services products and services
+                                </li>
+                                <li>systems and processes required to carry out the role of financial services administrator
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-row attachment-full-width">
+                    <div class="column-third">
+                        <h2 class="heading-small">Qualifications</h2></div>
+                    <div class="column-two-thirds">
+                        <div class="stnQual">
+                            <p>Apprentices will take a range of professional qualifications, as set out in the apprenticeship standard.
+                            </p>
+                            <p>Candidates who don’t have English and maths at grace C or above (or equivalent) will have to achieve this level before the end of their apprenticeship
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-row attachment-full-width">
+                    <div class="column-third">
+                        <h2 class="heading-small">Professional 
+registration</h2></div>
+                    <div class="column-two-thirds">
+                        <div class="stnReg">
+                            <p>This apprenticeship provides the first step on the pathway to professional membership of the Chartered Insurance Institute, Institute of Financial Services and the Chartered Institute of Securities and Investment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class="grid-row">
+                    <div class="column-half">
+                        <h2 class="heading-large">Documents</h2>
+
+                        <div class="panel panel-width-thin">
+                            <a href="#" target="_blank">Standard</a>
+                            <!--                    <span class="">PDF, 265kb, 3 pages</span>-->
+                            <br clear="all" />
+                            <a href="#" target="_blank">Assessment plan</a>
+                            <!--                    <span class="">PDF, 265kb, 3 pages</span>-->
+                        </div>
+                    </div>
+                    <div class="column-half hidden">
+                        <h3 class="heading-large">    Apprenticeship status:</h3>
+                        <span class="swatch swatch-green box"></span>
+                        <p class="lede">Ready for delivery</p>
+
+                        <details>
+                            <summary>
+                                Apprenticeship status explained
+                            </summary>
+                            <p>Apprenticeship training is scrutinised and approved by Government before being made available. Below is an explanation of the different stages leading up to approval apprenticeship training.</p>
+                            <span class="swatch swatch-green box"></span>
+                            <h4 class="heading-small">Ready for delivery (standard and assessment plan approved)</h4>
+                            <ul class="list list-bullet">
+                                <li>Means it is approved by SFA</li>
+                                <li>Does not mean it has providers offering the course</li>
+                                <li>Newly approved courses may not have providers ready to deliver it.</li>
+                                <li>The problem here is the terminology is focussed around the provider (ready for delivery, instead of has providers)</li>
+                            </ul>
+
+                            <span class="swatch swatch-red box"></span>
+                            <h4 class="heading-small">Standard in development</h4>
+                            <ul class="list list-bullet">
+                                <li>Means it has not been approved yet</li>
+                                <li>could be in early development maybe already in the approval process</li>
+                                <li>trial blazers are responsible/point of contact at this point to find out more.</li>
+                                <li>In development standards levels are subject to change</li>
+                                <li>No assessment plan is complete at this point</li>
+
+                            </ul>
+
+                            <span class="swatch swatch-red orange"></span>
+                            <h4 class="heading-small">Standard approved</h4>
+                            <ul class="list list-bullet">
+                                <li>Means the standard has been approved</li>
+                                <li>But the assessment plan for the standard has not</li>
+                                <li>trial blazers are responsible/point of contact at this point to find out more.</li>
+
+                            </ul>
+
+                        </details>
+
+                    </div>
+                </div>
+
+                <hr />
+
+
+
+                <div class="grid-row">
+                    <div class="column-two-thirds">
+                        <!--div class="container shortlist panel panel-width-thin">
+
+                            <a href="proSearch" class="findProviders button"><i class="fa fa-search hidden" style="margin-right: 5px;"></i>Find training providers</a>
+
+                            <a href="#" class="shortlist app shortlistButton"><i class="fa fa-star-o "></i><span>Shortlist this apprenticeship</span></a>
+
+                        </div-->
+                    </div>
+                </div>
+
+
+
+            </section>
+        </main>
+
+   <!-- Placed at the end of the document so the pages load faster -->
+
+
+    <script src="/public/ty/assets/javascripts/js.cookie.js"></script>
+    <script src="/public/ty/assets/javascripts/_app.js"></script>
+    <script src="/public/ty/assets/javascripts/_appResults.js" id="data" xmlData="/public/ty/assets/data/appList.xml"></script>
+
+{% endblock %}

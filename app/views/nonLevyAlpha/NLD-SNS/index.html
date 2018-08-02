@@ -1,0 +1,192 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+
+<head>
+    <link href="/public/ty/assets/stylesheets/main.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/elements-page.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/_app.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/_start.css" rel="stylesheet" />
+    <!--<![endif]-->
+
+
+    <script src="/public/ty/assets/javascripts/govuk-template.js" type="javascript/text"></script>
+</head>
+
+<body>
+
+    <style>
+        .survey-panel {
+            background: #DEE0E2;
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .survey-panel:before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: -10px;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 20px solid #DEE0E2;
+            clear: both;
+        }
+        
+        .survey-panel p {
+            margin-bottom: 0;
+        }
+        
+        .phase-tag {
+            line-height: 1.1428571429;
+            font-weight: 700;
+            text-transform: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: #fff;
+            background-color: f47738;
+            font-weight: 900;
+            /* background: orange; */
+            padding: 5px;
+            /* clear: right; */
+            position: relative;
+            float: left;
+            margin-top: 4px;
+            margin-right: 5px
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+    <main id="content" role="main">
+        <br />
+        <div class="grid-row">
+            <div class="column-two-thirds">
+  
+            </div>
+        </div>
+
+
+        <div class="grid-row">
+
+            <div class="column-two-thirds">
+                <h1 class="heading-xlarge">Find apprenticeship training</h1>
+
+                <p>This service is for employers looking to take on apprentices.</p>
+                <p>You can search here for apprenticeships and organisations that provide the training.</p>
+                <h4 class="heading-small">How this service works:</h4>
+                <ul class="list list-bullet">
+                    <li>search for apprenticeship training by keyword</li>
+                    <li>search for training providers by postcode</li>
+                    <li>filter your search results by levels and independent assessment scores</li>
+                    <li>shortlist apprenticeship training</li>
+                    <li>shortlist training providers</li>
+                    <li>save your shortlisted training and providers</li>
+                </ul>
+
+
+                <!--   <div class="padder-top-x">
+
+
+
+                </div>
+-->
+
+
+                <a  href="/{% include "includes/sprint-link.html" %}/NLD-SNS/find" class="button button-start">Start</a>
+
+                <style>
+                    .notice {
+                        position: relative;
+                    }
+                    .notice .icon {
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        margin-top: -17px;
+                    }
+                    .notice span {
+                        padding-left: 50px;
+                        display: block;
+                    }
+                </style>
+
+
+                <div class="notice hidden">
+                    <hr />
+                    <i class="icon icon-information">
+      <span class="visuallyhidden">Notice</span>
+    </i>
+                    <span class="bold-small">
+                    We need as much feedback as possible. This is your chance to steer the direction of the product to fit your needs. If you are finding something difficult or it isn't helping you achieve your goals please <a href="#">contact us</a> and we can work together to build a stronger solution. Jim is going absolutely nuts about this bit where it doesn't say the apprentice training location. He might be right, but wind him up and send us a note that you think it's perfect just the way it is.</span>
+                </div>
+
+
+            </div>
+
+            <div class="column-third">
+                <div class="related-container hidden">
+
+                    <aside class="related" id="related">
+
+
+                        <div class="inner group related-subsection">
+
+                            <h2 id="parent-subsection">Realted information</h2>
+
+
+                            <nav role="navigation" aria-labelledby="parent-subsection">
+                                <a href="inform_1.html">Find out about apprenticeships
+</a> <a href="https://www.gov.uk/apprenticeships-guide/overview">Become an apprentice 
+            </a>
+
+                            </nav>
+
+                            <ul class="list">
+                                <li><a>Find out about apprenticeships</a></li>
+                                <li><a>Become an apprentice</a></li>
+                            </ul>
+                        </div>
+
+
+                        <div class="inner group">
+                            <a class="return-to-top" href="#content">Return to top ↑</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="/public/ty/assets/javascripts/d3.min.js"></script>
+    <script src="/public/ty/assets/javascripts/c3.min.js"></script>
+    <script src="/public/ty/assets/javascripts/marked.min.js"></script>
+    <script src="/public/ty/assets/javascripts/underscore-min.js"></script>
+    <script src="/public/ty/assets/javascripts/js.cookie.js"></script>
+    <script src="/public/ty/assets/javascripts/footable.all.min.js"></script>
+    <script src="/public/ty/assets/javascripts/_app.js"></script>
+    <script src="/public/ty/assets/javascripts/_start.js"></script>
+
+
+{% endblock %}

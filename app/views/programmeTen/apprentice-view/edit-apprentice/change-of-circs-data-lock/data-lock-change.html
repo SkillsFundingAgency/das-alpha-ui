@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    {% include "includes/head.html" %}
+
+{% endblock %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .apprentice-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Change apprentice details</h1>
+
+        <p>Hackney Skills and Training has requested the following change.</p>
+        
+        <fieldset>
+            <table class="table-19-font"> 
+                  <tbody>
+                    <tr>
+                      <td class="apprenticeRecordTitle" >Name</td>
+                      <td class="">Rob Edwards</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="">Unique learner number</td>
+                      <td>0123456789</td>
+                    </tr>
+                    <tr>
+                      <td class="apprenticeRecordTitle" style="width:217px">Apprenticeship training course</td>
+                      <td class="">Level 2: Aeronautical Engineering</td>
+                      <td></td>
+                    </tr>
+                   </tbody>
+                </table>
+        </fieldset>
+
+<div class="form-group" style="margin: 20px 0 0px 0"></div>
+
+<form>
+  <fieldset>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col" style="width: 200px">Price period</th>
+          <th scope="col">Currently</th>
+          <th scope="col">Change to</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>10 Aug 2017 to<br> 20 Mar 2018</td>
+          <td>Level 2: Aeronautical Engineering</td>
+          <td>Level 3: Aeronautical Engineering</td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+</form>
+
+<div class="form-group" style="margin: 20px 0 20px 0">
+  <label class="form-label-bold" for="epa">Do you want to accept this change?</label>
+</div>
+
+  
+
+<div class="" style="margin: 20px 0 0 0"></div>
+
+        <form action="individual-figures">
+          <fieldset>
+                  <!--h2 class="heading-medium">Choose</h2-->
+                  <legend class="visuallyhidden">Choose provider to enter details</legend>
+                  <div class="form-group">
+                  <label class="block-label" for="radio1">
+                    <input id="radio1" type="radio" name="radio-group" value="employer">
+                    Yes, accept this change
+                  </label>
+                  <label class="block-label" for="radio2">
+                    <input id="radio2" type="radio" name="radio-group" value="provider">
+                    No, reject this change
+                  </label>
+                  </div>
+          </fieldset>
+        </form>
+        
+          </div>
+    <div class="column-two-thirds">
+       <form action="/{% include "includes/sprint-link.html" %}/contracts/new-contract/ULN-upload">
+          <div class="" style="display: table; margin: 30px 0 0 0;">
+            <div style="margin-top:20px; display:inline-block;display: table-cell; vertical-align: middle; "><input class="button" id="saveAndContinue" type="submit" value="Continue"></div>
+            <div style="display:inline-block; display: table-cell; vertical-align: middle;"><a href="/{% include "includes/sprint-link.html" %}/contracts/provider-in-progress/provider-list" id="saveAndAdd" style="margin-top:20px; margin-left:25px;  ">Cancel</a></div>
+          <div style="clear:both"></div>
+      </form>
+    </div>
+
+      <div class="column-one-third">
+         <!--div style="margin-top:20px;"><input class="button delete-button" id="deleteApprenticeship" value="Delete apprentice"></div-->
+      </div>
+</main>
+
+
+
+
+
+{% endblock %}
+

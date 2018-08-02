@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    {% include "includes/head.html" %}
+
+{% endblock %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .apprentice-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+  <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Change apprentice details</h1>
+
+        <p>BARNFIELD COLLEGE has requested the following change.</p>
+        
+        <fieldset>
+            <table class="table-19-font"> 
+                  <tbody>
+                    <tr>
+                      <td class="apprenticeRecordTitle" >Name</td>
+                      <td class="">Rob Edwards</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="apprenticeRecordTitle" style="width:217px">Apprenticeship training course</td>
+                      <td class="">Level 2: Aeronautical Engineering</td>
+                      <td></td>
+                    </tr>
+                   </tbody>
+                </table>
+        </fieldset>
+
+<!--div class="form-group" style="margin: 20px 0 0px 0">
+  <label class="form-label-bold" for="epa">Change 1</label>
+</div-->
+
+<div class="" style="margin: 20px 0 0 0"></div>
+
+<form>
+  <fieldset>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col" style="width: 200px"></th>
+          <th scope="col">Currently</th>
+          <th scope="col">Change to</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>From date</td>
+          <td>1 Jun 2017</td>
+          <td>1 Jun 2017</td>
+        </tr>
+        <tr>
+          <td>Apprenticeship training course</td>
+          <td>The Power Sector: Wind Turbine Installation and Commissioning, Level: 3</td>
+          <td>Health and Social Care: Adult Social Care, Level: 3</td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+</form>
+
+<div class="" style="margin: 10px 0 0 0"></div>
+
+<p>To update this apprentice's training details, you need to do the following:</p>
+
+<div class="" style="margin: 20px 0 0 0"></div>
+
+<ul class="list list-bullet">
+  <li>change the apprentice's status to 'stopped'</li>
+  <li>add the apprentice to a new cohort, using the updated details</li>
+</ul>
+
+
+<div class="panel panel-border-wide">
+  <p>
+    The apprentice's new training start date must be at least the day after the stop date of the current course.
+  </p>
+</div>
+
+<div class="" style="margin: 30px 0 0 0"></div>
+
+<p><a href="">Back to apprentice details</a></p>
+
+
+
+    </div>
+
+      <div class="column-one-third">
+         <!--div style="margin-top:20px;"><input class="button delete-button" id="deleteApprenticeship" value="Delete apprentice"></div-->
+      </div>
+</main>
+
+
+
+
+
+{% endblock %}
+

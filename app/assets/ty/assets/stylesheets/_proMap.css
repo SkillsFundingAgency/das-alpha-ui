@@ -1,0 +1,69 @@
+.global-header__wrapper,
+.phase-banner,
+#global-header-bar,
+#global-cookie-message p {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+}
+
+.phase-banner {
+    padding: 10px 30px;
+}
+
+#content,
+#content > div {
+    padding: 0;
+    margin: 0;
+}
+
+#content {
+    width: 100%;
+    max-width: 100%;
+}
+
+.map-container {
+    padding-left: 0;
+}
+
+.details {
+    width: 80%;
+    float: left;
+}
+
+.result {
+    position: relative;
+    overflow: auto;
+}
+
+#provider-results {
+    margin-top: 20px;
+}
+
+.shortlist {
+    width: 20%;
+    float: left;
+}
+
+ol li .shortlist:hover {
+    color: #2e8aca;
+    cursor: pointer;
+}
+
+ol li .shortlist i {
+    font-size: 2em;
+}
+
+ol li .shortlist span {
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+ol li .shortlist {
+    width: 20%;
+    float: left;
+    text-align: center;
+    color: #005ea5;
+}

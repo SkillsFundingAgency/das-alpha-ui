@@ -1,0 +1,169 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+<script>
+// if this is an employer journey, change some of the copy on the page.
+
+
+
+var whereNow = function() {
+  var status = JSON.parse(localStorage.getItem('commitments.isEmployer'));
+if (status == 'send-approve'){
+  window.location.href='../confirmation/confirmation-variations';
+}
+else {
+    window.location.href='../confirmation/confirmation-variations';
+}
+
+  }
+
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+
+          <div class="column-two-thirds">
+             <h1 class="heading-xlarge">Payment schedule</h1>
+
+                       <p>
+                  Based on the information you have entered here is a summary of the payment schedule. Remember, this will change if you alter apprenticeships in the future.
+                </p>
+            <!--h2 class="heading-medium">Account history</h2-->
+                  <table>
+                    <thead>
+                      <tr>
+                        <th scope="col">Payment overview</th>
+                        <th scope="col" class=""></th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Duration of payments</td>
+                        <td class="numeric">10 months</td>
+                      </tr>
+                      <tr>
+                        <td>Total to pay</td>
+                        <td class="numeric">£10,000.00</td>
+                      </tr>
+                    </tbody>
+                </table>
+                <div style="margin-top:35px">
+          
+                <table>
+                    <thead>
+                      <tr>
+                        <th scope="col">Due date</th>
+                        <th scope="col" class="numeric">Payment</th>
+                        <!--th scope="col" class="numeric">Details</th-->
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>20 July 2018</td>
+                        <td class="numeric">£888.96</td>
+                        <!--td class="numeric"><a href="/{% include "includes/sprint-link.html" %}/payment/individual-payment-plan">View</a></td-->
+                      </tr>
+                      <tr>
+                        <td>20 August 2018</td>
+                        <td class="numeric">£888.88</td>
+                        <!--td class="numeric"><a href="">View</a></td-->
+                      </tr>
+                      <tr>
+                        <td>20 September 2018</td>
+                        <td class="numeric">£888.88</td>
+                        <!--td class="numeric"><a href="">View</a></td-->
+                      </tr>
+                      <tr>
+                        <td>20 October 2018</td>
+                        <td class="numeric">£888.88</td>
+                        <!--td class="numeric"><a href="">View</a></td-->
+                      </tr>
+                       <tr>
+                        <td>20 November 2018</td>
+                        <td class="numeric">£888.88</td>
+                        <!--td class="numeric"><a href="">View</a></td-->
+                      </tr>
+                      <tr>
+                        <td>20 December 2018</td>
+                        <td class="numeric">£888.88</td>
+                        <!--td class="numeric"><a href="">View</a></td-->
+                      </tr>
+                      <tr>
+                        <td>20 January 2019</td>
+                        <td class="numeric">£888.88</td>
+                        <!--td class="numeric"><a href="">View</a></td-->
+                      </tr>
+                      <tr>
+                        <td>20 February 2019</td>
+                        <td class="numeric">£888.88</td>
+                        <!--td class="numeric"><a href="">View</a></td-->
+                      </tr>
+                       <tr>
+                        <td>20 March 2019</td>
+                        <td class="numeric">£888.88</td>
+                        <!--td class="numeric"><a href="">View</a></td-->
+                      </tr>
+                      <tr>
+                        <td>20 April 2019</td>
+                        <td class="numeric">£2,000.00</td>
+                        <!--td class="numeric"><a href="">View</a></td-->
+                      </tr>
+                    </tbody>
+                </table>
+               
+
+
+              <form action="/{% include "includes/sprint-link.html" %}/payment/how-to-pay">
+                  <div style="margin-top:20px;"><input class="button" type="button" id="saveAndContinue" onClick="whereNow()" value="Approve and send"></div>
+                </form>
+              </div>
+<div style="margin-top:35px">
+
+              </div>
+            <div style="margin-top:50px"></div>
+          </div>
+
+          <div class="column-one-third">
+
+        </div>
+</main>
+
+
+
+
+
+
+
+{% endblock %}
+

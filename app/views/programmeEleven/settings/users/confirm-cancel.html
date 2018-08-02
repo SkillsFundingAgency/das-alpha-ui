@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .people-nav a, .learners-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+              <h1 class="heading-xlarge" >Cancel invitation</h1>
+            <div>
+                <!--p>
+                  Are you sure you want to cancel the invitation to David Jenkins?
+                </p-->
+                <!--h2 class="heading-medium">
+                  What do you want to update?
+                </h2-->
+                
+
+                 <form action="/{% include "includes/sprint-link.html" %}/settings/users/">
+                    <legend class="visuallyhidden">Changes</legend>
+                    <label class="form-label-bold" for="full-name">Are you sure you want to cancel the invitation to David Jenkins?</label>
+                      <div class="form-group">
+                      <label class="block-label" for="radio-1">
+                        <input id="radio-1" type="radio" name="radio-group" value="pause-apprenticeship">
+                        No, don't cancel the invitation to David Jenkins
+                      </label>
+                      <label class="block-label" for="radio-2">
+                        <input id="radio-2" type="radio" name="radio-group" value="manual-payment">
+                       Yes, cancel the invitation to David Jenkins
+                      </label>
+
+                    </div>
+                    </fieldset>
+                  <div style="margin-top:20px;"><input class="button" id="paymentPlan" type="submit" value="Continue"></div>
+                  </form>
+
+            </div>
+            <div style="margin-top:35px"></div>
+            <div style="margin-top:50px"></div>
+          </div>
+
+          <div class="column-one-third">
+                       <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Provider management</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                        
+                          <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/paymentplan">Add a new payment plan (OUT?)</a>
+                          </li>
+                          <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/makepayment">Make a payment</a>
+                          </li>
+                           <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/reviewpayments">Review and amend regular payments</a>
+                          </li>
+                            <li>
+                            <a href="/{% include "includes/sprint-link.html" %}/payment/spendingcommitments">View a summary of your spending commitments</a>
+                          </li>
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+        </div>
+</main>
+
+ <!--button class="button">Do the thing</button-->
+
+
+{% endblock %}
+

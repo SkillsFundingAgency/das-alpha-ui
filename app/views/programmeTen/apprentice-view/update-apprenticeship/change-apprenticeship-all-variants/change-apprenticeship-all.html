@@ -1,0 +1,161 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    {% include "includes/head.html" %}
+
+{% endblock %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .apprentice-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+
+<script>
+
+var whereNow = function() {
+        window.location.href='apprentice-confirm';
+              };
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+<div class="breadcrumbs back-breadcrumb">
+  <ol role="breadcrumbs">
+    <a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice" class="link-back">Back to apprentice details</a>
+  </ol>
+</div>
+
+<div class="grid-row">
+<div class="column-two-thirds">
+            
+<h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Edit apprentice details</h1>
+
+<form id="myFormId">
+  <fieldset>
+    <legend class="visuallyhidden">Apprentice name</legend>
+      <div class="form-group" style="margin-bottom:15px">
+        <label class="form-label-bold" for="apprenticeGivenName">First name</label>
+          <input class="form-control" id="apprenticeGivenName" type="text" value="Rob">
+      </div>
+      <div class="form-group" style="margin-bottom:15px">
+        <label class="form-label-bold" for="apprenticeFamilyName">Last name</label>
+          <input class="form-control" id="apprenticeFamilyName" type="text" value="Edwards">
+      </div>
+  </fieldset>
+</form>
+
+<hr>
+
+<form>
+  <fieldset>
+    <span class="form-label-bold">Unique learner number</span>
+    <p>0123456789</p>
+  </fieldset>
+</form>
+
+<form>
+  <fieldset>
+    <legend>
+      <span class="form-label-bold">Date of birth</span>
+      <span class="form-hint" id="dob-hint">For example, 31 03 1980</span>
+    </legend>
+      <div class="form-date">
+        <div class="form-group form-group-day">
+          <label class="form-label" for="dob-day">Day</label>
+            <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint" value="28">
+        </div>
+        <div class="form-group form-group-month">
+          <label class="form-label" for="dob-month">Month</label>
+            <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12" value="02">
+        </div>
+        <div class="form-group form-group-year">
+          <label class="form-label" for="dob-year">Year</label>
+            <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016" value="1997">
+        </div>
+      </div>
+  </fieldset>
+</form>
+
+<div class="" style="margin: 73px 0 0 0"></div>
+
+<form>
+  <fieldset>
+    <label class="form-label-bold" for="search" >Apprenticeship training course
+      <br>
+      <span class="form-hint">Start typing in the name of the course or choose an option from the list</span>
+    </label>
+    <input class="form-control" id="search-for-training" type="text" style="width:100%">
+  </fieldset>
+</form>
+
+<hr style="margin: 40px 0 35px 0">
+
+<form>
+  <fieldset>
+    <span class="form-label-bold">Planned training start date</span>
+    <p>07 2017</p>
+  </fieldset>
+</form>
+
+<hr style="margin: 15px 0 35px 0">
+
+<form>
+  <fieldset>
+    <span class="form-label-bold">Planned training finish date</span>
+    <p>09 2019</p>
+  </fieldset>
+</form>
+
+
+
+<!--hr style="margin: 15px 0 35px 0"-->
+
+<form>
+  <fieldset>
+    <label class="form-label-bold" for="apprenticeCost">Total agreed training cost</label>
+      <span class="form-hint">For example, for £1,500 enter 1500</span>
+      <span class="rj-currency-symbol">£</span>
+        <input class="form-control rj-currency-input" id="apprenticeCost" type="text" value="6,555" style="max-width:6em">
+  </fieldset>
+</form>
+
+<hr>
+
+<form>
+  <fieldset>
+    <label class="form-label-bold" for="apprenticeCost">Reference (optional)
+      <span class="form-hint">Add a reference, such as employee number or location - this won’t be seen by the training provider.</span>
+    </label>
+      <input class="form-control rj-currency-input" id="employerRef" type="text" value="Banbury site" style="width:100%">
+  </fieldset>
+</form>
+
+
+
+<div class="" style="display: table; margin: 30px 0 0 0">
+  <div style="margin-top:20px; display:inline-block;display: table-cell; vertical-align: middle; "><input class="button" onClick="whereNow()" type="button" id="saveAndReturn" value="Update details"> </div>
+  <div style="display:inline-block; display: table-cell; vertical-align: middle;"><p class="looks-like-a-link-underline" id="saveAndAdd" style="margin-top:20px; margin-left:25px; cursor: pointer; cursor: hand; ">Cancel</p></div>
+<div style="clear:both"></div>
+</div>
+
+</div>
+</div>
+               
+
+          
+</main>
+{% endblock %}
+
+
+
+

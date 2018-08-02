@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+#navigation-primary, #kill-me {
+  display:none ;
+}
+
+</style>
+
+
+<script>
+$( document ).ready(function() {
+
+
+});
+
+</script>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+
+  </div>
+      <div class="grid-row">
+           <div class="column-two-thirds">
+
+   <h1 class="heading-xlarge" ><!--span class="heading-secondary" style="padding-top:0px">Question 2 of 4</span-->Get set up as a user</h1>
+    
+ </div></div>
+
+ 
+      <!--h2 class="heading-medium" style="margin-top:10px">Organisation information</h2-->
+          <form action="verify-your-email">
+            <fieldset>
+              <legend class="visuallyhidden">users details</legend>
+
+            <div class="form-group">
+                    <label class="form-label-bold" for="full-name">Email address</label>
+                   <!-- <span class="form-hint">Enter the email address you use at work</span> -->
+                    <input class="form-control " id="emailAddress" type="email" >
+              </div>
+            </fieldset>
+             <fieldset>
+              <legend class="visuallyhidden">password</legend>
+
+              <div class="form-group">
+                    <label class="form-label-bold" for="full-name">Create password</label>
+                <span class="form-hint"><p>Your password must:</p>
+
+                  <ul><li>be between 8 and 16 characters</li>
+                    <li>include at least one uppercase letter and one lowercase letter</li>
+                    <li>include at least one number</li></ul>
+</span>
+                    <input class="form-control" id="password" type="password" >
+              </div>
+              <div class="form-group">
+                    <label class="form-label-bold" for="full-name">Re-type password</label>
+                    <input class="form-control" id="confirm-password" type="password" >
+              </div>
+            </fieldset>
+            <p>By continuing you accept the <a href="https://ppidentity.apprenticeships.sfa.bis.gov.uk/views/sfa-das/terms-of-use.html">terms of use</a>.</p>
+
+                  <input class="button" id="saveAndContinue" type="submit" value="Set me up">
+          </form>
+
+
+</main>
+
+<script>
+
+//change page depending on which option you choose
+// var createButton = document.getElementById('saveAndContinue');
+ // EventUtil.addHandler(createButton, 'click', function(){
+
+ // var whichRadio = $('input:radio[name=radio-group]:checked').val();
+
+ // if (whichRadio == 'no-not-registered'){
+ //   window.location.href='new-password';
+ // } else {
+ //  window.location.href='enter-existing-password';
+ // }
+ //    });
+
+
+</script>
+
+{% endblock %}

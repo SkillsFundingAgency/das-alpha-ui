@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .financial-nav a, .nav-payments a{
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-finance.html" %}
+
+
+<div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/finance">Funding</a></li>
+      <li id="removeWithNav">Saved training</li>
+    </ol>
+</div>
+
+
+
+<div class="grid-row">
+                    <div class="column-two-thirds">
+             <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Training</h1>
+             <p> </p>
+        <div>
+          </div>
+                <table id="transactions">
+                    <thead>
+                      <tr>
+                        <th scope="col" style="width:250px">Apprenticeship</th>
+                        <th scope="col" >Quantity</th>
+                        <th scope="col" style="text-align:right">Maximum cost</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                      <tr>
+                        <td>Mechatronics engineer: Level 4</td>
+                        <td class="" style="text-align:center">2</td>
+                        <td class="numeric">£5,000</td>
+                        <td class=""><a href="/{% include "includes/sprint-link.html" %}/nld-claim/new/pageThree">View</a></td>
+                      </tr>
+                      <tr>
+                        <td>Accounting: Level 2</td>
+                          <td class="" style="text-align:center">4</td>
+                        <td class="numeric">£7,000</td>
+                       <td class=""><a href="/{% include "includes/sprint-link.html" %}/nld-claim/new/pageThree">View</a></td>
+                      </tr>
+                    </tbody>
+                </table>
+      </div>
+</main>
+
+{% endblock %}
+

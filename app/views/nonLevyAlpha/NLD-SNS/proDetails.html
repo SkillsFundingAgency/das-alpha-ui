@@ -1,0 +1,620 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<script>
+$(".shortlist").click(function (e) {
+    e.preventDefault();
+
+    console.log("shortlist button clicked: " + proCount);
+    //proCount++;
+
+    if ($("i", this).hasClass("fa-star-o")) {
+        console.log("isnt shortlisted");
+        proCount++;
+        console.log(proCount);
+        Cookies.set("proCount", proCount);
+        $("i", this).removeClass("fa-star-o").addClass("fa-star");
+        $("span", this).text("Remove this training provider");
+        $("#bannerSignedIn span").text(Number(proCount) + Number(appCount));
+
+    } else {
+        console.log("is shortlisted");
+        $("i", this).removeClass("fa-star").addClass("fa-star-o");
+        $("span", this).text("Shortlist this training provider");
+        proCount--;
+        Cookies.set("proCount", proCount);
+        console.log(proCount);
+        $("#bannerSignedIn span").text(Number(proCount) + Number(appCount));
+    }
+
+    //.toggleClass(".fa-star-o").toggleClass(".fa-star");
+
+})
+
+</script>
+
+    <!--[if gt IE 8]><!-->
+    <link href="/public/ty/assets/stylesheets/main.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/elements-page.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/font-awesome.min.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/_app.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/_proDetails.css" rel="stylesheet" />
+    <!--<![endif]-->
+
+
+    <script src="/public/ty/assets/javascripts/govuk-template.js" type="javascript/text"></script>
+
+
+
+    <style>
+        aside dl dt {
+            font-weight: 900;
+            float: left;
+            padding-right: 5px;
+            width: auto;
+        }
+
+        .survey-panel {
+            background: #DEE0E2;
+            padding: 20px;
+            margin-bottom: 20px;
+            float: left;
+            width: 100%;
+        }
+
+        .phase-tag {
+            line-height: 1.1428571429;
+            font-weight: 700;
+            text-transform: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: #fff;
+            background-color: f47738;
+            font-weight: 900;
+            /* background: orange; */
+            padding: 5px;
+            /* clear: right; */
+            position: relative;
+            float: left;
+            margin-top: 4px;
+            margin-right: 5px
+        }
+
+        .survey-panel-2 {
+            background: #28A197;
+            padding: 20px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .survey-panel-2 a {
+            color: white;
+        }
+
+        .survey-panel-3 {
+            border: 1px solid #DEE0E2;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .survey-panel-2 p,
+        .survey-panel-3 p {
+            margin: 0
+        }
+
+        .disclaimer {
+            border: 1px solid #d4d4d4;
+            padding: 0 10px;
+            float: left;
+        }
+
+        .disclaimerb {
+            border: 1px solid #d4d4d4;
+            padding: 0 10px;
+            float: left;
+        }
+
+        .disclaimer p,
+        .discalaimerb p {
+            font-size: 0.85em;
+        }
+    </style>
+
+
+
+
+    <main id="content" role="main">
+
+
+    <div class="breadcrumbs back-breadcrumb">
+            <div class="column-two-thirds">
+                <ol role="breadcrumbs">
+                    <a class="link-back" href="proResults">Back</a>
+                </ol>
+            </div>
+            <div class="column-third">
+                <div class="account-info" id="bannerSignedIn">
+                    <a href="dashboard" title="Shortlist"><i class="fa fa-list-alt"></i>Shortlisted training and providers(<span>0</span>)</a>
+                </div>
+             </div>
+    </div>
+
+
+
+        <section id="v1">
+
+            <div class="grid-row">
+                <div class="column-two-thirds">
+
+                    <div class="">
+                        <h1 class="heading-xlarge">
+                            HERTFORD REGIONAL COLLEGE </h1>
+                        <p class="proMarketing">Whether you are looking to Hertford Regional College as a step forward towards a successful career, retraining, progression to university or to pursue an area of interest, HRC has something for you. We offer a wide range of full and part-time courses, Apprenticeships and professional and leisure courses.</p>
+
+                    </div>
+
+
+                    <!-- <h2 class="heading-medium">Head office details</h2>-->
+
+
+                    <h2 class="heading-medium" style="margin-bottom:0;">
+        <span class="appName">Business and Professional Administration</span> 
+    </h2>
+                    <dl style="margin-bottom: 20px;">
+                        <dd style="display: inline; font-weight: bold; width: auto;">Level:</dd>
+                        <dt style="display:inline;">4 (equivalent to certificate of higher education)</dt>
+                    </dl>
+
+                    <section class="appDetails">
+
+                        <div class="grid-row attachment-full-width">
+                            <div class="column-third">
+                                <h2 class="heading-small">Website</h2></div>
+                            <div class="column-two-thirds">
+                                <ul class="list">
+                                    <li>
+                                        <a class="website" href="http://www.hrc.ac.uk/new-students/apprenticeships/#" target="_blank" rel="external">training provider website</a> </li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                        <div class="grid-row attachment-full-width">
+                            <div class="column-third">
+                                <h2 class="heading-small">Phone</h2></div>
+                            <div class="column-two-thirds">
+                                <div class="phone">01992 411 400</div>
+                            </div>
+                        </div>
+
+                        <div class="grid-row attachment-full-width">
+                            <div class="column-third">
+                                <h2 class="heading-small">Email</h2></div>
+                            <div class="column-two-thirds">
+                                <a class="email" href="mailto:info@hrc.ac.uk">info@hrc.ac.uk</a>
+                            </div>
+                        </div>
+
+                        <div class="grid-row attachment-full-width">
+                            <div class="column-third">
+                                <h2 class="heading-small">Contact page</h2></div>
+                            <div class="column-two-thirds">
+                                <a class="website" href="http://www.hrc.ac.uk/contact/contact-us/" target="_blank" rel="external">contact this training provider</a>
+                            </div>
+                        </div>
+
+
+
+                        <div class="grid-row attachment-full-width">
+                            <div class="column-third">
+                                <h2 class="heading-small">Training options</h2>
+
+
+                            </div>
+
+
+                            <div class="column-two-thirds">
+                                <!--<li>day release - on provider's site</li>-->
+                                <ul class="list list-bullet" style="margin-bottom: 0px;">
+                                    <li>day release</li>
+                                    <li>block release</li>
+                                    <li>employer on-site training</li>
+                                </ul>
+
+                                <!--<li>block release</li>-->
+                                <!--<li>100% at employer's site</li>-->
+                                <!--<li>at your location</li>-->
+                                <!--<li>completely at employer's location</li>-->
+                                <details>
+
+                                    <summary><span class="summary">Explain training options</span></summary>
+
+                                    <div class="panel panel-border-narrow">
+
+                                        <p>
+                                            <span class="bold-small">Day release:</span> eg one day a week at the training provider's location.
+                                        </p>
+                                        <p>
+                                            <span class="bold-small">Block release:</span> eg 3 to 4 weeks at the training provider's location.
+                                        </p>
+                                        <div>
+                                            <span class="bold-small">At your location:</span> the training provider comes to your workplace.
+                                        </div>
+
+
+
+
+
+                                    </div>
+
+                                </details>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="grid-row attachment-full-width">
+                            <div class="column-third">
+                                <h2 class="heading-small">Training location</h2></div>
+                            <div class="column-two-thirds">
+
+                                <address style="text-transform:lowercase">Rhodes Art Complex Rhodes Museum &amp; Commonwealth Centre South Road CM23 3JG
+</address>
+                            </div>
+                        </div>
+
+
+                        <div class="grid-row attachment-full-width hidden">
+                            <div class="column-third">
+                                <h2 class="heading-small">Distance</h2></div>
+                            <div class="column-two-thirds">
+
+                                <span class="distance">{x.x}</span><span class="milesFrom"> miles from</span> <span class="yourLocation"></span>
+                            </div>
+                        </div>
+
+                        <section class="proCourse">
+
+                            <h4 class="heading-medium">Apprenticeship training information</h4>
+
+                            <div class="proCourseInfo">
+                                <h3 class="heading-small">Apprenticeship Framework</h3>
+                                <p>You achieve apprenticeship status by successfully completing the full framework. This is made up of components, all of which you must pass to achieve the qualification.</p>
+                                <h3 class="heading-small">How does it all work?</h3>
+                                <p>You find an employer yourself or with the assistance of experienced HRC staff. We select the best apprenticeship for you and your employer.</p>
+                                <h3 class="heading-small">How are you assessed?</h3>
+                                <p>An assessor will regularly visit you in the workplace and assess your progress. Your employer is fully involved in this process.</p>
+                            </div>
+                        </section>
+                    </section>
+
+                    <!--<p class="disclaimer"><em>Content by GORDON FRANKS TRAINING LIMITED</em></p>
+                    <p class="disclaimer"><em>Content updated by GORDON FRANKS TRAINING LIMITED</em></p>
+                    <p class="disclaimer"><em>Content maintained by the training provider</em></p>
+                    -->
+                    <p class="disclaimer2"><em>Content maintained by HERTFORD REGIONAL COLLEGE
+
+.</em></p>
+                    <!--div class="container related-container ctaContainer panel panel-width-thin">
+                        <ul class="list list-link" style="text-align: center;">
+                            <li style="width: 100%; float: left;"><a href="assSearch.html" class="findAssessment button" style="float: left; margin:0 0 20px">Find an assessment organisations</a></li>
+                            <li class="shortlist app"><a href="#" class=""><span>Shortlist this training provider</span></a></li>
+                        </ul>
+                    </div-->
+
+                    <aside class="disclaimer" style=" margin-top:35px">
+                        <h4 class="heading-small">Content disclaimer</h4>
+                        <p>Skills Funding Agency cannot guarantee the accuracy of course information on this site and makes no representations about the quality of any courses which appear on the site. Skills Funding Agency is not liable for any losses suffered as a result of any party relying on the course information provided.
+
+                        </p>
+                    </aside>
+
+                </div>
+                <div class="column-third hide-mob">
+                    <div class="container related-container ctaContainer">
+                        <ul class="list list-link" style="text-align: center;">
+                            <!--li><a href="assSearch" class="findAssessment button" style="margin:0 0 20px">Find an assessment organisations</a></li-->
+                            <li class="shortlist app"><a href="#" class=""><i class="fa fa-star-o"></i><span>Shortlist this training provider</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="column-third">
+                    <aside class="related-container related">
+                        <h2 class="heading-medium">Training provider quality assessment</h2>
+                        <div class="score-container" id="employerRating">
+                            <dl>
+                                <dt>Employer satisfaction:</dt>
+                                <dd>78%</dd>
+                            </dl>
+                            <div></div>
+                        </div>
+                        <div class="score-container" id="employeeRating" style="padding-top:20px;">
+                            <dl>
+                                <dt>Learner satisfaction:</dt>
+                                <dd>85%</dd>
+                            </dl>
+                            <div></div>
+                        </div>
+
+                        <div class="score-container" id="passRating" style="padding-top:20px;">
+                            <dl>
+                                <dt>Achievement rate:</dt>
+                                <dd>66% <span class="font-xsmall">National average: 75%</span></dd>
+
+                            </dl>
+                            <div></div>
+                            <p class="font-xsmall"><span>Source:</span> <a href="http://www.lunchlabs.co.uk/test2" target="_blank" rel="external">{some source webite}</a>
+                                <br>Cohort size: (5-19)</p>
+
+                        </div>
+                        <br>
+                        <br>
+                        <div class="score-container hidden">
+                            <dl>
+                                <dt>Ofsted Report</dt>
+                                <dd>Outstanding</dd>
+                            </dl>
+                        </div>
+                        <div class="score-container hidden" id="passRating">
+                            <dl>
+                                <dt>Pass rate</dt>
+                                <dd>87%</dd>
+                            </dl>
+                            <div></div>
+                        </div>
+                        <br>
+                        <!--<em>Data from <a href="#" rel="external">FE Choices</a></em>-->
+                    </aside>
+                </div>
+            </div>
+        </section>
+        <section id="v2" class="hidden">
+
+            <h1 class="heading-xlarge">
+{providerName}
+        </h1>
+
+            <!-- <h2 class="heading-medium">Head office details</h2>-->
+
+            <h2 class="heading-large">
+        <span class="appName">{standardName/frameworkName}</span> level <span class="appLevel">{level}</span> <span class="frmPathway hidden">{pathway}</span>
+    </h2>
+
+            <section class="appDetails">
+
+
+
+
+                <div class="grid-row attachment-full-width">
+                    <div class="column-third">
+                        <h2 class="heading-small">Training details</h2></div>
+                    <div class="column-two-thirds">
+                        <a class="website" href="#" rel="external" target="_blank">www.{providerURL}.{tld}/{apprenticeshipURL}</a>
+                    </div>
+                </div>
+
+                <div class="grid-row attachment-full-width">
+                    <div class="column-third">
+                        <h2 class="heading-small">Phone</h2></div>
+                    <div class="column-two-thirds">
+                        <div class="phone">{apprenticeshipPhone}</div>
+                    </div>
+                </div>
+
+                <div class="grid-row attachment-full-width">
+                    <div class="column-third">
+                        <h2 class="heading-small">Email</h2></div>
+                    <div class="column-two-thirds">
+                        <a class="email" href="#">{apprenticeshipEmail}</a>
+                    </div>
+                </div>
+
+
+
+                <div class="grid-row attachment-full-width">
+                    <div class="column-third">
+                        <h2 class="heading-small">Training options</h2></div>
+                    <div class="column-two-thirds">
+                        <ul class="list list-bullet">
+                            <li>day release</li>
+                            <li>block release</li>
+                            <li>employer on-site training</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="grid-row attachment-full-width">
+                    <div class="column-third">
+                        <h2 class="heading-small">Training location</h2></div>
+                    <div class="column-two-thirds">
+
+                        <address>{apprenticeshipLocationLocation}</address>
+                    </div>
+                </div>
+
+                <div class="grid-row attachment-full-width">
+                    <div class="column-third">
+                        <h2 class="heading-small">Distance</h2></div>
+                    <div class="column-two-thirds">
+
+                        <span class="distance">{x.x}</span><span class="milesFrom"> miles from</span> <span class="yourLocation"></span>
+                    </div>
+                </div>
+
+                <hr />
+
+
+                <h2 class="heading-medium">Provider quality assessment</h4>
+
+                    <ul id="qaCharts2" style="width: 50%;">
+                    <li id="passRate1">
+                        <h4 class="heading-small">Learner satisfaction</h4>
+                        <div></div>
+                        <span class="bold-xsmall ">{xx}%</span>
+                    </li><br><br>
+                    <li id="employerSatisfaction1">
+                        <h4 class="heading-small">Employer satisfaction</h4>
+                        <div></div>
+                        <span class="bold-xsmall">{xx}%</span>
+                    </li>
+
+</main>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="/public/ty/assets/javascripts/marked.min.js"></script>
+    <script src="/public/ty/assets/javascripts/js.cookie.js"></script>
+    <script src="/public/ty/assets/javascripts/_app.js"></script>
+    <script id="data" xmldata="/public/ty/assets/data/proSource.xml" src="/public/ty/assets/javascripts/_proDetails.js"></script>
+
+    <script>
+        function noStandard() {
+            alert("This link isn't available in this demonstration");
+        }
+
+
+        var employeeRating = c3.generate({
+            bindto: '#employeeRating > div',
+            axis: {
+                rotated: true,
+                x: {
+                    show: false
+                },
+                y: {
+                    show: false
+                }
+            },
+            legend: {
+                show: false
+            },
+            tooltip: {
+                show: false
+            },
+            size: {
+                height: 30
+            },
+            padding: {
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0
+            },
+            data: {
+                columns: [
+            ['data1', 100 - 88],
+            ['data2', 88]
+        ],
+                type: 'bar',
+                groups: [
+            ['data1', 'data2']
+        ],
+                order: 'asc',
+                colors: {
+                    data1: '#DEE0E2',
+                    data2: '#2B8CC4'
+
+                }
+            }
+        });
+
+        var employerRating = c3.generate({
+            bindto: '#employerRating > div',
+            axis: {
+                rotated: true,
+                x: {
+                    show: false
+                },
+                y: {
+                    show: false
+                }
+            },
+            legend: {
+                show: false
+            },
+            tooltip: {
+                show: false
+            },
+            size: {
+                height: 30
+            },
+            padding: {
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0
+            },
+            data: {
+                columns: [
+            ['data1', 100 - 78],
+            ['data2', 78]
+        ],
+                type: 'bar',
+                groups: [
+            ['data1', 'data2']
+        ],
+                order: 'asc',
+                colors: {
+                    data1: '#DEE0E2',
+                    data2: '#2B8CC4'
+
+                }
+            }
+        });
+
+        var passRating = c3.generate({
+            bindto: '#passRating > div',
+            axis: {
+                rotated: true,
+                x: {
+                    show: false
+                },
+                y: {
+                    show: false
+                }
+            },
+            legend: {
+                show: false
+            },
+            tooltip: {
+                show: false
+            },
+            size: {
+                height: 30
+            },
+            padding: {
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0
+            },
+            data: {
+                columns: [
+            ['data1', 66],
+            ['data2', 34]
+        ],
+                type: 'bar',
+                groups: [
+            ['data1', 'data2']
+        ],
+                order: 'asc',
+                colors: {
+                    data1: '#2B8CC4',
+                    data2: '#DEE0E2'
+
+                }
+            }
+        });
+    </script>
+
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+#navigation-primary {
+  display:none ;
+}
+</style>
+
+<script>
+// not needed at the moment, remember to remove script from the header if you don't use this in the end.
+// jQuery( document ).ready(function() { jQuery.validate(); });
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_alpha.html" %}
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+     {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge" >Account Activated</h1>
+
+      <p>
+        Your account is now activated and ready to use.
+      </p>
+
+      <div class="padder-top-x">
+        <a href="../balance" class="button button-start">Start</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

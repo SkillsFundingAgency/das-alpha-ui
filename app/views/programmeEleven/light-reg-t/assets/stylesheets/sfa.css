@@ -1,0 +1,494 @@
+/**Global**/
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.ml {
+    margin-left: .5em;
+}
+
+.mt {
+    margin-top: 1.875em;
+}
+
+.tc {
+    text-align: center;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.grey {color:#6f777b;}
+
+@media (max-width: 640px) {
+    .fl {
+        float: left;
+        width: 100%;
+    }
+
+    .fr {
+        float: right;
+        width: 100%;
+    }
+
+    .ml {
+        margin-left: 0;
+    }
+}
+
+
+/**Yellow border highlight**/
+.govuk-box-border-yellow {
+    margin: 1em 0;
+    padding: .2em 1em 2.2em;
+    border: 4px solid #ffbf47;
+}
+
+.account-info {
+    padding-left: 0;
+    text-align: right;
+    font-size: 14px;
+    line-height: 1.1428571429;
+    padding: 1em 0;
+    border-bottom: 1px solid #bfc1c3;
+}
+
+@media (min-width: 641px) {
+    .account-info {
+        font-size: 16px;
+        line-height: 1.25;
+    }
+}
+
+.account-info .your-name, #signin-link {
+    padding: 0 .5em;
+}
+
+.no-border td {
+    border: 0;
+}
+
+.locked {opacity: 0.5;}
+
+/**dialog modal**/
+dialog-box {
+    overflow: visible;
+}
+
+dialog {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: -webkit-fit-content;
+    height: fit-content;
+    margin: auto;
+    border: solid;
+    padding: 1em;
+    background: #fff;
+    color: #000;
+    display: none;
+}
+
+dialog[open] {
+    display: block;
+}
+
+dialog + .backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.1);
+}
+
+/* for small devices, modal dialogs go full-screen */
+@media screen and (max-width: 540px) {
+    dialog[_polyfill_modal] {
+    /* TODO: implement */
+        top: 0;
+        width: auto;
+        margin: 1em;
+    }
+}
+
+._dialog_overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+dialog {
+    display: block;
+    position: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+dialog h2 {
+    font-family: "nta",Arial,sans-serif;
+    font-size: 24px;
+    line-height: 1.0416666667;
+    font-weight: 700;
+    text-transform: none;
+}
+
+dialog span {
+    line-height: 2em;
+}
+
+@media (min-width: 641px) {
+    dialog h1 {
+        font-size: 36px;
+        line-height: 1.1111111111;
+    }
+}
+
+dialog[open] {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 15px;
+    width: 90%;
+    border: 5px solid #000;
+}
+
+@media (min-width: 641px) {
+    dialog[open] {
+        padding: 30px;
+        margin: 30px auto;
+        max-width: 500px;
+    }
+}
+
+dialog[open] + .backdrop {
+    background: rgba(0,0,0,0.8);
+}
+
+dialog[open]::backdrop {
+    background: rgba(0,0,0,0.8);
+}
+
+.dialog-button {
+    display: none;
+    margin-right: .5em;
+}
+
+.js-enabled .dialog-button {
+    display: block;
+    float: left;
+}
+
+.js-enabled dialog {
+    display: none;
+}
+
+.js-enabled dialog[open] {
+    display: block;
+    position: absolute;
+}
+
+.dialog-is-open {
+    overflow: hidden;
+}
+
+/**mobile table**/
+@media only screen and (max-width: 960px) {
+    /* Force table to not be like tables anymore */
+    #advisor table,#advisor thead,#advisor tbody,#advisor th,#advisor td,#advisor tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    #advisor thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    #advisor tr {
+        border-left: 1px solid #BFC1C3;
+        margin-top: 1em;
+        border-right: 1px solid #BFC1C3;
+        border-top: 1px solid #BFC1C3;
+    }
+
+    #advisor td {
+    /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #BFC1C3;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    #advisor td:before {
+    /* Now like a table header */
+        position: absolute;
+    /* Top/left values mimic padding */
+        top: .8em;
+        left: .6em;
+        width: 45%;
+        padding-right: 1em;
+        white-space: nowrap;
+    }
+
+    /*
+        	Label the data
+        	*/
+    #advisor td:nth-of-type(1):before {
+        content: "Task";
+    }
+
+    #advisor td:nth-of-type(2):before {
+        content: "Due date";
+    }
+
+    #advisor td:nth-of-type(3):before {
+        content: "Responsibilty";
+    }
+
+    #advisor td:nth-of-type(4):before {
+        content: "Status";
+    }
+}
+@media only screen and (min-width: 961px) {
+#advisor td:nth-of-type(1) {
+    width: 35%;
+}
+}
+/*change-answers*/
+table.check-your-answers tr td:first-child {
+    width: 30%;
+}
+
+/*My account jump links*/
+.jump-links ol {
+    margin-bottom: 0;
+    
+}
+
+.jump-links {
+    border-bottom: 1px solid #bbb;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    
+    
+}
+
+/*search button*/
+button.search {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    z-index: 4;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border: none;
+    overflow: hidden;
+    text-indent: -5000px;
+    color: #fff;
+    background-color: #2b8cc4;
+    background-image: url(./images/search-button.png);
+    background-repeat: no-repeat;
+    background-position: -12.5% 50%;
+}
+
+#course-search {
+    float: left;
+    width: 76%;
+    width: -webkit-calc(100% - 62px);
+    width: calc(100% - 62px);
+    height: 38px;
+}
+
+/*Report a page*/
+.report-a-problem {
+    color: #6f777b;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media (min-width: 641px) {
+    .report-a-problem {
+        margin-top: 3em;
+        margin-bottom: .5em;
+    }
+}
+
+.report-a-problem a {
+    cursor: pointer;
+}
+ /*Pagination*/
+
+.pagination {
+    display: block;
+    margin: 4em 0 0;
+    border-bottom: 1px solid #bfc1c3;
+}
+
+@media (max-width: 640px) {
+    .pagination {
+        margin: 2em 0;
+    }
+}
+
+.pagination ul {
+    margin: 0;
+    padding: 0;
+}
+
+.pagination li {
+    font-size: 14px;
+    line-height: 1.14286;
+    font-weight: 400;
+    text-transform: none;
+    font-size-adjust: .5;
+    float: left;
+    list-style: none;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    width: 49%;
+}
+
+@media (min-width: 641px) {
+    .pagination li {
+        font-size: 16px;
+        line-height: 1.25;
+    }
+}
+
+.pagination li a {
+    background-color: transparent;
+    display: block;
+    color: #005ea5;
+    text-decoration: none;
+}
+
+.pagination li a:hover,.pagination li a:active {
+    background-color: #f8f8f8;
+}
+
+.pagination li a .pagination-label {
+    font-size: 20px;
+    line-height: 1.11111;
+    font-weight: 400;
+    text-transform: none;
+    font-size-adjust: .5;
+    margin-bottom: .1em;
+    display: block;
+}
+
+@media (min-width: 641px) {
+    .pagination li a .pagination-label {
+        font-size: 27px;
+        line-height: 1.25;
+    }
+}
+
+.pagination li a .pagination-part-title {
+    text-decoration: underline;
+}
+
+.pagination li.next {
+    float: right;
+    text-align: right;
+}
+
+.pagination li.next a:before {
+    background: transparent url(./images/arrow-sprite.png) no-repeat -102px -11px;
+    margin: -4px -32px 0 0;
+    display: block;
+    float: right;
+    width: 30px;
+    height: 38px;
+    content: " ";
+}
+
+.pagination li.previous a:before {
+    background: transparent url(./images/arrow-sprite.png) no-repeat -20px -11px;
+    margin: -4px 0 0 -32px;
+    display: block;
+    float: left;
+    width: 30px;
+    height: 38px;
+    content: " ";
+}
+
+.pagination li.previous {
+    float: left;
+    text-align: left;
+}
+
+.pagination li.previous a {
+    padding: .75em 0 .75em 3em;
+}
+
+.pagination li.next a {
+    padding: .75em 3em .75em 0;
+}
+
+@media (max-width: 640px) {
+    .pagination li.previous,.pagination li.next {
+        float: none;
+        width: 100%;
+    }
+
+    .pagination li.next a {
+        text-align: right;
+    }
+}
+
+.pagination .first,.pagination .last {
+    min-height: 4.5em;
+}
+
+.pagination .first span,.pagination .last span {
+    display: block;
+    min-height: 4.5em;
+    padding: .75em 5%;
+    width: 90%;
+}
+
+.pagination .first .pagination-label,.pagination .last .pagination-label {
+    display: block;
+    margin-bottom: .5em;
+}
+
+.tag-filter {background:#BFC1C3; padding:1% 2%; font-weight:700;}
+.tags li {margin-bottom:5%;}
+
+/**Over writing standard gov header**/
+
+#global-header #logo {
+    background: url(./images/sfa_logotype_crest.png) no-repeat;
+    background-size: 35px 31px;
+    background-position: 0 0;
+    height:100%;
+}
+
+.sfa_logo {
+    float: left;
+    width: 100%;
+    max-width:180px;
+    font-size: 27px;
+    line-height: 30px;
+    font-family: Helvetica, Arial;
+    font-weight: 400;
+}

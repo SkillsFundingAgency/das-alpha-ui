@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+  .financial-nav a, .nav-forecast a{
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-finance.html" %}
+
+
+
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+  <h1 class="heading-xlarge" >Legal</h1>
+  <p>There are <span style="font-weight:700">5</span> categories of legal apprenticeship. </p>
+<div>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+    <div class="browseListingAlpha">
+        <h3 class="heading-medium" style="margin-bottom:0">Solicitor</h3>
+        <p>Solicitors are a member of the legal profession qualified to deal with conveyancing, the drawing up of wills, and other legal matters. A solicitor may also instruct barristers and represent clients in some courts. </p>
+            <div class="browseListingItems">
+                <a href="https://findapprenticeshiptraining.sfa.bis.gov.uk/Apprenticeship/Standard/43?keywords=LAW" class="browseListing">Solicitor</a>
+            </div>
+    </div>
+        <div class="browseListingAlpha">
+        <h3 class="heading-medium" style="margin-bottom:0">Paralegal</h3>
+        <p>A paralegal is an individual, qualified by education, training or work experience, who is employed or retained by a lawyer, law office, corporation, governmental agency, or other entity and who performs specifically delegated substantive legal work for which a lawyer is responsible. </p>
+
+              <div class="browseListingItems">
+                <a href="#" class="browseListing">Paralegal</a>
+            </div>
+            <div class="browseListingItems">
+                <a href="#" class="browseListing">Chartered legal executive</a>
+            </div>
+             <div class="browseListingItems">
+                <a href="#" class="browseListing">Legal Services: Paralegal Practice</a>
+            </div>
+                        <div class="browseListingItems">
+                <a href="#" class="browseListing">Legal Services: Civil Litigation</a>
+            </div>
+                                    <div class="browseListingItems">
+                <a href="#" class="browseListing">Legal Services: Employment Practice</a>
+            </div>
+                                                <div class="browseListingItems">
+                <a href="#" class="browseListing">Legal Services: Family Practice</a>
+            </div>
+                                                            <div class="browseListingItems">
+                <a href="#" class="browseListing">Legal Services: Property</a>
+            </div>
+    </div>
+
+<div style="margin-top:50px"></div>
+            </div>
+      <div class="column-one-third">
+                <h2 class="heading-medium" style="margin-top:0">Popular apprenticeships:</h2>
+
+            <div class="rj-nudge-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-medium" style="margin: 22px 10px 5px 20px"><A HREF="#">Solicitor</A></h2>
+                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action><span style="font-weight:700">Level 7:</span> (equivalent to master’s degree) </p>
+                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action>Progressing legal matters and transactions, applying legal knowledge and commercial judgement to produce solutions which meet clients' needs.</p>
+
+                </div>
+            </div>
+
+              <div class="rj-nudge-wrapper">
+                <div class="rj-alert-copy">
+                  <h2 class="heading-medium" style="margin: 22px 10px 5px 20px"><A HREF="https://findapprenticeshiptraining.sfa.bis.gov.uk/Apprenticeship/Standard/40?keywords=lawyer">Licensed conveyancer</A></h2>
+                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action><span style="font-weight:700">Level 6:</span> (equivalent to bachelor's degree)</p>
+                  <p  style="width:85%; margin: 5px 10px 5px 20px" to-do-action>Responsible for legal matters relating to the transfer of ownership of land or property, managing client portfolios and providing conveyancing legal services.</p>
+
+                </div>
+            </div>
+    </div>
+</div>
+</main>
+
+
+{% endblock %}
+
+
+

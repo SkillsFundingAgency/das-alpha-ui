@@ -1,0 +1,242 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    {% include "includes/head.html" %}
+
+{% endblock %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .apprentice-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+
+<script>
+
+/* to set the saved variable on save and return (so it changed the next screen to show an apprenticeship that's been added) */
+/*var btn = document.getElementById('saveApprenticeship');
+EventUtil.addHandler(btn, 'click', function(){
+          var isAddedApp = 'yes';
+         localStorage.setItem("apprenticeship-added", JSON.stringify(isAddedApp));
+          window.location.href='../new-contract/cohorts';
+ });*/
+
+
+var whereNow = function() {
+        window.location.href='apprentice-confirm';
+              };
+</script>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+          <a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice" class="link-back">Back to apprentice details</a>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+           <div class="column-two-thirds">
+            <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Edit apprentice details</h1>
+
+          <form id="myFormId">
+        <fieldset>
+          <legend class="visuallyhidden">Apprentice name</legend>
+                <div class="form-group" style="margin-bottom:15px">
+                    <label class="form-label-bold" for="apprenticeGivenName">First name
+                    </label>
+                  <input class="form-control" id="apprenticeGivenName" type="text" value="Rob">
+                </div>
+                <div class="form-group" style="margin-bottom:15px">
+                    <label class="form-label-bold" for="apprenticeFamilyName">Last name
+                    </label>
+                  <input class="form-control" id="apprenticeFamilyName" type="text" value="Edwards">
+                </div>
+        </fieldset>
+         <fieldset>
+      <hr style=""/>
+            <legend class="visuallyhidden">ULN</legend>
+            <div class="form-group">
+            <label class="form-label-bold" for="ULN">Unique learner number
+           <!--span class="form-hint">This field is usually completed by training providers</span-->
+           </label>
+              <p>0123456789</p>
+      </div>
+    </fieldset>
+  <hr style="margin-top:-20px"/>
+
+    <div class="form-group">
+              <fieldset>
+                <legend>
+                  <span class="form-label-bold">
+                    Date of birth
+                  </span>
+                  <span class="form-hint" id="dob-hint">For example, 31 03 1980</span>
+                </legend>
+                <div class="form-date">
+                  <div class="form-group form-group-day">
+                    <label class="form-label" for="dob-day">Day</label>
+                    <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint" value="28">
+                  </div>
+                  <div class="form-group form-group-month">
+                    <label class="form-label" for="dob-month">Month</label>
+                    <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12" value="02">
+                  </div>
+                  <div class="form-group form-group-year">
+                    <label class="form-label" for="dob-year">Year</label>
+                    <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016" value="1997">
+                  </div>
+                </div>
+         
+
+            </div>
+     
+
+                    <fieldset>
+                             <hr style="margin-top:0px"/>
+                      <legend class="visuallyhidden">Enter the name of the framework or standard.</legend>
+                        <div class="form-group" style="margin-bottom:15px">
+                            <label class="form-label-bold" for="search">Apprenticeship training course
+                            <p>Level 2: Aeronautical engineering</p>
+                        </div>
+                          <!--input class="button button-grey-secondary" id="search-provider" type="submit" value="Find course"-->
+                    </fieldset>
+
+                    <fieldset>
+             <hr style="margin-top:0px"/>
+              <div class="form-group">
+              <label class="form-label-bold" for="epa">End-point assessor
+               <span class="form-hint">There are no end-point assessors for this training course yet. New organisations are added regularly so please check back at a later date to update these details.</span>
+            <!--span class="form-hint" style="margin-top: -10px">You'll need to add end-point assessor details before the training finishes</span-->
+             </label>
+                      <!--select class="form-control" id="select-box" style="width:100%; margin-top: 10px; margin-bottom: 30px;">
+                        <option>Please select an end-point assessor</option>
+                        <option>Institute of Mechanical Engineers</option>
+                        <option>EPA 2</option>
+                        <option>EPA 3</option>
+                      </select-->
+
+                      <!--div class="form-address-group" style="margin-left: 0px; margin-top: -10px;">
+                        <p style="margin:0; font-size: smaller;"><span style="font-weight:700">Email:</span> <a href="">epa@imeche.org</a></p>
+                        <p style="margin:0; font-size: smaller;"><span style="font-weight:700">Phone:</span> 020 7304 6970</p>
+                         <p style="margin:0; font-size: smaller;"><span style="font-weight:700">Web:</span> <a href="">www.imeche.org/engtech</a></p>
+                      </div-->
+
+
+                    <details style="margin-top: 10px">
+                        <summary><span class="summary">What is an end-point assessor?</span></summary>
+                        <div class="panel panel-border-narrow">
+                          <p>An end-point assessor carries out the final, independent assessment of the apprentice. The apprentice cannot complete their apprenticeship until they pass the end-point assessment. End-point assessment only applies to Standards.</p>
+
+                          <p><a href="https://www.gov.uk/government/publications/apprenticeship-funding-and-performance-management-rules-2017-to-2018">Find out more about end-point assessors</a></p>
+                        </div>
+                      </details>
+        </div>
+      </fieldset>
+
+  <hr style="margin-top: -10px"/>
+
+  <!--hr style="margin-top:-20px"/-->
+
+            <!--div id="displayTraining" style="display: none;clear: both;">
+                <label class="form-label-bold" for="apprenticeCost">Apprenticeship training course</label>
+
+                <div class=" " style="background-color:#fff; border: 0; padding: 18px 0px 15px 0px;" >
+                    <span style="">Mechatronics technician</span>
+                    <span class="">
+                      <div><p style="display:inline-block; margin:0;">Training code:&nbsp</p ><p style="display:inline; margin:0;">9267</p></div>
+                        <div><p style="display:inline-block; margin:0;">Level:&nbsp</p><p style="display:inline; margin:0;">2 </p></div>
+                    </span>
+                </div>
+                <div style="clear: both;"></div>
+                 <p class="looks-like-a-link-underline">Change course</p>
+            </div-->
+
+            <div class="form-group">
+            <fieldset>
+                <span class="form-label-bold">Planned training start date</span>
+                <p>07 2017</p>
+            </fieldset>
+
+             <hr style="margin-top: 0px"/>
+            </div>
+
+
+
+            <div class="form-group">
+            <fieldset>
+                <span class="form-label-bold">Planned training finish date</span>
+                <p>09 2019</p>
+            </fieldset>
+            <hr style="margin-top: 0px"/>
+            </div>
+
+            <div class="form-group">
+            <fieldset>
+            <label class="form-label-bold" for="apprenticeCost">Total agreed training cost</label>
+              <p><span class="rj-currency-symbol">£</span>6,555</p>  
+            </fieldset>
+            </div>
+
+            <!--div class="panel panel-border-wide">
+              <p>If you want to change the total agreed apprenticeship price, you’ll need to ask your training provider to make the changes on your behalf. We’ll ask you to approve any changes they make.</p>
+            </div-->
+
+            <!--div class="vertical-line" style="border-left: thick solid #005EA5; float: left;">
+            <p style="margin-left: 20px">If you want to change the total agreed apprenticeship price, you’ll need to ask your training provider to make the changes on your behalf. We’ll ask you to approve any changes they make.</p>
+            </div-->
+
+            <!--div style="clear: left;"></div-->
+
+            <div style="margin-bottom: 0px"></div>
+  
+      <fieldset>
+           <hr style="margin-top:0px"/>
+            <legend class="visuallyhidden">Add a note</legend>
+            <div class="form-group">
+            <label class="form-label-bold" for="apprenticeCost">Reference (optional)
+          <span class="form-hint">Add a reference, such as employee number or location - this won’t be seen by the training provider.</span>
+           </label>
+              <input class="form-control rj-currency-input" id="employerRef" type="text" value="Banbury site" style="width:100%">
+      </div>
+    </fieldset>
+    </form>
+       
+
+    <div class="" style="display: table;">
+
+          <div style="margin-top:20px; display:inline-block;display: table-cell; vertical-align: middle; "><input class="button" onClick="whereNow()" type="button" id="saveAndReturn" value="Update details"> </div>
+          <div style="display:inline-block; display: table-cell; vertical-align: middle;"><p class="looks-like-a-link-underline" id="saveAndAdd" style="margin-top:20px; margin-left:25px; cursor: pointer; cursor: hand; ">Cancel and return</p></div>
+
+
+          <div style="clear:both"></div>
+         
+</div>
+
+    </div>
+      <div class="column-one-third">
+   
+      </div>
+</main>
+{% endblock %}
+
+
+
+

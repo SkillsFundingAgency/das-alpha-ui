@@ -1,0 +1,217 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<style>
+
+#navigation-primary, #kill-me {
+  display:none ;
+}
+
+</style>
+
+<script>
+var userAdded = JSON.parse(localStorage.getItem('registration.addingAnotherUser'));
+var forecastDone = JSON.parse(localStorage.getItem('registration.forecastComplete'));
+console.log(forecastDone)
+$(document).ready(function() {
+  var changeStuff = function() {
+  if (userAdded=='yes' && forecastDone !="yes") {
+   // document.getElementById("commitmentsName").textContent = " Hackney Skills & Training Ltd";
+   // document.getElementById("providerName").textContent = "Provider:" ;
+    $(confirmationAdded).removeClass("rj-dont-display")
+   $(teamMemberOne).removeClass("rj-dont-display");
+  //  $(addReference).addClass("rj-dont-display");
+   // $(commitmentStatus).addClass("rj-dont-display");
+   //  $(addDate).addClass("rj-dont-display")
+    }
+else {  
+  //  $(notesStuff).removeClass("rj-dont-display");
+  //  $(addReference).removeClass("rj-dont-display");
+  //  $(commitmentStatus).removeClass("rj-dont-display");
+  //  $(addDate).removeClass("rj-dont-display")
+        };
+
+if (userAdded=='yes' & forecastDone =="yes") {
+   $(teamMemberOne).removeClass("rj-dont-display");
+   $(forecastComplete).removeClass("rj-dont-display");
+    }
+else {  };
+if (userAdded=='No' & forecastDone =="yes") {
+   $(forecastComplete).removeClass("rj-dont-display");
+    }
+else {  };
+if (userAdded=='No' ) {
+   $(trainingProviders).removeClass("rj-dont-display");
+   $(endpointAssessment).removeClass("rj-dont-display");
+    }
+else {  };
+
+  }
+changeStuff();
+});
+
+</script>
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds column-minimum">
+
+      <h1 class="heading-large">
+        LEVY
+      </h1>
+
+      <ol class="task-list">
+        <li>
+          <h2 class="task-list-section">
+            <span class="task-list-section-number">1. </span> Check before you start
+          </h2>
+          <ul class="task-list-items">
+            <li class="task-list-item">
+              <a class="task-name" href="#" aria-describedby="eligibility-completed">
+                Check eligibility
+              </a>
+              <strong class="task-completed" id="eligibility-completed">Completed</strong>
+            </li>
+            <!--li class="task-list-item">
+              <a class="task-name" href="#" aria-describedby="read-declaration-completed">
+                Do a thing
+              </a>
+            </li-->
+          </ul>
+        </li>
+        <li>
+          <h2 class="task-list-section">
+            <span class="task-list-section-number">2. </span> Training
+          </h2>
+          <ul class="task-list-items">
+            <li class="task-list-item">
+              <a class="task-name" href="/{% include "includes/sprint-link.html" %}/NLD-find/findStart" aria-describedby="company-information-completed">
+                Find training and get costs
+              </a>
+              <!--strong class="task-completed" id="company-information-completed">Completed</strong-->
+            </li>
+            <li class="task-list-item">
+              <a class="task-name" href="#" aria-describedby="contact-details-completed">
+                Find training providers
+              </a>
+              <!--strong class="task-completed" id="contact-details-completed">Completed</strong-->
+            </li>
+            <li class="task-list-item">
+              <a class="task-name" href="#">
+                View shortlisted training
+              </a>
+             <strong class="task-completed" style="min-width:60px; text-align: center; " id="contact-details-completed">3</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="task-list-section">
+            <span class="task-list-section-number">3. </span> Reserve funding
+          </h2>
+          <ul class="task-list-items">
+            <li class="task-list-item">
+              <a class="task-name" href="/{% include "includes/sprint-link.html" %}/NLD-claim/current">
+                Reserve funding
+              </a>
+
+            </li>
+            <li class="task-list-item">
+              <a class="task-name" href="/{% include "includes/sprint-link.html" %}/NLD-claim/start">
+                View reserved funding
+              </a>
+             <strong class="task-completed" style="min-width:60px; text-align: center; " id="contact-details-completed">1</strong>
+            </li>
+          </ul>
+       </li>
+
+       <li>
+          <h2 class="task-list-section">
+            <span class="task-list-section-number">4. </span> Recruit apprentices
+          </h2>
+          <ul class="task-list-items">
+            <li class="task-list-item">
+              <a class="task-name" href="#">
+                Recruit apprentices
+              </a>
+            </li>
+            <li class="task-list-item">
+              <a class="task-name" href="#">
+                View applications
+              </a>
+             <strong class="task-completed" style="min-width:60px; text-align: center; " id="contact-details-completed">0</strong>
+            </li>
+          </ul>
+       </li>
+
+       <li>
+          <h2 class="task-list-section">
+            <span class="task-list-section-number">5. </span> Apprentices
+          </h2>
+          <ul class="task-list-items">
+            <li class="task-list-item">
+              <a class="task-name" href="#">
+                Approve new apprentices
+              </a>
+            </li>
+            <li class="task-list-item">
+              <a class="task-name"  href="/{% include "includes/sprint-link.html" %}/NLD-claim/current">
+                View your current apprentices
+              </a>
+            </li>
+          </ul>
+       </li>
+
+
+      </ol>
+
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+<!--
+
+  <div style="margin-top:25px">
+                      <table class="">
+                          <thead>
+                            <tr>
+                              <th scope="col" style="padding-top:0"></th>
+                               <th scope="col" style="padding-top:0"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                             <tr>
+
+                              <td style="font-size:28px; color:#005ea5; font-weight:700;">1. Invite team members</td>
+                                <td >
+                                  <span id="teamMemberOne" class="statusToDo rj-dont-display">1 Team member added</span>
+                                  <span id="teamMemberTwo" class="statusToDo rj-dont-display">2 Team members added</span>
+                                </td>
+                              </tr>
+                              <tr>
+
+                              <td style="font-size:28px;  font-weight:700; "><a style="text-decoration:none; color:#005ea5;" href="/{% include "includes/sprint-link.html" %}/forecast">2. Forecast your funds</a></td>
+                               <td> <span id="forecastComplete" class="statusToDo rj-dont-display">Forecast added on 20 May 2017</span> </td>
+                              </tr>
+                             <tr>
+
+                              <td style="font-size:28px; color:#005ea5; font-weight:700;">3. Explore training courses and providers</td>
+                                <td class="looks-like-a-link-underline"></td>
+                              </tr>
+                             <tr>
+
+                              <td style="font-size:28px; color:#005ea5; font-weight:700;">4. Learn more about Endpoint Assesment</td>
+                                <td class="looks-like-a-link-underline"></td>
+                              </tr>
+
+                          </tbody>
+                      </table>
+</div>
+
+-->

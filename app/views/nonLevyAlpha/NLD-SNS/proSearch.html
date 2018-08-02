@@ -1,0 +1,78 @@
+
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+    <link href="/public/ty/assets/stylesheets/main.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/elements-page.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/flexboxgrid.min.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/_app.css" rel="stylesheet" />
+    <link href="/public/ty/assets/stylesheets/_proSearch.css" rel="stylesheet" />
+
+    <script src="/public/ty/assets/javascripts/govuk-template.js" type="javascript/text"></script>
+
+    <main id="content" role="main">
+        <div class="grid-row breadcrumb" style="margin-top:25px">
+            <div class="column-two-thirds"><a href="#" class="link-back">Back</a>
+            </div>
+            <div class="column-third">
+            </div>
+        </div>
+
+        <section class="test 01">
+            <h1 class="heading-xlarge">
+Find a training provider
+</h1>
+
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                    <p class="lede">Find a training provider for:
+                        <!--span class="bold-medium appName"></span--><span class="bold-medium">Financial Services Administrator, level 3</span></p>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        <form method="post" id="local-locator-form" class="find-location-for-service" style="background-color: #dee0e2;
+    display: block;
+    float: left;
+    padding: 20px;">
+                            <fieldset>
+                                <legend class="visuallyhidden">Postcode lookup</legend>
+
+                                <div class="ask_location">
+                                    <label class="instruction bold-medium" for="postcode">Enter a postcode</label>
+                                    <p>For example: SW1A 2AA</p>
+                                    <p>Enter the <span class="bold-small">full</span> postcode of your apprentice's work location.</p>
+                                    <input class="postcode form-control" id="postcode" name="postcode" type="text" value="">
+                                    <a href="proResults" class="button" id="search-button">Search</a>
+
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/public/ty/assets/javascripts/d3.min.js"></script>
+    <script src="/public/ty/assets/javascripts/c3.min.js"></script>
+    <script src="/public/ty/assets/javascripts/marked.min.js"></script>
+    <script src="/public/ty/assets/javascripts/underscore-min.js"></script>
+    <script src="/public/ty/assets/javascripts/js.cookie.js"></script>
+    <script src="/public/ty/assets/javascripts/footable.all.min.js"></script>
+    <script src="/public/ty/assets/javascripts/_app.js"></script>
+    <!-- Removed the JS that validates the postcode and directs to the postcode page-->
+    <!--script src="/public/ty/assets/javascripts/_proSearch.js"></script-->
+
+
+{% endblock %}

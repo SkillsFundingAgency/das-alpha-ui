@@ -1,0 +1,331 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+<link href="/public/stylesheets/filtering.css" media="screen" rel="stylesheet" type="text/css" />
+
+<style>
+    .apprentice-nav a  {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta.html" %}
+{% include "includes/secondary-nav-people.html" %}
+
+
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Account home</a></li>
+      <li><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/people">Apprentices</a></li>
+       <li id="removeWithNav">Your apprentices</li>
+    </ol>
+  </div>
+
+
+<!--h1 class="heading-large">Levy account</h1-->
+ <!--h2 class="bold-medium">Acme Ltd Levy Account</h2-->
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h1 class="heading-xlarge" >{% include "includes/account-name-number.html" %}Manage your apprentices</h1>
+    <!--p class="lede">All apprentices who are currently on your programme and need no action.</p-->
+  </div>
+</div>
+
+ <div class="grid-row">
+   <div class="column-one-third">
+    
+    <div class="filter-form filtering ">
+      <div id="finder-frontend" class="inner-block">
+
+        <form method="get" action="/" class="js-live-search-form">
+          <div class="filter text-filter">
+            <label class="legend" for="finder-keyword-search">Search</label>
+            <input value="" type="text" name="keywords" id="finder-keyword-search" aria-controls="js-search-results-info" class="text">
+          </div>
+        <div class="govuk-option-select js-collapsible" >
+            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+              <div class="option-select-label">Status</div>
+              <div class="js-selected-counter"></div></button>
+                <div class="options-container" id="case_state">
+                  <div class="js-auto-height-inner">
+                       <label for="Live">
+                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                          Live
+                        </label>
+                       <label for="not-started">
+                       <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                          Waiting to start
+                        </label>
+                        <label for="Paused">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          Paused
+                        </label>
+                         <label for="Stopped">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          Stopped
+                        </label>
+                        <label for="Finished">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                         Finished
+                        </label>
+
+                  </div>
+               </div>
+          </div>
+
+            <div class="govuk-option-select js-collapsible" >
+            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+              <div class="option-select-label">Alerts</div>
+              <div class="js-selected-counter"></div></button>
+                <div class="options-container" id="case_state">
+                  <div class="js-auto-height-inner">
+                       <label for="Live">
+                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                          No action needed
+                        </label>
+                       <label for="not-started">
+                       <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                            Changes pending
+                        </label>
+                        <label for="Paused">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          Payment failed
+                        </label>
+                         <label for="Stopped">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          EPA due now
+                        </label>
+                  </div>
+               </div>
+          </div>
+
+          
+
+          <!--div class="govuk-option-select js-collapsible" >
+            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+              <div class="option-select-label">Apprenticeship training courses</div>
+              <div class="js-selected-counter"></div></button>
+                <div class="options-container" id="case_state">
+                  <div class="js-auto-height-inner">
+                      <label for="Acme Coventry Ltd">
+                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                          Mechatronics engineers
+                        </label>
+                        <label for="Cyberdyne Systems Inc">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          Manufacturing engineers
+                        </label>
+                        <label for="Tyrell Corp">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          Survival equipment fitter
+                        </label>
+                        <label for="Tyrell Corp">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          Network engineer
+                        </label>
+                        <label for="Tyrell Corp">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          Cyber intrusion analyst
+                        </label>
+                        <label for="Tyrell Corp">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          Cyber security technologist
+                        </label>
+                        <label for="Tyrell Corp">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          Embedded Electronic Systems Design and Development Engineer
+                        </label>
+
+                  </div>
+
+               </div>
+          </div-->
+
+    <!--div class="govuk-option-select js-collapsible" >
+            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+              <div class="option-select-label">End-point assessor</div>
+              <div class="js-selected-counter"></div></button>
+                <div class="options-container" id="case_state">
+                  <div class="js-auto-height-inner">
+                      <label for="Acme Coventry Ltd">
+                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                          Due now
+                        </label>
+                        <label for="Cyberdyne Systems Inc">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          Due in 3 months
+                        </label>
+                        <label for="Tyrell Corp">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          Due in 6 months
+                        </label>
+                  </div>
+               </div>
+          </div-->
+
+    <!--div class="govuk-option-select js-collapsible" >
+            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+              <div class="option-select-label">Training providers</div>
+              <div class="js-selected-counter"></div></button>
+                <div class="options-container" id="case_state">
+                  <div class="js-auto-height-inner">
+                      <label for="Acme Coventry Ltd">
+                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                          Hackney Skills &amp Training
+                        </label>
+                        <label for="Cyberdyne Systems Inc">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          Skills, Skills, Skills Ltd
+                        </label>
+                        <label for="Tyrell Corp">
+                        <input name="case_type[]" value="Tyrell" id="Tyrell" type="checkbox" aria-controls="js-search-results-info">
+                          Apprenticeships R Us
+                        </label>
+                  </div>
+               </div>
+          </div-->
+
+          <!--div class="govuk-option-select js-collapsible" >
+            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+              <div class="option-select-label">Organisation</div>
+              <div class="js-selected-counter"></div></button>
+                <div class="options-container" id="case_state">
+                  <div class="js-auto-height-inner">
+                       <label for="Live">
+                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                          Acme Coventry Ltd
+                        </label>
+                       <label for="not-started">
+                       <input name="case_type[]" value="acme-cov" id="acme-birm" type="checkbox" aria-controls="js-search-results-info">
+                          Acme Birmingham Ltd
+                        </label>
+
+                  </div>
+               </div>
+          </div-->
+
+          <!--div class="govuk-option-select js-collapsible" >
+            <button class="js-container-head" type="button" aria-expanded="false" aria-controls="case_state">
+              <div class="option-select-label">Cohort reference</div>
+              <div class="js-selected-counter"></div></button>
+                <div class="options-container" id="case_state">
+                  <div class="js-auto-height-inner">
+                       <label for="Live">
+                        <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                          98HXGFD
+                        </label>
+                       <label for="not-started">
+                       <input name="case_type[]" value="acme-cov" id="acme-cov" type="checkbox" aria-controls="js-search-results-info">
+                          78JKHGS
+                        </label>
+                        <label for="Paused">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          HJGS897
+                        </label>
+                         <label for="Stopped">
+                        <input name="case_type[]" value="Cyberdyne" id="Cyberdyne" type="checkbox" aria-controls="js-search-results-info">
+                          UIOY784
+                        </label>
+                  </div>
+               </div>
+          </div-->
+
+        </div>
+      </div>
+    </div>
+                <div class="column-two-thirds">
+                      <table class="">
+                          <thead>
+                            <tr>
+                              <th scope="col" style="padding-top:0; width: 120px">Name</th>
+                              <th scope="col" style="padding-top:0; width: 100px">Date of birth</th>
+                               <th scope="col" style="padding-top:0; width:80px">Status</th>
+                               <th scope="col" style="padding-top:0; width:100px">Alerts</th>
+                               <th scope="col" style="padding-top: 0; width: 30px">EPA</th>
+                               <th scope="col" style="padding-top:0;"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <!--quick hack, will fix -->
+                              <td class="rjTabWidth">Rob Edwards</td>
+                              <td class="">3 Jun 1997</td>
+                              <td class="">Live</td>
+                              <td>Changes pending</td>
+                              <td></td>
+                              <td style="text-align: right;"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice">View</a></td>
+                            </tr>
+                            <tr>
+                              <td class="rjTabWidth">Susan Hamazaki</td>
+                              <td class="">12 Oct 1995</td>
+                              <td class="">Paused</td>
+                              <td>Changes for review</td>
+                              <td style="text-align: center;">&#x2714</td>
+                              <td style="text-align: right;"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice-showing-changes">View</a></td>
+
+                            </tr>
+                            <tr>
+                              <td class="rjTabWidth">James Apan</td>
+                              <td class="">30 Oct 2001</td>
+                              <td class="">Live</td>
+                              <td></td>
+                              <td></td>
+                              <td style="text-align: right;"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice-no-changes2">View</a></td>
+                            </tr>
+                            <tr>
+                              <td class="rjTabWidth">David Jenkins</td>
+                              <td class="">5 Sep 1999</td>
+                              <td class="">Finished</td>
+                              <td></td>
+                              <td style="text-align: center;">&#x2714</td>
+                              <td class="looks-like-a-link-underline" style="text-align: right;">View</td>
+                            </tr>
+                            <tr>
+                              <td class="rjTabWidth">Mel O'Connor</td>
+                              <td class="">1 May 1998</td>
+                              <td class="">Live</td>
+                              <td>Payment failed</td>
+                              <td style="text-align: center;">&#x2714</td>
+                              <td style="text-align: right;"><a href="/{% include "includes/sprint-link.html" %}/apprentice-view/individual-apprentice-payment-failure">View</a></td>
+                            </tr>
+                            <tr>
+                              <td class="rjTabWidth">William Hill</td>
+                              <td class="">10 Jan 1998</td>
+                              <td class="">Waiting to start</td>
+                              <td></td>
+                              <td></td>
+                              <td class="looks-like-a-link-underline" style="text-align: right;">View</td>
+                            </tr>
+                             <tr>
+                              <td class="rjTabWidth">Harvey Dent</td>
+                              <td class="">29 Oct 2000</td>
+                              <td class="">Live</td>
+                              <td>EPA due now</td>
+                              <td style="text-align: center;">&#x2714</td>
+                              <td class="looks-like-a-link-underline" style="text-align: right;">View</td>
+                            </tr>
+                             <tr>
+                              <td class="rjTabWidth">Jenny Topham</td>
+                              <td class="">10 Jan 1998</td>
+                              <td class="">Stopped</td>
+                              <td></td>
+                              <td style="text-align: center;">&#x2714</td>
+                              <td class="looks-like-a-link-underline" style="text-align: right;">View</td>
+                            </tr>
+                          </tbody>
+                      </table>
+                 </div>
+             </div>
+</main>
+
+
+
+{% endblock %}
+

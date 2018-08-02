@@ -22,6 +22,174 @@
 }
 
 
+//new task list stuff goes here
+
+.task-list-item:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+.task-list {
+  margin-top: 30px;
+}
+
+@media (min-width: 641px) {
+  .task-list {
+    margin-top: 60px;
+  }
+}
+
+.find-list {
+  font-weight:700;
+  text-decoration: none
+
+}
+
+.results-header a {
+  text-decoration:none;
+}
+
+.chottoPadding {
+   padding: 0 10px 15px 20px;
+}
+
+.floatingBox {
+      display: inline-block;
+    width: 150px;
+    height: 75px;
+    margin: 10px;
+}
+
+.category-list p {
+      margin-bottom: 0.75em;
+}
+
+.task-list-section {
+  display: table;
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  font-size: 18px;
+  line-height: 1.2;
+  padding-bottom: 5px;
+}
+
+@media (min-width: 641px) {
+  .task-list-section {
+    font-size: 24px;
+    line-height: 1.25;
+  }
+}
+
+.task-list-section-number {
+  display: table-cell;
+  padding-right: 5px;
+}
+
+@media (min-width: 641px) {
+  .task-list-section-number {
+    min-width: 35px;
+    padding-right: 0;
+  }
+}
+
+.task-list-items {
+  margin-bottom: 30px;
+}
+
+@media (min-width: 641px) {
+  .task-list-items {
+    margin-bottom: 60px;
+  }
+}
+
+@media (min-width: 641px) {
+  .task-list-items {
+    padding-left: 35px;
+  }
+}
+
+.task-list-item {
+  border-bottom: 1px solid #bfc1c3;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.task-list-item:first-child {
+  border-top: 1px solid #bfc1c3;
+}
+
+.task-name {
+  width: 66.66667%;
+  float: left;
+}
+
+.task-completed {
+  display: -moz-inline-stack;
+  display: inline-block;
+  margin: 0 8px 0 0;
+  padding: 2px 5px 0;
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 1.14286;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #005ea5;
+  float: right;
+  margin-right: 0;
+  padding-top: 3px;
+}
+
+@media (min-width: 641px) {
+  .task-completed {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+
+// inline with newer style sheets
+
+@media (min-width: 641px) {
+.heading-xlarge {
+    margin-top: 0.625em;
+    margin-bottom: 0.625em;
+}
+}
+
+.searchListing {
+  font-size: 24px;
+  line-height: 1.25;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-weight:700;
+}
+
+.browseListing {
+  font-size: 19px;
+  line-height: 1.25;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-weight:700;
+}
+
+.a-to-z-nav a {
+    display: inline-block;
+    padding: .3em;
+    position: relative;
+    left: -.3em;
+}
+
+.browseListingItems {
+  padding-bottom: 5px;
+}
+
 .link-back {
   margin:0 !important;
 }
@@ -355,6 +523,8 @@ margin-top:-6px;
   margin-top:15px;
   background-color: $grey-3;
 }
+
+
 
 .rj-alert-wrapper-history {
   // border: 1px solid #bfc1c3;
@@ -754,6 +924,15 @@ hr.vertical-line {
   #transactions td:nth-of-type(4):before { content: "Debit"; font-weight:400; }
   #transactions td:nth-of-type(5):before { content: "Balance"; font-weight:400; }
   #transactions td:nth-of-type(6):before { content: ""; font-weight:400;  color: #0b0c0c;}
+}
+
+.rj-nudge-wrapper {
+
+  border: 4px solid $purple;
+  width: 100%;
+  min-height: 270px;
+  margin-top:15px;
+  background-color: #FFF;
 }
 
 $info-colour:$purple;
@@ -1225,9 +1404,9 @@ $warning-colour:$orange;
   }
 
 .button-grey-secondary {
-    background-color: #eee;
-    color: #000;
-    box-shadow: 0 2px 0 #666;
+    background-color: #eee !important;
+    color: #000 !important;
+    box-shadow: 0 2px 0 #666 !important;
 }
 
 
@@ -1619,6 +1798,11 @@ flex:8;
 .commitCheck {
 margin-top:-10px;
 flex:1;
+}
+
+.tableBigStuff {
+  font-size: 19px;
+  font-weight:700;
 }
 
 .viewButton {

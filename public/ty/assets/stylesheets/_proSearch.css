@@ -1,0 +1,9 @@
+.appType,
+.appName {
+    text-transform: lowercase;
+    display: inline-block;
+}
+
+span.appName:first-letter {
+    text-transform: uppercase;
+}

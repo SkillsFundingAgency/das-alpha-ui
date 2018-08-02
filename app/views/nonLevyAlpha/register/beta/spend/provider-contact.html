@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Apprenticeships
+{% endblock %}
+
+{% block content %}
+
+
+<script>
+
+var whereNow = function() {
+  var goToEmployer = JSON.parse(localStorage.getItem('commitments.isEmployer'));
+
+    if (goToEmployer == "yes") {
+         window.location.href='../provider-in-progress/provider-list';
+  } else {
+    window.location.href='employer-confirmation';
+  }
+};
+
+</script>
+
+<style>
+  .people-nav a {
+    {% include "includes/nav-on-state-css.html" %}
+  }
+</style>
+
+<main id="content" role="main">
+{% include "includes/phase_banner_beta_noNav.html" %}
+{% include "includes/secondary-nav-provider.html" %}
+
+
+  <!--div class="breadcrumbs">
+    <ol role="breadcrumbs">
+      <li><a href="/{% include "includes/sprint-link.html" %}/balance">Access my funds</a></li>
+    </ol>
+
+  </div-->
+
+     <div class="breadcrumbs back-breadcrumb">
+    <ol role="breadcrumbs">
+      {% include "includes/breadcrumbs/register-back.html" %}
+    </ol>
+  </div>
+
+
+<div class="grid-row">
+                    <div class="column-two-thirds">
+  <h1 class="heading-xlarge" >Instructions for your training provider</h1>
+  <p class="lede">Let <span style="font-weight:700">Hackney Skills and Training Ltd</span> know which apprentices you'd like them to add.</p>
+  
+<form action="">
+  <fieldset>
+    <legend class="visuallyhidden">provider contact details and message - optional</legend>
+      <div class="form-group">
+          <label class="form-label-bold" for="message">Instructions</label>
+           <span class="form-hint">For example, please add the 12 admin level 2 apprentices and 13 engineering level 3 apprentices.</span>
+          <textarea class="form-control" id="message" type="text" style="width:100%"  rows="5" ></textarea>
+      </div>
+    </fieldset>
+    <input class="button" id="Finish"  onclick="whereNow()" type="button" value="Send">
+</form>
+
+
+
+
+    <div style="margin-top:50px"></div>
+    <!-- template to pull in the start tabs so this doesn't get too messy - it is pulling in the tabs -->
+<!-- {% include "includes/start-tabs.html" %} -->
+
+            </div>
+
+             <div class="column-one-third">
+                      <!--aside class="related">
+                        <h2 class="heading-medium" style="margin-top:10px">Existing account</h2>
+                        <nav role="navigation">
+                      <ul class="robSideNav">
+                          <li>
+                            <a href="../login">Sign in</a>
+                          </li>
+
+                        </ul>
+                           </nav>
+                    </aside-->
+            </div>
+</div>
+</main>
+
+<script>
+//jquery that runs the tabs. Uses the jquery.tabs.js from gov.uk
+
+
+
+
+{% endblock %}

@@ -1,0 +1,62 @@
+/* Mobile First CSS */
+
+ol li .shortlist {
+    width: 20%;
+    float: left;
+    text-align: center;
+    color: #005ea5;
+}
+
+.v2 ol li .details {
+    width: 70%;
+}
+
+.v2 ol li .shortlist {
+    width: 30%;
+}
+
+ol li .shortlist:hover {
+    color: #2e8aca;
+    cursor: pointer;
+}
+
+ol li .shortlist i {
+    font-size: 1em;
+}
+
+ol li .shortlist span {
+    display: none;
+}
+
+.result h2 {
+    margin-bottom: 0;
+}
+
+.result {
+    overflow: auto;
+}
+
+.result .column {
+    float: left;
+    width: 80%;
+}
+
+
+/* Tablet Small Desktop */
+
+@media (min-width: 641px) {}
+
+ol li .shortlist i {
+    font-size: 2em;
+}
+
+ol li .shortlist span {
+    display: block;
+    text-decoration: underline;
+    ;
+}
+
+
+/* Large Desktop */
+
+@media (min-width: 1020px) {}
