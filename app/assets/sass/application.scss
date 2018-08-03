@@ -415,6 +415,11 @@ padding-left:15px;
 
 }
 
+.errorBoxRed {
+ padding-top:18px;
+   border-bottom: 5px solid #B10E1E !important;
+  // background-color: $highlight-colour;
+
 .fatBR {
   line-height:25px
 }
@@ -743,22 +748,22 @@ vertical-align: top;
     height: 33px;
     margin-top: 0px;
     margin-bottom: 18px;
-    margin-left: 20px;
+    margin-left: 0px;
     float: left;
 }
 
 .tabs-menu li {
     display: inline-block;
-    height: 50px;
-    line-height: 50px;
+    height: 51px;
+    line-height: 52px;
     float: left;
     text-align: center;
     margin-right: 5px;
     color: #000;
-    background-color: #DEE0E2;
-    border-top: 1px solid #d4d4d1;
-    border-right: 1px solid #d4d4d1;
-    border-left: 1px solid #d4d4d1;
+    background-color: #BFC1C3;
+    border-top: 1px solid #BFC1C3;
+    border-right: 1px solid #BFC1C3;
+    border-left: 1px solid #BFC1C3;
 }
 
 .tabs-menu li.current {
@@ -857,6 +862,58 @@ vertical-align: top;
 
 // end of tabs
 
+// timeline
+
+.timeline {
+  padding-top: 0px;
+  padding-right: 15px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+
+}
+
+.timeline {
+  position: relative;
+  width: 100%;
+  background: #FFF;
+}
+
+.timeline::before {
+  margin-left: +0%;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 1px;
+  background: #BFC1C3;
+  top: 30px;
+  bottom: 10px;
+}
+
+.timeline .body {
+  width: 100%;
+  margin-left: 20px;
+  margin-bottom: 30px;
+  position: relative;;
+}
+
+.timeline .body::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #BFC1C3;
+  border-radius: 100%;
+  left: -25px;
+  top: 24%;
+  z-index: 99;
+}
+
+//end of timeline
+
 //vertical lines
 
 hr.vertical-line {
@@ -866,6 +923,16 @@ hr.vertical-line {
   float: left;
 }
 
+//end of vertical lines
+
+//edit page elements 
+
+.form-address-group .p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+//end edit page elements
 
 
 // Mobile tables
